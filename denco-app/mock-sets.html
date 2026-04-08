@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>擬似問題集 | 電気資格 学習ポータル</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0f1419;
+            --surface: #1a222c;
+            --surface-2: #232d3a;
+            --text: #e8edf4;
+            --text-muted: #8b9aad;
+            --accent: #3d9cf0;
+            --radius: 14px;
+            --shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            min-height: 100dvh;
+            font-family: "Zen Kaku Gothic New", "Hiragino Sans", sans-serif;
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--text);
+            background: var(--bg);
+            background-image:
+                radial-gradient(ellipse 80% 50% at 50% -20%, rgba(61, 156, 240, 0.15), transparent);
+            padding: max(16px, env(safe-area-inset-top)) 18px max(32px, env(safe-area-inset-bottom));
+        }
+
+        .wrap {
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        header {
+            margin-bottom: 22px;
+        }
+
+        header h1 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 0 0 8px;
+        }
+
+        header p {
+            margin: 0;
+            font-size: 0.88rem;
+            color: var(--text-muted);
+        }
+
+        .nav {
+            margin-bottom: 18px;
+        }
+
+        .nav a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.88rem;
+        }
+
+        .nav a:hover {
+            text-decoration: underline;
+        }
+
+        .set-card {
+            background: var(--surface);
+            border-radius: var(--radius);
+            padding: 18px 18px 16px;
+            margin-bottom: 14px;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .set-card h2 {
+            font-size: 1rem;
+            margin: 0 0 8px;
+            color: var(--accent);
+        }
+
+        .set-card p {
+            margin: 0 0 14px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .set-btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 14px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #0f1419;
+            background: linear-gradient(135deg, var(--accent), #6ec5ff);
+            border: none;
+            border-radius: 12px;
+            text-decoration: none;
+            box-shadow: 0 4px 20px rgba(61, 156, 240, 0.35);
+        }
+
+        .set-btn:hover {
+            opacity: 0.95;
+        }
+
+        .note {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            margin-top: 20px;
+            padding: 12px;
+            background: rgba(240, 198, 116, 0.08);
+            border: 1px solid rgba(240, 198, 116, 0.25);
+            border-radius: 10px;
+        }
+    </style>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3002712486184435" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="wrap">
+        <p class="nav"><a href="index.html">← トップページへ</a> · <a href="quiz.html">分野別クイズへ</a></p>
+        <header>
+            <h1>擬似問題集</h1>
+            <p>試験対策用の<strong>類題ベース</strong>のまとまりです。公式の過去問そのものではありません。出題順はランダムです。</p>
+        </header>
+
+        <section class="set-card">
+            <h2>擬似① 本番想定ミックス</h2>
+            <p>全分野から45問。易・標準・難の比率を本番より少し高め（30:50:20）に設定。まず腕試しに。<br>60%以上（27問以上）で合格判定。</p>
+            <a class="set-btn" href="quiz.html?set=mix-45">このセットで開始</a>
+        </section>
+
+        <section class="set-card">
+            <h2>擬似② 標準〜やや難ミックス</h2>
+            <p>全分野から45問。難問比率を引き上げ（15:55:30）、本番より一段階上の難易度。<br>60%以上（27問以上）で合格判定。</p>
+            <a class="set-btn" href="quiz.html?set=level2-45">このセットで開始</a>
+        </section>
+
+        <section class="set-card">
+            <h2>擬似③ 応用レベルミックス</h2>
+            <p>全分野から45問。標準・難問中心（5:50:45）。計算・条文・施工の応用問題が多め。<br>60%以上（27問以上）で合格判定。</p>
+            <a class="set-btn" href="quiz.html?set=level3-45">このセットで開始</a>
+        </section>
+
+        <section class="set-card">
+            <h2>擬似④ 難問チャレンジ</h2>
+            <p>全分野から45問。難問主体（0:35:65）。細かい数値・条件判断・複合計算が中心。<br>60%以上（27問以上）で合格判定。</p>
+            <a class="set-btn" href="quiz.html?set=level4-45">このセットで開始</a>
+        </section>
+
+        <section class="set-card">
+            <h2>擬似⑤ 最難関チャレンジ</h2>
+            <p>全分野から45問。難問特化（0:15:85）。収録問題の中で最も難しい問題を集中出題。<br>60%以上（27問以上）で合格判定。</p>
+            <a class="set-btn" href="quiz.html?set=level5-45">このセットで開始</a>
+        </section>
+
+        <p class="note">
+            全セット45問・合否判定付き。問題はランダム出題のため毎回異なります。分野選択メニューに戻るときは、クイズ画面上部の「分野選択に戻る」を押してください。
+        </p>
+    </div>
+</body>
+</html>

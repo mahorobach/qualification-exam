@@ -1,0 +1,1610 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>資格トレイン | 通勤・通学スキマ時間で資格合格</title>
+  <meta name="description" content="通勤・通学のスキマ時間に、スマホで資格試験の過去問対策。技術士・電気・危険物など各種資格の学習アプリを無料で提供しています。">
+  <meta property="og:title" content="資格トレイン | 通勤・通学スキマ時間で資格合格">
+  <meta property="og:description" content="スマホ完結の過去問クイズアプリで、どこでもいつでも資格取得をサポート。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --black:      #000000;
+      --white:      #ffffff;
+      --apple-dark: #1d1d1f;
+      --apple-gray: #f5f5f7;
+      --apple-mid:  #e8e8ed;
+      --apple-muted:#6e6e73;
+      --apple-blue: #0071e3;
+      --apple-blue-light: #2997ff;
+      --apple-blue-hover: #0077ed;
+      --radius-card: 18px;
+      --radius-btn:  980px;
+      --nav-h:       52px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: "Noto Sans JP", "Hiragino Sans", -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      background: var(--white);
+      color: var(--apple-dark);
+      line-height: 1.6;
+      font-size: 19px;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Navbar ── */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: var(--nav-h);
+      z-index: 200;
+      background: rgba(255, 255, 255, 0.72);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+      display: flex;
+      align-items: center;
+    }
+    .nav-inner {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 0 22px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      color: var(--apple-dark);
+    }
+    .nav-logo-icon { font-size: 1.3rem; line-height: 1; }
+    .nav-logo-text {
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.78rem;
+      font-weight: 400;
+      color: var(--apple-dark);
+      text-decoration: none;
+      opacity: 0.8;
+      transition: opacity .15s;
+    }
+    .nav-links a:hover { opacity: 1; }
+    .nav-cta {
+      font-size: 0.78rem;
+      font-weight: 400;
+      color: var(--apple-blue) !important;
+      opacity: 1 !important;
+    }
+
+    /* ── Search ── */
+    .nav-search-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      border-radius: 8px;
+      color: inherit;
+      font-size: 1.1rem;
+      transition: background .15s;
+      flex-shrink: 0;
+    }
+    .nav-search-btn:hover { background: rgba(0,0,0,0.06); }
+
+    .search-overlay {
+      position: fixed;
+      top: var(--nav-h);
+      left: 0;
+      right: 0;
+      z-index: 199;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+      padding: 16px 22px;
+      transform: translateY(-110%);
+      opacity: 0;
+      transition: transform .3s cubic-bezier(.25,.46,.45,.94), opacity .25s;
+      pointer-events: none;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+    }
+    .search-overlay.open {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .search-overlay-inner { max-width: 640px; margin: 0 auto; }
+    .search-input-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--apple-gray);
+      border-radius: 12px;
+      padding: 10px 16px;
+      border: 1.5px solid transparent;
+      transition: border-color .2s;
+    }
+    .search-input-wrap:focus-within { border-color: var(--apple-blue); background: #fff; }
+    .search-icon-static { font-size: 1rem; color: var(--apple-muted); flex-shrink: 0; }
+    .search-input {
+      flex: 1;
+      border: none;
+      background: transparent;
+      font-size: 1rem;
+      font-family: inherit;
+      color: var(--apple-dark);
+      outline: none;
+    }
+    .search-input::placeholder { color: var(--apple-muted); }
+    .search-clear-btn {
+      background: none; border: none; cursor: pointer;
+      font-size: 1rem; color: var(--apple-muted); padding: 2px;
+      border-radius: 50%; transition: color .15s;
+    }
+    .search-clear-btn:hover { color: var(--apple-dark); }
+
+    .search-results {
+      margin-top: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .search-empty { font-size: 0.84rem; color: var(--apple-muted); padding: 10px 4px; }
+    .search-hint  { font-size: 0.82rem; color: var(--apple-muted); padding: 4px 4px; }
+    .search-result-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: var(--apple-gray);
+      text-decoration: none;
+      color: var(--apple-dark);
+      transition: background .15s;
+    }
+    .search-result-item:hover { background: var(--apple-mid); }
+    .search-result-emoji { font-size: 1.35rem; flex-shrink: 0; }
+    .search-result-body { flex: 1; }
+    .search-result-name { font-size: 0.93rem; font-weight: 600; margin-bottom: 2px; }
+    .search-result-sub  { font-size: 0.77rem; color: var(--apple-muted); line-height: 1.5; }
+    .search-result-arrow { font-size: 1rem; color: var(--apple-muted); }
+
+    /* Footer search */
+    .footer-search-wrap {
+      max-width: 420px;
+      margin: 0 auto 28px;
+    }
+    .footer-search-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      color: var(--apple-muted);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    .footer-search-row {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      background: var(--apple-gray);
+      border-radius: 12px;
+      padding: 10px 14px;
+      border: 1.5px solid transparent;
+      transition: border-color .2s;
+    }
+    .footer-search-row:focus-within { border-color: var(--apple-blue); background: #fff; }
+    .footer-search-input {
+      flex: 1;
+      border: none;
+      background: transparent;
+      font-size: 0.9rem;
+      font-family: inherit;
+      color: var(--apple-dark);
+      outline: none;
+    }
+    .footer-search-input::placeholder { color: var(--apple-muted); }
+    .footer-search-btn {
+      background: var(--apple-blue);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 6px 14px;
+      font-family: inherit;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background .15s;
+    }
+    .footer-search-btn:hover { background: var(--apple-blue-hover); }
+    .footer-search-results {
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    /* ── Hamburger button ── */
+    .nav-hamburger {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 36px;
+      height: 36px;
+      padding: 6px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: background .15s;
+      flex-shrink: 0;
+    }
+    .nav-hamburger:hover { background: rgba(0,0,0,0.06); }
+    .nav-hamburger span {
+      display: block;
+      height: 1.5px;
+      border-radius: 2px;
+      background: currentColor;
+      transition: transform .3s, opacity .3s, width .3s;
+      width: 20px;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; width: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+    /* ── Drawer menu ── */
+    .drawer-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+      z-index: 190;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .3s;
+    }
+    .drawer-overlay.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: min(320px, 85vw);
+      background: var(--white);
+      z-index: 195;
+      transform: translateX(100%);
+      transition: transform .35s cubic-bezier(.25,.46,.45,.94);
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+    }
+    .drawer.open { transform: translateX(0); }
+
+    .drawer-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--apple-mid);
+      flex-shrink: 0;
+    }
+    .drawer-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--apple-dark);
+      text-decoration: none;
+    }
+    .drawer-close {
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--apple-gray);
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.1rem;
+      color: var(--apple-muted);
+      line-height: 1;
+    }
+    .drawer-close:hover { background: var(--apple-mid); }
+
+    .drawer-section {
+      padding: 20px 20px 8px;
+    }
+    .drawer-section-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--apple-muted);
+      margin-bottom: 8px;
+      padding-left: 4px;
+    }
+    .drawer-nav {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .drawer-nav a {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 11px 12px;
+      border-radius: 10px;
+      text-decoration: none;
+      color: var(--apple-dark);
+      font-size: 0.95rem;
+      font-weight: 400;
+      transition: background .15s;
+    }
+    .drawer-nav a:hover { background: var(--apple-gray); }
+    .drawer-nav a .di { font-size: 1.1rem; width: 24px; text-align: center; }
+    .drawer-divider {
+      height: 1px;
+      background: var(--apple-mid);
+      margin: 8px 20px;
+    }
+
+    /* ── Layout ── */
+    .container { max-width: 980px; margin: 0 auto; padding: 0 22px; }
+    .container-sm { max-width: 692px; margin: 0 auto; padding: 0 22px; }
+
+    /* ── Hero ── */
+    .hero {
+      min-height: 100dvh;
+      background: var(--black);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      padding: calc(var(--nav-h) + 60px) 22px 80px;
+    }
+
+    /* 微細なグリッド背景 */
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(ellipse 80% 60% at 50% -20%, rgba(41, 151, 255, 0.18), transparent),
+        radial-gradient(ellipse 50% 40% at 80% 100%, rgba(41, 151, 255, 0.06), transparent);
+      pointer-events: none;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--apple-blue-light);
+      margin-bottom: 22px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-title {
+      font-size: clamp(2.8rem, 8vw, 5.5rem);
+      font-weight: 700;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      color: var(--white);
+      margin-bottom: 24px;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-title .accent {
+      background: linear-gradient(90deg, #2997ff, #60d8ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.6);
+      max-width: 580px;
+      margin: 0 auto 44px;
+      line-height: 1.7;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+      margin-bottom: 80px;
+    }
+
+    .btn-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 12px 26px;
+      border-radius: var(--radius-btn);
+      font-family: inherit;
+      font-size: 0.95rem;
+      font-weight: 400;
+      text-decoration: none;
+      transition: all .2s;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-pill-blue {
+      background: var(--apple-blue);
+      color: var(--white);
+    }
+    .btn-pill-blue:hover { background: var(--apple-blue-hover); }
+    .btn-pill-outline {
+      background: transparent;
+      color: var(--apple-blue-light);
+      border: 1.5px solid rgba(41, 151, 255, 0.5);
+    }
+    .btn-pill-outline:hover { border-color: var(--apple-blue-light); background: rgba(41,151,255,0.08); }
+
+    /* Hero stats */
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 40px;
+    }
+    .stat-item { text-align: center; }
+    .stat-num {
+      display: block;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -0.04em;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .stat-label { font-size: 0.72rem; color: rgba(255,255,255,0.4); letter-spacing: .04em; }
+
+    /* ── Section base ── */
+    .section {
+      padding: 120px 0;
+    }
+    .section-white { background: var(--white); }
+    .section-gray  { background: var(--apple-gray); }
+    .section-black { background: var(--black); }
+
+    .section-eyebrow {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--apple-blue);
+      margin-bottom: 14px;
+    }
+    .section-title {
+      font-size: clamp(1.9rem, 4.5vw, 2.8rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.12;
+      color: var(--apple-dark);
+      margin-bottom: 16px;
+    }
+    .section-title.on-dark { color: var(--white); }
+    .section-body {
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: var(--apple-muted);
+      line-height: 1.75;
+      max-width: 560px;
+    }
+    .section-body.on-dark { color: rgba(255,255,255,0.55); }
+
+    /* ── Concept grid ── */
+    .concept-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 2px;
+      margin-top: 64px;
+      border-radius: var(--radius-card);
+      overflow: hidden;
+    }
+    .concept-card {
+      background: var(--white);
+      padding: 44px 36px;
+      border: 1px solid var(--apple-mid);
+    }
+    .concept-card:first-child { border-radius: var(--radius-card) 0 0 var(--radius-card); }
+    .concept-card:last-child  { border-radius: 0 var(--radius-card) var(--radius-card) 0; }
+    .concept-icon {
+      font-size: 2.2rem;
+      margin-bottom: 22px;
+      display: block;
+    }
+    .concept-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--apple-blue);
+      margin-bottom: 10px;
+    }
+    .concept-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+      color: var(--apple-dark);
+    }
+    .concept-desc {
+      font-size: 0.85rem;
+      color: var(--apple-muted);
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    /* ── App cards ── */
+    .app-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 16px;
+      margin-top: 56px;
+    }
+    .app-card {
+      background: var(--white);
+      border-radius: var(--radius-card);
+      padding: 32px 30px;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      transition: transform .3s cubic-bezier(.25,.46,.45,.94), box-shadow .3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .app-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: var(--radius-card);
+      border: 1px solid rgba(0,0,0,0.1);
+      pointer-events: none;
+    }
+    .app-card:hover { transform: translateY(-4px); box-shadow: 0 20px 60px rgba(0,0,0,0.1); }
+    .app-card.coming { opacity: .55; cursor: default; }
+    .app-card.coming:hover { transform: none; box-shadow: none; }
+
+    .app-card-icon-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+    }
+    .app-icon-wrap {
+      width: 60px;
+      height: 60px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+    }
+    .icon-blue   { background: linear-gradient(135deg, #e8f4ff, #c8e4ff); }
+    .icon-yellow { background: linear-gradient(135deg, #fff8e1, #ffe8a1); }
+    .icon-red    { background: linear-gradient(135deg, #ffeaea, #ffc0c0); }
+    .icon-green  { background: linear-gradient(135deg, #e6faf2, #b8f0d8); }
+    .icon-purple { background: linear-gradient(135deg, #f3eeff, #d8ccff); }
+    .icon-orange { background: linear-gradient(135deg, #fff3e8, #ffd0a0); }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.62rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: var(--radius-btn);
+      letter-spacing: .04em;
+    }
+    .badge-live   { background: #e8f8f0; color: #1a7a4a; }
+    .badge-soon   { background: #fff4e0; color: #c07000; }
+    .badge-plan   { background: #f0f0f5; color: var(--apple-muted); }
+
+    .app-name {
+      font-size: 1.12rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--apple-dark);
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+    .app-sub {
+      font-size: 0.78rem;
+      color: var(--apple-muted);
+      margin-bottom: 14px;
+      font-weight: 300;
+    }
+    .app-desc {
+      font-size: 0.85rem;
+      color: var(--apple-muted);
+      line-height: 1.75;
+      flex: 1;
+      margin-bottom: 22px;
+      font-weight: 300;
+    }
+    .app-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 22px;
+    }
+    .app-tag {
+      font-size: 0.68rem;
+      padding: 3px 10px;
+      background: var(--apple-gray);
+      border-radius: var(--radius-btn);
+      color: var(--apple-muted);
+      font-weight: 400;
+    }
+    .app-cta {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--apple-blue);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .app-cta-arrow { transition: transform .2s; }
+    .app-card:hover .app-cta-arrow { transform: translateX(4px); }
+
+    /* Coming divider */
+    .coming-divider {
+      grid-column: 1 / -1;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 0.75rem;
+      color: var(--apple-muted);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-weight: 500;
+      margin: 4px 0;
+    }
+    .coming-divider::before, .coming-divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--apple-mid);
+    }
+
+    /* ── SNS ── */
+    .sns-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-top: 56px;
+    }
+    .sns-card {
+      background: var(--white);
+      border-radius: var(--radius-card);
+      padding: 28px 20px;
+      text-decoration: none;
+      color: inherit;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      transition: transform .25s, box-shadow .25s;
+      border: 1px solid var(--apple-mid);
+    }
+    .sns-card:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(0,0,0,0.07); border-color: transparent; }
+    .sns-icon { line-height: 1; }
+    .sns-name { font-size: 0.9rem; font-weight: 600; color: var(--apple-dark); }
+    .sns-handle { font-size: 0.72rem; color: var(--apple-muted); font-weight: 300; }
+
+    /* ── Contact ── */
+    .contact-wrap {
+      background: var(--white);
+      border-radius: 24px;
+      padding: 52px 48px;
+      margin-top: 56px;
+      border: 1px solid var(--apple-mid);
+    }
+    .contact-desc {
+      font-size: 0.92rem;
+      color: var(--apple-muted);
+      margin-bottom: 36px;
+      line-height: 1.8;
+      font-weight: 300;
+    }
+    .form-group { margin-bottom: 18px; }
+    .form-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--apple-dark);
+      margin-bottom: 7px;
+      letter-spacing: .01em;
+    }
+    .form-required { color: var(--apple-blue); margin-left: 2px; }
+    .form-input,
+    .form-select,
+    .form-textarea {
+      width: 100%;
+      padding: 13px 16px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      color: var(--apple-dark);
+      background: var(--apple-gray);
+      border: 1.5px solid transparent;
+      border-radius: 12px;
+      outline: none;
+      transition: border-color .2s, background .2s;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+    .form-input::placeholder, .form-textarea::placeholder { color: #b0b0b8; }
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
+      border-color: var(--apple-blue);
+      background: var(--white);
+      box-shadow: 0 0 0 4px rgba(0,113,227,0.1);
+    }
+    .form-textarea { resize: vertical; min-height: 120px; line-height: 1.7; }
+    .form-select { cursor: pointer; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236e6e73' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 38px; }
+
+    .submit-btn {
+      width: 100%;
+      padding: 16px;
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--white);
+      background: var(--apple-blue);
+      border: none;
+      border-radius: var(--radius-btn);
+      cursor: pointer;
+      transition: background .2s;
+      letter-spacing: -0.01em;
+    }
+    .submit-btn:hover { background: var(--apple-blue-hover); }
+    .form-note { font-size: 0.72rem; color: var(--apple-muted); margin-top: 14px; text-align: center; font-weight: 300; }
+
+    #contact-thanks {
+      text-align: center;
+      padding: 48px 0;
+    }
+    #contact-thanks .thanks-icon { font-size: 3rem; margin-bottom: 16px; }
+    #contact-thanks .thanks-title { font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.02em; }
+    #contact-thanks p { font-size: 0.9rem; color: var(--apple-muted); font-weight: 300; }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--apple-dark);
+      padding: 56px 0 max(36px, env(safe-area-inset-bottom));
+    }
+    .footer-inner { display: flex; gap: 48px; flex-wrap: wrap; margin-bottom: 40px; }
+    .footer-brand-col { flex-shrink: 0; }
+    .footer-brand { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+    .footer-brand-icon { font-size: 1.5rem; }
+    .footer-brand-name { font-size: 1rem; font-weight: 600; color: var(--white); }
+    .footer-brand-desc {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.35);
+      font-weight: 300;
+      line-height: 1.7;
+      max-width: 200px;
+    }
+    .footer-cols {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      flex: 1;
+    }
+    .footer-col-title {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 14px;
+    }
+    .footer-col ul {
+      list-style: none;
+      margin: 0; padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .footer-col ul a {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      font-weight: 300;
+      transition: color .15s;
+    }
+    .footer-col ul a:hover { color: rgba(255,255,255,0.9); }
+    .footer-bottom {
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .footer-copy { font-size: 0.72rem; color: rgba(255,255,255,0.28); font-weight: 300; }
+
+    /* ── Animations ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .7s cubic-bezier(.25,.46,.45,.94), transform .7s cubic-bezier(.25,.46,.45,.94);
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .fade-up:nth-child(2) { transition-delay: .1s; }
+    .fade-up:nth-child(3) { transition-delay: .18s; }
+    .fade-up:nth-child(4) { transition-delay: .26s; }
+
+    /* ── Responsive ── */
+    @media (max-width: 680px) {
+      .nav-links { display: none; }
+      .hero-title { font-size: 2.4rem; }
+      .section { padding: 80px 0; }
+      .concept-grid { grid-template-columns: 1fr 1fr; }
+      .concept-card:first-child { border-radius: var(--radius-card) var(--radius-card) 0 0; }
+      .concept-card:last-child  { border-radius: 0 0 var(--radius-card) var(--radius-card); }
+      .app-grid { grid-template-columns: 1fr; }
+      .contact-wrap { padding: 32px 24px; }
+      .hero-stats { gap: 28px; }
+      .footer-inner { flex-direction: column; gap: 28px; }
+      .footer-cols { gap: 28px; }
+    }
+  </style>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3002712486184435" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<!-- ══ DRAWER OVERLAY ══ -->
+<div class="drawer-overlay" id="drawer-overlay"></div>
+
+<!-- ══ DRAWER ══ -->
+<aside class="drawer" id="drawer" aria-label="サイトメニュー">
+  <div class="drawer-header">
+    <a href="index.html" class="drawer-logo">
+      <span>🚃</span><span>資格トレイン</span>
+    </a>
+    <button class="drawer-close" id="drawer-close" aria-label="メニューを閉じる">✕</button>
+  </div>
+
+  <div class="drawer-section">
+    <p class="drawer-section-label">このページ</p>
+    <ul class="drawer-nav">
+      <li><a href="#concept"><span class="di">💡</span>コンセプト</a></li>
+      <li><a href="#apps"><span class="di">📱</span>アプリ一覧</a></li>
+      <li><a href="#sns"><span class="di">🔗</span>SNS・外部リンク</a></li>
+      <li><a href="#contact"><span class="di">✉️</span>お問い合わせ</a></li>
+    </ul>
+  </div>
+
+  <div class="drawer-divider"></div>
+
+  <div class="drawer-section">
+    <p class="drawer-section-label">資格問題一覧</p>
+    <ul class="drawer-nav">
+      <li><a href="kikai-app/index.html"><span class="di">⚙️</span>技術士（機械部門）</a></li>
+      <li><a href="denco-app/index.html"><span class="di">⚡</span>電気資格ポータル</a></li>
+      <li><a href="gyosei-app/index.html"><span class="di">📋</span>行政書士</a></li>
+      <li><a href="takken-app/index.html"><span class="di">🏠</span>宅建士</a></li>
+    </ul>
+  </div>
+
+  <div class="drawer-divider"></div>
+
+  <div class="drawer-section">
+    <p class="drawer-section-label">ブログ</p>
+    <ul class="drawer-nav">
+      <li><a href="blog/index.html"><span class="di">📝</span>記事一覧</a></li>
+    </ul>
+  </div>
+
+  <div class="drawer-divider"></div>
+
+  <div class="drawer-section">
+    <p class="drawer-section-label">サイト情報</p>
+    <ul class="drawer-nav">
+      <li><a href="about.html"><span class="di">🏢</span>運営者情報</a></li>
+      <li><a href="contact.html"><span class="di">✉️</span>お問い合わせ</a></li>
+      <li><a href="privacy.html"><span class="di">🔒</span>プライバシーポリシー</a></li>
+    </ul>
+  </div>
+</aside>
+
+<!-- ══ NAV ══ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <span class="nav-logo-icon">🚃</span>
+      <span class="nav-logo-text">資格トレイン</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#concept">コンセプト</a></li>
+      <li><a href="#apps">アプリ</a></li>
+      <li><a href="#sns">SNS</a></li>
+      <li><a href="#contact" class="nav-cta">お問い合わせ</a></li>
+    </ul>
+    <button class="nav-search-btn" id="nav-search-btn" aria-label="検索">🔍</button>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="メニューを開く">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ══ Search Overlay ══ -->
+<div class="search-overlay" id="search-overlay" role="search" aria-label="サイト内検索">
+  <div class="search-overlay-inner">
+    <div class="search-input-wrap">
+      <span class="search-icon-static">🔍</span>
+      <input class="search-input" id="search-input" type="search" placeholder="資格名や科目名で検索… 例：宅建、行政書士、電気" autocomplete="off" aria-label="検索キーワード">
+      <button class="search-clear-btn" id="search-clear-btn" aria-label="クリア">✕</button>
+    </div>
+    <div class="search-results" id="search-results" aria-live="polite">
+      <p class="search-hint">資格名・科目・キーワードを入力してください</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <p class="hero-eyebrow">Shikaku Train</p>
+  <h1 class="hero-title">
+    スキマ時間が、<br><span class="accent">合格への近道</span>になる。
+  </h1>
+  <p class="hero-sub">
+    通勤・通学中のわずかな時間を学習に変える、<br>スマホ完結の過去問クイズアプリ。
+  </p>
+  <div class="hero-actions">
+    <a href="#apps" class="btn-pill btn-pill-blue">アプリを使ってみる</a>
+    <a href="#concept" class="btn-pill btn-pill-outline">詳しく見る</a>
+  </div>
+  <div class="hero-stats">
+    <div class="stat-item">
+      <span class="stat-num">2</span>
+      <span class="stat-label">公開中のアプリ</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">100+</span>
+      <span class="stat-label">収録問題数</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">¥0</span>
+      <span class="stat-label">完全無料</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">5年</span>
+      <span class="stat-label">過去問収録（機械）</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONCEPT ══ -->
+<section id="concept" class="section section-gray">
+  <div class="container">
+    <div class="fade-up">
+      <p class="section-eyebrow">コンセプト</p>
+      <h2 class="section-title">忙しい毎日に、<br>学習の習慣を。</h2>
+      <p class="section-body">「資格トレイン」は、忙しい社会人・学生のためのスキマ学習プラットフォームです。電車の中でも、バスの中でも。</p>
+    </div>
+    <div class="concept-grid">
+      <div class="concept-card fade-up">
+        <span class="concept-icon">🚃</span>
+        <p class="concept-label">Anytime</p>
+        <p class="concept-title">通勤・通学で学ぶ</p>
+        <p class="concept-desc">電車・バス移動中のスキマ時間を有効活用。1問30秒から始められます。</p>
+      </div>
+      <div class="concept-card fade-up">
+        <span class="concept-icon">📱</span>
+        <p class="concept-label">No Install</p>
+        <p class="concept-title">スマホ完結</p>
+        <p class="concept-desc">アプリのダウンロード不要。ブラウザを開くだけで即スタートできます。</p>
+      </div>
+      <div class="concept-card fade-up">
+        <span class="concept-icon">🆓</span>
+        <p class="concept-label">Free</p>
+        <p class="concept-title">完全無料</p>
+        <p class="concept-desc">全機能・全問題を無料で利用可能。会員登録も不要です。</p>
+      </div>
+      <div class="concept-card fade-up">
+        <span class="concept-icon">📊</span>
+        <p class="concept-label">Smart</p>
+        <p class="concept-title">本番形式＋解説</p>
+        <p class="concept-desc">タイマー付き本番形式と、1問ごとの解説が読める学習モードの2種類。</p>
+      </div>
+    </div>
+    <p class="fade-up" style="margin-top:28px;font-size:0.8rem;color:var(--apple-muted);text-align:center;line-height:1.8;max-width:600px;margin-left:auto;margin-right:auto;">
+      ※ 本サイトで使用している問題は、各資格試験の公式過去問をもとに内容・表現をアレンジして作成したオリジナル問題です。公式機関が提供する問題そのものではありません。正確な試験情報は各試験実施機関の公式サイトをご確認ください。
+    </p>
+  </div>
+</section>
+
+<!-- ══ APPS ══ -->
+<section id="apps" class="section section-white">
+  <div class="container">
+    <div class="fade-up">
+      <p class="section-eyebrow">学習アプリ</p>
+      <h2 class="section-title">あなたの資格に、<br>ぴったりのアプリを。</h2>
+      <p class="section-body">現在公開中のアプリと、近日追加予定のアプリ一覧です。</p>
+    </div>
+
+    <div class="app-grid">
+
+      <!-- 宅建士 / 受験者数 1位：241,436人（2024年） -->
+      <a href="takken-app/index.html" class="app-card fade-up">
+        <div class="app-card-icon-row">
+          <div class="app-icon-wrap icon-orange">🏠</div>
+          <span class="badge badge-live">公開中</span>
+        </div>
+        <p class="app-name">宅建士（宅地建物取引士）</p>
+        <p class="app-sub">権利関係・法令上の制限・宅建業法・税その他</p>
+        <p class="app-desc">宅建士試験の4科目を過去問ベースで学習。年度別の本番形式（120分タイマー・自由ナビ）と分野別の解説モードの2種類を搭載。AI解説機能付き。</p>
+        <div class="app-tags">
+          <span class="app-tag">受験者数 No.1</span>
+          <span class="app-tag">過去問 2年分</span>
+          <span class="app-tag">50問収録</span>
+          <span class="app-tag">タイマー付き</span>
+          <span class="app-tag">AI解説</span>
+        </div>
+        <div class="app-cta">学習を始める <span class="app-cta-arrow">›</span></div>
+      </a>
+
+      <!-- 電気資格 / 受験者数 2位：電気工事士 132,462人＋電験三種 49,963人（2024年） -->
+      <a href="denco-app/index.html" class="app-card fade-up">
+        <div class="app-card-icon-row">
+          <div class="app-icon-wrap icon-yellow">⚡</div>
+          <span class="badge badge-live">公開中</span>
+        </div>
+        <p class="app-name">電気資格 学習ポータル</p>
+        <p class="app-sub">第二種電気工事士・電験三種など</p>
+        <p class="app-desc">電気系資格の過去問クイズ。電気理論・配線設計・法規など幅広い分野をカバー。スキマ時間に繰り返し解いて合格力を高めましょう。</p>
+        <div class="app-tags">
+          <span class="app-tag">電気工事士</span>
+          <span class="app-tag">電験三種</span>
+          <span class="app-tag">解説付き</span>
+        </div>
+        <div class="app-cta">学習を始める <span class="app-cta-arrow">›</span></div>
+      </a>
+
+      <!-- 行政書士 / 受験者数 3位：47,785人（2024年） -->
+      <a href="gyosei-app/index.html" class="app-card fade-up">
+        <div class="app-card-icon-row">
+          <div class="app-icon-wrap icon-green">📋</div>
+          <span class="badge badge-live">公開中</span>
+        </div>
+        <p class="app-name">行政書士</p>
+        <p class="app-sub">憲法・行政法・民法・商法・一般知識</p>
+        <p class="app-desc">行政書士試験の5科目を過去問ベースで学習。年度別の本番形式（180分タイマー・自由ナビ）と科目別の解説モードの2種類を搭載。AI解説機能付き。</p>
+        <div class="app-tags">
+          <span class="app-tag">過去問 2年分</span>
+          <span class="app-tag">50問収録</span>
+          <span class="app-tag">タイマー付き</span>
+          <span class="app-tag">AI解説</span>
+        </div>
+        <div class="app-cta">学習を始める <span class="app-cta-arrow">›</span></div>
+      </a>
+
+      <!-- 技術士（機械） / 受験者数 4位 -->
+      <a href="kikai-app/index.html" class="app-card fade-up">
+        <div class="app-card-icon-row">
+          <div class="app-icon-wrap icon-blue">⚙️</div>
+          <span class="badge badge-live">公開中</span>
+        </div>
+        <p class="app-name">技術士第一次試験（機械部門）</p>
+        <p class="app-sub">材料力学・機械力学・熱工学・流体力学など</p>
+        <p class="app-desc">基礎科目・適性科目・専門科目の過去問を収録。年度別の本番形式（タイマー・自由ナビ）と学習モードの2種類を搭載。AI解説機能付き。</p>
+        <div class="app-tags">
+          <span class="app-tag">過去問 5年分</span>
+          <span class="app-tag">49問収録</span>
+          <span class="app-tag">タイマー付き</span>
+          <span class="app-tag">AI解説</span>
+        </div>
+        <div class="app-cta">学習を始める <span class="app-cta-arrow">›</span></div>
+      </a>
+
+      <!-- Coming divider -->
+      <div class="coming-divider fade-up">近日公開予定</div>
+
+      <!-- 危険物 -->
+      <div class="app-card coming fade-up">
+        <div class="app-card-icon-row">
+          <div class="app-icon-wrap icon-red">🔥</div>
+          <span class="badge badge-soon">近日公開</span>
+        </div>
+        <p class="app-name">危険物取扱者（乙種4類）</p>
+        <p class="app-sub">ガソリン・灯油・軽油などの取扱いに関する国家資格</p>
+        <p class="app-desc">物理・化学、危険物の性質、法令の3分野を徹底対策。</p>
+        <div class="app-tags">
+          <span class="app-tag">物理・化学</span>
+          <span class="app-tag">法令</span>
+          <span class="app-tag">性質・消火</span>
+        </div>
+      </div>
+
+      <!-- ボイラー技士 -->
+      <div class="app-card coming fade-up">
+        <div class="app-card-icon-row">
+          <div class="app-icon-wrap icon-red">🌡️</div>
+          <span class="badge badge-soon">近日公開</span>
+        </div>
+        <p class="app-name">二級ボイラー技士</p>
+        <p class="app-sub">ボイラーの構造・取扱い・燃焼・法令</p>
+        <p class="app-desc">ボイラーの構造・取扱い・燃焼・法規の4分野を網羅。</p>
+        <div class="app-tags">
+          <span class="app-tag">ボイラー構造</span>
+          <span class="app-tag">取扱い</span>
+          <span class="app-tag">燃焼</span>
+          <span class="app-tag">法規</span>
+        </div>
+      </div>
+
+      <!-- 地質 -->
+      <div class="app-card coming fade-up">
+        <div class="app-card-icon-row">
+          <div class="app-icon-wrap icon-green">🪨</div>
+          <span class="badge badge-plan">準備中</span>
+        </div>
+        <p class="app-name">地質調査技士 / 技術士（地質部門）</p>
+        <p class="app-sub">地質・土質・地盤に関する資格試験</p>
+        <p class="app-desc">岩石・地質図・土質試験など地球科学の専門知識を対策。</p>
+        <div class="app-tags">
+          <span class="app-tag">地質学</span>
+          <span class="app-tag">地質調査</span>
+          <span class="app-tag">土質力学</span>
+        </div>
+      </div>
+
+      <!-- 建設土木 -->
+      <div class="app-card coming fade-up">
+        <div class="app-card-icon-row">
+          <div class="app-icon-wrap icon-purple">📐</div>
+          <span class="badge badge-plan">構想中</span>
+        </div>
+        <p class="app-name">技術士第一次試験（建設・土木部門）</p>
+        <p class="app-sub">道路・橋梁・河川・都市計画など</p>
+        <p class="app-desc">機械部門に続く技術士シリーズ。建設・土木の専門科目を収録予定。</p>
+        <div class="app-tags">
+          <span class="app-tag">建設一般</span>
+          <span class="app-tag">専門科目</span>
+          <span class="app-tag">適性科目</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ SNS ══ -->
+<section id="sns" class="section section-gray">
+  <div class="container">
+    <div class="fade-up">
+      <p class="section-eyebrow">フォローする</p>
+      <h2 class="section-title">最新情報を<br>チェックしよう。</h2>
+      <p class="section-body">学習記事・解説・アップデート情報をSNSで発信しています。</p>
+    </div>
+    <div class="sns-grid">
+
+      <a href="#" class="sns-card fade-up" target="_blank" rel="noopener">
+        <svg class="sns-icon" width="42" height="42" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="36" height="36" rx="10" fill="#41C9B4"/>
+          <path d="M10 12h16M10 18h10M10 24h13" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+        <span class="sns-name">note</span>
+        <span class="sns-handle">学習記事・合格体験記</span>
+      </a>
+
+      <a href="#" class="sns-card fade-up" target="_blank" rel="noopener">
+        <svg class="sns-icon" width="42" height="42" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="ig-grad" x1="0" y1="36" x2="36" y2="0">
+              <stop offset="0%" stop-color="#f09433"/>
+              <stop offset="25%" stop-color="#e6683c"/>
+              <stop offset="50%" stop-color="#dc2743"/>
+              <stop offset="75%" stop-color="#cc2366"/>
+              <stop offset="100%" stop-color="#bc1888"/>
+            </linearGradient>
+          </defs>
+          <rect width="36" height="36" rx="10" fill="url(#ig-grad)"/>
+          <rect x="9" y="9" width="18" height="18" rx="5" stroke="white" stroke-width="2"/>
+          <circle cx="18" cy="18" r="5" stroke="white" stroke-width="2"/>
+          <circle cx="24" cy="12" r="1.2" fill="white"/>
+        </svg>
+        <span class="sns-name">Instagram</span>
+        <span class="sns-handle">学習Tips・図解</span>
+      </a>
+
+      <a href="#" class="sns-card fade-up" target="_blank" rel="noopener">
+        <svg class="sns-icon" width="42" height="42" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="36" height="36" rx="10" fill="#111"/>
+          <path d="M20.6 16.4L27 9h-1.5l-5.5 6.4L15.3 9H10l6.7 9.7L10 27h1.5l5.9-6.8 4.6 6.8H27l-6.4-10.6zm-2 2.3l-.7-1L12 10.2h2.3l4.3 6.2.7 1 5.6 8h-2.3l-4.5-6.6z" fill="white"/>
+        </svg>
+        <span class="sns-name">X（旧Twitter）</span>
+        <span class="sns-handle">速報・更新通知</span>
+      </a>
+
+      <a href="#" class="sns-card fade-up" target="_blank" rel="noopener">
+        <svg class="sns-icon" width="42" height="42" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="36" height="36" rx="10" fill="#FF0000"/>
+          <path d="M26.5 13.5C26.2 12.4 25.3 11.6 24.3 11.3 22.4 11 18 11 18 11s-4.4 0-6.3.3c-1 .3-1.9 1.1-2.2 2.2C9.2 15.4 9.2 18 9.2 18s0 2.6.3 4.5c.3 1.1 1.2 1.9 2.2 2.2 1.9.3 6.3.3 6.3.3s4.4 0 6.3-.3c1-.3 1.9-1.1 2.2-2.2.3-1.9.3-4.5.3-4.5s0-2.6-.3-4.5z" fill="white" fill-opacity=".9"/>
+          <path d="M16 21l5.5-3L16 15v6z" fill="#FF0000"/>
+        </svg>
+        <span class="sns-name">YouTube</span>
+        <span class="sns-handle">解説動画（準備中）</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACT ══ -->
+<section id="contact" class="section section-white">
+  <div class="container-sm">
+    <div class="fade-up">
+      <p class="section-eyebrow">お問い合わせ</p>
+      <h2 class="section-title">ご質問・ご要望、<br>お気軽にどうぞ。</h2>
+    </div>
+
+    <div class="contact-wrap fade-up">
+      <p class="contact-desc">
+        アプリの不具合・学習内容へのご意見・追加してほしい資格試験のリクエストなど、どんなことでもお気軽にご連絡ください。通常 <strong style="color:var(--apple-dark);font-weight:600;">2〜3営業日</strong> 以内にご返信いたします。
+      </p>
+
+      <form id="contact-form">
+        <div class="form-group">
+          <label class="form-label" for="inp-name">お名前<span class="form-required">*</span></label>
+          <input class="form-input" type="text" id="inp-name" name="name" placeholder="山田 太郎" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="inp-email">メールアドレス<span class="form-required">*</span></label>
+          <input class="form-input" type="email" id="inp-email" name="email" placeholder="example@mail.com" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="inp-type">お問い合わせ種別</label>
+          <select class="form-select" id="inp-type" name="type">
+            <option value="">選択してください</option>
+            <option value="bug">不具合・エラー報告</option>
+            <option value="content">問題・解説の内容について</option>
+            <option value="request">追加してほしい資格・機能</option>
+            <option value="collab">コラボ・掲載依頼</option>
+            <option value="other">その他</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="inp-msg">メッセージ<span class="form-required">*</span></label>
+          <textarea class="form-textarea" id="inp-msg" name="message" placeholder="お問い合わせ内容をご記入ください…" required></textarea>
+        </div>
+        <button type="submit" class="submit-btn">送信する</button>
+        <p class="form-note">※ このフォームはデモです。実際の送信にはメールフォームサービス（Formspree など）への接続が必要です。</p>
+      </form>
+
+      <div id="contact-thanks" hidden>
+        <div class="thanks-icon">✅</div>
+        <p class="thanks-title">お問い合わせありがとうございます！</p>
+        <p>2〜3営業日以内にご返信いたします。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+
+      <!-- ブランド -->
+      <div class="footer-brand-col">
+        <div class="footer-brand">
+          <span class="footer-brand-icon">🚃</span>
+          <span class="footer-brand-name">資格トレイン</span>
+        </div>
+        <p class="footer-brand-desc">通勤・通学のスキマ時間で<br>資格合格をサポートする<br>無料学習プラットフォーム</p>
+      </div>
+
+      <div class="footer-cols">
+        <!-- このページ -->
+        <div class="footer-col">
+          <p class="footer-col-title">このページ</p>
+          <ul>
+            <li><a href="#concept">コンセプト</a></li>
+            <li><a href="#apps">アプリ一覧</a></li>
+            <li><a href="#sns">SNS・外部リンク</a></li>
+            <li><a href="#contact">お問い合わせ</a></li>
+          </ul>
+        </div>
+
+        <!-- 資格問題一覧 -->
+        <div class="footer-col">
+          <p class="footer-col-title">資格問題一覧</p>
+          <ul>
+            <li><a href="kikai-app/index.html">技術士（機械部門）</a></li>
+            <li><a href="denco-app/index.html">電気資格ポータル</a></li>
+            <li><a href="gyosei-app/index.html">行政書士</a></li>
+            <li><a href="takken-app/index.html">宅建士</a></li>
+          </ul>
+        </div>
+
+        <!-- ブログ -->
+        <div class="footer-col">
+          <p class="footer-col-title">ブログ</p>
+          <ul>
+            <li><a href="blog/index.html">記事一覧</a></li>
+          </ul>
+        </div>
+
+        <!-- サイト情報 -->
+        <div class="footer-col">
+          <p class="footer-col-title">サイト情報</p>
+          <ul>
+            <li><a href="about.html">運営者情報</a></li>
+            <li><a href="contact.html">お問い合わせ</a></li>
+            <li><a href="privacy.html">プライバシーポリシー</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+    <div class="footer-search-wrap" role="search" aria-label="フッター検索">
+      <p class="footer-search-label">資格を検索</p>
+      <div class="footer-search-row">
+        <span style="font-size:1rem;color:var(--apple-muted);flex-shrink:0;">🔍</span>
+        <input class="footer-search-input" id="footer-search-input" type="search" placeholder="宅建、電験、行政書士…" autocomplete="off" aria-label="フッター検索キーワード">
+        <button class="footer-search-btn" id="footer-search-btn">検索</button>
+      </div>
+      <div class="footer-search-results" id="footer-search-results" aria-live="polite"></div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">Copyright © 2024 mahorobaチャンネル / 資格トレイン. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Scroll fade-up
+  const fadeEls = document.querySelectorAll(".fade-up");
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add("visible");
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: "0px 0px -40px 0px" });
+  fadeEls.forEach(el => observer.observe(el));
+
+  // Nav bg on scroll (hero is black, so invert nav text for contrast)
+  const nav = document.querySelector(".nav");
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > window.innerHeight * 0.85) {
+      nav.style.background = "rgba(255,255,255,0.85)";
+    } else {
+      // Over hero (black bg) - switch to dark nav
+      nav.style.background = window.scrollY < 80
+        ? "rgba(0,0,0,0.5)"
+        : "rgba(255,255,255,0.72)";
+    }
+  }, { passive: true });
+
+  // Initial nav style (over black hero)
+  nav.style.background = "rgba(0,0,0,0.5)";
+  nav.style.borderBottomColor = "rgba(255,255,255,0.1)";
+  document.querySelectorAll(".nav-logo, .nav-links a").forEach(el => {
+    el.style.color = "rgba(255,255,255,0.85)";
+  });
+  document.getElementById("nav-search-btn").style.color = "rgba(255,255,255,0.85)";
+  document.querySelector(".nav-cta").style.color = "#2997ff";
+
+  window.addEventListener("scroll", () => {
+    const overHero = window.scrollY < window.innerHeight * 0.8;
+    document.querySelectorAll(".nav-logo, .nav-links a:not(.nav-cta)").forEach(el => {
+      el.style.color = overHero ? "rgba(255,255,255,0.85)" : "var(--apple-dark, #1d1d1f)";
+    });
+    if (!searchOpen) document.getElementById("nav-search-btn").style.color = overHero ? "rgba(255,255,255,0.85)" : "var(--apple-dark, #1d1d1f)";
+    nav.style.borderBottomColor = overHero
+      ? "rgba(255,255,255,0.1)"
+      : "rgba(0,0,0,0.08)";
+  }, { passive: true });
+
+  // ── Hamburger / Drawer ──
+  const hamburger = document.getElementById("nav-hamburger");
+  const drawer    = document.getElementById("drawer");
+  const overlay   = document.getElementById("drawer-overlay");
+  const drawerClose = document.getElementById("drawer-close");
+
+  function openDrawer() {
+    drawer.classList.add("open");
+    overlay.classList.add("open");
+    hamburger.classList.add("open");
+    document.body.style.overflow = "hidden";
+  }
+  function closeDrawer() {
+    drawer.classList.remove("open");
+    overlay.classList.remove("open");
+    hamburger.classList.remove("open");
+    document.body.style.overflow = "";
+  }
+
+  hamburger.addEventListener("click", () => {
+    drawer.classList.contains("open") ? closeDrawer() : openDrawer();
+  });
+  drawerClose.addEventListener("click", closeDrawer);
+  overlay.addEventListener("click", closeDrawer);
+
+  // ドロワー内のリンクをクリックしたら閉じる
+  drawer.querySelectorAll("a").forEach(a => a.addEventListener("click", closeDrawer));
+
+  // ── Search ──
+  const SEARCH_DATA = [
+    { emoji: "⚙️", name: "技術士（機械部門）", url: "kikai-app/index.html",
+      sub: "基礎科目・適性科目・専門科目（機械工学）",
+      tags: ["技術士","機械","基礎科目","適性科目","専門科目","材料力学","熱力学","流体","過去問"] },
+    { emoji: "⚡", name: "電気資格ポータル（電験三種・電気工事士）", url: "denco-app/index.html",
+      sub: "第二種電気工事士・電験三種（第三種電気主任技術者）",
+      tags: ["電気","電気工事士","電験","電験三種","電気主任技術者","理論","電力","機械","法規"] },
+    { emoji: "📋", name: "行政書士", url: "gyosei-app/index.html",
+      sub: "憲法・行政法・民法・商法会社法・一般知識",
+      tags: ["行政書士","法律","憲法","行政法","民法","商法","会社法","一般知識","法令"] },
+    { emoji: "🏠", name: "宅建士（宅地建物取引士）", url: "takken-app/index.html",
+      sub: "権利関係・法令上の制限・宅建業法・税その他",
+      tags: ["宅建","宅建士","宅地建物取引士","権利関係","法令","宅建業法","不動産","税"] },
+  ];
+
+  function searchApps(query) {
+    const q = query.trim().toLowerCase();
+    if (!q) return [];
+    return SEARCH_DATA.filter(item => {
+      const haystack = [item.name, item.sub, ...item.tags].join(" ").toLowerCase();
+      return q.split(/\s+/).every(word => haystack.includes(word));
+    });
+  }
+
+  function buildSearchResultHTML(items, query) {
+    if (!query.trim()) return '<p class="search-hint">資格名・科目・キーワードを入力してください</p>';
+    if (!items.length) return `<p class="search-empty">「${query}」に一致するアプリが見つかりませんでした</p>`;
+    return items.map(item => `
+      <a href="${item.url}" class="search-result-item">
+        <span class="search-result-emoji">${item.emoji}</span>
+        <span class="search-result-body">
+          <span class="search-result-name">${item.name}</span>
+          <span class="search-result-sub">${item.sub}</span>
+        </span>
+        <span class="search-result-arrow">›</span>
+      </a>`).join("");
+  }
+
+  function buildFooterResultHTML(items, query) {
+    if (!query.trim() || !items.length) return "";
+    return items.map(item => `
+      <a href="${item.url}" class="search-result-item">
+        <span class="search-result-emoji">${item.emoji}</span>
+        <span class="search-result-body">
+          <span class="search-result-name">${item.name}</span>
+          <span class="search-result-sub">${item.sub}</span>
+        </span>
+        <span class="search-result-arrow">›</span>
+      </a>`).join("");
+  }
+
+  // Nav search overlay
+  const searchOverlay  = document.getElementById("search-overlay");
+  const searchInput    = document.getElementById("search-input");
+  const searchResults  = document.getElementById("search-results");
+  const searchClearBtn = document.getElementById("search-clear-btn");
+  const navSearchBtn   = document.getElementById("nav-search-btn");
+  let searchOpen = false;
+
+  function openSearch() {
+    searchOpen = true;
+    searchOverlay.classList.add("open");
+    navSearchBtn.textContent = "✕";
+    setTimeout(() => searchInput.focus(), 50);
+    document.body.style.overflow = "hidden";
+  }
+  function closeSearch() {
+    searchOpen = false;
+    searchOverlay.classList.remove("open");
+    navSearchBtn.textContent = "🔍";
+    searchInput.value = "";
+    searchResults.innerHTML = '<p class="search-hint">資格名・科目・キーワードを入力してください</p>';
+    document.body.style.overflow = "";
+  }
+
+  navSearchBtn.addEventListener("click", () => {
+    if (searchOpen) { closeSearch(); return; }
+    closeDrawer(); // ドロワーが開いていたら閉じる
+    openSearch();
+  });
+
+  searchInput.addEventListener("input", () => {
+    const q = searchInput.value;
+    const results = searchApps(q);
+    searchResults.innerHTML = buildSearchResultHTML(results, q);
+  });
+
+  searchClearBtn.addEventListener("click", () => {
+    searchInput.value = "";
+    searchResults.innerHTML = '<p class="search-hint">資格名・科目・キーワードを入力してください</p>';
+    searchInput.focus();
+  });
+
+  document.addEventListener("keydown", e => {
+    if (e.key === "Escape" && searchOpen) closeSearch();
+    if ((e.key === "k" || e.key === "K") && (e.metaKey || e.ctrlKey)) { e.preventDefault(); searchOpen ? closeSearch() : openSearch(); }
+  });
+  searchOverlay.addEventListener("click", e => { if (e.target === searchOverlay) closeSearch(); });
+
+  // Footer search
+  const footerInput   = document.getElementById("footer-search-input");
+  const footerBtn     = document.getElementById("footer-search-btn");
+  const footerResults = document.getElementById("footer-search-results");
+
+  function doFooterSearch() {
+    const q = footerInput.value;
+    footerResults.innerHTML = buildFooterResultHTML(searchApps(q), q);
+    if (!q.trim()) footerResults.innerHTML = "";
+    else if (!searchApps(q).length) footerResults.innerHTML = `<p class="search-empty" style="font-size:0.82rem;padding:8px 4px;">「${q}」に一致するアプリが見つかりませんでした</p>`;
+  }
+  footerBtn.addEventListener("click", doFooterSearch);
+  footerInput.addEventListener("keydown", e => { if (e.key === "Enter") doFooterSearch(); });
+  footerInput.addEventListener("input", doFooterSearch);
+
+  // Contact form
+  document.getElementById("contact-form").addEventListener("submit", e => {
+    e.preventDefault();
+    document.getElementById("contact-form").style.display = "none";
+    const thanks = document.getElementById("contact-thanks");
+    thanks.hidden = false;
+    thanks.style.display = "block";
+  });
+</script>
+</body>
+</html>

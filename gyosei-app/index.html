@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>行政書士 学習ポータル | 資格トレイン</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --bg: #0f1a14;
+        --surface: #192319;
+        --surface-2: #222d22;
+        --text: #e4ede4;
+        --text-muted: #8aa48a;
+        --accent: #4caf7d;
+        --radius: 14px;
+        --shadow: 0 8px 32px rgba(0,0,0,0.4);
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        min-height: 100dvh;
+        font-family: 'Zen Kaku Gothic New','Hiragino Sans',sans-serif;
+        font-size: 16px;
+        line-height: 1.7;
+        color: var(--text);
+        background: var(--bg);
+        background-image: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(76,175,125,0.14), transparent);
+        padding: calc(52px + max(16px,env(safe-area-inset-top))) 18px max(32px,env(safe-area-inset-bottom));
+      }
+
+      .wrap { max-width: 640px; margin: 0 auto; }
+
+      header { text-align: center; margin-bottom: 28px; }
+      header .icon { font-size: 2.6rem; margin-bottom: 10px; display: block; }
+      header h1 { font-size: 1.35rem; font-weight: 700; margin: 0 0 10px; letter-spacing: .03em; }
+      header .lead { margin: 0; font-size: 0.9rem; color: var(--text-muted); }
+
+      .card {
+        background: var(--surface);
+        border-radius: var(--radius);
+        padding: 22px 20px;
+        margin-bottom: 18px;
+        box-shadow: var(--shadow);
+        border: 1px solid rgba(255,255,255,0.07);
+      }
+      .card h2 { font-size: 1.05rem; margin: 0 0 14px; color: var(--accent); }
+      .card p, .card li { margin: 0 0 12px; font-size: 0.95rem; }
+      .card ul { margin: 0; padding-left: 1.2em; }
+      .card li { margin-bottom: 8px; }
+
+      .cta {
+        display: block; width: 100%; text-align: center;
+        padding: 16px; font-family: inherit; font-size: 1rem; font-weight: 700;
+        color: #0a1a0f;
+        background: linear-gradient(135deg, var(--accent), #7de0aa);
+        border: none; border-radius: 12px; text-decoration: none;
+        box-shadow: 0 4px 20px rgba(76,175,125,0.35);
+        transition: opacity .15s;
+      }
+      .cta:hover { opacity: .92; }
+      .note { font-size: .82rem; color: var(--text-muted); margin-top: 14px; }
+
+      /* Subject grid */
+      .subject-grid { display: grid; gap: 10px; margin-bottom: 16px; }
+      .subject-item { display: flex; gap: 12px; align-items: flex-start; padding: 12px 14px; background: var(--surface-2); border-radius: 12px; border: 1px solid rgba(255,255,255,0.07); }
+      .subject-badge { flex-shrink: 0; font-size: .7rem; font-weight: 700; padding: 3px 8px; border-radius: 999px; margin-top: 2px; }
+      .badge-kenpo  { background: rgba(61,156,240,0.2);  color: #8ecfff; }
+      .badge-gyosei { background: rgba(76,175,125,0.2);  color: #7de0aa; }
+      .badge-minji  { background: rgba(240,180,64,0.2);  color: #f0d080; }
+      .badge-shoho  { background: rgba(180,100,240,0.2); color: #d4a0ff; }
+      .badge-ippan  { background: rgba(160,160,180,0.2); color: #c0c4cc; }
+      .subject-body { flex: 1; }
+      .subject-name { font-size: .9rem; font-weight: 700; margin: 0 0 4px; }
+      .subject-desc { font-size: .8rem; color: var(--text-muted); margin: 0; line-height: 1.55; }
+
+      .divider { height: 1px; background: rgba(255,255,255,0.07); margin: 4px 0 14px; }
+
+      /* Score guide */
+      .score-table { width: 100%; border-collapse: collapse; font-size: .88rem; }
+      .score-table th, .score-table td { padding: 8px 10px; border: 1px solid rgba(255,255,255,0.1); text-align: left; }
+      .score-table th { background: rgba(76,175,125,0.15); color: var(--accent); font-weight: 700; }
+      .score-table td { color: var(--text-muted); }
+      .score-table td:first-child { color: var(--text); font-weight: 500; }
+
+      /* ── Hamburger ── */
+      .nav-hamburger { display:flex; flex-direction:column; justify-content:center; gap:5px; width:36px; height:36px; padding:6px; background:none; border:none; cursor:pointer; border-radius:8px; transition:background .15s; flex-shrink:0; }
+      .nav-hamburger:hover { background: rgba(0,0,0,0.06); }
+      .nav-hamburger span { display:block; height:1.5px; border-radius:2px; background:currentColor; transition:transform .3s,opacity .3s,width .3s; width:20px; }
+      .nav-hamburger.open span:nth-child(1) { transform:translateY(6.5px) rotate(45deg); }
+      .nav-hamburger.open span:nth-child(2) { opacity:0; width:0; }
+      .nav-hamburger.open span:nth-child(3) { transform:translateY(-6.5px) rotate(-45deg); }
+
+      /* ── Drawer ── */
+      .drawer-overlay { position:fixed; inset:0; background:rgba(0,0,0,0.45); z-index:190; opacity:0; pointer-events:none; transition:opacity .3s; }
+      .drawer-overlay.open { opacity:1; pointer-events:auto; }
+      .drawer { position:fixed; top:0; right:0; bottom:0; width:min(320px,85vw); background:#ffffff; z-index:195; transform:translateX(100%); transition:transform .35s cubic-bezier(.25,.46,.45,.94); display:flex; flex-direction:column; overflow-y:auto; }
+      .drawer.open { transform:translateX(0); }
+      .drawer-header { display:flex; align-items:center; justify-content:space-between; padding:16px 20px; border-bottom:1px solid #e8e8ed; flex-shrink:0; }
+      .drawer-logo { display:flex; align-items:center; gap:8px; font-size:.95rem; font-weight:600; color:#1d1d1f; text-decoration:none; }
+      .drawer-close { width:32px; height:32px; display:flex; align-items:center; justify-content:center; background:#f5f5f7; border:none; border-radius:50%; cursor:pointer; font-size:1.1rem; color:#6e6e73; }
+      .drawer-close:hover { background:#e8e8ed; }
+      .drawer-section { padding:20px 20px 8px; }
+      .drawer-section-label { font-size:.68rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:#6e6e73; margin-bottom:8px; padding-left:4px; }
+      .drawer-nav { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:2px; }
+      .drawer-nav a { display:flex; align-items:center; gap:12px; padding:11px 12px; border-radius:10px; text-decoration:none; color:#1d1d1f; font-size:.95rem; font-weight:400; transition:background .15s; }
+      .drawer-nav a:hover { background:#f5f5f7; }
+      .drawer-nav a .di { font-size:1.1rem; width:24px; text-align:center; }
+      .drawer-divider { height:1px; background:#e8e8ed; margin:8px 20px; }
+
+      /* ── Footer ── */
+      footer { background:#1d1d1f; padding:56px 0 max(36px,env(safe-area-inset-bottom)); }
+      .footer-container { max-width:980px; margin:0 auto; padding:0 22px; }
+      .footer-inner { display:flex; gap:48px; flex-wrap:wrap; margin-bottom:40px; }
+      .footer-brand-col { flex-shrink:0; }
+      .footer-brand { display:flex; align-items:center; gap:10px; margin-bottom:10px; }
+      .footer-brand-icon { font-size:1.5rem; }
+      .footer-brand-name { font-size:1rem; font-weight:600; color:#fff; }
+      .footer-brand-desc { font-size:.75rem; color:rgba(255,255,255,.35); line-height:1.7; max-width:200px; }
+      .footer-cols { display:flex; gap:40px; flex-wrap:wrap; flex:1; }
+      .footer-col-title { font-size:.68rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:rgba(255,255,255,.35); margin-bottom:14px; }
+      .footer-col ul { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px; }
+      .footer-col ul a { font-size:.82rem; color:rgba(255,255,255,.55); text-decoration:none; transition:color .15s; }
+      .footer-col ul a:hover { color:rgba(255,255,255,.9); }
+      .footer-bottom { padding-top:24px; border-top:1px solid rgba(255,255,255,.08); }
+      .footer-copy { font-size:.72rem; color:rgba(255,255,255,.28); }
+      @media (max-width:680px) { .footer-inner{flex-direction:column;gap:28px;} .footer-cols{gap:28px;} }
+    </style>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3002712486184435" crossorigin="anonymous"></script>
+  </head>
+  <body>
+
+<!-- Drawer overlay -->
+<div class="drawer-overlay" id="drawer-overlay"></div>
+<aside class="drawer" id="drawer" aria-label="サイトメニュー">
+  <div class="drawer-header">
+    <a href="../index.html" class="drawer-logo">🚃 資格トレイン</a>
+    <button class="drawer-close" id="drawer-close" aria-label="閉じる">✕</button>
+  </div>
+  <div class="drawer-section">
+    <p class="drawer-section-label">トップページ</p>
+    <ul class="drawer-nav">
+      <li><a href="../index.html#concept"><span class="di">💡</span>コンセプト</a></li>
+      <li><a href="../index.html#apps"><span class="di">📱</span>アプリ一覧</a></li>
+      <li><a href="../index.html#contact"><span class="di">✉️</span>お問い合わせ</a></li>
+    </ul>
+  </div>
+  <div class="drawer-divider"></div>
+  <div class="drawer-section">
+    <p class="drawer-section-label">資格問題一覧</p>
+    <ul class="drawer-nav">
+      <li><a href="../kikai-app/index.html"><span class="di">⚙️</span>技術士（機械部門）</a></li>
+      <li><a href="../denco-app/index.html"><span class="di">⚡</span>電気資格ポータル</a></li>
+      <li><a href="index.html"><span class="di">📋</span>行政書士</a></li>
+    </ul>
+  </div>
+  <div class="drawer-divider"></div>
+  <div class="drawer-section">
+    <p class="drawer-section-label">サイト情報</p>
+    <ul class="drawer-nav">
+      <li><a href="../about.html"><span class="di">🏢</span>運営者情報</a></li>
+      <li><a href="../contact.html"><span class="di">✉️</span>お問い合わせ</a></li>
+      <li><a href="../privacy.html"><span class="di">🔒</span>プライバシーポリシー</a></li>
+    </ul>
+  </div>
+</aside>
+
+<!-- Navigation -->
+<nav style="position:fixed;top:0;left:0;right:0;height:52px;z-index:100;backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid;display:flex;align-items:center;background:rgba(15,26,20,0.88);border-bottom-color:rgba(255,255,255,0.08);">
+  <div style="max-width:640px;margin:0 auto;padding:0 18px;width:100%;display:flex;align-items:center;justify-content:space-between;">
+    <a href="../index.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:rgba(255,255,255,0.85);font-size:.95rem;font-weight:600;">
+      <span>🚃</span><span>資格トレイン</span>
+    </a>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="メニューを開く" style="color:rgba(255,255,255,0.85);">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+    <div class="wrap">
+      <header>
+        <span class="icon">📋</span>
+        <h1>行政書士 学習ポータル</h1>
+        <p class="lead">憲法・行政法・民法・商法・一般知識の過去問をスマホで学習できるアプリです。</p>
+      </header>
+
+      <section class="card" aria-labelledby="sec-start">
+        <h2 id="sec-start">クイズを始める</h2>
+        <p>
+          5科目・全 <strong>50 問</strong>（各科目 10 問）の過去問ベースのクイズに挑戦できます。
+          <strong>年度別（本番形式）</strong>と<strong>科目別（解説付き）</strong>の2つのモードで学習できます。
+        </p>
+        <a class="cta" href="quiz.html">クイズを開く</a>
+        <p class="note">
+          科目別モードでは回答後に詳細解説とAI質問機能が利用できます。年度別モードでは本試験と同じ180分のタイマー付きで挑戦できます。
+        </p>
+      </section>
+
+      <section class="card" aria-labelledby="sec-subjects">
+        <h2 id="sec-subjects">試験科目について</h2>
+        <div class="subject-grid">
+          <div class="subject-item">
+            <span class="subject-badge badge-kenpo">憲法</span>
+            <div class="subject-body">
+              <p class="subject-name">憲法</p>
+              <p class="subject-desc">基本的人権・統治機構（国会・内閣・裁判所）・地方自治・違憲審査制など。人権の類型・判例が頻出。</p>
+            </div>
+          </div>
+          <div class="subject-item">
+            <span class="subject-badge badge-gyosei">行政法</span>
+            <div class="subject-body">
+              <p class="subject-name">行政法</p>
+              <p class="subject-desc">行政行為・行政手続法・行政不服申立法・行政事件訴訟法・国家賠償法・地方自治法など。最大配点科目。</p>
+            </div>
+          </div>
+          <div class="subject-item">
+            <span class="subject-badge badge-minji">民法</span>
+            <div class="subject-body">
+              <p class="subject-name">民法</p>
+              <p class="subject-desc">総則（意思表示・代理）・物権・債権（契約・不法行為）・相続。2020年改正内容が重要。</p>
+            </div>
+          </div>
+          <div class="subject-item">
+            <span class="subject-badge badge-shoho">商法</span>
+            <div class="subject-body">
+              <p class="subject-name">商法・会社法</p>
+              <p class="subject-desc">会社の機関・株式・持分会社・商行為・手形など。会社法（会社の設立・株主総会・取締役）が中心。</p>
+            </div>
+          </div>
+          <div class="subject-item">
+            <span class="subject-badge badge-ippan">一般</span>
+            <div class="subject-body">
+              <p class="subject-name">一般知識等</p>
+              <p class="subject-desc">政治・経済・社会・情報通信・個人情報保護・文章理解。一般知識の足切り（24点以上）に注意。</p>
+            </div>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <p class="note">※ 出題数は参考です。本アプリは学習用として過去問を参考に作成した問題を収録しています。</p>
+      </section>
+
+      <section class="card" aria-labelledby="sec-scoring">
+        <h2 id="sec-scoring">合格基準（300点満点）</h2>
+        <table class="score-table">
+          <thead>
+            <tr><th>要件</th><th>基準</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>① 法令等合計</td><td>122点以上（244点満点）</td></tr>
+            <tr><td>② 一般知識等合計</td><td>24点以上（56点満点）</td></tr>
+            <tr><td>③ 総合点</td><td>180点以上（300点満点の60%）</td></tr>
+          </tbody>
+        </table>
+        <p class="note" style="margin-top:12px;">①〜③の全てを満たす必要があります。特に②の一般知識「足切り」（24点＝14問中6問以上）に注意が必要です。</p>
+      </section>
+
+      <section class="card" aria-labelledby="sec-howto">
+        <h2 id="sec-howto">使い方</h2>
+        <ul>
+          <li>「クイズを開く」から学習ページへ進みます。</li>
+          <li><strong>年度別モード</strong>：年度を選択して180分のタイマーで全問に挑戦。問題は自由に行き来でき、終了後に全問の解説を確認できます。</li>
+          <li><strong>科目別モード</strong>：学習したい科目を選んで1問ずつ解答。回答後に詳細解説が表示され、AIに追加質問もできます。</li>
+          <li>正答率はブラウザに保存され、科目ごとの学習進捗を確認できます。</li>
+          <li>苦手な科目は繰り返し解くことで知識を定着させましょう。</li>
+        </ul>
+        <p class="note" style="margin-top:16px;">※ 本サイトで使用している問題は、行政書士試験の公式過去問をもとに内容・表現をアレンジして作成したオリジナル問題です。公式機関が提供する問題そのものではありません。正確な試験情報は行政書士試験研究センターの公式サイトをご確認ください。</p>
+      </section>
+    </div>
+
+<footer>
+  <div class="footer-container">
+    <div class="footer-inner">
+      <div class="footer-brand-col">
+        <div class="footer-brand">
+          <span class="footer-brand-icon">🚃</span>
+          <span class="footer-brand-name">資格トレイン</span>
+        </div>
+        <p class="footer-brand-desc">通勤・通学のスキマ時間で<br>資格合格をサポートする<br>無料学習プラットフォーム</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <p class="footer-col-title">資格問題一覧</p>
+          <ul>
+            <li><a href="../kikai-app/index.html">技術士（機械部門）</a></li>
+            <li><a href="../denco-app/index.html">電気資格ポータル</a></li>
+            <li><a href="index.html">行政書士</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-title">ブログ</p>
+          <ul>
+            <li><a href="../blog/index.html">記事一覧</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-title">サイト情報</p>
+          <ul>
+            <li><a href="../about.html">運営者情報</a></li>
+            <li><a href="../contact.html">お問い合わせ</a></li>
+            <li><a href="../privacy.html">プライバシーポリシー</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">Copyright © 2024 mahorobaチャンネル / 資格トレイン. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function() {
+    var hamburger = document.getElementById('nav-hamburger');
+    var drawer    = document.getElementById('drawer');
+    var overlay   = document.getElementById('drawer-overlay');
+    var drawerClose = document.getElementById('drawer-close');
+    function openDrawer()  { drawer.classList.add('open'); overlay.classList.add('open'); hamburger.classList.add('open'); document.body.style.overflow = 'hidden'; }
+    function closeDrawer() { drawer.classList.remove('open'); overlay.classList.remove('open'); hamburger.classList.remove('open'); document.body.style.overflow = ''; }
+    hamburger.addEventListener('click', function() { drawer.classList.contains('open') ? closeDrawer() : openDrawer(); });
+    drawerClose.addEventListener('click', closeDrawer);
+    overlay.addEventListener('click', closeDrawer);
+    drawer.querySelectorAll('a').forEach(function(a) { a.addEventListener('click', closeDrawer); });
+  })();
+</script>
+
+  </body>
+</html>
