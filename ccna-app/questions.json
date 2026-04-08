@@ -1,0 +1,392 @@
+[
+  {
+    "year": "2024",
+    "category": "ネットワーク基礎",
+    "question": "OSI参照モデルのデータリンク層（第2層）が扱うPDU（プロトコルデータユニット）の名称として正しいのは？",
+    "choices": [
+      "パケット",
+      "フレーム",
+      "セグメント",
+      "ビット"
+    ],
+    "correctIndex": 1,
+    "explanation": "データリンク層のPDUは「フレーム」です。各層のPDU：物理層=ビット、データリンク層=フレーム、ネットワーク層=パケット、トランスポート層=セグメント（TCP）/ データグラム（UDP）。"
+  },
+  {
+    "year": "2024",
+    "category": "ネットワーク基礎",
+    "question": "IPv4アドレス 172.20.100.52/22 のネットワークアドレスとして正しいのは？",
+    "choices": [
+      "172.20.100.0",
+      "172.20.96.0",
+      "172.20.0.0",
+      "172.20.64.0"
+    ],
+    "correctIndex": 1,
+    "explanation": "/22 のサブネットマスクは 255.255.252.0 です。第3オクテットの 252（11111100）と 100（01100100）のAND演算の結果は 96（01100000）となります。よってネットワークアドレスは 172.20.96.0 です。"
+  },
+  {
+    "year": "2024",
+    "category": "ネットワーク基礎",
+    "question": "TCPの3ウェイハンドシェイクの正しい順序は？",
+    "choices": [
+      "SYN → SYN-ACK → ACK",
+      "SYN → ACK → SYN-ACK",
+      "ACK → SYN → SYN-ACK",
+      "SYN-ACK → SYN → ACK"
+    ],
+    "correctIndex": 0,
+    "explanation": "TCPの3ウェイハンドシェイクは、(1)クライアントがSYNを送信、(2)サーバーがSYN-ACKで応答、(3)クライアントがACKを送信、の順で接続を確立します。これによりTCPはコネクション型の信頼性ある通信を実現します。"
+  },
+  {
+    "year": "2024",
+    "category": "ネットワーク基礎",
+    "question": "RFC 1918 で定義されたプライベートIPアドレス範囲として正しいのは？",
+    "choices": [
+      "10.0.0.0 〜 10.255.255.255",
+      "172.0.0.0 〜 172.15.255.255",
+      "192.0.0.0 〜 192.255.255.255",
+      "169.254.0.0 〜 169.254.255.255"
+    ],
+    "correctIndex": 0,
+    "explanation": "RFC 1918のプライベートIPアドレス：10.0.0.0/8（10.0.0.0〜10.255.255.255）、172.16.0.0/12（172.16.0.0〜172.31.255.255）、192.168.0.0/16（192.168.0.0〜192.168.255.255）の3範囲です。169.254.x.xはAPIPAアドレスです。"
+  },
+  {
+    "year": "2024",
+    "category": "ネットワーク基礎",
+    "question": "DNS（Domain Name System）の主な役割として正しいのは？",
+    "choices": [
+      "IPアドレスをMACアドレスに解決する",
+      "ドメイン名をIPアドレスに解決する",
+      "ポート番号をサービス名に解決する",
+      "プライベートIPアドレスをグローバルIPアドレスに変換する"
+    ],
+    "correctIndex": 1,
+    "explanation": "DNSはドメイン名（例：www.example.com）をIPアドレスに変換するシステムです。IPアドレスとMACアドレスの変換はARP（Address Resolution Protocol）、プライベートIPとグローバルIPの変換はNAT（Network Address Translation）が担当します。"
+  },
+  {
+    "year": "2024",
+    "category": "スイッチング",
+    "question": "スイッチのMACアドレステーブルに宛先MACアドレスのエントリが存在しない場合の動作として正しいのは？",
+    "choices": [
+      "そのフレームを破棄する",
+      "ルーターに転送する",
+      "受信ポートを除くすべてのポートにフラッディングする",
+      "ARPリクエストを送信する"
+    ],
+    "correctIndex": 2,
+    "explanation": "スイッチは宛先MACアドレスがテーブルにない場合、受信ポート（インバウンドポート）以外のすべてのアクティブポートにフレームをフラッディングします（ユニキャストフラッディング）。これはブロードキャストやマルチキャストの処理とも似ていますが、ユニキャストでもテーブルに無ければ同様の動作をします。"
+  },
+  {
+    "year": "2024",
+    "category": "スイッチング",
+    "question": "IEEE 802.1Q タグにVLAN識別のために使用されるビット数は？",
+    "choices": [
+      "4ビット",
+      "8ビット",
+      "12ビット",
+      "16ビット"
+    ],
+    "correctIndex": 2,
+    "explanation": "IEEE 802.1Q のVLANタグはEthernetフレームに4バイト（32ビット）追加します。内訳はPCP（3ビット/優先度）、DEI（1ビット）、VLAN ID（12ビット）です。12ビットで最大4094個のVLAN（0と4095は予約）を識別できます。"
+  },
+  {
+    "year": "2024",
+    "category": "スイッチング",
+    "question": "RSTP（Rapid Spanning Tree Protocol）の主な利点として正しいのは？",
+    "choices": [
+      "ルーティングループを防ぐことができる",
+      "従来STPより収束（コンバージェンス）時間が大幅に短い",
+      "VLANトランキングを可能にする",
+      "MACアドレステーブルを自動的に構築する"
+    ],
+    "correctIndex": 1,
+    "explanation": "RSTP（IEEE 802.1w）は従来STP（IEEE 802.1D）の30〜50秒の収束時間を1〜2秒以下に大幅に短縮しました。新しいポートステート（Discarding・Learning・Forwarding）と高速遷移メカニズムにより、ネットワーク障害時の復旧が迅速になります。"
+  },
+  {
+    "year": "2024",
+    "category": "スイッチング",
+    "question": "スイッチのAccessポートとTrunkポートの違いとして正しいのは？",
+    "choices": [
+      "Accessポートは複数のVLANを通し、Trunkポートは1つのVLANのみを通す",
+      "Trunkポートは802.1Qタグを使い複数VLANのトラフィックを通し、Accessポートは単一VLANのみを通す",
+      "AccessポートはL3スイッチのみで使用される",
+      "TrunkポートはWANリンクにのみ使用される"
+    ],
+    "correctIndex": 1,
+    "explanation": "Accessポートは単一VLANに属し、PCやサーバーなどエンドデバイスに接続します（タグなし）。Trunkポートは802.1QタグによってVLAN IDを付加し、複数VLANのトラフィックを1本のリンクで伝送します。スイッチ間やスイッチとルーター間で使用されます。"
+  },
+  {
+    "year": "2024",
+    "category": "スイッチング",
+    "question": "EtherChannelをネゴシエートするシスコ独自のプロトコルはどれか？",
+    "choices": [
+      "LACP（Link Aggregation Control Protocol）",
+      "PAgP（Port Aggregation Protocol）",
+      "STP（Spanning Tree Protocol）",
+      "VTP（VLAN Trunking Protocol）"
+    ],
+    "correctIndex": 1,
+    "explanation": "PAgP（Port Aggregation Protocol）はシスコ独自のEtherChannelネゴシエーションプロトコルです。業界標準はLACP（IEEE 802.3ad/802.1ax）です。どちらも複数の物理リンクを1本の論理チャンネルに束ね、帯域幅の増加と冗長性を実現します。"
+  },
+  {
+    "year": "2024",
+    "category": "ルーティング",
+    "question": "デフォルトルートの正しい表記はどれか？",
+    "choices": [
+      "192.168.0.0/0",
+      "0.0.0.0/0",
+      "255.255.255.255/32",
+      "10.0.0.0/0"
+    ],
+    "correctIndex": 1,
+    "explanation": "デフォルトルートは 0.0.0.0/0 と表記されます（クワッドゼロルートとも呼ばれます）。ルーティングテーブルに一致するより具体的なエントリがない場合に使用され、インターネットへのゲートウェイとして設定されることが多いです。"
+  },
+  {
+    "year": "2024",
+    "category": "ルーティング",
+    "question": "OSPF のアドミニストレイティブディスタンス（AD値）として正しいのは？",
+    "choices": [
+      "90",
+      "100",
+      "110",
+      "120"
+    ],
+    "correctIndex": 2,
+    "explanation": "主なプロトコルのAD値：直接接続=0、スタティック=1、EIGRP=90、OSPF=110、IS-IS=115、RIP=120。AD値が小さいほど信頼性が高いと判断され、同じ宛先へ複数のルーティングプロトコルが経路を学習した場合はAD値が最小のルートが選ばれます。"
+  },
+  {
+    "year": "2024",
+    "category": "ルーティング",
+    "question": "OSPFでDR（Designated Router）が選出される際の優先基準の正しい順序は？",
+    "choices": [
+      "ルーターID → プライオリティ",
+      "プライオリティ → ルーターID",
+      "IPアドレス → MACアドレス",
+      "コスト値 → ルーターID"
+    ],
+    "correctIndex": 1,
+    "explanation": "OSPFのDR選出は、まず最も高いOSPFプライオリティ（デフォルト1、範囲0〜255）のルーターが選ばれます。プライオリティが等しい場合は最も大きいルーターID（通常最大のIPアドレス）が優先されます。プライオリティ0のルーターはDR/BDRに選出されません。"
+  },
+  {
+    "year": "2024",
+    "category": "ルーティング",
+    "question": "ルーティングテーブルで宛先IPアドレスに複数のルートが一致する場合、最優先される選択基準は？",
+    "choices": [
+      "AD値が最大のルート",
+      "プレフィックス長が最長（最も具体的）のルート",
+      "メトリックが最大のルート",
+      "最も古く学習したルート"
+    ],
+    "correctIndex": 1,
+    "explanation": "Longest Prefix Match（最長プレフィックス一致）が最優先されます。例：宛先10.1.1.5へのルートとして 10.1.1.0/24 と 10.1.0.0/16 がある場合、/24（より具体的）が選択されます。プレフィックス長が同じ場合にAD値やメトリックが考慮されます。"
+  },
+  {
+    "year": "2024",
+    "category": "ルーティング",
+    "question": "IPv6アドレス fe80::1/64 が属するアドレス種別として正しいのは？",
+    "choices": [
+      "グローバルユニキャストアドレス",
+      "マルチキャストアドレス",
+      "リンクローカルユニキャストアドレス",
+      "エニーキャストアドレス"
+    ],
+    "correctIndex": 2,
+    "explanation": "fe80::/10 で始まるアドレスはリンクローカルユニキャストアドレスです。同一リンク（セグメント）内の通信にのみ使用され、ルーターを越えて転送されません。IPv6ではインターフェースに自動的に割り当てられ、OSPFv3やNDP（Neighbor Discovery Protocol）に利用されます。"
+  },
+  {
+    "year": "2024",
+    "category": "IPサービス",
+    "question": "DHCPのDORAプロセスの正しい順序は？",
+    "choices": [
+      "Discover → Offer → Request → Acknowledge",
+      "Discover → Request → Offer → Acknowledge",
+      "Request → Discover → Offer → Acknowledge",
+      "Offer → Request → Discover → Acknowledge"
+    ],
+    "correctIndex": 0,
+    "explanation": "DHCPのDORAプロセス：(1)Discover：クライアントがブロードキャストでDHCPサーバーを探す、(2)Offer：サーバーが利用可能なIPアドレスを提案、(3)Request：クライアントが提案されたIPを要求、(4)Acknowledge：サーバーが割り当てを確定・通知。"
+  },
+  {
+    "year": "2024",
+    "category": "IPサービス",
+    "question": "HSRP（Hot Standby Router Protocol）の主な目的として正しいのは？",
+    "choices": [
+      "ルーター間でルーティング情報を交換する",
+      "複数の物理ルーターが仮想IPを共有し、デフォルトゲートウェイの冗長性を提供する",
+      "L2スイッチにIPアドレスを割り当てる",
+      "DHCPサーバーの冗長構成を実現する"
+    ],
+    "correctIndex": 1,
+    "explanation": "HSRP（シスコ独自）は複数の物理ルーターが仮想MACアドレスと仮想IPアドレスを共有することで、デフォルトゲートウェイの冗長性を提供します。Active/Standbyルーターがあり、Activeが障害時にStandbyが即座に引き継ぎます。オープン標準の同等プロトコルはVRRP（RFC 5798）です。"
+  },
+  {
+    "year": "2024",
+    "category": "IPサービス",
+    "question": "NTP（Network Time Protocol）の役割として正しいのは？",
+    "choices": [
+      "ネットワーク機器のファームウェアを自動更新する",
+      "ネットワーク機器の時刻を協定世界時（UTC）に同期する",
+      "ネットワークトポロジを自動検出する",
+      "ルーティングテーブルを隣接機器に配布する"
+    ],
+    "correctIndex": 1,
+    "explanation": "NTPはUDP 123番ポートを使用し、ネットワーク機器の時刻をUTCに同期するプロトコルです。ログのタイムスタンプ整合性、デジタル証明書の検証、認証システムの正確な動作に不可欠です。NTPサーバーはStratum 0（原子時計等）から始まる階層構造で管理されます。"
+  },
+  {
+    "year": "2024",
+    "category": "IPサービス",
+    "question": "DNSの逆引き（IPアドレス → ドメイン名）に使用されるレコードタイプはどれか？",
+    "choices": [
+      "Aレコード",
+      "MXレコード",
+      "PTRレコード",
+      "AAAAレコード"
+    ],
+    "correctIndex": 2,
+    "explanation": "PTR（Pointer）レコードは逆引きDNSに使用され、IPアドレスからドメイン名を解決します（例：1.2.0.192.in-addr.arpa → example.com）。主なDNSレコード：Aレコード=ドメイン→IPv4、AAAAレコード=ドメイン→IPv6、MXレコード=メールサーバー、CNAMEレコード=ドメインの別名。"
+  },
+  {
+    "year": "2024",
+    "category": "IPサービス",
+    "question": "DSCP（Differentiated Services Code Point）はIPv4ヘッダーのどのフィールドに設定されるか？",
+    "choices": [
+      "TTLフィールド",
+      "ToS（Type of Service）フィールドの上位6ビット（DSフィールド）",
+      "プロトコルフィールド",
+      "フラグメントオフセットフィールド"
+    ],
+    "correctIndex": 1,
+    "explanation": "DSCPはIPv4ヘッダーのToS（Type of Service）フィールド、正確にはDS（Differentiated Services）フィールドと呼ばれる上位6ビットに設定されます。これによりネットワーク機器がトラフィック種別（音声・ビデオ・データ等）を識別し、QoS（Quality of Service）の優先制御を行います。"
+  },
+  {
+    "year": "2024",
+    "category": "セキュリティ",
+    "question": "シスコのACL（Access Control List）の末尾に暗黙的に存在するルールはどれか？",
+    "choices": [
+      "permit any（すべて許可）",
+      "deny any（すべて拒否）",
+      "log any（すべてログ記録）",
+      "redirect any（すべてリダイレクト）"
+    ],
+    "correctIndex": 1,
+    "explanation": "シスコのACLには最後に「implicit deny any」（暗黙のdeny any）が存在します。ACLに明示的に許可（permit）されていないすべてのトラフィックはデフォルトで拒否されます。これがACLを設定する際に意図しないブロックが起きる主な原因です。"
+  },
+  {
+    "year": "2024",
+    "category": "セキュリティ",
+    "question": "スイッチのポートセキュリティ（Port Security）でviolation発生時のデフォルト動作はどれか？",
+    "choices": [
+      "restrict（違反パケットを破棄してログ記録）",
+      "protect（違反パケットを静かに破棄）",
+      "shutdown（ポートをerr-disabled状態にする）",
+      "SNMP trapを送信して何もしない"
+    ],
+    "correctIndex": 2,
+    "explanation": "ポートセキュリティのデフォルトviolationモードは「shutdown」です。違反が発生するとポートが「err-disabled」状態になり、管理者が「shutdown → no shutdown」コマンドまたはerr-disable recoveryで手動復旧する必要があります。他のモード：protect=パケット廃棄のみ、restrict=廃棄+ログ+SNMP。"
+  },
+  {
+    "year": "2024",
+    "category": "セキュリティ",
+    "question": "DHCPスヌーピング（DHCP Snooping）の主な目的として正しいのは？",
+    "choices": [
+      "DHCPサーバーの負荷を複数サーバーに分散する",
+      "不正なDHCPサーバーからの応答をブロックし、正規サーバーからのみ許可する",
+      "DHCPリリース処理を高速化する",
+      "VLANをまたいだDHCPリレーを可能にする"
+    ],
+    "correctIndex": 1,
+    "explanation": "DHCPスヌーピングはL2セキュリティ機能で、スイッチがDHCPパケットを検査します。Trusted（信頼できる）ポートからのDHCP応答のみを転送し、Untrustedポートからのサーバー応答を廃棄します。攻撃者が偽のDHCPサーバーを立て、クライアントに不正なIPを割り当てる攻撃（DHCP Spoofing）を防ぎます。"
+  },
+  {
+    "year": "2024",
+    "category": "セキュリティ",
+    "question": "WPA3がWPA2に対して新たに導入したセキュリティ機能として正しいのは？",
+    "choices": [
+      "AES暗号化をTKIP暗号化に置き換えた",
+      "SAE（Simultaneous Authentication of Equals）によるより強力な認証を導入した",
+      "WPAキーの最低文字数を8文字から16文字に変更した",
+      "2.4GHz帯の使用を廃止した"
+    ],
+    "correctIndex": 1,
+    "explanation": "WPA3はWPA2のPSK（Pre-Shared Key）方式の代わりにSAE（Simultaneous Authentication of Equals、Dragonflyプロトコルベース）を採用しました。SAEはオフライン辞書攻撃への耐性があり、前方秘匿性（Forward Secrecy）を提供します。WPA2+AESの暗号化はWPA3でも引き続き使用されます。"
+  },
+  {
+    "year": "2024",
+    "category": "セキュリティ",
+    "question": "AAAフレームワークにおける「Authorization（認可）」の意味として正しいのは？",
+    "choices": [
+      "ユーザーが本人であることを確認する（本人認証）",
+      "認証されたユーザーが何を実行できるかを制御する",
+      "ユーザーの操作履歴を記録・監査する",
+      "ユーザーアカウントのパスワードを管理する"
+    ],
+    "correctIndex": 1,
+    "explanation": "AAAの3要素：Authentication（認証）=誰であるかの確認、Authorization（認可）=何をしていいかの権限制御、Accounting（アカウンティング）=何をしたかの記録。シスコ機器ではRADIUSやTACACS+サーバーと連携してAAAを実装します。TACACS+は認証・認可・アカウンティングを個別のパケットで処理できる点が特徴です。"
+  },
+  {
+    "year": "2024",
+    "category": "自動化・プログラマビリティ",
+    "question": "REST APIで既存のリソースを取得（読み取り）する際に使用するHTTPメソッドはどれか？",
+    "choices": [
+      "POST",
+      "PUT",
+      "GET",
+      "DELETE"
+    ],
+    "correctIndex": 2,
+    "explanation": "REST APIのCRUD操作とHTTPメソッドの対応：Create→POST、Read→GET、Update→PUT（全体更新）/PATCH（部分更新）、Delete→DELETE。GETはサーバーの状態を変更しない「安全なメソッド」であり、冪等性（何度実行しても結果が同じ）も持ちます。"
+  },
+  {
+    "year": "2024",
+    "category": "自動化・プログラマビリティ",
+    "question": "Ansible が Puppet や Chef と比べた際の最大の特徴として正しいのは？",
+    "choices": [
+      "管理対象ノードへのエージェントソフトウェアのインストールが必要である",
+      "エージェントレスで動作し、SSHを使用して管理対象ノードに接続する",
+      "設定ファイルはPythonスクリプトで記述する",
+      "WindowsのPowerShellのみをサポートする"
+    ],
+    "correctIndex": 1,
+    "explanation": "Ansibleはエージェントレスアーキテクチャを採用し、管理ノードからSSH（Linux）またはWinRM（Windows）経由で接続します。PuppetやChefは管理対象にエージェントのインストールが必要です。Ansibleの設定ファイルは「Playbook」と呼ばれるYAML形式で記述します。"
+  },
+  {
+    "year": "2024",
+    "category": "自動化・プログラマビリティ",
+    "question": "YANG データモデルと主に組み合わせて使用されるネットワーク管理プロトコルはどれか？",
+    "choices": [
+      "SNMP（Simple Network Management Protocol）",
+      "NETCONF（Network Configuration Protocol）",
+      "TFTP（Trivial File Transfer Protocol）",
+      "CDP（Cisco Discovery Protocol）"
+    ],
+    "correctIndex": 1,
+    "explanation": "YANG（RFC 6020）はネットワーク設定のデータモデリング言語で、主にNETCONF（RFC 6241）やRESTCONF（RFC 8040）と組み合わせて使用されます。NETCONFはXML over SSHを使用し、ネットワーク機器の設定の取得・変更・確認を行う現代的なプロトコルです。"
+  },
+  {
+    "year": "2024",
+    "category": "自動化・プログラマビリティ",
+    "question": "SDN（Software-Defined Networking）のコントロールプレーンの特徴として正しいのは？",
+    "choices": [
+      "パケットの実際の転送（フォワーディング）を担当する",
+      "各ネットワーク機器に分散して存在する",
+      "集中管理型で、転送決定のロジック（ルーティング・スイッチング判断）を担当する",
+      "ハードウェアASICに実装される"
+    ],
+    "correctIndex": 2,
+    "explanation": "SDNはコントロールプレーン（転送決定ロジック）を集中型コントローラー（例：OpenDaylight、Cisco ACI）に分離し、データプレーン（実際のパケット転送）のみを各ネットワーク機器に残します。コントローラーはSouthbound API（例：OpenFlow）で機器を制御し、Northbound APIでアプリケーションに抽象化されたネットワーク制御を提供します。"
+  },
+  {
+    "year": "2024",
+    "category": "自動化・プログラマビリティ",
+    "question": "JSON形式のデータとして構文的に正しいのはどれか？",
+    "choices": [
+      "{\"name\": 'Alice', \"age\": 30}",
+      "{\"name\": \"Alice\", \"age\": 30}",
+      "{name: \"Alice\", age: 30}",
+      "(\"name\": \"Alice\", \"age\": 30)"
+    ],
+    "correctIndex": 1,
+    "explanation": "JSONではキーと文字列値は必ずダブルクォート（\"）で囲む必要があります（シングルクォート不可）。キーにもダブルクォートが必須で、キーなしのオブジェクト記法も無効です。数値（30）はクォート不要です。REST APIやNETCONFのデータ交換フォーマットとして広く使用されています。"
+  }
+]
