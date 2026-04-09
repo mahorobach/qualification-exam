@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>民間資格を「受験者数／年収／転職市場価値」でランキング化するには？ | 資格トレイン</title>
+  <meta name="description" content="国家資格ランキングの次にやること。民間資格を受験者数・年収・転職市場価値の3軸でランキング化するための定義・集計ルール・実装設計を解説します。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3002712486184435" crossorigin="anonymous"></script>
+  <style>
+    :root { --white:#ffffff; --apple-dark:#1d1d1f; --apple-gray:#f5f5f7; --apple-mid:#e8e8ed; --apple-muted:#6e6e73; --apple-blue:#0071e3; --nav-h:52px; }
+    *,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+    html { scroll-behavior:smooth; }
+    body { font-family:"Noto Sans JP","Hiragino Sans",-apple-system,sans-serif; background:var(--white); color:var(--apple-dark); line-height:1.8; font-size:17px; -webkit-font-smoothing:antialiased; }
+    .nav { position:fixed; top:0; left:0; right:0; height:var(--nav-h); z-index:200; background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px); -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid rgba(0,0,0,0.08); display:flex; align-items:center; }
+    .nav-inner { max-width:980px; margin:0 auto; padding:0 22px; width:100%; display:flex; align-items:center; justify-content:space-between; }
+    .nav-logo { display:flex; align-items:center; gap:8px; text-decoration:none; color:var(--apple-dark); }
+    .nav-logo-icon { font-size:1.3rem; }
+    .nav-logo-text { font-size:0.95rem; font-weight:600; }
+    .nav-hamburger { display:flex; flex-direction:column; justify-content:center; gap:5px; width:36px; height:36px; padding:6px; background:none; border:none; cursor:pointer; border-radius:8px; transition:background .15s; flex-shrink:0; }
+    .nav-hamburger:hover { background:rgba(0,0,0,0.06); }
+    .nav-hamburger span { display:block; height:1.5px; border-radius:2px; background:currentColor; transition:transform .3s,opacity .3s,width .3s; width:20px; }
+    .nav-hamburger.open span:nth-child(1) { transform:translateY(6.5px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity:0; width:0; }
+    .nav-hamburger.open span:nth-child(3) { transform:translateY(-6.5px) rotate(-45deg); }
+    .drawer-overlay { position:fixed; inset:0; background:rgba(0,0,0,0.45); z-index:190; opacity:0; pointer-events:none; transition:opacity .3s; }
+    .drawer-overlay.open { opacity:1; pointer-events:auto; }
+    .drawer { position:fixed; top:0; right:0; bottom:0; width:min(320px,85vw); background:#fff; z-index:195; transform:translateX(100%); transition:transform .35s cubic-bezier(.25,.46,.45,.94); display:flex; flex-direction:column; overflow-y:auto; }
+    .drawer.open { transform:translateX(0); }
+    .drawer-header { display:flex; align-items:center; justify-content:space-between; padding:16px 20px; border-bottom:1px solid var(--apple-mid); flex-shrink:0; }
+    .drawer-logo { display:flex; align-items:center; gap:8px; font-size:0.95rem; font-weight:600; color:var(--apple-dark); text-decoration:none; }
+    .drawer-close { width:32px; height:32px; display:flex; align-items:center; justify-content:center; background:var(--apple-gray); border:none; border-radius:50%; cursor:pointer; font-size:1.1rem; color:var(--apple-muted); }
+    .drawer-close:hover { background:var(--apple-mid); }
+    .drawer-section { padding:20px 20px 8px; }
+    .drawer-section-label { font-size:0.68rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--apple-muted); margin-bottom:8px; padding-left:4px; }
+    .drawer-nav { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:2px; }
+    .drawer-nav a { display:flex; align-items:center; gap:12px; padding:11px 12px; border-radius:10px; text-decoration:none; color:var(--apple-dark); font-size:0.95rem; transition:background .15s; }
+    .drawer-nav a:hover { background:var(--apple-gray); }
+    .drawer-nav a .di { font-size:1.1rem; width:24px; text-align:center; }
+    .drawer-divider { height:1px; background:var(--apple-mid); margin:8px 20px; }
+    .breadcrumb { padding:calc(var(--nav-h) + 16px) 22px 0; max-width:720px; margin:0 auto; font-size:0.75rem; color:var(--apple-muted); display:flex; gap:6px; align-items:center; flex-wrap:wrap; }
+    .breadcrumb a { color:var(--apple-blue); text-decoration:none; }
+    .breadcrumb a:hover { text-decoration:underline; }
+    .breadcrumb-sep { color:var(--apple-mid); }
+    .article-hero { padding:calc(var(--nav-h) + 56px) 22px 48px; background:linear-gradient(135deg,#fce4ec,#f8bbd0,#fff3e0); text-align:center; }
+    .article-cat-badge { display:inline-block; font-size:0.72rem; font-weight:700; letter-spacing:.06em; padding:4px 14px; border-radius:980px; background:rgba(194,24,91,0.1); color:#c2185b; margin-bottom:20px; }
+    .article-hero-title { font-size:clamp(1.4rem,3.5vw,2.1rem); font-weight:900; letter-spacing:-0.03em; line-height:1.25; color:var(--apple-dark); max-width:700px; margin:0 auto 20px; }
+    .article-hero-meta { display:flex; align-items:center; justify-content:center; gap:16px; flex-wrap:wrap; font-size:0.78rem; color:var(--apple-muted); font-weight:300; }
+    .article-wrap { max-width:720px; margin:0 auto; padding:56px 22px 80px; }
+    .toc { background:var(--apple-gray); border-radius:14px; padding:24px 28px; margin-bottom:48px; }
+    .toc-title { font-size:0.78rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--apple-muted); margin-bottom:14px; }
+    .toc ol { padding-left:1.4em; display:flex; flex-direction:column; gap:8px; }
+    .toc ol li { font-size:0.88rem; }
+    .toc ol li a { color:var(--apple-blue); text-decoration:none; }
+    .toc ol li a:hover { text-decoration:underline; }
+    .article-wrap h2 { font-size:1.35rem; font-weight:700; letter-spacing:-0.02em; margin:52px 0 18px; padding-bottom:12px; border-bottom:2px solid var(--apple-mid); color:var(--apple-dark); scroll-margin-top:calc(var(--nav-h) + 16px); }
+    .article-wrap h3 { font-size:1.05rem; font-weight:700; margin:32px 0 12px; color:var(--apple-dark); }
+    .article-wrap p { font-size:0.95rem; color:#333; line-height:1.9; margin-bottom:18px; font-weight:300; }
+    .article-wrap ul,.article-wrap ol { padding-left:1.5em; margin-bottom:18px; display:flex; flex-direction:column; gap:8px; }
+    .article-wrap li { font-size:0.95rem; color:#333; line-height:1.8; font-weight:300; }
+    .article-wrap strong { font-weight:700; color:var(--apple-dark); }
+    .article-wrap a { color:var(--apple-blue); text-decoration:none; }
+    .article-wrap a:hover { text-decoration:underline; }
+    .point-box { background:rgba(194,24,91,0.05); border-left:3px solid #c2185b; border-radius:0 12px 12px 0; padding:20px 24px; margin:24px 0; }
+    .point-box p { margin:0; font-size:0.92rem; }
+    .point-box-title { font-size:0.72rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:#c2185b; margin-bottom:8px; }
+    .warn-box { background:rgba(255,149,0,0.08); border-left:3px solid #ff9500; border-radius:0 12px 12px 0; padding:20px 24px; margin:24px 0; }
+    .warn-box p { margin:0; font-size:0.92rem; }
+    .warn-box-title { font-size:0.72rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:#e68000; margin-bottom:8px; }
+    .axis-cards { display:grid; grid-template-columns: repeat(3,1fr); gap:14px; margin:24px 0; }
+    .axis-card { border-radius:14px; padding:20px 18px; text-align:center; }
+    .axis-card-vol { background:rgba(0,113,227,0.07); border:1px solid rgba(0,113,227,0.18); }
+    .axis-card-sal { background:rgba(52,199,89,0.07); border:1px solid rgba(52,199,89,0.22); }
+    .axis-card-job { background:rgba(255,149,0,0.07); border:1px solid rgba(255,149,0,0.22); }
+    .axis-card-icon { font-size:1.8rem; margin-bottom:8px; }
+    .axis-card-label { font-size:0.72rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--apple-muted); margin-bottom:4px; }
+    .axis-card-name { font-size:0.92rem; font-weight:700; color:var(--apple-dark); }
+    .axis-card-desc { font-size:0.78rem; color:var(--apple-muted); font-weight:300; margin-top:4px; line-height:1.5; }
+    .data-table { width:100%; border-collapse:collapse; margin:24px 0; font-size:0.88rem; border-radius:12px; overflow:hidden; border:1px solid var(--apple-mid); }
+    .data-table th { background:var(--apple-gray); padding:10px 16px; text-align:left; font-weight:700; font-size:0.78rem; color:var(--apple-muted); }
+    .data-table td { padding:10px 16px; border-top:1px solid var(--apple-mid); font-weight:300; vertical-align:top; }
+    .data-table tr:hover td { background:var(--apple-gray); }
+    .prev-next { margin:40px 0 0; padding:24px 28px; background:var(--apple-gray); border-radius:14px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+    .prev-next-label { font-size:0.72rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--apple-muted); margin-bottom:6px; }
+    .prev-next-title { font-size:0.95rem; font-weight:700; color:var(--apple-dark); margin:0; }
+    .prev-next-btn { flex-shrink:0; display:inline-block; padding:10px 22px; background:var(--apple-dark); color:#fff; border-radius:980px; text-decoration:none; font-size:0.88rem; font-weight:500; transition:background .2s; }
+    .prev-next-btn:hover { background:#3a3a3c; text-decoration:none; }
+    .cta-card { background:var(--apple-dark); border-radius:18px; padding:36px 32px; text-align:center; margin:48px 0; position:relative; overflow:hidden; }
+    .cta-card::before { content:""; position:absolute; inset:0; background:radial-gradient(ellipse 70% 60% at 50% -10%,rgba(194,24,91,0.25),transparent); pointer-events:none; }
+    .cta-card p { font-size:0.88rem; color:rgba(255,255,255,0.6); margin-bottom:8px; position:relative; z-index:1; font-weight:300; }
+    .cta-card strong { display:block; font-size:1.15rem; color:#fff; font-weight:700; margin-bottom:20px; position:relative; z-index:1; }
+    .cta-btn { display:inline-block; padding:13px 28px; background:#c2185b; color:#fff; border-radius:980px; text-decoration:none; font-size:0.95rem; font-weight:500; position:relative; z-index:1; transition:background .2s; }
+    .cta-btn:hover { background:#ad1457; text-decoration:none; }
+    footer { background:var(--apple-dark); padding:56px 0 max(36px,env(safe-area-inset-bottom)); }
+    .footer-container { max-width:980px; margin:0 auto; padding:0 22px; }
+    .footer-inner { display:flex; gap:48px; flex-wrap:wrap; margin-bottom:40px; }
+    .footer-brand-col { flex-shrink:0; }
+    .footer-brand { display:flex; align-items:center; gap:10px; margin-bottom:10px; }
+    .footer-brand-icon { font-size:1.5rem; }
+    .footer-brand-name { font-size:1rem; font-weight:600; color:#fff; }
+    .footer-brand-desc { font-size:0.75rem; color:rgba(255,255,255,0.35); font-weight:300; line-height:1.7; max-width:200px; }
+    .footer-cols { display:flex; gap:40px; flex-wrap:wrap; flex:1; }
+    .footer-col-title { font-size:0.68rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:rgba(255,255,255,0.35); margin-bottom:14px; }
+    .footer-col ul { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px; }
+    .footer-col ul a { font-size:0.82rem; color:rgba(255,255,255,0.55); text-decoration:none; font-weight:300; transition:color .15s; }
+    .footer-col ul a:hover { color:rgba(255,255,255,0.9); }
+    .footer-bottom { padding-top:24px; border-top:1px solid rgba(255,255,255,0.08); }
+    .footer-copy { font-size:0.72rem; color:rgba(255,255,255,0.28); font-weight:300; }
+    @media (max-width:680px) {
+      .article-hero { padding:calc(var(--nav-h) + 36px) 22px 36px; }
+      .axis-cards { grid-template-columns:1fr; }
+      .footer-inner { flex-direction:column; gap:28px; }
+      .footer-cols { gap:28px; }
+      .cta-card { padding:28px 20px; }
+      .prev-next { flex-direction:column; align-items:flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="drawer-overlay" id="drawer-overlay"></div>
+<aside class="drawer" id="drawer" aria-label="サイトメニュー">
+  <div class="drawer-header">
+    <a href="../index.html" class="drawer-logo">🚃 資格トレイン</a>
+    <button class="drawer-close" id="drawer-close" aria-label="閉じる">✕</button>
+  </div>
+  <div class="drawer-section">
+    <p class="drawer-section-label">トップページ</p>
+    <ul class="drawer-nav">
+      <li><a href="../index.html#concept"><span class="di">💡</span>コンセプト</a></li>
+      <li><a href="../index.html#apps"><span class="di">📱</span>アプリ一覧</a></li>
+      <li><a href="../index.html#contact"><span class="di">✉️</span>お問い合わせ</a></li>
+    </ul>
+  </div>
+  <div class="drawer-divider"></div>
+  <div class="drawer-section">
+    <p class="drawer-section-label">資格問題一覧</p>
+    <ul class="drawer-nav">
+      <li><a href="../kikai-app/index.html"><span class="di">⚙️</span>技術士（機械部門）</a></li>
+      <li><a href="../denco-app/index.html"><span class="di">⚡</span>電気資格ポータル</a></li>
+      <li><a href="../takken-app/index.html"><span class="di">🏠</span>宅建士</a></li>
+      <li><a href="../gyosei-app/index.html"><span class="di">📋</span>行政書士</a></li>
+    </ul>
+  </div>
+  <div class="drawer-divider"></div>
+  <div class="drawer-section">
+    <p class="drawer-section-label">ブログ</p>
+    <ul class="drawer-nav">
+      <li><a href="index.html"><span class="di">📝</span>記事一覧</a></li>
+    </ul>
+  </div>
+  <div class="drawer-divider"></div>
+  <div class="drawer-section">
+    <p class="drawer-section-label">サイト情報</p>
+    <ul class="drawer-nav">
+      <li><a href="../about.html"><span class="di">🏢</span>運営者情報</a></li>
+      <li><a href="../contact.html"><span class="di">✉️</span>お問い合わせ</a></li>
+      <li><a href="../privacy.html"><span class="di">🔒</span>プライバシーポリシー</a></li>
+    </ul>
+  </div>
+</aside>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo"><span class="nav-logo-icon">🚃</span><span class="nav-logo-text">資格トレイン</span></a>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="メニューを開く"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<nav class="breadcrumb" aria-label="パンくずリスト">
+  <a href="../index.html">トップ</a><span class="breadcrumb-sep">›</span>
+  <a href="index.html">ブログ</a><span class="breadcrumb-sep">›</span>
+  <span>民間資格を3軸でランキング化するには？</span>
+</nav>
+
+<header class="article-hero">
+  <span class="article-cat-badge">開発日誌</span>
+  <h1 class="article-hero-title">民間資格を「受験者数／年収／転職市場価値」でランキング化するには？<br>――国家資格ランキングの次にやること</h1>
+  <div class="article-hero-meta">
+    <span>📅 2026年4月9日</span>
+    <span>⏱ 読了約7分</span>
+    <span>✍️ 資格トレイン編集部</span>
+  </div>
+</header>
+
+<article class="article-wrap">
+
+  <p>国家資格の受験者数ランキングを作ろうとしたとき、いちばん大きかった学びは「ランキングは、どこかに完成品があるものではなく、<strong>定義と集計ルールを決めた瞬間に"作れるもの"になる</strong>」ということでした。これは民間資格でも同じです。むしろ民間資格のほうが、資格の種類も提供元も多く、目的もばらばらなので、最初に軸を決めないと一生まとまりません。</p>
+
+  <p>そこで次は、民間資格を次の3軸でランキング化します。</p>
+
+  <div class="axis-cards">
+    <div class="axis-card axis-card-vol">
+      <div class="axis-card-icon">📊</div>
+      <p class="axis-card-label">軸①</p>
+      <p class="axis-card-name">受験者数</p>
+      <p class="axis-card-desc">いま実際にどれだけ受けられているか（ボリューム）</p>
+    </div>
+    <div class="axis-card axis-card-sal">
+      <div class="axis-card-icon">💰</div>
+      <p class="axis-card-label">軸②</p>
+      <p class="axis-card-name">年収</p>
+      <p class="axis-card-desc">取るとどれくらい報酬に跳ねやすいか（リターン）</p>
+    </div>
+    <div class="axis-card axis-card-job">
+      <div class="axis-card-icon">🔍</div>
+      <p class="axis-card-label">軸③</p>
+      <p class="axis-card-name">転職市場価値</p>
+      <p class="axis-card-desc">求人でどれくらい求められているか（需要）</p>
+    </div>
+  </div>
+
+  <p>この3つは似ているようで、<strong>結果がまったく違うランキング</strong>になります。受験者数が多い資格が、必ずしも年収に直結するとは限りませんし、年収に効く資格が必ずしも受験者数が多いとも限りません。だからこそ、同じ「民間資格ランキング」でも、軸を分けて作る意味があります。</p>
+
+  <nav class="toc" aria-label="目次">
+    <p class="toc-title">目次</p>
+    <ol>
+      <li><a href="#sec1">受験者数ランキング（ボリューム）を作る現実的な方法</a></li>
+      <li><a href="#sec2">年収ランキング（リターン）を作るときに避けて通れないこと</a></li>
+      <li><a href="#sec3">転職市場価値ランキング（需要）は「求人票の出現頻度」で作れる</a></li>
+      <li><a href="#sec4">まず作るべきは「3つのランキング」ではなく「3つの同じ名簿」</a></li>
+      <li><a href="#sec5">次フェーズで作るランキング案：候補の方向性</a></li>
+    </ol>
+  </nav>
+
+  <div class="prev-next">
+    <div>
+      <p class="prev-next-label">前回の記事</p>
+      <p class="prev-next-title">国家資格の受験者数ランキングは、5年でどれくらい変わるのか</p>
+    </div>
+    <a href="shikaku-ranking-gonengo.html" class="prev-next-btn">← 読む</a>
+  </div>
+
+  <h2 id="sec1">1. 受験者数ランキング（ボリューム）を作る現実的な方法</h2>
+
+  <p>国家資格と違って、民間資格は<strong>「受験者数を公式に毎年出していない」ケースが珍しくありません。</strong>ここが最初の壁です。</p>
+
+  <p>したがって、受験者数ランキングは次の2段構えにすると実務的です。</p>
+
+  <ul>
+    <li><strong>第一に</strong>、「公式に受験者数を公表している資格」に限定してランキングを作る</li>
+    <li><strong>第二に</strong>、公式数値が取れない人気資格については、別枠で「代理指標」を使った参考ランキングとして扱う</li>
+  </ul>
+
+  <p>アプリでもブログでも、この"出し分け"をしておくと誤解が減ります。</p>
+
+  <table class="data-table">
+    <thead><tr><th>資格の種類</th><th>受験者数の取りやすさ</th><th>例</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>語学・検定系</td>
+        <td>比較的追いやすい</td>
+        <td>TOEIC、英検、日商簿記</td>
+      </tr>
+      <tr>
+        <td>ベンダー資格</td>
+        <td>国別・年度別の公開なし多い</td>
+        <td>AWS認定、Azure、Cisco</td>
+      </tr>
+      <tr>
+        <td>民間団体検定</td>
+        <td>まちまち（団体による）</td>
+        <td>FP、色彩検定、秘書検定</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="warn-box">
+    <p class="warn-box-title">民間資格の特徴</p>
+    <p>「受験者数ランキング」とひと口に言っても、ランキングの"作り方"そのものが<strong>資格の公開姿勢に左右される</strong>のが民間資格の特徴です。データがなければランキングは作れない――この前提を設計に組み込む必要があります。</p>
+  </div>
+
+  <h2 id="sec2">2. 年収ランキング（リターン）を作るときに避けて通れないこと</h2>
+
+  <p>「この資格を取ると年収が上がる」という話はよく聞きますが、<strong>資格単体で年収が決まることはほとんどありません。</strong>実際には、職種・業界・経験年数・勤務地・マネジメント有無などの影響が大きく、資格は"条件の一部"になりがちです。</p>
+
+  <p>それでもランキングを作るなら、コツは<strong>「資格→年収」を直接つなげようとしすぎないこと</strong>です。現実的には次の2つの設計が堅いです。</p>
+
+  <h3>設計A：職種経由で年収を紐づける</h3>
+  <p>資格が強く紐づく職種（例：クラウドエンジニア、セキュリティ、PMなど）を定義し、その職種の年収データを集めて「その職種に入りやすくする資格ランキング」として表現する方法。</p>
+
+  <h3>設計B：求人票の年収レンジから推定する</h3>
+  <p>求人票で「歓迎／必須」として書かれやすい資格を集め、資格名が明記された求人の平均年収（レンジ）を比較して"資格プレミアム"を推定する方法。</p>
+
+  <div class="point-box">
+    <p class="point-box-title">年収ランキングに必須の明記事項</p>
+    <p>年収ランキングは統計が整っている一枚の表が存在しにくい。だからこそ<strong>「年収の定義（平均／中央値／レンジ上限）」と「データの取り方（どのサイトの、どの条件の求人か）」</strong>を明記する必要があります。ここを曖昧にすると説得力が一気に落ちます。</p>
+  </div>
+
+  <h2 id="sec3">3. 転職市場価値ランキング（需要）は「求人票の出現頻度」で作れる</h2>
+
+  <p>民間資格で<strong>一番作りやすく、アプリにも実装しやすいのがこの軸</strong>です。理由は単純で、需要は求人票に出ます。求人票の本文や要件欄にどの資格名がどれくらい登場するかを数えれば、「市場が求めている資格ランキング」を作れます。</p>
+
+  <p>この軸では、<strong>ベンダー資格（AWS、Azure、Google Cloud、Cisco、CompTIAなど）が一気に強くなります。</strong>国家資格中心のランキングでは見えにくかった"実務で効く民間資格"が、ここで前面に出てきます。</p>
+
+  <table class="data-table">
+    <thead><tr><th>軸</th><th>上位に来やすい資格</th></tr></thead>
+    <tbody>
+      <tr><td>受験者数（ボリューム）</td><td>TOEIC・英検・日商簿記など語学・検定系</td></tr>
+      <tr><td>年収（リターン）</td><td>AWS・Azure・セキュリティ・PMなど高単価職種直結型</td></tr>
+      <tr><td>転職市場価値（需要）</td><td>AWS・Azure・Google Cloud・Cisco・CompTIAなどベンダー系</td></tr>
+    </tbody>
+  </table>
+
+  <div class="warn-box">
+    <p class="warn-box-title">求人票活用の注意点</p>
+    <p>検索ワードの揺れ（例：「AWS認定」「AWS Certified」「SAA」など）を正規化する必要があり、同一求人の重複・求人媒体ごとの偏りもあります。それでも「需要の方向性」を示す指標としては非常に強い軸です。</p>
+  </div>
+
+  <h2 id="sec4">4. まず作るべきは「3つのランキング」ではなく「3つの同じ名簿」</h2>
+
+  <p>3軸でランキングを作る前に、実務で一番効くのは<strong>同じ"資格名簿"を作っておくこと</strong>です。</p>
+
+  <p>つまり、同一の民間資格リストに対して、次の3つの値を同じIDで紐づけていく構造にする。</p>
+
+  <ul>
+    <li><strong>受験者数</strong>（取れれば公式値、なければ空欄）</li>
+    <li><strong>年収</strong>（求人平均レンジ、または職種年収へ紐づけ）</li>
+    <li><strong>転職市場価値</strong>（求人票出現数）</li>
+  </ul>
+
+  <p>こうすると、アプリ上でも「人気（受験者数）」「稼げる（年収）」「求められる（求人）」のタブ切り替えができ、<strong>同じ資格の見え方を変えられます。</strong>ランキングの正解が1つではない以上、この見せ方がユーザーにとって一番親切です。</p>
+
+  <div class="point-box">
+    <p class="point-box-title">設計のポイント</p>
+    <p>3つの別々のランキングを作るより、<strong>1つの名簿に3つの軸を紐づける</strong>ほうが、メンテナンスもしやすく、アプリでの表現も豊かになります。データの定義が先、表示が後——国家資格のときと同じ原則です。</p>
+  </div>
+
+  <h2 id="sec5">5. 次フェーズで作るランキング案：候補の方向性</h2>
+
+  <p>民間資格のランキングは、軸を分けると結果がきれいに分離します。</p>
+
+  <table class="data-table">
+    <thead><tr><th>軸</th><th>特徴</th><th>強い資格の傾向</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>受験者数</strong></td>
+        <td>語学・検定系が可視化しやすい。ベンダー系はデータが取りにくい</td>
+        <td>TOEIC・英検・日商簿記</td>
+      </tr>
+      <tr>
+        <td><strong>転職市場価値</strong></td>
+        <td>求人票から作れる。ベンダー資格が一気に上位に来る</td>
+        <td>AWS・Azure・Google Cloud・Cisco</td>
+      </tr>
+      <tr>
+        <td><strong>年収</strong></td>
+        <td>高単価職種に直結する資格が強い。資格単体でなく職種経由で測る</td>
+        <td>AWS・セキュリティ系・PMP</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p><strong>国家資格の受験者数ランキングが安定して見えたのは、制度と構造に支えられていたから</strong>で、民間資格は市場（求人）側の力学がよりダイレクトに出ます。</p>
+
+  <p>次は、民間資格を「受験者数／年収／転職市場価値」の3軸でランキング化します。国家資格で苦労した<strong>"定義と集計ルール作り"を、今度は民間資格でやる番</strong>です。</p>
+
+  <div class="cta-card">
+    <p>資格学習はスキマ時間から始めよう</p>
+    <strong>無料の過去問クイズアプリ一覧</strong>
+    <a href="../index.html#apps" class="cta-btn">アプリを見る →</a>
+  </div>
+
+</article>
+
+<footer>
+  <div class="footer-container">
+    <div class="footer-inner">
+      <div class="footer-brand-col">
+        <div class="footer-brand"><span class="footer-brand-icon">🚃</span><span class="footer-brand-name">資格トレイン</span></div>
+        <p class="footer-brand-desc">通勤・通学のスキマ時間で<br>資格合格をサポートする<br>無料学習プラットフォーム</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <p class="footer-col-title">資格問題一覧</p>
+          <ul>
+            <li><a href="../kikai-app/index.html">技術士（機械部門）</a></li>
+            <li><a href="../denco-app/index.html">電気資格ポータル</a></li>
+            <li><a href="../takken-app/index.html">宅建士</a></li>
+            <li><a href="../gyosei-app/index.html">行政書士</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-title">ブログ</p>
+          <ul><li><a href="index.html">記事一覧</a></li></ul>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-title">サイト情報</p>
+          <ul>
+            <li><a href="../about.html">運営者情報</a></li>
+            <li><a href="../contact.html">お問い合わせ</a></li>
+            <li><a href="../privacy.html">プライバシーポリシー</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom"><p class="footer-copy">Copyright © 2024 mahorobaチャンネル / 資格トレイン. All rights reserved.</p></div>
+  </div>
+</footer>
+
+<script>
+  const hamburger=document.getElementById('nav-hamburger'),drawer=document.getElementById('drawer'),overlay=document.getElementById('drawer-overlay'),drawerClose=document.getElementById('drawer-close');
+  function openDrawer(){drawer.classList.add('open');overlay.classList.add('open');hamburger.classList.add('open');document.body.style.overflow='hidden';}
+  function closeDrawer(){drawer.classList.remove('open');overlay.classList.remove('open');hamburger.classList.remove('open');document.body.style.overflow='';}
+  hamburger.addEventListener('click',openDrawer);
+  drawerClose.addEventListener('click',closeDrawer);
+  overlay.addEventListener('click',closeDrawer);
+</script>
+</body>
+</html>
