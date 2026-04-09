@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>資格試験受験者ランキングをつくるまで | 資格トレイン</title>
+  <meta name="description" content="「受験者数ランキング」を作るには、まず集計ルールを自分で決める必要があった。AIへの質問から始まり、出典・粒度・集計期間を整理して30試験を選定するまでのプロセスを記録します。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3002712486184435" crossorigin="anonymous"></script>
+  <style>
+    :root { --white:#ffffff; --apple-dark:#1d1d1f; --apple-gray:#f5f5f7; --apple-mid:#e8e8ed; --apple-muted:#6e6e73; --apple-blue:#0071e3; --nav-h:52px; }
+    *,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+    html { scroll-behavior:smooth; }
+    body { font-family:"Noto Sans JP","Hiragino Sans",-apple-system,sans-serif; background:var(--white); color:var(--apple-dark); line-height:1.8; font-size:17px; -webkit-font-smoothing:antialiased; }
+    .nav { position:fixed; top:0; left:0; right:0; height:var(--nav-h); z-index:200; background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px); -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid rgba(0,0,0,0.08); display:flex; align-items:center; }
+    .nav-inner { max-width:980px; margin:0 auto; padding:0 22px; width:100%; display:flex; align-items:center; justify-content:space-between; }
+    .nav-logo { display:flex; align-items:center; gap:8px; text-decoration:none; color:var(--apple-dark); }
+    .nav-logo-icon { font-size:1.3rem; }
+    .nav-logo-text { font-size:0.95rem; font-weight:600; }
+    .nav-hamburger { display:flex; flex-direction:column; justify-content:center; gap:5px; width:36px; height:36px; padding:6px; background:none; border:none; cursor:pointer; border-radius:8px; transition:background .15s; flex-shrink:0; }
+    .nav-hamburger:hover { background:rgba(0,0,0,0.06); }
+    .nav-hamburger span { display:block; height:1.5px; border-radius:2px; background:currentColor; transition:transform .3s,opacity .3s,width .3s; width:20px; }
+    .nav-hamburger.open span:nth-child(1) { transform:translateY(6.5px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity:0; width:0; }
+    .nav-hamburger.open span:nth-child(3) { transform:translateY(-6.5px) rotate(-45deg); }
+    .drawer-overlay { position:fixed; inset:0; background:rgba(0,0,0,0.45); z-index:190; opacity:0; pointer-events:none; transition:opacity .3s; }
+    .drawer-overlay.open { opacity:1; pointer-events:auto; }
+    .drawer { position:fixed; top:0; right:0; bottom:0; width:min(320px,85vw); background:#fff; z-index:195; transform:translateX(100%); transition:transform .35s cubic-bezier(.25,.46,.45,.94); display:flex; flex-direction:column; overflow-y:auto; }
+    .drawer.open { transform:translateX(0); }
+    .drawer-header { display:flex; align-items:center; justify-content:space-between; padding:16px 20px; border-bottom:1px solid var(--apple-mid); flex-shrink:0; }
+    .drawer-logo { display:flex; align-items:center; gap:8px; font-size:0.95rem; font-weight:600; color:var(--apple-dark); text-decoration:none; }
+    .drawer-close { width:32px; height:32px; display:flex; align-items:center; justify-content:center; background:var(--apple-gray); border:none; border-radius:50%; cursor:pointer; font-size:1.1rem; color:var(--apple-muted); }
+    .drawer-close:hover { background:var(--apple-mid); }
+    .drawer-section { padding:20px 20px 8px; }
+    .drawer-section-label { font-size:0.68rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--apple-muted); margin-bottom:8px; padding-left:4px; }
+    .drawer-nav { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:2px; }
+    .drawer-nav a { display:flex; align-items:center; gap:12px; padding:11px 12px; border-radius:10px; text-decoration:none; color:var(--apple-dark); font-size:0.95rem; transition:background .15s; }
+    .drawer-nav a:hover { background:var(--apple-gray); }
+    .drawer-nav a .di { font-size:1.1rem; width:24px; text-align:center; }
+    .drawer-divider { height:1px; background:var(--apple-mid); margin:8px 20px; }
+    .breadcrumb { padding:calc(var(--nav-h) + 16px) 22px 0; max-width:720px; margin:0 auto; font-size:0.75rem; color:var(--apple-muted); display:flex; gap:6px; align-items:center; flex-wrap:wrap; }
+    .breadcrumb a { color:var(--apple-blue); text-decoration:none; }
+    .breadcrumb a:hover { text-decoration:underline; }
+    .breadcrumb-sep { color:var(--apple-mid); }
+    .article-hero { padding:calc(var(--nav-h) + 56px) 22px 48px; background:linear-gradient(135deg,#e0f7fa,#b2ebf2,#e8f5e9); text-align:center; }
+    .article-cat-badge { display:inline-block; font-size:0.72rem; font-weight:700; letter-spacing:.06em; padding:4px 14px; border-radius:980px; background:rgba(0,150,136,0.12); color:#00897b; margin-bottom:20px; }
+    .article-hero-title { font-size:clamp(1.5rem,4vw,2.2rem); font-weight:900; letter-spacing:-0.03em; line-height:1.25; color:var(--apple-dark); max-width:700px; margin:0 auto 20px; }
+    .article-hero-meta { display:flex; align-items:center; justify-content:center; gap:16px; flex-wrap:wrap; font-size:0.78rem; color:var(--apple-muted); font-weight:300; }
+    .article-wrap { max-width:720px; margin:0 auto; padding:56px 22px 80px; }
+    .toc { background:var(--apple-gray); border-radius:14px; padding:24px 28px; margin-bottom:48px; }
+    .toc-title { font-size:0.78rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--apple-muted); margin-bottom:14px; }
+    .toc ol { padding-left:1.4em; display:flex; flex-direction:column; gap:8px; }
+    .toc ol li { font-size:0.88rem; }
+    .toc ol li a { color:var(--apple-blue); text-decoration:none; }
+    .toc ol li a:hover { text-decoration:underline; }
+    .article-wrap h2 { font-size:1.35rem; font-weight:700; letter-spacing:-0.02em; margin:52px 0 18px; padding-bottom:12px; border-bottom:2px solid var(--apple-mid); color:var(--apple-dark); scroll-margin-top:calc(var(--nav-h) + 16px); }
+    .article-wrap h3 { font-size:1.05rem; font-weight:700; margin:32px 0 12px; color:var(--apple-dark); }
+    .article-wrap p { font-size:0.95rem; color:#333; line-height:1.9; margin-bottom:18px; font-weight:300; }
+    .article-wrap ul,.article-wrap ol { padding-left:1.5em; margin-bottom:18px; display:flex; flex-direction:column; gap:8px; }
+    .article-wrap li { font-size:0.95rem; color:#333; line-height:1.8; font-weight:300; }
+    .article-wrap strong { font-weight:700; color:var(--apple-dark); }
+    .article-wrap a { color:var(--apple-blue); text-decoration:none; }
+    .article-wrap a:hover { text-decoration:underline; }
+    .point-box { background:rgba(0,150,136,0.06); border-left:3px solid #00897b; border-radius:0 12px 12px 0; padding:20px 24px; margin:24px 0; }
+    .point-box p { margin:0; font-size:0.92rem; }
+    .point-box-title { font-size:0.72rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:#00897b; margin-bottom:8px; }
+    .warn-box { background:rgba(255,149,0,0.08); border-left:3px solid #ff9500; border-radius:0 12px 12px 0; padding:20px 24px; margin:24px 0; }
+    .warn-box p { margin:0; font-size:0.92rem; }
+    .warn-box-title { font-size:0.72rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:#e68000; margin-bottom:8px; }
+    .data-table { width:100%; border-collapse:collapse; margin:24px 0; font-size:0.85rem; border-radius:12px; overflow:hidden; border:1px solid var(--apple-mid); }
+    .data-table th { background:var(--apple-gray); padding:10px 14px; text-align:left; font-weight:700; font-size:0.75rem; color:var(--apple-muted); }
+    .data-table td { padding:10px 14px; border-top:1px solid var(--apple-mid); font-weight:300; line-height:1.6; }
+    .data-table tr:hover td { background:var(--apple-gray); }
+    .data-table td:first-child { font-weight:700; text-align:right; color:var(--apple-muted); width:2.5em; }
+    .source-table td:first-child { text-align:left; font-weight:300; width:auto; }
+    .source-table td:last-child { font-size:0.75rem; color:var(--apple-muted); word-break:break-all; }
+    .cta-card { background:var(--apple-dark); border-radius:18px; padding:36px 32px; text-align:center; margin:48px 0; position:relative; overflow:hidden; }
+    .cta-card::before { content:""; position:absolute; inset:0; background:radial-gradient(ellipse 70% 60% at 50% -10%,rgba(0,150,136,0.3),transparent); pointer-events:none; }
+    .cta-card p { font-size:0.88rem; color:rgba(255,255,255,0.6); margin-bottom:8px; position:relative; z-index:1; font-weight:300; }
+    .cta-card strong { display:block; font-size:1.15rem; color:#fff; font-weight:700; margin-bottom:20px; position:relative; z-index:1; }
+    .cta-btn { display:inline-block; padding:13px 28px; background:#00897b; color:#fff; border-radius:980px; text-decoration:none; font-size:0.95rem; font-weight:500; position:relative; z-index:1; transition:background .2s; }
+    .cta-btn:hover { background:#00796b; text-decoration:none; }
+    footer { background:var(--apple-dark); padding:56px 0 max(36px,env(safe-area-inset-bottom)); }
+    .footer-container { max-width:980px; margin:0 auto; padding:0 22px; }
+    .footer-inner { display:flex; gap:48px; flex-wrap:wrap; margin-bottom:40px; }
+    .footer-brand-col { flex-shrink:0; }
+    .footer-brand { display:flex; align-items:center; gap:10px; margin-bottom:10px; }
+    .footer-brand-icon { font-size:1.5rem; }
+    .footer-brand-name { font-size:1rem; font-weight:600; color:#fff; }
+    .footer-brand-desc { font-size:0.75rem; color:rgba(255,255,255,0.35); font-weight:300; line-height:1.7; max-width:200px; }
+    .footer-cols { display:flex; gap:40px; flex-wrap:wrap; flex:1; }
+    .footer-col-title { font-size:0.68rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:rgba(255,255,255,0.35); margin-bottom:14px; }
+    .footer-col ul { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px; }
+    .footer-col ul a { font-size:0.82rem; color:rgba(255,255,255,0.55); text-decoration:none; font-weight:300; transition:color .15s; }
+    .footer-col ul a:hover { color:rgba(255,255,255,0.9); }
+    .footer-bottom { padding-top:24px; border-top:1px solid rgba(255,255,255,0.08); }
+    .footer-copy { font-size:0.72rem; color:rgba(255,255,255,0.28); font-weight:300; }
+    @media (max-width:680px) { .article-hero { padding:calc(var(--nav-h) + 36px) 22px 36px; } .footer-inner { flex-direction:column; gap:28px; } .footer-cols { gap:28px; } .cta-card { padding:28px 22px; } .data-table { font-size:0.78rem; } .data-table td,.data-table th { padding:8px 10px; } }
+  </style>
+</head>
+<body>
+
+<div class="drawer-overlay" id="drawer-overlay"></div>
+<aside class="drawer" id="drawer" aria-label="サイトメニュー">
+  <div class="drawer-header">
+    <a href="../index.html" class="drawer-logo">🚃 資格トレイン</a>
+    <button class="drawer-close" id="drawer-close" aria-label="閉じる">✕</button>
+  </div>
+  <div class="drawer-section">
+    <p class="drawer-section-label">トップページ</p>
+    <ul class="drawer-nav">
+      <li><a href="../index.html#concept"><span class="di">💡</span>コンセプト</a></li>
+      <li><a href="../index.html#apps"><span class="di">📱</span>アプリ一覧</a></li>
+      <li><a href="../index.html#contact"><span class="di">✉️</span>お問い合わせ</a></li>
+    </ul>
+  </div>
+  <div class="drawer-divider"></div>
+  <div class="drawer-section">
+    <p class="drawer-section-label">資格問題一覧</p>
+    <ul class="drawer-nav">
+      <li><a href="../kikai-app/index.html"><span class="di">⚙️</span>技術士（機械部門）</a></li>
+      <li><a href="../denco-app/index.html"><span class="di">⚡</span>電気資格ポータル</a></li>
+      <li><a href="../takken-app/index.html"><span class="di">🏠</span>宅建士</a></li>
+      <li><a href="../gyosei-app/index.html"><span class="di">📋</span>行政書士</a></li>
+    </ul>
+  </div>
+  <div class="drawer-divider"></div>
+  <div class="drawer-section">
+    <p class="drawer-section-label">ブログ</p>
+    <ul class="drawer-nav">
+      <li><a href="index.html"><span class="di">📝</span>記事一覧</a></li>
+    </ul>
+  </div>
+  <div class="drawer-divider"></div>
+  <div class="drawer-section">
+    <p class="drawer-section-label">サイト情報</p>
+    <ul class="drawer-nav">
+      <li><a href="../about.html"><span class="di">🏢</span>運営者情報</a></li>
+      <li><a href="../contact.html"><span class="di">✉️</span>お問い合わせ</a></li>
+      <li><a href="../privacy.html"><span class="di">🔒</span>プライバシーポリシー</a></li>
+    </ul>
+  </div>
+</aside>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo"><span class="nav-logo-icon">🚃</span><span class="nav-logo-text">資格トレイン</span></a>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="メニューを開く"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<nav class="breadcrumb" aria-label="パンくずリスト">
+  <a href="../index.html">トップ</a><span class="breadcrumb-sep">›</span>
+  <a href="index.html">ブログ</a><span class="breadcrumb-sep">›</span>
+  <span>資格試験受験者ランキングをつくるまで</span>
+</nav>
+
+<header class="article-hero">
+  <span class="article-cat-badge">開発日誌</span>
+  <h1 class="article-hero-title">資格試験受験者ランキングをつくるまで</h1>
+  <div class="article-hero-meta">
+    <span>📅 2026年4月9日</span>
+    <span>⏱ 読了約6分</span>
+    <span>✍️ 資格トレイン編集部</span>
+  </div>
+</header>
+
+<article class="article-wrap">
+
+  <p>資格取得を支援するアプリを作っていると、「いま多くの人が受けている資格は何か」を<strong>数字で</strong>示したくなりました。トップ画面に受験者数の多い試験が並んでいれば、ユーザーが次に学ぶ候補を選びやすくなりますし、学習の動機づけにもなります。</p>
+
+  <nav class="toc" aria-label="目次">
+    <p class="toc-title">目次</p>
+    <ol>
+      <li><a href="#sec1">最初に出てきた「人気ランキング」の問題点</a></li>
+      <li><a href="#sec2">集計ルールを自分で決める必要があった</a></li>
+      <li><a href="#sec3">今回決めた集計の条件</a></li>
+      <li><a href="#sec4">集計対象として確定した30試験</a></li>
+      <li><a href="#sec4-links">出典元の公式リンク一覧</a></li>
+      <li><a href="#sec5">まとめ</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="sec1">最初に出てきた「人気ランキング」の問題点</h2>
+
+  <p>最初は、軽い気持ちでAIに「現在の資格取得ランキング」を聞きました。すると、定番資格として次のような上位が返ってきました。</p>
+
+  <table class="data-table">
+    <thead><tr><th>順位</th><th>資格名</th><th>分野</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>ITパスポート</td><td>IT・デジタル</td></tr>
+      <tr><td>2</td><td>宅地建物取引士（宅建）</td><td>不動産</td></tr>
+      <tr><td>3</td><td>簿記2級・3級（日商）</td><td>会計・経理</td></tr>
+      <tr><td>4</td><td>ファイナンシャルプランナー（FP）</td><td>金融・資産</td></tr>
+      <tr><td>5</td><td>基本情報技術者試験</td><td>IT</td></tr>
+    </tbody>
+  </table>
+
+  <p>いわゆる"人気資格"としてよく見かける並びです。ただ、ここで気づきます。<strong>「人気ランキング」はアプリに載せるには根拠が弱い。</strong></p>
+
+  <div class="warn-box">
+    <p class="warn-box-title">「人気」の曖昧さ</p>
+    <p>受験者数なのか、講座の申込数なのか、求人需要なのかで"人気"の意味が変わり、順位も変わってしまいます。私が作りたいのは、できるだけ客観的な「受験者数ランキング」です。</p>
+  </div>
+
+  <h2 id="sec2">集計ルールを自分で決める必要があった</h2>
+
+  <p>調べ始めると、国家資格全体を横断して「2025年の受験者数ランキング」が完成形で載っている公式ページは<strong>基本的に存在しない</strong>ことがわかりました。</p>
+
+  <p>資格は所管省庁も実施団体もバラバラで、公表形式も統一されていないからです。消防試験研究センター（危険物）・IPA（情報処理技術者）・全国建設研修センター（施工管理）など、試験ごとに別々のページで別々の形式で発表されています。</p>
+
+  <p>つまり、ランキングは<strong>"どこかから持ってくるもの"ではなく、こちらで集計ルールを決めて作る必要がありました。</strong></p>
+
+  <h2 id="sec3">今回決めた集計の条件</h2>
+
+  <p>やり取りを重ねながら決めた「集計の条件」です。</p>
+
+  <ul>
+    <li>対象は「国家資格全体」ではなく、現実的に作れるよう<strong>主要な国家資格（上位30前後）</strong>に絞る</li>
+    <li>"人気"ではなく、指標を<strong>受験者数</strong>に統一する（申込者数ではなく、可能な限り受験者数）</li>
+    <li>2025年は<strong>暦年（2025/1/1〜12/31）</strong>の実施分で集計する</li>
+    <li>年に複数回実施される試験（CBTや複数回開催など）は<strong>年内の受験者数を合算</strong>する</li>
+    <li>ユーザーが実際に申し込む単位で分ける（例：危険物は「乙4」「甲種」など別、施工管理は1級/2級など別）</li>
+    <li>前期・後期など名称が分かれていても<strong>取得できる資格区分が同じなら合算</strong>する（例：2級土木施工管理の前期＋後期）</li>
+    <li>出典は必ず<strong>公式の統計・試験結果ページ</strong>（実施団体／所管官庁）にそろえる</li>
+    <li>運転免許のように桁が違って比較不能になりやすいものは、通常の資格ランキングの文脈では<strong>除外</strong>する</li>
+  </ul>
+
+  <div class="point-box">
+    <p class="point-box-title">集計ルールを決めた意味</p>
+    <p>このルールが決まったことで、「集計対象を確定して、各公式ページの2025年受験者数を拾えばランキングが完成する」という状態になりました。データの定義が先、集計が後—この順番が重要です。</p>
+  </div>
+
+  <h2 id="sec4">集計対象として確定した30試験</h2>
+
+  <p>次の30試験を<strong>2025年受験者数で並べ替えて最終順位を確定する</strong>予定です。試験区分の粒度を統一し、各試験の出典（公式の統計・試験結果ページ）も合わせて整理しました。</p>
+
+  <table class="data-table source-table">
+    <thead><tr><th>No.</th><th>試験（受験単位）</th><th>出典（公式）</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>ITパスポート試験</td><td>IPA 統計情報</td></tr>
+      <tr><td>2</td><td>基本情報技術者試験</td><td>IPA 統計情報</td></tr>
+      <tr><td>3</td><td>情報セキュリティマネジメント試験</td><td>IPA 統計情報</td></tr>
+      <tr><td>4</td><td>応用情報技術者試験</td><td>IPA 統計情報</td></tr>
+      <tr><td>5</td><td>宅地建物取引士資格試験（宅建）</td><td>不動産適正取引推進機構</td></tr>
+      <tr><td>6</td><td>行政書士試験</td><td>行政書士試験研究センター</td></tr>
+      <tr><td>7</td><td>社会保険労務士試験</td><td>社労士試験センター</td></tr>
+      <tr><td>8</td><td>3級FP技能検定（2団体合算）</td><td>日本FP協会 ／ きんざい</td></tr>
+      <tr><td>9</td><td>2級FP技能検定（2団体合算）</td><td>日本FP協会 ／ きんざい</td></tr>
+      <tr><td>10</td><td>危険物取扱者 乙種第4類</td><td>消防試験研究センター</td></tr>
+      <tr><td>11</td><td>危険物取扱者 甲種</td><td>消防試験研究センター</td></tr>
+      <tr><td>12</td><td>危険物取扱者 丙種</td><td>消防試験研究センター</td></tr>
+      <tr><td>13</td><td>第二種電気工事士</td><td>電気技術者試験センター</td></tr>
+      <tr><td>14</td><td>第一種電気工事士</td><td>電気技術者試験センター</td></tr>
+      <tr><td>15</td><td>第三種電気主任技術者（電験三種）</td><td>電気技術者試験センター</td></tr>
+      <tr><td>16</td><td>第一種衛生管理者</td><td>安全衛生技術試験協会</td></tr>
+      <tr><td>17</td><td>第二種衛生管理者</td><td>安全衛生技術試験協会</td></tr>
+      <tr><td>18</td><td>二級ボイラー技士</td><td>安全衛生技術試験協会</td></tr>
+      <tr><td>19</td><td>クレーン・デリック運転士</td><td>安全衛生技術試験協会</td></tr>
+      <tr><td>20</td><td>1級土木施工管理技士（第一次検定）</td><td>全国建設研修センター</td></tr>
+      <tr><td>21</td><td>2級土木施工管理技士（第一次検定）※前期後期合算</td><td>全国建設研修センター</td></tr>
+      <tr><td>22</td><td>1級建築施工管理技士（第一次検定）</td><td>全国建設研修センター</td></tr>
+      <tr><td>23</td><td>2級建築施工管理技士（第一次検定）※前期後期合算</td><td>全国建設研修センター</td></tr>
+      <tr><td>24</td><td>2級建築士</td><td>建築技術教育普及センター</td></tr>
+      <tr><td>25</td><td>1級建築士</td><td>建築技術教育普及センター</td></tr>
+      <tr><td>26</td><td>測量士補</td><td>国土地理院</td></tr>
+      <tr><td>27</td><td>介護福祉士国家試験</td><td>社会福祉振興・試験センター</td></tr>
+      <tr><td>28</td><td>社会福祉士国家試験</td><td>社会福祉振興・試験センター</td></tr>
+      <tr><td>29</td><td>保育士試験（前期＋後期合算）</td><td>全国保育士養成協議会</td></tr>
+      <tr><td>30</td><td>看護師国家試験</td><td>厚生労働省</td></tr>
+    </tbody>
+  </table>
+
+  <p>この30試験に対して、それぞれの公式ページ（PDF等）から2025年の受験者数を取得し、多い順に並べ替えることで「受験者数ランキング」が完成します。</p>
+
+  <h3 id="sec4-links">出典元の公式リンク一覧</h3>
+
+  <p>30試験の受験者数はすべて以下の公式サイト・機関から取得します。調査する際の入口として整理しました。</p>
+
+  <table class="data-table source-table">
+    <thead><tr><th>対象資格</th><th>実施機関・所管</th><th>公式URL</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>情報処理技術者試験全般<br><small>（ITパスポート／基本情報／SG／AP ほか）</small></td>
+        <td>IPA（情報処理推進機構）統計情報</td>
+        <td><a href="https://www.ipa.go.jp/shiken/toukei/" target="_blank" rel="noopener">ipa.go.jp/shiken/toukei/</a></td>
+      </tr>
+      <tr>
+        <td>宅地建物取引士（宅建）</td>
+        <td>不動産適正取引推進機構</td>
+        <td><a href="https://www.retpc.jp/" target="_blank" rel="noopener">retpc.jp</a></td>
+      </tr>
+      <tr>
+        <td>行政書士</td>
+        <td>行政書士試験研究センター</td>
+        <td><a href="https://gyosei-shiken.or.jp/" target="_blank" rel="noopener">gyosei-shiken.or.jp</a></td>
+      </tr>
+      <tr>
+        <td>社会保険労務士（社労士）</td>
+        <td>社労士試験センター</td>
+        <td><a href="https://www.sharosi-siken.or.jp/" target="_blank" rel="noopener">sharosi-siken.or.jp</a></td>
+      </tr>
+      <tr>
+        <td>FP技能検定（3級・2級など）<br><small>※日本FP協会＋きんざいの合算が必要</small></td>
+        <td>日本FP協会</td>
+        <td><a href="https://www.jafp.or.jp/exam/" target="_blank" rel="noopener">jafp.or.jp/exam/</a></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>きんざい</td>
+        <td><a href="https://www.kinzai.or.jp/" target="_blank" rel="noopener">kinzai.or.jp</a></td>
+      </tr>
+      <tr>
+        <td>危険物取扱者（乙4・甲種・丙種など）</td>
+        <td>消防試験研究センター</td>
+        <td><a href="https://www.shoubo-shiken.or.jp/" target="_blank" rel="noopener">shoubo-shiken.or.jp</a></td>
+      </tr>
+      <tr>
+        <td>電気工事士／電験（電気主任技術者）</td>
+        <td>電気技術者試験センター</td>
+        <td><a href="https://www.shiken.or.jp/" target="_blank" rel="noopener">shiken.or.jp</a></td>
+      </tr>
+      <tr>
+        <td>安全衛生系<br><small>（衛生管理者・ボイラー・クレーン等）</small></td>
+        <td>安全衛生技術試験協会</td>
+        <td><a href="https://www.exam.or.jp/" target="_blank" rel="noopener">exam.or.jp</a></td>
+      </tr>
+      <tr>
+        <td>施工管理技士</td>
+        <td>全国建設研修センター</td>
+        <td><a href="https://www.jctc.jp/" target="_blank" rel="noopener">jctc.jp</a></td>
+      </tr>
+      <tr>
+        <td>建築士（1級・2級）</td>
+        <td>建築技術教育普及センター</td>
+        <td><a href="https://www.jaeic.or.jp/" target="_blank" rel="noopener">jaeic.or.jp</a></td>
+      </tr>
+      <tr>
+        <td>測量士・測量士補</td>
+        <td>国土地理院</td>
+        <td><a href="https://www.gsi.go.jp/" target="_blank" rel="noopener">gsi.go.jp</a></td>
+      </tr>
+      <tr>
+        <td>福祉系<br><small>（介護福祉士・社会福祉士・精神保健福祉士）</small></td>
+        <td>社会福祉振興・試験センター</td>
+        <td><a href="https://www.sssc.or.jp/" target="_blank" rel="noopener">sssc.or.jp</a></td>
+      </tr>
+      <tr>
+        <td>保育士</td>
+        <td>全国保育士養成協議会</td>
+        <td><a href="https://www.hoikushi.or.jp/" target="_blank" rel="noopener">hoikushi.or.jp</a></td>
+      </tr>
+      <tr>
+        <td>看護師など医療系国家試験</td>
+        <td>厚生労働省</td>
+        <td><a href="https://www.mhlw.go.jp/" target="_blank" rel="noopener">mhlw.go.jp</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="point-box">
+    <p class="point-box-title">次のステップ</p>
+    <p>次回は、この30試験それぞれについて「2025年受験者数が載っている該当ページ（PDF等）を特定し、実際の受験者数を取得して順位を確定します。公式データの場所の探し方や、PDF形式の統計から数値を読み取るコツについても記録する予定です。</p>
+  </div>
+
+  <h2 id="sec5">まとめ</h2>
+
+  <p>最初は「ランキングを作る」と言っても、AIに聞けばそれっぽい答えがすぐ出ます。ただ、アプリに載せるとなると次の3つを決めないと数字の意味が曖昧になってしまいます。</p>
+
+  <ul>
+    <li><strong>それは何のランキングか</strong>（受験者数なのか、人気なのか、合格率なのか）</li>
+    <li><strong>同じ土俵で比較できているか</strong>（試験の粒度・集計期間・複数回実施の扱い）</li>
+    <li><strong>出典は公式か</strong>（実施団体・所管官庁の公式統計ページ）</li>
+  </ul>
+
+  <p>今回の着地点は、主要な国家資格を30試験に絞り、試験単位の粒度をそろえ、2025年の受験者数を公式発表から集計して並べ替える、という手順でした。<strong>データの定義が先、集計が後</strong>というこの順番は、資格に限らずどんな比較を作る際にも通じると思います。</p>
+
+  <div class="cta-card">
+    <p>資格学習はスキマ時間から始めよう</p>
+    <strong>無料の過去問クイズアプリ一覧</strong>
+    <a href="../index.html#apps" class="cta-btn">アプリを見る →</a>
+  </div>
+
+  <div style="margin:40px 0 0; padding:24px 28px; background:var(--apple-gray); border-radius:14px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+    <div>
+      <p style="font-size:0.72rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--apple-muted); margin-bottom:6px;">次の記事</p>
+      <p style="font-size:0.95rem; font-weight:700; color:var(--apple-dark); margin:0;">国家資格の受験者数ランキングは、5年でどれくらい変わるのか</p>
+    </div>
+    <a href="shikaku-ranking-gonengo.html" style="flex-shrink:0; display:inline-block; padding:10px 22px; background:var(--apple-dark); color:#fff; border-radius:980px; text-decoration:none; font-size:0.88rem; font-weight:500; transition:background .2s;">読む →</a>
+  </div>
+
+</article>
+
+<footer>
+  <div class="footer-container">
+    <div class="footer-inner">
+      <div class="footer-brand-col">
+        <div class="footer-brand"><span class="footer-brand-icon">🚃</span><span class="footer-brand-name">資格トレイン</span></div>
+        <p class="footer-brand-desc">通勤・通学のスキマ時間で<br>資格合格をサポートする<br>無料学習プラットフォーム</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <p class="footer-col-title">資格問題一覧</p>
+          <ul>
+            <li><a href="../kikai-app/index.html">技術士（機械部門）</a></li>
+            <li><a href="../denco-app/index.html">電気資格ポータル</a></li>
+            <li><a href="../takken-app/index.html">宅建士</a></li>
+            <li><a href="../gyosei-app/index.html">行政書士</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-title">ブログ</p>
+          <ul><li><a href="index.html">記事一覧</a></li></ul>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-title">サイト情報</p>
+          <ul>
+            <li><a href="../about.html">運営者情報</a></li>
+            <li><a href="../contact.html">お問い合わせ</a></li>
+            <li><a href="../privacy.html">プライバシーポリシー</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom"><p class="footer-copy">Copyright © 2024 mahorobaチャンネル / 資格トレイン. All rights reserved.</p></div>
+  </div>
+</footer>
+
+<script>
+  const hamburger=document.getElementById('nav-hamburger'),drawer=document.getElementById('drawer'),overlay=document.getElementById('drawer-overlay'),drawerClose=document.getElementById('drawer-close');
+  function openDrawer(){drawer.classList.add('open');overlay.classList.add('open');hamburger.classList.add('open');document.body.style.overflow='hidden';}
+  function closeDrawer(){drawer.classList.remove('open');overlay.classList.remove('open');hamburger.classList.remove('open');document.body.style.overflow='';}
+  hamburger.addEventListener('click',openDrawer);
+  drawerClose.addEventListener('click',closeDrawer);
+  overlay.addEventListener('click',closeDrawer);
+</script>
+</body>
+</html>
