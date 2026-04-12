@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <!-- 開発中は外部スクリプトをコメントアウト -->
+    <!-- <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/da8873c0823e389b7f9a1d40/script.js"></script> -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3002712486184435" crossorigin="anonymous"></script> -->
+    <!-- Google tag (gtag.js) -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-G4S7ZG2Y34"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-G4S7ZG2Y34');
+  </script> -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>地質調査技士 学習ポータル | 資格トレイン</title>
+    <meta
+      name="description"
+      content="地質調査技士の過去問クイズアプリ。地質・地形、地盤調査・ボーリング、土質・岩石試験、施工・法規・環境の4分野を年度別・分野別で学習。AI解説機能付き。"
+    />
+    <meta
+      name="keywords"
+      content="地質調査技士,過去問,クイズ,地盤調査,ボーリング,地質,土質試験,岩石,資格,独学,無料"
+    />
+    <link rel="canonical" href="https://qualifications.app/chishitsu-app/" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="地質調査技士 学習ポータル | 資格トレイン"
+    />
+    <meta
+      property="og:description"
+      content="地質調査技士の過去問クイズアプリ。4分野を年度別・分野別で学習。AI解説機能付き。"
+    />
+    <meta
+      property="og:url"
+      content="https://qualifications.app/chishitsu-app/"
+    />
+    <meta name="twitter:card" content="summary" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #0d1108;
+        --surface: #172014;
+        --surface-2: #1f2c1a;
+        --text: #d8e8c8;
+        --text-muted: #7a9468;
+        --accent: #7ab840;
+        --accent-soft: rgba(122, 184, 64, 0.15);
+        --radius: 14px;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+      }
+      body {
+        font-family: 'Zen Kaku Gothic New', 'Hiragino Sans', sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        background-image: radial-gradient(
+          ellipse 80% 50% at 50% -10%,
+          rgba(122, 184, 64, 0.12),
+          transparent
+        );
+        min-height: 100dvh;
+        padding: 0 0 40px;
+      }
+      nav.topnav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+        height: 52px;
+        background: rgba(13, 17, 8, 0.92);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+      nav.topnav a {
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 0.85rem;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      nav.topnav .brand {
+        font-weight: 700;
+        font-size: 0.95rem;
+        color: rgba(255, 255, 255, 0.9);
+      }
+      .wrap {
+        max-width: 560px;
+        margin: 0 auto;
+        padding: 24px 18px;
+      }
+      header {
+        text-align: center;
+        margin-bottom: 24px;
+      }
+      header .icon {
+        font-size: 3.2rem;
+        display: block;
+        margin-bottom: 8px;
+      }
+      header h1 {
+        font-size: 1.4rem;
+        font-weight: 700;
+      }
+      header p {
+        font-size: 0.87rem;
+        color: var(--text-muted);
+        margin-top: 6px;
+      }
+      .start-btn {
+        display: block;
+        width: 100%;
+        padding: 17px 24px;
+        margin: 24px 0;
+        font-family: inherit;
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: #0d1108;
+        background: linear-gradient(135deg, #7ab840, #a0d060);
+        border: none;
+        border-radius: var(--radius);
+        cursor: pointer;
+        box-shadow: 0 6px 24px rgba(122, 184, 64, 0.4);
+        text-align: center;
+        text-decoration: none;
+        transition: opacity 0.15s;
+      }
+      .start-btn:hover {
+        opacity: 0.9;
+      }
+      .card {
+        background: var(--surface);
+        border-radius: var(--radius);
+        padding: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.07);
+        margin-bottom: 14px;
+      }
+      .card h2 {
+        font-size: 1rem;
+        font-weight: 700;
+        margin-bottom: 14px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      }
+      .subject {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .sub-item {
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+      }
+      .sub-badge {
+        display: inline-block;
+        font-size: 0.7rem;
+        font-weight: 700;
+        padding: 3px 9px;
+        border-radius: 999px;
+        white-space: nowrap;
+        margin-top: 2px;
+      }
+      .badge-geo {
+        background: rgba(122, 184, 64, 0.2);
+        color: #a8d870;
+      }
+      .badge-bore {
+        background: rgba(60, 160, 220, 0.2);
+        color: #88ccf0;
+      }
+      .badge-soil {
+        background: rgba(220, 160, 60, 0.2);
+        color: #f0c878;
+      }
+      .badge-law {
+        background: rgba(180, 100, 220, 0.2);
+        color: #d4a0f8;
+      }
+      .sub-content {
+        flex: 1;
+      }
+      .sub-name {
+        font-size: 0.95rem;
+        font-weight: 700;
+        margin-bottom: 3px;
+      }
+      .sub-desc {
+        font-size: 0.82rem;
+        color: var(--text-muted);
+        line-height: 1.7;
+      }
+      .pass-box {
+        background: var(--surface-2);
+        border-radius: 12px;
+        padding: 14px 16px;
+        margin-top: 4px;
+      }
+      .pass-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 0;
+        font-size: 0.88rem;
+      }
+      .pass-row + .pass-row {
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+      }
+      .pass-val {
+        font-weight: 700;
+        color: var(--accent);
+      }
+      .how-list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .how-item {
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+      }
+      .how-num {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: var(--accent-soft);
+        color: var(--accent);
+        font-size: 0.85rem;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      .how-text {
+        flex: 1;
+        font-size: 0.88rem;
+        color: var(--text-muted);
+        line-height: 1.7;
+      }
+      .how-text strong {
+        color: var(--text);
+        font-weight: 700;
+      }
+      footer {
+        margin-top: 32px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.07);
+        font-size: 0.82rem;
+        color: var(--text-muted);
+      }
+      footer nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        justify-content: center;
+        margin-bottom: 12px;
+      }
+      footer nav a {
+        color: var(--text-muted);
+        text-decoration: none;
+      }
+      footer nav a:hover {
+        color: var(--accent);
+      }
+      footer p {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="topnav">
+      <a href="../index.html" class="brand"
+        ><span>🚃</span><span>資格トレイン</span></a
+      >
+      <a href="../index.html">← トップへ戻る</a>
+    </nav>
+    <div class="wrap">
+      <header>
+        <span class="icon">🪨</span>
+        <h1>地質調査技士 学習ポータル</h1>
+        <p>地質・地盤調査・土質試験・法規の4分野、過去3年分の問題を収録</p>
+      </header>
+
+      <a href="quiz.html" class="start-btn">▶ クイズをはじめる</a>
+
+      <div class="card">
+        <h2>📖 試験科目について</h2>
+        <div class="subject">
+          <div class="sub-item">
+            <span class="sub-badge badge-geo">地質・地形</span>
+            <div class="sub-content">
+              <p class="sub-name">地質・地形</p>
+              <p class="sub-desc">
+                断層・褶曲・変成岩・堆積岩などの地質学、地形分類（段丘・扇状地・崖錐等）、地質図の読み方、地すべり地形の判読。
+              </p>
+            </div>
+          </div>
+          <div class="sub-item">
+            <span class="sub-badge badge-bore">地盤調査</span>
+            <div class="sub-content">
+              <p class="sub-name">地盤調査・ボーリング</p>
+              <p class="sub-desc">
+                標準貫入試験（SPT）・コーン貫入試験（CPT）・サウンディング、コアバレルの種類、原位置試験（ベーン・透水・平板載荷）、物理探査（GPR・弾性波）。
+              </p>
+            </div>
+          </div>
+          <div class="sub-item">
+            <span class="sub-badge badge-soil">土質・岩石</span>
+            <div class="sub-content">
+              <p class="sub-name">土質・岩石試験</p>
+              <p class="sub-desc">
+                粒度試験・コンシステンシー試験、圧密試験・三軸圧縮試験・一軸圧縮試験、RQD・ポイントロード試験、クーロン破壊基準。
+              </p>
+            </div>
+          </div>
+          <div class="sub-item">
+            <span class="sub-badge badge-law">法規・施工</span>
+            <div class="sub-content">
+              <p class="sub-name">施工・法規・環境</p>
+              <p class="sub-desc">
+                地盤改良工法（固結・締固め・置換）、斜面対策工（抑止・抑制）、土壌汚染対策法・建設リサイクル法、ボーリング柱状図の記載要領。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>✅ 合格基準</h2>
+        <div class="pass-box">
+          <div class="pass-row">
+            <span>試験区分</span
+            ><span class="pass-val">現場調査部門（一般）</span>
+          </div>
+          <div class="pass-row">
+            <span>試験時間</span><span class="pass-val">各120分 程度</span>
+          </div>
+          <div class="pass-row">
+            <span>合格ライン</span
+            ><span class="pass-val">正答率60〜65%以上（目安）</span>
+          </div>
+          <div class="pass-row">
+            <span>出題形式</span><span class="pass-val">4択 択一式</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>💡 使い方</h2>
+        <div class="how-list">
+          <div class="how-item">
+            <span class="how-num">1</span>
+            <p class="how-text">
+              <strong>年度別モード</strong
+              >で本番を想定した時間設定で解答し、実力を把握しましょう。
+            </p>
+          </div>
+          <div class="how-item">
+            <span class="how-num">2</span>
+            <p class="how-text">
+              <strong>分野別モード</strong
+              >で苦手な科目（地質・ボーリング・土質等）を重点的に練習できます。
+            </p>
+          </div>
+          <div class="how-item">
+            <span class="how-num">3</span>
+            <p class="how-text">
+              解答後の<strong>AI解説機能</strong>で理解できなかった内容を掘り下げて質問できます。
+            </p>
+          </div>
+          <div class="how-item">
+            <span class="how-num">4</span>
+            <p class="how-text">
+              各分野の<strong>正答率</strong>がグラフで確認でき、弱点分野の学習進捗を把握できます。
+            </p>
+          </div>
+        </div>
+        <p
+          style="
+            margin-top: 16px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+          "
+        >
+          ※
+          本サイトで使用している問題は、地質調査技士試験の公式試験範囲（地質学・地盤工学・地質調査技術・関係法規等）および一般に公開されている専門技術情報をもとに独自に作成したオリジナル問題です。実際の試験問題は使用していません。合格を保証するものではありません。
+        </p>
+      </div>
+
+      <a href="quiz.html" class="start-btn">▶ クイズをはじめる</a>
+
+      <footer>
+        <nav>
+          <a href="../index.html">🏠 トップ</a>
+          <a href="../takken-app/index.html">🏠 宅建士</a>
+          <a href="../denco-app/index.html">⚡ 電験三種</a>
+          <a href="../gyosei-app/index.html">📜 行政書士</a>
+          <a href="../kikai-app/index.html">⚙️ 機械設計</a>
+          <a href="../ccna-app/index.html">🌐 CCNA</a>
+          <a href="index.html">🪨 地質調査技士</a>
+        </nav>
+        <p>© 2025 資格トレイン · 無料の資格過去問クイズアプリ</p>
+      </footer>
+    </div>
+  </body>
+</html>
