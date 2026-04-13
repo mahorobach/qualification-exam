@@ -1,1 +1,2 @@
 name = "qualificationexam"
+pages_build_output_dir = "."
