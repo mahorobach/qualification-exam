@@ -1,7 +1,0 @@
-name = "qualification-exam"
-pages_build_output_dir = "."
-compatibility_date = "2026-04-13"
-
-# GEMINI_API_KEY はここに書かないこと。
-# Cloudflare Dashboard > Pages > Settings > Environment variables で
-# 変数名: GEMINI_API_KEY / タイプ: Secret として登録してください。
