@@ -156,22 +156,6 @@
         .sub-btn:hover { background: #2a3645; }
 
         /* ── AI Panel ── */
-        .ai-panel { margin-top: 18px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.08); display: none !important; }
-        .ai-toggle-btn { width: 100%; padding: 11px 16px; font-family: inherit; font-size: 0.9rem; font-weight: 600; color: #c9a8ff; background: rgba(139,92,246,0.12); border: 1px solid rgba(139,92,246,0.35); border-radius: 10px; cursor: pointer; transition: background .2s; text-align: left; }
-        .ai-toggle-btn:hover { background: rgba(139,92,246,0.2); }
-        .ai-chat { margin-top: 12px; }
-        .ai-messages { max-height: 300px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; margin-bottom: 10px; }
-        .ai-msg { padding: 10px 14px; border-radius: 10px; font-size: 0.87rem; line-height: 1.75; }
-        .ai-msg.user { background: rgba(240,192,64,0.12); border: 1px solid rgba(240,192,64,0.25); align-self: flex-end; max-width: 92%; }
-        .ai-msg.ai   { background: rgba(139,92,246,0.1); border: 1px solid rgba(139,92,246,0.2); white-space: pre-wrap; }
-        .ai-msg.loading { color: var(--text-muted); font-style: italic; }
-        .ai-input-row { display: flex; gap: 8px; align-items: flex-end; }
-        .ai-input { flex: 1; padding: 10px 12px; font-family: inherit; font-size: 0.9rem; color: var(--text); background: var(--surface-2); border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; resize: none; line-height: 1.5; }
-        .ai-input:focus { outline: none; border-color: rgba(139,92,246,0.5); }
-        .ai-send-btn { padding: 10px 16px; font-family: inherit; font-size: 0.9rem; font-weight: 600; color: #fff; background: rgba(139,92,246,0.7); border: none; border-radius: 10px; cursor: pointer; white-space: nowrap; min-height: 44px; transition: background .2s; }
-        .ai-send-btn:hover { background: rgba(139,92,246,0.9); }
-        .ai-send-btn:disabled { opacity: .45; cursor: default; }
-        .ai-hint { font-size: 0.74rem; color: var(--text-muted); margin: 8px 0 0; text-align: center; }
 
         .load-warning { padding: 12px 14px; font-size: 0.82rem; color: #f0c674; background: rgba(240,198,116,0.1); border: 1px solid rgba(240,198,116,0.35); border-radius: 12px; margin-bottom: 14px; }
         .section-label { font-size: 0.82rem; font-weight: 700; color: var(--text-muted); margin: 0 0 10px; letter-spacing: .04em; }
@@ -294,21 +278,6 @@
             <div class="feedback" id="prac-feedback">
                 <p class="result-label" id="prac-result-label"></p>
                 <p class="explanation" id="prac-explanation"></p>
-                <div id="prac-ai-panel" class="ai-panel" hidden>
-                    <button type="button" id="ai-toggle-btn" class="ai-toggle-btn">✨ AIに質問する</button>
-                    <div id="ai-chat" class="ai-chat" hidden>
-                        <div id="ai-messages" class="ai-messages"></div>
-                        <div class="ai-input-row">
-                            <textarea id="ai-input" class="ai-input" placeholder="この問題について質問を入力… (Enterで送信)" rows="2"></textarea>
-                            <button type="button" id="ai-send-btn" class="ai-send-btn">送信</button>
-                        </div>
-                        <p class="ai-hint">Gemini AI が回答 · 無料 · 1日最大1,500回</p>
-                    </div>
-                </div>
-                <button type="button" class="next-btn" id="btn-prac-next">次の問題へ</button>
-            </div>
-        </div>
-    </div>
 
     <!-- ══ Screen 5: 結果 ══ -->
     <div id="s-results" hidden>
@@ -335,7 +304,6 @@
 // ══════════════════════════════════════
 //  Config
 // ══════════════════════════════════════
-const GEMINI_URL = "/api/gemini";
 
 const CAT_ORDER = ["理論", "電力", "機械", "法規"];
 const CAT_BADGE = { "理論": "badge-theory", "電力": "badge-power", "機械": "badge-machine", "法規": "badge-law" };
@@ -607,9 +575,7 @@ function renderPracQ() {
     document.getElementById("prac-feedback").classList.remove("visible");
     document.getElementById("prac-result-label").textContent = "";
     document.getElementById("prac-explanation").textContent = "";
-    document.getElementById("prac-ai-panel").hidden = true;
-    resetAiPanel();
-    document.getElementById("btn-prac-next").textContent = pracIdx===pracQuestions.length-1 ? "結果を見る" : "次の問題へ";
+document.getElementById("btn-prac-next").textContent = pracIdx===pracQuestions.length-1 ? "結果を見る" : "次の問題へ";
 }
 
 function onPracChoose(selectedIdx) {
@@ -623,7 +589,6 @@ function onPracChoose(selectedIdx) {
     lbl.className = "result-label "+(isCorrect?"ok":"ng");
     document.getElementById("prac-explanation").textContent = q.explanation;
     document.getElementById("prac-feedback").classList.add("visible");
-    document.getElementById("prac-ai-panel").hidden = false; resetAiPanel();
 }
 
 document.getElementById("btn-prac-next").addEventListener("click", () => {
@@ -697,38 +662,6 @@ document.getElementById("btn-retry").addEventListener("click", () => { if(curren
 // ══════════════════════════════════════
 //  AI Panel
 // ══════════════════════════════════════
-const aiToggleBtn=document.getElementById("ai-toggle-btn"), aiChat=document.getElementById("ai-chat");
-const aiMessagesEl=document.getElementById("ai-messages"), aiInputEl=document.getElementById("ai-input"), aiSendBtn=document.getElementById("ai-send-btn");
-
-aiToggleBtn.addEventListener("click", () => {
-    const h=aiChat.hidden; aiChat.hidden=!h;
-    aiToggleBtn.textContent = h ? "✨ AIへの質問を閉じる" : "✨ AIに質問する";
-});
-aiSendBtn.addEventListener("click", sendAiQ);
-aiInputEl.addEventListener("keydown", e => { if(e.key==="Enter"&&!e.shiftKey){e.preventDefault();sendAiQ();} });
-
-async function sendAiQ() {
-    const userText=aiInputEl.value.trim(); if(!userText||aiSendBtn.disabled) return;
-    const q=pracQuestions[pracIdx];
-    const userMsg=document.createElement("div"); userMsg.className="ai-msg user"; userMsg.textContent=userText; aiMessagesEl.appendChild(userMsg); aiInputEl.value="";
-    const loadMsg=document.createElement("div"); loadMsg.className="ai-msg ai loading"; loadMsg.textContent="考え中…"; aiMessagesEl.appendChild(loadMsg);
-    aiMessagesEl.scrollTop=aiMessagesEl.scrollHeight; aiSendBtn.disabled=true; aiInputEl.disabled=true;
-    const ctx=["【問題】"+q.question,"【選択肢】\n"+q.choices.map((c,i)=>(i+1)+". "+c).join("\n"),"【正解】"+q.choices[q.correctIndex],"【解説】"+q.explanation].join("\n\n");
-    const prompt="あなたは第三種電気主任技術者試験（電験三種）の学習支援AIです。以下の問題についてユーザーの質問に分かりやすく丁寧な日本語で回答してください。\n\n"+ctx+"\n\n【ユーザーの質問】\n"+userText;
-    try {
-        const res=await fetch(GEMINI_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({contents:[{role:"user",parts:[{text:prompt}]}],generationConfig:{temperature:0.7,maxOutputTokens:2048}})});
-        if(!res.ok){const err=await res.json().catch(()=>({})); throw new Error(res.status===429?"rate_limit":(err.error?.message||"HTTP "+res.status));}
-        const data=await res.json();
-        loadMsg.className="ai-msg ai"; loadMsg.textContent=data.candidates?.[0]?.content?.parts?.[0]?.text||"回答を取得できませんでした。";
-    } catch(err) {
-        loadMsg.className="ai-msg ai"; loadMsg.style.color="var(--wrong)";
-        loadMsg.textContent=err.message==="rate_limit"?"⚠️ リクエストが多すぎます。しばらく待ってからお試しください。":"⚠️ エラー: "+err.message;
-    } finally { aiSendBtn.disabled=false; aiInputEl.disabled=false; aiMessagesEl.scrollTop=aiMessagesEl.scrollHeight; }
-}
-
-function resetAiPanel() {
-    aiChat.hidden=true; aiToggleBtn.textContent="✨ AIに質問する"; aiMessagesEl.innerHTML=""; aiInputEl.value="";
-}
 
 // ══════════════════════════════════════
 //  Boot
