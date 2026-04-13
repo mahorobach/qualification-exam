@@ -1,2 +1,7 @@
 name = "qualification-exam"
-pages_build_output_dir = "."
+compatibility_date = "2026-04-13"
+main = "src/worker.js"
+
+[assets]
+directory = "."
+binding = "ASSETS"
