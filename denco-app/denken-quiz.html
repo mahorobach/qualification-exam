@@ -18,13 +18,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #0f1419;
-            --surface: #1a222c;
-            --surface-2: #232d3a;
-            --text: #e8edf4;
-            --text-muted: #8b9aad;
-            --accent: #f0c040;
-            --accent-soft: rgba(240,192,64,0.15);
+            --bg: #12100a;
+            --surface: #1c1a10;
+            --surface-2: #252214;
+            --text: #f0ead8;
+            --text-muted: #9a9070;
+            --accent: #f0c674;
+            --accent-soft: rgba(240,198,116,0.15);
             --correct: #3ecf8e;
             --correct-bg: rgba(62,207,142,0.12);
             --wrong: #f07178;
@@ -37,7 +37,7 @@
             font-family: "Zen Kaku Gothic New","Hiragino Sans",sans-serif;
             font-size: 16px; line-height: 1.65;
             color: var(--text); background: var(--bg);
-            background-image: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(240,192,64,0.12), transparent);
+            background-image: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(240,198,116,0.12), transparent);
             min-height: 100dvh;
             padding: calc(52px + max(16px,env(safe-area-inset-top))) 18px max(32px,env(safe-area-inset-bottom));
         }
@@ -53,7 +53,7 @@
         /* ── Mode Screen ── */
         .mode-grid { display: grid; gap: 12px; }
         .mode-btn { appearance: none; width: 100%; text-align: left; padding: 18px 20px; font-family: inherit; color: var(--text); background: var(--surface-2); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; cursor: pointer; transition: background .2s, border-color .2s; }
-        .mode-btn:hover { background: #2a3645; border-color: rgba(240,192,64,0.35); }
+        .mode-btn:hover { background: #2e2a18; border-color: rgba(240,198,116,0.35); }
         .mode-btn .m-icon { font-size: 1.8rem; margin-bottom: 8px; display: block; }
         .mode-btn .m-name { font-size: 1.0rem; font-weight: 700; display: block; margin-bottom: 4px; }
         .mode-btn .m-desc { font-size: 0.8rem; color: var(--text-muted); display: block; line-height: 1.55; }
@@ -61,12 +61,12 @@
         /* ── Selection Lists ── */
         .sel-list { display: flex; flex-direction: column; gap: 10px; }
         .sel-item { appearance: none; width: 100%; text-align: left; padding: 14px 16px; font-family: inherit; font-size: 0.95rem; font-weight: 500; color: var(--text); background: var(--surface-2); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; cursor: pointer; transition: background .2s, border-color .2s; }
-        .sel-item:hover { background: #2a3645; border-color: rgba(240,192,64,0.35); }
+        .sel-item:hover { background: #2e2a18; border-color: rgba(240,198,116,0.35); }
         .sel-item .s-meta { display: block; font-size: 0.78rem; color: var(--text-muted); margin-top: 3px; font-weight: 400; }
 
         /* Subject Badges */
         .sub-badge { display: inline-block; font-size: 0.7rem; font-weight: 700; padding: 2px 8px; border-radius: 999px; margin-right: 6px; vertical-align: middle; }
-        .badge-theory  { background: rgba(240,192,64,0.2);  color: #f0d080; }
+        .badge-theory  { background: rgba(240,198,116,0.2);  color: #f0d080; }
         .badge-power   { background: rgba(61,156,240,0.2);  color: #8ecfff; }
         .badge-machine { background: rgba(62,207,142,0.2);  color: #3ecf8e; }
         .badge-law     { background: rgba(240,113,120,0.2); color: #ffd3d6; }
@@ -90,8 +90,8 @@
 
         .q-nav { display: flex; flex-wrap: wrap; gap: 6px; padding: 12px; background: var(--surface-2); border-radius: 10px; border: 1px solid rgba(255,255,255,0.06); margin-bottom: 12px; }
         .q-dot { appearance: none; width: 34px; height: 34px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.14); background: transparent; color: var(--text-muted); font-size: 0.78rem; font-family: inherit; cursor: pointer; transition: all .15s; }
-        .q-dot.answered { background: rgba(240,192,64,0.18); border-color: rgba(240,192,64,0.5); color: var(--accent); }
-        .q-dot.current  { border-color: var(--accent); box-shadow: 0 0 0 2px rgba(240,192,64,0.4); font-weight: 700; }
+        .q-dot.answered { background: rgba(240,198,116,0.18); border-color: rgba(240,198,116,0.5); color: var(--accent); }
+        .q-dot.current  { border-color: var(--accent); box-shadow: 0 0 0 2px rgba(240,198,116,0.4); font-weight: 700; }
         .q-dot:hover:not(.current) { background: rgba(255,255,255,0.06); }
 
         .notice-bar { padding: 10px 14px; background: rgba(62,207,142,0.1); border: 1px solid rgba(62,207,142,0.35); border-radius: 10px; font-size: 0.86rem; color: #b8f0d4; margin-bottom: 12px; text-align: center; }
@@ -101,17 +101,17 @@
         .q-text { font-size: 1rem; font-weight: 500; margin: 0 0 20px; line-height: 1.75; }
         .choices { display: flex; flex-direction: column; gap: 10px; }
         .choice-btn { appearance: none; width: 100%; text-align: left; padding: 14px 16px; font-family: inherit; font-size: 0.95rem; color: var(--text); background: var(--surface-2); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; cursor: pointer; transition: background .2s, border-color .2s; line-height: 1.45; }
-        .choice-btn:hover:not(:disabled) { background: #2a3645; border-color: rgba(240,192,64,0.35); }
-        .choice-btn.selected { background: rgba(240,192,64,0.15); border-color: rgba(240,192,64,0.5); color: #f0e0a0; }
+        .choice-btn:hover:not(:disabled) { background: #2e2a18; border-color: rgba(240,198,116,0.35); }
+        .choice-btn.selected { background: rgba(240,198,116,0.15); border-color: rgba(240,198,116,0.5); color: #f0e0a0; }
         .choice-btn.correct-pick { background: var(--correct-bg); border-color: rgba(62,207,142,0.45); color: #b8f0d4; }
         .choice-btn.wrong-pick   { background: var(--wrong-bg);   border-color: rgba(240,113,120,0.45); }
         .choice-btn:disabled { cursor: default; opacity: .85; }
 
         .exam-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
         .nav-btn { appearance: none; padding: 14px; font-family: inherit; font-size: 0.9rem; font-weight: 600; color: var(--text); background: var(--surface-2); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; cursor: pointer; transition: background .2s; }
-        .nav-btn:hover:not(:disabled) { background: #2a3645; }
+        .nav-btn:hover:not(:disabled) { background: #2e2a18; }
         .nav-btn:disabled { opacity: .35; cursor: default; }
-        .nav-btn.primary { color: #0f1419; background: linear-gradient(135deg,#f0c040,#ffe080); border: none; box-shadow: 0 4px 16px rgba(240,192,64,0.3); }
+        .nav-btn.primary { color: #12100a; background: linear-gradient(135deg,#f0c674,#f5d98a); border: none; box-shadow: 0 4px 16px rgba(240,198,116,0.3); }
         .nav-btn.primary:hover:not(:disabled) { opacity: .9; }
 
         /* ── Practice Mode ── */
@@ -125,7 +125,7 @@
         .result-label.ok { color: var(--correct); }
         .result-label.ng { color: var(--wrong); }
         .explanation { font-size: 0.88rem; color: var(--text-muted); margin: 0; line-height: 1.8; }
-        .next-btn { width: 100%; padding: 15px; margin-top: 20px; font-family: inherit; font-size: 1rem; font-weight: 700; color: #0f1419; background: linear-gradient(135deg,#f0c040,#ffe080); border: none; border-radius: 12px; cursor: pointer; box-shadow: 0 4px 20px rgba(240,192,64,0.35); transition: opacity .15s; }
+        .next-btn { width: 100%; padding: 15px; margin-top: 20px; font-family: inherit; font-size: 1rem; font-weight: 700; color: #12100a; background: linear-gradient(135deg,#f0c674,#f5d98a); border: none; border-radius: 12px; cursor: pointer; box-shadow: 0 4px 20px rgba(240,198,116,0.35); transition: opacity .15s; }
         .next-btn:hover { opacity: .9; }
 
         /* ── Results Screen ── */
@@ -151,9 +151,9 @@
         .q-res-correct { font-size: 0.82rem; color: var(--correct); margin-bottom: 6px; }
         .q-res-exp { font-size: 0.8rem; color: var(--text-muted); line-height: 1.75; }
         .action-col { display: flex; flex-direction: column; gap: 10px; }
-        .cta-btn { width: 100%; padding: 15px; font-family: inherit; font-size: 1rem; font-weight: 700; color: #0f1419; background: linear-gradient(135deg,#f0c040,#ffe080); border: none; border-radius: 12px; cursor: pointer; box-shadow: 0 4px 16px rgba(240,192,64,0.3); }
+        .cta-btn { width: 100%; padding: 15px; font-family: inherit; font-size: 1rem; font-weight: 700; color: #12100a; background: linear-gradient(135deg,#f0c674,#f5d98a); border: none; border-radius: 12px; cursor: pointer; box-shadow: 0 4px 16px rgba(240,198,116,0.3); }
         .sub-btn { width: 100%; padding: 13px; font-family: inherit; font-size: 0.95rem; font-weight: 600; color: var(--text); background: var(--surface-2); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; cursor: pointer; }
-        .sub-btn:hover { background: #2a3645; }
+        .sub-btn:hover { background: #2e2a18; }
 
         /* ── AI Panel ── */
 
@@ -167,7 +167,7 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3002712486184435" crossorigin="anonymous"></script>
 </head>
 <body>
-<nav style="position:fixed;top:0;left:0;right:0;height:52px;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 18px;background:rgba(15,20,25,0.9);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(255,255,255,0.08);">
+<nav style="position:fixed;top:0;left:0;right:0;height:52px;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 18px;background:rgba(18,16,10,0.92);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(255,255,255,0.08);">
   <a href="../index.html" style="display:flex;align-items:center;gap:7px;text-decoration:none;color:rgba(255,255,255,0.85);font-size:0.9rem;font-weight:600;letter-spacing:-.01em;">
     <span>🚃</span><span>資格トレイン</span>
   </a>
@@ -185,15 +185,15 @@
             <p class="screen-title">⚡ 電験三種（第三種電気主任技術者）</p>
             <p class="screen-sub">理論・電力・機械・法規の過去問クイズ</p>
             <div class="mode-grid">
-                <button type="button" class="mode-btn" id="btn-mode-year">
-                    <span class="m-icon">📅</span>
-                    <span class="m-name">年度別（本番形式）</span>
-                    <span class="m-desc">年度を選択してタイマー付きで解答。自由に問題を行き来しながら解答し、終了後に全問の解説を確認できます。</span>
-                </button>
                 <button type="button" class="mode-btn" id="btn-mode-cat">
                     <span class="m-icon">📚</span>
-                    <span class="m-name">科目別（学習モード）</span>
-                    <span class="m-desc">理論・電力・機械・法規から科目を選んで1問ずつ解答。回答ごとに詳細解説とAI質問機能を使えます。</span>
+                    <span class="m-name">学習モード（科目別）</span>
+                    <span class="m-desc">理論・電力・機械・法規から科目を選んで1問ずつ解答。回答ごとに詳細解説を確認できます。</span>
+                </button>
+                <button type="button" class="mode-btn" id="btn-mode-year">
+                    <span class="m-icon">📅</span>
+                    <span class="m-name">本番モード（年度別）</span>
+                    <span class="m-desc">年度を選択してタイマー付きで解答。自由に問題を行き来しながら解答し、終了後に全問の解説を確認できます。</span>
                 </button>
             </div>
         </div>
@@ -278,6 +278,10 @@
             <div class="feedback" id="prac-feedback">
                 <p class="result-label" id="prac-result-label"></p>
                 <p class="explanation" id="prac-explanation"></p>
+        <button type="button" class="next-btn" id="btn-prac-next">次の問題へ</button>
+        </div>
+    </div>
+    </div>
 
     <!-- ══ Screen 5: 結果 ══ -->
     <div id="s-results" hidden>
@@ -448,7 +452,7 @@ function buildYearList() {
     });
     const allBtn = document.createElement("button");
     allBtn.type = "button"; allBtn.className = "sel-item";
-    allBtn.style.borderColor = "rgba(240,192,64,0.3)";
+    allBtn.style.borderColor = "rgba(240,198,116,0.3)";
     allBtn.innerHTML = `<strong>🔀 全年度ランダム</strong><span class="s-meta">全 ${allQuestions.length} 問をシャッフル出題（110分）</span>`;
     allBtn.addEventListener("click", () => startExam("__all__"));
     el.appendChild(allBtn);
