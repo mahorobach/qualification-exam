@@ -128,8 +128,45 @@
 
 <div class="wrap">
     <div class="card">
-        <a class="cta" href="quiz.html">年度別（本番形式）で挑戦 →</a>
-        <a class="cta cta-secondary" href="quiz.html?mode=category">分野別（学習モード）で練習</a>
+        <a class="cta" href="quiz.html">クイズを開く →</a>
+        <a class="cta cta-secondary" href="mock-sets.html" style="margin-top:2px;">擬似問題集を選ぶ</a>
+        <div style="margin-top:16px;display:flex;flex-direction:column;gap:8px;">
+            <div style="display:flex;align-items:center;gap:10px;padding:10px 12px;background:var(--surface-2);border-radius:10px;border:1px solid rgba(255,255,255,0.06);">
+                <span style="font-size:1.1rem;">📅</span>
+                <div>
+                    <div style="font-size:0.85rem;font-weight:700;color:var(--text);">年度別（本番モード）</div>
+                    <div style="font-size:0.78rem;color:var(--text-muted);">年度を選んで試験形式で解答</div>
+                </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;padding:10px 12px;background:var(--surface-2);border-radius:10px;border:1px solid rgba(255,255,255,0.06);">
+                <span style="font-size:1.1rem;">📋</span>
+                <div>
+                    <div style="font-size:0.85rem;font-weight:700;color:var(--text);">擬似問題集</div>
+                    <div style="font-size:0.78rem;color:var(--text-muted);">試験形式に近い問題セットで実力チェック</div>
+                </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;padding:10px 12px;background:var(--surface-2);border-radius:10px;border:1px solid rgba(255,255,255,0.06);">
+                <span style="font-size:1.1rem;">📂</span>
+                <div>
+                    <div style="font-size:0.85rem;font-weight:700;color:var(--text);">分野別（学習モード）</div>
+                    <div style="font-size:0.78rem;color:var(--text-muted);">苦手な分野を選んで1問ずつ解答・解説確認</div>
+                </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;padding:10px 12px;background:var(--surface-2);border-radius:10px;border:1px solid rgba(255,255,255,0.06);">
+                <span style="font-size:1.1rem;">🔁</span>
+                <div>
+                    <div style="font-size:0.85rem;font-weight:700;color:var(--text);">苦手問題だけ再出題</div>
+                    <div style="font-size:0.78rem;color:var(--text-muted);">不正解の問題を自動で記録・集中復習</div>
+                </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;padding:10px 12px;background:var(--surface-2);border-radius:10px;border:1px solid rgba(255,255,255,0.06);">
+                <span style="font-size:1.1rem;">↩️</span>
+                <div>
+                    <div style="font-size:0.85rem;font-weight:700;color:var(--text);">回答済みを出題に戻す</div>
+                    <div style="font-size:0.78rem;color:var(--text-muted);">解き終わった問題をリセットして再挑戦</div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="card">
@@ -202,19 +239,23 @@
         <div class="how-list">
             <div class="how-item">
                 <div class="how-num">1</div>
-                <div class="how-text"><strong style="color:var(--text)">分野別（学習モード）</strong>：分野を選んで1問ずつ解答。すぐに解説を確認でき、AIへの質問機能で疑問をその場で解消できます。</div>
+                <div class="how-text"><strong style="color:var(--text)">年度別（本番モード）</strong>：年度を選んで本番に近い形式で解答。解き終わった後に解説をまとめて確認できます。</div>
             </div>
             <div class="how-item">
                 <div class="how-num">2</div>
-                <div class="how-text"><strong style="color:var(--text)">年度別（本番形式）</strong>：年度を選択して120分タイマー付きで本番を想定した練習。問題を行き来しながら解答でき、終了後に全解説を確認。</div>
+                <div class="how-text"><strong style="color:var(--text)">擬似問題集</strong>：試験形式に近い問題セットをまるごと選んで実力チェック。仕上げの総合演習に最適です。</div>
             </div>
             <div class="how-item">
                 <div class="how-num">3</div>
-                <div class="how-text"><strong style="color:var(--text)">苦手問題の復習</strong>：不正解だった問題が自動で記録され、苦手問題だけを集中して再挑戦できます。</div>
+                <div class="how-text"><strong style="color:var(--text)">分野別（学習モード）</strong>：分野を選んで1問ずつ解答し、問題に答えると正誤と解説が表示されます。苦手分野の集中学習に活用してください。</div>
             </div>
             <div class="how-item">
                 <div class="how-num">4</div>
-                <div class="how-text"><strong style="color:var(--text)">模擬問題集</strong>：「擬似問題集を選ぶ」から試験形式に近い問題セットを選んで実力チェックできます。</div>
+                <div class="how-text"><strong style="color:var(--text)">苦手問題だけ再出題</strong>：不正解だった問題がブラウザに自動保存され、苦手問題のみを集中して繰り返し復習できます。</div>
+            </div>
+            <div class="how-item">
+                <div class="how-num">5</div>
+                <div class="how-text"><strong style="color:var(--text)">回答済みを出題に戻す</strong>：一度解いた問題は再出題されない仕組みになっています。「回答済み…リセット」から手動でリセットすると、同じ問題を最初から解き直せます。</div>
             </div>
         </div>
         <p style="margin-top:16px;font-size:0.8rem;color:var(--text-muted);line-height:1.8;">※ 本サイトで使用している問題は、第二種電気工事士試験の公式過去問をもとに内容・表現をアレンジして作成したオリジナル問題です。公式機関が提供する問題そのものではありません。正確な試験情報は（一財）電気技術者試験センターの公式サイトをご確認ください。</p>
