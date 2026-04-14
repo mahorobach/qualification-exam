@@ -1677,8 +1677,14 @@
             await loadQuestionBank();
             const qp = new URLSearchParams(location.search);
             const setId = qp.get("set");
+            const mode = qp.get("mode");
             if (setId && MOCK_SETS[setId]) {
                 startMockSet(setId);
+            } else if (mode === "year") {
+                showNewScreen("s-year-sel");
+                buildYearSel();
+            } else if (mode === "category" || mode === "cat") {
+                goToMenu();
             } else {
                 initModeScreen();
             }
