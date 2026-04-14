@@ -13,30 +13,16 @@
   </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <title>第二種電気工事士 学習ポータル | 資格トレイン</title>
-    <meta name="description" content="第二種電気工事士試験の過去問クイズアプリ。電気理論・配線図・機器・施工・法令などを年度別・分野別で学習。AI解説機能付き。">
-    <meta name="keywords" content="電気工事士,第二種電気工事士,過去問,クイズ,電気理論,配線図,機器,施工,法令,資格,独学,合格">
-    <meta property="og:title" content="第二種電気工事士 過去問クイズ | 資格トレイン">
-    <meta property="og:description" content="第二種電気工事士試験の過去問クイズアプリ。AI解説機能付きで分野別に効率よく学習できます。">
+    <title>電気資格ポータル（電験三種・電気工事士）| 資格トレイン</title>
+    <meta name="description" content="電験三種（第三種電気主任技術者）・第二種電気工事士の過去問クイズアプリ一覧。理論・電力・機械・法規・配線図など科目別・年度別で学習できます。AI解説機能付き。">
+    <meta name="keywords" content="電験三種,電気工事士,第二種電気工事士,第三種電気主任技術者,過去問,クイズ,電気,資格,理論,電力,機械,法規">
+    <meta property="og:title" content="電気資格ポータル（電験三種・電気工事士）| 資格トレイン">
+    <meta property="og:description" content="電験三種・第二種電気工事士の過去問クイズアプリ。AI解説機能付きで科目別に効率よく学習できます。">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://qualifications.app/denco-app/index.html">
     <meta property="og:locale" content="ja_JP">
     <meta name="twitter:card" content="summary">
     <link rel="canonical" href="https://qualifications.app/denco-app/index.html">
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "第二種電気工事士 過去問クイズ | 資格トレイン",
-      "url": "https://qualifications.app/denco-app/quiz.html",
-      "description": "第二種電気工事士試験の過去問クイズアプリ。電気理論・配線図・機器・施工・法令などを年度別・分野別で学習。AI解説機能付き。",
-      "applicationCategory": "EducationalApplication",
-      "operatingSystem": "Web",
-      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" },
-      "educationalUse": "資格試験対策",
-      "inLanguage": "ja"
-    }
-    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
@@ -52,53 +38,44 @@
             --radius: 14px;
         }
         *, *::before, *::after { box-sizing: border-box; margin: 0; }
-        body { font-family: "Zen Kaku Gothic New","Hiragino Sans",sans-serif; font-size: 16px; color: var(--text); background: var(--bg); background-image: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(61,156,240,0.14), transparent); min-height: 100dvh; padding-top: 52px; }
+        body { font-family: "Zen Kaku Gothic New","Hiragino Sans",sans-serif; font-size: 16px; color: var(--text); background: var(--bg); background-image: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(61,156,240,0.12), transparent); min-height: 100dvh; padding-top: 52px; }
         .wrap { max-width: 560px; margin: 0 auto; padding: 0 18px; }
 
         header { padding: 40px 18px 30px; text-align: center; }
         .icon { font-size: 3.2rem; display: block; margin-bottom: 12px; }
-        h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 8px; }
+        h1 { font-size: 1.45rem; font-weight: 700; margin-bottom: 8px; }
         .lead { font-size: 0.9rem; color: var(--text-muted); line-height: 1.7; max-width: 380px; margin: 0 auto; }
 
-        .card { background: var(--surface); border-radius: var(--radius); padding: 22px 20px; box-shadow: 0 8px 32px rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.07); margin: 0 18px 16px; }
-        h2 { font-size: 1.05rem; font-weight: 700; margin-bottom: 14px; color: var(--accent); }
-        p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.75; margin-bottom: 12px; }
-        p:last-child { margin-bottom: 0; }
-        strong { color: var(--text); }
+        .app-card { background: var(--surface); border-radius: var(--radius); padding: 22px 20px; box-shadow: 0 8px 32px rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.07); margin: 0 18px 16px; }
+        .app-card-header { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+        .app-icon { font-size: 2.2rem; flex-shrink: 0; }
+        .app-title { font-size: 1.05rem; font-weight: 700; color: var(--text); margin-bottom: 3px; }
+        .app-subtitle { font-size: 0.78rem; color: var(--text-muted); }
+        .app-desc { font-size: 0.88rem; color: var(--text-muted); line-height: 1.75; margin-bottom: 16px; }
+        .tag-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+        .tag { display: inline-block; font-size: 0.7rem; font-weight: 700; padding: 3px 10px; border-radius: 999px; }
 
-        .cta { display: block; width: 100%; padding: 16px; text-align: center; font-family: inherit; font-size: 1rem; font-weight: 700; color: #0f1419; background: linear-gradient(135deg,#3d9cf0,#60b8ff); border: none; border-radius: 12px; cursor: pointer; text-decoration: none; box-shadow: 0 4px 20px rgba(61,156,240,0.4); margin-bottom: 10px; transition: opacity .15s; }
-        .cta:hover { opacity: .9; }
-        .cta-secondary { background: transparent; color: var(--accent); border: 1.5px solid rgba(61,156,240,0.5); box-shadow: none; }
+        .tag-blue   { background: rgba(61,156,240,0.18); color: #8ecfff; }
+        .tag-green  { background: rgba(62,207,142,0.18); color: #7de0aa; }
+        .tag-yellow { background: rgba(240,198,116,0.18); color: #f5d789; }
+        .tag-orange { background: rgba(224,120,64,0.18);  color: #f0a878; }
+        .tag-purple { background: rgba(180,100,240,0.18); color: #d4a0ff; }
+        .tag-red    { background: rgba(240,113,120,0.18); color: #ffd3d6; }
+
+        .btn-row { display: flex; flex-direction: column; gap: 8px; }
+        .cta { display: block; width: 100%; padding: 14px; text-align: center; font-family: inherit; font-size: 0.95rem; font-weight: 700; border: none; border-radius: 12px; cursor: pointer; text-decoration: none; transition: opacity .15s; }
+        .cta:hover { opacity: .88; }
+        .cta-blue { color: #0f1419; background: linear-gradient(135deg,#3d9cf0,#60b8ff); box-shadow: 0 4px 18px rgba(61,156,240,0.38); }
+        .cta-yellow { color: #12100a; background: linear-gradient(135deg,#f0c674,#f5d98a); box-shadow: 0 4px 18px rgba(240,198,116,0.38); }
+        .cta-secondary { background: transparent; color: var(--accent); border: 1.5px solid rgba(61,156,240,0.45); }
         .cta-secondary:hover { background: var(--accent-soft); opacity: 1; }
+        .cta-secondary-yellow { background: transparent; color: #f0c674; border: 1.5px solid rgba(240,198,116,0.45); }
+        .cta-secondary-yellow:hover { background: rgba(240,198,116,0.1); opacity: 1; }
 
-        .subjects { display: flex; flex-direction: column; gap: 10px; }
-        .subject { display: flex; align-items: flex-start; gap: 12px; padding: 12px 14px; background: var(--surface-2); border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); }
-        .sub-badge { display: inline-block; font-size: 0.72rem; font-weight: 700; padding: 3px 10px; border-radius: 999px; margin-bottom: 5px; }
-        .badge-ron   { background: rgba(61,156,240,0.2); color: #8ecfff; }
-        .badge-haisen{ background: rgba(62,207,142,0.2); color: #7de0aa; }
-        .badge-kiki  { background: rgba(240,198,116,0.2); color: #f5d789; }
-        .badge-kouj  { background: rgba(224,120,64,0.2);  color: #f0a878; }
-        .badge-horei { background: rgba(180,100,240,0.2); color: #d4a0ff; }
-        .badge-setti { background: rgba(240,113,120,0.2); color: #ffd3d6; }
-        .sub-q { font-size: 0.75rem; font-weight: 700; color: var(--text-muted); margin-bottom: 4px; }
-        .sub-desc { font-size: 0.82rem; color: var(--text-muted); line-height: 1.65; }
+        .detail-link { display: flex; align-items: center; justify-content: center; gap: 5px; font-size: 0.8rem; color: var(--text-muted); text-decoration: none; margin-top: 10px; }
+        .detail-link:hover { color: var(--accent); text-decoration: underline; }
 
-        .score-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
-        .score-table th, .score-table td { border: 1px solid rgba(255,255,255,0.1); padding: 8px 12px; text-align: left; }
-        .score-table th { background: rgba(255,255,255,0.05); font-weight: 700; }
-        .score-table td { color: var(--text-muted); }
-        .note { font-size: 0.78rem; color: var(--text-muted); line-height: 1.75; }
-
-        .how-list { display: flex; flex-direction: column; gap: 10px; }
-        .how-item { display: flex; gap: 12px; align-items: flex-start; }
-        .how-num  { min-width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; background: var(--accent-soft); border-radius: 50%; color: var(--accent); font-weight: 700; font-size: 0.85rem; }
-        .how-text { font-size: 0.85rem; color: var(--text-muted); line-height: 1.65; padding-top: 4px; }
-
-        .other-link { display: flex; align-items: center; justify-content: space-between; padding: 14px 16px; background: var(--surface-2); border-radius: 12px; border: 1px solid rgba(61,156,240,0.25); text-decoration: none; margin-bottom: 8px; transition: background .15s; }
-        .other-link:hover { background: #2a3645; }
-        .other-link-text { font-size: 0.9rem; font-weight: 600; color: var(--text); }
-        .other-link-sub  { font-size: 0.78rem; color: var(--text-muted); }
-        .other-link-arrow{ color: var(--accent); font-size: 1rem; }
+        .divider { border: none; border-top: 1px solid rgba(255,255,255,0.07); margin: 4px 18px 16px; }
 
         .top-link { display: block; text-align: center; padding: 10px 18px; font-size: 0.84rem; color: var(--text-muted); text-decoration: none; }
         .top-link:hover { color: var(--accent); text-decoration: underline; }
@@ -115,120 +92,65 @@
   <a href="../index.html" style="display:flex;align-items:center;gap:7px;text-decoration:none;color:rgba(255,255,255,0.85);font-size:0.9rem;font-weight:600;letter-spacing:-.01em;">
     <span>🚃</span><span>資格トレイン</span>
   </a>
-  <a href="quiz.html" style="display:inline-flex;align-items:center;gap:5px;text-decoration:none;font-size:0.8rem;font-weight:600;color:#0f1419;background:linear-gradient(135deg,#3d9cf0,#60b8ff);padding:6px 14px;border-radius:20px;">
-    クイズを始める
-  </a>
 </nav>
 
 <header>
-    <span class="icon">🔌</span>
-    <h1>第二種電気工事士 学習ポータル</h1>
-    <p class="lead">電気工事士試験の6分野・300問以上を過去問ベースでスマホ学習できるアプリ。分野別の解説モードと模擬問題集に対応。</p>
+    <span class="icon">⚡</span>
+    <h1>電気資格 学習ポータル</h1>
+    <p class="lead">電験三種・第二種電気工事士の過去問クイズを収録。科目別・年度別の2モードで効率よく学習できます。</p>
 </header>
 
 <div class="wrap">
-    <div class="card">
-        <a class="cta" href="quiz.html">クイズを始める →</a>
-        <a class="cta cta-secondary" href="quiz.html?mode=category">分野別（学習モード）で練習</a>
-    </div>
 
-    <div class="card">
-        <h2>📖 試験科目について</h2>
-        <div class="subjects">
-            <div class="subject">
-                <div style="flex:1">
-                    <span class="sub-badge badge-ron">電気理論</span>
-                    <div class="sub-q">本試験：約10問</div>
-                    <div class="sub-desc">オームの法則・キルヒホッフの法則・交流回路・電力計算・コンデンサ・インダクタンスなど。計算問題が中心で基礎理解が合格の鍵。</div>
-                </div>
-            </div>
-            <div class="subject">
-                <div style="flex:1">
-                    <span class="sub-badge badge-haisen">配線図・記号・識別</span>
-                    <div class="sub-q">本試験：約20問（配線図20問）</div>
-                    <div class="sub-desc">単線図・複線図の読み方、電気用図記号の識別、器具・材料の名称と用途。筆記試験後半の配線図問題は出題数が多く得点源にできる。</div>
-                </div>
-            </div>
-            <div class="subject">
-                <div style="flex:1">
-                    <span class="sub-badge badge-kiki">機器・試験・計測</span>
-                    <div class="sub-q">本試験：約10問</div>
-                    <div class="sub-desc">各種電気機器（変圧器・電動機・照明など）の原理と特性、測定器の使い方（電流計・電圧計・絶縁抵抗計・接地抵抗計）。</div>
-                </div>
-            </div>
-            <div class="subject">
-                <div style="flex:1">
-                    <span class="sub-badge badge-kouj">屋内配線・施工</span>
-                    <div class="sub-q">本試験：約10問</div>
-                    <div class="sub-desc">ケーブル工事・管工事・接続方法・スイッチ・コンセントの施工基準。技能試験にも直結する重要な分野。</div>
-                </div>
-            </div>
-            <div class="subject">
-                <div style="flex:1">
-                    <span class="sub-badge badge-horei">法令</span>
-                    <div class="sub-q">本試験：約8問</div>
-                    <div class="sub-desc">電気事業法・電気工事士法・電気工事業法・電気用品安全法の4法。免状の種類・工事の範囲・義務・罰則など暗記中心の分野。</div>
-                </div>
-            </div>
-            <div class="subject">
-                <div style="flex:1">
-                    <span class="sub-badge badge-setti">接地・漏電保護</span>
-                    <div class="sub-q">本試験：約2問</div>
-                    <div class="sub-desc">接地工事の種類（A種〜D種）と接地抵抗値、漏電遮断器の目的と設置基準。短問・暗記で確実に得点できる。</div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="card">
-        <h2>✅ 合格基準</h2>
-        <table class="score-table">
-            <thead>
-                <tr><th>項目</th><th>内容</th></tr>
-            </thead>
-            <tbody>
-                <tr><td>試験形式</td><td>四肢択一・全50問（マークシート）</td></tr>
-                <tr><td>試験時間</td><td>120分（2時間）</td></tr>
-                <tr><td>合格基準点</td><td>60点以上（30問以上正解）</td></tr>
-                <tr><td>合格率</td><td>筆記：例年55〜65%前後</td></tr>
-                <tr><td>技能試験</td><td>筆記合格者が受験・合格率約70%前後</td></tr>
-            </tbody>
-        </table>
-        <p class="note" style="margin-top:12px;">筆記試験は<strong>相対評価ではなく絶対評価（60点以上）</strong>。配線図問題（20問）を確実に得点し、電気理論の計算を捨てないことが合格への近道です。</p>
-    </div>
-
-    <div class="card">
-        <h2>💡 使い方</h2>
-        <div class="how-list">
-            <div class="how-item">
-                <div class="how-num">1</div>
-                <div class="how-text"><strong style="color:var(--text)">分野別（学習モード）</strong>：分野を選んで1問ずつ解答。すぐに解説を確認でき、AIへの質問機能で疑問をその場で解消できます。</div>
-            </div>
-            <div class="how-item">
-                <div class="how-num">2</div>
-                <div class="how-text"><strong style="color:var(--text)">年度別（本番形式）</strong>：年度を選択して120分タイマー付きで本番を想定した練習。問題を行き来しながら解答でき、終了後に全解説を確認。</div>
-            </div>
-            <div class="how-item">
-                <div class="how-num">3</div>
-                <div class="how-text"><strong style="color:var(--text)">苦手問題の復習</strong>：不正解だった問題が自動で記録され、苦手問題だけを集中して再挑戦できます。</div>
-            </div>
-            <div class="how-item">
-                <div class="how-num">4</div>
-                <div class="how-text"><strong style="color:var(--text)">模擬問題集</strong>：「擬似問題集を選ぶ」から試験形式に近い問題セットを選んで実力チェックできます。</div>
-            </div>
-        </div>
-        <p style="margin-top:16px;font-size:0.8rem;color:var(--text-muted);line-height:1.8;">※ 本サイトで使用している問題は、第二種電気工事士試験の公式過去問をもとに内容・表現をアレンジして作成したオリジナル問題です。公式機関が提供する問題そのものではありません。正確な試験情報は（一財）電気技術者試験センターの公式サイトをご確認ください。</p>
-    </div>
-
-    <div class="card">
-        <h2>⚡ 関連資格</h2>
-        <a href="denken-index.html" class="other-link">
+    <!-- 電験三種 -->
+    <div class="app-card">
+        <div class="app-card-header">
+            <span class="app-icon">⚡</span>
             <div>
-                <div class="other-link-text">電験三種（第三種電気主任技術者）</div>
-                <div class="other-link-sub">理論・電力・機械・法規の4科目で学習</div>
+                <div class="app-title">電験三種</div>
+                <div class="app-subtitle">第三種電気主任技術者試験</div>
             </div>
-            <span class="other-link-arrow">→</span>
-        </a>
+        </div>
+        <p class="app-desc">理論・電力・機械・法規の4科目を年度別・科目別で学習。科目合格制度を活用した戦略的な受験対策に対応。</p>
+        <div class="tag-row">
+            <span class="tag tag-blue">理論</span>
+            <span class="tag tag-green">電力</span>
+            <span class="tag tag-orange">機械</span>
+            <span class="tag tag-purple">法規</span>
+            <span class="tag tag-yellow">AI解説</span>
+        </div>
+        <div class="btn-row">
+            <a class="cta cta-yellow" href="denken-quiz.html">クイズを始める →</a>
+            <a class="cta cta-secondary-yellow" href="denken-quiz.html?mode=category">科目別（学習モード）で練習</a>
+        </div>
+        <a href="denken-index.html" class="detail-link">試験科目・合格基準・使い方を見る →</a>
+    </div>
+
+    <hr class="divider">
+
+    <!-- 第二種電気工事士 -->
+    <div class="app-card">
+        <div class="app-card-header">
+            <span class="app-icon">🔌</span>
+            <div>
+                <div class="app-title">第二種電気工事士</div>
+                <div class="app-subtitle">筆記試験対策</div>
+            </div>
+        </div>
+        <p class="app-desc">電気理論・配線図・機器・施工・法令など6分野・300問以上を収録。苦手問題の再出題や模擬問題集にも対応。</p>
+        <div class="tag-row">
+            <span class="tag tag-blue">電気理論</span>
+            <span class="tag tag-green">配線図・記号</span>
+            <span class="tag tag-yellow">機器・計測</span>
+            <span class="tag tag-orange">屋内配線・施工</span>
+            <span class="tag tag-purple">法令</span>
+            <span class="tag tag-red">接地・漏電</span>
+        </div>
+        <div class="btn-row">
+            <a class="cta cta-blue" href="quiz.html">クイズを始める →</a>
+            <a class="cta cta-secondary" href="quiz.html?mode=category">分野別（学習モード）で練習</a>
+        </div>
+        <a href="koujishi-index.html" class="detail-link">試験科目・合格基準・使い方を見る →</a>
     </div>
 
     <a href="../index.html" class="top-link">← 資格トレイン トップへ</a>
@@ -239,8 +161,8 @@
         <a href="../index.html">トップ</a>
         <a href="../takken-app/index.html">宅建士</a>
         <a href="denken-index.html">電験三種</a>
+        <a href="koujishi-index.html">第二種電気工事士</a>
         <a href="../gyosei-app/index.html">行政書士</a>
-        <a href="../fe-app/index.html">基本情報技術者</a>
     </nav>
     <p>© 2024 資格トレイン</p>
 </footer>
