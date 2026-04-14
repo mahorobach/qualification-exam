@@ -107,6 +107,9 @@
         footer nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-bottom: 12px; }
         footer nav a { color: var(--text-muted); text-decoration: none; }
         footer nav a:hover { color: var(--accent); }
+
+        /* アンカーリンク時に固定ナビで見出しが隠れないようにする */
+        #exam-subjects { scroll-margin-top: 64px; }
     </style>
 </head>
 <body>
@@ -169,8 +172,8 @@
         </div>
     </div>
 
-    <div class="card">
-        <h2>📖 試験科目について</h2>
+    <section class="card" id="exam-subjects" aria-labelledby="exam-subjects-heading">
+        <h2 id="exam-subjects-heading">📖 試験科目について</h2>
         <div class="subjects">
             <div class="subject">
                 <div style="flex:1">
@@ -215,7 +218,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <div class="card">
         <h2>✅ 合格基準</h2>
