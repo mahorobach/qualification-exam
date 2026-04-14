@@ -54,6 +54,12 @@
         .mode-grid { display: grid; gap: 12px; }
         .mode-btn { appearance: none; width: 100%; text-align: left; padding: 18px 20px; font-family: inherit; color: var(--text); background: var(--surface-2); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; cursor: pointer; transition: background .2s, border-color .2s; }
         .mode-btn:hover { background: #2e2a18; border-color: rgba(240,198,116,0.35); }
+        .mode-btn.danger:hover { background: rgba(240,113,120,0.1); border-color: rgba(240,113,120,0.5); }
+        .mode-btn.subtle:hover { background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.12); }
+        .weak-btn { width:100%; min-height:44px; border-radius:10px; border:1px solid rgba(240,113,120,0.3); background:rgba(240,113,120,0.08); color:#ffd3d6; font-family:inherit; font-size:0.88rem; font-weight:600; cursor:pointer; margin-top:8px; }
+        .weak-btn:hover { background:rgba(240,113,120,0.15); }
+        .reset-answered-btn { width:100%; min-height:44px; border-radius:10px; border:1px solid rgba(255,255,255,0.14); background:transparent; color:var(--text-muted); font-family:inherit; font-size:0.82rem; cursor:pointer; margin-top:6px; }
+        .reset-answered-btn:hover { background:rgba(255,255,255,0.06); color:var(--text); }
         .mode-btn .m-icon { font-size: 1.8rem; margin-bottom: 8px; display: block; }
         .mode-btn .m-name { font-size: 1.0rem; font-weight: 700; display: block; margin-bottom: 4px; }
         .mode-btn .m-desc { font-size: 0.8rem; color: var(--text-muted); display: block; line-height: 1.55; }
@@ -181,9 +187,10 @@
     <!-- ══ Screen 0: モード選択 ══ -->
     <div id="s-mode">
         <a href="index.html" class="back-link">← 電気資格ポータルへ</a>
+        <h1 style="font-size:1.35rem;font-weight:700;margin:0 0 16px;color:var(--accent);">⚡ 電験三種（第三種電気主任技術者）</h1>
         <div class="card">
-            <p class="screen-title">⚡ 電験三種（第三種電気主任技術者）</p>
-            <p class="screen-sub">理論・電力・機械・法規の過去問クイズ</p>
+            <p class="screen-sub" style="margin:0 0 20px;">理論・電力・機械・法規の過去問クイズ</p>
+            <button type="button" class="cta-btn" id="btn-start-all" style="margin-bottom:16px;">クイズを始める →</button>
             <div class="mode-grid">
                 <button type="button" class="mode-btn" id="btn-mode-cat">
                     <span class="m-icon">📚</span>
@@ -194,6 +201,16 @@
                     <span class="m-icon">📅</span>
                     <span class="m-name">本番モード（年度別）</span>
                     <span class="m-desc">年度を選択してタイマー付きで解答。自由に問題を行き来しながら解答し、終了後に全問の解説を確認できます。</span>
+                </button>
+                <button type="button" class="mode-btn danger" id="btn-mode-weak">
+                    <span class="m-icon">🔁</span>
+                    <span class="m-name">間違った問題だけ再出題</span>
+                    <span class="m-desc">不正解だった問題をブラウザに自動記録・集中復習。</span>
+                </button>
+                <button type="button" class="mode-btn subtle" id="btn-mode-reset">
+                    <span class="m-icon">↩️</span>
+                    <span class="m-name">回答済みを出題に戻す</span>
+                    <span class="m-desc">解き終わった問題をリセットして再挑戦。</span>
                 </button>
             </div>
         </div>
@@ -212,6 +229,13 @@
             <p class="stats-title">科目ごとの正答率（累計）</p>
             <div id="mode-stats"></div>
         </div>
+        <div class="exam-info-card" style="margin-top:10px;">
+            <p class="section-label" style="margin-bottom:8px;">💡 使い方</p>
+            <div style="display:flex;flex-direction:column;gap:10px;font-size:0.85rem;color:var(--text-muted);line-height:1.7;">
+                <div><strong style="color:var(--text);">間違った問題だけ再出題</strong>：モード選択画面のボタン、または科目別メニュー内のボタンから利用できます。不正解だった問題がブラウザに自動保存され、間違った問題だけを集中して繰り返し復習できます。</div>
+                <div><strong style="color:var(--text);">回答済みを出題に戻す</strong>：モード選択画面のボタン、または科目別メニュー内の「回答済み（同じ問題）を出題に戻す」から利用できます。一度解いた問題は再出題されない仕組みのため、リセットすると同じ問題を最初から解き直せます。</div>
+            </div>
+        </div>
     </div>
 
     <!-- ══ Screen 1: 年度選択 ══ -->
@@ -229,10 +253,10 @@
 
     <!-- ══ Screen 2: 科目選択 ══ -->
     <div id="s-cat-sel" hidden>
+        <h2 style="font-size:1.2rem;font-weight:700;color:var(--accent);margin:0 0 10px;text-align:center;">⚡ 学習モード（科目別）</h2>
         <a href="#" class="back-link" id="lnk-cat-back">← モード選択へ</a>
         <div class="card">
-            <p class="screen-title">科目を選択</p>
-            <p class="screen-sub">学習する科目を選んでください</p>
+            <p class="screen-sub" style="font-size:1rem;font-weight:700;color:var(--text);">学習する科目を選んでください</p>
             <div class="sel-list" id="cat-list"></div>
         </div>
         <div class="stats-box">
@@ -318,6 +342,8 @@ const CAT_SHORT = { "理論": "理論", "電力": "電力", "機械": "機械", 
 // ══════════════════════════════════════
 let allQuestions = [];
 let categoryStats = {};
+let weakQuestionIds = new Set();
+let answeredQids = new Set();
 let examQuestions = [], examAnswers = [], examIdx = 0, examTimerSec = 0, examTimerInt = null, examYearKey = null;
 let pracQuestions = [], pracIdx = 0, pracAnswered = false, pracRecord = [];
 let currentMode = null, currentCatKey = null;
@@ -346,8 +372,16 @@ function showScreen(id) {
 function loadStats() {
     try { categoryStats = JSON.parse(localStorage.getItem("denkenCategoryStats") || "{}") || {}; }
     catch(e) { categoryStats = {}; }
+    try { const raw = localStorage.getItem("denkenWeakQuestionIds"); weakQuestionIds = new Set(Array.isArray(JSON.parse(raw||"[]")) ? JSON.parse(raw||"[]") : []); }
+    catch(e) { weakQuestionIds = new Set(); }
+    try { const raw = localStorage.getItem("denkenAnsweredQids"); answeredQids = new Set(Array.isArray(JSON.parse(raw||"[]")) ? JSON.parse(raw||"[]") : []); }
+    catch(e) { answeredQids = new Set(); }
 }
-function saveStats() { localStorage.setItem("denkenCategoryStats", JSON.stringify(categoryStats)); }
+function saveStats() {
+    localStorage.setItem("denkenCategoryStats", JSON.stringify(categoryStats));
+    localStorage.setItem("denkenWeakQuestionIds", JSON.stringify(Array.from(weakQuestionIds)));
+    localStorage.setItem("denkenAnsweredQids", JSON.stringify(Array.from(answeredQids)));
+}
 function recordAnswer(cat, isCorrect) {
     if (!categoryStats[cat]) categoryStats[cat] = { correct: 0, attempted: 0 };
     categoryStats[cat].attempted++;
@@ -421,8 +455,18 @@ function shuffle(arr) {
 // ══════════════════════════════════════
 function initModeScreen() { renderStats("mode-stats"); showScreen("s-mode"); }
 
+document.getElementById("btn-start-all").addEventListener("click", () => { startPrac("__all__"); });
 document.getElementById("btn-mode-year").addEventListener("click", () => { showScreen("s-year-sel"); buildYearList(); });
 document.getElementById("btn-mode-cat").addEventListener("click",  () => { showScreen("s-cat-sel");  buildCatList(); });
+document.getElementById("btn-mode-weak").addEventListener("click", () => {
+    if (!weakQuestionIds.size) { window.alert("間違った問題がまだありません。まず通常学習で問題を解いてください。"); return; }
+    startPrac("__all__", true);
+});
+document.getElementById("btn-mode-reset").addEventListener("click", () => {
+    if (!window.confirm("回答済みの記録をリセットします。よろしいですか？")) return;
+    answeredQids.clear(); saveStats();
+    window.alert("リセットしました。全問が再出題されます。");
+});
 document.getElementById("lnk-year-back").addEventListener("click", e => { e.preventDefault(); initModeScreen(); });
 document.getElementById("lnk-cat-back").addEventListener("click",  e => { e.preventDefault(); initModeScreen(); });
 
@@ -489,6 +533,25 @@ function buildCatList() {
         btn.addEventListener("click", () => startPrac(c));
         el.appendChild(btn);
     });
+    // 弱問ボタン
+    const weakCount = allQuestions.filter(q => weakQuestionIds.has(q._qid)).length;
+    const weakBtn = document.createElement("button");
+    weakBtn.type = "button"; weakBtn.className = "weak-btn";
+    weakBtn.textContent = "間違った問題だけ再出題（" + weakCount + "問）";
+    weakBtn.addEventListener("click", () => {
+        if (!weakCount) { window.alert("間違った問題がまだありません。まず通常学習で問題を解いてください。"); return; }
+        startPrac("__all__", true);
+    });
+    el.appendChild(weakBtn);
+    // リセットボタン
+    const resetBtn = document.createElement("button");
+    resetBtn.type = "button"; resetBtn.className = "reset-answered-btn";
+    resetBtn.textContent = "回答済み（同じ問題）を出題に戻す";
+    resetBtn.addEventListener("click", () => {
+        if (!window.confirm("一度答えた問題の記録を消し、再び出題されるようにします。よろしいですか？")) return;
+        answeredQids.clear(); saveStats(); buildCatList();
+    });
+    el.appendChild(resetBtn);
     renderStats("cat-stats");
 }
 
@@ -589,13 +652,21 @@ function endExam() {
 // ══════════════════════════════════════
 //  Screen 4: Practice Mode
 // ══════════════════════════════════════
-function startPrac(catKey) {
+function startPrac(catKey, onlyWeak) {
     if (!allQuestions.length) {
         window.alert("問題データが読み込まれていません。");
         return;
     }
     currentMode = "prac"; currentCatKey = catKey;
-    const pool = catKey==="__all__" ? shuffle(allQuestions.slice()) : shuffle(allQuestions.filter(q=>q.category===catKey));
+    let base = catKey==="__all__" ? allQuestions.slice() : allQuestions.filter(q=>q.category===catKey);
+    if (onlyWeak) {
+        base = base.filter(q => weakQuestionIds.has(q._qid));
+        if (!base.length) { window.alert("間違った問題がまだありません。まず通常学習で問題を解いてください。"); return; }
+    } else {
+        const unanswered = base.filter(q => !answeredQids.has(q._qid));
+        base = unanswered.length > 0 ? unanswered : base;
+    }
+    const pool = shuffle(base);
     if (!pool.length) {
         window.alert("この条件に出題できる問題がありません。");
         return;
@@ -630,6 +701,9 @@ function onPracChoose(selectedIdx) {
     if(pracAnswered) return; pracAnswered = true;
     const q = pracQuestions[pracIdx]; const isCorrect = selectedIdx===q.correctIndex;
     pracRecord[pracIdx] = selectedIdx; recordAnswer(q.category||"未分類", isCorrect);
+    answeredQids.add(q._qid);
+    if (isCorrect) { weakQuestionIds.delete(q._qid); } else { weakQuestionIds.add(q._qid); }
+    saveStats();
     const buttons = document.getElementById("prac-choices").querySelectorAll(".choice-btn");
     buttons.forEach((btn,i) => { btn.disabled=true; if(i===q.correctIndex)btn.classList.add("correct-pick"); else if(i===selectedIdx)btn.classList.add("wrong-pick"); });
     const lbl = document.getElementById("prac-result-label");
