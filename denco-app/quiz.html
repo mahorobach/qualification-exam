@@ -512,6 +512,70 @@
             color: var(--text-muted);
             margin-left: 8px;
         }
+
+        /* ── Mode selection screen ── */
+        .mode-grid { display: flex; flex-direction: column; gap: 10px; }
+        .mode-btn { appearance: none; width: 100%; text-align: left; padding: 15px 16px; font-family: inherit; color: var(--text); background: var(--surface-2); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; cursor: pointer; transition: background .2s, border-color .2s; display: flex; align-items: center; gap: 14px; }
+        .mode-btn:hover { background: #2a3645; border-color: rgba(61,156,240,0.4); }
+        .mode-btn.danger:hover { background: rgba(240,113,120,0.1); border-color: rgba(240,113,120,0.5); }
+        .mode-btn.subtle:hover { background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.12); }
+        .mode-icon { font-size: 1.4rem; flex-shrink: 0; }
+        .mode-name { font-size: 0.9rem; font-weight: 700; display: block; margin-bottom: 2px; }
+        .mode-desc { font-size: 0.74rem; color: var(--text-muted); display: block; line-height: 1.5; }
+        .mock-link-btn { display: flex; align-items: center; gap: 14px; padding: 15px 16px; font-family: inherit; font-size: 0.9rem; font-weight: 700; color: var(--text); background: var(--surface-2); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; text-decoration: none; transition: background .2s; }
+        .mock-link-btn:hover { background: #2a3645; }
+        .screen-title { font-size: 1.05rem; font-weight: 700; text-align: center; margin: 0 0 4px; }
+        .screen-sub   { font-size: 0.82rem; color: var(--text-muted); text-align: center; margin: 0 0 18px; }
+
+        /* ── Year selection screen ── */
+        .sel-list { display: flex; flex-direction: column; gap: 8px; }
+        .sel-item { appearance: none; width: 100%; text-align: left; padding: 14px 16px; font-family: inherit; font-size: 0.92rem; color: var(--text); background: var(--surface-2); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; cursor: pointer; transition: background .2s, border-color .2s; display: flex; justify-content: space-between; align-items: center; }
+        .sel-item:hover { background: #2a3645; border-color: rgba(61,156,240,0.35); }
+        .s-meta { font-size: 0.75rem; color: var(--text-muted); }
+        .back-link { display: inline-flex; align-items: center; gap: 5px; font-size: 0.84rem; color: var(--accent); text-decoration: none; margin-bottom: 12px; }
+        .back-link:hover { text-decoration: underline; }
+        .info-card { background: var(--surface); border-radius: var(--radius); padding: 14px 16px; border: 1px solid rgba(255,255,255,0.06); margin-top: 12px; font-size: 0.83rem; color: var(--text-muted); line-height: 1.7; }
+
+        /* ── Year exam screen ── */
+        .exam-header { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
+        .timer-box { display: flex; flex-direction: column; align-items: center; background: var(--surface-2); border-radius: 10px; padding: 6px 14px; border: 1px solid rgba(255,255,255,0.08); min-width: 82px; }
+        .timer-label { font-size: 0.65rem; color: var(--text-muted); }
+        .timer-val { font-size: 1.15rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+        .timer-val.warn   { color: #f0c674; }
+        .timer-val.danger { color: var(--wrong); }
+        .exam-meta { font-size: 0.78rem; color: var(--text-muted); flex: 1; }
+        .end-btn { appearance: none; padding: 8px 14px; font-family: inherit; font-size: 0.8rem; font-weight: 700; color: #ffd3d6; background: rgba(240,113,120,0.15); border: 1px solid rgba(240,113,120,0.45); border-radius: 8px; cursor: pointer; white-space: nowrap; }
+        .end-btn:hover { background: rgba(240,113,120,0.25); }
+        .q-nav { display: flex; flex-wrap: wrap; gap: 6px; padding: 12px; background: var(--surface-2); border-radius: 10px; border: 1px solid rgba(255,255,255,0.06); margin-bottom: 12px; }
+        .q-dot { appearance: none; width: 34px; height: 34px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.14); background: transparent; color: var(--text-muted); font-size: 0.78rem; font-family: inherit; cursor: pointer; transition: all .15s; }
+        .q-dot.current  { background: var(--accent); color: #0f1419; border-color: var(--accent); font-weight: 700; }
+        .q-dot.answered { border-color: rgba(61,156,240,0.5); color: var(--accent); }
+        .q-dot.answered.current { background: var(--accent); color: #0f1419; }
+        .notice-bar { padding: 10px 14px; background: rgba(62,207,142,0.1); border: 1px solid rgba(62,207,142,0.35); border-radius: 10px; font-size: 0.86rem; color: #b8f0d4; margin-bottom: 12px; text-align: center; }
+        .q-num-badge { display: inline-block; font-size: 0.72rem; font-weight: 600; color: var(--accent); background: var(--accent-soft); padding: 4px 10px; border-radius: 999px; margin-bottom: 14px; }
+        .q-text { font-size: 1rem; font-weight: 500; margin: 0 0 20px; line-height: 1.7; }
+        .choice-btn.selected { border-color: rgba(61,156,240,0.6); background: rgba(61,156,240,0.12); }
+        .exam-nav { display: flex; gap: 10px; margin-top: 12px; }
+        .nav-btn { flex: 1; padding: 13px; font-family: inherit; font-size: 0.9rem; font-weight: 700; color: var(--text); background: var(--surface-2); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; cursor: pointer; transition: background .15s; }
+        .nav-btn:hover:not(:disabled) { background: #2a3645; }
+        .nav-btn:disabled { opacity: 0.35; cursor: default; }
+        .nav-btn.primary { background: linear-gradient(135deg, var(--accent), #6ec5ff); color: #0f1419; border: none; }
+        .nav-btn.primary:hover:not(:disabled) { opacity: .88; }
+
+        /* ── Exam results ── */
+        .res-cat-row { display: flex; justify-content: space-between; gap: 10px; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 0.84rem; }
+        .res-cat-row:last-child { border-bottom: none; }
+        .res-q-card { padding: 14px; background: var(--surface-2); border-radius: 12px; margin-bottom: 10px; border-left: 3px solid transparent; }
+        .res-q-card.ok   { border-left-color: var(--correct); }
+        .res-q-card.ng   { border-left-color: var(--wrong); }
+        .res-q-card.skip { border-left-color: rgba(255,255,255,0.2); }
+        .res-q-meta { font-size: 0.72rem; color: var(--text-muted); margin-bottom: 6px; }
+        .res-q-text { font-size: 0.88rem; margin-bottom: 8px; line-height: 1.6; }
+        .res-q-yours { font-size: 0.82rem; padding: 5px 8px; border-radius: 6px; margin-bottom: 4px; }
+        .res-q-yours.ok { color: var(--correct); background: rgba(62,207,142,0.1); }
+        .res-q-yours.ng { color: var(--wrong); background: rgba(240,113,120,0.1); }
+        .res-q-correct { font-size: 0.82rem; color: #b8f0d4; padding: 5px 8px; background: rgba(62,207,142,0.08); border-radius: 6px; margin-bottom: 4px; }
+        .res-q-exp { font-size: 0.8rem; color: var(--text-muted); line-height: 1.65; margin-top: 6px; }
     </style>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3002712486184435" crossorigin="anonymous"></script>
 </head>
@@ -537,10 +601,93 @@
             <button type="button" class="back-btn" id="back-btn">← 分野選択に戻る</button>
         </div>
 
-        <div id="menu-screen" class="card">
+        <!-- ══ Screen 0: モード選択 ══ -->
+        <div id="s-mode" hidden>
+            <div class="card">
+                <p class="screen-title">🔌 第二種電気工事士 過去問クイズ</p>
+                <p class="screen-sub">学習方法を選んでください</p>
+                <div class="mode-grid">
+                    <button type="button" class="mode-btn" id="btn-mode-year">
+                        <span class="mode-icon">📅</span>
+                        <span><span class="mode-name">年度別（本番形式）</span><span class="mode-desc">年度を選んで120分タイマー付きで解答。問題を行き来でき、終了後に全解説を確認できます。</span></span>
+                    </button>
+                    <a class="mock-link-btn" href="mock-sets.html">
+                        <span class="mode-icon">📋</span>
+                        <span><span class="mode-name">擬似問題集</span><span class="mode-desc">試験形式に近い問題セットを選んで実力チェック。</span></span>
+                    </a>
+                    <button type="button" class="mode-btn" id="btn-mode-cat">
+                        <span class="mode-icon">📂</span>
+                        <span><span class="mode-name">分野別（学習モード）</span><span class="mode-desc">分野を選んで1問ずつ解答。解答ごとに解説を確認できます。</span></span>
+                    </button>
+                    <button type="button" class="mode-btn danger" id="btn-mode-weak">
+                        <span class="mode-icon">🔁</span>
+                        <span><span class="mode-name">苦手問題だけ再出題</span><span class="mode-desc">不正解だった問題をブラウザに自動記録・集中復習。</span></span>
+                    </button>
+                    <button type="button" class="mode-btn subtle" id="btn-mode-reset">
+                        <span class="mode-icon">↩️</span>
+                        <span><span class="mode-name">回答済みを出題に戻す</span><span class="mode-desc">解き終わった問題をリセットして再挑戦。</span></span>
+                    </button>
+                </div>
+            </div>
+            <div class="stats-box" style="margin-top:12px;">
+                <p class="stats-title">分野ごとの正答率（累計）</p>
+                <div id="mode-stats" class="stats-list"></div>
+            </div>
+        </div>
+
+        <!-- ══ Screen 1: 年度選択 ══ -->
+        <div id="s-year-sel" hidden>
+            <a href="#" class="back-link" id="lnk-year-back">← モード選択へ</a>
+            <div class="card">
+                <p class="screen-title">年度を選択</p>
+                <p class="screen-sub">解答する年度を選んでください</p>
+                <div class="sel-list" id="year-sel-list"></div>
+            </div>
+            <div class="info-card">120分タイマー付きで出題されます。問題を行き来しながら解答し、終了後に全問の解説を一覧で確認できます。</div>
+        </div>
+
+        <!-- ══ Screen 2: 年度別 試験 ══ -->
+        <div id="s-exam" hidden>
+            <div class="exam-header">
+                <div class="timer-box">
+                    <span class="timer-label">残り時間</span>
+                    <span class="timer-val" id="timer-val">120:00</span>
+                </div>
+                <div class="exam-meta" id="exam-meta">回答済み 0 / 0 問</div>
+                <button type="button" class="end-btn" id="btn-end-exam">終了する</button>
+            </div>
+            <div class="q-nav" id="q-nav"></div>
+            <div id="all-done-notice" class="notice-bar" hidden>✅ 全問回答済み。「終了する」で結果を確認できます。</div>
+            <div class="card" style="margin-bottom:12px;">
+                <span class="q-num-badge" id="exam-q-num">問題 1</span>
+                <p class="q-text" id="exam-q-text"></p>
+                <div class="choices" id="exam-choices"></div>
+            </div>
+            <div class="exam-nav">
+                <button type="button" class="nav-btn" id="btn-exam-prev">← 前の問題</button>
+                <button type="button" class="nav-btn primary" id="btn-exam-next">次の問題 →</button>
+            </div>
+        </div>
+
+        <!-- ══ Screen 3: 年度別 結果 ══ -->
+        <div id="s-exam-results" hidden>
+            <a href="#" class="back-link" id="lnk-res-back">← モード選択へ</a>
+            <div class="card" style="margin-bottom:12px;">
+                <p class="screen-title" id="res-title">結果</p>
+                <div id="res-banner" style="margin:12px 0;padding:12px;border-radius:10px;text-align:center;font-weight:700;font-size:1.1rem;"></div>
+                <p id="res-score" style="text-align:center;font-size:2rem;font-weight:700;color:var(--accent);margin:0 0 8px;"></p>
+                <p id="res-msg" style="font-size:0.85rem;color:var(--text-muted);text-align:center;margin:0 0 16px;line-height:1.6;"></p>
+                <div id="res-cat-summary"></div>
+                <button type="button" class="restart-btn" id="btn-res-back-menu" style="margin-top:14px;">モード選択に戻る</button>
+            </div>
+            <div id="res-q-list"></div>
+        </div>
+
+        <div id="menu-screen" style="display:none;">
+            <a href="#" class="back-link" id="lnk-cat-back-mode">← モード選択へ</a>
+            <div class="card">
             <h2 class="menu-title">学習する分野を選択してください</h2>
             <p class="menu-hint" id="menu-hint">問題データを読み込み中…</p>
-            <p class="menu-mock-link"><a href="mock-sets.html">擬似問題集の一覧ページへ</a></p>
             <div class="menu-controls">
                 <select id="year-filter" class="menu-select" aria-label="年度で絞り込み">
                     <option value="all">全年度</option>
@@ -553,7 +700,8 @@
                 <p class="stats-title">分野ごとの正答率</p>
                 <div id="stats-list" class="stats-list"></div>
             </div>
-        </div>
+            </div><!-- /.card -->
+        </div><!-- /#menu-screen -->
 
         <div id="quiz-screen" style="display: none;">
             <div class="progress">
@@ -1140,6 +1288,7 @@
             feedbackEl.classList.remove("visible");
             summaryScreen.style.display = "none";
             quizScreen.style.display = "none";
+            ["s-mode","s-year-sel","s-exam","s-exam-results"].forEach(function(s){ const el=document.getElementById(s); if(el)el.hidden=true; });
             menuScreen.style.display = "block";
             topBarEl.hidden = true;
             if (window.history && window.history.replaceState && location.search) {
@@ -1234,7 +1383,10 @@
 
         nextBtn.addEventListener("click", goNext);
         restartBtn.addEventListener("click", restart);
-        backBtn.addEventListener("click", goToMenu);
+        backBtn.addEventListener("click", function() {
+            if (summaryScreen.style.display !== "none") { initModeScreen(); }
+            else { goToMenu(); }
+        });
         yearFilterEl.addEventListener("change", function () {
             selectedYear = yearFilterEl.value;
             buildCategoryMenu();
@@ -1323,6 +1475,201 @@
             renderCategoryStats();
         }
 
+        // ── Exam mode variables ──────────────────────────────────
+        let examQuestions = [], examAnswers = [], examIdx = 0;
+        let examTimerSec = 0, examTimerInt = null, examYearKey = null;
+
+        const NEW_SCREENS = ["s-mode","s-year-sel","s-exam","s-exam-results"];
+
+        function showNewScreen(id) {
+            NEW_SCREENS.forEach(function(s) {
+                const el = document.getElementById(s);
+                if (el) el.hidden = (s !== id);
+            });
+            menuScreen.style.display = "none";
+            quizScreen.style.display = "none";
+            summaryScreen.style.display = "none";
+            topBarEl.hidden = true;
+        }
+
+        function initModeScreen() {
+            clearInterval(examTimerInt);
+            renderModeStats();
+            showNewScreen("s-mode");
+        }
+
+        function renderModeStats() {
+            const el = document.getElementById("mode-stats");
+            if (!el) return;
+            el.innerHTML = "";
+            const cats = new Set(CATEGORY_ORDER);
+            for (const q of allQuestions) cats.add(q.category || "未分類");
+            Array.from(cats).forEach(function(cat) {
+                const st = categoryStats[cat] || { correct: 0, attempted: 0 };
+                const row = document.createElement("div"); row.className = "stats-row";
+                const name = document.createElement("span"); name.textContent = cat;
+                const val = document.createElement("span");
+                if (!st.attempted) { val.textContent = "—"; val.style.color = "var(--text-muted)"; }
+                else { const r = Math.round(st.correct / st.attempted * 100); val.textContent = r + "% (" + st.correct + "/" + st.attempted + ")"; val.style.color = r >= 60 ? "var(--correct)" : "var(--wrong)"; }
+                row.appendChild(name); row.appendChild(val); el.appendChild(row);
+            });
+        }
+
+        // Mode screen buttons
+        document.getElementById("btn-mode-year").addEventListener("click", function() {
+            showNewScreen("s-year-sel"); buildYearSel();
+        });
+        document.getElementById("btn-mode-cat").addEventListener("click", function() {
+            goToMenu();
+        });
+        document.getElementById("btn-mode-weak").addEventListener("click", function() {
+            const pool = allQuestions.filter(function(q) { return weakQuestionIds.has(q._qid); });
+            if (pool.length === 0) { window.alert("苦手問題がありません。まず通常学習で問題を解いてください。"); return; }
+            questions = pool.slice(); sessionCategoryLabel = "苦手問題"; skipAnswerRecording = false; isMockMode = false; currentIndex = 0; score = 0;
+            showNewScreen(null);
+            menuScreen.style.display = "none"; summaryScreen.style.display = "none";
+            topBarEl.hidden = false; quizScreen.style.display = "block"; renderQuestion();
+        });
+        document.getElementById("btn-mode-reset").addEventListener("click", function() {
+            if (!window.confirm("回答済みの記録をリセットします。よろしいですか？")) return;
+            answeredQids.clear(); saveStoredStats();
+            window.alert("リセットしました。全問が再出題されます。");
+        });
+        document.getElementById("lnk-year-back").addEventListener("click", function(e) {
+            e.preventDefault(); initModeScreen();
+        });
+        document.getElementById("lnk-cat-back-mode").addEventListener("click", function(e) {
+            e.preventDefault(); initModeScreen();
+        });
+        document.getElementById("lnk-res-back").addEventListener("click", function(e) {
+            e.preventDefault(); initModeScreen();
+        });
+        document.getElementById("btn-res-back-menu").addEventListener("click", function() {
+            initModeScreen();
+        });
+
+        // Year selection
+        function buildYearSel() {
+            const el = document.getElementById("year-sel-list"); el.innerHTML = "";
+            const byYear = {};
+            allQuestions.forEach(function(q) {
+                const y = String(q.year || "").trim();
+                if (/^\d{4}$/.test(y)) { if (!byYear[y]) byYear[y] = 0; byYear[y]++; }
+            });
+            Object.keys(byYear).sort(function(a,b){return Number(b)-Number(a);}).forEach(function(y) {
+                const btn = document.createElement("button"); btn.type = "button"; btn.className = "sel-item";
+                btn.innerHTML = "<strong>" + y + "年度</strong><span class='s-meta'>全 " + byYear[y] + " 問</span>";
+                btn.addEventListener("click", function() { startYearExam(y); }); el.appendChild(btn);
+            });
+            const allBtn = document.createElement("button"); allBtn.type = "button"; allBtn.className = "sel-item";
+            allBtn.style.borderColor = "rgba(61,156,240,0.35)";
+            allBtn.innerHTML = "<strong>🔀 全年度ランダム</strong><span class='s-meta'>全 " + allQuestions.length + " 問</span>";
+            allBtn.addEventListener("click", function() { startYearExam("__all__"); }); el.appendChild(allBtn);
+        }
+
+        // Year exam
+        function startYearExam(yearKey) {
+            examYearKey = yearKey; clearInterval(examTimerInt);
+            let pool = yearKey === "__all__"
+                ? shuffleArray(allQuestions.slice())
+                : allQuestions.filter(function(q){ return String(q.year||"") === yearKey; })
+                    .sort(function(a,b){ return (CATEGORY_ORDER.indexOf(a.category)<0?99:CATEGORY_ORDER.indexOf(a.category)) - (CATEGORY_ORDER.indexOf(b.category)<0?99:CATEGORY_ORDER.indexOf(b.category)); });
+            examQuestions = pool; examAnswers = new Array(pool.length).fill(null); examIdx = 0; examTimerSec = 120 * 60;
+            showNewScreen("s-exam");
+            document.getElementById("all-done-notice").hidden = true;
+            buildQNav(); renderExamQ(); startExamTimer();
+        }
+
+        function buildQNav() {
+            const nav = document.getElementById("q-nav"); nav.innerHTML = "";
+            examQuestions.forEach(function(q, i) {
+                const b = document.createElement("button"); b.type = "button";
+                b.className = "q-dot" + (i === examIdx ? " current" : "") + (examAnswers[i] !== null ? " answered" : "");
+                b.textContent = i + 1;
+                b.addEventListener("click", function() { examIdx = i; buildQNav(); renderExamQ(); });
+                nav.appendChild(b);
+            });
+            updateExamMeta();
+        }
+
+        function renderExamQ() {
+            const q = examQuestions[examIdx];
+            document.getElementById("exam-q-num").textContent = (q.year ? q.year + "年 · " : "") + "問題 " + (examIdx + 1) + " / " + examQuestions.length;
+            document.getElementById("exam-q-text").textContent = q.question;
+            const ce = document.getElementById("exam-choices"); ce.innerHTML = "";
+            q.choices.forEach(function(label, idx) {
+                const btn = document.createElement("button"); btn.type = "button";
+                btn.className = "choice-btn" + (examAnswers[examIdx] === idx ? " selected" : "");
+                btn.textContent = label;
+                btn.addEventListener("click", function() { examAnswers[examIdx] = idx; buildQNav(); renderExamQ(); checkAllExamDone(); });
+                ce.appendChild(btn);
+            });
+            document.getElementById("btn-exam-prev").disabled = examIdx === 0;
+            document.getElementById("btn-exam-next").disabled = examIdx === examQuestions.length - 1;
+            document.getElementById("btn-exam-next").textContent = examIdx === examQuestions.length - 1 ? "最後の問題" : "次の問題 →";
+        }
+
+        function updateExamMeta() {
+            document.getElementById("exam-meta").textContent = "回答済み " + examAnswers.filter(function(a){return a!==null;}).length + " / " + examQuestions.length + " 問";
+        }
+        function checkAllExamDone() {
+            document.getElementById("all-done-notice").hidden = examAnswers.filter(function(a){return a!==null;}).length < examQuestions.length;
+        }
+
+        document.getElementById("btn-exam-prev").addEventListener("click", function() { if(examIdx>0){examIdx--;buildQNav();renderExamQ();} });
+        document.getElementById("btn-exam-next").addEventListener("click", function() { if(examIdx<examQuestions.length-1){examIdx++;buildQNav();renderExamQ();} });
+        document.getElementById("btn-end-exam").addEventListener("click", function() {
+            const ua = examAnswers.filter(function(a){return a===null;}).length;
+            if (!window.confirm(ua > 0 ? "未回答が " + ua + " 問あります。終了して採点しますか？" : "試験を終了して結果を表示します。よろしいですか？")) return;
+            endExam();
+        });
+
+        function startExamTimer() {
+            clearInterval(examTimerInt); renderExamTimer();
+            examTimerInt = setInterval(function() {
+                examTimerSec--; renderExamTimer();
+                if (examTimerSec <= 0) { clearInterval(examTimerInt); window.alert("⏰ 時間になりました。結果を表示します。"); endExam(); }
+            }, 1000);
+        }
+        function renderExamTimer() {
+            const el = document.getElementById("timer-val");
+            const m = Math.floor(examTimerSec/60), s = examTimerSec%60;
+            el.textContent = String(m).padStart(3,"0") + ":" + String(s).padStart(2,"0");
+            el.className = "timer-val" + (examTimerSec<=60?" danger":examTimerSec<=600?" warn":"");
+        }
+        function endExam() {
+            clearInterval(examTimerInt);
+            examQuestions.forEach(function(q,i) {
+                if (examAnswers[i] !== null) {
+                    const cat = q.category || "未分類";
+                    if (!categoryStats[cat]) categoryStats[cat] = { correct:0, attempted:0 };
+                    categoryStats[cat].attempted++;
+                    if (examAnswers[i] === q.correctIndex) categoryStats[cat].correct++;
+                }
+            });
+            saveStoredStats(); showExamResults();
+        }
+        function escHtml(s) { return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
+        function showExamResults() {
+            showNewScreen("s-exam-results");
+            const qs = examQuestions, ans = examAnswers;
+            const answered = ans.filter(function(a){return a!==null;}).length;
+            const correct = qs.reduce(function(s,q,i){return s+(ans[i]===q.correctIndex?1:0);},0);
+            const pct = answered > 0 ? Math.round(correct/answered*100) : 0, pass = pct >= 60;
+            document.getElementById("res-title").textContent = examYearKey==="__all__" ? "全年度ランダム 結果" : examYearKey + "年度 結果";
+            document.getElementById("res-score").textContent = correct + " / " + answered + " 問正解";
+            const banner = document.getElementById("res-banner");
+            if (pass) { banner.style.cssText="background:rgba(62,207,142,0.12);border:1px solid rgba(62,207,142,0.45);color:#b8f0d4;border-radius:10px;"; banner.textContent="✓ 合格ライン到達（正答率 "+pct+"%）"; }
+            else       { banner.style.cssText="background:rgba(240,113,120,0.12);border:1px solid rgba(240,113,120,0.45);color:#ffd3d6;border-radius:10px;"; banner.textContent="✗ 不合格（"+pct+"% ／ 目安 60%以上）"; }
+            document.getElementById("res-msg").textContent = pct===100?"全問正解！完璧です。":pct>=80?"優秀な成績です！":pct>=60?"合格ライン到達。引き続き苦手分野を強化しましょう。":"解説をしっかり読んで基礎から固め直しましょう。";
+            const catSummary = document.getElementById("res-cat-summary"); catSummary.innerHTML = "";
+            const catMap = {};
+            qs.forEach(function(q,i){ const c=q.category||"未分類"; if(!catMap[c])catMap[c]={ok:0,done:0}; if(ans[i]!==null){catMap[c].done++;if(ans[i]===q.correctIndex)catMap[c].ok++;} });
+            CATEGORY_ORDER.forEach(function(c){ if(!catMap[c])return; const s=catMap[c]; const r=s.done>0?Math.round(s.ok/s.done*100):0; const row=document.createElement("div"); row.className="res-cat-row"; row.innerHTML="<span>"+c+"</span><span style='color:"+(r>=60?"var(--correct)":"var(--wrong)")+";font-weight:600'>"+s.ok+"/"+s.done+"問 ("+r+"%)</span>"; catSummary.appendChild(row); });
+            const listEl = document.getElementById("res-q-list"); listEl.innerHTML = "";
+            qs.forEach(function(q,i){ const ua=ans[i],isSkip=ua===null,isOk=!isSkip&&ua===q.correctIndex; const card=document.createElement("div"); card.className="res-q-card "+(isSkip?"skip":isOk?"ok":"ng"); const sc=isSkip?"var(--text-muted)":isOk?"var(--correct)":"var(--wrong)"; const si=isSkip?"— 未回答":isOk?"✓ 正解":"✗ 不正解"; let html="<div class='res-q-meta'>"+(q.year?q.year+"年 · ":"")+(q.category||"")+" · 問"+(i+1)+" <span style='color:"+sc+"'>"+si+"</span></div><div class='res-q-text'>"+escHtml(q.question)+"</div>"; if(!isSkip)html+="<div class='res-q-yours "+(isOk?"ok":"ng")+"'>あなたの解答："+escHtml(q.choices[ua])+"</div>"; if(!isOk)html+="<div class='res-q-correct'>正解："+escHtml(q.choices[q.correctIndex])+"</div>"; html+="<div class='res-q-exp'>"+escHtml(q.explanation)+"</div>"; card.innerHTML=html; listEl.appendChild(card); });
+        }
+
         async function boot() {
             menuHintEl.textContent = "問題データを読み込み中…";
             categoryButtonsEl.innerHTML = "";
@@ -1333,7 +1680,7 @@
             if (setId && MOCK_SETS[setId]) {
                 startMockSet(setId);
             } else {
-                goToMenu();
+                initModeScreen();
             }
         }
 
