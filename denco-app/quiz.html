@@ -61,6 +61,13 @@
             margin-bottom: 22px;
         }
 
+        .header-icon {
+            font-size: 2.4rem;
+            line-height: 1;
+            display: block;
+            margin: 0 0 8px;
+        }
+
         header h1 {
             font-size: 1.15rem;
             font-weight: 700;
@@ -341,11 +348,11 @@
             line-height: 1.5;
         }
 
-        .menu-hint {
+        .menu-footer-note {
             font-size: 0.82rem;
             color: var(--text-muted);
             text-align: center;
-            margin: 0 0 18px;
+            margin: 16px 0 0;
             line-height: 1.55;
         }
 
@@ -403,24 +410,6 @@
             font-weight: 400;
             color: var(--text-muted);
             margin-top: 4px;
-        }
-
-        .menu-controls {
-            margin-bottom: 16px;
-            display: grid;
-            gap: 10px;
-        }
-
-        .menu-select {
-            width: 100%;
-            min-height: 44px;
-            border-radius: 10px;
-            padding: 10px 12px;
-            background: var(--surface-2);
-            color: var(--text);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            font-family: inherit;
-            font-size: 0.9rem;
         }
 
         .weak-btn {
@@ -526,6 +515,7 @@
         .mock-link-btn:hover { background: #2a3645; }
         .screen-title { font-size: 1.05rem; font-weight: 700; text-align: center; margin: 0 0 4px; }
         .screen-sub   { font-size: 0.82rem; color: var(--text-muted); text-align: center; margin: 0 0 18px; }
+        #s-mode .card > .screen-title:first-of-type { margin-bottom: 18px; }
 
         /* ── Year selection screen ── */
         .sel-list { display: flex; flex-direction: column; gap: 8px; }
@@ -576,6 +566,39 @@
         .res-q-yours.ng { color: var(--wrong); background: rgba(240,113,120,0.1); }
         .res-q-correct { font-size: 0.82rem; color: #b8f0d4; padding: 5px 8px; background: rgba(62,207,142,0.08); border-radius: 6px; margin-bottom: 4px; }
         .res-q-exp { font-size: 0.8rem; color: var(--text-muted); line-height: 1.65; margin-top: 6px; }
+
+        #how-to-use { scroll-margin-top: 64px; }
+        .how-guide {
+            margin-top: 16px;
+            background: var(--surface-2);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 16px 14px;
+        }
+        .how-guide h2 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin: 0 0 14px;
+            color: var(--accent);
+        }
+        .how-list { display: flex; flex-direction: column; gap: 10px; }
+        .how-item { display: flex; gap: 12px; align-items: flex-start; }
+        .how-num {
+            flex-shrink: 0;
+            min-width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--accent-soft);
+            border-radius: 50%;
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 0.85rem;
+        }
+        .how-text { font-size: 0.85rem; color: var(--text-muted); line-height: 1.65; padding-top: 2px; }
+        .how-text strong { color: var(--text); }
+        .how-guide-note { margin-top: 14px; font-size: 0.78rem; color: var(--text-muted); line-height: 1.75; }
     </style>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3002712486184435" crossorigin="anonymous"></script>
 </head>
@@ -590,8 +613,9 @@
 </nav>
     <div class="app">
         <header>
+            <span class="header-icon" aria-hidden="true">🔌</span>
             <p class="top-nav"><a href="index.html">← トップページへ</a></p>
-            <h1>第二種電気工事士 過去問クイズ</h1>
+            <h1 id="page-title">第二種電気工事士 過去問クイズ</h1>
             <p id="subtitle">スマホ向け · 問題読み込み中…</p>
         </header>
 
@@ -604,24 +628,23 @@
         <!-- ══ Screen 0: モード選択 ══ -->
         <div id="s-mode" hidden>
             <div class="card">
-                <p class="screen-title">🔌 第二種電気工事士 過去問クイズ</p>
-                <p class="screen-sub">学習方法を選んでください</p>
+                <p class="screen-title">学習方法を選んでください</p>
                 <div class="mode-grid">
+                    <button type="button" class="mode-btn" id="btn-mode-cat">
+                        <span class="mode-icon">📂</span>
+                        <span><span class="mode-name">学習モード（分野別）</span><span class="mode-desc">分野を選んで1問ずつ解答。解答ごとに解説を確認できます。</span></span>
+                    </button>
                     <button type="button" class="mode-btn" id="btn-mode-year">
                         <span class="mode-icon">📅</span>
-                        <span><span class="mode-name">年度別（本番形式）</span><span class="mode-desc">年度を選んで120分タイマー付きで解答。問題を行き来でき、終了後に全解説を確認できます。</span></span>
+                        <span><span class="mode-name">本番モード（年度別）</span><span class="mode-desc">年度を選んで120分タイマー付きで解答。問題を行き来でき、終了後に全解説を確認できます。</span></span>
                     </button>
                     <a class="mock-link-btn" href="mock-sets.html">
                         <span class="mode-icon">📋</span>
                         <span><span class="mode-name">擬似問題集</span><span class="mode-desc">試験形式に近い問題セットを選んで実力チェック。</span></span>
                     </a>
-                    <button type="button" class="mode-btn" id="btn-mode-cat">
-                        <span class="mode-icon">📂</span>
-                        <span><span class="mode-name">分野別（学習モード）</span><span class="mode-desc">分野を選んで1問ずつ解答。解答ごとに解説を確認できます。</span></span>
-                    </button>
                     <button type="button" class="mode-btn danger" id="btn-mode-weak">
                         <span class="mode-icon">🔁</span>
-                        <span><span class="mode-name">苦手問題だけ再出題</span><span class="mode-desc">不正解だった問題をブラウザに自動記録・集中復習。</span></span>
+                        <span><span class="mode-name">間違った問題だけ再出題</span><span class="mode-desc">不正解だった問題をブラウザに自動記録・集中復習。</span></span>
                     </button>
                     <button type="button" class="mode-btn subtle" id="btn-mode-reset">
                         <span class="mode-icon">↩️</span>
@@ -632,6 +655,32 @@
             <div class="stats-box" style="margin-top:12px;">
                 <p class="stats-title">分野ごとの正答率（累計）</p>
                 <div id="mode-stats" class="stats-list"></div>
+            </div>
+            <div id="how-to-use" class="how-guide">
+                <h2>💡 使い方</h2>
+                <div class="how-list">
+                    <div class="how-item">
+                        <div class="how-num">1</div>
+                        <div class="how-text"><strong>本番モード（年度別）</strong>：年度を選んで本番に近い形式で解答。解き終わった後に解説をまとめて確認できます。</div>
+                    </div>
+                    <div class="how-item">
+                        <div class="how-num">2</div>
+                        <div class="how-text"><strong>擬似問題集</strong>：試験形式に近い問題セットをまるごと選んで実力チェック。仕上げの総合演習に最適です。</div>
+                    </div>
+                    <div class="how-item">
+                        <div class="how-num">3</div>
+                        <div class="how-text"><strong>学習モード（分野別）</strong>：分野を選んで1問ずつ解答し、問題に答えると正誤と解説が表示されます。苦手分野の集中学習に活用してください。</div>
+                    </div>
+                    <div class="how-item">
+                        <div class="how-num">4</div>
+                        <div class="how-text"><strong>間違った問題だけ再出題</strong>：<strong>モード選択画面</strong>のボタン、または分野別メニュー内の同じ名前のボタンから利用できます。不正解だった問題がブラウザに自動保存され、間違った問題だけを集中して繰り返し復習できます。</div>
+                    </div>
+                    <div class="how-item">
+                        <div class="how-num">5</div>
+                        <div class="how-text"><strong>回答済みを出題に戻す</strong>：<strong>モード選択画面</strong>のボタン、または分野別メニュー内の「回答済み（同じ問題）を出題に戻す」から利用できます。一度解いた問題は再出題されない仕組みのため、リセットすると同じ問題を最初から解き直せます。</div>
+                    </div>
+                </div>
+                <p class="how-guide-note">※ 本サイトで使用している問題は、第二種電気工事士試験の公式過去問をもとに内容・表現をアレンジして作成したオリジナル問題です。公式機関が提供する問題そのものではありません。正確な試験情報は（一財）電気技術者試験センターの公式サイトをご確認ください。</p>
             </div>
         </div>
 
@@ -686,20 +735,13 @@
         <div id="menu-screen" style="display:none;">
             <a href="#" class="back-link" id="lnk-cat-back-mode">← モード選択へ</a>
             <div class="card">
-            <h2 class="menu-title">学習する分野を選択してください</h2>
-            <p class="menu-hint" id="menu-hint">問題データを読み込み中…</p>
-            <div class="menu-controls">
-                <select id="year-filter" class="menu-select" aria-label="年度で絞り込み">
-                    <option value="all">全年度</option>
-                </select>
-                <button type="button" id="weak-btn" class="weak-btn">苦手問題だけ再出題</button>
-                <button type="button" id="reset-answered-btn" class="reset-answered-btn">回答済み（同じ問題）を出題に戻す</button>
-            </div>
+            <h2 class="menu-title">分野を選択してください。</h2>
             <div id="category-buttons" class="category-buttons"></div>
             <div class="stats-box">
                 <p class="stats-title">分野ごとの正答率</p>
                 <div id="stats-list" class="stats-list"></div>
             </div>
+            <p class="menu-footer-note">分野の問数は収録件数です（本試験の1回の出題数ではありません）。答えた問題は同じ分野でも出ません。範囲内を全部答えると、次に選んだとき自動で記録がリセットされランダムに再出題されます。戻すは下のリセット。</p>
             </div><!-- /.card -->
         </div><!-- /#menu-screen -->
 
@@ -786,7 +828,6 @@
         let allQuestions = [];
         let questions = [];
         let sessionCategoryLabel = "";
-        let selectedYear = "all";
         let weakQuestionIds = new Set();
         let answeredQids = new Set();
         let categoryStats = {};
@@ -813,14 +854,30 @@
         const subtitleEl = document.getElementById("subtitle");
         const loadWarningEl = document.getElementById("load-warning");
         const menuScreen = document.getElementById("menu-screen");
-        const menuHintEl = document.getElementById("menu-hint");
         const categoryButtonsEl = document.getElementById("category-buttons");
         const topBarEl = document.getElementById("top-bar");
         const backBtn = document.getElementById("back-btn");
-        const yearFilterEl = document.getElementById("year-filter");
-        const weakBtn = document.getElementById("weak-btn");
-        const resetAnsweredBtn = document.getElementById("reset-answered-btn");
+        const weakBtn = document.createElement("button");
+        weakBtn.type = "button";
+        weakBtn.id = "weak-btn";
+        weakBtn.className = "weak-btn";
+        weakBtn.textContent = "間違った問題だけ再出題";
+        const resetAnsweredBtn = document.createElement("button");
+        resetAnsweredBtn.type = "button";
+        resetAnsweredBtn.id = "reset-answered-btn";
+        resetAnsweredBtn.className = "reset-answered-btn";
+        resetAnsweredBtn.textContent = "回答済み（同じ問題）を出題に戻す";
         const statsListEl = document.getElementById("stats-list");
+        const pageTitleEl = document.getElementById("page-title");
+        const PAGE_TITLE_DEFAULT = "第二種電気工事士 過去問クイズ";
+        const PAGE_TITLE_CATEGORY = "学習モード（分野別）";
+
+        function setPageTitleDefault() {
+            if (pageTitleEl) pageTitleEl.textContent = PAGE_TITLE_DEFAULT;
+        }
+        function setPageTitleCategory() {
+            if (pageTitleEl) pageTitleEl.textContent = PAGE_TITLE_CATEGORY;
+        }
 
         function loadStoredStats() {
             try {
@@ -853,10 +910,7 @@
         }
 
         function getFilteredPool() {
-            if (selectedYear === "all") return allQuestions.slice();
-            return allQuestions.filter(function (q) {
-                return String(q.year || "") === selectedYear;
-            });
+            return allQuestions.slice();
         }
 
         function shuffleArray(arr) {
@@ -1114,30 +1168,8 @@
             summaryScreen.style.display = "none";
             topBarEl.hidden = false;
             quizScreen.style.display = "block";
+            setPageTitleDefault();
             renderQuestion();
-        }
-
-        function buildYearFilter() {
-            const years = new Set();
-            for (const q of allQuestions) {
-                const y = String(q.year || "").trim();
-                if (/^\d{4}$/.test(y)) {
-                    years.add(y);
-                }
-            }
-            const sorted = Array.from(years).sort();
-            yearFilterEl.innerHTML = "";
-            const allOpt = document.createElement("option");
-            allOpt.value = "all";
-            allOpt.textContent = "全年度";
-            yearFilterEl.appendChild(allOpt);
-            sorted.forEach(function (y) {
-                const opt = document.createElement("option");
-                opt.value = y;
-                opt.textContent = y + "年";
-                yearFilterEl.appendChild(opt);
-            });
-            yearFilterEl.value = selectedYear;
         }
 
         function renderCategoryStats() {
@@ -1291,6 +1323,7 @@
             ["s-mode","s-year-sel","s-exam","s-exam-results"].forEach(function(s){ const el=document.getElementById(s); if(el)el.hidden=true; });
             menuScreen.style.display = "block";
             topBarEl.hidden = true;
+            setPageTitleCategory();
             if (window.history && window.history.replaceState && location.search) {
                 history.replaceState(null, "", location.pathname);
             }
@@ -1311,16 +1344,16 @@
                 });
             }
             if (onlyWeak && questions.length === 0) {
-                window.alert("苦手問題がありません。まず通常学習で問題を解いてください。");
+                window.alert("間違った問題がまだありません。まず通常学習で問題を解いてください。");
                 return;
             }
-            const emptyMsg = onlyWeak ? "苦手の未出題がありません。" : "この条件の未出題がありません。";
+            const emptyMsg = onlyWeak ? "間違った問題の未出題がありません。" : "この条件の未出題がありません。";
             const deck = tryBuildDeckOrReset(questions, emptyMsg, onlyWeak);
             if (!deck) {
                 return;
             }
             questions = deck;
-            sessionCategoryLabel = onlyWeak ? (labelForSession + "（苦手）") : labelForSession;
+            sessionCategoryLabel = onlyWeak ? (labelForSession + "（間違い）") : labelForSession;
             skipAnswerRecording = onlyWeak;
             isMockMode = false;
             currentIndex = 0;
@@ -1329,6 +1362,7 @@
             summaryScreen.style.display = "none";
             topBarEl.hidden = false;
             quizScreen.style.display = "block";
+            setPageTitleCategory();
             renderQuestion();
         }
 
@@ -1360,12 +1394,17 @@
 
             addButton("__all__", "すべて", pool.length);
 
+            const AFTER_ACTIONS_CAT = "機器・試験・計測";
             for (let j = 0; j < CATEGORY_ORDER.length; j++) {
                 const c = CATEGORY_ORDER[j];
                 const n = counts[c];
                 if (n) {
                     addButton(c, c, n);
                     delete counts[c];
+                }
+                if (c === AFTER_ACTIONS_CAT) {
+                    categoryButtonsEl.appendChild(weakBtn);
+                    categoryButtonsEl.appendChild(resetAnsweredBtn);
                 }
             }
 
@@ -1376,9 +1415,7 @@
             }
 
             const weakPoolCount = pool.filter(function (q) { return weakQuestionIds.has(q._qid); }).length;
-            weakBtn.textContent = "苦手問題だけ再出題（" + weakPoolCount + "問）";
-            menuHintEl.textContent =
-                "分野の問数は収録件数です（本試験の1回の出題数ではありません）。答えた問題は同じ分野でも出ません。範囲内を全部答えると、次に選んだとき自動で記録がリセットされランダムに再出題されます。戻すは下のリセット。";
+            weakBtn.textContent = "間違った問題だけ再出題（" + weakPoolCount + "問）";
         }
 
         nextBtn.addEventListener("click", goNext);
@@ -1386,10 +1423,6 @@
         backBtn.addEventListener("click", function() {
             if (summaryScreen.style.display !== "none") { initModeScreen(); }
             else { goToMenu(); }
-        });
-        yearFilterEl.addEventListener("change", function () {
-            selectedYear = yearFilterEl.value;
-            buildCategoryMenu();
         });
         weakBtn.addEventListener("click", function () {
             startCategory("__all__", "すべて", true);
@@ -1470,7 +1503,6 @@
                 " 問 ＋ JSON " +
                 nJson +
                 " 問）· 分野別学習";
-            buildYearFilter();
             buildCategoryMenu();
             renderCategoryStats();
         }
@@ -1490,12 +1522,23 @@
             quizScreen.style.display = "none";
             summaryScreen.style.display = "none";
             topBarEl.hidden = true;
+            if (id === "s-mode" || id === "s-year-sel" || id === "s-exam" || id === "s-exam-results" || id === null) {
+                setPageTitleDefault();
+            }
         }
 
         function initModeScreen() {
             clearInterval(examTimerInt);
             renderModeStats();
             showNewScreen("s-mode");
+            if (location.hash === "#how-to-use") {
+                requestAnimationFrame(function () {
+                    var el = document.getElementById("how-to-use");
+                    if (el) {
+                        el.scrollIntoView({ behavior: "smooth", block: "start" });
+                    }
+                });
+            }
         }
 
         function renderModeStats() {
@@ -1524,8 +1567,8 @@
         });
         document.getElementById("btn-mode-weak").addEventListener("click", function() {
             const pool = allQuestions.filter(function(q) { return weakQuestionIds.has(q._qid); });
-            if (pool.length === 0) { window.alert("苦手問題がありません。まず通常学習で問題を解いてください。"); return; }
-            questions = pool.slice(); sessionCategoryLabel = "苦手問題"; skipAnswerRecording = false; isMockMode = false; currentIndex = 0; score = 0;
+            if (pool.length === 0) { window.alert("間違った問題がまだありません。まず通常学習で問題を解いてください。"); return; }
+            questions = pool.slice(); sessionCategoryLabel = "間違った問題"; skipAnswerRecording = false; isMockMode = false; currentIndex = 0; score = 0;
             showNewScreen(null);
             menuScreen.style.display = "none"; summaryScreen.style.display = "none";
             topBarEl.hidden = false; quizScreen.style.display = "block"; renderQuestion();
@@ -1671,7 +1714,6 @@
         }
 
         async function boot() {
-            menuHintEl.textContent = "問題データを読み込み中…";
             categoryButtonsEl.innerHTML = "";
             loadStoredStats();
             await loadQuestionBank();

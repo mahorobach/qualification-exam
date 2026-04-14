@@ -322,7 +322,19 @@ let currentMode = null, currentCatKey = null;
 //  Screen management
 // ══════════════════════════════════════
 const SCREENS = ["s-mode","s-year-sel","s-cat-sel","s-exam","s-prac","s-results"];
-function showScreen(id) { SCREENS.forEach(s => document.getElementById(s).hidden = (s !== id)); }
+function showScreen(id) {
+    SCREENS.forEach(function (s) {
+        const el = document.getElementById(s);
+        if (!el) return;
+        const on = s === id;
+        el.hidden = !on;
+        if (on) {
+            el.removeAttribute("hidden");
+        } else {
+            el.setAttribute("hidden", "");
+        }
+    });
+}
 
 // ══════════════════════════════════════
 //  Persistence
@@ -374,11 +386,16 @@ async function loadQuestions() {
         if (!res.ok) throw new Error("HTTP " + res.status);
         const data = await res.json();
         if (!Array.isArray(data)) throw new Error("not array");
-        allQuestions = data.filter(q =>
-            q && typeof q.question === "string" &&
-            Array.isArray(q.choices) && q.choices.length === 4 &&
-            typeof q.correctIndex === "number"
-        );
+        allQuestions = data.filter(function (q) {
+            if (!q || typeof q.question !== "string") return false;
+            if (!Array.isArray(q.choices) || q.choices.length !== 4) return false;
+            const ci = Number(q.correctIndex);
+            return !isNaN(ci) && ci >= 0 && ci <= 3;
+        });
+        allQuestions.forEach(function (q, i) {
+            q.correctIndex = Number(q.correctIndex);
+            q._qid = "dk_" + i;
+        });
     } catch(err) {
         const w = document.getElementById("load-warning");
         w.hidden = false;
@@ -443,6 +460,15 @@ function buildYearList() {
 function buildCatList() {
     const el = document.getElementById("cat-list");
     el.innerHTML = "";
+    if (!allQuestions.length) {
+        const p = document.createElement("p");
+        p.className = "screen-sub";
+        p.style.cssText = "text-align:left;margin:0;line-height:1.65;";
+        p.textContent = "問題データを読み込めていません。denken-questions.json があるフォルダでローカルサーバー（例: python3 -m http.server）を立てて開いてください。";
+        el.appendChild(p);
+        renderStats("cat-stats");
+        return;
+    }
     const counts = {};
     allQuestions.forEach(q => { const c = q.category || "未分類"; counts[c] = (counts[c]||0)+1; });
     const allBtn = document.createElement("button");
@@ -466,6 +492,10 @@ function buildCatList() {
 //  Screen 3: Exam Mode
 // ══════════════════════════════════════
 function startExam(yearKey) {
+    if (!allQuestions.length) {
+        window.alert("問題データが読み込まれていません。");
+        return;
+    }
     currentMode = "year"; examYearKey = yearKey;
     clearInterval(examTimerInt);
     let pool;
@@ -474,6 +504,10 @@ function startExam(yearKey) {
     } else {
         pool = allQuestions.filter(q => String(q.year||"") === yearKey);
         pool.sort((a,b) => (CAT_ORDER.indexOf(a.category)<0?99:CAT_ORDER.indexOf(a.category)) - (CAT_ORDER.indexOf(b.category)<0?99:CAT_ORDER.indexOf(b.category)));
+    }
+    if (!pool.length) {
+        window.alert("この条件に出題できる問題がありません。");
+        return;
     }
     examQuestions = pool; examAnswers = new Array(pool.length).fill(null); examIdx = 0;
     examTimerSec = (yearKey === "__all__" ? 110 : 50) * 60;
@@ -552,14 +586,24 @@ function endExam() {
 //  Screen 4: Practice Mode
 // ══════════════════════════════════════
 function startPrac(catKey) {
+    if (!allQuestions.length) {
+        window.alert("問題データが読み込まれていません。");
+        return;
+    }
     currentMode = "prac"; currentCatKey = catKey;
     const pool = catKey==="__all__" ? shuffle(allQuestions.slice()) : shuffle(allQuestions.filter(q=>q.category===catKey));
+    if (!pool.length) {
+        window.alert("この条件に出題できる問題がありません。");
+        return;
+    }
     pracQuestions=pool; pracIdx=0; pracAnswered=false; pracRecord=new Array(pool.length).fill(null);
     showScreen("s-prac"); renderPracQ();
 }
 
 function renderPracQ() {
-    const q = pracQuestions[pracIdx]; pracAnswered = false;
+    const q = pracQuestions[pracIdx];
+    if (!q) return;
+    pracAnswered = false;
     const total = pracQuestions.length;
     document.getElementById("prac-prog-label").textContent = (pracIdx+1)+" / "+total;
     document.getElementById("prac-prog-fill").style.width = ((pracIdx+1)/total*100)+"%";
@@ -666,13 +710,25 @@ document.getElementById("btn-retry").addEventListener("click", () => { if(curren
 // ══════════════════════════════════════
 //  Boot
 // ══════════════════════════════════════
+function openCategoryFromQuery() {
+    showScreen("s-cat-sel");
+    buildCatList();
+}
+
+function openYearFromQuery() {
+    showScreen("s-year-sel");
+    buildYearList();
+}
+
 async function boot() {
   loadStats();
   await loadQuestions();
   const params = new URLSearchParams(location.search);
-  if (params.get("mode") === "category") {
-    showScreen("s-cat-sel");
-    buildCatList();
+  const mode = (params.get("mode") || "").toLowerCase().trim();
+  if (mode === "category" || mode === "cat") {
+    openCategoryFromQuery();
+  } else if (mode === "year") {
+    openYearFromQuery();
   } else {
     initModeScreen();
   }

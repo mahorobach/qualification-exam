@@ -89,11 +89,6 @@
         .score-table td { color: var(--text-muted); }
         .note { font-size: 0.78rem; color: var(--text-muted); line-height: 1.75; }
 
-        .how-list { display: flex; flex-direction: column; gap: 10px; }
-        .how-item { display: flex; gap: 12px; align-items: flex-start; }
-        .how-num  { min-width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; background: var(--accent-soft); border-radius: 50%; color: var(--accent); font-weight: 700; font-size: 0.85rem; }
-        .how-text { font-size: 0.85rem; color: var(--text-muted); line-height: 1.65; padding-top: 4px; }
-
         .other-link { display: flex; align-items: center; justify-content: space-between; padding: 14px 16px; background: var(--surface-2); border-radius: 12px; border: 1px solid rgba(61,156,240,0.25); text-decoration: none; margin-bottom: 8px; transition: background .15s; }
         .other-link:hover { background: #2a3645; }
         .other-link-text { font-size: 0.9rem; font-weight: 600; color: var(--text); }
@@ -145,12 +140,12 @@
 
 <div class="wrap">
     <div class="card">
-        <a class="cta" href="quiz.html">クイズを開く →</a>
+        <a class="cta" href="quiz.html">クイズを始める →</a>
         <div style="margin-top:16px;display:flex;flex-direction:column;gap:8px;">
             <a href="quiz.html?mode=year" class="mode-row-link">
                 <span style="font-size:1.1rem;">📅</span>
                 <div>
-                    <div style="font-size:0.85rem;font-weight:700;color:var(--text);">年度別（本番モード）</div>
+                    <div style="font-size:0.85rem;font-weight:700;color:var(--text);">本番モード（年度別）</div>
                     <div style="font-size:0.78rem;color:var(--text-muted);">年度を選んで試験形式で解答</div>
                 </div>
             </a>
@@ -164,7 +159,7 @@
             <a href="quiz.html?mode=category" class="mode-row-link">
                 <span style="font-size:1.1rem;">📂</span>
                 <div>
-                    <div style="font-size:0.85rem;font-weight:700;color:var(--text);">分野別（学習モード）</div>
+                    <div style="font-size:0.85rem;font-weight:700;color:var(--text);">学習モード（分野別）</div>
                     <div style="font-size:0.78rem;color:var(--text-muted);">苦手な分野を選んで1問ずつ解答・解説確認</div>
                 </div>
             </a>
@@ -236,32 +231,7 @@
         <p class="note" style="margin-top:12px;">筆記試験は<strong>相対評価ではなく絶対評価（60点以上）</strong>。配線図問題（20問）を確実に得点し、電気理論の計算を捨てないことが合格への近道です。</p>
     </div>
 
-    <div class="card">
-        <h2>💡 使い方</h2>
-        <div class="how-list">
-            <div class="how-item">
-                <div class="how-num">1</div>
-                <div class="how-text"><strong style="color:var(--text)">年度別（本番モード）</strong>：年度を選んで本番に近い形式で解答。解き終わった後に解説をまとめて確認できます。</div>
-            </div>
-            <div class="how-item">
-                <div class="how-num">2</div>
-                <div class="how-text"><strong style="color:var(--text)">擬似問題集</strong>：試験形式に近い問題セットをまるごと選んで実力チェック。仕上げの総合演習に最適です。</div>
-            </div>
-            <div class="how-item">
-                <div class="how-num">3</div>
-                <div class="how-text"><strong style="color:var(--text)">分野別（学習モード）</strong>：分野を選んで1問ずつ解答し、問題に答えると正誤と解説が表示されます。苦手分野の集中学習に活用してください。</div>
-            </div>
-            <div class="how-item">
-                <div class="how-num">4</div>
-                <div class="how-text"><strong style="color:var(--text)">苦手問題だけ再出題</strong>：クイズの<strong style="color:var(--text)">モード選択画面</strong>のボタン、または分野別メニュー内の同じ名前のボタンから利用できます。不正解だった問題がブラウザに自動保存され、苦手問題のみを集中して繰り返し復習できます。</div>
-            </div>
-            <div class="how-item">
-                <div class="how-num">5</div>
-                <div class="how-text"><strong style="color:var(--text)">回答済みを出題に戻す</strong>：クイズの<strong style="color:var(--text)">モード選択画面</strong>のボタン、または分野別メニュー内の「回答済み（同じ問題）を出題に戻す」から利用できます。一度解いた問題は再出題されない仕組みのため、リセットすると同じ問題を最初から解き直せます。</div>
-            </div>
-        </div>
-        <p style="margin-top:16px;font-size:0.8rem;color:var(--text-muted);line-height:1.8;">※ 本サイトで使用している問題は、第二種電気工事士試験の公式過去問をもとに内容・表現をアレンジして作成したオリジナル問題です。公式機関が提供する問題そのものではありません。正確な試験情報は（一財）電気技術者試験センターの公式サイトをご確認ください。</p>
-    </div>
+    <p class="note" style="margin:0 18px 16px;font-size:0.82rem;color:var(--text-muted);line-height:1.75;">💡 各モードの<strong style="color:var(--text)">使い方</strong>は <a href="quiz.html#how-to-use" style="color:var(--accent);text-decoration:none;">過去問クイズ</a> のモード選択画面にあります。</p>
 
     <div class="card">
         <h2>⚡ 関連資格</h2>

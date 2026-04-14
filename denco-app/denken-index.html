@@ -14,10 +14,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>電験三種（第三種電気主任技術者）学習ポータル | 資格トレイン</title>
-    <meta name="description" content="電験三種（第三種電気主任技術者）試験の過去問クイズアプリ。理論・電力・機械・法規の4科目を年度別・分野別で学習。AI解説機能付き。">
+    <meta name="description" content="電験三種（第三種電気主任技術者）試験の過去問クイズアプリ。理論・電力・機械・法規の4科目を年度別・擬似問題集・科目別で学習。">
     <meta name="keywords" content="電験三種,第三種電気主任技術者,電験,過去問,クイズ,理論,電力,機械,法規,資格,独学,合格">
     <meta property="og:title" content="電験三種（第三種電気主任技術者）過去問クイズ | 資格トレイン">
-    <meta property="og:description" content="電験三種試験の過去問クイズアプリ。AI解説機能付きで科目別に効率よく学習できます。">
+    <meta property="og:description" content="電験三種試験の過去問クイズアプリ。年度別・擬似問題集・科目別で学習できます。">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://qualifications.app/denco-app/denken-index.html">
     <meta property="og:locale" content="ja_JP">
@@ -29,7 +29,7 @@
       "@type": "WebApplication",
       "name": "電験三種（第三種電気主任技術者）過去問クイズ | 資格トレイン",
       "url": "https://qualifications.app/denco-app/denken-quiz.html",
-      "description": "電験三種試験の過去問クイズアプリ。理論・電力・機械・法規の4科目を年度別・分野別で学習。AI解説機能付き。",
+      "description": "電験三種試験の過去問クイズアプリ。理論・電力・機械・法規の4科目を年度別・擬似問題集・科目別で学習。",
       "applicationCategory": "EducationalApplication",
       "operatingSystem": "Web",
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" },
@@ -87,11 +87,6 @@
         .score-table td { color: var(--text-muted); }
         .note { font-size: 0.78rem; color: var(--text-muted); line-height: 1.75; }
 
-        .how-list { display: flex; flex-direction: column; gap: 10px; }
-        .how-item { display: flex; gap: 12px; align-items: flex-start; }
-        .how-num  { min-width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; background: var(--accent-soft); border-radius: 50%; color: var(--accent); font-weight: 700; font-size: 0.85rem; }
-        .how-text { font-size: 0.85rem; color: var(--text-muted); line-height: 1.65; padding-top: 4px; }
-
         .other-link { display: flex; align-items: center; justify-content: space-between; padding: 14px 16px; background: var(--surface-2); border-radius: 12px; border: 1px solid rgba(240,198,116,0.25); text-decoration: none; margin-bottom: 8px; transition: background .15s; }
         .other-link:hover { background: #2e2a18; }
         .other-link-text { font-size: 0.9rem; font-weight: 600; color: var(--text); }
@@ -105,6 +100,22 @@
         footer nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-bottom: 12px; }
         footer nav a { color: var(--text-muted); text-decoration: none; }
         footer nav a:hover { color: var(--accent); }
+
+        #exam-subjects { scroll-margin-top: 64px; }
+
+        .mode-row-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 12px;
+            background: var(--surface-2);
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.06);
+            text-decoration: none;
+            color: inherit;
+            transition: background .15s, border-color .15s;
+        }
+        .mode-row-link:hover { background: #2e2a18; border-color: rgba(240,198,116,0.35); }
     </style>
 </head>
 <body>
@@ -121,17 +132,39 @@
 <header>
     <span class="icon">⚡</span>
     <h1>電験三種 学習ポータル</h1>
-    <p class="lead">第三種電気主任技術者試験の4科目を過去問ベースでスマホ学習できるアプリ。年度別の本番形式と科目別の解説モードを搭載。</p>
+    <p class="lead">第三種電気主任技術者試験の4科目を過去問ベースでスマホ学習できるアプリ。年度別の本番形式・擬似問題集・科目別の解説モードに対応。</p>
 </header>
 
 <div class="wrap">
     <div class="card">
         <a class="cta" href="denken-quiz.html">クイズを始める →</a>
-        <a class="cta cta-secondary" href="denken-quiz.html?mode=category">科目別（学習モード）で練習</a>
+        <div style="margin-top:16px;display:flex;flex-direction:column;gap:8px;">
+            <a href="denken-quiz.html?mode=year" class="mode-row-link">
+                <span style="font-size:1.1rem;">📅</span>
+                <div>
+                    <div style="font-size:0.85rem;font-weight:700;color:var(--text);">年度別（本番モード）</div>
+                    <div style="font-size:0.78rem;color:var(--text-muted);">年度を選んでタイマー付きで解答</div>
+                </div>
+            </a>
+            <a href="denken-mock-sets.html" class="mode-row-link">
+                <span style="font-size:1.1rem;">📋</span>
+                <div>
+                    <div style="font-size:0.85rem;font-weight:700;color:var(--text);">擬似問題集</div>
+                    <div style="font-size:0.78rem;color:var(--text-muted);">4科目ミックスのセットで実力チェック</div>
+                </div>
+            </a>
+            <a href="denken-quiz.html?mode=category" class="mode-row-link">
+                <span style="font-size:1.1rem;">📂</span>
+                <div>
+                    <div style="font-size:0.85rem;font-weight:700;color:var(--text);">学習モード（科目別）</div>
+                    <div style="font-size:0.78rem;color:var(--text-muted);">苦手な科目を選んで1問ずつ解答・解説確認</div>
+                </div>
+            </a>
+        </div>
     </div>
 
-    <div class="card">
-        <h2>📖 試験科目について</h2>
+    <section class="card" id="exam-subjects" aria-labelledby="exam-subjects-heading">
+        <h2 id="exam-subjects-heading">📖 試験科目について</h2>
         <div class="subjects">
             <div class="subject">
                 <div style="flex:1">
@@ -162,7 +195,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <div class="card">
         <h2>✅ 合格基準</h2>
@@ -181,28 +214,11 @@
         <p class="note" style="margin-top:12px;">4科目すべてを1年で合格する必要はありません。<strong>科目合格制度</strong>を活用して、1〜2科目ずつ確実に仕上げる戦略も有効です。まず得点しやすい<strong>電力・法規</strong>から攻略するのがおすすめです。</p>
     </div>
 
-    <div class="card">
-        <h2>💡 使い方</h2>
-        <div class="how-list">
-            <div class="how-item">
-                <div class="how-num">1</div>
-                <div class="how-text"><strong style="color:var(--text)">科目別（学習モード）</strong>：科目を選んで1問ずつ解答。すぐに解説を確認でき、AIへの質問機能で疑問をその場で解消できます。</div>
-            </div>
-            <div class="how-item">
-                <div class="how-num">2</div>
-                <div class="how-text"><strong style="color:var(--text)">年度別（本番形式）</strong>：年度を選択して90分タイマー付きで本番を想定した練習。問題を行き来しながら解答でき、終了後に全解説を確認。</div>
-            </div>
-            <div class="how-item">
-                <div class="how-num">3</div>
-                <div class="how-text"><strong style="color:var(--text)">弱点の把握</strong>：科目ごとの正答率が表示されるので、正答率の低い科目を重点的に学習することで効率よくスコアアップできます。</div>
-            </div>
-        </div>
-        <p style="margin-top:16px;font-size:0.8rem;color:var(--text-muted);line-height:1.8;">※ 本サイトで使用している問題は、第三種電気主任技術者試験の公式過去問をもとに内容・表現をアレンジして作成したオリジナル問題です。公式機関が提供する問題そのものではありません。正確な試験情報は（一財）電気技術者試験センターの公式サイトをご確認ください。</p>
-    </div>
+    <p class="note" style="margin:0 18px 16px;font-size:0.82rem;color:var(--text-muted);line-height:1.75;">💡 各モードの<strong style="color:var(--text)">使い方</strong>は <a href="denken-quiz.html#how-to-use" style="color:var(--accent);text-decoration:none;">過去問クイズ</a> のモード選択画面にあります。</p>
 
     <div class="card">
-        <h2>🔌 関連資格</h2>
-        <a href="index.html" class="other-link">
+        <h2>⚡ 関連資格</h2>
+        <a href="index.html" class="other-link" style="margin-bottom:8px;">
             <div>
                 <div class="other-link-text">⚡ 電気資格ポータルに戻る</div>
                 <div class="other-link-sub">電験三種・電気工事士のまとめページ</div>
@@ -225,7 +241,7 @@
     <nav>
         <a href="../index.html">トップ</a>
         <a href="../takken-app/index.html">宅建士</a>
-        <a href="index.html">第二種電気工事士</a>
+        <a href="koujishi-index.html">第二種電気工事士</a>
         <a href="../gyosei-app/index.html">行政書士</a>
         <a href="../fe-app/index.html">基本情報技術者</a>
     </nav>
