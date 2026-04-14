@@ -13,19 +13,19 @@
   </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <title>宅建士（宅地建物取引士）過去問クイズ</title>
+    <title>マンション管理士 過去問クイズ</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #1a1208;
-            --surface: #251b0c;
-            --surface-2: #2f2210;
-            --text: #ede8de;
-            --text-muted: #a09070;
-            --accent: #e07840;
-            --accent-soft: rgba(224,120,64,0.15);
+            --bg: #111827;
+            --surface: #1e293b;
+            --surface-2: #273549;
+            --text: #e8eaf4;
+            --text-muted: #8b95b0;
+            --accent: #6366f1;
+            --accent-soft: rgba(99,102,241,0.15);
             --correct: #3ecf8e;
             --correct-bg: rgba(62,207,142,0.12);
             --wrong: #f07178;
@@ -38,7 +38,7 @@
             font-family: "Zen Kaku Gothic New","Hiragino Sans",sans-serif;
             font-size: 16px; line-height: 1.65;
             color: var(--text); background: var(--bg);
-            background-image: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(224,120,64,0.14), transparent);
+            background-image: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(99,102,241,0.12), transparent);
             min-height: 100dvh;
             padding: calc(52px + max(16px,env(safe-area-inset-top))) 18px max(32px,env(safe-area-inset-bottom));
         }
@@ -52,11 +52,11 @@
 
         .mode-grid { display: grid; gap: 12px; }
         .mode-btn { appearance: none; width: 100%; text-align: left; padding: 18px 20px; font-family: inherit; color: var(--text); background: var(--surface-2); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; cursor: pointer; transition: background .2s, border-color .2s; }
-        .mode-btn:hover { background: #3a2c14; border-color: rgba(224,120,64,0.4); }
+        .mode-btn:hover { background: #2d3f5a; border-color: rgba(99,102,241,0.45); }
         .mode-btn.danger:hover { background: rgba(240,113,120,0.1); border-color: rgba(240,113,120,0.5); }
         .mode-btn.subtle:hover { background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.12); }
         .mock-link-btn { display:flex; align-items:center; gap:12px; width:100%; text-align:left; padding:18px 20px; font-family:inherit; color:var(--text); background:var(--surface-2); border:1px solid rgba(255,255,255,0.08); border-radius:14px; cursor:pointer; text-decoration:none; transition:background .2s, border-color .2s; }
-        .mock-link-btn:hover { background:#3a2c14; border-color:rgba(224,120,64,0.4); }
+        .mock-link-btn:hover { background:#2d3f5a; border-color:rgba(99,102,241,0.45); }
         .weak-btn { width:100%; min-height:44px; border-radius:10px; border:1px solid rgba(240,113,120,0.3); background:rgba(240,113,120,0.08); color:#ffd3d6; font-family:inherit; font-size:0.88rem; font-weight:600; cursor:pointer; margin-top:8px; }
         .weak-btn:hover { background:rgba(240,113,120,0.15); }
         .reset-answered-btn { width:100%; min-height:44px; border-radius:10px; border:1px solid rgba(255,255,255,0.14); background:transparent; color:var(--text-muted); font-family:inherit; font-size:0.82rem; cursor:pointer; margin-top:6px; }
@@ -67,14 +67,14 @@
 
         .sel-list { display: flex; flex-direction: column; gap: 10px; }
         .sel-item { appearance: none; width: 100%; text-align: left; padding: 14px 16px; font-family: inherit; font-size: 0.95rem; font-weight: 500; color: var(--text); background: var(--surface-2); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; cursor: pointer; transition: background .2s, border-color .2s; }
-        .sel-item:hover { background: #3a2c14; border-color: rgba(224,120,64,0.4); }
+        .sel-item:hover { background: #2d3f5a; border-color: rgba(99,102,241,0.45); }
         .sel-item .s-meta { display: block; font-size: 0.78rem; color: var(--text-muted); margin-top: 3px; font-weight: 400; }
 
         .sub-badge { display: inline-block; font-size: 0.7rem; font-weight: 700; padding: 2px 8px; border-radius: 999px; margin-right: 6px; vertical-align: middle; }
-        .badge-kenri  { background: rgba(61,156,240,0.2);  color: #8ecfff; }
-        .badge-horei  { background: rgba(224,120,64,0.2);  color: #f0a878; }
-        .badge-takken { background: rgba(62,207,142,0.2);  color: #7de0aa; }
-        .badge-zei    { background: rgba(180,100,240,0.2); color: #d4a0ff; }
+        .badge-hourei   { background: rgba(61,156,240,0.2);  color: #8ecfff; }
+        .badge-unei     { background: rgba(52,211,153,0.2); color: #6ee7b7; }
+        .badge-setsubi  { background: rgba(251,191,36,0.2);  color: #fcd34d; }
+        .badge-tekisei  { background: rgba(180,100,240,0.2); color: #d4a0ff; }
 
         .stats-box { background: var(--surface-2); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 14px; }
         .stats-title { margin: 0 0 10px; font-size: 0.82rem; color: var(--text-muted); }
@@ -93,8 +93,8 @@
 
         .q-nav { display: flex; flex-wrap: wrap; gap: 6px; padding: 12px; background: var(--surface-2); border-radius: 10px; border: 1px solid rgba(255,255,255,0.06); margin-bottom: 12px; }
         .q-dot { appearance: none; width: 34px; height: 34px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.14); background: transparent; color: var(--text-muted); font-size: 0.78rem; font-family: inherit; cursor: pointer; transition: all .15s; }
-        .q-dot.answered { background: rgba(224,120,64,0.18); border-color: rgba(224,120,64,0.5); color: var(--accent); }
-        .q-dot.current  { border-color: var(--accent); box-shadow: 0 0 0 2px rgba(224,120,64,0.4); font-weight: 700; }
+        .q-dot.answered { background: rgba(99,102,241,0.18); border-color: rgba(99,102,241,0.5); color: var(--accent); }
+        .q-dot.current  { border-color: var(--accent); box-shadow: 0 0 0 2px rgba(99,102,241,0.45); font-weight: 700; }
         .q-dot:hover:not(.current) { background: rgba(255,255,255,0.06); }
 
         .notice-bar { padding: 10px 14px; background: rgba(62,207,142,0.1); border: 1px solid rgba(62,207,142,0.35); border-radius: 10px; font-size: 0.86rem; color: #b8f0d4; margin-bottom: 12px; text-align: center; }
@@ -104,22 +104,22 @@
         .q-text { font-size: 1rem; font-weight: 500; margin: 0 0 20px; line-height: 1.8; }
         .choices { display: flex; flex-direction: column; gap: 10px; }
         .choice-btn { appearance: none; width: 100%; text-align: left; padding: 14px 16px; font-family: inherit; font-size: 0.95rem; color: var(--text); background: var(--surface-2); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; cursor: pointer; transition: background .2s, border-color .2s; line-height: 1.55; }
-        .choice-btn:hover:not(:disabled) { background: #3a2c14; border-color: rgba(224,120,64,0.4); }
-        .choice-btn.selected     { background: var(--accent-soft); border-color: rgba(224,120,64,0.6); color: #f0c090; }
+        .choice-btn:hover:not(:disabled) { background: #2d3f5a; border-color: rgba(99,102,241,0.45); }
+        .choice-btn.selected     { background: var(--accent-soft); border-color: rgba(99,102,241,0.6); color: #c7d2fe; }
         .choice-btn.correct-pick { background: var(--correct-bg); border-color: rgba(62,207,142,0.45); color: #b8f0d4; }
         .choice-btn.wrong-pick   { background: var(--wrong-bg);   border-color: rgba(240,113,120,0.45); }
         .choice-btn:disabled { cursor: default; opacity: .85; }
 
         .exam-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
         .nav-btn { appearance: none; padding: 14px; font-family: inherit; font-size: 0.9rem; font-weight: 600; color: var(--text); background: var(--surface-2); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; cursor: pointer; transition: background .2s; }
-        .nav-btn:hover:not(:disabled) { background: #3a2c14; }
+        .nav-btn:hover:not(:disabled) { background: #2d3f5a; }
         .nav-btn:disabled { opacity: .35; cursor: default; }
-        .nav-btn.primary { color: #1a1208; background: linear-gradient(135deg,#e07840,#f0a860); border: none; box-shadow: 0 4px 16px rgba(224,120,64,0.4); }
+        .nav-btn.primary { color: #111827; background: linear-gradient(135deg,#6366f1,#818cf8); border: none; box-shadow: 0 4px 16px rgba(99,102,241,0.4); }
         .nav-btn.primary:hover:not(:disabled) { opacity: .9; }
 
         .progress { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; font-size: 0.8rem; color: var(--text-muted); }
         .progress-bar { flex: 1; height: 4px; background: var(--surface-2); border-radius: 2px; margin: 0 12px; overflow: hidden; }
-        .progress-bar span { display: block; height: 100%; background: linear-gradient(90deg,var(--accent),#f0a860); border-radius: 2px; transition: width .35s ease; }
+        .progress-bar span { display: block; height: 100%; background: linear-gradient(90deg,var(--accent),#818cf8); border-radius: 2px; transition: width .35s ease; }
         .feedback { margin-top: 20px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.08); display: none; }
         .feedback.visible { display: block; animation: fadeIn .35s ease; }
         @keyframes fadeIn { from{opacity:0;transform:translateY(6px)} to{opacity:1;transform:translateY(0)} }
@@ -127,7 +127,7 @@
         .result-label.ok { color: var(--correct); }
         .result-label.ng { color: var(--wrong); }
         .explanation { font-size: 0.88rem; color: var(--text-muted); margin: 0; line-height: 1.85; }
-        .next-btn { width: 100%; padding: 15px; margin-top: 20px; font-family: inherit; font-size: 1rem; font-weight: 700; color: #1a1208; background: linear-gradient(135deg,#e07840,#f0a860); border: none; border-radius: 12px; cursor: pointer; box-shadow: 0 4px 20px rgba(224,120,64,0.4); transition: opacity .15s; }
+        .next-btn { width: 100%; padding: 15px; margin-top: 20px; font-family: inherit; font-size: 1rem; font-weight: 700; color: #111827; background: linear-gradient(135deg,#6366f1,#818cf8); border: none; border-radius: 12px; cursor: pointer; box-shadow: 0 4px 20px rgba(99,102,241,0.4); transition: opacity .15s; }
         .next-btn:hover { opacity: .9; }
 
         .res-header { text-align: center; padding-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,0.07); margin-bottom: 16px; }
@@ -153,9 +153,9 @@
         .q-res-correct { font-size: 0.82rem; color: var(--correct); margin-bottom: 6px; }
         .q-res-exp     { font-size: 0.8rem; color: var(--text-muted); line-height: 1.8; }
         .action-col { display: flex; flex-direction: column; gap: 10px; }
-        .cta-btn { width: 100%; padding: 15px; font-family: inherit; font-size: 1rem; font-weight: 700; color: #1a1208; background: linear-gradient(135deg,#e07840,#f0a860); border: none; border-radius: 12px; cursor: pointer; box-shadow: 0 4px 16px rgba(224,120,64,0.35); }
+        .cta-btn { width: 100%; padding: 15px; font-family: inherit; font-size: 1rem; font-weight: 700; color: #111827; background: linear-gradient(135deg,#6366f1,#818cf8); border: none; border-radius: 12px; cursor: pointer; box-shadow: 0 4px 16px rgba(99,102,241,0.35); }
         .sub-btn { width: 100%; padding: 13px; font-family: inherit; font-size: 0.95rem; font-weight: 600; color: var(--text); background: var(--surface-2); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; cursor: pointer; }
-        .sub-btn:hover { background: #3a2c14; }
+        .sub-btn:hover { background: #2d3f5a; }
 
         .load-warning { padding: 12px 14px; font-size: 0.82rem; color: #f0d080; background: rgba(240,198,116,0.1); border: 1px solid rgba(240,198,116,0.35); border-radius: 12px; margin-bottom: 14px; }
         .info-card { background: var(--surface-2); border-radius: 12px; padding: 14px 16px; border: 1px solid rgba(255,255,255,0.07); margin-top: 4px; }
@@ -163,12 +163,12 @@
     </style>
 </head>
 <body>
-<nav style="position:fixed;top:0;left:0;right:0;height:52px;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 18px;background:rgba(26,18,8,0.9);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(255,255,255,0.08);">
+<nav style="position:fixed;top:0;left:0;right:0;height:52px;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 18px;background:rgba(17,24,39,0.92);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(255,255,255,0.08);">
   <a href="../index.html" style="display:flex;align-items:center;gap:7px;text-decoration:none;color:rgba(255,255,255,0.85);font-size:0.9rem;font-weight:600;letter-spacing:-.01em;">
     <span>🚃</span><span>資格トレイン</span>
   </a>
   <a href="index.html" style="display:flex;align-items:center;gap:4px;text-decoration:none;color:rgba(255,255,255,0.5);font-size:0.8rem;">
-    <span style="font-size:.75rem;">←</span><span>宅建士ポータル</span>
+    <span style="font-size:.75rem;">←</span><span>マンション管理士ポータル</span>
   </a>
 </nav>
 <div class="app">
@@ -177,10 +177,10 @@
     <!-- ══ Screen 0: モード選択 ══ -->
     <div id="s-mode">
         <button type="button" onclick="history.back()" class="back-link" style="appearance:none;background:none;border:none;cursor:pointer;margin-bottom:10px;display:block;">← 戻る</button>
-        <a href="index.html" class="back-link">← 宅建士ポータルへ</a>
+        <a href="index.html" class="back-link">← マンション管理士ポータルへ</a>
         <div class="card">
-            <p class="screen-title">🏠 宅建士（宅地建物取引士）過去問クイズ</p>
-            <p class="screen-sub">権利関係・法令制限・宅建業法・税その他の過去問</p>
+            <p class="screen-title">🏘️ マンション管理士 過去問クイズ</p>
+            <p class="screen-sub">法令・実務・管理組合運営・建物設備・管理適正化法の演習</p>
             <div class="mode-grid">
                 <button type="button" class="mode-btn" id="btn-mode-year">
                     <span class="m-icon">📅</span>
@@ -190,11 +190,11 @@
                 <button type="button" class="mode-btn" id="btn-mode-cat">
                     <span class="m-icon">📚</span>
                     <span class="m-name">学習モード（分野別）</span>
-                    <span class="m-desc">権利関係・宅建業法など分野を選んで1問ずつ解答。回答ごとに詳細解説を確認できます。</span>
+                    <span class="m-desc">4区分から分野を選んで1問ずつ解答。回答ごとに詳細解説を確認できます。</span>
                 </button>
                 <a href="mock-sets.html" class="mock-link-btn">
                     <span class="m-icon">📋</span>
-                    <div><span class="m-name" style="display:block;font-size:1rem;font-weight:700;margin-bottom:4px;">擬似問題集</span><span class="m-desc">試験形式に近い50問セットで実力チェック。タイマー付き。</span></div>
+                    <div><span class="m-name" style="display:block;font-size:1rem;font-weight:700;margin-bottom:4px;">擬似問題集</span><span class="m-desc">4分野ミックスのセットで実力チェック（収録数に応じて最大40問）。</span></div>
                 </a>
                 <button type="button" class="mode-btn danger" id="btn-mode-weak">
                     <span class="m-icon">🔁</span>
@@ -211,9 +211,8 @@
         <div class="info-card">
             <p class="section-label" style="margin-bottom:8px;">📋 試験概要</p>
             <p>
-                宅建士試験は<strong style="color:var(--text)">4分野・全50問</strong>で構成。合格基準は例年36〜38点前後（70〜76%）。
-                <strong style="color:var(--text)">宅建業法</strong>（20問）が最重要科目で、
-                権利関係（14問）・法令上の制限（8問）・税その他（8問）。
+                マンション管理士試験は<strong style="color:var(--text)">全50問・2時間</strong>のマークシート（要項で確認）。管理業務主任者合格者は<strong style="color:var(--text)">管理適正化法5問免除</strong>があります。
+                本アプリは学習用に<strong style="color:var(--text)">4区分</strong>（法令・実務／管理組合の運営／建物・設備・修繕／管理適正化法）に整理した演習です。
             </p>
         </div>
         <div class="stats-box" style="margin-top:10px;">
@@ -239,7 +238,7 @@
     <!-- ══ Screen 2: 分野選択 ══ -->
     <div id="s-cat-sel" hidden>
         <button type="button" onclick="history.back()" class="back-link" style="appearance:none;background:none;border:none;cursor:pointer;margin-bottom:10px;display:block;">← 戻る</button>
-        <h2 style="font-size:1.2rem;font-weight:700;color:var(--accent);margin:0 0 10px;text-align:center;">🏠 学習モード（分野別）</h2>
+        <h2 style="font-size:1.2rem;font-weight:700;color:var(--accent);margin:0 0 10px;text-align:center;">🏘️ 学習モード（分野別）</h2>
         <a href="#" class="back-link" id="lnk-cat-back">← モード選択へ</a>
         <div class="card">
             <p class="screen-title">分野を選択</p>
@@ -324,34 +323,36 @@
 </div>
 
 <script>
-const CAT_ORDER = ["権利関係", "法令上の制限", "宅建業法", "税その他"];
-const CAT_BADGE = { "権利関係": "badge-kenri", "法令上の制限": "badge-horei", "宅建業法": "badge-takken", "税その他": "badge-zei" };
+const CAT_ORDER = ["法令・実務", "管理組合の運営", "建物・設備・修繕", "管理適正化法"];
+const CAT_BADGE = { "法令・実務": "badge-hourei", "管理組合の運営": "badge-unei", "建物・設備・修繕": "badge-setsubi", "管理適正化法": "badge-tekisei" };
+/** 演習目安：50問換算で約37問以上＝正答率74%前後（合格基準点は年度の公表による） */
+const PASS_PCT = 74;
 
 const MOCK_SETS = {
-    "mix-50":    { seed: 1, count: 50 },
-    "level2-50": { seed: 2, count: 50 },
-    "level3-50": { seed: 3, count: 50 },
-    "level4-50": { seed: 4, count: 50 },
-    "level5-50": { seed: 5, count: 50 },
+    "mix-40":    { seed: 1, count: 40 },
+    "level2-40": { seed: 2, count: 40 },
+    "level3-40": { seed: 3, count: 40 },
+    "level4-40": { seed: 4, count: 40 },
+    "level5-40": { seed: 5, count: 40 },
 };
 let allQuestions = [], categoryStats = {};
 let weakQuestionIds = new Set(), answeredQids = new Set();
 let examQuestions = [], examAnswers = [], examIdx = 0, examTimerSec = 0, examTimerInt = null, examYearKey = null;
 let pracQuestions = [], pracIdx = 0, pracAnswered = false, pracRecord = [];
-let currentMode = null, currentCatKey = null;
+let currentMode = null, currentCatKey = null, lastMockSetId = null;
 
 const SCREENS = ["s-mode","s-year-sel","s-cat-sel","s-exam","s-prac","s-results"];
 function showScreen(id) { SCREENS.forEach(s => document.getElementById(s).hidden = (s !== id)); }
 
 function loadStats() {
-    try { categoryStats = JSON.parse(localStorage.getItem("takkenCategoryStats") || "{}") || {}; } catch(e) { categoryStats = {}; }
-    try { const raw = localStorage.getItem("takkenWeakQuestionIds"); weakQuestionIds = new Set(Array.isArray(JSON.parse(raw||"[]")) ? JSON.parse(raw||"[]") : []); } catch(e) { weakQuestionIds = new Set(); }
-    try { const raw = localStorage.getItem("takkenAnsweredQids"); answeredQids = new Set(Array.isArray(JSON.parse(raw||"[]")) ? JSON.parse(raw||"[]") : []); } catch(e) { answeredQids = new Set(); }
+    try { categoryStats = JSON.parse(localStorage.getItem("mansionCategoryStats") || "{}") || {}; } catch(e) { categoryStats = {}; }
+    try { const raw = localStorage.getItem("mansionWeakQuestionIds"); weakQuestionIds = new Set(Array.isArray(JSON.parse(raw||"[]")) ? JSON.parse(raw||"[]") : []); } catch(e) { weakQuestionIds = new Set(); }
+    try { const raw = localStorage.getItem("mansionAnsweredQids"); answeredQids = new Set(Array.isArray(JSON.parse(raw||"[]")) ? JSON.parse(raw||"[]") : []); } catch(e) { answeredQids = new Set(); }
 }
 function saveStats() {
-    localStorage.setItem("takkenCategoryStats", JSON.stringify(categoryStats));
-    localStorage.setItem("takkenWeakQuestionIds", JSON.stringify(Array.from(weakQuestionIds)));
-    localStorage.setItem("takkenAnsweredQids", JSON.stringify(Array.from(answeredQids)));
+    localStorage.setItem("mansionCategoryStats", JSON.stringify(categoryStats));
+    localStorage.setItem("mansionWeakQuestionIds", JSON.stringify(Array.from(weakQuestionIds)));
+    localStorage.setItem("mansionAnsweredQids", JSON.stringify(Array.from(answeredQids)));
 }
 function recordAnswer(cat, isCorrect) {
     if (!categoryStats[cat]) categoryStats[cat] = { correct:0, attempted:0 };
@@ -366,7 +367,7 @@ function renderStats(cid) {
         const l = document.createElement("span"); l.textContent = cat; l.style.fontSize = "0.82rem";
         const r = document.createElement("span"); r.style.fontSize = "0.82rem";
         if (!st.attempted) { r.textContent = "—"; r.style.color = "var(--text-muted)"; }
-        else { const rate = Math.round(st.correct/st.attempted*100); r.textContent = rate+"% ("+st.correct+"/"+st.attempted+")"; r.style.color = rate>=60?"var(--correct)":"var(--wrong)"; }
+        else { const rate = Math.round(st.correct/st.attempted*100); r.textContent = rate+"% ("+st.correct+"/"+st.attempted+")"; r.style.color = rate>=PASS_PCT?"var(--correct)":"var(--wrong)"; }
         row.appendChild(l); row.appendChild(r); el.appendChild(row);
     });
 }
@@ -377,7 +378,7 @@ async function loadQuestions() {
         if (!res.ok) throw new Error("HTTP "+res.status);
         const data = await res.json();
         allQuestions = data.filter(q => q && typeof q.question==="string" && Array.isArray(q.choices) && q.choices.length===4 && typeof q.correctIndex==="number");
-        allQuestions.forEach((q, i) => { q._qid = "tk_" + i; });
+        allQuestions.forEach((q, i) => { q._qid = "ms_" + i; });
     } catch(err) {
         const w = document.getElementById("load-warning"); w.hidden = false;
         w.textContent = "questions.json を読み込めませんでした。python3 -m http.server などで開いてください。";
@@ -391,6 +392,7 @@ function seededShuffle(arr, seed) {
 }
 function startMockSet(setId) {
     const cfg = MOCK_SETS[setId]; if (!cfg || !allQuestions.length) return;
+    lastMockSetId = setId;
     currentMode = "prac"; currentCatKey = "__mock__";
     const pool = seededShuffle(allQuestions.slice(), cfg.seed).slice(0, Math.min(cfg.count, allQuestions.length));
     pracQuestions=pool; pracIdx=0; pracAnswered=false; pracRecord=new Array(pool.length).fill(null);
@@ -425,7 +427,7 @@ function buildYearList() {
         btn.addEventListener("click", ()=>startExam(y)); el.appendChild(btn);
     });
     const allBtn=document.createElement("button"); allBtn.type="button"; allBtn.className="sel-item";
-    allBtn.style.borderColor="rgba(224,120,64,0.35)";
+    allBtn.style.borderColor="rgba(99,102,241,0.35)";
     allBtn.innerHTML=`<strong>🔀 全年度ランダム</strong><span class="s-meta">全 ${allQuestions.length} 問をシャッフル出題（120分）</span>`;
     allBtn.addEventListener("click", ()=>startExam("__all__")); el.appendChild(allBtn);
 }
@@ -463,6 +465,7 @@ function buildCatList() {
 }
 
 function startExam(yearKey) {
+    lastMockSetId = null;
     currentMode="year"; examYearKey=yearKey; clearInterval(examTimerInt);
     let pool = yearKey==="__all__" ? shuffle(allQuestions.slice()) : allQuestions.filter(q=>String(q.year||"")===yearKey).sort((a,b)=>(CAT_ORDER.indexOf(a.category)<0?99:CAT_ORDER.indexOf(a.category))-(CAT_ORDER.indexOf(b.category)<0?99:CAT_ORDER.indexOf(b.category)));
     examQuestions=pool; examAnswers=new Array(pool.length).fill(null); examIdx=0; examTimerSec=120*60;
@@ -494,6 +497,7 @@ function renderTimer() { const el=document.getElementById("timer-val"); const m=
 function endExam() { clearInterval(examTimerInt); examQuestions.forEach((q,i)=>{if(examAnswers[i]!==null)recordAnswer(q.category||"未分類",examAnswers[i]===q.correctIndex);}); showResults("year"); }
 
 function startPrac(catKey, onlyWeak) {
+    lastMockSetId = null;
     currentMode="prac"; currentCatKey=catKey;
     let base = catKey==="__all__" ? allQuestions.slice() : allQuestions.filter(q=>q.category===catKey);
     if (onlyWeak) {
@@ -559,22 +563,22 @@ function showResults(mode) {
     showScreen("s-results");
     const qs=mode==="year"?examQuestions:pracQuestions, ans=mode==="year"?examAnswers:pracRecord;
     const answered=ans.filter(a=>a!==null).length, correct=qs.reduce((s,q,i)=>s+(ans[i]===q.correctIndex?1:0),0);
-    const pct=answered>0?Math.round(correct/answered*100):0, pass=pct>=70;
+    const pct=answered>0?Math.round(correct/answered*100):0, pass=pct>=PASS_PCT;
     document.getElementById("res-title").textContent=mode==="year"?(examYearKey==="__all__"?"全年度ランダム 結果":examYearKey+"年度 結果"):"分野別学習 結果";
     document.getElementById("res-score").textContent=correct+" / "+answered+" 問正解";
     const banner=document.getElementById("res-banner"); banner.className="pass-banner "+(pass?"pass":"fail");
-    banner.textContent=pass?"✓ 合格ライン到達（正答率 "+pct+"%）":"✗ 不合格（"+pct+"% ／ 目安 70%以上）";
-    document.getElementById("res-msg").textContent=pct===100?"全問正解！完璧です。":pct>=80?"優秀な成績です！弱点を確認しましょう。":pct>=70?"合格ライン到達。引き続き苦手分野を強化しましょう。":"解説をしっかり読んで基礎から固め直しましょう。";
+    banner.textContent=pass?"✓ 合格目安クリア（正答率 "+pct+"%・50問換算で約37問以上相当）":"△ 合格目安未達（"+pct+"% ／ 50問中37〜38問＝約74〜76%が目安）";
+    document.getElementById("res-msg").textContent=pct===100?"全問正解！完璧です。":pct>=80?"優秀な成績です！弱点を確認しましょう。":pct>=PASS_PCT?"合格目安をクリア。引き続き苦手分野を強化しましょう。":"解説をしっかり読んで基礎から固め直しましょう。";
     const catSummary=document.getElementById("res-cat-summary"); catSummary.innerHTML="";
     const catMap={};
     qs.forEach((q,i)=>{ const c=q.category||"未分類"; if(!catMap[c])catMap[c]={ok:0,done:0,total:0}; catMap[c].total++; if(ans[i]!==null){catMap[c].done++;if(ans[i]===q.correctIndex)catMap[c].ok++;} });
-    CAT_ORDER.forEach(c=>{ if(!catMap[c])return; const s=catMap[c]; const r=s.done>0?Math.round(s.ok/s.done*100):0; const b=CAT_BADGE[c]||""; const row=document.createElement("div"); row.className="cat-summary-row"; row.innerHTML=`<span><span class="sub-badge ${b}">${c}</span>${c}</span><span style="color:${r>=70?'var(--correct)':'var(--wrong)'};font-weight:600">${s.ok}/${s.done}問 (${r}%)</span>`; catSummary.appendChild(row); });
+    CAT_ORDER.forEach(c=>{ if(!catMap[c])return; const s=catMap[c]; const r=s.done>0?Math.round(s.ok/s.done*100):0; const b=CAT_BADGE[c]||""; const row=document.createElement("div"); row.className="cat-summary-row"; row.innerHTML=`<span><span class="sub-badge ${b}">${c}</span>${c}</span><span style="color:${r>=PASS_PCT?'var(--correct)':'var(--wrong)'};font-weight:600">${s.ok}/${s.done}問 (${r}%)</span>`; catSummary.appendChild(row); });
     const listEl=document.getElementById("res-q-list"); listEl.innerHTML="";
     qs.forEach((q,i)=>{ const userAns=ans[i],isSkip=userAns===null,isOk=!isSkip&&userAns===q.correctIndex; const b=CAT_BADGE[q.category]||""; const card=document.createElement("div"); card.className="q-result-card "+(isSkip?"skipped":isOk?"ok":"ng"); const sc=isSkip?"var(--text-muted)":isOk?"var(--correct)":"var(--wrong)"; const si=isSkip?"— 未回答":isOk?"✓ 正解":"✗ 不正解"; let html=`<div class="q-res-meta"><span class="sub-badge ${b}">${q.category||""}</span><strong>問${i+1}</strong> · ${q.year}年<span style="color:${sc};margin-left:8px">${si}</span></div><div class="q-res-text">${escHtml(q.question)}</div>`; if(!isSkip)html+=`<div class="q-res-your ${isOk?'ok':'ng'}">あなたの解答：${escHtml(q.choices[userAns])}</div>`; if(!isOk)html+=`<div class="q-res-correct">正解：${escHtml(q.choices[q.correctIndex])}</div>`; html+=`<div class="q-res-exp">${escHtml(q.explanation)}</div>`; card.innerHTML=html; listEl.appendChild(card); });
 }
 function escHtml(s) { return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
 document.getElementById("btn-to-menu").addEventListener("click",()=>initModeScreen());
-document.getElementById("btn-retry").addEventListener("click",()=>{ if(currentMode==="year")startExam(examYearKey); else startPrac(currentCatKey); });
+document.getElementById("btn-retry").addEventListener("click",()=>{ if(currentMode==="year")startExam(examYearKey); else if(lastMockSetId&&MOCK_SETS[lastMockSetId])startMockSet(lastMockSetId); else startPrac(currentCatKey); });
 
 async function boot() {
     loadStats();
