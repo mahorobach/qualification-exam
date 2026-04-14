@@ -459,7 +459,17 @@ function escHtml(s) { return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;"
 document.getElementById("btn-to-menu").addEventListener("click",()=>initModeScreen());
 document.getElementById("btn-retry").addEventListener("click",()=>{ if(currentMode==="year")startExam(examYearKey); else startPrac(currentCatKey); });
 
-async function boot() { loadStats(); await loadQuestions(); initModeScreen(); }
+async function boot() {
+  loadStats();
+  await loadQuestions();
+  const params = new URLSearchParams(location.search);
+  if (params.get("mode") === "category") {
+    showScreen("s-cat-sel");
+    buildCatList();
+  } else {
+    initModeScreen();
+  }
+}
 boot();
 </script>
 </body>

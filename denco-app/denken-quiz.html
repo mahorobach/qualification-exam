@@ -666,7 +666,17 @@ document.getElementById("btn-retry").addEventListener("click", () => { if(curren
 // ══════════════════════════════════════
 //  Boot
 // ══════════════════════════════════════
-async function boot() { loadStats(); await loadQuestions(); initModeScreen(); }
+async function boot() {
+  loadStats();
+  await loadQuestions();
+  const params = new URLSearchParams(location.search);
+  if (params.get("mode") === "category") {
+    showScreen("s-cat-sel");
+    buildCatList();
+  } else {
+    initModeScreen();
+  }
+}
 boot();
 </script>
 </body>
