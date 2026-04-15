@@ -28,7 +28,7 @@
       "@context": "https://schema.org",
       "@type": "WebApplication",
       "name": "宅建士（宅地建物取引士）過去問クイズ | 資格トレイン",
-      "url": "https://mahorobach.github.io/qualification-exam/takken-app/quiz.html",
+      "url": "https://mahorobach.github.io/qualification-exam/takken-app/index.html",
       "description": "宅地建物取引士（宅建士）試験の過去問クイズアプリ。権利関係・法令上の制限・宅建業法・税その他を年度別・分野別で学習。AI解説機能付き。",
       "applicationCategory": "EducationalApplication",
       "operatingSystem": "Web",
@@ -93,6 +93,22 @@
         .how-text { font-size: 0.85rem; color: var(--text-muted); line-height: 1.65; padding-top: 4px; }
         .how-text code { font-size: 0.8em; }
 
+        #exam-subjects, #portal-how-to-use { scroll-margin-top: 64px; }
+
+        .mode-row-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 12px;
+            background: var(--surface-2);
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.06);
+            text-decoration: none;
+            color: inherit;
+            transition: background .15s, border-color .15s;
+        }
+        .mode-row-link:hover { background: #3a2a14; border-color: rgba(224,120,64,0.35); }
+
         .top-link { display: block; text-align: center; padding: 10px 18px; font-size: 0.84rem; color: var(--text-muted); text-decoration: none; }
         .top-link:hover { color: var(--accent); text-decoration: underline; }
 
@@ -103,12 +119,26 @@
     </style>
 </head>
 <body>
+<script>
+(function () {
+    try {
+        var p = new URLSearchParams(window.location.search);
+        if (p.get("howto") === "1") {
+            window.location.replace("quiz.html");
+            return;
+        }
+        if (p.get("set") || p.get("mode")) {
+            window.location.replace("quiz.html" + window.location.search + window.location.hash);
+        }
+    } catch (e) {}
+})();
+</script>
 
 <nav style="position:fixed;top:0;left:0;right:0;height:52px;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 18px;background:rgba(26,18,8,0.92);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(255,255,255,0.08);">
   <a href="../index.html" style="display:flex;align-items:center;gap:7px;text-decoration:none;color:rgba(255,255,255,0.85);font-size:0.9rem;font-weight:600;letter-spacing:-.01em;">
     <span>🚃</span><span>資格トレイン</span>
   </a>
-  <a href="quiz.html?mode=all" style="display:inline-flex;align-items:center;gap:5px;text-decoration:none;font-size:0.8rem;font-weight:600;color:#1a1208;background:linear-gradient(135deg,#e07840,#f0a860);padding:6px 14px;border-radius:20px;">
+  <a href="?mode=all" style="display:inline-flex;align-items:center;gap:5px;text-decoration:none;font-size:0.8rem;font-weight:600;color:#1a1208;background:linear-gradient(135deg,#e07840,#f0a860);padding:6px 14px;border-radius:20px;">
     クイズを始める
   </a>
 </nav>
@@ -121,25 +151,34 @@
 
 <div class="wrap">
     <div class="card">
-        <a class="cta" href="quiz.html?mode=all">クイズを始める →</a>
+        <a class="cta" href="?mode=all">クイズを始める →</a>
         <div style="margin-top:16px;display:flex;flex-direction:column;gap:8px;">
-            <a href="quiz.html?mode=year" style="display:flex;align-items:center;gap:12px;padding:12px 14px;background:var(--surface-2);border-radius:12px;border:1px solid rgba(255,255,255,0.07);text-decoration:none;color:var(--text);">
+            <a href="?mode=year" class="mode-row-link">
                 <span style="font-size:1.1rem;">📅</span>
-                <div><div style="font-size:0.85rem;font-weight:700;">本番モード（年度別）</div><div style="font-size:0.78rem;color:var(--text-muted);">年度を選んで120分タイマー付きで解答</div></div>
+                <div>
+                    <div style="font-size:0.85rem;font-weight:700;color:var(--text);">本番モード（年度別）</div>
+                    <div style="font-size:0.78rem;color:var(--text-muted);">年度を選んで120分タイマー付きで解答</div>
+                </div>
             </a>
-            <a href="mock-sets.html" style="display:flex;align-items:center;gap:12px;padding:12px 14px;background:var(--surface-2);border-radius:12px;border:1px solid rgba(255,255,255,0.07);text-decoration:none;color:var(--text);">
+            <a href="mock-sets.html" class="mode-row-link">
                 <span style="font-size:1.1rem;">📋</span>
-                <div><div style="font-size:0.85rem;font-weight:700;">擬似問題集</div><div style="font-size:0.78rem;color:var(--text-muted);">4分野ミックスのセットで実力チェック</div></div>
+                <div>
+                    <div style="font-size:0.85rem;font-weight:700;color:var(--text);">擬似問題集</div>
+                    <div style="font-size:0.78rem;color:var(--text-muted);">4分野ミックスのセットで実力チェック</div>
+                </div>
             </a>
-            <a href="quiz.html?mode=category" style="display:flex;align-items:center;gap:12px;padding:12px 14px;background:var(--surface-2);border-radius:12px;border:1px solid rgba(255,255,255,0.07);text-decoration:none;color:var(--text);">
+            <a href="?mode=category" class="mode-row-link">
                 <span style="font-size:1.1rem;">📚</span>
-                <div><div style="font-size:0.85rem;font-weight:700;">学習モード（分野別）</div><div style="font-size:0.78rem;color:var(--text-muted);">苦手な分野を選んで1問ずつ解答・解説確認</div></div>
+                <div>
+                    <div style="font-size:0.85rem;font-weight:700;color:var(--text);">学習モード（分野別）</div>
+                    <div style="font-size:0.78rem;color:var(--text-muted);">苦手な分野を選んで1問ずつ解答・解説確認</div>
+                </div>
             </a>
         </div>
     </div>
 
-    <div class="card">
-        <h2>📖 試験科目について</h2>
+    <section class="card" id="exam-subjects" aria-labelledby="exam-subjects-heading">
+        <h2 id="exam-subjects-heading">📖 試験科目について</h2>
         <div class="subjects">
             <div class="subject">
                 <div style="flex:1">
@@ -170,7 +209,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <div class="card">
         <h2>✅ 合格基準</h2>
@@ -188,7 +227,7 @@
         <p class="note" style="margin-top:12px;">合格基準点は試験終了後に決定されます。<strong>宅建業法（20問）</strong>で取りこぼしがないことが合格への近道です。</p>
     </div>
 
-    <div class="card">
+    <div class="card" id="portal-how-to-use">
         <h2>💡 使い方</h2>
         <div class="how-list">
             <div class="how-item">
@@ -220,6 +259,7 @@
                 <div class="how-text"><strong style="color:var(--text)">回答済みを出題に戻す</strong>：一度答えた問題の記録を消し、再び通常出題の対象に戻せます。モード選択画面または分野別メニューから利用できます。</div>
             </div>
         </div>
+        <p class="note" style="margin-top:16px;">試験概要・操作の補足は <a href="?howto=1" style="color:var(--accent);text-decoration:none;">過去問クイズ（モード選択）</a> にも記載があります。</p>
         <p style="margin-top:16px;font-size:0.8rem;color:var(--text-muted);line-height:1.8;">※ 本サイトで使用している問題は、宅地建物取引士試験の公式過去問をもとに内容・表現をアレンジして作成したオリジナル問題です。公式機関が提供する問題そのものではありません。正確な試験情報は（一財）不動産適正取引推進機構の公式サイトをご確認ください。</p>
     </div>
 

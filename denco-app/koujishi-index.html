@@ -28,7 +28,7 @@
       "@context": "https://schema.org",
       "@type": "WebApplication",
       "name": "第二種電気工事士 過去問クイズ | 資格トレイン",
-      "url": "https://qualifications.app/denco-app/quiz.html",
+      "url": "https://qualifications.app/denco-app/koujishi-index.html",
       "description": "第二種電気工事士試験の過去問クイズアプリ。電気理論・配線図・機器・施工・法令などを年度別・分野別で学習。AI解説機能付き。",
       "applicationCategory": "EducationalApplication",
       "operatingSystem": "Web",
@@ -104,7 +104,7 @@
         footer nav a:hover { color: var(--accent); }
 
         /* アンカーリンク時に固定ナビで見出しが隠れないようにする */
-        #exam-subjects { scroll-margin-top: 64px; }
+        #exam-subjects, #portal-how-to-use { scroll-margin-top: 64px; }
 
         .mode-row-link {
             display: flex;
@@ -125,15 +125,30 @@
         .how-num  { flex-shrink: 0; min-width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; background: var(--accent-soft); border-radius: 50%; color: var(--accent); font-weight: 700; font-size: 0.85rem; }
         .how-text { font-size: 0.85rem; color: var(--text-muted); line-height: 1.65; padding-top: 4px; }
         .how-text code { font-size: 0.8em; }
+
     </style>
 </head>
 <body>
+<script>
+(function () {
+    try {
+        var p = new URLSearchParams(window.location.search);
+        if (p.get("howto") === "1") {
+            window.location.replace("quiz.html#how-to-use");
+            return;
+        }
+        if (p.get("set") || p.get("mode")) {
+            window.location.replace("quiz.html" + window.location.search + window.location.hash);
+        }
+    } catch (e) {}
+})();
+</script>
 
 <nav style="position:fixed;top:0;left:0;right:0;height:52px;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 18px;background:rgba(9,19,31,0.92);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(255,255,255,0.08);">
   <a href="../index.html" style="display:flex;align-items:center;gap:7px;text-decoration:none;color:rgba(255,255,255,0.85);font-size:0.9rem;font-weight:600;letter-spacing:-.01em;">
     <span>🚃</span><span>資格トレイン</span>
   </a>
-  <a href="quiz.html?mode=all" style="display:inline-flex;align-items:center;gap:5px;text-decoration:none;font-size:0.8rem;font-weight:600;color:#09131f;background:linear-gradient(135deg,#3d9cf0,#60b8ff);padding:6px 14px;border-radius:20px;">
+  <a href="?mode=all" style="display:inline-flex;align-items:center;gap:5px;text-decoration:none;font-size:0.8rem;font-weight:600;color:#09131f;background:linear-gradient(135deg,#3d9cf0,#60b8ff);padding:6px 14px;border-radius:20px;">
     クイズを始める
   </a>
 </nav>
@@ -146,9 +161,9 @@
 
 <div class="wrap">
     <div class="card">
-        <a class="cta" href="quiz.html?mode=all">クイズを始める →</a>
+        <a class="cta" href="?mode=all">クイズを始める →</a>
         <div style="margin-top:16px;display:flex;flex-direction:column;gap:8px;">
-            <a href="quiz.html?mode=year" class="mode-row-link">
+            <a href="?mode=year" class="mode-row-link">
                 <span style="font-size:1.1rem;">📅</span>
                 <div>
                     <div style="font-size:0.85rem;font-weight:700;color:var(--text);">本番モード（年度別）</div>
@@ -162,7 +177,7 @@
                     <div style="font-size:0.78rem;color:var(--text-muted);">試験形式に近い問題セットで実力チェック</div>
                 </div>
             </a>
-            <a href="quiz.html?mode=category" class="mode-row-link">
+            <a href="?mode=category" class="mode-row-link">
                 <span style="font-size:1.1rem;">📂</span>
                 <div>
                     <div style="font-size:0.85rem;font-weight:700;color:var(--text);">学習モード（分野別）</div>
@@ -237,7 +252,7 @@
         <p class="note" style="margin-top:12px;">筆記試験は<strong>相対評価ではなく絶対評価（60点以上）</strong>。配線図問題（20問）を確実に得点し、電気理論の計算を捨てないことが合格への近道です。</p>
     </div>
 
-    <div class="card">
+    <div class="card" id="portal-how-to-use">
         <h2>💡 使い方</h2>
         <div class="how-list">
             <div class="how-item">
@@ -269,7 +284,7 @@
                 <div class="how-text"><strong style="color:var(--text)">回答済みを出題に戻す</strong>：一度答えた問題の記録を消し、再び通常出題の対象に戻せます。モード選択画面または分野別メニューから利用できます。</div>
             </div>
         </div>
-        <p class="note" style="margin-top:16px;">より詳しい説明は <a href="quiz.html#how-to-use" style="color:var(--accent);text-decoration:none;">過去問クイズ</a> のモード選択画面（使い方）にもあります。</p>
+        <p class="note" style="margin-top:16px;">より詳しい説明は <a href="?howto=1" style="color:var(--accent);text-decoration:none;">過去問クイズの使い方</a>（モード選択画面）にもあります。</p>
     </div>
 
     <div class="card">

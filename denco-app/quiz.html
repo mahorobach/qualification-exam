@@ -31,6 +31,10 @@
             --wrong-bg: rgba(240, 113, 120, 0.12);
             --radius: 14px;
             --shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+            --denco-portal-grad: linear-gradient(135deg, #153a5e, #1e5088 45%, #2563a8);
+            --denco-portal-border: 1px solid rgba(100, 170, 240, 0.22);
+            --denco-portal-shadow: 0 3px 14px rgba(21, 58, 94, 0.55);
+            --denco-portal-shadow-hover: 0 4px 18px rgba(30, 80, 136, 0.5);
         }
 
         * {
@@ -626,6 +630,27 @@
         .how-text { font-size: 0.85rem; color: var(--text-muted); line-height: 1.65; padding-top: 2px; }
         .how-text strong { color: var(--text); }
         .how-guide-note { margin-top: 14px; font-size: 0.78rem; color: var(--text-muted); line-height: 1.75; }
+
+        /* 右上：電気資格ポータル（電験ポータル denken-index と同一デザイン） */
+        .nav-denco-portal {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            text-decoration: none;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: rgba(232, 244, 255, 0.96);
+            background: var(--denco-portal-grad);
+            padding: 6px 12px;
+            border-radius: 20px;
+            box-shadow: var(--denco-portal-shadow);
+            border: var(--denco-portal-border);
+            transition: opacity 0.15s, box-shadow 0.2s;
+        }
+        .nav-denco-portal:hover {
+            opacity: 0.92;
+            box-shadow: var(--denco-portal-shadow-hover);
+        }
     </style>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3002712486184435" crossorigin="anonymous"></script>
 </head>
@@ -634,9 +659,7 @@
   <a href="../index.html" style="display:flex;align-items:center;gap:7px;text-decoration:none;color:rgba(255,255,255,0.85);font-size:0.9rem;font-weight:600;letter-spacing:-.01em;">
     <span>🚃</span><span>資格トレイン</span>
   </a>
-  <a href="index.html" style="display:flex;align-items:center;gap:4px;text-decoration:none;color:rgba(255,255,255,0.5);font-size:0.8rem;">
-    <span style="font-size:.75rem;">←</span><span>電気資格ポータル</span>
-  </a>
+  <a href="index.html" class="nav-denco-portal">⚡ 電気資格ポータル</a>
 </nav>
     <div class="app">
         <header>
@@ -715,7 +738,7 @@
 
         <!-- ══ Screen 1: 年度選択 ══ -->
         <div id="s-year-sel" hidden>
-            <a href="#" class="back-link" id="lnk-year-back">← モード選択へ</a>
+            <a href="koujishi-index.html" class="back-link" id="lnk-year-back">← 第二種電気工事士 学習ポータルへ</a>
             <div class="card">
                 <p class="screen-title">年度を選択</p>
                 <p class="screen-sub">解答する年度を選んでください</p>
@@ -749,20 +772,20 @@
 
         <!-- ══ Screen 3: 年度別 結果 ══ -->
         <div id="s-exam-results" hidden>
-            <a href="#" class="back-link" id="lnk-res-back">← モード選択へ</a>
+            <a href="koujishi-index.html" class="back-link" id="lnk-res-back">← 第二種電気工事士 学習ポータルへ</a>
             <div class="card" style="margin-bottom:12px;">
                 <p class="screen-title" id="res-title">結果</p>
                 <div id="res-banner" style="margin:12px 0;padding:12px;border-radius:10px;text-align:center;font-weight:700;font-size:1.1rem;"></div>
                 <p id="res-score" style="text-align:center;font-size:2rem;font-weight:700;color:var(--accent);margin:0 0 8px;"></p>
                 <p id="res-msg" style="font-size:0.85rem;color:var(--text-muted);text-align:center;margin:0 0 16px;line-height:1.6;"></p>
                 <div id="res-cat-summary"></div>
-                <button type="button" class="restart-btn" id="btn-res-back-menu" style="margin-top:14px;">モード選択に戻る</button>
+                <a href="koujishi-index.html" class="restart-btn" id="btn-res-back-menu" style="margin-top:14px;display:block;text-align:center;text-decoration:none;box-sizing:border-box;">第二種電気工事士 学習ポータルに戻る</a>
             </div>
             <div id="res-q-list"></div>
         </div>
 
         <div id="menu-screen" style="display:none;">
-            <a href="#" class="back-link" id="lnk-cat-back-mode">← モード選択へ</a>
+            <a href="koujishi-index.html" class="back-link" id="lnk-cat-back-mode">← 第二種電気工事士 学習ポータルへ</a>
             <div class="card">
             <h2 class="menu-title">分野を選択してください。</h2>
             <div class="menu-quick-quiz-wrap">
@@ -879,6 +902,8 @@
         let isMockMode = false;
         let isQuickQuizMode = false;
         let quickQuizIssuedIds = new Set();
+        /** boot 時のみ true。quiz.html#how-to-use 直リンクのとき一度だけ使い方へスクロールし、以降のモード復帰ではトップに戻す */
+        let applyHowToUseHashScrollOnce = false;
 
         const questionTextEl = document.getElementById("question-text");
         const choicesEl = document.getElementById("choices");
@@ -1659,13 +1684,20 @@
             clearInterval(examTimerInt);
             renderModeStats();
             showNewScreen("s-mode");
-            if (location.hash === "#how-to-use") {
+            window.scrollTo(0, 0);
+            if (applyHowToUseHashScrollOnce && location.hash === "#how-to-use") {
+                applyHowToUseHashScrollOnce = false;
                 requestAnimationFrame(function () {
-                    var el = document.getElementById("how-to-use");
-                    if (el) {
-                        el.scrollIntoView({ behavior: "smooth", block: "start" });
-                    }
+                    requestAnimationFrame(function () {
+                        var el = document.getElementById("how-to-use");
+                        if (el) {
+                            el.scrollIntoView({ behavior: "smooth", block: "start" });
+                        }
+                    });
                 });
+                if (history.replaceState) {
+                    history.replaceState(null, "", location.pathname + location.search);
+                }
             }
         }
 
@@ -1699,26 +1731,14 @@
             questions = pool.slice(); sessionCategoryLabel = "間違った問題"; skipAnswerRecording = false; isMockMode = false; isQuickQuizMode = false; currentIndex = 0; score = 0;
             showNewScreen(null);
             menuScreen.style.display = "none"; summaryScreen.style.display = "none";
-            topBarEl.hidden = false; quizScreen.style.display = "block"; renderQuestion();
+            topBarEl.hidden = false; quizScreen.style.display = "block";
+            renderQuestion();
         });
         document.getElementById("btn-mode-reset").addEventListener("click", function() {
             if (!window.confirm("回答済みの記録をリセットします。よろしいですか？")) return;
             answeredQids.clear(); saveStoredStats();
             window.alert("リセットしました。全問が再出題されます。");
         });
-        document.getElementById("lnk-year-back").addEventListener("click", function(e) {
-            e.preventDefault(); initModeScreen();
-        });
-        document.getElementById("lnk-cat-back-mode").addEventListener("click", function(e) {
-            e.preventDefault(); initModeScreen();
-        });
-        document.getElementById("lnk-res-back").addEventListener("click", function(e) {
-            e.preventDefault(); initModeScreen();
-        });
-        document.getElementById("btn-res-back-menu").addEventListener("click", function() {
-            initModeScreen();
-        });
-
         // Year selection
         function buildYearSel() {
             const el = document.getElementById("year-sel-list"); el.innerHTML = "";
@@ -1858,6 +1878,7 @@
             } else if (mode === "category" || mode === "cat") {
                 goToMenu();
             } else {
+                applyHowToUseHashScrollOnce = location.hash === "#how-to-use";
                 initModeScreen();
             }
         }

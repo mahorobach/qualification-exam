@@ -25,6 +25,10 @@
             --text-muted: #9a9070;
             --accent: #f0c674;
             --accent-soft: rgba(240,198,116,0.15);
+            --denco-portal-grad: linear-gradient(135deg, #153a5e, #1e5088 45%, #2563a8);
+            --denco-portal-border: 1px solid rgba(100, 170, 240, 0.22);
+            --denco-portal-shadow: 0 3px 14px rgba(21, 58, 94, 0.55);
+            --denco-portal-shadow-hover: 0 4px 18px rgba(30, 80, 136, 0.5);
             --correct: #3ecf8e;
             --correct-bg: rgba(62,207,142,0.12);
             --wrong: #f07178;
@@ -46,6 +50,27 @@
         /* ── Common ── */
         .back-link { display: inline-flex; align-items: center; gap: 4px; color: var(--accent); text-decoration: none; font-size: 0.85rem; margin-bottom: 14px; }
         .back-link:hover { text-decoration: underline; }
+
+        /* 右上：電気資格ポータル（電験ポータル denken-index と同一デザイン） */
+        .nav-denco-portal {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            text-decoration: none;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: rgba(232, 244, 255, 0.96);
+            background: var(--denco-portal-grad);
+            padding: 6px 12px;
+            border-radius: 20px;
+            box-shadow: var(--denco-portal-shadow);
+            border: var(--denco-portal-border);
+            transition: opacity 0.15s, box-shadow 0.2s;
+        }
+        .nav-denco-portal:hover {
+            opacity: 0.92;
+            box-shadow: var(--denco-portal-shadow-hover);
+        }
         .card { background: var(--surface); border-radius: var(--radius); padding: 22px 20px; box-shadow: var(--shadow); border: 1px solid rgba(255,255,255,0.06); margin-bottom: 14px; }
         .screen-title { font-size: 1.1rem; font-weight: 700; text-align: center; margin: 0 0 6px; }
         .screen-sub { font-size: 0.82rem; color: var(--text-muted); text-align: center; margin: 0 0 20px; }
@@ -177,9 +202,7 @@
   <a href="../index.html" style="display:flex;align-items:center;gap:7px;text-decoration:none;color:rgba(255,255,255,0.85);font-size:0.9rem;font-weight:600;letter-spacing:-.01em;">
     <span>🚃</span><span>資格トレイン</span>
   </a>
-  <a href="index.html" style="display:flex;align-items:center;gap:4px;text-decoration:none;color:rgba(255,255,255,0.5);font-size:0.8rem;">
-    <span style="font-size:.75rem;">←</span><span>電気資格ポータル</span>
-  </a>
+  <a href="index.html" class="nav-denco-portal">⚡ 電気資格ポータル</a>
 </nav>
 <div class="app">
     <p id="load-warning" class="load-warning" hidden></p>
@@ -241,7 +264,7 @@
 
     <!-- ══ Screen 1: 年度選択 ══ -->
     <div id="s-year-sel" hidden>
-        <a href="#" class="back-link" id="lnk-year-back">← モード選択へ</a>
+        <a href="denken-index.html" class="back-link" id="lnk-year-back">← 電験ポータルへ</a>
         <div class="card">
             <p class="screen-title">年度を選択</p>
             <p class="screen-sub">解答する年度を選んでください</p>
@@ -255,7 +278,7 @@
     <!-- ══ Screen 2: 科目選択 ══ -->
     <div id="s-cat-sel" hidden>
         <h2 style="font-size:1.2rem;font-weight:700;color:var(--accent);margin:0 0 10px;text-align:center;">⚡ 学習モード（科目別）</h2>
-        <a href="#" class="back-link" id="lnk-cat-back">← モード選択へ</a>
+        <a href="denken-index.html" class="back-link" id="lnk-cat-back">← 電験ポータルに戻る</a>
         <div class="card">
             <p class="screen-sub" style="font-size:1rem;font-weight:700;color:var(--text);">学習する科目を選んでください</p>
             <button type="button" class="cta-btn" id="btn-cat-quick-quiz" style="width:100%;max-width:100%;margin-bottom:14px;padding:12px 15px;">クイズを始める →</button>
@@ -528,9 +551,6 @@ document.getElementById("btn-mode-reset").addEventListener("click", () => {
     answeredQids.clear(); saveStats();
     window.alert("リセットしました。全問が再出題されます。");
 });
-document.getElementById("lnk-year-back").addEventListener("click", e => { e.preventDefault(); initModeScreen(); });
-document.getElementById("lnk-cat-back").addEventListener("click",  e => { e.preventDefault(); initModeScreen(); });
-
 // ══════════════════════════════════════
 //  Screen 1: Year Selection
 // ══════════════════════════════════════

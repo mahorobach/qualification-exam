@@ -28,7 +28,7 @@
       "@context": "https://schema.org",
       "@type": "WebApplication",
       "name": "電験三種（第三種電気主任技術者）過去問クイズ | 資格トレイン",
-      "url": "https://qualifications.app/denco-app/denken-quiz.html",
+      "url": "https://qualifications.app/denco-app/denken-index.html",
       "description": "電験三種試験の過去問クイズアプリ。理論・電力・機械・法規の4科目を年度別・擬似問題集・科目別で学習。",
       "applicationCategory": "EducationalApplication",
       "operatingSystem": "Web",
@@ -44,6 +44,10 @@
         :root {
             --accent: #f0c674;
             --accent-soft: rgba(240,198,116,0.15);
+            --denco-portal-grad: linear-gradient(135deg, #153a5e, #1e5088 45%, #2563a8);
+            --denco-portal-border: 1px solid rgba(100, 170, 240, 0.22);
+            --denco-portal-shadow: 0 3px 14px rgba(21, 58, 94, 0.55);
+            --denco-portal-shadow-hover: 0 4px 18px rgba(30, 80, 136, 0.5);
             --bg: #12100a;
             --surface: #1c1a10;
             --surface-2: #252214;
@@ -101,7 +105,7 @@
         footer nav a { color: var(--text-muted); text-decoration: none; }
         footer nav a:hover { color: var(--accent); }
 
-        #exam-subjects { scroll-margin-top: 64px; }
+        #exam-subjects, #portal-how-to-use { scroll-margin-top: 64px; }
 
         .mode-row-link {
             display: flex;
@@ -122,17 +126,50 @@
         .how-num  { flex-shrink: 0; min-width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; background: var(--accent-soft); border-radius: 50%; color: var(--accent); font-weight: 700; font-size: 0.85rem; }
         .how-text { font-size: 0.85rem; color: var(--text-muted); line-height: 1.65; padding-top: 4px; }
         .how-text code { font-size: 0.8em; }
+
+        /* 電気資格ポータル系：濃い青グラデ（ナビ・学習モード行で共通） */
+        .nav-denco-portal {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            text-decoration: none;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: rgba(232, 244, 255, 0.96);
+            background: var(--denco-portal-grad);
+            padding: 6px 12px;
+            border-radius: 20px;
+            box-shadow: var(--denco-portal-shadow);
+            border: var(--denco-portal-border);
+            transition: opacity 0.15s, box-shadow 0.2s;
+        }
+        .nav-denco-portal:hover {
+            opacity: 0.92;
+            box-shadow: var(--denco-portal-shadow-hover);
+        }
     </style>
 </head>
 <body>
+<script>
+(function () {
+    try {
+        var p = new URLSearchParams(window.location.search);
+        if (p.get("howto") === "1") {
+            window.location.replace("denken-quiz.html");
+            return;
+        }
+        if (p.get("set") || p.get("mode")) {
+            window.location.replace("denken-quiz.html" + window.location.search + window.location.hash);
+        }
+    } catch (e) {}
+})();
+</script>
 
 <nav style="position:fixed;top:0;left:0;right:0;height:52px;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 18px;background:rgba(18,16,10,0.92);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(255,255,255,0.08);">
   <a href="../index.html" style="display:flex;align-items:center;gap:7px;text-decoration:none;color:rgba(255,255,255,0.85);font-size:0.9rem;font-weight:600;letter-spacing:-.01em;">
     <span>🚃</span><span>資格トレイン</span>
   </a>
-  <a href="denken-quiz.html?mode=all" style="display:inline-flex;align-items:center;gap:5px;text-decoration:none;font-size:0.8rem;font-weight:600;color:#12100a;background:linear-gradient(135deg,#f0c674,#f5d98a);padding:6px 14px;border-radius:20px;">
-    クイズを始める
-  </a>
+  <a href="index.html" class="nav-denco-portal">⚡ 電気資格ポータル</a>
 </nav>
 
 <header>
@@ -142,9 +179,9 @@
 
 <div class="wrap">
     <div class="card">
-        <a class="cta" href="denken-quiz.html?mode=all">クイズを始める →</a>
+        <a class="cta" href="?mode=all">クイズを始める →</a>
         <div style="margin-top:16px;display:flex;flex-direction:column;gap:8px;">
-            <a href="denken-quiz.html?mode=year" class="mode-row-link">
+            <a href="?mode=year" class="mode-row-link">
                 <span style="font-size:1.1rem;">📅</span>
                 <div>
                     <div style="font-size:0.85rem;font-weight:700;color:var(--text);">年度別（本番モード）</div>
@@ -158,7 +195,7 @@
                     <div style="font-size:0.78rem;color:var(--text-muted);">4科目ミックスのセットで実力チェック</div>
                 </div>
             </a>
-            <a href="denken-quiz.html?mode=category" class="mode-row-link">
+            <a href="?mode=category" class="mode-row-link">
                 <span style="font-size:1.1rem;">📂</span>
                 <div>
                     <div style="font-size:0.85rem;font-weight:700;color:var(--text);">学習モード（科目別）</div>
@@ -219,7 +256,7 @@
         <p class="note" style="margin-top:12px;">4科目すべてを1年で合格する必要はありません。<strong>科目合格制度</strong>を活用して、1〜2科目ずつ確実に仕上げる戦略も有効です。まず得点しやすい<strong>電力・法規</strong>から攻略するのがおすすめです。</p>
     </div>
 
-    <div class="card">
+    <div class="card" id="portal-how-to-use">
         <h2>💡 使い方</h2>
         <div class="how-list">
             <div class="how-item">
@@ -251,7 +288,7 @@
                 <div class="how-text"><strong style="color:var(--text)">回答済みを出題に戻す</strong>：一度答えた問題の記録を消し、再び通常出題の対象に戻せます。モード選択画面または科目別メニューから利用できます。</div>
             </div>
         </div>
-        <p class="note" style="margin-top:16px;">試験概要・タイマーなどの補足は <a href="denken-quiz.html" style="color:var(--accent);text-decoration:none;">過去問クイズ</a> のモード選択画面にも記載があります。</p>
+        <p class="note" style="margin-top:16px;">試験概要・タイマーなどの補足は <a href="?howto=1" style="color:var(--accent);text-decoration:none;">過去問クイズ（モード選択）</a> にも記載があります。</p>
     </div>
 
     <div class="card">

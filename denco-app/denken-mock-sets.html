@@ -12,7 +12,7 @@
   </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <title>擬似問題集 | 電験三種 学習ポータル | 資格トレイン</title>
+    <title>擬似問題集 | 電験三種 電験ポータル | 資格トレイン</title>
     <meta name="description" content="電験三種（第三種電気主任技術者）向けの4科目ミックス擬似問題集。タイマー付きで実力チェックできます。">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,6 +28,10 @@
             --accent-2: #f5d98a;
             --radius: 14px;
             --shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+            --denco-portal-grad: linear-gradient(135deg, #153a5e, #1e5088 45%, #2563a8);
+            --denco-portal-border: 1px solid rgba(100, 170, 240, 0.22);
+            --denco-portal-shadow: 0 3px 14px rgba(21, 58, 94, 0.55);
+            --denco-portal-shadow-hover: 0 4px 18px rgba(30, 80, 136, 0.5);
         }
 
         * { box-sizing: border-box; }
@@ -52,6 +56,7 @@
 
         header {
             margin-bottom: 22px;
+            text-align: center;
         }
 
         header h1 {
@@ -62,7 +67,8 @@
         }
 
         header p {
-            margin: 0;
+            margin: 0 auto;
+            max-width: 36em;
             font-size: 0.88rem;
             color: var(--text-muted);
         }
@@ -131,6 +137,27 @@
             border: 1px solid rgba(240, 198, 116, 0.25);
             border-radius: 10px;
         }
+
+        /* 右上：電気資格ポータル（denken-index / denken-quiz と同一） */
+        .nav-denco-portal {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            text-decoration: none;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: rgba(232, 244, 255, 0.96);
+            background: var(--denco-portal-grad);
+            padding: 6px 12px;
+            border-radius: 20px;
+            box-shadow: var(--denco-portal-shadow);
+            border: var(--denco-portal-border);
+            transition: opacity 0.15s, box-shadow 0.2s;
+        }
+        .nav-denco-portal:hover {
+            opacity: 0.92;
+            box-shadow: var(--denco-portal-shadow-hover);
+        }
     </style>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3002712486184435" crossorigin="anonymous"></script>
 </head>
@@ -140,13 +167,11 @@
   <a href="../index.html" style="display:flex;align-items:center;gap:7px;text-decoration:none;color:rgba(255,255,255,0.85);font-size:0.9rem;font-weight:600;letter-spacing:-.01em;">
     <span>🚃</span><span>資格トレイン</span>
   </a>
-  <a href="denken-index.html" style="display:flex;align-items:center;gap:4px;text-decoration:none;color:rgba(255,255,255,0.5);font-size:0.8rem;">
-    <span style="font-size:.75rem;">←</span><span>電験三種</span>
-  </a>
+  <a href="index.html" class="nav-denco-portal">⚡ 電気資格ポータル</a>
 </nav>
 
     <div class="wrap" style="padding-top:68px;">
-        <p class="nav"><a href="denken-quiz.html">← クイズモード選択へ</a></p>
+        <p class="nav"><a href="denken-index.html">← 電験ポータルへ</a></p>
         <header>
             <h1>電験三種 擬似問題集</h1>
             <p>理論・電力・機械・法規を<strong>まとめて</strong>出題する演習です。公式の過去問そのものではありません。セットごとに<strong>出題順が異なります</strong>（最大45問・収録数が少ない場合は全問）。</p>
@@ -155,31 +180,31 @@
         <section class="set-card">
             <h2>擬似① 本番想定ミックス</h2>
             <p>4科目ミックス。まずは全体の腕試しに。<br>正答率<strong>60%以上</strong>で合格ライン到達の目安。</p>
-            <a class="set-btn" href="denken-quiz.html?set=mix-45">このセットで開始</a>
+            <a class="set-btn" href="denken-index.html?set=mix-45">このセットで開始</a>
         </section>
 
         <section class="set-card">
             <h2>擬似② 標準〜やや難ミックス</h2>
             <p>別シードの4科目ミックス。①とは問題の並びが変わります。</p>
-            <a class="set-btn" href="denken-quiz.html?set=level2-45">このセットで開始</a>
+            <a class="set-btn" href="denken-index.html?set=level2-45">このセットで開始</a>
         </section>
 
         <section class="set-card">
             <h2>擬似③ 応用レベルミックス</h2>
             <p>別シードの4科目ミックス。繰り返しで慣れをつけられます。</p>
-            <a class="set-btn" href="denken-quiz.html?set=level3-45">このセットで開始</a>
+            <a class="set-btn" href="denken-index.html?set=level3-45">このセットで開始</a>
         </section>
 
         <section class="set-card">
             <h2>擬似④ 難問チャレンジ</h2>
             <p>別シードの4科目ミックス。長めの制限時間でじっくりどうぞ。</p>
-            <a class="set-btn" href="denken-quiz.html?set=level4-45">このセットで開始</a>
+            <a class="set-btn" href="denken-index.html?set=level4-45">このセットで開始</a>
         </section>
 
         <section class="set-card">
             <h2>擬似⑤ 最難関チャレンジ</h2>
             <p>別シードの4科目ミックス。総仕上げのイメージで活用してください。</p>
-            <a class="set-btn" href="denken-quiz.html?set=level5-45">このセットで開始</a>
+            <a class="set-btn" href="denken-index.html?set=level5-45">このセットで開始</a>
         </section>
 
         <p class="note">

@@ -246,7 +246,7 @@
     <div id="s-cat-sel" hidden>
         <button type="button" onclick="history.back()" class="back-link" style="appearance:none;background:none;border:none;cursor:pointer;margin-bottom:10px;display:block;">← 戻る</button>
         <h2 style="font-size:1.2rem;font-weight:700;color:var(--accent);margin:0 0 10px;text-align:center;">🏠 学習モード（分野別）</h2>
-        <a href="#" class="back-link" id="lnk-cat-back">← モード選択へ</a>
+        <a href="index.html" class="back-link" id="lnk-cat-back">← 学習ポータルへ</a>
         <div class="card">
             <p class="screen-title">分野を選択</p>
             <p class="screen-sub">学習する分野を選んでください</p>
@@ -479,7 +479,6 @@ document.getElementById("btn-mode-reset").addEventListener("click", () => {
     window.alert("リセットしました。全問が再出題されます。");
 });
 document.getElementById("lnk-year-back").addEventListener("click", e => { e.preventDefault(); initModeScreen(); });
-document.getElementById("lnk-cat-back").addEventListener("click",  e => { e.preventDefault(); initModeScreen(); });
 
 function buildYearList() {
     const el = document.getElementById("year-list"); el.innerHTML = "";
