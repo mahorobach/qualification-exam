@@ -264,9 +264,8 @@
         <a href="index.html" class="back-link" id="lnk-cat-back">← 学習ポータルへ</a>
         <h2 style="font-size:1.2rem;font-weight:700;color:var(--accent);margin:0 0 10px;text-align:center;">🏠 学習モード（分野別）</h2>
         <div class="card">
-            <p class="screen-title">分野を選択</p>
-            <p class="screen-sub">学習する分野を選んでください</p>
-            <button type="button" class="menu-quick-quiz-btn" id="btn-cat-quick-quiz">クイズを始める</button>
+            <p class="screen-title">分野を選択してください。</p>
+            <button type="button" class="menu-quick-quiz-btn" id="btn-cat-quick-quiz">クイズを始める（ランダム２０問）</button>
             <div class="sel-list" id="cat-list"></div>
         </div>
         <div class="stats-box">
@@ -385,7 +384,7 @@ function saveStats() {
 }
 function syncQuickQuizLabels() {
     const label = "クイズを始める →";
-    const labelCat = "クイズを始める";
+    const labelCat = "クイズを始める（ランダム２０問）";
     const a = document.getElementById("btn-start-all");
     const b = document.getElementById("btn-cat-quick-quiz");
     if (a) a.textContent = label;

@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/da8873c0823e389b7f9a1d40/script.js"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3002712486184435" crossorigin="anonymous"></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G4S7ZG2Y34"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-G4S7ZG2Y34');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>応用情報技術者 過去問クイズ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0c0a14;
+      --surface: #14121f;
+      --surface-2: #1c1a2a;
+      --text: #e4e0f5;
+      --text-muted: #8a82a8;
+      --accent: #9b87f5;
+      --accent-soft: rgba(155,135,245,0.18);
+      --correct: #3ecf8e;
+      --correct-bg: rgba(62,207,142,0.12);
+      --wrong: #f07178;
+      --wrong-bg: rgba(240,113,120,0.12);
+      --radius: 14px;
+      --shadow: 0 8px 32px rgba(0,0,0,0.5);
+      --ipa-portal-grad: linear-gradient(135deg, #2a2458, #3d3570 45%, #4f4a8a);
+      --ipa-portal-border: 1px solid rgba(160, 150, 220, 0.35);
+      --ipa-portal-shadow: 0 3px 14px rgba(42, 36, 88, 0.55);
+      --ipa-portal-shadow-hover: 0 4px 18px rgba(79, 74, 138, 0.45);
+    }
+    .nav-ipa-portal {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      text-decoration: none;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: rgba(232, 248, 252, 0.96);
+      background: var(--ipa-portal-grad);
+      padding: 6px 10px;
+      border-radius: 20px;
+      box-shadow: var(--ipa-portal-shadow);
+      border: var(--ipa-portal-border);
+      transition: opacity 0.15s, box-shadow 0.2s;
+      white-space: nowrap;
+    }
+    .nav-ipa-portal:hover { opacity: 0.92; box-shadow: var(--ipa-portal-shadow-hover); }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; }
+    body {
+      font-family: "Zen Kaku Gothic New","Hiragino Sans",sans-serif;
+      font-size: 16px; line-height: 1.65;
+      color: var(--text); background: var(--bg);
+      background-image: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(155,135,245,0.12), transparent);
+      min-height: 100dvh;
+      padding: calc(52px + max(16px,env(safe-area-inset-top))) 18px max(32px,env(safe-area-inset-bottom));
+    }
+    .app { max-width: 480px; margin: 0 auto; }
+    .back-link { display: inline-flex; align-items: center; gap: 4px; color: var(--accent); text-decoration: none; font-size: 0.85rem; margin-bottom: 14px; }
+    .back-link:hover { text-decoration: underline; }
+    .card { background: var(--surface); border-radius: var(--radius); padding: 22px 20px; box-shadow: var(--shadow); border: 1px solid rgba(255,255,255,0.07); margin-bottom: 14px; }
+    .screen-title { font-size: 1.1rem; font-weight: 700; text-align: center; margin: 0 0 6px; }
+    .screen-sub { font-size: 0.82rem; color: var(--text-muted); text-align: center; margin: 0 0 20px; }
+    .mode-grid { display: grid; gap: 12px; }
+    .mode-btn { appearance: none; width: 100%; text-align: left; padding: 18px 20px; font-family: inherit; color: var(--text); background: var(--surface-2); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; cursor: pointer; transition: background .2s, border-color .2s; }
+    .mode-btn:hover { background: #242238; border-color: rgba(155,135,245,0.4); }
+    .mode-btn .m-icon { font-size: 1.8rem; margin-bottom: 8px; display: block; }
+    .mode-btn .m-name { font-size: 1.0rem; font-weight: 700; display: block; margin-bottom: 4px; }
+    .mode-btn .m-desc { font-size: 0.8rem; color: var(--text-muted); display: block; line-height: 1.55; }
+    .mock-link-btn { display:flex; align-items:center; gap:12px; width:100%; text-align:left; padding:18px 20px; font-family:inherit; color:var(--text); background:var(--surface-2); border:1px solid rgba(255,255,255,0.08); border-radius:14px; cursor:pointer; text-decoration:none; transition:background .2s, border-color .2s; }
+    .mock-link-btn:hover { background:#242238; border-color:rgba(155,135,245,0.4); }
+    .sel-list { display: flex; flex-direction: column; gap: 10px; }
+    .sel-item { appearance: none; width: 100%; text-align: left; padding: 14px 16px; font-family: inherit; font-size: 0.95rem; font-weight: 500; color: var(--text); background: var(--surface-2); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; cursor: pointer; transition: background .2s, border-color .2s; }
+    .sel-item:hover { background: #242238; border-color: rgba(155,135,245,0.4); }
+    .sel-item .s-meta { display: block; font-size: 0.78rem; color: var(--text-muted); margin-top: 3px; font-weight: 400; }
+    .menu-quick-quiz-btn { width: 100%; margin-bottom: 14px; padding: 14px 16px; font-family: inherit; font-size: 0.95rem; font-weight: 700; color: #120c1c; background: linear-gradient(135deg,#8b7cf0,#b4a3f8); border: none; border-radius: 12px; cursor: pointer; box-shadow: 0 4px 16px rgba(155,135,245,0.35); }
+    .menu-quick-quiz-btn:hover { opacity: 0.92; }
+    .weak-btn { display:flex; align-items:center; justify-content:center; gap:10px; width:100%; min-height:44px; border-radius:10px; border:1px solid rgba(240,113,120,0.3); background:rgba(240,113,120,0.08); color:#ffd3d6; font-family:inherit; font-size:0.88rem; font-weight:600; cursor:pointer; margin-top:8px; text-align:center; padding:0 14px; box-sizing:border-box; }
+    .weak-btn .weak-btn-icon { font-size:1.25rem; line-height:1; flex-shrink:0; }
+    .weak-btn:hover { background:rgba(240,113,120,0.15); }
+    .reset-answered-btn { display:flex; align-items:center; justify-content:center; gap:10px; width:100%; min-height:44px; border-radius:10px; border:1px solid rgba(255,255,255,0.14); background:transparent; color:var(--text-muted); font-family:inherit; font-size:0.82rem; font-weight:600; cursor:pointer; margin-top:6px; text-align:center; padding:0 14px; box-sizing:border-box; }
+    .reset-answered-btn .reset-answered-icon { font-size:1.2rem; line-height:1; flex-shrink:0; }
+    .reset-answered-btn:hover { background:rgba(255,255,255,0.06); color:var(--text); }
+    .sub-badge { display: inline-block; font-size: 0.7rem; font-weight: 700; padding: 2px 8px; border-radius: 999px; margin-right: 6px; vertical-align: middle; }
+    .badge-hw  { background: rgba(155,135,245,0.22);  color: #c4b5fc; }
+    .badge-alg { background: rgba(60,207,142,0.2);  color: #88f0c8; }
+    .badge-net { background: rgba(240,198,116,0.2); color: #f8d880; }
+    .badge-db  { background: rgba(180,100,220,0.2); color: #d4a0f8; }
+    .badge-dev { background: rgba(240,120,80,0.2);  color: #f8a888; }
+    .stats-box { background: var(--surface-2); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 14px; }
+    .stats-title { margin: 0 0 10px; font-size: 0.82rem; color: var(--text-muted); }
+    .stats-row { display: flex; justify-content: space-between; font-size: 0.84rem; padding: 3px 0; }
+    .exam-header { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 12px; }
+    .timer-box { display: flex; flex-direction: column; align-items: center; background: var(--surface-2); border-radius: 10px; padding: 6px 12px; border: 1px solid rgba(255,255,255,0.08); }
+    .timer-label { font-size: 0.64rem; color: var(--text-muted); }
+    .timer-val { font-size: 1.25rem; font-weight: 700; color: var(--accent); font-variant-numeric: tabular-nums; letter-spacing: .04em; }
+    .timer-val.warn   { color: #f0d080; }
+    .timer-val.danger { color: var(--wrong); animation: blink 1s ease infinite; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.5} }
+    .exam-meta { font-size: 0.8rem; color: var(--text-muted); text-align: center; flex: 1; line-height: 1.5; }
+    .end-btn { appearance: none; padding: 8px 12px; font-family: inherit; font-size: 0.82rem; font-weight: 600; color: #ffd3d6; background: rgba(240,113,120,0.15); border: 1px solid rgba(240,113,120,0.4); border-radius: 8px; cursor: pointer; white-space: nowrap; }
+    .end-btn:hover { background: rgba(240,113,120,0.25); }
+    .q-nav { display: flex; flex-wrap: wrap; gap: 6px; padding: 12px; background: var(--surface-2); border-radius: 10px; border: 1px solid rgba(255,255,255,0.06); margin-bottom: 12px; }
+    .q-dot { appearance: none; width: 34px; height: 34px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.14); background: transparent; color: var(--text-muted); font-size: 0.78rem; font-family: inherit; cursor: pointer; transition: all .15s; }
+    .q-dot.answered { background: rgba(155,135,245,0.18); border-color: rgba(155,135,245,0.5); color: var(--accent); }
+    .q-dot.current  { border-color: var(--accent); box-shadow: 0 0 0 2px rgba(155,135,245,0.4); font-weight: 700; }
+    .q-dot:hover:not(.current) { background: rgba(255,255,255,0.06); }
+    .notice-bar { padding: 10px 14px; background: rgba(62,207,142,0.1); border: 1px solid rgba(62,207,142,0.35); border-radius: 10px; font-size: 0.86rem; color: #b8f0d4; margin-bottom: 12px; text-align: center; }
+    .q-num-badge { display: inline-block; font-size: 0.72rem; font-weight: 500; color: var(--accent); background: var(--accent-soft); padding: 4px 10px; border-radius: 999px; margin-bottom: 14px; }
+    .q-text { font-size: 1rem; font-weight: 500; margin: 0 0 20px; line-height: 1.8; white-space: pre-wrap; }
+    .choices { display: flex; flex-direction: column; gap: 10px; }
+    .choice-btn { appearance: none; width: 100%; text-align: left; padding: 14px 16px; font-family: inherit; font-size: 0.95rem; color: var(--text); background: var(--surface-2); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; cursor: pointer; transition: background .2s, border-color .2s; line-height: 1.55; white-space: pre-wrap; }
+    .choice-btn:hover:not(:disabled) { background: #242238; border-color: rgba(155,135,245,0.4); }
+    .choice-btn.selected     { background: var(--accent-soft); border-color: rgba(155,135,245,0.6); color: #c4b5fc; }
+    .choice-btn.correct-pick { background: var(--correct-bg); border-color: rgba(62,207,142,0.45); color: #b8f0d4; }
+    .choice-btn.wrong-pick   { background: var(--wrong-bg);   border-color: rgba(240,113,120,0.45); }
+    .choice-btn:disabled { cursor: default; opacity: .85; }
+    .exam-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
+    .nav-btn { appearance: none; padding: 14px; font-family: inherit; font-size: 0.9rem; font-weight: 600; color: var(--text); background: var(--surface-2); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; cursor: pointer; transition: background .2s; }
+    .nav-btn:hover:not(:disabled) { background: #242238; }
+    .nav-btn:disabled { opacity: .35; cursor: default; }
+    .nav-btn.primary { color: #120c1c; background: linear-gradient(135deg,#8b7cf0,#b4a3f8); border: none; box-shadow: 0 4px 16px rgba(155,135,245,0.4); }
+    .nav-btn.primary:hover:not(:disabled) { opacity: .9; }
+    .progress { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; font-size: 0.8rem; color: var(--text-muted); }
+    .progress-bar { flex: 1; height: 4px; background: var(--surface-2); border-radius: 2px; margin: 0 12px; overflow: hidden; }
+    .progress-bar span { display: block; height: 100%; background: linear-gradient(90deg,var(--accent),#b4a3f8); border-radius: 2px; transition: width .35s ease; }
+    .feedback { margin-top: 20px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.08); display: none; }
+    .feedback.visible { display: block; animation: fadeIn .35s ease; }
+    @keyframes fadeIn { from{opacity:0;transform:translateY(6px)} to{opacity:1;transform:translateY(0)} }
+    .result-label { font-size: 1.1rem; font-weight: 700; margin: 0 0 10px; }
+    .result-label.ok { color: var(--correct); }
+    .result-label.ng { color: var(--wrong); }
+    .explanation { font-size: 0.88rem; color: var(--text-muted); margin: 0; line-height: 1.85; }
+    .next-btn { width: 100%; padding: 15px; margin-top: 20px; font-family: inherit; font-size: 1rem; font-weight: 700; color: #120c1c; background: linear-gradient(135deg,#8b7cf0,#b4a3f8); border: none; border-radius: 12px; cursor: pointer; box-shadow: 0 4px 20px rgba(155,135,245,0.4); transition: opacity .15s; }
+    .next-btn:hover { opacity: .9; }
+    .res-header { text-align: center; padding-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,0.07); margin-bottom: 16px; }
+    .res-title  { font-size: 1.15rem; font-weight: 700; margin: 0 0 12px; }
+    .res-score  { font-size: 2.4rem; font-weight: 700; color: var(--accent); margin-bottom: 10px; }
+    .pass-banner { display: inline-block; font-size: 1.05rem; font-weight: 700; padding: 9px 20px; border-radius: 12px; margin-bottom: 8px; }
+    .pass-banner.pass { color: #b8f0d4; background: rgba(62,207,142,0.15); border: 2px solid rgba(62,207,142,0.55); }
+    .pass-banner.fail { color: #ffd3d6; background: rgba(240,113,120,0.15); border: 2px solid rgba(240,113,120,0.45); }
+    .res-msg { font-size: 0.86rem; color: var(--text-muted); margin: 6px 0 0; }
+    .cat-summary { display: grid; gap: 6px; margin-bottom: 16px; }
+    .cat-summary-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 12px; background: var(--surface-2); border-radius: 10px; font-size: 0.84rem; }
+    .section-label { font-size: 0.82rem; font-weight: 700; color: var(--text-muted); margin: 0 0 10px; letter-spacing: .04em; }
+    .q-card-list { display: flex; flex-direction: column; gap: 14px; margin-bottom: 20px; }
+    .q-result-card { background: var(--surface-2); border-radius: 12px; padding: 14px 16px; border-left: 4px solid transparent; }
+    .q-result-card.ok      { border-left-color: var(--correct); }
+    .q-result-card.ng      { border-left-color: var(--wrong); }
+    .q-result-card.skipped { border-left-color: var(--text-muted); }
+    .q-res-meta    { font-size: 0.72rem; color: var(--text-muted); margin-bottom: 6px; }
+    .q-res-text    { font-size: 0.88rem; font-weight: 600; line-height: 1.65; margin-bottom: 8px; white-space: pre-wrap; }
+    .q-res-your    { font-size: 0.82rem; margin-bottom: 4px; }
+    .q-res-your.ok { color: var(--correct); }
+    .q-res-your.ng { color: var(--wrong); }
+    .q-res-correct { font-size: 0.82rem; color: var(--correct); margin-bottom: 6px; }
+    .q-res-exp     { font-size: 0.8rem; color: var(--text-muted); line-height: 1.8; }
+    .action-col { display: flex; flex-direction: column; gap: 10px; }
+    .cta-btn { width: 100%; padding: 15px; font-family: inherit; font-size: 1rem; font-weight: 700; color: #120c1c; background: linear-gradient(135deg,#8b7cf0,#b4a3f8); border: none; border-radius: 12px; cursor: pointer; box-shadow: 0 4px 16px rgba(155,135,245,0.35); }
+    .sub-btn { width: 100%; padding: 13px; font-family: inherit; font-size: 0.95rem; font-weight: 600; color: var(--text); background: var(--surface-2); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; cursor: pointer; }
+    .sub-btn:hover { background: #242238; }
+    .load-warning { padding: 12px 14px; font-size: 0.82rem; color: #f0d080; background: rgba(240,198,116,0.1); border: 1px solid rgba(240,198,116,0.35); border-radius: 12px; margin-bottom: 14px; }
+    .info-card { background: var(--surface-2); border-radius: 12px; padding: 14px 16px; border: 1px solid rgba(255,255,255,0.07); margin-top: 4px; }
+    .info-card p { font-size: 0.82rem; color: var(--text-muted); margin: 0; line-height: 1.75; }
+  </style>
+</head>
+<body>
+<nav style="position:fixed;top:0;left:0;right:0;min-height:52px;z-index:200;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;padding:8px 18px;background:rgba(12,10,20,0.92);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(255,255,255,0.08);">
+  <a href="../index.html" style="display:flex;align-items:center;gap:7px;text-decoration:none;color:rgba(255,255,255,0.85);font-size:0.9rem;font-weight:600;letter-spacing:-.01em;">
+    <span>🚃</span><span>資格トレイン</span>
+  </a>
+  <a href="../ipa-app/index.html" class="nav-ipa-portal">🖥️ 情報処理資格ポータル</a>
+</nav>
+<div class="app">
+  <p id="load-warning" class="load-warning" hidden></p>
+
+  <!-- Screen 0: モード選択 -->
+  <div id="s-mode">
+    <a href="index.html" class="back-link">← 応用情報技術者ポータルへ</a>
+    <div class="card">
+      <p class="screen-title">📗 応用情報技術者 過去問クイズ</p>
+      <p class="screen-sub">コンピュータ基礎 / アルゴリズム / ネットワーク・セキュリティ / データベース / ソフトウェア開発</p>
+      <button type="button" class="cta-btn" id="btn-start-all" style="margin-bottom:16px;">クイズを始める →</button>
+      <div class="mode-grid">
+        <button type="button" class="mode-btn" id="btn-mode-year">
+          <span class="m-icon">📅</span>
+          <span class="m-name">年度別（本番形式）</span>
+          <span class="m-desc">150分タイマー・解説付き</span>
+        </button>
+        <a href="mock-sets.html" class="mock-link-btn">
+          <span class="m-icon">📋</span>
+          <div><span class="m-name" style="display:block;font-size:1rem;font-weight:700;margin-bottom:4px;">擬似問題集</span><span class="m-desc">ミックスセット（最大50問）</span></div>
+        </a>
+        <button type="button" class="mode-btn" id="btn-mode-cat">
+          <span class="m-icon">📚</span>
+          <span class="m-name">学習モード（分野別）</span>
+          <span class="m-desc">分野を選んで1問ずつ</span>
+        </button>
+      </div>
+    </div>
+    <div class="info-card">
+      <p>応用情報は科目A・Bの要項をIPAで確認。本クイズは知識確認用。<a href="mock-sets.html" style="color:var(--accent);text-decoration:none;">擬似問題集</a></p>
+    </div>
+    <div class="stats-box" style="margin-top:10px;">
+      <p class="stats-title">分野ごとの正答率（累計）</p>
+      <div id="mode-stats"></div>
+    </div>
+  </div>
+
+  <!-- Screen 1: 年度選択 -->
+  <div id="s-year-sel" hidden>
+    <a href="index.html" class="back-link">← 学習ポータルへ</a>
+    <div class="card">
+      <p class="screen-title">年度を選択</p>
+      <p class="screen-sub">解答する年度を選んでください</p>
+      <div class="sel-list" id="year-list"></div>
+    </div>
+    <div class="info-card">
+      <p>各年度・全年度ランダムとも <strong style="color:var(--text)">150分</strong></p>
+    </div>
+  </div>
+
+  <!-- Screen 2: 分野選択 -->
+  <div id="s-cat-sel" hidden>
+    <a href="index.html" class="back-link" id="lnk-cat-back">← 学習ポータルへ</a>
+    <h2 style="font-size:1.2rem;font-weight:700;color:var(--accent);margin:0 0 10px;text-align:center;">📗 学習モード（分野別）</h2>
+    <div class="card">
+      <p class="screen-title">分野を選択してください。</p>
+      <button type="button" class="menu-quick-quiz-btn" id="btn-cat-quick-quiz">クイズを始める（ランダム２０問）</button>
+      <div class="sel-list" id="cat-list"></div>
+    </div>
+    <div class="stats-box">
+      <p class="stats-title">分野ごとの正答率（累計）</p>
+      <div id="cat-stats"></div>
+    </div>
+  </div>
+
+  <!-- Screen 3: 年度別試験 -->
+  <div id="s-exam" hidden>
+    <div class="exam-header">
+      <div class="timer-box">
+        <span class="timer-label">残り時間</span>
+        <span class="timer-val" id="timer-val">150:00</span>
+      </div>
+      <div class="exam-meta" id="exam-meta">回答済み 0 / 0 問</div>
+      <button type="button" class="end-btn" id="btn-end-exam">終了する</button>
+    </div>
+    <div class="q-nav" id="q-nav"></div>
+    <div id="all-done-notice" class="notice-bar" hidden>✅ 全問回答済み。「終了する」で結果を確認できます。</div>
+    <div class="card" style="margin-bottom:12px;">
+      <span class="q-num-badge" id="exam-q-num">問題 1</span>
+      <p class="q-text" id="exam-q-text"></p>
+      <div class="choices" id="exam-choices"></div>
+    </div>
+    <div class="exam-nav">
+      <button type="button" class="nav-btn" id="btn-exam-prev">← 前の問題</button>
+      <button type="button" class="nav-btn primary" id="btn-exam-next">次の問題 →</button>
+    </div>
+  </div>
+
+  <!-- Screen 4: 分野別練習 -->
+  <div id="s-prac" hidden>
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
+      <a href="#" class="back-link" id="lnk-prac-back" style="margin-bottom:0;">← 分野選択へ</a>
+      <button type="button" id="btn-prac-prev" class="nav-btn" style="width:auto;padding:7px 14px;font-size:0.82rem;" disabled>← 前の問題</button>
+    </div>
+    <div class="progress">
+      <span id="prac-prog-label">1 / 1</span>
+      <div class="progress-bar"><span id="prac-prog-fill" style="width:0%"></span></div>
+    </div>
+    <div class="card">
+      <span class="q-num-badge" id="prac-q-num">問題 1</span>
+      <p class="q-text" id="prac-q-text"></p>
+      <div class="choices" id="prac-choices"></div>
+      <div class="feedback" id="prac-feedback">
+        <p class="result-label" id="prac-result-label"></p>
+        <p class="explanation" id="prac-explanation"></p>
+        <button type="button" class="next-btn" id="btn-prac-next">次の問題へ</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Screen 5: 結果 -->
+  <div id="s-results" hidden>
+    <div class="card">
+      <div class="res-header">
+        <p class="res-title" id="res-title">結果</p>
+        <div class="res-score" id="res-score">0 / 0</div>
+        <div id="res-banner"></div>
+        <p class="res-msg" id="res-msg"></p>
+      </div>
+      <p class="section-label">分野別成績</p>
+      <div class="cat-summary" id="res-cat-summary" style="margin-bottom:16px;"></div>
+      <p class="section-label">全問題の解説</p>
+      <div class="q-card-list" id="res-q-list"></div>
+      <div class="action-col">
+        <button type="button" class="cta-btn" id="btn-retry">もう一度解く</button>
+        <a href="index.html" class="sub-btn" id="btn-to-menu" style="display:block;text-align:center;text-decoration:none;box-sizing:border-box;">学習ポータルへ戻る</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+
+const CAT_ORDER = ["コンピュータ基礎", "アルゴリズム・データ構造", "ネットワーク・セキュリティ", "データベース", "ソフトウェア開発"];
+const CAT_BADGE = {
+  "コンピュータ基礎": "badge-hw",
+  "アルゴリズム・データ構造": "badge-alg",
+  "ネットワーク・セキュリティ": "badge-net",
+  "データベース": "badge-db",
+  "ソフトウェア開発": "badge-dev"
+};
+
+/** 「クイズを始める」1セットあたりの出題数（?mode=all も同じ） */
+const QUICK_QUIZ_QUESTION_COUNT = 20;
+
+const MOCK_SETS = {
+  "mix-50":    { seed: 1, count: 50 },
+  "level2-50": { seed: 2, count: 50 },
+  "level3-50": { seed: 3, count: 50 },
+  "level4-50": { seed: 4, count: 50 },
+  "level5-50": { seed: 5, count: 50 },
+};
+
+let allQuestions = [], categoryStats = {};
+let wrongQids = new Set();
+let pracAttemptedQids = new Set();
+let quickQuizIssuedIds = new Set();
+let isQuickQuizMode = false;
+let examQuestions = [], examAnswers = [], examIdx = 0, examTimerSec = 0, examTimerInt = null, examYearKey = null;
+let pracQuestions = [], pracIdx = 0, pracAnswered = false, pracRecord = [];
+let currentMode = null, currentCatKey = null, lastMockSetId = null;
+
+const SCREENS = ["s-mode","s-year-sel","s-cat-sel","s-exam","s-prac","s-results"];
+function showScreen(id) { SCREENS.forEach(s => document.getElementById(s).hidden = (s !== id)); }
+
+function loadStats() {
+  try { categoryStats = JSON.parse(localStorage.getItem("apCategoryStats") || "{}") || {}; } catch(e) { categoryStats = {}; }
+  try { wrongQids = new Set(JSON.parse(localStorage.getItem("apWrongQids") || "[]").filter(Boolean)); } catch (e) { wrongQids = new Set(); }
+  try { pracAttemptedQids = new Set(JSON.parse(localStorage.getItem("apPracAttemptedQids") || "[]").filter(Boolean)); } catch (e) { pracAttemptedQids = new Set(); }
+  try {
+    const rawQz = localStorage.getItem("apQuickQuizIssuedQids");
+    const arrQz = rawQz ? JSON.parse(rawQz) : [];
+    quickQuizIssuedIds = new Set(Array.isArray(arrQz) ? arrQz : []);
+  } catch (e) { quickQuizIssuedIds = new Set(); }
+}
+function saveStats() {
+  localStorage.setItem("apCategoryStats", JSON.stringify(categoryStats));
+  localStorage.setItem("apWrongQids", JSON.stringify([...wrongQids]));
+  localStorage.setItem("apPracAttemptedQids", JSON.stringify([...pracAttemptedQids]));
+  localStorage.setItem("apQuickQuizIssuedQids", JSON.stringify([...quickQuizIssuedIds]));
+}
+function syncQuickQuizLabels() {
+  const a = document.getElementById("btn-start-all");
+  const b = document.getElementById("btn-cat-quick-quiz");
+  if (a) a.textContent = "クイズを始める →";
+  if (b) b.textContent = "クイズを始める（ランダム２０問）";
+}
+function recordAnswer(cat, isCorrect) {
+  if (!categoryStats[cat]) categoryStats[cat] = { correct:0, attempted:0 };
+  categoryStats[cat].attempted++; if (isCorrect) categoryStats[cat].correct++; saveStats();
+}
+function renderStats(cid) {
+  const el = document.getElementById(cid); el.innerHTML = "";
+  CAT_ORDER.forEach(cat => {
+    const st = categoryStats[cat] || { correct:0, attempted:0 };
+    const row = document.createElement("div"); row.className = "stats-row";
+    const l = document.createElement("span"); l.textContent = cat; l.style.fontSize = "0.82rem";
+    const r = document.createElement("span"); r.style.fontSize = "0.82rem";
+    if (!st.attempted) { r.textContent = "—"; r.style.color = "var(--text-muted)"; }
+    else { const rate = Math.round(st.correct/st.attempted*100); r.textContent = rate+"% ("+st.correct+"/"+st.attempted+")"; r.style.color = rate>=60?"var(--correct)":"var(--wrong)"; }
+    row.appendChild(l); row.appendChild(r); el.appendChild(row);
+  });
+}
+async function loadQuestions() {
+  try {
+    const res = await fetch("questions.json", { cache: "no-store" });
+    if (!res.ok) throw new Error("HTTP "+res.status);
+    const data = await res.json();
+    allQuestions = data.filter(q => q && typeof q.question==="string" && Array.isArray(q.choices) && q.choices.length===4 && typeof q.correctIndex==="number");
+    allQuestions.forEach((q, i) => { q._qid = "ap_" + i; });
+  } catch(err) {
+    const w = document.getElementById("load-warning"); w.hidden = false;
+    w.textContent = "questions.json を読み込めませんでした。";
+  }
+}
+function shuffle(a) { const arr=a.slice(); for(let i=arr.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]];} return arr; }
+function seededShuffle(arr, seed) {
+  const a = arr.slice(); let s = seed;
+  for (let i = a.length-1; i > 0; i--) { s=(s*1664525+1013904223)&0xffffffff; const j=Math.abs(s)%(i+1); [a[i],a[j]]=[a[j],a[i]]; }
+  return a;
+}
+function startMockSet(setId) {
+  const cfg = MOCK_SETS[setId]; if (!cfg || !allQuestions.length) return;
+  isQuickQuizMode = false;
+  lastMockSetId = setId;
+  currentMode = "prac"; currentCatKey = "__mock__";
+  const pool = seededShuffle(allQuestions.slice(), cfg.seed).slice(0, Math.min(cfg.count, allQuestions.length));
+  pracQuestions = pool; pracIdx = 0; pracAnswered = false; pracRecord = new Array(pool.length).fill(null);
+  showScreen("s-prac"); renderPracQ();
+}
+function startQuickQuiz() {
+  if (!allQuestions.length) {
+    window.alert("問題データが読み込まれていません。");
+    initModeScreen();
+    return;
+  }
+  const n = Math.min(QUICK_QUIZ_QUESTION_COUNT, allQuestions.length);
+  let pool = allQuestions.filter(function (q) { return !quickQuizIssuedIds.has(q._qid); });
+  if (pool.length < n) {
+    quickQuizIssuedIds.clear();
+    saveStats();
+    pool = allQuestions.slice();
+  }
+  const deck = shuffle(pool).slice(0, Math.min(n, pool.length));
+  if (!deck.length) {
+    window.alert("出題できる問題がありません。");
+    initModeScreen();
+    return;
+  }
+  lastMockSetId = null;
+  isQuickQuizMode = true;
+  currentMode = "prac"; currentCatKey = "__quick__";
+  pracQuestions = deck; pracIdx = 0; pracAnswered = false; pracRecord = new Array(deck.length).fill(null);
+  showScreen("s-prac"); renderPracQ();
+}
+function initModeScreen() {
+  isQuickQuizMode = false;
+  renderStats("mode-stats");
+  syncQuickQuizLabels();
+  showScreen("s-mode");
+}
+
+document.getElementById("btn-start-all").addEventListener("click", () => { startQuickQuiz(); });
+const btnCatQuickQuiz = document.getElementById("btn-cat-quick-quiz");
+if (btnCatQuickQuiz) btnCatQuickQuiz.addEventListener("click", () => { startQuickQuiz(); });
+document.getElementById("btn-mode-year").addEventListener("click", () => { showScreen("s-year-sel"); buildYearList(); });
+document.getElementById("btn-mode-cat").addEventListener("click",  () => { showScreen("s-cat-sel");  buildCatList(); });
+
+function buildYearList() {
+  const el = document.getElementById("year-list"); el.innerHTML = "";
+  const byYear = {};
+  allQuestions.forEach(q => { const y=String(q.year||""); if(!byYear[y])byYear[y]={}; const c=q.category||"未分類"; byYear[y][c]=(byYear[y][c]||0)+1; });
+  Object.keys(byYear).filter(y=>/^\d{4}$/.test(y)).sort((a,b)=>Number(b)-Number(a)).forEach(y => {
+    const cats=byYear[y]; const total=Object.values(cats).reduce((s,n)=>s+n,0);
+    const detail=CAT_ORDER.filter(c=>cats[c]).map(c=>c+":"+cats[c]+"問").join(" / ");
+    const btn=document.createElement("button"); btn.type="button"; btn.className="sel-item";
+    btn.innerHTML=`<strong>${y}年度</strong><span class="s-meta">全 ${total} 問 ／ ${detail}</span>`;
+    btn.addEventListener("click", ()=>startExam(y)); el.appendChild(btn);
+  });
+  const allBtn=document.createElement("button"); allBtn.type="button"; allBtn.className="sel-item";
+  allBtn.style.borderColor="rgba(155,135,245,0.35)";
+  allBtn.innerHTML=`<strong>🔀 全年度ランダム</strong><span class="s-meta">全 ${allQuestions.length} 問をシャッフル出題（150分）</span>`;
+  allBtn.addEventListener("click", ()=>startExam("__all__")); el.appendChild(allBtn);
+}
+function buildCatList() {
+  const el=document.getElementById("cat-list"); el.innerHTML="";
+  const counts={}; allQuestions.forEach(q=>{ const c=q.category||"未分類"; counts[c]=(counts[c]||0)+1; });
+  const allBtn=document.createElement("button"); allBtn.type="button"; allBtn.className="sel-item";
+  allBtn.innerHTML=`<strong>すべての分野</strong><span class="s-meta">未出題優先・全 ${allQuestions.length} 問から</span>`;
+  allBtn.addEventListener("click", ()=>startPrac("__all__")); el.appendChild(allBtn);
+  syncQuickQuizLabels();
+  CAT_ORDER.forEach(c=>{
+    if(!counts[c]) return;
+    const b=CAT_BADGE[c]||""; const btn=document.createElement("button"); btn.type="button"; btn.className="sel-item";
+    btn.innerHTML=`<span><span class="sub-badge ${b}">${c}</span><strong>${c}</strong></span><span class="s-meta">${counts[c]} 問</span>`;
+    btn.addEventListener("click", ()=>startPrac(c)); el.appendChild(btn);
+  });
+  const weakCount = allQuestions.filter(q => wrongQids.has(q._qid)).length;
+  const weakBtn = document.createElement("button");
+  weakBtn.type="button"; weakBtn.className="weak-btn";
+  weakBtn.innerHTML='<span class="weak-btn-icon" aria-hidden="true">🔁</span><span>間違った問題だけ再出題（'+weakCount+'問）</span>';
+  weakBtn.addEventListener("click", () => {
+    if(!weakCount){window.alert("間違った問題がまだありません。まず通常学習で問題を解いてください。");return;}
+    startPrac("__all__", true);
+  });
+  el.appendChild(weakBtn);
+  const resetBtn = document.createElement("button");
+  resetBtn.type="button"; resetBtn.className="reset-answered-btn";
+  resetBtn.innerHTML='<span class="reset-answered-icon" aria-hidden="true">↩️</span><span>回答済み（同じ問題）を出題に戻す</span>';
+  resetBtn.addEventListener("click", () => {
+    if(!window.confirm("一度答えた問題の記録を消し、再び出題されるようにします。よろしいですか？"))return;
+    pracAttemptedQids.clear(); saveStats(); buildCatList();
+  });
+  el.appendChild(resetBtn);
+  renderStats("cat-stats");
+}
+function startExam(yearKey) {
+  isQuickQuizMode = false;
+  lastMockSetId = null;
+  currentMode="year"; examYearKey=yearKey; clearInterval(examTimerInt);
+  let pool = yearKey==="__all__" ? shuffle(allQuestions.slice()) : allQuestions.filter(q=>String(q.year||"")===yearKey).sort((a,b)=>(CAT_ORDER.indexOf(a.category)<0?99:CAT_ORDER.indexOf(a.category))-(CAT_ORDER.indexOf(b.category)<0?99:CAT_ORDER.indexOf(b.category)));
+  examQuestions=pool; examAnswers=new Array(pool.length).fill(null); examIdx=0; examTimerSec=150*60;
+  showScreen("s-exam"); document.getElementById("all-done-notice").hidden=true; buildQNav(); renderExamQ(); startTimer();
+}
+function buildQNav() {
+  const nav=document.getElementById("q-nav"); nav.innerHTML="";
+  examQuestions.forEach((q,i)=>{ const b=document.createElement("button"); b.type="button"; b.className="q-dot"+(i===examIdx?" current":"")+(examAnswers[i]!==null?" answered":""); b.textContent=i+1; b.title=(q.category||"")+" Q"+(i+1); b.addEventListener("click",()=>{examIdx=i;buildQNav();renderExamQ();}); nav.appendChild(b); });
+}
+function renderExamQ() {
+  const q=examQuestions[examIdx]; const badge=CAT_BADGE[q.category]||"";
+  document.getElementById("exam-q-num").innerHTML=`<span class="sub-badge ${badge}">${q.category||""}</span> ${q.year}年 · 問題 ${examIdx+1} / ${examQuestions.length}`;
+  document.getElementById("exam-q-text").textContent=q.question;
+  const choicesEl=document.getElementById("exam-choices"); choicesEl.innerHTML="";
+  q.choices.forEach((label,idx)=>{ const btn=document.createElement("button"); btn.type="button"; btn.className="choice-btn"+(examAnswers[examIdx]===idx?" selected":""); btn.textContent=label; btn.addEventListener("click",()=>{examAnswers[examIdx]=idx;buildQNav();updateExamMeta();renderExamQ();checkAllExamDone();}); choicesEl.appendChild(btn); });
+  document.getElementById("btn-exam-prev").disabled=examIdx===0;
+  document.getElementById("btn-exam-next").disabled=examIdx===examQuestions.length-1;
+  document.getElementById("btn-exam-next").textContent=examIdx===examQuestions.length-1?"最後の問題":"次の問題 →";
+}
+function updateExamMeta() { document.getElementById("exam-meta").textContent="回答済み "+examAnswers.filter(a=>a!==null).length+" / "+examQuestions.length+" 問"; }
+function checkAllExamDone() { document.getElementById("all-done-notice").hidden=examAnswers.filter(a=>a!==null).length<examQuestions.length; }
+document.getElementById("btn-exam-prev").addEventListener("click",()=>{if(examIdx>0){examIdx--;buildQNav();renderExamQ();}});
+document.getElementById("btn-exam-next").addEventListener("click",()=>{if(examIdx<examQuestions.length-1){examIdx++;buildQNav();renderExamQ();}});
+document.getElementById("btn-end-exam").addEventListener("click",()=>{ const ua=examAnswers.filter(a=>a===null).length; if(!window.confirm(ua>0?`未回答が ${ua} 問あります。終了して採点しますか？`:"試験を終了して結果を表示します。よろしいですか？"))return; endExam(); });
+function startTimer() { clearInterval(examTimerInt); renderTimer(); examTimerInt=setInterval(()=>{examTimerSec--;renderTimer();if(examTimerSec<=0){clearInterval(examTimerInt);window.alert("⏰ 時間になりました。結果を表示します。");endExam();}},1000); }
+function renderTimer() { const el=document.getElementById("timer-val"); const m=Math.floor(examTimerSec/60),s=examTimerSec%60; el.textContent=String(m).padStart(3,"0")+":"+String(s).padStart(2,"0"); el.className="timer-val"+(examTimerSec<=60?" danger":examTimerSec<=600?" warn":""); }
+function endExam() { clearInterval(examTimerInt); examQuestions.forEach((q,i)=>{if(examAnswers[i]!==null)recordAnswer(q.category||"未分類",examAnswers[i]===q.correctIndex);}); showResults("year"); }
+function startPrac(catKey, onlyWeak) {
+  isQuickQuizMode = false;
+  lastMockSetId = null;
+  currentMode="prac"; currentCatKey=catKey;
+  let base = catKey==="__all__" ? allQuestions.slice() : allQuestions.filter(q=>q.category===catKey);
+  if (onlyWeak) {
+    base = base.filter(q => wrongQids.has(q._qid));
+    if (!base.length) { window.alert("間違った問題がまだありません。まず通常学習で問題を解いてください。"); return; }
+  } else {
+    const unanswered = base.filter(q => !pracAttemptedQids.has(q._qid));
+    base = unanswered.length > 0 ? unanswered : base;
+  }
+  const pool=shuffle(base);
+  pracQuestions=pool; pracIdx=0; pracAnswered=false; pracRecord=new Array(pool.length).fill(null); showScreen("s-prac"); renderPracQ();
+}
+function renderPracQ() {
+  const lnkBack = document.getElementById("lnk-prac-back");
+  if (currentCatKey === "__mock__") lnkBack.textContent = "← 擬似問題集へ";
+  else lnkBack.textContent = "← 分野選択へ";
+  const q=pracQuestions[pracIdx]; pracAnswered=false; const total=pracQuestions.length;
+  document.getElementById("prac-prog-label").textContent=(pracIdx+1)+" / "+total;
+  document.getElementById("prac-prog-fill").style.width=((pracIdx+1)/total*100)+"%";
+  const badge=CAT_BADGE[q.category]||"";
+  document.getElementById("prac-q-num").innerHTML=`<span class="sub-badge ${badge}">${q.category||""}</span> ${q.year}年 · 問題 ${pracIdx+1}`;
+  document.getElementById("prac-q-text").textContent=q.question;
+  const choicesEl=document.getElementById("prac-choices"); choicesEl.innerHTML="";
+  q.choices.forEach((label,idx)=>{ const btn=document.createElement("button"); btn.type="button"; btn.className="choice-btn"; btn.textContent=label; btn.addEventListener("click",()=>onPracChoose(idx)); choicesEl.appendChild(btn); });
+  document.getElementById("prac-feedback").classList.remove("visible");
+  document.getElementById("prac-result-label").textContent=""; document.getElementById("prac-explanation").textContent="";
+  document.getElementById("btn-prac-next").textContent=pracIdx===pracQuestions.length-1?"結果を見る":"次の問題へ";
+  document.getElementById("btn-prac-prev").disabled = pracIdx === 0;
+  if (pracRecord[pracIdx] !== null) {
+    const qR = pracQuestions[pracIdx];
+    const selectedIdx = pracRecord[pracIdx];
+    const isCorrect = selectedIdx === qR.correctIndex;
+    pracAnswered = true;
+    document.getElementById("prac-choices").querySelectorAll(".choice-btn").forEach((btn, i) => {
+      btn.disabled = true;
+      if (i === qR.correctIndex) btn.classList.add("correct-pick");
+      else if (i === selectedIdx) btn.classList.add("wrong-pick");
+    });
+    const lbl = document.getElementById("prac-result-label");
+    lbl.textContent = isCorrect ? "✓ 正解！" : "✗ 不正解…";
+    lbl.className = "result-label " + (isCorrect ? "ok" : "ng");
+    document.getElementById("prac-explanation").textContent = qR.explanation;
+    document.getElementById("prac-feedback").classList.add("visible");
+  }
+}
+function onPracChoose(selectedIdx) {
+  if(pracAnswered)return; pracAnswered=true;
+  const q=pracQuestions[pracIdx]; const isCorrect=selectedIdx===q.correctIndex;
+  pracRecord[pracIdx]=selectedIdx; recordAnswer(q.category||"未分類",isCorrect);
+  if (!isQuickQuizMode) pracAttemptedQids.add(q._qid);
+  if (isCorrect) wrongQids.delete(q._qid); else wrongQids.add(q._qid);
+  saveStats();
+  document.getElementById("prac-choices").querySelectorAll(".choice-btn").forEach((btn,i)=>{ btn.disabled=true; if(i===q.correctIndex)btn.classList.add("correct-pick"); else if(i===selectedIdx)btn.classList.add("wrong-pick"); });
+  const lbl=document.getElementById("prac-result-label"); lbl.textContent=isCorrect?"✓ 正解！":"✗ 不正解…"; lbl.className="result-label "+(isCorrect?"ok":"ng");
+  document.getElementById("prac-explanation").textContent=q.explanation;
+  document.getElementById("prac-feedback").classList.add("visible");
+}
+document.getElementById("btn-prac-next").addEventListener("click",()=>{ if(!pracAnswered&&!window.confirm("未回答のままスキップしますか？"))return; if(pracIdx<pracQuestions.length-1){pracIdx++;renderPracQ();}else showResults("prac"); });
+document.getElementById("btn-prac-prev").addEventListener("click",()=>{ if(pracIdx>0){pracIdx--;renderPracQ();} });
+document.getElementById("lnk-prac-back").addEventListener("click", e => {
+  e.preventDefault();
+  isQuickQuizMode = false;
+  if (currentCatKey === "__mock__") { window.location.href = "mock-sets.html"; return; }
+  showScreen("s-cat-sel"); buildCatList();
+});
+function showResults(mode) {
+  if (mode === "prac" && isQuickQuizMode) {
+    pracQuestions.forEach(function (q) { quickQuizIssuedIds.add(q._qid); });
+    saveStats();
+  }
+  showScreen("s-results");
+  const qs=mode==="year"?examQuestions:pracQuestions, ans=mode==="year"?examAnswers:pracRecord;
+  const answered=ans.filter(a=>a!==null).length, correct=qs.reduce((s,q,i)=>s+(ans[i]===q.correctIndex?1:0),0);
+  const pct=answered>0?Math.round(correct/answered*100):0, pass=pct>=60;
+  let pracTitle = "分野別学習 結果";
+  if (currentCatKey === "__mock__") pracTitle = "擬似問題集 結果";
+  else if (isQuickQuizMode) pracTitle = "ランダムクイズ 結果";
+  document.getElementById("res-title").textContent = mode==="year" ? (examYearKey==="__all__"?"全年度ランダム 結果":examYearKey+"年度 結果") : pracTitle;
+  document.getElementById("res-score").textContent=correct+" / "+answered+" 問正解";
+  const banner=document.getElementById("res-banner"); banner.className="pass-banner "+(pass?"pass":"fail");
+  banner.textContent=pass?"✓ 合格ライン到達（正答率 "+pct+"%）":"✗ 未達（"+pct+"% ／ 目安 60%以上）";
+  let msg = pct===100?"全問正解！完璧です。":pct>=80?"優秀な成績です。":pct>=60?"合格ライン到達。引き続き苦手分野を強化しましょう。":"解説をしっかり読んで基礎から固め直しましょう。";
+  if (mode === "prac" && isQuickQuizMode) msg = "累計正答率に反映。続けると直近セット以外から"+QUICK_QUIZ_QUESTION_COUNT+"問を抽選します。";
+  document.getElementById("res-msg").textContent = msg;
+  const retryBtn = document.getElementById("btn-retry");
+  if (retryBtn) retryBtn.textContent = (mode === "prac" && isQuickQuizMode) ? "次のクイズ（新しい"+QUICK_QUIZ_QUESTION_COUNT+"問）" : "もう一度解く";
+  const catSummary=document.getElementById("res-cat-summary"); catSummary.innerHTML="";
+  const catMap={};
+  qs.forEach((q,i)=>{ const c=q.category||"未分類"; if(!catMap[c])catMap[c]={ok:0,done:0,total:0}; catMap[c].total++; if(ans[i]!==null){catMap[c].done++;if(ans[i]===q.correctIndex)catMap[c].ok++;} });
+  CAT_ORDER.forEach(c=>{ if(!catMap[c])return; const s=catMap[c]; const r=s.done>0?Math.round(s.ok/s.done*100):0; const b=CAT_BADGE[c]||""; const row=document.createElement("div"); row.className="cat-summary-row"; row.innerHTML=`<span><span class="sub-badge ${b}">${c}</span>${c}</span><span style="color:${r>=60?'var(--correct)':'var(--wrong)'};font-weight:600">${s.ok}/${s.done}問 (${r}%)</span>`; catSummary.appendChild(row); });
+  const listEl=document.getElementById("res-q-list"); listEl.innerHTML="";
+  qs.forEach((q,i)=>{ const userAns=ans[i],isSkip=userAns===null,isOk=!isSkip&&userAns===q.correctIndex; const b=CAT_BADGE[q.category]||""; const card=document.createElement("div"); card.className="q-result-card "+(isSkip?"skipped":isOk?"ok":"ng"); const sc=isSkip?"var(--text-muted)":isOk?"var(--correct)":"var(--wrong)"; const si=isSkip?"— 未回答":isOk?"✓ 正解":"✗ 不正解"; let html=`<div class="q-res-meta"><span class="sub-badge ${b}">${q.category||""}</span><strong>問${i+1}</strong> · ${q.year}年<span style="color:${sc};margin-left:8px">${si}</span></div><div class="q-res-text">${escHtml(q.question)}</div>`; if(!isSkip)html+=`<div class="q-res-your ${isOk?'ok':'ng'}">あなたの解答：${escHtml(q.choices[userAns])}</div>`; if(!isOk)html+=`<div class="q-res-correct">正解：${escHtml(q.choices[q.correctIndex])}</div>`; html+=`<div class="q-res-exp">${escHtml(q.explanation)}</div>`; card.innerHTML=html; listEl.appendChild(card); });
+}
+function escHtml(s) { return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
+document.getElementById("btn-retry").addEventListener("click",()=>{
+  if (currentMode==="year") startExam(examYearKey);
+  else if (isQuickQuizMode) startQuickQuiz();
+  else if (lastMockSetId && MOCK_SETS[lastMockSetId]) startMockSet(lastMockSetId);
+  else startPrac(currentCatKey);
+});
+async function boot() {
+  loadStats();
+  await loadQuestions();
+  const params = new URLSearchParams(location.search);
+  const setId = params.get("set");
+  const mode = (params.get("mode") || "").toLowerCase().trim();
+  if (setId && MOCK_SETS[setId]) {
+    startMockSet(setId);
+  } else if (mode === "year") {
+    showScreen("s-year-sel"); buildYearList();
+  } else if (mode === "all") {
+    startQuickQuiz();
+  } else if (mode === "category") {
+    showScreen("s-cat-sel"); buildCatList();
+  } else {
+    initModeScreen();
+  }
+}
+boot();
+</script>
+</body>
+</html>
