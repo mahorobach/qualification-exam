@@ -32,7 +32,28 @@
             --wrong-bg: rgba(240,113,120,0.12);
             --radius: 14px;
             --shadow: 0 8px 32px rgba(0,0,0,0.45);
+            --fudosan-portal-grad: linear-gradient(135deg, #164234, #1f5c48 45%, #287a62);
+            --fudosan-portal-border: 1px solid rgba(130, 200, 175, 0.28);
+            --fudosan-portal-shadow: 0 3px 14px rgba(22, 66, 52, 0.55);
+            --fudosan-portal-shadow-hover: 0 4px 18px rgba(31, 92, 72, 0.45);
         }
+        .nav-fudosan-portal {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            text-decoration: none;
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: rgba(232, 250, 244, 0.96);
+            background: var(--fudosan-portal-grad);
+            padding: 6px 10px;
+            border-radius: 20px;
+            box-shadow: var(--fudosan-portal-shadow);
+            border: var(--fudosan-portal-border);
+            transition: opacity 0.15s, box-shadow 0.2s;
+            white-space: nowrap;
+        }
+        .nav-fudosan-portal:hover { opacity: 0.92; box-shadow: var(--fudosan-portal-shadow-hover); }
         *, *::before, *::after { box-sizing: border-box; margin: 0; }
         body {
             font-family: "Zen Kaku Gothic New","Hiragino Sans",sans-serif;
@@ -165,21 +186,18 @@
     </style>
 </head>
 <body>
-<nav style="position:fixed;top:0;left:0;right:0;height:52px;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 18px;background:rgba(26,18,8,0.9);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(255,255,255,0.08);">
+<nav style="position:fixed;top:0;left:0;right:0;min-height:52px;z-index:200;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;padding:8px 18px;background:rgba(26,18,8,0.9);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(255,255,255,0.08);">
   <a href="../index.html" style="display:flex;align-items:center;gap:7px;text-decoration:none;color:rgba(255,255,255,0.85);font-size:0.9rem;font-weight:600;letter-spacing:-.01em;">
     <span>🚃</span><span>資格トレイン</span>
   </a>
-  <a href="index.html" style="display:flex;align-items:center;gap:4px;text-decoration:none;color:rgba(255,255,255,0.5);font-size:0.8rem;">
-    <span style="font-size:.75rem;">←</span><span>宅建士ポータル</span>
-  </a>
+  <a href="../fudosan-app/index.html" class="nav-fudosan-portal">🏠 不動産資格ポータル</a>
 </nav>
 <div class="app">
     <p id="load-warning" class="load-warning" hidden></p>
 
     <!-- ══ Screen 0: モード選択 ══ -->
     <div id="s-mode">
-        <button type="button" onclick="history.back()" class="back-link" style="appearance:none;background:none;border:none;cursor:pointer;margin-bottom:10px;display:block;">← 戻る</button>
-        <a href="index.html" class="back-link">← 宅建士ポータルへ</a>
+        <a href="index.html" class="back-link">← 学習ポータルへ</a>
         <div class="card">
             <p class="screen-title">🏠 宅建士（宅地建物取引士）過去問クイズ</p>
             <p class="screen-sub">権利関係・法令制限・宅建業法・税その他の過去問</p>
@@ -230,8 +248,7 @@
 
     <!-- ══ Screen 1: 年度選択 ══ -->
     <div id="s-year-sel" hidden>
-        <button type="button" onclick="history.back()" class="back-link" style="appearance:none;background:none;border:none;cursor:pointer;margin-bottom:10px;display:block;">← 戻る</button>
-        <a href="#" class="back-link" id="lnk-year-back">← モード選択へ</a>
+        <a href="index.html" class="back-link">← 学習ポータルへ</a>
         <div class="card">
             <p class="screen-title">年度を選択</p>
             <p class="screen-sub">解答する年度を選んでください</p>
@@ -244,9 +261,8 @@
 
     <!-- ══ Screen 2: 分野選択 ══ -->
     <div id="s-cat-sel" hidden>
-        <button type="button" onclick="history.back()" class="back-link" style="appearance:none;background:none;border:none;cursor:pointer;margin-bottom:10px;display:block;">← 戻る</button>
-        <h2 style="font-size:1.2rem;font-weight:700;color:var(--accent);margin:0 0 10px;text-align:center;">🏠 学習モード（分野別）</h2>
         <a href="index.html" class="back-link" id="lnk-cat-back">← 学習ポータルへ</a>
+        <h2 style="font-size:1.2rem;font-weight:700;color:var(--accent);margin:0 0 10px;text-align:center;">🏠 学習モード（分野別）</h2>
         <div class="card">
             <p class="screen-title">分野を選択</p>
             <p class="screen-sub">学習する分野を選んでください</p>
@@ -261,7 +277,6 @@
 
     <!-- ══ Screen 3: 年度別 試験 ══ -->
     <div id="s-exam" hidden>
-        <button type="button" onclick="history.back()" class="back-link" style="appearance:none;background:none;border:none;cursor:pointer;margin-bottom:10px;display:block;">← 戻る</button>
         <div class="exam-header">
             <div class="timer-box">
                 <span class="timer-label">残り時間</span>
@@ -286,7 +301,6 @@
 
     <!-- ══ Screen 4: 分野別 練習 ══ -->
     <div id="s-prac" hidden>
-        <button type="button" onclick="history.back()" class="back-link" style="appearance:none;background:none;border:none;cursor:pointer;margin-bottom:10px;display:block;">← 戻る</button>
         <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
             <a href="#" class="back-link" id="lnk-prac-back" style="margin-bottom:0;">← 分野選択へ</a>
             <button type="button" id="btn-prac-prev" class="nav-btn" style="width:auto;padding:7px 14px;font-size:0.82rem;" disabled>← 前の問題</button>
@@ -310,7 +324,6 @@
 
     <!-- ══ Screen 5: 結果 ══ -->
     <div id="s-results" hidden>
-        <button type="button" onclick="history.back()" class="back-link" style="appearance:none;background:none;border:none;cursor:pointer;margin-bottom:10px;display:block;">← 戻る</button>
         <div class="card">
             <div class="res-header">
                 <p class="res-title" id="res-title">結果</p>
@@ -324,7 +337,7 @@
             <div class="q-card-list" id="res-q-list"></div>
             <div class="action-col">
                 <button type="button" class="cta-btn" id="btn-retry">もう一度解く</button>
-                <button type="button" class="sub-btn" id="btn-to-menu">モード選択へ戻る</button>
+                <a href="index.html" class="sub-btn" id="btn-to-menu" style="display:block;text-align:center;text-decoration:none;box-sizing:border-box;">学習ポータルへ戻る</a>
             </div>
         </div>
     </div>
@@ -478,8 +491,6 @@ document.getElementById("btn-mode-reset").addEventListener("click", () => {
     answeredQids.clear(); saveStats();
     window.alert("リセットしました。全問が再出題されます。");
 });
-document.getElementById("lnk-year-back").addEventListener("click", e => { e.preventDefault(); initModeScreen(); });
-
 function buildYearList() {
     const el = document.getElementById("year-list"); el.innerHTML = "";
     const byYear = {};
@@ -665,7 +676,6 @@ function showResults(mode) {
     qs.forEach((q,i)=>{ const userAns=ans[i],isSkip=userAns===null,isOk=!isSkip&&userAns===q.correctIndex; const b=CAT_BADGE[q.category]||""; const card=document.createElement("div"); card.className="q-result-card "+(isSkip?"skipped":isOk?"ok":"ng"); const sc=isSkip?"var(--text-muted)":isOk?"var(--correct)":"var(--wrong)"; const si=isSkip?"— 未回答":isOk?"✓ 正解":"✗ 不正解"; let html=`<div class="q-res-meta"><span class="sub-badge ${b}">${q.category||""}</span><strong>問${i+1}</strong> · ${q.year}年<span style="color:${sc};margin-left:8px">${si}</span></div><div class="q-res-text">${escHtml(q.question)}</div>`; if(!isSkip)html+=`<div class="q-res-your ${isOk?'ok':'ng'}">あなたの解答：${escHtml(q.choices[userAns])}</div>`; if(!isOk)html+=`<div class="q-res-correct">正解：${escHtml(q.choices[q.correctIndex])}</div>`; html+=`<div class="q-res-exp">${escHtml(q.explanation)}</div>`; card.innerHTML=html; listEl.appendChild(card); });
 }
 function escHtml(s) { return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
-document.getElementById("btn-to-menu").addEventListener("click",()=>initModeScreen());
 document.getElementById("btn-retry").addEventListener("click",()=>{
     if (currentMode==="year") startExam(examYearKey);
     else if (isQuickQuizMode) startQuickQuiz();

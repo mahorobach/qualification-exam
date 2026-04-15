@@ -28,7 +28,29 @@
             --accent-2: #f0a860;
             --radius: 14px;
             --shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+            --fudosan-portal-grad: linear-gradient(135deg, #164234, #1f5c48 45%, #287a62);
+            --fudosan-portal-border: 1px solid rgba(130, 200, 175, 0.28);
+            --fudosan-portal-shadow: 0 3px 14px rgba(22, 66, 52, 0.55);
+            --fudosan-portal-shadow-hover: 0 4px 18px rgba(31, 92, 72, 0.45);
         }
+
+        .nav-fudosan-portal {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            text-decoration: none;
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: rgba(232, 250, 244, 0.96);
+            background: var(--fudosan-portal-grad);
+            padding: 6px 10px;
+            border-radius: 20px;
+            box-shadow: var(--fudosan-portal-shadow);
+            border: var(--fudosan-portal-border);
+            transition: opacity 0.15s, box-shadow 0.2s;
+            white-space: nowrap;
+        }
+        .nav-fudosan-portal:hover { opacity: 0.92; box-shadow: var(--fudosan-portal-shadow-hover); }
 
         * { box-sizing: border-box; }
 
@@ -49,13 +71,12 @@
 
         .wrap { max-width: 640px; margin: 0 auto; }
 
-        .nav { margin-bottom: 18px; }
-        .nav a { color: var(--accent); text-decoration: none; font-size: 0.88rem; }
-        .nav a:hover { text-decoration: underline; }
-
-        header { margin-bottom: 22px; }
+        header { margin-bottom: 22px; text-align: center; }
+        .portal-back { margin: 0 0 14px; font-size: 0.88rem; text-align: left; }
+        .portal-back a { color: var(--accent); text-decoration: none; }
+        .portal-back a:hover { text-decoration: underline; }
         header h1 { font-size: 1.25rem; font-weight: 700; margin: 0 0 8px; color: var(--accent); }
-        header p { margin: 0; font-size: 0.88rem; color: var(--text-muted); }
+        header .lead { margin: 0 auto; max-width: 36em; font-size: 0.88rem; color: var(--text-muted); text-align: left; }
 
         .set-card {
             background: var(--surface);
@@ -101,21 +122,18 @@
 </head>
 <body>
 
-<nav style="position:fixed;top:0;left:0;right:0;height:52px;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 18px;background:rgba(26,18,8,0.92);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(255,255,255,0.08);">
+<nav style="position:fixed;top:0;left:0;right:0;min-height:52px;z-index:200;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;padding:8px 18px;background:rgba(26,18,8,0.92);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(255,255,255,0.08);">
   <a href="../index.html" style="display:flex;align-items:center;gap:7px;text-decoration:none;color:rgba(255,255,255,0.85);font-size:0.9rem;font-weight:600;letter-spacing:-.01em;">
     <span>🚃</span><span>資格トレイン</span>
   </a>
-  <a href="index.html" style="display:flex;align-items:center;gap:4px;text-decoration:none;color:rgba(255,255,255,0.5);font-size:0.8rem;">
-    <span style="font-size:.75rem;">←</span><span>宅建士</span>
-  </a>
+  <a href="../fudosan-app/index.html" class="nav-fudosan-portal">🏠 不動産資格ポータル</a>
 </nav>
 
     <div class="wrap">
-        <button type="button" onclick="history.back()" style="appearance:none;background:none;border:none;cursor:pointer;color:#e07840;font-size:0.85rem;padding:10px 0 4px;display:inline-flex;align-items:center;gap:4px;">← 戻る</button>
-        <p class="nav"><a href="index.html">← 学習ポータルへ</a></p>
         <header>
+            <p class="portal-back"><a href="index.html">← 学習ポータルへ</a></p>
             <h1>宅建士 擬似問題集</h1>
-            <p>権利関係・法令上の制限・宅建業法・税その他を<strong>まとめて</strong>出題する演習です。セットごとに<strong>出題順が異なります</strong>（最大50問・収録数が少ない場合は全問）。</p>
+            <p class="lead">権利関係・法令上の制限・宅建業法・税その他を<strong>まとめて</strong>出題する演習です。セットごとに<strong>出題順が異なります</strong>（最大50問・収録数が少ない場合は全問）。</p>
         </header>
 
         <section class="set-card">
@@ -149,7 +167,7 @@
         </section>
 
         <p class="note">
-            合否目安（正答率70%）付きです。モード選択に戻るときは、結果画面の「モード選択へ戻る」を押してください。
+            合否目安（正答率70%）付きです。結果画面から学習ポータルへ戻るときは「学習ポータルへ戻る」を押してください。
         </p>
     </div>
 </body>

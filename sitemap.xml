@@ -14,6 +14,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+  <!-- 不動産資格（宅建・管理業務主任者・マンション管理士） -->
+  <url>
+    <loc>https://mahorobach.github.io/qualification-exam/fudosan-app/index.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
   <!-- 電気資格（電験三種・電気工事士） -->
   <url>
     <loc>https://mahorobach.github.io/qualification-exam/denco-app/index.html</loc>
