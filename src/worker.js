@@ -7,8 +7,42 @@
  * APIキーは Cloudflare Dashboard の Environment Variables (Secret) に設定。
  * 変数名: GEMINI_API_KEY
  */
+const CANONICAL_HOST = 'qualifications.app';
+
+/**
+ * 本番ドメイン上でのみ: www → apex、ディレクトリURL（末尾 /）→ index.html
+ * （workers.dev プレビューではスキップ）
+ */
+function canonicalRedirects(request) {
+  const url = new URL(request.url);
+  const host = url.hostname;
+  const isProd =
+    host === CANONICAL_HOST || host === `www.${CANONICAL_HOST}`;
+  if (!isProd) return null;
+
+  if (host === `www.${CANONICAL_HOST}`) {
+    const dest = `https://${CANONICAL_HOST}${url.pathname}${url.search}`;
+    return Response.redirect(dest, 301);
+  }
+
+  if (
+    url.pathname !== '/' &&
+    url.pathname.endsWith('/') &&
+    !url.pathname.startsWith('/api/')
+  ) {
+    const destPath = url.pathname.replace(/\/+$/, '') + '/index.html';
+    const dest = `https://${CANONICAL_HOST}${destPath}${url.search}`;
+    return Response.redirect(dest, 301);
+  }
+
+  return null;
+}
+
 export default {
   async fetch(request, env) {
+    const redirect = canonicalRedirects(request);
+    if (redirect) return redirect;
+
     const url = new URL(request.url);
 
     // Gemini API プロキシ
@@ -63,6 +97,12 @@ export default {
     }
 
     // 静的ファイルの配信
+    if (!env.ASSETS?.fetch) {
+      return new Response(
+        'ASSETS binding がありません（本番デプロイまたは wrangler dev で確認してください）',
+        { status: 503, headers: { 'Content-Type': 'text/plain; charset=utf-8' } }
+      );
+    }
     return env.ASSETS.fetch(request);
   },
 };
