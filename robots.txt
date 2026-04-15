@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mahorobach.github.io/qualification-exam/sitemap.xml
+Sitemap: https://www.qualifications.app/sitemap.xml

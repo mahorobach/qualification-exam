@@ -3,147 +3,147 @@
 
   <!-- トップページ -->
   <url>
-    <loc>https://mahorobach.github.io/qualification-exam/</loc>
+    <loc>https://www.qualifications.app/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <!-- 宅建士 -->
   <url>
-    <loc>https://mahorobach.github.io/qualification-exam/takken-app/index.html</loc>
+    <loc>https://www.qualifications.app/takken-app/index.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <!-- 不動産資格（宅建・管理業務主任者・マンション管理士） -->
   <url>
-    <loc>https://mahorobach.github.io/qualification-exam/fudosan-app/index.html</loc>
+    <loc>https://www.qualifications.app/fudosan-app/index.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <!-- 電気資格（電験三種・電気工事士） -->
   <url>
-    <loc>https://mahorobach.github.io/qualification-exam/denco-app/index.html</loc>
+    <loc>https://www.qualifications.app/denco-app/index.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://mahorobach.github.io/qualification-exam/denco-app/koujishi-index.html</loc>
+    <loc>https://www.qualifications.app/denco-app/koujishi-index.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mahorobach.github.io/qualification-exam/denco-app/denken-index.html</loc>
+    <loc>https://www.qualifications.app/denco-app/denken-index.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- 行政書士 -->
   <url>
-    <loc>https://mahorobach.github.io/qualification-exam/gyosei-app/index.html</loc>
+    <loc>https://www.qualifications.app/gyosei-app/index.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://mahorobach.github.io/qualification-exam/gyosei-app/quiz.html</loc>
+    <loc>https://www.qualifications.app/gyosei-app/quiz.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- 技術士（機械部門） -->
   <url>
-    <loc>https://mahorobach.github.io/qualification-exam/kikai-app/index.html</loc>
+    <loc>https://www.qualifications.app/kikai-app/index.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://mahorobach.github.io/qualification-exam/kikai-app/quiz.html</loc>
+    <loc>https://www.qualifications.app/kikai-app/quiz.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- CCNA -->
   <url>
-    <loc>https://mahorobach.github.io/qualification-exam/ccna-app/index.html</loc>
+    <loc>https://www.qualifications.app/ccna-app/index.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://mahorobach.github.io/qualification-exam/ccna-app/quiz.html</loc>
+    <loc>https://www.qualifications.app/ccna-app/quiz.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mahorobach.github.io/qualification-exam/chishitsu-app/index.html</loc>
+    <loc>https://www.qualifications.app/chishitsu-app/index.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://mahorobach.github.io/qualification-exam/chishitsu-app/quiz.html</loc>
+    <loc>https://www.qualifications.app/chishitsu-app/quiz.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mahorobach.github.io/qualification-exam/fe-app/index.html</loc>
+    <loc>https://www.qualifications.app/fe-app/index.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://mahorobach.github.io/qualification-exam/fe-app/quiz.html</loc>
+    <loc>https://www.qualifications.app/fe-app/quiz.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mahorobach.github.io/qualification-exam/fe-app/mock-sets.html</loc>
+    <loc>https://www.qualifications.app/fe-app/mock-sets.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <!-- 情報処理資格（基本情報・応用情報・セキスペ まとめ） -->
   <url>
-    <loc>https://mahorobach.github.io/qualification-exam/ipa-app/index.html</loc>
+    <loc>https://www.qualifications.app/ipa-app/index.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <!-- ブログ -->
   <url>
-    <loc>https://mahorobach.github.io/qualification-exam/blog/index.html</loc>
+    <loc>https://www.qualifications.app/blog/index.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://mahorobach.github.io/qualification-exam/blog/takken-benkyoho.html</loc>
+    <loc>https://www.qualifications.app/blog/takken-benkyoho.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://mahorobach.github.io/qualification-exam/blog/denken-3shu-nanido.html</loc>
+    <loc>https://www.qualifications.app/blog/denken-3shu-nanido.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://mahorobach.github.io/qualification-exam/blog/denki-koujishi-2shu-point.html</loc>
+    <loc>https://www.qualifications.app/blog/denki-koujishi-2shu-point.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://mahorobach.github.io/qualification-exam/blog/gijutsu-shi-kikai-goukaku.html</loc>
+    <loc>https://www.qualifications.app/blog/gijutsu-shi-kikai-goukaku.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <!-- その他 -->
   <url>
-    <loc>https://mahorobach.github.io/qualification-exam/about.html</loc>
+    <loc>https://www.qualifications.app/about.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://mahorobach.github.io/qualification-exam/contact.html</loc>
+    <loc>https://www.qualifications.app/contact.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://mahorobach.github.io/qualification-exam/privacy.html</loc>
+    <loc>https://www.qualifications.app/privacy.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
