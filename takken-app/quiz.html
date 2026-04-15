@@ -160,6 +160,8 @@
         .load-warning { padding: 12px 14px; font-size: 0.82rem; color: #f0d080; background: rgba(240,198,116,0.1); border: 1px solid rgba(240,198,116,0.35); border-radius: 12px; margin-bottom: 14px; }
         .info-card { background: var(--surface-2); border-radius: 12px; padding: 14px 16px; border: 1px solid rgba(255,255,255,0.07); margin-top: 4px; }
         .info-card p { font-size: 0.82rem; color: var(--text-muted); margin: 0; line-height: 1.75; }
+        .menu-quick-quiz-btn { width: 100%; margin-bottom: 14px; padding: 14px 16px; font-family: inherit; font-size: 0.95rem; font-weight: 700; color: #1a1208; background: linear-gradient(135deg,#e07840,#f0a860); border: none; border-radius: 12px; cursor: pointer; box-shadow: 0 4px 16px rgba(224,120,64,0.35); }
+        .menu-quick-quiz-btn:hover { opacity: 0.92; }
     </style>
 </head>
 <body>
@@ -181,6 +183,7 @@
         <div class="card">
             <p class="screen-title">🏠 宅建士（宅地建物取引士）過去問クイズ</p>
             <p class="screen-sub">権利関係・法令制限・宅建業法・税その他の過去問</p>
+            <button type="button" class="cta-btn" id="btn-start-all" style="margin-bottom:16px;">クイズを始める →</button>
             <div class="mode-grid">
                 <button type="button" class="mode-btn" id="btn-mode-year">
                     <span class="m-icon">📅</span>
@@ -215,6 +218,9 @@
                 <strong style="color:var(--text)">宅建業法</strong>（20問）が最重要科目で、
                 権利関係（14問）・法令上の制限（8問）・税その他（8問）。
             </p>
+            <p style="margin-top:12px;">
+                <strong style="color:var(--text)">クイズを始める</strong>／学習モードの<strong style="color:var(--text)">クイズを始める（ランダム20問）</strong>では、全問からランダムに<strong>20問</strong>（スクリプトの <code style="font-size:0.85em;">QUICK_QUIZ_QUESTION_COUNT</code> で変更）を出題します。続けて挑戦すると直近セットで出た問題は避けて抽選され、分野別の累計正答率に反映されますが、学習の「回答済み」には含めません。
+            </p>
         </div>
         <div class="stats-box" style="margin-top:10px;">
             <p class="stats-title">分野ごとの正答率（累計）</p>
@@ -244,6 +250,7 @@
         <div class="card">
             <p class="screen-title">分野を選択</p>
             <p class="screen-sub">学習する分野を選んでください</p>
+            <button type="button" class="menu-quick-quiz-btn" id="btn-cat-quick-quiz">クイズを始める（ランダム20問）</button>
             <div class="sel-list" id="cat-list"></div>
         </div>
         <div class="stats-box">
@@ -326,6 +333,8 @@
 <script>
 const CAT_ORDER = ["権利関係", "法令上の制限", "宅建業法", "税その他"];
 const CAT_BADGE = { "権利関係": "badge-kenri", "法令上の制限": "badge-horei", "宅建業法": "badge-takken", "税その他": "badge-zei" };
+/** 「クイズを始める（ランダムN問）」1セットあたりの出題数（?mode=all も同じ） */
+const QUICK_QUIZ_QUESTION_COUNT = 20;
 
 const MOCK_SETS = {
     "mix-50":    { seed: 1, count: 50 },
@@ -336,6 +345,8 @@ const MOCK_SETS = {
 };
 let allQuestions = [], categoryStats = {};
 let weakQuestionIds = new Set(), answeredQids = new Set();
+let quickQuizIssuedIds = new Set();
+let isQuickQuizMode = false;
 let examQuestions = [], examAnswers = [], examIdx = 0, examTimerSec = 0, examTimerInt = null, examYearKey = null;
 let pracQuestions = [], pracIdx = 0, pracAnswered = false, pracRecord = [];
 let currentMode = null, currentCatKey = null;
@@ -347,11 +358,24 @@ function loadStats() {
     try { categoryStats = JSON.parse(localStorage.getItem("takkenCategoryStats") || "{}") || {}; } catch(e) { categoryStats = {}; }
     try { const raw = localStorage.getItem("takkenWeakQuestionIds"); weakQuestionIds = new Set(Array.isArray(JSON.parse(raw||"[]")) ? JSON.parse(raw||"[]") : []); } catch(e) { weakQuestionIds = new Set(); }
     try { const raw = localStorage.getItem("takkenAnsweredQids"); answeredQids = new Set(Array.isArray(JSON.parse(raw||"[]")) ? JSON.parse(raw||"[]") : []); } catch(e) { answeredQids = new Set(); }
+    try {
+        const rawQz = localStorage.getItem("takkenQuickQuizIssuedQids");
+        const arrQz = rawQz ? JSON.parse(rawQz) : [];
+        quickQuizIssuedIds = new Set(Array.isArray(arrQz) ? arrQz : []);
+    } catch (e) { quickQuizIssuedIds = new Set(); }
 }
 function saveStats() {
     localStorage.setItem("takkenCategoryStats", JSON.stringify(categoryStats));
     localStorage.setItem("takkenWeakQuestionIds", JSON.stringify(Array.from(weakQuestionIds)));
     localStorage.setItem("takkenAnsweredQids", JSON.stringify(Array.from(answeredQids)));
+    localStorage.setItem("takkenQuickQuizIssuedQids", JSON.stringify(Array.from(quickQuizIssuedIds)));
+}
+function syncQuickQuizLabels() {
+    const catLabel = "クイズを始める（ランダム" + QUICK_QUIZ_QUESTION_COUNT + "問）";
+    const a = document.getElementById("btn-start-all");
+    const b = document.getElementById("btn-cat-quick-quiz");
+    if (a) a.textContent = "クイズを始める →";
+    if (b) b.textContent = catLabel;
 }
 function recordAnswer(cat, isCorrect) {
     if (!categoryStats[cat]) categoryStats[cat] = { correct:0, attempted:0 };
@@ -391,14 +415,57 @@ function seededShuffle(arr, seed) {
 }
 function startMockSet(setId) {
     const cfg = MOCK_SETS[setId]; if (!cfg || !allQuestions.length) return;
+    isQuickQuizMode = false;
     currentMode = "prac"; currentCatKey = "__mock__";
     const pool = seededShuffle(allQuestions.slice(), cfg.seed).slice(0, Math.min(cfg.count, allQuestions.length));
     pracQuestions=pool; pracIdx=0; pracAnswered=false; pracRecord=new Array(pool.length).fill(null);
     showScreen("s-prac"); renderPracQ();
 }
 
-function initModeScreen() { renderStats("mode-stats"); showScreen("s-mode"); }
+/**
+ * 全問からランダムに N 問。過去のクイックセットで出した _qid は除外し、足りなければ履歴リセット。
+ * takkenCategoryStats には加算するが takkenAnsweredQids は更新しない。
+ */
+function startQuickQuiz() {
+    if (!allQuestions.length) {
+        window.alert("問題データが読み込まれていません。");
+        initModeScreen();
+        return;
+    }
+    const n = Math.min(QUICK_QUIZ_QUESTION_COUNT, allQuestions.length);
+    let pool = allQuestions.filter(function (q) { return !quickQuizIssuedIds.has(q._qid); });
+    if (pool.length < n) {
+        quickQuizIssuedIds.clear();
+        saveStats();
+        pool = allQuestions.slice();
+    }
+    const deck = shuffle(pool).slice(0, Math.min(n, pool.length));
+    if (!deck.length) {
+        window.alert("出題できる問題がありません。");
+        initModeScreen();
+        return;
+    }
+    isQuickQuizMode = true;
+    currentMode = "prac";
+    currentCatKey = "__quick__";
+    pracQuestions = deck;
+    pracIdx = 0;
+    pracAnswered = false;
+    pracRecord = new Array(deck.length).fill(null);
+    showScreen("s-prac");
+    renderPracQ();
+}
 
+function initModeScreen() {
+    isQuickQuizMode = false;
+    renderStats("mode-stats");
+    syncQuickQuizLabels();
+    showScreen("s-mode");
+}
+
+document.getElementById("btn-start-all").addEventListener("click", () => { startQuickQuiz(); });
+const btnCatQuickQuiz = document.getElementById("btn-cat-quick-quiz");
+if (btnCatQuickQuiz) btnCatQuickQuiz.addEventListener("click", () => { startQuickQuiz(); });
 document.getElementById("btn-mode-year").addEventListener("click", () => { showScreen("s-year-sel"); buildYearList(); });
 document.getElementById("btn-mode-cat").addEventListener("click",  () => { showScreen("s-cat-sel");  buildCatList(); });
 document.getElementById("btn-mode-weak").addEventListener("click", () => {
@@ -434,8 +501,9 @@ function buildCatList() {
     const el=document.getElementById("cat-list"); el.innerHTML="";
     const counts={}; allQuestions.forEach(q=>{ const c=q.category||"未分類"; counts[c]=(counts[c]||0)+1; });
     const allBtn=document.createElement("button"); allBtn.type="button"; allBtn.className="sel-item";
-    allBtn.innerHTML=`<strong>すべての分野</strong><span class="s-meta">全 ${allQuestions.length} 問をシャッフル</span>`;
+    allBtn.innerHTML=`<strong>すべての分野</strong><span class="s-meta">未出題優先・全 ${allQuestions.length} 問から</span>`;
     allBtn.addEventListener("click", ()=>startPrac("__all__")); el.appendChild(allBtn);
+    syncQuickQuizLabels();
     CAT_ORDER.forEach(c=>{
         if(!counts[c]) return;
         const b=CAT_BADGE[c]||""; const btn=document.createElement("button"); btn.type="button"; btn.className="sel-item";
@@ -463,6 +531,7 @@ function buildCatList() {
 }
 
 function startExam(yearKey) {
+    isQuickQuizMode = false;
     currentMode="year"; examYearKey=yearKey; clearInterval(examTimerInt);
     let pool = yearKey==="__all__" ? shuffle(allQuestions.slice()) : allQuestions.filter(q=>String(q.year||"")===yearKey).sort((a,b)=>(CAT_ORDER.indexOf(a.category)<0?99:CAT_ORDER.indexOf(a.category))-(CAT_ORDER.indexOf(b.category)<0?99:CAT_ORDER.indexOf(b.category)));
     examQuestions=pool; examAnswers=new Array(pool.length).fill(null); examIdx=0; examTimerSec=120*60;
@@ -494,6 +563,7 @@ function renderTimer() { const el=document.getElementById("timer-val"); const m=
 function endExam() { clearInterval(examTimerInt); examQuestions.forEach((q,i)=>{if(examAnswers[i]!==null)recordAnswer(q.category||"未分類",examAnswers[i]===q.correctIndex);}); showResults("year"); }
 
 function startPrac(catKey, onlyWeak) {
+    isQuickQuizMode = false;
     currentMode="prac"; currentCatKey=catKey;
     let base = catKey==="__all__" ? allQuestions.slice() : allQuestions.filter(q=>q.category===catKey);
     if (onlyWeak) {
@@ -543,7 +613,7 @@ function onPracChoose(selectedIdx) {
     if(pracAnswered)return; pracAnswered=true;
     const q=pracQuestions[pracIdx]; const isCorrect=selectedIdx===q.correctIndex;
     pracRecord[pracIdx]=selectedIdx; recordAnswer(q.category||"未分類",isCorrect);
-    answeredQids.add(q._qid);
+    if (!isQuickQuizMode) answeredQids.add(q._qid);
     if (isCorrect) { weakQuestionIds.delete(q._qid); } else { weakQuestionIds.add(q._qid); }
     saveStats();
     document.getElementById("prac-choices").querySelectorAll(".choice-btn").forEach((btn,i)=>{ btn.disabled=true; if(i===q.correctIndex)btn.classList.add("correct-pick"); else if(i===selectedIdx)btn.classList.add("wrong-pick"); });
@@ -553,18 +623,40 @@ function onPracChoose(selectedIdx) {
 }
 document.getElementById("btn-prac-next").addEventListener("click",()=>{ if(!pracAnswered&&!window.confirm("未回答のままスキップしますか？"))return; if(pracIdx<pracQuestions.length-1){pracIdx++;renderPracQ();}else showResults("prac"); });
 document.getElementById("btn-prac-prev").addEventListener("click",()=>{ if(pracIdx>0){pracIdx--;renderPracQ();} });
-document.getElementById("lnk-prac-back").addEventListener("click",e=>{e.preventDefault();showScreen("s-cat-sel");buildCatList();});
+document.getElementById("lnk-prac-back").addEventListener("click",e=>{
+    e.preventDefault();
+    isQuickQuizMode = false;
+    showScreen("s-cat-sel");
+    buildCatList();
+});
 
 function showResults(mode) {
+    if (mode === "prac" && isQuickQuizMode) {
+        pracQuestions.forEach(function (q) { quickQuizIssuedIds.add(q._qid); });
+        saveStats();
+    }
     showScreen("s-results");
     const qs=mode==="year"?examQuestions:pracQuestions, ans=mode==="year"?examAnswers:pracRecord;
     const answered=ans.filter(a=>a!==null).length, correct=qs.reduce((s,q,i)=>s+(ans[i]===q.correctIndex?1:0),0);
     const pct=answered>0?Math.round(correct/answered*100):0, pass=pct>=70;
-    document.getElementById("res-title").textContent=mode==="year"?(examYearKey==="__all__"?"全年度ランダム 結果":examYearKey+"年度 結果"):"分野別学習 結果";
+    let titleText = "分野別学習 結果";
+    if (mode === "year") titleText = examYearKey==="__all__" ? "全年度ランダム 結果" : examYearKey+"年度 結果";
+    else if (isQuickQuizMode) titleText = "ランダムクイズ 結果";
+    document.getElementById("res-title").textContent = titleText;
     document.getElementById("res-score").textContent=correct+" / "+answered+" 問正解";
     const banner=document.getElementById("res-banner"); banner.className="pass-banner "+(pass?"pass":"fail");
     banner.textContent=pass?"✓ 合格ライン到達（正答率 "+pct+"%）":"✗ 不合格（"+pct+"% ／ 目安 70%以上）";
-    document.getElementById("res-msg").textContent=pct===100?"全問正解！完璧です。":pct>=80?"優秀な成績です！弱点を確認しましょう。":pct>=70?"合格ライン到達。引き続き苦手分野を強化しましょう。":"解説をしっかり読んで基礎から固め直しましょう。";
+    let msg = pct===100?"全問正解！完璧です。":pct>=80?"優秀な成績です！弱点を確認しましょう。":pct>=70?"合格ライン到達。引き続き苦手分野を強化しましょう。":"解説をしっかり読んで基礎から固め直しましょう。";
+    if (mode === "prac" && isQuickQuizMode) {
+        msg = "今回の結果は、モード選択・分野別画面の「分野ごとの正答率（累計）」に加算されています。続けて「次のクイズ」で、今回までに出た問題以外からランダムに " + QUICK_QUIZ_QUESTION_COUNT + " 問（収録数が少ないときはその範囲内）が選ばれます。全問を使い切ると履歴が自動リセットされます。学習の「回答済み」には含めません。";
+    }
+    document.getElementById("res-msg").textContent = msg;
+    const retryBtn = document.getElementById("btn-retry");
+    if (retryBtn) {
+        retryBtn.textContent = (mode === "prac" && isQuickQuizMode)
+            ? "次のクイズ（新しい" + QUICK_QUIZ_QUESTION_COUNT + "問）"
+            : "もう一度解く";
+    }
     const catSummary=document.getElementById("res-cat-summary"); catSummary.innerHTML="";
     const catMap={};
     qs.forEach((q,i)=>{ const c=q.category||"未分類"; if(!catMap[c])catMap[c]={ok:0,done:0,total:0}; catMap[c].total++; if(ans[i]!==null){catMap[c].done++;if(ans[i]===q.correctIndex)catMap[c].ok++;} });
@@ -574,20 +666,24 @@ function showResults(mode) {
 }
 function escHtml(s) { return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
 document.getElementById("btn-to-menu").addEventListener("click",()=>initModeScreen());
-document.getElementById("btn-retry").addEventListener("click",()=>{ if(currentMode==="year")startExam(examYearKey); else startPrac(currentCatKey); });
+document.getElementById("btn-retry").addEventListener("click",()=>{
+    if (currentMode==="year") startExam(examYearKey);
+    else if (isQuickQuizMode) startQuickQuiz();
+    else startPrac(currentCatKey);
+});
 
 async function boot() {
     loadStats();
     await loadQuestions();
     const params = new URLSearchParams(location.search);
     const setId = params.get("set");
-    const mode = params.get("mode");
+    const mode = (params.get("mode") || "").toLowerCase().trim();
     if (setId && MOCK_SETS[setId]) {
         startMockSet(setId);
     } else if (mode === "year") {
         showScreen("s-year-sel"); buildYearList();
     } else if (mode === "all") {
-        startPrac("__all__");
+        startQuickQuiz();
     } else if (mode === "category") {
         showScreen("s-cat-sel"); buildCatList();
     } else {

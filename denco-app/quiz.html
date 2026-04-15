@@ -347,6 +347,34 @@
             line-height: 1.5;
         }
 
+        .menu-quick-quiz-wrap {
+            margin: 0 0 14px;
+        }
+
+        .menu-quick-quiz-btn {
+            appearance: none;
+            width: 100%;
+            padding: 14px 16px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #09131f;
+            background: linear-gradient(135deg, var(--accent), #5eb8ff);
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(61, 156, 240, 0.35);
+            transition: transform 0.15s, box-shadow 0.2s, opacity 0.15s;
+        }
+
+        .menu-quick-quiz-btn:hover {
+            box-shadow: 0 6px 28px rgba(61, 156, 240, 0.45);
+        }
+
+        .menu-quick-quiz-btn:active {
+            transform: scale(0.98);
+        }
+
         .menu-footer-note {
             font-size: 0.82rem;
             color: var(--text-muted);
@@ -658,22 +686,26 @@
                 <div class="how-list">
                     <div class="how-item">
                         <div class="how-num">1</div>
-                        <div class="how-text"><strong>本番モード（年度別）</strong>：年度を選んで本番に近い形式で解答。解き終わった後に解説をまとめて確認できます。</div>
+                        <div class="how-text"><strong>ポータルの「クイズを始める」</strong>、または<strong>学習モード（分野別）内の「クイズを始める（ランダム20問）」</strong>では、全問からランダムに<strong>20問</strong>（スクリプト先頭の <code style="font-size:0.8em;">QUICK_QUIZ_QUESTION_COUNT</code> で変更）を出題。セット完了後に結果を表示し、続けて挑戦すると過去に出した問題以外から再抽選します（使い切りで自動リセット）。正誤は学習モードの分野別累計正答率に反映されます。</div>
                     </div>
                     <div class="how-item">
                         <div class="how-num">2</div>
-                        <div class="how-text"><strong>擬似問題集</strong>：試験形式に近い問題セットをまるごと選んで実力チェック。仕上げの総合演習に最適です。</div>
+                        <div class="how-text"><strong>本番モード（年度別）</strong>：年度を選んで本番に近い形式で解答。解き終わった後に解説をまとめて確認できます。</div>
                     </div>
                     <div class="how-item">
                         <div class="how-num">3</div>
-                        <div class="how-text"><strong>学習モード（分野別）</strong>：分野を選んで1問ずつ解答し、問題に答えると正誤と解説が表示されます。苦手分野の集中学習に活用してください。</div>
+                        <div class="how-text"><strong>擬似問題集</strong>：試験形式に近い問題セットをまるごと選んで実力チェック。仕上げの総合演習に最適です。</div>
                     </div>
                     <div class="how-item">
                         <div class="how-num">4</div>
-                        <div class="how-text"><strong>間違った問題だけ再出題</strong>：<strong>モード選択画面</strong>のボタン、または分野別メニュー内の同じ名前のボタンから利用できます。不正解だった問題がブラウザに自動保存され、間違った問題だけを集中して繰り返し復習できます。</div>
+                        <div class="how-text"><strong>学習モード（分野別）</strong>：分野を選んで1問ずつ解答し、問題に答えると正誤と解説が表示されます。苦手分野の集中学習に活用してください。</div>
                     </div>
                     <div class="how-item">
                         <div class="how-num">5</div>
+                        <div class="how-text"><strong>間違った問題だけ再出題</strong>：<strong>モード選択画面</strong>のボタン、または分野別メニュー内の同じ名前のボタンから利用できます。不正解だった問題がブラウザに自動保存され、間違った問題だけを集中して繰り返し復習できます。</div>
+                    </div>
+                    <div class="how-item">
+                        <div class="how-num">6</div>
                         <div class="how-text"><strong>回答済みを出題に戻す</strong>：<strong>モード選択画面</strong>のボタン、または分野別メニュー内の「回答済み（同じ問題）を出題に戻す」から利用できます。一度解いた問題は再出題されない仕組みのため、リセットすると同じ問題を最初から解き直せます。</div>
                     </div>
                 </div>
@@ -733,6 +765,9 @@
             <a href="#" class="back-link" id="lnk-cat-back-mode">← モード選択へ</a>
             <div class="card">
             <h2 class="menu-title">分野を選択してください。</h2>
+            <div class="menu-quick-quiz-wrap">
+                <button type="button" class="menu-quick-quiz-btn" id="btn-menu-quick-quiz">クイズを始める（ランダム20問）</button>
+            </div>
             <div id="category-buttons" class="category-buttons"></div>
             <div class="stats-box">
                 <p class="stats-title">分野ごとの正答率</p>
@@ -773,6 +808,16 @@
     </div>
 
     <script>
+        /** 「クイズを始める（ランダムN問）」（?mode=all）の1セットあたりの出題数。実験で前後させる場合はここだけ変える */
+        const QUICK_QUIZ_QUESTION_COUNT = 20;
+
+        function syncMenuQuickQuizLabel() {
+            const el = document.getElementById("btn-menu-quick-quiz");
+            if (el) {
+                el.textContent = "クイズを始める（ランダム" + QUICK_QUIZ_QUESTION_COUNT + "問）";
+            }
+        }
+
         const CATEGORY_ORDER = [
             "電気理論",
             "配線図・記号・識別",
@@ -832,6 +877,8 @@
         let score = 0;
         let skipAnswerRecording = false;
         let isMockMode = false;
+        let isQuickQuizMode = false;
+        let quickQuizIssuedIds = new Set();
 
         const questionTextEl = document.getElementById("question-text");
         const choicesEl = document.getElementById("choices");
@@ -898,12 +945,20 @@
             } catch (e) {
                 answeredQids = new Set();
             }
+            try {
+                const rawQz = localStorage.getItem("denkoQuickQuizIssuedQids");
+                const arrQz = rawQz ? JSON.parse(rawQz) : [];
+                quickQuizIssuedIds = new Set(Array.isArray(arrQz) ? arrQz : []);
+            } catch (e) {
+                quickQuizIssuedIds = new Set();
+            }
         }
 
         function saveStoredStats() {
             localStorage.setItem("denkoWeakQuestionIds", JSON.stringify(Array.from(weakQuestionIds)));
             localStorage.setItem("denkoCategoryStats", JSON.stringify(categoryStats));
             localStorage.setItem("denkoAnsweredQids", JSON.stringify(Array.from(answeredQids)));
+            localStorage.setItem("denkoQuickQuizIssuedQids", JSON.stringify(Array.from(quickQuizIssuedIds)));
         }
 
         function getFilteredPool() {
@@ -1132,6 +1187,49 @@
             }
         };
 
+        /**
+         * ポータル「クイズを始める」／学習モード「クイズを始める（ランダムN問）」用：全問からランダムに N 問（QUICK_QUIZ_QUESTION_COUNT）。
+         * 過去のクイズで出した問題は除外し、足りなくなったら履歴をリセットして再抽選。
+         * 分野別累計正答率（denkoCategoryStats）には各解答ごとに蓄積。学習モードの「回答済み」は立てない。
+         */
+        function startQuickQuiz() {
+            if (!allQuestions.length) {
+                window.alert("問題が読み込まれていません。");
+                initModeScreen();
+                return;
+            }
+            const n = Math.min(QUICK_QUIZ_QUESTION_COUNT, allQuestions.length);
+            let pool = allQuestions.filter(function (q) {
+                return !quickQuizIssuedIds.has(q._qid);
+            });
+            if (pool.length < n) {
+                quickQuizIssuedIds.clear();
+                saveStoredStats();
+                pool = allQuestions.slice();
+            }
+            let deck = shuffleQuizDeck(pool.slice());
+            deck = deck.slice(0, Math.min(n, deck.length));
+            if (deck.length === 0) {
+                window.alert("出題できる問題がありません。");
+                initModeScreen();
+                return;
+            }
+            questions = deck;
+            sessionCategoryLabel = "ランダムクイズ（" + deck.length + "問）";
+            skipAnswerRecording = true;
+            isMockMode = false;
+            isQuickQuizMode = true;
+            currentIndex = 0;
+            score = 0;
+            menuScreen.style.display = "none";
+            summaryScreen.style.display = "none";
+            showNewScreen(null);
+            topBarEl.hidden = false;
+            quizScreen.style.display = "block";
+            setPageTitleDefault();
+            renderQuestion();
+        }
+
         function startMockSet(setId) {
             const cfg = MOCK_SETS[setId];
             if (!cfg) {
@@ -1159,6 +1257,7 @@
             sessionCategoryLabel = cfg.title;
             skipAnswerRecording = false;
             isMockMode = true;
+            isQuickQuizMode = false;
             currentIndex = 0;
             score = 0;
             menuScreen.style.display = "none";
@@ -1275,6 +1374,13 @@
             const total = questions.length;
             finalScoreEl.textContent = score + " / " + total;
 
+            if (isQuickQuizMode) {
+                for (let qi = 0; qi < questions.length; qi++) {
+                    quickQuizIssuedIds.add(questions[qi]._qid);
+                }
+                saveStoredStats();
+            }
+
             // 擬似問題セット（45問）の合否判定：60%以上で合格
             passFailBannerEl.className = "pass-fail-banner";
             if (isMockMode) {
@@ -1287,9 +1393,20 @@
                     passFailBannerEl.classList.add("fail");
                     passFailBannerEl.innerHTML = "不合格 ✗ <span class='pass-threshold'>正答率 " + pct + "% (" + score + "/" + total + "）合格ライン " + passingScore + "問以上</span>";
                 }
+            } else {
+                passFailBannerEl.innerHTML = "";
             }
 
-            if (score === total) {
+            restartBtn.textContent = isQuickQuizMode
+                ? "次のクイズ（新しい" + QUICK_QUIZ_QUESTION_COUNT + "問）"
+                : "もう一度チャレンジ";
+
+            if (isQuickQuizMode) {
+                finalMessageEl.textContent =
+                    "今回の結果は、学習モード画面の「分野ごとの正答率」に累計で加算されています。再度「クイズを始める（ランダム" + QUICK_QUIZ_QUESTION_COUNT + "問）」を選ぶと、今回までに出た問題以外からランダムに " +
+                    QUICK_QUIZ_QUESTION_COUNT +
+                    " 問（収録数が少ないときはその範囲内）が選ばれます。全問を使い切ると自動で履歴がリセットされます。";
+            } else if (score === total) {
                 finalMessageEl.textContent =
                     "全問正解です。この調子で本番もがんばりましょう。分野に戻って同じ条件を選ぶと、未出題がなければ自動で記録がリセットされ、全問が新しい順で出ます。";
             } else if (score >= 1) {
@@ -1314,6 +1431,7 @@
             currentIndex = 0;
             score = 0;
             skipAnswerRecording = false;
+            isQuickQuizMode = false;
             feedbackEl.classList.remove("visible");
             summaryScreen.style.display = "none";
             quizScreen.style.display = "none";
@@ -1326,6 +1444,7 @@
             }
             renderCategoryStats();
             buildCategoryMenu();
+            syncMenuQuickQuizLabel();
         }
 
         function startCategory(catKey, labelForSession, onlyWeak) {
@@ -1353,6 +1472,7 @@
             sessionCategoryLabel = onlyWeak ? (labelForSession + "（間違い）") : labelForSession;
             skipAnswerRecording = onlyWeak;
             isMockMode = false;
+            isQuickQuizMode = false;
             currentIndex = 0;
             score = 0;
             menuScreen.style.display = "none";
@@ -1416,7 +1536,13 @@
         }
 
         nextBtn.addEventListener("click", goNext);
-        restartBtn.addEventListener("click", restart);
+        restartBtn.addEventListener("click", function () {
+            if (isQuickQuizMode) {
+                startQuickQuiz();
+            } else {
+                restart();
+            }
+        });
         backBtn.addEventListener("click", function() {
             if (summaryScreen.style.display !== "none") { initModeScreen(); }
             else { goToMenu(); }
@@ -1502,7 +1628,12 @@
                 " 問）· 分野別学習";
             buildCategoryMenu();
             renderCategoryStats();
+            syncMenuQuickQuizLabel();
         }
+
+        document.getElementById("btn-menu-quick-quiz").addEventListener("click", function () {
+            startQuickQuiz();
+        });
 
         // ── Exam mode variables ──────────────────────────────────
         let examQuestions = [], examAnswers = [], examIdx = 0;
@@ -1565,7 +1696,7 @@
         document.getElementById("btn-mode-weak").addEventListener("click", function() {
             const pool = allQuestions.filter(function(q) { return weakQuestionIds.has(q._qid); });
             if (pool.length === 0) { window.alert("間違った問題がまだありません。まず通常学習で問題を解いてください。"); return; }
-            questions = pool.slice(); sessionCategoryLabel = "間違った問題"; skipAnswerRecording = false; isMockMode = false; currentIndex = 0; score = 0;
+            questions = pool.slice(); sessionCategoryLabel = "間違った問題"; skipAnswerRecording = false; isMockMode = false; isQuickQuizMode = false; currentIndex = 0; score = 0;
             showNewScreen(null);
             menuScreen.style.display = "none"; summaryScreen.style.display = "none";
             topBarEl.hidden = false; quizScreen.style.display = "block"; renderQuestion();
@@ -1723,7 +1854,7 @@
                 showNewScreen("s-year-sel");
                 buildYearSel();
             } else if (mode === "all") {
-                startCategory("__all__", "すべて", false);
+                startQuickQuiz();
             } else if (mode === "category" || mode === "cat") {
                 goToMenu();
             } else {

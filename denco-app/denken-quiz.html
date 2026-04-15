@@ -234,6 +234,7 @@
             <div style="display:flex;flex-direction:column;gap:10px;font-size:0.85rem;color:var(--text-muted);line-height:1.7;">
                 <div><strong style="color:var(--text);">間違った問題だけ再出題</strong>：モード選択画面のボタン、または科目別メニュー内のボタンから利用できます。不正解だった問題がブラウザに自動保存され、間違った問題だけを集中して繰り返し復習できます。</div>
                 <div><strong style="color:var(--text);">回答済みを出題に戻す</strong>：モード選択画面のボタン、または科目別メニュー内の「回答済み（同じ問題）を出題に戻す」から利用できます。一度解いた問題は再出題されない仕組みのため、リセットすると同じ問題を最初から解き直せます。</div>
+                <div><strong style="color:var(--text);">クイズを始める</strong>／<strong style="color:var(--text);">学習モードの「クイズを始める（ランダム20問）」</strong>：全問からランダムに<strong>20問</strong>（スクリプトの <code style="font-size:0.8em;">QUICK_QUIZ_QUESTION_COUNT</code> で変更）を出題。セット完了後に結果を表示し、続けて挑戦すると過去に出した問題以外から再抽選します（使い切りで自動リセット）。正誤は科目別の累計正答率に反映されますが、学習モードの「回答済み」には含めません。</div>
             </div>
         </div>
     </div>
@@ -257,6 +258,7 @@
         <a href="#" class="back-link" id="lnk-cat-back">← モード選択へ</a>
         <div class="card">
             <p class="screen-sub" style="font-size:1rem;font-weight:700;color:var(--text);">学習する科目を選んでください</p>
+            <button type="button" class="cta-btn" id="btn-cat-quick-quiz" style="width:100%;max-width:100%;margin-bottom:14px;padding:12px 15px;">クイズを始める（ランダム20問） →</button>
             <div class="sel-list" id="cat-list"></div>
         </div>
         <div class="stats-box">
@@ -336,6 +338,8 @@
 const CAT_ORDER = ["理論", "電力", "機械", "法規"];
 const CAT_BADGE = { "理論": "badge-theory", "電力": "badge-power", "機械": "badge-machine", "法規": "badge-law" };
 const CAT_SHORT = { "理論": "理論", "電力": "電力", "機械": "機械", "法規": "法規" };
+/** 「クイズを始める（ランダムN問）」1セットあたりの出題数（モード選択の「クイズを始める」・?mode=all でも同じセット数） */
+const QUICK_QUIZ_QUESTION_COUNT = 20;
 
 // ══════════════════════════════════════
 //  State
@@ -344,6 +348,8 @@ let allQuestions = [];
 let categoryStats = {};
 let weakQuestionIds = new Set();
 let answeredQids = new Set();
+let quickQuizIssuedIds = new Set();
+let isQuickQuizMode = false;
 let examQuestions = [], examAnswers = [], examIdx = 0, examTimerSec = 0, examTimerInt = null, examYearKey = null;
 let pracQuestions = [], pracIdx = 0, pracAnswered = false, pracRecord = [];
 let currentMode = null, currentCatKey = null;
@@ -376,11 +382,25 @@ function loadStats() {
     catch(e) { weakQuestionIds = new Set(); }
     try { const raw = localStorage.getItem("denkenAnsweredQids"); answeredQids = new Set(Array.isArray(JSON.parse(raw||"[]")) ? JSON.parse(raw||"[]") : []); }
     catch(e) { answeredQids = new Set(); }
+    try {
+        const rawQz = localStorage.getItem("denkenQuickQuizIssuedQids");
+        const arrQz = rawQz ? JSON.parse(rawQz) : [];
+        quickQuizIssuedIds = new Set(Array.isArray(arrQz) ? arrQz : []);
+    } catch (e) { quickQuizIssuedIds = new Set(); }
 }
 function saveStats() {
     localStorage.setItem("denkenCategoryStats", JSON.stringify(categoryStats));
     localStorage.setItem("denkenWeakQuestionIds", JSON.stringify(Array.from(weakQuestionIds)));
     localStorage.setItem("denkenAnsweredQids", JSON.stringify(Array.from(answeredQids)));
+    localStorage.setItem("denkenQuickQuizIssuedQids", JSON.stringify(Array.from(quickQuizIssuedIds)));
+}
+
+function syncQuickQuizLabels() {
+    const catLabel = "クイズを始める（ランダム" + QUICK_QUIZ_QUESTION_COUNT + "問）";
+    const a = document.getElementById("btn-start-all");
+    const b = document.getElementById("btn-cat-quick-quiz");
+    if (a) a.textContent = "クイズを始める →";
+    if (b) b.textContent = catLabel + " →";
 }
 function recordAnswer(cat, isCorrect) {
     if (!categoryStats[cat]) categoryStats[cat] = { correct: 0, attempted: 0 };
@@ -450,12 +470,53 @@ function shuffle(arr) {
     return a;
 }
 
+/**
+ * 全問からランダムに N 問。過去のクイックセットで出した _qid は除外し、足りなければ履歴リセット。
+ * denkenCategoryStats には加算するが denkenAnsweredQids は更新しない（学習モードの未出題ロジックはそのまま）。
+ */
+function startQuickQuiz() {
+    if (!allQuestions.length) {
+        window.alert("問題データが読み込まれていません。");
+        initModeScreen();
+        return;
+    }
+    const n = Math.min(QUICK_QUIZ_QUESTION_COUNT, allQuestions.length);
+    let pool = allQuestions.filter(function (q) { return !quickQuizIssuedIds.has(q._qid); });
+    if (pool.length < n) {
+        quickQuizIssuedIds.clear();
+        saveStats();
+        pool = allQuestions.slice();
+    }
+    const deck = shuffle(pool).slice(0, Math.min(n, pool.length));
+    if (!deck.length) {
+        window.alert("出題できる問題がありません。");
+        initModeScreen();
+        return;
+    }
+    isQuickQuizMode = true;
+    currentMode = "prac";
+    currentCatKey = "__quick__";
+    pracQuestions = deck;
+    pracIdx = 0;
+    pracAnswered = false;
+    pracRecord = new Array(deck.length).fill(null);
+    showScreen("s-prac");
+    renderPracQ();
+}
+
 // ══════════════════════════════════════
 //  Screen 0: Mode Selection
 // ══════════════════════════════════════
-function initModeScreen() { renderStats("mode-stats"); showScreen("s-mode"); }
+function initModeScreen() {
+    isQuickQuizMode = false;
+    renderStats("mode-stats");
+    syncQuickQuizLabels();
+    showScreen("s-mode");
+}
 
-document.getElementById("btn-start-all").addEventListener("click", () => { startPrac("__all__"); });
+document.getElementById("btn-start-all").addEventListener("click", () => { startQuickQuiz(); });
+const btnCatQuickQuiz = document.getElementById("btn-cat-quick-quiz");
+if (btnCatQuickQuiz) btnCatQuickQuiz.addEventListener("click", () => { startQuickQuiz(); });
 document.getElementById("btn-mode-year").addEventListener("click", () => { showScreen("s-year-sel"); buildYearList(); });
 document.getElementById("btn-mode-cat").addEventListener("click",  () => { showScreen("s-cat-sel");  buildCatList(); });
 document.getElementById("btn-mode-weak").addEventListener("click", () => {
@@ -521,9 +582,10 @@ function buildCatList() {
     allQuestions.forEach(q => { const c = q.category || "未分類"; counts[c] = (counts[c]||0)+1; });
     const allBtn = document.createElement("button");
     allBtn.type = "button"; allBtn.className = "sel-item";
-    allBtn.innerHTML = `<strong>すべての科目</strong><span class="s-meta">全 ${allQuestions.length} 問をシャッフル</span>`;
+    allBtn.innerHTML = `<strong>すべての科目</strong><span class="s-meta">未出題優先・全 ${allQuestions.length} 問から</span>`;
     allBtn.addEventListener("click", () => startPrac("__all__"));
     el.appendChild(allBtn);
+    syncQuickQuizLabels();
     CAT_ORDER.forEach(c => {
         if (!counts[c]) return;
         const b = CAT_BADGE[c] || "";
@@ -563,6 +625,7 @@ function startExam(yearKey) {
         window.alert("問題データが読み込まれていません。");
         return;
     }
+    isQuickQuizMode = false;
     currentMode = "year"; examYearKey = yearKey;
     clearInterval(examTimerInt);
     let pool;
@@ -657,6 +720,7 @@ function startPrac(catKey, onlyWeak) {
         window.alert("問題データが読み込まれていません。");
         return;
     }
+    isQuickQuizMode = false;
     currentMode = "prac"; currentCatKey = catKey;
     let base = catKey==="__all__" ? allQuestions.slice() : allQuestions.filter(q=>q.category===catKey);
     if (onlyWeak) {
@@ -701,7 +765,7 @@ function onPracChoose(selectedIdx) {
     if(pracAnswered) return; pracAnswered = true;
     const q = pracQuestions[pracIdx]; const isCorrect = selectedIdx===q.correctIndex;
     pracRecord[pracIdx] = selectedIdx; recordAnswer(q.category||"未分類", isCorrect);
-    answeredQids.add(q._qid);
+    if (!isQuickQuizMode) answeredQids.add(q._qid);
     if (isCorrect) { weakQuestionIds.delete(q._qid); } else { weakQuestionIds.add(q._qid); }
     saveStats();
     const buttons = document.getElementById("prac-choices").querySelectorAll(".choice-btn");
@@ -718,12 +782,21 @@ document.getElementById("btn-prac-next").addEventListener("click", () => {
     if(pracIdx < pracQuestions.length-1){ pracIdx++; renderPracQ(); }
     else showResults("prac");
 });
-document.getElementById("lnk-prac-back").addEventListener("click", e => { e.preventDefault(); showScreen("s-cat-sel"); buildCatList(); });
+document.getElementById("lnk-prac-back").addEventListener("click", e => {
+    e.preventDefault();
+    isQuickQuizMode = false;
+    showScreen("s-cat-sel");
+    buildCatList();
+});
 
 // ══════════════════════════════════════
 //  Screen 5: Results
 // ══════════════════════════════════════
 function showResults(mode) {
+    if (mode === "prac" && isQuickQuizMode) {
+        pracQuestions.forEach(function (q) { quickQuizIssuedIds.add(q._qid); });
+        saveStats();
+    }
     showScreen("s-results");
     const qs = mode==="year" ? examQuestions : pracQuestions;
     const ans = mode==="year" ? examAnswers : pracRecord;
@@ -731,12 +804,25 @@ function showResults(mode) {
     const correct  = qs.reduce((s,q,i) => s+(ans[i]===q.correctIndex?1:0), 0);
     const pct = answered>0 ? Math.round(correct/answered*100) : 0;
     const pass = pct >= 60;
-    document.getElementById("res-title").textContent = mode==="year" ? (examYearKey==="__all__"?"全年度ランダム 結果":examYearKey+"年度 結果") : "科目別学習 結果";
+    let titleText = "科目別学習 結果";
+    if (mode === "year") titleText = examYearKey==="__all__" ? "全年度ランダム 結果" : examYearKey+"年度 結果";
+    else if (isQuickQuizMode) titleText = "ランダムクイズ 結果";
+    document.getElementById("res-title").textContent = titleText;
     document.getElementById("res-score").textContent = correct+" / "+answered+" 問正解";
     const banner = document.getElementById("res-banner");
     banner.className = "pass-banner "+(pass?"pass":"fail");
     banner.textContent = pass ? "✓ 合格ライン到達（正答率 "+pct+"%）" : "✗ 不合格（"+pct+"% ／ 合格基準 60%以上）";
-    document.getElementById("res-msg").textContent = pct===100 ? "全問正解！素晴らしい成績です。" : pct>=80 ? "優秀です！解説で確認して定着させましょう。" : pct>=60 ? "合格ライン到達。苦手問題をしっかり復習しましょう。" : "解説を読んで基礎から固め直しましょう。";
+    let msg = pct===100 ? "全問正解！素晴らしい成績です。" : pct>=80 ? "優秀です！解説で確認して定着させましょう。" : pct>=60 ? "合格ライン到達。苦手問題をしっかり復習しましょう。" : "解説を読んで基礎から固め直しましょう。";
+    if (mode === "prac" && isQuickQuizMode) {
+        msg = "今回の結果は、モード選択・科目別画面の「科目ごとの正答率（累計）」に加算されています。続けて「次のクイズ」で、今回までに出た問題以外からランダムに " + QUICK_QUIZ_QUESTION_COUNT + " 問（収録数が少ないときはその範囲内）が選ばれます。全問を使い切ると履歴が自動リセットされます。学習モードの「回答済み」には含めません。";
+    }
+    document.getElementById("res-msg").textContent = msg;
+    const retryBtn = document.getElementById("btn-retry");
+    if (retryBtn) {
+        retryBtn.textContent = (mode === "prac" && isQuickQuizMode)
+            ? "次のクイズ（新しい" + QUICK_QUIZ_QUESTION_COUNT + "問）"
+            : "もう一度解く";
+    }
 
     // 科目別成績
     const catSummary = document.getElementById("res-cat-summary"); catSummary.innerHTML = "";
@@ -779,7 +865,11 @@ function escHtml(str) {
 }
 
 document.getElementById("btn-to-menu").addEventListener("click", () => initModeScreen());
-document.getElementById("btn-retry").addEventListener("click", () => { if(currentMode==="year") startExam(examYearKey); else startPrac(currentCatKey); });
+document.getElementById("btn-retry").addEventListener("click", () => {
+    if (currentMode === "year") startExam(examYearKey);
+    else if (isQuickQuizMode) startQuickQuiz();
+    else startPrac(currentCatKey);
+});
 
 // ══════════════════════════════════════
 //  AI Panel
@@ -807,6 +897,8 @@ async function boot() {
     openCategoryFromQuery();
   } else if (mode === "year") {
     openYearFromQuery();
+  } else if (mode === "all") {
+    startQuickQuiz();
   } else {
     initModeScreen();
   }
