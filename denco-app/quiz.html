@@ -686,7 +686,7 @@
                 <div class="how-list">
                     <div class="how-item">
                         <div class="how-num">1</div>
-                        <div class="how-text"><strong>ポータルの「クイズを始める」</strong>、または<strong>学習モード（分野別）内の「クイズを始める（ランダム20問）」</strong>では、全問からランダムに<strong>20問</strong>（スクリプト先頭の <code style="font-size:0.8em;">QUICK_QUIZ_QUESTION_COUNT</code> で変更）を出題。セット完了後に結果を表示し、続けて挑戦すると過去に出した問題以外から再抽選します（使い切りで自動リセット）。正誤は学習モードの分野別累計正答率に反映されます。</div>
+                        <div class="how-text"><strong>クイズを始める</strong>：ポータルまたはモード選択・分野別メニューから、全問からランダムに<strong>20問</strong>（スクリプト先頭の <code style="font-size:0.8em;">QUICK_QUIZ_QUESTION_COUNT</code> で変更）を出題。セット完了後に結果を表示し、続けて挑戦すると過去に出した問題以外から再抽選します（使い切りで自動リセット）。正誤は学習モードの分野別累計正答率に反映されます。</div>
                     </div>
                     <div class="how-item">
                         <div class="how-num">2</div>
@@ -766,7 +766,7 @@
             <div class="card">
             <h2 class="menu-title">分野を選択してください。</h2>
             <div class="menu-quick-quiz-wrap">
-                <button type="button" class="menu-quick-quiz-btn" id="btn-menu-quick-quiz">クイズを始める（ランダム20問）</button>
+                <button type="button" class="menu-quick-quiz-btn" id="btn-menu-quick-quiz">クイズを始める</button>
             </div>
             <div id="category-buttons" class="category-buttons"></div>
             <div class="stats-box">
@@ -808,13 +808,13 @@
     </div>
 
     <script>
-        /** 「クイズを始める（ランダムN問）」（?mode=all）の1セットあたりの出題数。実験で前後させる場合はここだけ変える */
+        /** 「クイズを始める」（?mode=all）1セットあたりの出題数。実験で前後させる場合はここだけ変える */
         const QUICK_QUIZ_QUESTION_COUNT = 20;
 
         function syncMenuQuickQuizLabel() {
             const el = document.getElementById("btn-menu-quick-quiz");
             if (el) {
-                el.textContent = "クイズを始める（ランダム" + QUICK_QUIZ_QUESTION_COUNT + "問）";
+                el.textContent = "クイズを始める";
             }
         }
 
@@ -1188,7 +1188,7 @@
         };
 
         /**
-         * ポータル「クイズを始める」／学習モード「クイズを始める（ランダムN問）」用：全問からランダムに N 問（QUICK_QUIZ_QUESTION_COUNT）。
+         * 「クイズを始める」用：全問からランダムに N 問（QUICK_QUIZ_QUESTION_COUNT）。
          * 過去のクイズで出した問題は除外し、足りなくなったら履歴をリセットして再抽選。
          * 分野別累計正答率（denkoCategoryStats）には各解答ごとに蓄積。学習モードの「回答済み」は立てない。
          */
@@ -1403,7 +1403,7 @@
 
             if (isQuickQuizMode) {
                 finalMessageEl.textContent =
-                    "今回の結果は、学習モード画面の「分野ごとの正答率」に累計で加算されています。再度「クイズを始める（ランダム" + QUICK_QUIZ_QUESTION_COUNT + "問）」を選ぶと、今回までに出た問題以外からランダムに " +
+                    "今回の結果は、学習モード画面の「分野ごとの正答率」に累計で加算されています。再度「クイズを始める」を選ぶと、今回までに出た問題以外からランダムに " +
                     QUICK_QUIZ_QUESTION_COUNT +
                     " 問（収録数が少ないときはその範囲内）が選ばれます。全問を使い切ると自動で履歴がリセットされます。";
             } else if (score === total) {

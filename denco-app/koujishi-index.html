@@ -119,6 +119,12 @@
             transition: background .15s, border-color .15s;
         }
         .mode-row-link:hover { background: #2a3645; border-color: rgba(61,156,240,0.35); }
+
+        .how-list { display: flex; flex-direction: column; gap: 10px; }
+        .how-item { display: flex; gap: 12px; align-items: flex-start; }
+        .how-num  { flex-shrink: 0; min-width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; background: var(--accent-soft); border-radius: 50%; color: var(--accent); font-weight: 700; font-size: 0.85rem; }
+        .how-text { font-size: 0.85rem; color: var(--text-muted); line-height: 1.65; padding-top: 4px; }
+        .how-text code { font-size: 0.8em; }
     </style>
 </head>
 <body>
@@ -141,7 +147,6 @@
 <div class="wrap">
     <div class="card">
         <a class="cta" href="quiz.html?mode=all">クイズを始める →</a>
-        <p style="margin:10px 0 0;font-size:0.78rem;color:var(--text-muted);line-height:1.65;"><strong style="color:var(--text)">クイズを始める</strong>：ポータルからすぐに開始できます。アプリの<strong style="color:var(--text)">学習モード（分野別）</strong>では<strong style="color:var(--text)">クイズを始める（ランダム20問）</strong>からも同じ形式で開始できます。全問からランダムに<strong>20問</strong>（収録が少ないときはその範囲内）。続けて挑戦すると直近までに出た問題は避けて抽選され、成績は学習モード画面の<strong style="color:var(--text)">分野別正答率（累計）</strong>に加算されます（学習の「回答済み」には含めません）。問題数はアプリ内 <code style="font-size:0.85em;">QUICK_QUIZ_QUESTION_COUNT</code> で変更できます。</p>
         <div style="margin-top:16px;display:flex;flex-direction:column;gap:8px;">
             <a href="quiz.html?mode=year" class="mode-row-link">
                 <span style="font-size:1.1rem;">📅</span>
@@ -232,7 +237,40 @@
         <p class="note" style="margin-top:12px;">筆記試験は<strong>相対評価ではなく絶対評価（60点以上）</strong>。配線図問題（20問）を確実に得点し、電気理論の計算を捨てないことが合格への近道です。</p>
     </div>
 
-    <p class="note" style="margin:0 18px 16px;font-size:0.82rem;color:var(--text-muted);line-height:1.75;">💡 各モードの<strong style="color:var(--text)">使い方</strong>は <a href="quiz.html#how-to-use" style="color:var(--accent);text-decoration:none;">過去問クイズ</a> のモード選択画面にあります。</p>
+    <div class="card">
+        <h2>💡 使い方</h2>
+        <div class="how-list">
+            <div class="how-item">
+                <div class="how-num">1</div>
+                <div class="how-text"><strong style="color:var(--text)">クイズを始める</strong>：ポータルまたはアプリのモード選択・分野別メニューから、全問からランダムに<strong>20問</strong>（収録が少ないときはその範囲内）のセットで開始できます。続けて挑戦すると直近までに出た問題は避けて抽選され、成績は<strong style="color:var(--text)">分野別正答率（累計）</strong>に加算されます（学習の「回答済み」には含めません）。問題数はアプリ内 <code>QUICK_QUIZ_QUESTION_COUNT</code> で変更できます。</div>
+            </div>
+            <div class="how-item">
+                <div class="how-num">2</div>
+                <div class="how-text"><strong style="color:var(--text)">学習モード（分野別）</strong>：分野を選んで1問ずつ解答。問題に答えると正誤とともに解説が表示されるので、その場で内容を確認しながら学習できます。</div>
+            </div>
+            <div class="how-item">
+                <div class="how-num">3</div>
+                <div class="how-text"><strong style="color:var(--text)">本番モード（年度別）</strong>：年度を選択して120分タイマー付きで本番を想定した練習。問題を行き来しながら解答でき、終了後に全解説を確認できます。</div>
+            </div>
+            <div class="how-item">
+                <div class="how-num">4</div>
+                <div class="how-text"><strong style="color:var(--text)">擬似問題集</strong>：試験形式に近い問題セットを選んで実力チェック。仕上げの総合演習に最適です。</div>
+            </div>
+            <div class="how-item">
+                <div class="how-num">5</div>
+                <div class="how-text"><strong style="color:var(--text)">弱点の把握</strong>：分野ごとの正答率が表示されるので、正答率の低い分野を重点的に学習できます。</div>
+            </div>
+            <div class="how-item">
+                <div class="how-num">6</div>
+                <div class="how-text"><strong style="color:var(--text)">間違った問題だけ再出題</strong>：不正解だった問題を記録し、同じ問題だけを集中して復習できます。モード選択画面または分野別メニューから利用できます。</div>
+            </div>
+            <div class="how-item">
+                <div class="how-num">7</div>
+                <div class="how-text"><strong style="color:var(--text)">回答済みを出題に戻す</strong>：一度答えた問題の記録を消し、再び通常出題の対象に戻せます。モード選択画面または分野別メニューから利用できます。</div>
+            </div>
+        </div>
+        <p class="note" style="margin-top:16px;">より詳しい説明は <a href="quiz.html#how-to-use" style="color:var(--accent);text-decoration:none;">過去問クイズ</a> のモード選択画面（使い方）にもあります。</p>
+    </div>
 
     <div class="card">
         <h2>⚡ 関連資格</h2>

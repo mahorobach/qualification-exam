@@ -219,7 +219,7 @@
                 権利関係（14問）・法令上の制限（8問）・税その他（8問）。
             </p>
             <p style="margin-top:12px;">
-                <strong style="color:var(--text)">クイズを始める</strong>／学習モードの<strong style="color:var(--text)">クイズを始める（ランダム20問）</strong>では、全問からランダムに<strong>20問</strong>（スクリプトの <code style="font-size:0.85em;">QUICK_QUIZ_QUESTION_COUNT</code> で変更）を出題します。続けて挑戦すると直近セットで出た問題は避けて抽選され、分野別の累計正答率に反映されますが、学習の「回答済み」には含めません。
+                <strong style="color:var(--text)">クイズを始める</strong>：ポータルまたはモード選択・分野別メニューから、全問からランダムに<strong>20問</strong>（スクリプトの <code style="font-size:0.85em;">QUICK_QUIZ_QUESTION_COUNT</code> で変更）を出題します。続けて挑戦すると直近セットで出た問題は避けて抽選され、分野別の累計正答率に反映されますが、学習の「回答済み」には含めません。
             </p>
         </div>
         <div class="stats-box" style="margin-top:10px;">
@@ -250,7 +250,7 @@
         <div class="card">
             <p class="screen-title">分野を選択</p>
             <p class="screen-sub">学習する分野を選んでください</p>
-            <button type="button" class="menu-quick-quiz-btn" id="btn-cat-quick-quiz">クイズを始める（ランダム20問）</button>
+            <button type="button" class="menu-quick-quiz-btn" id="btn-cat-quick-quiz">クイズを始める</button>
             <div class="sel-list" id="cat-list"></div>
         </div>
         <div class="stats-box">
@@ -333,7 +333,7 @@
 <script>
 const CAT_ORDER = ["権利関係", "法令上の制限", "宅建業法", "税その他"];
 const CAT_BADGE = { "権利関係": "badge-kenri", "法令上の制限": "badge-horei", "宅建業法": "badge-takken", "税その他": "badge-zei" };
-/** 「クイズを始める（ランダムN問）」1セットあたりの出題数（?mode=all も同じ） */
+/** 「クイズを始める」1セットあたりの出題数（?mode=all も同じ） */
 const QUICK_QUIZ_QUESTION_COUNT = 20;
 
 const MOCK_SETS = {
@@ -371,11 +371,12 @@ function saveStats() {
     localStorage.setItem("takkenQuickQuizIssuedQids", JSON.stringify(Array.from(quickQuizIssuedIds)));
 }
 function syncQuickQuizLabels() {
-    const catLabel = "クイズを始める（ランダム" + QUICK_QUIZ_QUESTION_COUNT + "問）";
+    const label = "クイズを始める →";
+    const labelCat = "クイズを始める";
     const a = document.getElementById("btn-start-all");
     const b = document.getElementById("btn-cat-quick-quiz");
-    if (a) a.textContent = "クイズを始める →";
-    if (b) b.textContent = catLabel;
+    if (a) a.textContent = label;
+    if (b) b.textContent = labelCat;
 }
 function recordAnswer(cat, isCorrect) {
     if (!categoryStats[cat]) categoryStats[cat] = { correct:0, attempted:0 };

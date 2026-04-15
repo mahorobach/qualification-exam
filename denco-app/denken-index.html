@@ -116,6 +116,12 @@
             transition: background .15s, border-color .15s;
         }
         .mode-row-link:hover { background: #2e2a18; border-color: rgba(240,198,116,0.35); }
+
+        .how-list { display: flex; flex-direction: column; gap: 10px; }
+        .how-item { display: flex; gap: 12px; align-items: flex-start; }
+        .how-num  { flex-shrink: 0; min-width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; background: var(--accent-soft); border-radius: 50%; color: var(--accent); font-weight: 700; font-size: 0.85rem; }
+        .how-text { font-size: 0.85rem; color: var(--text-muted); line-height: 1.65; padding-top: 4px; }
+        .how-text code { font-size: 0.8em; }
     </style>
 </head>
 <body>
@@ -137,7 +143,6 @@
 <div class="wrap">
     <div class="card">
         <a class="cta" href="denken-quiz.html?mode=all">クイズを始める →</a>
-        <p style="margin:10px 0 0;font-size:0.78rem;color:var(--text-muted);line-height:1.65;"><strong style="color:var(--text)">クイズを始める</strong>：ポータルからすぐに開始できます。アプリの<strong style="color:var(--text)">学習モード（科目別）</strong>では<strong style="color:var(--text)">クイズを始める（ランダム20問）</strong>からも同じ形式で開始できます。全問からランダムに<strong>20問</strong>（収録が少ないときはその範囲内）。続けて挑戦すると直近までに出た問題は避けて抽選され、成績は<strong style="color:var(--text)">科目別正答率（累計）</strong>に加算されます（学習モードの「回答済み」には含めません）。問題数はアプリ内 <code style="font-size:0.85em;">QUICK_QUIZ_QUESTION_COUNT</code> で変更できます。</p>
         <div style="margin-top:16px;display:flex;flex-direction:column;gap:8px;">
             <a href="denken-quiz.html?mode=year" class="mode-row-link">
                 <span style="font-size:1.1rem;">📅</span>
@@ -214,7 +219,40 @@
         <p class="note" style="margin-top:12px;">4科目すべてを1年で合格する必要はありません。<strong>科目合格制度</strong>を活用して、1〜2科目ずつ確実に仕上げる戦略も有効です。まず得点しやすい<strong>電力・法規</strong>から攻略するのがおすすめです。</p>
     </div>
 
-    <p class="note" style="margin:0 18px 16px;font-size:0.82rem;color:var(--text-muted);line-height:1.75;">💡 各モードの<strong style="color:var(--text)">使い方</strong>は <a href="denken-quiz.html#how-to-use" style="color:var(--accent);text-decoration:none;">過去問クイズ</a> のモード選択画面にあります。</p>
+    <div class="card">
+        <h2>💡 使い方</h2>
+        <div class="how-list">
+            <div class="how-item">
+                <div class="how-num">1</div>
+                <div class="how-text"><strong style="color:var(--text)">クイズを始める</strong>：ポータルまたはアプリのモード選択・科目別メニューから、全問からランダムに<strong>20問</strong>（収録が少ないときはその範囲内）のセットで開始できます。続けて挑戦すると直近までに出た問題は避けて抽選され、成績は<strong style="color:var(--text)">科目別正答率（累計）</strong>に加算されます（学習の「回答済み」には含めません）。問題数はアプリ内 <code>QUICK_QUIZ_QUESTION_COUNT</code> で変更できます。</div>
+            </div>
+            <div class="how-item">
+                <div class="how-num">2</div>
+                <div class="how-text"><strong style="color:var(--text)">学習モード（科目別）</strong>：理論・電力・機械・法規から科目を選び、1問ずつ解答。正誤と解説をその場で確認できます。</div>
+            </div>
+            <div class="how-item">
+                <div class="how-num">3</div>
+                <div class="how-text"><strong style="color:var(--text)">年度別（本番モード）</strong>：年度を選んでタイマー付きで演習。問題を行き来しながら解答し、終了後に全問の解説を確認できます。</div>
+            </div>
+            <div class="how-item">
+                <div class="how-num">4</div>
+                <div class="how-text"><strong style="color:var(--text)">擬似問題集</strong>：4科目ミックスのセットで実力チェック。本番に近い流れを体験できます。</div>
+            </div>
+            <div class="how-item">
+                <div class="how-num">5</div>
+                <div class="how-text"><strong style="color:var(--text)">弱点の把握</strong>：科目ごとの累計正答率を確認し、苦手科目の対策に活用できます。</div>
+            </div>
+            <div class="how-item">
+                <div class="how-num">6</div>
+                <div class="how-text"><strong style="color:var(--text)">間違った問題だけ再出題</strong>：不正解だった問題を記録し、同じ問題だけを集中して復習できます。モード選択画面または科目別メニューから利用できます。</div>
+            </div>
+            <div class="how-item">
+                <div class="how-num">7</div>
+                <div class="how-text"><strong style="color:var(--text)">回答済みを出題に戻す</strong>：一度答えた問題の記録を消し、再び通常出題の対象に戻せます。モード選択画面または科目別メニューから利用できます。</div>
+            </div>
+        </div>
+        <p class="note" style="margin-top:16px;">試験概要・タイマーなどの補足は <a href="denken-quiz.html" style="color:var(--accent);text-decoration:none;">過去問クイズ</a> のモード選択画面にも記載があります。</p>
+    </div>
 
     <div class="card">
         <h2>⚡ 関連資格</h2>

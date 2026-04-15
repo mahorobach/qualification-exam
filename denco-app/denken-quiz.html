@@ -234,7 +234,7 @@
             <div style="display:flex;flex-direction:column;gap:10px;font-size:0.85rem;color:var(--text-muted);line-height:1.7;">
                 <div><strong style="color:var(--text);">間違った問題だけ再出題</strong>：モード選択画面のボタン、または科目別メニュー内のボタンから利用できます。不正解だった問題がブラウザに自動保存され、間違った問題だけを集中して繰り返し復習できます。</div>
                 <div><strong style="color:var(--text);">回答済みを出題に戻す</strong>：モード選択画面のボタン、または科目別メニュー内の「回答済み（同じ問題）を出題に戻す」から利用できます。一度解いた問題は再出題されない仕組みのため、リセットすると同じ問題を最初から解き直せます。</div>
-                <div><strong style="color:var(--text);">クイズを始める</strong>／<strong style="color:var(--text);">学習モードの「クイズを始める（ランダム20問）」</strong>：全問からランダムに<strong>20問</strong>（スクリプトの <code style="font-size:0.8em;">QUICK_QUIZ_QUESTION_COUNT</code> で変更）を出題。セット完了後に結果を表示し、続けて挑戦すると過去に出した問題以外から再抽選します（使い切りで自動リセット）。正誤は科目別の累計正答率に反映されますが、学習モードの「回答済み」には含めません。</div>
+                <div><strong style="color:var(--text);">クイズを始める</strong>：ポータルまたはモード選択・科目別メニューから、全問からランダムに<strong>20問</strong>（スクリプトの <code style="font-size:0.8em;">QUICK_QUIZ_QUESTION_COUNT</code> で変更）を出題。セット完了後に結果を表示し、続けて挑戦すると過去に出した問題以外から再抽選します（使い切りで自動リセット）。正誤は科目別の累計正答率に反映されますが、学習の「回答済み」には含めません。</div>
             </div>
         </div>
     </div>
@@ -258,7 +258,7 @@
         <a href="#" class="back-link" id="lnk-cat-back">← モード選択へ</a>
         <div class="card">
             <p class="screen-sub" style="font-size:1rem;font-weight:700;color:var(--text);">学習する科目を選んでください</p>
-            <button type="button" class="cta-btn" id="btn-cat-quick-quiz" style="width:100%;max-width:100%;margin-bottom:14px;padding:12px 15px;">クイズを始める（ランダム20問） →</button>
+            <button type="button" class="cta-btn" id="btn-cat-quick-quiz" style="width:100%;max-width:100%;margin-bottom:14px;padding:12px 15px;">クイズを始める →</button>
             <div class="sel-list" id="cat-list"></div>
         </div>
         <div class="stats-box">
@@ -338,7 +338,7 @@
 const CAT_ORDER = ["理論", "電力", "機械", "法規"];
 const CAT_BADGE = { "理論": "badge-theory", "電力": "badge-power", "機械": "badge-machine", "法規": "badge-law" };
 const CAT_SHORT = { "理論": "理論", "電力": "電力", "機械": "機械", "法規": "法規" };
-/** 「クイズを始める（ランダムN問）」1セットあたりの出題数（モード選択の「クイズを始める」・?mode=all でも同じセット数） */
+/** 「クイズを始める」1セットあたりの出題数（?mode=all でも同じ） */
 const QUICK_QUIZ_QUESTION_COUNT = 20;
 
 // ══════════════════════════════════════
@@ -396,11 +396,11 @@ function saveStats() {
 }
 
 function syncQuickQuizLabels() {
-    const catLabel = "クイズを始める（ランダム" + QUICK_QUIZ_QUESTION_COUNT + "問）";
+    const label = "クイズを始める →";
     const a = document.getElementById("btn-start-all");
     const b = document.getElementById("btn-cat-quick-quiz");
-    if (a) a.textContent = "クイズを始める →";
-    if (b) b.textContent = catLabel + " →";
+    if (a) a.textContent = label;
+    if (b) b.textContent = label;
 }
 function recordAnswer(cat, isCorrect) {
     if (!categoryStats[cat]) categoryStats[cat] = { correct: 0, attempted: 0 };

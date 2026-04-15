@@ -91,6 +91,7 @@
         .how-item { display: flex; gap: 12px; align-items: flex-start; }
         .how-num  { min-width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; background: var(--accent-soft); border-radius: 50%; color: var(--accent); font-weight: 700; font-size: 0.85rem; }
         .how-text { font-size: 0.85rem; color: var(--text-muted); line-height: 1.65; padding-top: 4px; }
+        .how-text code { font-size: 0.8em; }
 
         .top-link { display: block; text-align: center; padding: 10px 18px; font-size: 0.84rem; color: var(--text-muted); text-decoration: none; }
         .top-link:hover { color: var(--accent); text-decoration: underline; }
@@ -121,7 +122,6 @@
 <div class="wrap">
     <div class="card">
         <a class="cta" href="quiz.html?mode=all">クイズを始める →</a>
-        <p style="margin:10px 0 0;font-size:0.78rem;color:var(--text-muted);line-height:1.65;"><strong style="color:var(--text)">クイズを始める</strong>：ポータルからすぐに開始できます。アプリの<strong style="color:var(--text)">学習モード（分野別）</strong>では<strong style="color:var(--text)">クイズを始める（ランダム20問）</strong>からも同じ形式で開始できます。全問からランダムに<strong>20問</strong>（収録が少ないときはその範囲内）。続けて挑戦すると直近セットで出た問題は避けて抽選され、成績は<strong style="color:var(--text)">分野別正答率（累計）</strong>に加算されます（学習の「回答済み」には含めません）。問題数はアプリ内 <code style="font-size:0.85em;">QUICK_QUIZ_QUESTION_COUNT</code> で変更できます。</p>
         <div style="margin-top:16px;display:flex;flex-direction:column;gap:8px;">
             <a href="quiz.html?mode=year" style="display:flex;align-items:center;gap:12px;padding:12px 14px;background:var(--surface-2);border-radius:12px;border:1px solid rgba(255,255,255,0.07);text-decoration:none;color:var(--text);">
                 <span style="font-size:1.1rem;">📅</span>
@@ -193,15 +193,31 @@
         <div class="how-list">
             <div class="how-item">
                 <div class="how-num">1</div>
-                <div class="how-text"><strong style="color:var(--text)">分野別（学習モード）</strong>：科目を選んで1問ずつ解答。問題に答えると正誤とともに解説が表示されるので、その場で内容を確認しながら学習できます。</div>
+                <div class="how-text"><strong style="color:var(--text)">クイズを始める</strong>：ポータルまたはアプリのモード選択・分野別メニューから、全問からランダムに<strong>20問</strong>（収録が少ないときはその範囲内）のセットで開始できます。続けて挑戦すると直近までに出た問題は避けて抽選され、成績は<strong style="color:var(--text)">分野別正答率（累計）</strong>に加算されます（学習の「回答済み」には含めません）。問題数はアプリ内 <code>QUICK_QUIZ_QUESTION_COUNT</code> で変更できます。</div>
             </div>
             <div class="how-item">
                 <div class="how-num">2</div>
-                <div class="how-text"><strong style="color:var(--text)">年度別（本番形式）</strong>：年度を選択して120分タイマー付きで本番を想定した練習。問題を行き来しながら解答でき、終了後に全解説を確認。</div>
+                <div class="how-text"><strong style="color:var(--text)">分野別（学習モード）</strong>：科目を選んで1問ずつ解答。問題に答えると正誤とともに解説が表示されるので、その場で内容を確認しながら学習できます。</div>
             </div>
             <div class="how-item">
                 <div class="how-num">3</div>
+                <div class="how-text"><strong style="color:var(--text)">年度別（本番形式）</strong>：年度を選択して120分タイマー付きで本番を想定した練習。問題を行き来しながら解答でき、終了後に全解説を確認。</div>
+            </div>
+            <div class="how-item">
+                <div class="how-num">4</div>
+                <div class="how-text"><strong style="color:var(--text)">擬似問題集</strong>：4分野ミックスのセットで、本番に近い流れを体験できます。</div>
+            </div>
+            <div class="how-item">
+                <div class="how-num">5</div>
                 <div class="how-text"><strong style="color:var(--text)">弱点の把握</strong>：正答率が表示されるので、正答率の低い分野を重点的に学習することで効率よくスコアアップできます。</div>
+            </div>
+            <div class="how-item">
+                <div class="how-num">6</div>
+                <div class="how-text"><strong style="color:var(--text)">間違った問題だけ再出題</strong>：不正解だった問題を記録し、同じ問題だけを集中して復習できます。モード選択画面または分野別メニューから利用できます。</div>
+            </div>
+            <div class="how-item">
+                <div class="how-num">7</div>
+                <div class="how-text"><strong style="color:var(--text)">回答済みを出題に戻す</strong>：一度答えた問題の記録を消し、再び通常出題の対象に戻せます。モード選択画面または分野別メニューから利用できます。</div>
             </div>
         </div>
         <p style="margin-top:16px;font-size:0.8rem;color:var(--text-muted);line-height:1.8;">※ 本サイトで使用している問題は、宅地建物取引士試験の公式過去問をもとに内容・表現をアレンジして作成したオリジナル問題です。公式機関が提供する問題そのものではありません。正確な試験情報は（一財）不動産適正取引推進機構の公式サイトをご確認ください。</p>
