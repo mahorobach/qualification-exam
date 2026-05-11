@@ -1,470 +1,1743 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
-<head>
-<script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/da8873c0823e389b7f9a1d40/script.js"></script>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G4S7ZG2Y34"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-G4S7ZG2Y34');
-  </script>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>ブログ | 資格トレイン</title>
-  <meta name="description" content="資格試験の勉強法・合格体験記・各資格の難易度比較など、役立つ記事を発信しています。">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3002712486184435" crossorigin="anonymous"></script>
-  <style>
-    :root {
-      --white:      #ffffff;
-      --apple-dark: #1d1d1f;
-      --apple-gray: #f5f5f7;
-      --apple-mid:  #e8e8ed;
-      --apple-muted:#6e6e73;
-      --apple-blue: #0071e3;
-      --nav-h:      52px;
-      --radius:     16px;
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: "Noto Sans JP", "Hiragino Sans", -apple-system, sans-serif;
-      background: var(--white);
-      color: var(--apple-dark);
-      line-height: 1.7;
-      font-size: 17px;
-      -webkit-font-smoothing: antialiased;
-    }
+  <head>
+    <script
+      id="cookieyes"
+      type="text/javascript"
+      src="https://cdn-cookieyes.com/client_data/da8873c0823e389b7f9a1d40/script.js"
+    ></script>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-G4S7ZG2Y34"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-G4S7ZG2Y34');
+    </script>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>ブログ | 資格トレイン</title>
+    <meta
+      name="description"
+      content="資格試験の勉強法・合格体験記・各資格の難易度比較など、役立つ記事を発信しています。"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3002712486184435"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      :root {
+        --white: #ffffff;
+        --apple-dark: #1d1d1f;
+        --apple-gray: #f5f5f7;
+        --apple-mid: #e8e8ed;
+        --apple-muted: #6e6e73;
+        --apple-blue: #0071e3;
+        --apple-blue-hover: #0077ed;
+        --nav-h: 52px;
+        --radius: 16px;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family:
+          'Noto Sans JP',
+          'Hiragino Sans',
+          -apple-system,
+          sans-serif;
+        background: var(--white);
+        color: var(--apple-dark);
+        line-height: 1.7;
+        font-size: 17px;
+        -webkit-font-smoothing: antialiased;
+      }
 
-    /* ── Nav ── */
-    .nav {
-      position: fixed; top: 0; left: 0; right: 0;
-      height: var(--nav-h); z-index: 200;
-      background: rgba(255,255,255,0.85);
-      backdrop-filter: saturate(180%) blur(20px);
-      -webkit-backdrop-filter: saturate(180%) blur(20px);
-      border-bottom: 1px solid rgba(0,0,0,0.08);
-      display: flex; align-items: center;
-    }
-    .nav-inner {
-      max-width: 980px; margin: 0 auto; padding: 0 22px;
-      width: 100%; display: flex; align-items: center; justify-content: space-between;
-    }
-    .nav-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; color: var(--apple-dark); }
-    .nav-logo-icon { font-size: 1.3rem; }
-    .nav-logo-text { font-size: 0.95rem; font-weight: 600; }
-    .nav-hamburger {
-      display: flex; flex-direction: column; justify-content: center;
-      gap: 5px; width: 36px; height: 36px; padding: 6px;
-      background: none; border: none; cursor: pointer;
-      border-radius: 8px; transition: background .15s; flex-shrink: 0;
-    }
-    .nav-hamburger:hover { background: rgba(0,0,0,0.06); }
-    .nav-hamburger span {
-      display: block; height: 1.5px; border-radius: 2px;
-      background: currentColor; transition: transform .3s, opacity .3s, width .3s; width: 20px;
-    }
-    .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
-    .nav-hamburger.open span:nth-child(2) { opacity: 0; width: 0; }
-    .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+      /* ── Nav（トップ index.html と同デザイン） ── */
+      .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: var(--nav-h);
+        z-index: 200;
+        background: rgba(255, 255, 255, 0.72);
+        backdrop-filter: saturate(180%) blur(20px);
+        -webkit-backdrop-filter: saturate(180%) blur(20px);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        display: flex;
+        align-items: center;
+      }
+      .nav-inner {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 0 22px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .nav-logo {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+        color: var(--apple-dark);
+      }
+      .nav-logo-icon {
+        font-size: 1.3rem;
+        line-height: 1;
+      }
+      .nav-logo-text {
+        font-size: 0.95rem;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+      }
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .nav-links a {
+        font-size: 0.78rem;
+        font-weight: 400;
+        color: var(--apple-dark);
+        text-decoration: none;
+        opacity: 0.8;
+        transition: opacity 0.15s;
+      }
+      .nav-links a:hover {
+        opacity: 1;
+      }
+      .nav-search-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        border-radius: 8px;
+        color: inherit;
+        font-size: 1.1rem;
+        transition: background 0.15s;
+        flex-shrink: 0;
+      }
+      .nav-search-btn:hover {
+        background: rgba(0, 0, 0, 0.06);
+      }
 
-    /* ── Drawer ── */
-    .drawer-overlay {
-      position: fixed; inset: 0; background: rgba(0,0,0,0.45);
-      z-index: 190; opacity: 0; pointer-events: none; transition: opacity .3s;
-    }
-    .drawer-overlay.open { opacity: 1; pointer-events: auto; }
-    .drawer {
-      position: fixed; top: 0; right: 0; bottom: 0;
-      width: min(320px, 85vw); background: #fff;
-      z-index: 195; transform: translateX(100%);
-      transition: transform .35s cubic-bezier(.25,.46,.45,.94);
-      display: flex; flex-direction: column; overflow-y: auto;
-    }
-    .drawer.open { transform: translateX(0); }
-    .drawer-header {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 16px 20px; border-bottom: 1px solid var(--apple-mid); flex-shrink: 0;
-    }
-    .drawer-logo { display: flex; align-items: center; gap: 8px; font-size: 0.95rem; font-weight: 600; color: var(--apple-dark); text-decoration: none; }
-    .drawer-close {
-      width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;
-      background: var(--apple-gray); border: none; border-radius: 50%;
-      cursor: pointer; font-size: 1.1rem; color: var(--apple-muted);
-    }
-    .drawer-close:hover { background: var(--apple-mid); }
-    .drawer-section { padding: 20px 20px 8px; }
-    .drawer-section-label { font-size: 0.68rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--apple-muted); margin-bottom: 8px; padding-left: 4px; }
-    .drawer-nav { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; }
-    .drawer-nav a { display: flex; align-items: center; gap: 12px; padding: 11px 12px; border-radius: 10px; text-decoration: none; color: var(--apple-dark); font-size: 0.95rem; transition: background .15s; }
-    .drawer-nav a:hover { background: var(--apple-gray); }
-    .drawer-nav a .di { font-size: 1.1rem; width: 24px; text-align: center; }
-    .drawer-divider { height: 1px; background: var(--apple-mid); margin: 8px 20px; }
+      .search-overlay {
+        position: fixed;
+        top: var(--nav-h);
+        left: 0;
+        right: 0;
+        z-index: 199;
+        background: rgba(255, 255, 255, 0.97);
+        backdrop-filter: saturate(180%) blur(20px);
+        -webkit-backdrop-filter: saturate(180%) blur(20px);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        padding: 16px 22px;
+        transform: translateY(-110%);
+        opacity: 0;
+        transition:
+          transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+          opacity 0.25s;
+        pointer-events: none;
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+      }
+      .search-overlay.open {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+      }
+      .search-overlay-inner {
+        max-width: 640px;
+        margin: 0 auto;
+      }
+      .search-input-wrap {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: var(--apple-gray);
+        border-radius: 12px;
+        padding: 10px 16px;
+        border: 1.5px solid transparent;
+        transition: border-color 0.2s;
+      }
+      .search-input-wrap:focus-within {
+        border-color: var(--apple-blue);
+        background: #fff;
+      }
+      .search-icon-static {
+        font-size: 1rem;
+        color: var(--apple-muted);
+        flex-shrink: 0;
+      }
+      .search-input {
+        flex: 1;
+        border: none;
+        background: transparent;
+        font-size: 1rem;
+        font-family: inherit;
+        color: var(--apple-dark);
+        outline: none;
+      }
+      .search-input::placeholder {
+        color: var(--apple-muted);
+      }
+      .search-clear-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+        color: var(--apple-muted);
+        padding: 2px;
+        border-radius: 50%;
+        transition: color 0.15s;
+      }
+      .search-clear-btn:hover {
+        color: var(--apple-dark);
+      }
+      .search-results {
+        margin-top: 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .search-empty {
+        font-size: 0.84rem;
+        color: var(--apple-muted);
+        padding: 10px 4px;
+      }
+      .search-hint {
+        font-size: 0.82rem;
+        color: var(--apple-muted);
+        padding: 4px 4px;
+      }
+      .search-result-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 10px 14px;
+        border-radius: 10px;
+        background: var(--apple-gray);
+        text-decoration: none;
+        color: var(--apple-dark);
+        transition: background 0.15s;
+      }
+      .search-result-item:hover {
+        background: var(--apple-mid);
+      }
+      .search-result-emoji {
+        font-size: 1.35rem;
+        flex-shrink: 0;
+      }
+      .search-result-body {
+        flex: 1;
+      }
+      .search-result-name {
+        font-size: 0.93rem;
+        font-weight: 600;
+        margin-bottom: 2px;
+      }
+      .search-result-sub {
+        font-size: 0.77rem;
+        color: var(--apple-muted);
+        line-height: 1.5;
+      }
+      .search-result-arrow {
+        font-size: 1rem;
+        color: var(--apple-muted);
+      }
 
-    /* ── Page header ── */
-    .page-header {
-      padding: calc(var(--nav-h) + 64px) 22px 56px;
-      background: var(--apple-dark);
-      text-align: center;
-      position: relative; overflow: hidden;
-    }
-    .page-header::before {
-      content: ""; position: absolute; inset: 0;
-      background: radial-gradient(ellipse 70% 60% at 50% -10%, rgba(0,113,227,0.2), transparent);
-      pointer-events: none;
-    }
-    .page-eyebrow { font-size: 0.78rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: #2997ff; margin-bottom: 14px; position: relative; z-index: 1; }
-    .page-title { font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; letter-spacing: -0.03em; color: #fff; margin-bottom: 12px; position: relative; z-index: 1; }
-    .page-sub { font-size: 1rem; color: rgba(255,255,255,0.5); font-weight: 300; position: relative; z-index: 1; }
+      .nav-hamburger {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        width: 36px;
+        height: 36px;
+        padding: 6px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        border-radius: 8px;
+        transition: background 0.15s;
+        flex-shrink: 0;
+      }
+      .nav-hamburger:hover {
+        background: rgba(0, 0, 0, 0.06);
+      }
+      .nav-hamburger span {
+        display: block;
+        height: 1.5px;
+        border-radius: 2px;
+        background: currentColor;
+        transition:
+          transform 0.3s,
+          opacity 0.3s,
+          width 0.3s;
+        width: 20px;
+      }
+      .nav-hamburger.open span:nth-child(1) {
+        transform: translateY(6.5px) rotate(45deg);
+      }
+      .nav-hamburger.open span:nth-child(2) {
+        opacity: 0;
+        width: 0;
+      }
+      .nav-hamburger.open span:nth-child(3) {
+        transform: translateY(-6.5px) rotate(-45deg);
+      }
 
-    /* ── Layout ── */
-    .container { max-width: 980px; margin: 0 auto; padding: 0 22px; }
+      /* ── Drawer ── */
+      .drawer-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.45);
+        z-index: 190;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s;
+      }
+      .drawer-overlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      .drawer {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: min(320px, 85vw);
+        background: #fff;
+        z-index: 195;
+        transform: translateX(100%);
+        transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+      }
+      .drawer.open {
+        transform: translateX(0);
+      }
+      .drawer-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 20px;
+        border-bottom: 1px solid var(--apple-mid);
+        flex-shrink: 0;
+      }
+      .drawer-logo {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: var(--apple-dark);
+        text-decoration: none;
+      }
+      .drawer-close {
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--apple-gray);
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 1.1rem;
+        color: var(--apple-muted);
+        line-height: 1;
+      }
+      .drawer-close:hover {
+        background: var(--apple-mid);
+      }
+      .drawer-section {
+        padding: 20px 20px 8px;
+      }
+      .drawer-section-label {
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--apple-muted);
+        margin-bottom: 8px;
+        padding-left: 4px;
+      }
+      .drawer-nav {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+      .drawer-nav a {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 11px 12px;
+        border-radius: 10px;
+        text-decoration: none;
+        color: var(--apple-dark);
+        font-size: 0.95rem;
+        font-weight: 400;
+        transition: background 0.15s;
+      }
+      .drawer-nav a:hover {
+        background: var(--apple-gray);
+      }
+      .drawer-nav a .di {
+        font-size: 1.1rem;
+        width: 24px;
+        text-align: center;
+      }
+      .drawer-divider {
+        height: 1px;
+        background: var(--apple-mid);
+        margin: 8px 20px;
+      }
 
-    /* ── Category filter ── */
-    .filter-bar {
-      padding: 32px 22px 0;
-      max-width: 980px; margin: 0 auto;
-      display: flex; gap: 8px; flex-wrap: wrap;
-    }
-    .filter-btn {
-      padding: 7px 16px; border-radius: 980px;
-      font-family: inherit; font-size: 0.82rem; font-weight: 500;
-      border: 1.5px solid var(--apple-mid); background: var(--white);
-      color: var(--apple-muted); cursor: pointer; transition: all .2s;
-    }
-    .filter-btn:hover, .filter-btn.active {
-      background: var(--apple-dark); color: var(--white); border-color: var(--apple-dark);
-    }
+      /* ── Page header ── */
+      .page-header {
+        padding: calc(var(--nav-h) + 64px) 22px 56px;
+        background: var(--apple-dark);
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .page-header::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          ellipse 70% 60% at 50% -10%,
+          rgba(0, 113, 227, 0.2),
+          transparent
+        );
+        pointer-events: none;
+      }
+      .page-eyebrow {
+        font-size: 0.78rem;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #2997ff;
+        margin-bottom: 14px;
+        position: relative;
+        z-index: 1;
+      }
+      .page-title {
+        font-size: clamp(2rem, 5vw, 3rem);
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        color: #fff;
+        margin-bottom: 12px;
+        position: relative;
+        z-index: 1;
+      }
+      .page-sub {
+        font-size: 1rem;
+        color: rgba(255, 255, 255, 0.5);
+        font-weight: 300;
+        position: relative;
+        z-index: 1;
+      }
 
-    /* ── Article grid ── */
-    .article-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
-      gap: 20px;
-      padding: 32px 22px 80px;
-      max-width: 980px; margin: 0 auto;
-    }
-    .article-card {
-      background: var(--white);
-      border: 1px solid var(--apple-mid);
-      border-radius: var(--radius);
-      overflow: hidden;
-      text-decoration: none;
-      color: inherit;
-      display: flex; flex-direction: column;
-      transition: transform .25s, box-shadow .25s;
-    }
-    .article-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.09); border-color: transparent; }
+      /* ── Layout ── */
+      .container {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 0 22px;
+      }
 
-    .article-thumb {
-      height: 160px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 3.5rem;
-    }
-    .thumb-blue   { background: linear-gradient(135deg, #e8f4ff, #c8e4ff); }
-    .thumb-yellow { background: linear-gradient(135deg, #fff8e1, #ffe8a1); }
-    .thumb-green  { background: linear-gradient(135deg, #e6faf2, #b8f0d8); }
-    .thumb-purple { background: linear-gradient(135deg, #f3eeff, #d8ccff); }
-    .thumb-red    { background: linear-gradient(135deg, #ffeaea, #ffc0c0); }
-    .thumb-gray   { background: linear-gradient(135deg, #f5f5f7, #e8e8ed); }
+      /* ── Category filter ── */
+      .filter-bar {
+        padding: 32px 22px 0;
+        max-width: 980px;
+        margin: 0 auto;
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+      .filter-btn {
+        padding: 7px 16px;
+        border-radius: 980px;
+        font-family: inherit;
+        font-size: 0.82rem;
+        font-weight: 500;
+        border: 1.5px solid var(--apple-mid);
+        background: var(--white);
+        color: var(--apple-muted);
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+      .filter-btn:hover,
+      .filter-btn.active {
+        background: var(--apple-dark);
+        color: var(--white);
+        border-color: var(--apple-dark);
+      }
 
-    .article-body { padding: 20px 20px 24px; flex: 1; display: flex; flex-direction: column; }
-    .article-meta {
-      display: flex; align-items: center; gap: 8px;
-      margin-bottom: 10px; flex-wrap: wrap;
-    }
-    .article-cat {
-      font-size: 0.68rem; font-weight: 700; letter-spacing: .06em;
-      padding: 3px 10px; border-radius: 980px;
-      background: rgba(0,113,227,0.1); color: var(--apple-blue);
-    }
-    .article-date { font-size: 0.72rem; color: var(--apple-muted); font-weight: 300; }
-    .article-title {
-      font-size: 1rem; font-weight: 700; letter-spacing: -0.01em;
-      line-height: 1.45; margin-bottom: 8px; color: var(--apple-dark);
-      flex: 1;
-    }
-    .article-excerpt { font-size: 0.8rem; color: var(--apple-muted); line-height: 1.7; font-weight: 300; margin-bottom: 16px; }
-    .article-cta { font-size: 0.82rem; font-weight: 500; color: var(--apple-blue); display: flex; align-items: center; gap: 4px; margin-top: auto; }
-    .article-arrow { transition: transform .2s; }
-    .article-card:hover .article-arrow { transform: translateX(4px); }
+      /* ── Article grid ── */
+      .article-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+        gap: 20px;
+        padding: 32px 22px 80px;
+        max-width: 980px;
+        margin: 0 auto;
+      }
+      .article-card {
+        background: var(--white);
+        border: 1px solid var(--apple-mid);
+        border-radius: var(--radius);
+        overflow: hidden;
+        text-decoration: none;
+        color: inherit;
+        display: flex;
+        flex-direction: column;
+        transition:
+          transform 0.25s,
+          box-shadow 0.25s;
+      }
+      .article-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.09);
+        border-color: transparent;
+      }
 
-    /* ── Footer ── */
-    footer { background: var(--apple-dark); padding: 56px 0 max(36px, env(safe-area-inset-bottom)); }
-    .footer-container { max-width: 980px; margin: 0 auto; padding: 0 22px; }
-    .footer-inner { display: flex; gap: 48px; flex-wrap: wrap; margin-bottom: 40px; }
-    .footer-brand-col { flex-shrink: 0; }
-    .footer-brand { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
-    .footer-brand-icon { font-size: 1.5rem; }
-    .footer-brand-name { font-size: 1rem; font-weight: 600; color: #fff; }
-    .footer-brand-desc { font-size: 0.75rem; color: rgba(255,255,255,0.35); font-weight: 300; line-height: 1.7; max-width: 200px; }
-    .footer-cols { display: flex; gap: 40px; flex-wrap: wrap; flex: 1; }
-    .footer-col-title { font-size: 0.68rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 14px; }
-    .footer-col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
-    .footer-col ul a { font-size: 0.82rem; color: rgba(255,255,255,0.55); text-decoration: none; font-weight: 300; transition: color .15s; }
-    .footer-col ul a:hover { color: rgba(255,255,255,0.9); }
-    .footer-bottom { padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08); }
-    .footer-copy { font-size: 0.72rem; color: rgba(255,255,255,0.28); font-weight: 300; }
+      .article-thumb {
+        height: 160px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3.5rem;
+      }
+      .thumb-blue {
+        background: linear-gradient(135deg, #e8f4ff, #c8e4ff);
+      }
+      .thumb-yellow {
+        background: linear-gradient(135deg, #fff8e1, #ffe8a1);
+      }
+      .thumb-green {
+        background: linear-gradient(135deg, #e6faf2, #b8f0d8);
+      }
+      .thumb-purple {
+        background: linear-gradient(135deg, #f3eeff, #d8ccff);
+      }
+      .thumb-red {
+        background: linear-gradient(135deg, #ffeaea, #ffc0c0);
+      }
+      .thumb-gray {
+        background: linear-gradient(135deg, #f5f5f7, #e8e8ed);
+      }
 
-    @media (max-width: 680px) {
-      .article-grid { grid-template-columns: 1fr; }
-      .footer-inner { flex-direction: column; gap: 28px; }
-      .footer-cols { gap: 28px; }
-    }
-  </style>
-</head>
-<body>
+      .article-body {
+        padding: 20px 20px 24px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      .article-meta {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 10px;
+        flex-wrap: wrap;
+      }
+      .article-cat {
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        padding: 3px 10px;
+        border-radius: 980px;
+        background: rgba(0, 113, 227, 0.1);
+        color: var(--apple-blue);
+      }
+      .article-date {
+        font-size: 0.72rem;
+        color: var(--apple-muted);
+        font-weight: 300;
+      }
+      .article-title {
+        font-size: 1rem;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+        line-height: 1.45;
+        margin-bottom: 8px;
+        color: var(--apple-dark);
+        flex: 1;
+      }
+      .article-excerpt {
+        font-size: 0.8rem;
+        color: var(--apple-muted);
+        line-height: 1.7;
+        font-weight: 300;
+        margin-bottom: 16px;
+      }
+      .article-cta {
+        font-size: 0.82rem;
+        font-weight: 500;
+        color: var(--apple-blue);
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        margin-top: auto;
+      }
+      .article-arrow {
+        transition: transform 0.2s;
+      }
+      .article-card:hover .article-arrow {
+        transform: translateX(4px);
+      }
 
-<!-- DRAWER -->
-<div class="drawer-overlay" id="drawer-overlay"></div>
-<aside class="drawer" id="drawer" aria-label="サイトメニュー">
-  <div class="drawer-header">
-    <a href="../index.html" class="drawer-logo">🚃 資格トレイン</a>
-    <button class="drawer-close" id="drawer-close" aria-label="閉じる">✕</button>
-  </div>
-  <div class="drawer-section">
-    <p class="drawer-section-label">トップページ</p>
-    <ul class="drawer-nav">
-      <li><a href="../index.html#concept"><span class="di">💡</span>コンセプト</a></li>
-      <li><a href="../index.html#apps"><span class="di">📱</span>アプリ一覧</a></li>
-      <li><a href="../index.html#contact"><span class="di">✉️</span>お問い合わせ</a></li>
-    </ul>
-  </div>
-  <div class="drawer-divider"></div>
-  <div class="drawer-section">
-    <p class="drawer-section-label">資格問題一覧</p>
-    <ul class="drawer-nav">
-      <li><a href="../kikai-app/index.html"><span class="di">⚙️</span>技術士（機械部門）</a></li>
-      <li><a href="../denco-app/index.html"><span class="di">⚡</span>電気資格ポータル</a></li>
-      <li><a href="../takken-app/index.html"><span class="di">🏠</span>宅建士</a></li>
-      <li><a href="../gyosei-app/index.html"><span class="di">📋</span>行政書士</a></li>
-    </ul>
-  </div>
-  <div class="drawer-divider"></div>
-  <div class="drawer-section">
-    <p class="drawer-section-label">ブログ</p>
-    <ul class="drawer-nav">
-      <li><a href="index.html"><span class="di">📝</span>記事一覧</a></li>
-    </ul>
-  </div>
-  <div class="drawer-divider"></div>
-  <div class="drawer-section">
-    <p class="drawer-section-label">サイト情報</p>
-    <ul class="drawer-nav">
-      <li><a href="../about.html"><span class="di">🏢</span>運営者情報</a></li>
-      <li><a href="../contact.html"><span class="di">✉️</span>お問い合わせ</a></li>
-      <li><a href="../privacy.html"><span class="di">🔒</span>プライバシーポリシー</a></li>
-    </ul>
-  </div>
-</aside>
+      /* ── Footer ── */
+      footer {
+        background: var(--apple-dark);
+        padding: 56px 0 max(36px, env(safe-area-inset-bottom));
+      }
+      .footer-container {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 0 22px;
+      }
+      .footer-inner {
+        display: flex;
+        gap: 48px;
+        flex-wrap: wrap;
+        margin-bottom: 40px;
+      }
+      .footer-brand-col {
+        flex-shrink: 0;
+      }
+      .footer-brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 10px;
+      }
+      .footer-brand-icon {
+        font-size: 1.5rem;
+      }
+      .footer-brand-name {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #fff;
+      }
+      .footer-brand-desc {
+        font-size: 0.75rem;
+        color: rgba(255, 255, 255, 0.35);
+        font-weight: 300;
+        line-height: 1.7;
+        max-width: 200px;
+      }
+      .footer-cols {
+        display: flex;
+        gap: 40px;
+        flex-wrap: wrap;
+        flex: 1;
+      }
+      .footer-col-title {
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.35);
+        margin-bottom: 14px;
+      }
+      .footer-col ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .footer-col ul a {
+        font-size: 0.82rem;
+        color: rgba(255, 255, 255, 0.55);
+        text-decoration: none;
+        font-weight: 300;
+        transition: color 0.15s;
+      }
+      .footer-col ul a:hover {
+        color: rgba(255, 255, 255, 0.9);
+      }
+      .footer-bottom {
+        padding-top: 24px;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .footer-copy {
+        font-size: 0.72rem;
+        color: rgba(255, 255, 255, 0.28);
+        font-weight: 300;
+      }
 
-<!-- NAV -->
-<nav class="nav">
-  <div class="nav-inner">
-    <a href="../index.html" class="nav-logo">
-      <span class="nav-logo-icon">🚃</span>
-      <span class="nav-logo-text">資格トレイン</span>
-    </a>
-    <button class="nav-hamburger" id="nav-hamburger" aria-label="メニューを開く">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
+      @media (max-width: 680px) {
+        .nav-links {
+          display: none;
+        }
+        .nav-hamburger {
+          display: flex;
+        }
+        .article-grid {
+          grid-template-columns: 1fr;
+        }
+        .footer-inner {
+          flex-direction: column;
+          gap: 28px;
+        }
+        .footer-cols {
+          gap: 28px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- DRAWER（トップと同構成・パスは blog 相対） -->
+    <div class="drawer-overlay" id="drawer-overlay"></div>
+    <aside class="drawer" id="drawer" aria-label="サイトメニュー">
+      <div class="drawer-header">
+        <a href="../index.html" class="drawer-logo"
+          ><span>🚃</span><span>資格トレイン</span></a
+        >
+        <button
+          class="drawer-close"
+          id="drawer-close"
+          aria-label="メニューを閉じる"
+        >
+          ✕
+        </button>
+      </div>
 
-<!-- PAGE HEADER -->
-<header class="page-header">
-  <p class="page-eyebrow">Blog</p>
-  <h1 class="page-title">ブログ</h1>
-  <p class="page-sub">勉強法・合格体験記・資格情報を発信しています</p>
-</header>
+      <div class="drawer-section">
+        <p class="drawer-section-label">このページ</p>
+        <ul class="drawer-nav">
+          <li>
+            <a href="../index.html#concept"
+              ><span class="di">💡</span>コンセプト</a
+            >
+          </li>
+          <li>
+            <a href="../index.html#apps"
+              ><span class="di">📱</span>アプリ</a
+            >
+          </li>
+          <li>
+            <a href="index.html"><span class="di">📝</span>blog</a>
+          </li>
+          <li>
+            <a href="../contact.html"
+              ><span class="di">✉️</span>お問い合わせ</a
+            >
+          </li>
+        </ul>
+      </div>
 
-<!-- NEW ARTICLES LIST -->
-<div style="max-width:720px;margin:40px auto 0;padding:0 22px;">
-  <p style="font-size:0.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--apple-muted);margin-bottom:14px;">新着記事</p>
-  <ol style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:0;border-radius:14px;overflow:hidden;border:1px solid var(--apple-mid);">
-    <li style="border-bottom:1px solid var(--apple-mid);">
-      <a href="shikaku-ranking-ketteiban.html" style="display:flex;align-items:center;gap:14px;padding:14px 18px;text-decoration:none;color:var(--apple-dark);background:#fff;transition:background .15s;" onmouseover="this.style.background='var(--apple-gray)'" onmouseout="this.style.background='#fff'">
-        <span style="font-size:1.4rem;flex-shrink:0;">🏆</span>
-        <span style="flex:1;font-size:0.9rem;font-weight:500;line-height:1.45;">資格試験ランキングを作って気づいた「集計のリアル」と完成したランキング</span>
-        <span style="font-size:0.72rem;color:var(--apple-muted);white-space:nowrap;flex-shrink:0;">2026年4月9日</span>
+      <div class="drawer-divider"></div>
+
+      <div class="drawer-section">
+        <p class="drawer-section-label">資格問題一覧</p>
+        <ul class="drawer-nav">
+          <li>
+            <a href="../kikai-app/index.html"
+              ><span class="di">⚙️</span>技術士（機械部門）</a
+            >
+          </li>
+          <li>
+            <a href="../denco-app/index.html"
+              ><span class="di">⚡</span>電気資格ポータル</a
+            >
+          </li>
+          <li>
+            <a href="../gyosei-app/index.html"
+              ><span class="di">📋</span>行政書士</a
+            >
+          </li>
+          <li>
+            <a href="../takken-app/index.html"
+              ><span class="di">🏠</span>宅建士</a
+            >
+          </li>
+          <li>
+            <a href="../kanri-app/index.html"
+              ><span class="di">🏢</span>管理業務主任者</a
+            >
+          </li>
+          <li>
+            <a href="../mansion-app/index.html"
+              ><span class="di">🏘️</span>マンション管理士</a
+            >
+          </li>
+          <li>
+            <a href="../ccna-app/index.html"
+              ><span class="di">🌐</span>CCNA</a
+            >
+          </li>
+          <li>
+            <a href="../chishitsu-app/index.html"
+              ><span class="di">🪨</span>地質調査技士</a
+            >
+          </li>
+          <li>
+            <a href="../fe-app/index.html"
+              ><span class="di">💻</span>基本情報技術者</a
+            >
+          </li>
+          <li>
+            <a href="../sekispe-app/index.html"
+              ><span class="di">🔐</span>情報処理安全確保支援士</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <div class="drawer-divider"></div>
+
+      <div class="drawer-section">
+        <p class="drawer-section-label">AIアシスタント</p>
+        <ul class="drawer-nav">
+          <li>
+            <a href="../ai-chat/index.html"
+              ><span class="di">✨</span>AI学習アシスタント</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <div class="drawer-divider"></div>
+
+      <div class="drawer-section">
+        <p class="drawer-section-label">ブログ</p>
+        <ul class="drawer-nav">
+          <li>
+            <a href="index.html"><span class="di">📝</span>記事一覧</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="drawer-divider"></div>
+
+      <div class="drawer-section">
+        <p class="drawer-section-label">サイト情報</p>
+        <ul class="drawer-nav">
+          <li>
+            <a href="../about.html"><span class="di">🏢</span>運営者情報</a>
+          </li>
+          <li>
+            <a href="../contact.html"><span class="di">✉️</span>お問い合わせ</a>
+          </li>
+          <li>
+            <a href="../privacy.html"
+              ><span class="di">🔒</span>プライバシーポリシー</a
+            >
+          </li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- NAV -->
+    <nav class="nav">
+      <div class="nav-inner">
+        <a href="../index.html" class="nav-logo">
+          <span class="nav-logo-icon">🚃</span>
+          <span class="nav-logo-text">資格トレイン</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="../index.html#concept">コンセプト</a></li>
+          <li><a href="../index.html#apps">アプリ</a></li>
+          <li><a href="index.html">blog</a></li>
+          <li><a href="../contact.html">お問い合わせ</a></li>
+        </ul>
+        <button
+          type="button"
+          class="nav-search-btn"
+          id="nav-search-btn"
+          aria-label="検索"
+        >
+          🔍
+        </button>
+        <button
+          type="button"
+          class="nav-hamburger"
+          id="nav-hamburger"
+          aria-label="メニューを開く"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Search overlay（トップと同じ） -->
+    <div
+      class="search-overlay"
+      id="search-overlay"
+      role="search"
+      aria-label="サイト内検索"
+    >
+      <div class="search-overlay-inner">
+        <div class="search-input-wrap">
+          <span class="search-icon-static">🔍</span>
+          <input
+            class="search-input"
+            id="search-input"
+            type="search"
+            placeholder="資格名や科目名で検索… 例：宅建、行政書士、電気"
+            autocomplete="off"
+            aria-label="検索キーワード"
+          />
+          <button
+            type="button"
+            class="search-clear-btn"
+            id="search-clear-btn"
+            aria-label="クリア"
+          >
+            ✕
+          </button>
+        </div>
+        <div class="search-results" id="search-results" aria-live="polite">
+          <p class="search-hint">資格名・科目・キーワードを入力してください</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAGE HEADER -->
+    <header class="page-header">
+      <p class="page-eyebrow">Blog</p>
+      <h1 class="page-title">ブログ</h1>
+      <p class="page-sub">勉強法・合格体験記・資格情報を発信しています</p>
+    </header>
+
+    <!-- NEW ARTICLES LIST -->
+    <div style="max-width: 720px; margin: 40px auto 0; padding: 0 22px">
+      <p
+        style="
+          font-size: 0.72rem;
+          font-weight: 700;
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+          color: var(--apple-muted);
+          margin-bottom: 14px;
+        "
+      >
+        新着記事
+      </p>
+      <ol
+        style="
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          flex-direction: column;
+          gap: 0;
+          border-radius: 14px;
+          overflow: hidden;
+          border: 1px solid var(--apple-mid);
+        "
+      >
+        <li style="border-bottom: 1px solid var(--apple-mid)">
+          <a
+            href="1shukan-adsense-made.html"
+            style="
+              display: flex;
+              align-items: center;
+              gap: 14px;
+              padding: 14px 18px;
+              text-decoration: none;
+              color: var(--apple-dark);
+              background: #fff;
+              transition: background 0.15s;
+            "
+            onmouseover="this.style.background = 'var(--apple-gray)'"
+            onmouseout="this.style.background = '#fff'"
+          >
+            <span style="font-size: 1.4rem; flex-shrink: 0">📖</span>
+            <span
+              style="
+                flex: 1;
+                font-size: 0.9rem;
+                font-weight: 500;
+                line-height: 1.45;
+              "
+              >朝思いついたサイトが夕方に形に：1週間で作られてAdSenseに落ちるまで</span
+            >
+            <span
+              style="
+                font-size: 0.72rem;
+                color: var(--apple-muted);
+                white-space: nowrap;
+                flex-shrink: 0;
+              "
+              >2026年4月16日</span
+            >
+          </a>
+        </li>
+        <li style="border-bottom: 1px solid var(--apple-mid)">
+          <a
+            href="denken-shutsuDAI-keiko.html"
+            style="
+              display: flex;
+              align-items: center;
+              gap: 14px;
+              padding: 14px 18px;
+              text-decoration: none;
+              color: var(--apple-dark);
+              background: #fff;
+              transition: background 0.15s;
+            "
+            onmouseover="this.style.background = 'var(--apple-gray)'"
+            onmouseout="this.style.background = '#fff'"
+          >
+            <span style="font-size: 1.4rem; flex-shrink: 0">⚡</span>
+            <span
+              style="
+                flex: 1;
+                font-size: 0.9rem;
+                font-weight: 500;
+                line-height: 1.45;
+              "
+              >電験三種の出題傾向2024年版：理論・電力・機械・法規の配点と攻略順序</span
+            >
+            <span
+              style="
+                font-size: 0.72rem;
+                color: var(--apple-muted);
+                white-space: nowrap;
+                flex-shrink: 0;
+              "
+              >2026年4月16日</span
+            >
+          </a>
+        </li>
+        <li style="border-bottom: 1px solid var(--apple-mid)">
+          <a
+            href="kihon-joho-gokaku-taiken.html"
+            style="
+              display: flex;
+              align-items: center;
+              gap: 14px;
+              padding: 14px 18px;
+              text-decoration: none;
+              color: var(--apple-dark);
+              background: #fff;
+              transition: background 0.15s;
+            "
+            onmouseover="this.style.background = 'var(--apple-gray)'"
+            onmouseout="this.style.background = '#fff'"
+          >
+            <span style="font-size: 1.4rem; flex-shrink: 0">💻</span>
+            <span
+              style="
+                flex: 1;
+                font-size: 0.9rem;
+                font-weight: 500;
+                line-height: 1.45;
+              "
+              >基本情報技術者試験に独学3ヶ月で合格：勉強法と失敗経験から学んだ対策</span
+            >
+            <span
+              style="
+                font-size: 0.72rem;
+                color: var(--apple-muted);
+                white-space: nowrap;
+                flex-shrink: 0;
+              "
+              >2026年4月16日</span
+            >
+          </a>
+        </li>
+        <li style="border-bottom: 1px solid var(--apple-mid)">
+          <a
+            href="gijutsu-shi-nanmon-kaisetsu.html"
+            style="
+              display: flex;
+              align-items: center;
+              gap: 14px;
+              padding: 14px 18px;
+              text-decoration: none;
+              color: var(--apple-dark);
+              background: #fff;
+              transition: background 0.15s;
+            "
+            onmouseover="this.style.background = 'var(--apple-gray)'"
+            onmouseout="this.style.background = '#fff'"
+          >
+            <span style="font-size: 1.4rem; flex-shrink: 0">⚙️</span>
+            <span
+              style="
+                flex: 1;
+                font-size: 0.9rem;
+                font-weight: 500;
+                line-height: 1.45;
+              "
+              >技術士第一次試験 機械部門の頻出難問5選：失敗しない攻略法</span
+            >
+            <span
+              style="
+                font-size: 0.72rem;
+                color: var(--apple-muted);
+                white-space: nowrap;
+                flex-shrink: 0;
+              "
+              >2026年4月16日</span
+            >
+          </a>
+        </li>
+        <li style="border-bottom: 1px solid var(--apple-mid)">
+          <a
+            href="denki-koujishi-guide.html"
+            style="
+              display: flex;
+              align-items: center;
+              gap: 14px;
+              padding: 14px 18px;
+              text-decoration: none;
+              color: var(--apple-dark);
+              background: #fff;
+              transition: background 0.15s;
+            "
+            onmouseover="this.style.background = 'var(--apple-gray)'"
+            onmouseout="this.style.background = '#fff'"
+          >
+            <span style="font-size: 1.4rem; flex-shrink: 0">🔌</span>
+            <span
+              style="
+                flex: 1;
+                font-size: 0.9rem;
+                font-weight: 500;
+                line-height: 1.45;
+              "
+              >電気工事士資格完全ガイド：キャリアパスと40代未経験からの転職可能性</span
+            >
+            <span
+              style="
+                font-size: 0.72rem;
+                color: var(--apple-muted);
+                white-space: nowrap;
+                flex-shrink: 0;
+              "
+              >2026年4月16日</span
+            >
+          </a>
+        </li>
+        <li style="border-bottom: 1px solid var(--apple-mid)">
+          <a
+            href="sukima-gakushu-kikkake.html"
+            style="
+              display: flex;
+              align-items: center;
+              gap: 14px;
+              padding: 14px 18px;
+              text-decoration: none;
+              color: var(--apple-dark);
+              background: #fff;
+              transition: background 0.15s;
+            "
+            onmouseover="this.style.background = 'var(--apple-gray)'"
+            onmouseout="this.style.background = '#fff'"
+          >
+            <span style="font-size: 1.4rem; flex-shrink: 0">🎯</span>
+            <span
+              style="
+                flex: 1;
+                font-size: 0.9rem;
+                font-weight: 500;
+                line-height: 1.45;
+              "
+              >スキマ時間学習が人生を変える：資格トレイン開発の背景</span
+            >
+            <span
+              style="
+                font-size: 0.72rem;
+                color: var(--apple-muted);
+                white-space: nowrap;
+                flex-shrink: 0;
+              "
+              >2026年4月16日</span
+            >
+          </a>
+        </li>
+        <li style="border-bottom: 1px solid var(--apple-mid)">
+          <a
+            href="shikaku-ranking-ketteiban.html"
+            style="
+              display: flex;
+              align-items: center;
+              gap: 14px;
+              padding: 14px 18px;
+              text-decoration: none;
+              color: var(--apple-dark);
+              background: #fff;
+              transition: background 0.15s;
+            "
+            onmouseover="this.style.background = 'var(--apple-gray)'"
+            onmouseout="this.style.background = '#fff'"
+          >
+            <span style="font-size: 1.4rem; flex-shrink: 0">🏆</span>
+            <span
+              style="
+                flex: 1;
+                font-size: 0.9rem;
+                font-weight: 500;
+                line-height: 1.45;
+              "
+              >資格試験ランキングを作って気づいた「集計のリアル」と完成したランキング</span
+            >
+            <span
+              style="
+                font-size: 0.72rem;
+                color: var(--apple-muted);
+                white-space: nowrap;
+                flex-shrink: 0;
+              "
+              >2026年4月9日</span
+            >
+          </a>
+        </li>
+        <li style="border-bottom: 1px solid var(--apple-mid)">
+          <a
+            href="minkan-ranking-houhou.html"
+            style="
+              display: flex;
+              align-items: center;
+              gap: 14px;
+              padding: 14px 18px;
+              text-decoration: none;
+              color: var(--apple-dark);
+              background: #fff;
+              transition: background 0.15s;
+            "
+            onmouseover="this.style.background = 'var(--apple-gray)'"
+            onmouseout="this.style.background = '#fff'"
+          >
+            <span style="font-size: 1.4rem; flex-shrink: 0">🏅</span>
+            <span
+              style="
+                flex: 1;
+                font-size: 0.9rem;
+                font-weight: 500;
+                line-height: 1.45;
+              "
+              >民間資格を「受験者数／年収／転職市場価値」でランキング化するには？</span
+            >
+            <span
+              style="
+                font-size: 0.72rem;
+                color: var(--apple-muted);
+                white-space: nowrap;
+                flex-shrink: 0;
+              "
+              >2026年4月9日</span
+            >
+          </a>
+        </li>
+        <li style="border-bottom: 1px solid var(--apple-mid)">
+          <a
+            href="shikaku-ranking-gonengo.html"
+            style="
+              display: flex;
+              align-items: center;
+              gap: 14px;
+              padding: 14px 18px;
+              text-decoration: none;
+              color: var(--apple-dark);
+              background: #fff;
+              transition: background 0.15s;
+            "
+            onmouseover="this.style.background = 'var(--apple-gray)'"
+            onmouseout="this.style.background = '#fff'"
+          >
+            <span style="font-size: 1.4rem; flex-shrink: 0">📈</span>
+            <span
+              style="
+                flex: 1;
+                font-size: 0.9rem;
+                font-weight: 500;
+                line-height: 1.45;
+              "
+              >国家資格の受験者数ランキングは、5年でどれくらい変わるのか</span
+            >
+            <span
+              style="
+                font-size: 0.72rem;
+                color: var(--apple-muted);
+                white-space: nowrap;
+                flex-shrink: 0;
+              "
+              >2026年4月9日</span
+            >
+          </a>
+        </li>
+        <li>
+          <a
+            href="shikaku-ranking-tsukurikata.html"
+            style="
+              display: flex;
+              align-items: center;
+              gap: 14px;
+              padding: 14px 18px;
+              text-decoration: none;
+              color: var(--apple-dark);
+              background: #fff;
+              transition: background 0.15s;
+            "
+            onmouseover="this.style.background = 'var(--apple-gray)'"
+            onmouseout="this.style.background = '#fff'"
+          >
+            <span style="font-size: 1.4rem; flex-shrink: 0">📊</span>
+            <span
+              style="
+                flex: 1;
+                font-size: 0.9rem;
+                font-weight: 500;
+                line-height: 1.45;
+              "
+              >資格試験受験者ランキングをつくるまで</span
+            >
+            <span
+              style="
+                font-size: 0.72rem;
+                color: var(--apple-muted);
+                white-space: nowrap;
+                flex-shrink: 0;
+              "
+              >2026年4月9日</span
+            >
+          </a>
+        </li>
+      </ol>
+    </div>
+
+    <!-- FILTER -->
+    <div class="filter-bar">
+      <button class="filter-btn active" data-cat="all">すべて</button>
+      <button class="filter-btn" data-cat="howto">勉強法</button>
+      <button class="filter-btn" data-cat="info">資格情報</button>
+      <button class="filter-btn" data-cat="experience">合格体験記</button>
+      <button class="filter-btn" data-cat="news">お知らせ</button>
+    </div>
+
+    <!-- ARTICLE GRID -->
+    <!-- ▼▼▼ 新しい記事を追加するときはここにカードを1枚コピーして追加する（新しい順） ▼▼▼ -->
+    <div class="article-grid" id="article-grid">
+      <!-- 最新①：朝思いついたサイトが夕方に形に -->
+      <a href="1shukan-adsense-made.html" class="article-card" data-cat="news">
+        <div
+          class="article-thumb"
+          style="background: linear-gradient(135deg, #e8eaf6, #c5cae9)"
+        >
+          📖
+        </div>
+        <div class="article-body">
+          <div class="article-meta">
+            <span class="article-cat">開発日誌</span>
+            <span class="article-date">2026年4月16日</span>
+          </div>
+          <p class="article-title">
+            朝思いついたサイトが夕方に形に：1週間で作られてAdSenseに落ちるまで
+          </p>
+          <p class="article-excerpt">
+            AIの力で1週間でWebサイトを作り上げ、最初のGoogle
+            AdSense審査に落ちるまでの実話。休日の思いつきが、数千人への学習プラットフォームになるまでの軌跡を公開。
+          </p>
+          <span class="article-cta"
+            >続きを読む <span class="article-arrow">›</span></span
+          >
+        </div>
       </a>
-    </li>
-    <li style="border-bottom:1px solid var(--apple-mid);">
-      <a href="minkan-ranking-houhou.html" style="display:flex;align-items:center;gap:14px;padding:14px 18px;text-decoration:none;color:var(--apple-dark);background:#fff;transition:background .15s;" onmouseover="this.style.background='var(--apple-gray)'" onmouseout="this.style.background='#fff'">
-        <span style="font-size:1.4rem;flex-shrink:0;">🏅</span>
-        <span style="flex:1;font-size:0.9rem;font-weight:500;line-height:1.45;">民間資格を「受験者数／年収／転職市場価値」でランキング化するには？</span>
-        <span style="font-size:0.72rem;color:var(--apple-muted);white-space:nowrap;flex-shrink:0;">2026年4月9日</span>
+
+      <!-- 最新②：電験三種の出題傾向分析 -->
+      <a
+        href="denken-shutsuDAI-keiko.html"
+        class="article-card"
+        data-cat="info"
+      >
+        <div
+          class="article-thumb"
+          style="background: linear-gradient(135deg, #fff3e0, #ffe0b2)"
+        >
+          ⚡
+        </div>
+        <div class="article-body">
+          <div class="article-meta">
+            <span class="article-cat">出題傾向分析</span>
+            <span class="article-date">2026年4月16日</span>
+          </div>
+          <p class="article-title">
+            電験三種の出題傾向2024年版：理論・電力・機械・法規の配点と攻略順序
+          </p>
+          <p class="article-excerpt">
+            過去5年の出題データから理論(28%)→電力(40%)→機械(20%)→法規(12%)の学習優先順位を分析。科目別の難易度傾向と、効率的な学習時間配分を徹底解説します。
+          </p>
+          <span class="article-cta"
+            >続きを読む <span class="article-arrow">›</span></span
+          >
+        </div>
       </a>
-    </li>
-    <li style="border-bottom:1px solid var(--apple-mid);">
-      <a href="shikaku-ranking-gonengo.html" style="display:flex;align-items:center;gap:14px;padding:14px 18px;text-decoration:none;color:var(--apple-dark);background:#fff;transition:background .15s;" onmouseover="this.style.background='var(--apple-gray)'" onmouseout="this.style.background='#fff'">
-        <span style="font-size:1.4rem;flex-shrink:0;">📈</span>
-        <span style="flex:1;font-size:0.9rem;font-weight:500;line-height:1.45;">国家資格の受験者数ランキングは、5年でどれくらい変わるのか</span>
-        <span style="font-size:0.72rem;color:var(--apple-muted);white-space:nowrap;flex-shrink:0;">2026年4月9日</span>
+
+      <!-- 最新③：基本情報技術者の合格体験記 -->
+      <a
+        href="kihon-joho-gokaku-taiken.html"
+        class="article-card"
+        data-cat="experience"
+      >
+        <div
+          class="article-thumb"
+          style="background: linear-gradient(135deg, #fce4ec, #f8bbd0)"
+        >
+          💻
+        </div>
+        <div class="article-body">
+          <div class="article-meta">
+            <span class="article-cat">合格体験記</span>
+            <span class="article-date">2026年4月16日</span>
+          </div>
+          <p class="article-title">
+            基本情報技術者試験に独学3ヶ月で合格：勉強法と失敗経験から学んだ対策
+          </p>
+          <p class="article-excerpt">
+            未経験から150時間で合格した実体験。1ヶ月目の失敗から「過去問ベース学習」へ戦略転換した方法と、「間違った問題3回ルール」を詳しく解説。
+          </p>
+          <span class="article-cta"
+            >続きを読む <span class="article-arrow">›</span></span
+          >
+        </div>
       </a>
-    </li>
-    <li style="border-bottom:1px solid var(--apple-mid);">
-      <a href="shikaku-ranking-tsukurikata.html" style="display:flex;align-items:center;gap:14px;padding:14px 18px;text-decoration:none;color:var(--apple-dark);background:#fff;transition:background .15s;" onmouseover="this.style.background='var(--apple-gray)'" onmouseout="this.style.background='#fff'">
-        <span style="font-size:1.4rem;flex-shrink:0;">📊</span>
-        <span style="flex:1;font-size:0.9rem;font-weight:500;line-height:1.45;">資格試験受験者ランキングをつくるまで</span>
-        <span style="font-size:0.72rem;color:var(--apple-muted);white-space:nowrap;flex-shrink:0;">2026年4月9日</span>
+
+      <!-- 最新④：技術士難問解説 -->
+      <a
+        href="gijutsu-shi-nanmon-kaisetsu.html"
+        class="article-card"
+        data-cat="info"
+      >
+        <div
+          class="article-thumb"
+          style="background: linear-gradient(135deg, #e0f7fa, #b2ebf2)"
+        >
+          ⚙️
+        </div>
+        <div class="article-body">
+          <div class="article-meta">
+            <span class="article-cat">難問解説</span>
+            <span class="article-date">2026年4月16日</span>
+          </div>
+          <p class="article-title">
+            技術士第一次試験 機械部門の頻出難問5選：失敗しない攻略法
+          </p>
+          <p class="article-excerpt">
+            過去10年間の分析から頻出難問5選（応力集中・エントロピー・流体力学・機械振動・制御工学）を抽出。正答率データと陥りやすい罠、確実に得点する戦略を解説。
+          </p>
+          <span class="article-cta"
+            >続きを読む <span class="article-arrow">›</span></span
+          >
+        </div>
       </a>
-    </li>
-    <li>
-      <a href="gyosei-benkyoho.html" style="display:flex;align-items:center;gap:14px;padding:14px 18px;text-decoration:none;color:var(--apple-dark);background:#fff;transition:background .15s;" onmouseover="this.style.background='var(--apple-gray)'" onmouseout="this.style.background='#fff'">
-        <span style="font-size:1.4rem;flex-shrink:0;">📋</span>
-        <span style="flex:1;font-size:0.9rem;font-weight:500;line-height:1.45;">行政書士の勉強法：合格者が教える分野別戦略と学習スケジュール</span>
-        <span style="font-size:0.72rem;color:var(--apple-muted);white-space:nowrap;flex-shrink:0;">2025年4月8日</span>
+
+      <!-- 最新⑤：電気工事士資格ガイド -->
+      <a href="denki-koujishi-guide.html" class="article-card" data-cat="info">
+        <div
+          class="article-thumb"
+          style="background: linear-gradient(135deg, #e6faf2, #b8f0d8)"
+        >
+          🔌
+        </div>
+        <div class="article-body">
+          <div class="article-meta">
+            <span class="article-cat">資格ガイド</span>
+            <span class="article-date">2026年4月16日</span>
+          </div>
+          <p class="article-title">
+            電気工事士資格完全ガイド：キャリアパスと40代未経験からの転職可能性
+          </p>
+          <p class="article-excerpt">
+            二種(実務0年OK・400-550万)→一種(実務3年必須・700-1000万)のキャリア進路。建設業人手不足の現状から、40代未経験での挑戦可能性を詳しく検証。
+          </p>
+          <span class="article-cta"
+            >続きを読む <span class="article-arrow">›</span></span
+          >
+        </div>
       </a>
-    </li>
-  </ol>
-</div>
 
-<!-- FILTER -->
-<div class="filter-bar">
-  <button class="filter-btn active" data-cat="all">すべて</button>
-  <button class="filter-btn" data-cat="howto">勉強法</button>
-  <button class="filter-btn" data-cat="info">資格情報</button>
-  <button class="filter-btn" data-cat="experience">合格体験記</button>
-  <button class="filter-btn" data-cat="news">お知らせ</button>
-</div>
+      <!-- 最新：スキマ時間学習が人生を変える -->
+      <a
+        href="sukima-gakushu-kikkake.html"
+        class="article-card"
+        data-cat="news"
+      >
+        <div
+          class="article-thumb"
+          style="background: linear-gradient(135deg, #f3eeff, #d8ccff)"
+        >
+          🎯
+        </div>
+        <div class="article-body">
+          <div class="article-meta">
+            <span class="article-cat">運営者から</span>
+            <span class="article-date">2026年4月16日</span>
+          </div>
+          <p class="article-title">
+            スキマ時間学習が人生を変える：資格トレイン開発の背景
+          </p>
+          <p class="article-excerpt">
+            24年のビル管理会社勤務から転職を考えたとき、「なぜスキマ時間で学べるサービスがないのか」という疑問から、資格トレイン開発へ至ったストーリーを語ります。
+          </p>
+          <span class="article-cta"
+            >続きを読む <span class="article-arrow">›</span></span
+          >
+        </div>
+      </a>
 
-<!-- ARTICLE GRID -->
-<!-- ▼▼▼ 新しい記事を追加するときはここにカードを1枚コピーして追加する（新しい順） ▼▼▼ -->
-<div class="article-grid" id="article-grid">
+      <!-- 人気①：資格試験受験者ランキングをつくるまで -->
+      <a
+        href="shikaku-ranking-tsukurikata.html"
+        class="article-card"
+        data-cat="info"
+      >
+        <div
+          class="article-thumb"
+          style="background: linear-gradient(135deg, #e0f7fa, #b2ebf2)"
+        >
+          📊
+        </div>
+        <div class="article-body">
+          <div class="article-meta">
+            <span class="article-cat">開発日誌</span>
+            <span class="article-date">2026年4月9日</span>
+          </div>
+          <p class="article-title">資格試験受験者ランキングをつくるまで</p>
+          <p class="article-excerpt">
+            「人気ランキング」ではなく「受験者数ランキング」を作るには、集計ルールを自分で決める必要があった。30試験の選定プロセスを記録します。
+          </p>
+          <span class="article-cta"
+            >続きを読む <span class="article-arrow">›</span></span
+          >
+        </div>
+      </a>
 
-  <!-- 人気①：資格試験受験者ランキングをつくるまで -->
-  <a href="shikaku-ranking-tsukurikata.html" class="article-card" data-cat="info">
-    <div class="article-thumb" style="background:linear-gradient(135deg,#e0f7fa,#b2ebf2);">📊</div>
-    <div class="article-body">
-      <div class="article-meta">
-        <span class="article-cat">開発日誌</span>
-        <span class="article-date">2026年4月9日</span>
-      </div>
-      <p class="article-title">資格試験受験者ランキングをつくるまで</p>
-      <p class="article-excerpt">「人気ランキング」ではなく「受験者数ランキング」を作るには、集計ルールを自分で決める必要があった。30試験の選定プロセスを記録します。</p>
-      <span class="article-cta">続きを読む <span class="article-arrow">›</span></span>
-    </div>
-  </a>
+      <!-- 人気②：集計のリアルと完成したランキング -->
+      <a
+        href="shikaku-ranking-ketteiban.html"
+        class="article-card"
+        data-cat="info"
+      >
+        <div
+          class="article-thumb"
+          style="background: linear-gradient(135deg, #fff3e0, #ffe0b2)"
+        >
+          🏆
+        </div>
+        <div class="article-body">
+          <div class="article-meta">
+            <span class="article-cat">開発日誌</span>
+            <span class="article-date">2026年4月9日</span>
+          </div>
+          <p class="article-title">
+            資格試験ランキングを作って気づいた「集計のリアル」と完成したランキング
+          </p>
+          <p class="article-excerpt">
+            PDFの壁・複数団体の合算・年内複数回実施——集計作業の実態と、2025年版・主要国家資格受験者数ランキング30試験を発表します。
+          </p>
+          <span class="article-cta"
+            >続きを読む <span class="article-arrow">›</span></span
+          >
+        </div>
+      </a>
 
-  <!-- 人気②：集計のリアルと完成したランキング -->
-  <a href="shikaku-ranking-ketteiban.html" class="article-card" data-cat="info">
-    <div class="article-thumb" style="background:linear-gradient(135deg,#fff3e0,#ffe0b2);">🏆</div>
-    <div class="article-body">
-      <div class="article-meta">
-        <span class="article-cat">開発日誌</span>
-        <span class="article-date">2026年4月9日</span>
-      </div>
-      <p class="article-title">資格試験ランキングを作って気づいた「集計のリアル」と完成したランキング</p>
-      <p class="article-excerpt">PDFの壁・複数団体の合算・年内複数回実施——集計作業の実態と、2025年版・主要国家資格受験者数ランキング30試験を発表します。</p>
-      <span class="article-cta">続きを読む <span class="article-arrow">›</span></span>
-    </div>
-  </a>
+      <!-- 人気③：受験者数ランキングは5年で変わるのか -->
+      <a
+        href="shikaku-ranking-gonengo.html"
+        class="article-card"
+        data-cat="info"
+      >
+        <div
+          class="article-thumb"
+          style="background: linear-gradient(135deg, #e8eaf6, #c5cae9)"
+        >
+          📈
+        </div>
+        <div class="article-body">
+          <div class="article-meta">
+            <span class="article-cat">開発日誌</span>
+            <span class="article-date">2026年4月9日</span>
+          </div>
+          <p class="article-title">
+            国家資格の受験者数ランキングは、5年でどれくらい変わるのか
+          </p>
+          <p class="article-excerpt">
+            上位の顔ぶれが固定されている理由は"構造"にある。法令要件・養成ルート・受験しやすさの3軸でランキングの安定性を分析します。
+          </p>
+          <span class="article-cta"
+            >続きを読む <span class="article-arrow">›</span></span
+          >
+        </div>
+      </a>
 
-  <!-- 人気③：受験者数ランキングは5年で変わるのか -->
-  <a href="shikaku-ranking-gonengo.html" class="article-card" data-cat="info">
-    <div class="article-thumb" style="background:linear-gradient(135deg,#e8eaf6,#c5cae9);">📈</div>
-    <div class="article-body">
-      <div class="article-meta">
-        <span class="article-cat">開発日誌</span>
-        <span class="article-date">2026年4月9日</span>
-      </div>
-      <p class="article-title">国家資格の受験者数ランキングは、5年でどれくらい変わるのか</p>
-      <p class="article-excerpt">上位の顔ぶれが固定されている理由は"構造"にある。法令要件・養成ルート・受験しやすさの3軸でランキングの安定性を分析します。</p>
-      <span class="article-cta">続きを読む <span class="article-arrow">›</span></span>
-    </div>
-  </a>
+      <!-- 人気④：民間資格を3軸でランキング化するには -->
+      <a href="minkan-ranking-houhou.html" class="article-card" data-cat="info">
+        <div
+          class="article-thumb"
+          style="background: linear-gradient(135deg, #fce4ec, #f8bbd0)"
+        >
+          🏅
+        </div>
+        <div class="article-body">
+          <div class="article-meta">
+            <span class="article-cat">開発日誌</span>
+            <span class="article-date">2026年4月9日</span>
+          </div>
+          <p class="article-title">
+            民間資格を「受験者数／年収／転職市場価値」でランキング化するには？
+          </p>
+          <p class="article-excerpt">
+            3つの軸は似ているようで結果がまったく異なるランキングになる。定義・集計ルール・実装設計を国家資格の経験をもとに解説します。
+          </p>
+          <span class="article-cta"
+            >続きを読む <span class="article-arrow">›</span></span
+          >
+        </div>
+      </a>
 
-  <!-- 人気④：民間資格を3軸でランキング化するには -->
-  <a href="minkan-ranking-houhou.html" class="article-card" data-cat="info">
-    <div class="article-thumb" style="background:linear-gradient(135deg,#fce4ec,#f8bbd0);">🏅</div>
-    <div class="article-body">
-      <div class="article-meta">
-        <span class="article-cat">開発日誌</span>
-        <span class="article-date">2026年4月9日</span>
-      </div>
-      <p class="article-title">民間資格を「受験者数／年収／転職市場価値」でランキング化するには？</p>
-      <p class="article-excerpt">3つの軸は似ているようで結果がまったく異なるランキングになる。定義・集計ルール・実装設計を国家資格の経験をもとに解説します。</p>
-      <span class="article-cta">続きを読む <span class="article-arrow">›</span></span>
-    </div>
-  </a>
+      <!-- 人気⑤：宅建士 勉強法 -->
+      <a href="takken-benkyoho.html" class="article-card" data-cat="howto">
+        <div class="article-thumb thumb-yellow">🏠</div>
+        <div class="article-body">
+          <div class="article-meta">
+            <span class="article-cat">勉強法</span>
+            <span class="article-date">2025年4月8日</span>
+          </div>
+          <p class="article-title">
+            宅建士の勉強法：合格者が教える分野別戦略と学習スケジュール
+          </p>
+          <p class="article-excerpt">
+            宅建業法→法令上の制限→税その他→権利関係の順で攻略する最短ルートと、3〜4ヶ月の学習スケジュールを解説します。
+          </p>
+          <span class="article-cta"
+            >続きを読む <span class="article-arrow">›</span></span
+          >
+        </div>
+      </a>
 
-  <!-- 人気⑤：宅建士 勉強法 -->
-  <a href="takken-benkyoho.html" class="article-card" data-cat="howto">
-    <div class="article-thumb thumb-yellow">🏠</div>
-    <div class="article-body">
-      <div class="article-meta">
-        <span class="article-cat">勉強法</span>
-        <span class="article-date">2025年4月8日</span>
-      </div>
-      <p class="article-title">宅建士の勉強法：合格者が教える分野別戦略と学習スケジュール</p>
-      <p class="article-excerpt">宅建業法→法令上の制限→税その他→権利関係の順で攻略する最短ルートと、3〜4ヶ月の学習スケジュールを解説します。</p>
-      <span class="article-cta">続きを読む <span class="article-arrow">›</span></span>
-    </div>
-  </a>
+      <!-- 記事⑥：行政書士 勉強法 -->
+      <a href="gyosei-benkyoho.html" class="article-card" data-cat="howto">
+        <div class="article-thumb thumb-purple">📋</div>
+        <div class="article-body">
+          <div class="article-meta">
+            <span class="article-cat">勉強法</span>
+            <span class="article-date">2025年4月8日</span>
+          </div>
+          <p class="article-title">
+            行政書士の勉強法：合格者が教える分野別戦略と学習スケジュール
+          </p>
+          <p class="article-excerpt">
+            試験の約40%を占める行政法を最優先に、記述式・一般知識の足切り対策まで独学合格の戦略を徹底解説します。
+          </p>
+          <span class="article-cta"
+            >続きを読む <span class="article-arrow">›</span></span
+          >
+        </div>
+      </a>
 
-  <!-- 記事⑥：行政書士 勉強法 -->
-  <a href="gyosei-benkyoho.html" class="article-card" data-cat="howto">
-    <div class="article-thumb thumb-purple">📋</div>
-    <div class="article-body">
-      <div class="article-meta">
-        <span class="article-cat">勉強法</span>
-        <span class="article-date">2025年4月8日</span>
-      </div>
-      <p class="article-title">行政書士の勉強法：合格者が教える分野別戦略と学習スケジュール</p>
-      <p class="article-excerpt">試験の約40%を占める行政法を最優先に、記述式・一般知識の足切り対策まで独学合格の戦略を徹底解説します。</p>
-      <span class="article-cta">続きを読む <span class="article-arrow">›</span></span>
-    </div>
-  </a>
+      <!-- 記事⑥：技術士機械 勉強法 -->
+      <a
+        href="gijutsu-shi-kikai-goukaku.html"
+        class="article-card"
+        data-cat="howto"
+      >
+        <div class="article-thumb thumb-blue">⚙️</div>
+        <div class="article-body">
+          <div class="article-meta">
+            <span class="article-cat">勉強法</span>
+            <span class="article-date">2024年1月15日</span>
+          </div>
+          <p class="article-title">
+            技術士第一次試験（機械部門）の効率的な勉強法｜スキマ時間で合格を掴む
+          </p>
+          <p class="article-excerpt">
+            通勤・通学時間を最大限に活用して技術士一次試験を突破する勉強法をまとめました。科目別の攻略ポイントも紹介します。
+          </p>
+          <span class="article-cta"
+            >続きを読む <span class="article-arrow">›</span></span
+          >
+        </div>
+      </a>
 
-  <!-- 記事⑥：技術士機械 勉強法 -->
-  <a href="gijutsu-shi-kikai-goukaku.html" class="article-card" data-cat="howto">
-    <div class="article-thumb thumb-blue">⚙️</div>
-    <div class="article-body">
-      <div class="article-meta">
-        <span class="article-cat">勉強法</span>
-        <span class="article-date">2024年1月15日</span>
-      </div>
-      <p class="article-title">技術士第一次試験（機械部門）の効率的な勉強法｜スキマ時間で合格を掴む</p>
-      <p class="article-excerpt">通勤・通学時間を最大限に活用して技術士一次試験を突破する勉強法をまとめました。科目別の攻略ポイントも紹介します。</p>
-      <span class="article-cta">続きを読む <span class="article-arrow">›</span></span>
-    </div>
-  </a>
+      <!-- 記事⑦：電験三種 資格情報 -->
+      <a href="denken-3shu-nanido.html" class="article-card" data-cat="info">
+        <div class="article-thumb thumb-yellow">⚡</div>
+        <div class="article-body">
+          <div class="article-meta">
+            <span class="article-cat">資格情報</span>
+            <span class="article-date">2024年1月10日</span>
+          </div>
+          <p class="article-title">
+            電験三種の難易度・合格率・勉強時間を徹底解説
+          </p>
+          <p class="article-excerpt">
+            電験三種はどのくらい難しい資格なのか。合格率の推移や必要な勉強時間、科目合格制度の活用法を詳しく解説します。
+          </p>
+          <span class="article-cta"
+            >続きを読む <span class="article-arrow">›</span></span
+          >
+        </div>
+      </a>
 
-  <!-- 記事⑦：電験三種 資格情報 -->
-  <a href="denken-3shu-nanido.html" class="article-card" data-cat="info">
-    <div class="article-thumb thumb-yellow">⚡</div>
-    <div class="article-body">
-      <div class="article-meta">
-        <span class="article-cat">資格情報</span>
-        <span class="article-date">2024年1月10日</span>
-      </div>
-      <p class="article-title">電験三種の難易度・合格率・勉強時間を徹底解説</p>
-      <p class="article-excerpt">電験三種はどのくらい難しい資格なのか。合格率の推移や必要な勉強時間、科目合格制度の活用法を詳しく解説します。</p>
-      <span class="article-cta">続きを読む <span class="article-arrow">›</span></span>
-    </div>
-  </a>
+      <!-- 記事⑧：電気工事士 勉強法 -->
+      <a
+        href="denki-koujishi-2shu-point.html"
+        class="article-card"
+        data-cat="howto"
+      >
+        <div class="article-thumb thumb-green">🔌</div>
+        <div class="article-body">
+          <div class="article-meta">
+            <span class="article-cat">勉強法</span>
+            <span class="article-date">2024年1月5日</span>
+          </div>
+          <p class="article-title">
+            第二種電気工事士 筆記試験の出題傾向と対策ポイント
+          </p>
+          <p class="article-excerpt">
+            合格率60%前後と比較的取りやすい電気工事士二種。頻出分野と効率的な過去問活用法を解説します。
+          </p>
+          <span class="article-cta"
+            >続きを読む <span class="article-arrow">›</span></span
+          >
+        </div>
+      </a>
 
-  <!-- 記事⑧：電気工事士 勉強法 -->
-  <a href="denki-koujishi-2shu-point.html" class="article-card" data-cat="howto">
-    <div class="article-thumb thumb-green">🔌</div>
-    <div class="article-body">
-      <div class="article-meta">
-        <span class="article-cat">勉強法</span>
-        <span class="article-date">2024年1月5日</span>
-      </div>
-      <p class="article-title">第二種電気工事士 筆記試験の出題傾向と対策ポイント</p>
-      <p class="article-excerpt">合格率60%前後と比較的取りやすい電気工事士二種。頻出分野と効率的な過去問活用法を解説します。</p>
-      <span class="article-cta">続きを読む <span class="article-arrow">›</span></span>
-    </div>
-  </a>
-
-  <!-- ▼ 次の記事はここに追加（新しい順で先頭に）▼ -->
-  <!--
+      <!-- ▼ 次の記事はここに追加（新しい順で先頭に）▼ -->
+      <!--
   <a href="【ファイル名】.html" class="article-card" data-cat="【howto/info/experience/news】">
     <div class="article-thumb thumb-【blue/yellow/green/purple/red/gray】">【絵文字】</div>
     <div class="article-body">
@@ -478,77 +1751,380 @@
     </div>
   </a>
   -->
-
-</div>
-<!-- ▲▲▲ 記事追加エリア ここまで ▲▲▲ -->
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-container">
-    <div class="footer-inner">
-      <div class="footer-brand-col">
-        <div class="footer-brand">
-          <span class="footer-brand-icon">🚃</span>
-          <span class="footer-brand-name">資格トレイン</span>
-        </div>
-        <p class="footer-brand-desc">通勤・通学のスキマ時間で<br>資格合格をサポートする<br>無料学習プラットフォーム</p>
-      </div>
-      <div class="footer-cols">
-        <div class="footer-col">
-          <p class="footer-col-title">資格問題一覧</p>
-          <ul>
-            <li><a href="../kikai-app/index.html">技術士（機械部門）</a></li>
-            <li><a href="../denco-app/index.html">電気資格ポータル</a></li>
-            <li><a href="../takken-app/index.html">宅建士</a></li>
-            <li><a href="../gyosei-app/index.html">行政書士</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <p class="footer-col-title">ブログ</p>
-          <ul>
-            <li><a href="index.html">記事一覧</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <p class="footer-col-title">サイト情報</p>
-          <ul>
-            <li><a href="../about.html">運営者情報</a></li>
-            <li><a href="../contact.html">お問い合わせ</a></li>
-            <li><a href="../privacy.html">プライバシーポリシー</a></li>
-          </ul>
-        </div>
-      </div>
     </div>
-    <div class="footer-bottom">
-      <p class="footer-copy">Copyright © 2024 mahorobaチャンネル / 資格トレイン. All rights reserved.</p>
-    </div>
-  </div>
-</footer>
+    <!-- ▲▲▲ 記事追加エリア ここまで ▲▲▲ -->
 
-<script>
-  // Drawer
-  const hamburger  = document.getElementById('nav-hamburger');
-  const drawer     = document.getElementById('drawer');
-  const overlay    = document.getElementById('drawer-overlay');
-  const drawerClose= document.getElementById('drawer-close');
-  function openDrawer()  { drawer.classList.add('open'); overlay.classList.add('open'); hamburger.classList.add('open'); document.body.style.overflow='hidden'; }
-  function closeDrawer() { drawer.classList.remove('open'); overlay.classList.remove('open'); hamburger.classList.remove('open'); document.body.style.overflow=''; }
-  hamburger.addEventListener('click', () => drawer.classList.contains('open') ? closeDrawer() : openDrawer());
-  drawerClose.addEventListener('click', closeDrawer);
-  overlay.addEventListener('click', closeDrawer);
-  drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-inner">
+          <div class="footer-brand-col">
+            <div class="footer-brand">
+              <span class="footer-brand-icon">🚃</span>
+              <span class="footer-brand-name">資格トレイン</span>
+            </div>
+            <p class="footer-brand-desc">
+              通勤・通学のスキマ時間で<br />資格合格をサポートする<br />無料学習プラットフォーム
+            </p>
+          </div>
+          <div class="footer-cols">
+            <div class="footer-col">
+              <p class="footer-col-title">資格問題一覧</p>
+              <ul>
+                <li>
+                  <a href="../kikai-app/index.html">技術士（機械部門）</a>
+                </li>
+                <li><a href="../denco-app/index.html">電気資格ポータル</a></li>
+                <li><a href="../takken-app/index.html">宅建士</a></li>
+                <li><a href="../gyosei-app/index.html">行政書士</a></li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <p class="footer-col-title">ブログ</p>
+              <ul>
+                <li><a href="index.html">記事一覧</a></li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <p class="footer-col-title">サイト情報</p>
+              <ul>
+                <li><a href="../about.html">運営者情報</a></li>
+                <li><a href="../contact.html">お問い合わせ</a></li>
+                <li><a href="../privacy.html">プライバシーポリシー</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p class="footer-copy">
+            Copyright © 2024 mahorobaチャンネル / 資格トレイン. All rights
+            reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
 
-  // Category filter
-  document.querySelectorAll('.filter-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const cat = btn.dataset.cat;
-      document.querySelectorAll('.article-card').forEach(card => {
-        card.style.display = (cat === 'all' || card.dataset.cat === cat) ? '' : 'none';
+    <script>
+      const SEARCH_DATA = [
+        {
+          emoji: '⚙️',
+          name: '技術士（機械部門）',
+          url: '../kikai-app/index.html',
+          sub: '基礎科目・適性科目・専門科目（機械工学）',
+          tags: [
+            '技術士',
+            '機械',
+            '基礎科目',
+            '適性科目',
+            '専門科目',
+            '材料力学',
+            '熱力学',
+            '流体',
+            '過去問',
+          ],
+        },
+        {
+          emoji: '⚡',
+          name: '電気資格ポータル（電験三種・電気工事士）',
+          url: '../denco-app/index.html',
+          sub: '第二種電気工事士・電験三種（第三種電気主任技術者）',
+          tags: [
+            '電気',
+            '電気工事士',
+            '電験',
+            '電験三種',
+            '電気主任技術者',
+            '理論',
+            '電力',
+            '機械',
+            '法規',
+          ],
+        },
+        {
+          emoji: '📋',
+          name: '行政書士',
+          url: '../gyosei-app/index.html',
+          sub: '憲法・行政法・民法・商法会社法・一般知識',
+          tags: [
+            '行政書士',
+            '法律',
+            '憲法',
+            '行政法',
+            '民法',
+            '商法',
+            '会社法',
+            '一般知識',
+            '法令',
+          ],
+        },
+        {
+          emoji: '🏠',
+          name: '宅建士（宅地建物取引士）',
+          url: '../takken-app/index.html',
+          sub: '権利関係・法令上の制限・宅建業法・税その他',
+          tags: [
+            '宅建',
+            '宅建士',
+            '宅地建物取引士',
+            '権利関係',
+            '法令',
+            '宅建業法',
+            '不動産',
+            '税',
+          ],
+        },
+        {
+          emoji: '🏢',
+          name: '管理業務主任者（賃貸不動産経営管理士）',
+          url: '../kanri-app/index.html',
+          sub: '管理適正化法等・区分所有法・民法・借地借家・管理実務',
+          tags: [
+            '管理業務主任者',
+            '賃貸不動産経営管理士',
+            '管理の適正化',
+            '区分所有法',
+            '賃貸管理',
+            '不動産管理',
+            '原状回復',
+            '管理業者',
+          ],
+        },
+        {
+          emoji: '🏘️',
+          name: 'マンション管理士',
+          url: '../mansion-app/index.html',
+          sub: '法令・実務・管理組合の運営・建物設備・管理適正化法',
+          tags: [
+            'マンション管理士',
+            'マン管',
+            '区分所有法',
+            '管理組合',
+            '管理規約',
+            '長期修繕',
+            '管理適正化',
+            '標準管理規約',
+            '分譲マンション',
+          ],
+        },
+        {
+          emoji: '🌐',
+          name: 'CCNA（シスコ技術者認定）',
+          url: '../ccna-app/index.html',
+          sub: 'ネットワーク基礎・スイッチング・ルーティング・IPサービス・セキュリティ・自動化',
+          tags: [
+            'CCNA',
+            'シスコ',
+            'ネットワーク',
+            'cisco',
+            'スイッチング',
+            'ルーティング',
+            'OSPF',
+            'VLAN',
+            'TCP/IP',
+            'OSI',
+            'セキュリティ',
+            '自動化',
+            '200-301',
+          ],
+        },
+        {
+          emoji: '🪨',
+          name: '地質調査技士',
+          url: '../chishitsu-app/index.html',
+          sub: '地質・地形・地盤調査・ボーリング・土質試験・岩石試験・法規・環境',
+          tags: [
+            '地質調査技士',
+            '地質',
+            '地盤',
+            'ボーリング',
+            '土質',
+            '岩石',
+            '地形',
+            '断層',
+            '液状化',
+            'SPT',
+            'CPT',
+            'RQD',
+            '圧密',
+            '地盤調査',
+            '地盤改良',
+          ],
+        },
+        {
+          emoji: '💻',
+          name: '基本情報技術者（FE）',
+          url: '../fe-app/index.html',
+          sub: 'コンピュータ基礎・アルゴリズム・ネットワーク・セキュリティ・データベース・ソフトウェア開発',
+          tags: [
+            '基本情報技術者',
+            'FE',
+            'IPA',
+            'アルゴリズム',
+            'データ構造',
+            'ネットワーク',
+            'セキュリティ',
+            'データベース',
+            'SQL',
+            'ソフトウェア開発',
+            'オブジェクト指向',
+            'コンピュータ',
+            'IT資格',
+            '情報処理',
+          ],
+        },
+        {
+          emoji: '🔐',
+          name: '情報処理安全確保支援士（登録セキスペ）',
+          url: '../sekispe-app/index.html',
+          sub: 'セキュリティマネジメント・技術・法令・リスク・監査（科目A向け演習）',
+          tags: [
+            '情報処理安全確保支援士',
+            '登録セキスペ',
+            'セキスペ',
+            'IPA',
+            'セキュリティ',
+            'コンプライアンス',
+            'リスク管理',
+            '監査',
+            'インシデント対応',
+            '法令',
+            '科目A',
+          ],
+        },
+      ];
+
+      function searchApps(query) {
+        const q = query.trim().toLowerCase();
+        if (!q) return [];
+        return SEARCH_DATA.filter((item) => {
+          const haystack = [item.name, item.sub, ...item.tags]
+            .join(' ')
+            .toLowerCase();
+          return q.split(/\s+/).every((word) => haystack.includes(word));
+        });
+      }
+
+      function buildSearchResultHTML(items, query) {
+        if (!query.trim())
+          return '<p class="search-hint">資格名・科目・キーワードを入力してください</p>';
+        if (!items.length)
+          return `<p class="search-empty">「${query}」に一致するアプリが見つかりませんでした</p>`;
+        return items
+          .map(
+            (item) => `
+      <a href="${item.url}" class="search-result-item">
+        <span class="search-result-emoji">${item.emoji}</span>
+        <span class="search-result-body">
+          <span class="search-result-name">${item.name}</span>
+          <span class="search-result-sub">${item.sub}</span>
+        </span>
+        <span class="search-result-arrow">›</span>
+      </a>`,
+          )
+          .join('');
+      }
+
+      // Drawer
+      const hamburger = document.getElementById('nav-hamburger');
+      const drawer = document.getElementById('drawer');
+      const overlay = document.getElementById('drawer-overlay');
+      const drawerClose = document.getElementById('drawer-close');
+      function openDrawer() {
+        drawer.classList.add('open');
+        overlay.classList.add('open');
+        hamburger.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeDrawer() {
+        drawer.classList.remove('open');
+        overlay.classList.remove('open');
+        hamburger.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+      hamburger.addEventListener('click', () =>
+        drawer.classList.contains('open') ? closeDrawer() : openDrawer(),
+      );
+      drawerClose.addEventListener('click', closeDrawer);
+      overlay.addEventListener('click', closeDrawer);
+      drawer
+        .querySelectorAll('a')
+        .forEach((a) => a.addEventListener('click', closeDrawer));
+
+      // Nav search overlay
+      const searchOverlay = document.getElementById('search-overlay');
+      const searchInput = document.getElementById('search-input');
+      const searchResults = document.getElementById('search-results');
+      const searchClearBtn = document.getElementById('search-clear-btn');
+      const navSearchBtn = document.getElementById('nav-search-btn');
+      let searchOpen = false;
+
+      function openSearch() {
+        searchOpen = true;
+        searchOverlay.classList.add('open');
+        navSearchBtn.textContent = '✕';
+        setTimeout(() => searchInput.focus(), 50);
+        document.body.style.overflow = 'hidden';
+      }
+      function closeSearch() {
+        searchOpen = false;
+        searchOverlay.classList.remove('open');
+        navSearchBtn.textContent = '🔍';
+        searchInput.value = '';
+        searchResults.innerHTML =
+          '<p class="search-hint">資格名・科目・キーワードを入力してください</p>';
+        document.body.style.overflow = '';
+      }
+
+      navSearchBtn.addEventListener('click', () => {
+        if (searchOpen) {
+          closeSearch();
+          return;
+        }
+        closeDrawer();
+        openSearch();
       });
-    });
-  });
-</script>
-</body>
+
+      searchInput.addEventListener('input', () => {
+        const q = searchInput.value;
+        const results = searchApps(q);
+        searchResults.innerHTML = buildSearchResultHTML(results, q);
+      });
+
+      searchClearBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        searchResults.innerHTML =
+          '<p class="search-hint">資格名・科目・キーワードを入力してください</p>';
+        searchInput.focus();
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && searchOpen) closeSearch();
+        if (
+          (e.key === 'k' || e.key === 'K') &&
+          (e.metaKey || e.ctrlKey)
+        ) {
+          e.preventDefault();
+          searchOpen ? closeSearch() : openSearch();
+        }
+      });
+      searchOverlay.addEventListener('click', (e) => {
+        if (e.target === searchOverlay) closeSearch();
+      });
+
+      // Category filter
+      document.querySelectorAll('.filter-btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          document
+            .querySelectorAll('.filter-btn')
+            .forEach((b) => b.classList.remove('active'));
+          btn.classList.add('active');
+          const cat = btn.dataset.cat;
+          document.querySelectorAll('.article-card').forEach((card) => {
+            card.style.display =
+              cat === 'all' || card.dataset.cat === cat ? '' : 'none';
+          });
+        });
+      });
+    </script>
+  </body>
 </html>
