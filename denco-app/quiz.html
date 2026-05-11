@@ -684,7 +684,7 @@
                     </button>
                     <button type="button" class="mode-btn" id="btn-mode-year">
                         <span class="mode-icon">📅</span>
-                        <span><span class="mode-name">本番モード（年度別）</span><span class="mode-desc">年度を選んで120分タイマー付きで解答。問題を行き来でき、終了後に全解説を確認できます。</span></span>
+                        <span><span class="mode-name">年度別演習</span><span class="mode-desc">年度を選んで120分タイマー付きで解答。問題を行き来でき、終了後に全解説を確認できます。</span></span>
                     </button>
                     <a class="mock-link-btn" href="mock-sets.html">
                         <span class="mode-icon">📋</span>
@@ -713,7 +713,7 @@
                     </div>
                     <div class="how-item">
                         <div class="how-num">2</div>
-                        <div class="how-text"><strong>本番モード（年度別）</strong>：年度を選んで本番に近い形式で解答。解き終わった後に解説をまとめて確認できます。</div>
+                        <div class="how-text"><strong>年度別演習</strong>：年度を選んでタイマー付きで解答。解き終わった後に解説をまとめて確認できます。</div>
                     </div>
                     <div class="how-item">
                         <div class="how-num">3</div>
@@ -744,7 +744,7 @@
                 <p class="screen-sub">解答する年度を選んでください</p>
                 <div class="sel-list" id="year-sel-list"></div>
             </div>
-            <div class="info-card">120分タイマー付きで出題されます。問題を行き来しながら解答し、終了後に全問の解説を一覧で確認できます。</div>
+            <div class="info-card">120分タイマー付きで収録範囲内の問題が出題されます。問題を行き来しながら解答し、終了後に全問の解説を一覧で確認できます。</div>
         </div>
 
         <!-- ══ Screen 2: 年度別 試験 ══ -->
@@ -1127,7 +1127,7 @@
         }
 
         /**
-         * 難易度ウェイト指定で45問を選ぶ。
+         * 難易度ウェイト指定で50問を選ぶ。
          * easyRatio / medRatio / hardRatio の比率で easy/medium/hard 問題を配分し、
          * 不足分は他難易度から補う。カテゴリ内でランダムに選択。
          */
@@ -1175,42 +1175,47 @@
         }
 
         const MOCK_SETS = {
-            // ① easy:medium:hard = 30:50:20（本番レベルよりやや上）
-            "mix-45": {
-                title: "擬似① 本番想定ミックス（45問）",
+            // ① easy:medium:hard = 30:50:20（標準的な仕上げ演習）
+            "mix-50": {
+                title: "擬似① 標準ミックス（50問）",
                 build: function (all) {
-                    return buildDifficultyWeightedMock(all, 45, 30, 50, 20);
+                    return buildDifficultyWeightedMock(all, 50, 30, 50, 20);
                 }
             },
             // ② easy:medium:hard = 15:55:30（標準〜やや難）
-            "level2-45": {
-                title: "擬似② 標準〜やや難ミックス（45問）",
+            "level2-50": {
+                title: "擬似② 標準〜やや難ミックス（50問）",
                 build: function (all) {
-                    return buildDifficultyWeightedMock(all, 45, 15, 55, 30);
+                    return buildDifficultyWeightedMock(all, 50, 15, 55, 30);
                 }
             },
             // ③ easy:medium:hard = 5:50:45（応用レベル）
-            "level3-45": {
-                title: "擬似③ 応用レベルミックス（45問）",
+            "level3-50": {
+                title: "擬似③ 応用レベルミックス（50問）",
                 build: function (all) {
-                    return buildDifficultyWeightedMock(all, 45, 5, 50, 45);
+                    return buildDifficultyWeightedMock(all, 50, 5, 50, 45);
                 }
             },
             // ④ easy:medium:hard = 0:35:65（難問チャレンジ）
-            "level4-45": {
-                title: "擬似④ 難問チャレンジ（45問）",
+            "level4-50": {
+                title: "擬似④ 難問チャレンジ（50問）",
                 build: function (all) {
-                    return buildDifficultyWeightedMock(all, 45, 0, 35, 65);
+                    return buildDifficultyWeightedMock(all, 50, 0, 35, 65);
                 }
             },
             // ⑤ easy:medium:hard = 0:15:85（最難関チャレンジ）
-            "level5-45": {
-                title: "擬似⑤ 最難関チャレンジ（45問）",
+            "level5-50": {
+                title: "擬似⑤ 最難関チャレンジ（50問）",
                 build: function (all) {
-                    return buildDifficultyWeightedMock(all, 45, 0, 15, 85);
+                    return buildDifficultyWeightedMock(all, 50, 0, 15, 85);
                 }
             }
         };
+        MOCK_SETS["mix-45"] = MOCK_SETS["mix-50"];
+        MOCK_SETS["level2-45"] = MOCK_SETS["level2-50"];
+        MOCK_SETS["level3-45"] = MOCK_SETS["level3-50"];
+        MOCK_SETS["level4-45"] = MOCK_SETS["level4-50"];
+        MOCK_SETS["level5-45"] = MOCK_SETS["level5-50"];
 
         /**
          * 「クイズを始める」用：全問からランダムに N 問（QUICK_QUIZ_QUESTION_COUNT）。
@@ -1406,10 +1411,10 @@
                 saveStoredStats();
             }
 
-            // 擬似問題セット（45問）の合否判定：60%以上で合格
+            // 擬似問題セットの合否判定：60%以上で合格
             passFailBannerEl.className = "pass-fail-banner";
             if (isMockMode) {
-                const passingScore = Math.ceil(total * 0.6); // 27問
+                const passingScore = Math.ceil(total * 0.6);
                 const pct = Math.round(score / total * 100);
                 if (score >= passingScore) {
                     passFailBannerEl.classList.add("pass");
