@@ -902,6 +902,7 @@
         let isMockMode = false;
         let isQuickQuizMode = false;
         let quickQuizIssuedIds = new Set();
+        let quickQuizIssuedGroups = new Set();
         /** boot 時のみ true。quiz.html#how-to-use 直リンクのとき一度だけ使い方へスクロールし、以降のモード復帰ではトップに戻す */
         let applyHowToUseHashScrollOnce = false;
 
@@ -977,6 +978,13 @@
             } catch (e) {
                 quickQuizIssuedIds = new Set();
             }
+            try {
+                const rawGroups = localStorage.getItem("denkoQuickQuizIssuedGroups");
+                const arrGroups = rawGroups ? JSON.parse(rawGroups) : [];
+                quickQuizIssuedGroups = new Set(Array.isArray(arrGroups) ? arrGroups : []);
+            } catch (e) {
+                quickQuizIssuedGroups = new Set();
+            }
         }
 
         function saveStoredStats() {
@@ -984,6 +992,7 @@
             localStorage.setItem("denkoCategoryStats", JSON.stringify(categoryStats));
             localStorage.setItem("denkoAnsweredQids", JSON.stringify(Array.from(answeredQids)));
             localStorage.setItem("denkoQuickQuizIssuedQids", JSON.stringify(Array.from(quickQuizIssuedIds)));
+            localStorage.setItem("denkoQuickQuizIssuedGroups", JSON.stringify(Array.from(quickQuizIssuedGroups)));
         }
 
         function getFilteredPool() {
@@ -1007,10 +1016,18 @@
                 .trim();
         }
 
+        function getQuestionGroup(q) {
+            return q && q.duplicateGroup ? String(q.duplicateGroup) : "";
+        }
+
+        function getQuestionSpacingKey(q) {
+            return getQuestionGroup(q) || getQuestionStem(q && q.question);
+        }
+
         function avoidAdjacentDuplicateStems(list) {
             const groups = new Map();
             for (const item of list) {
-                const stem = getQuestionStem(item.question);
+                const stem = getQuestionSpacingKey(item);
                 if (!groups.has(stem)) groups.set(stem, []);
                 groups.get(stem).push(item);
             }
@@ -1056,6 +1073,7 @@
         function pickBalancedQuickQuizDeck(pool, count) {
             const byCategory = new Map();
             const categories = [];
+            const usedGroups = new Set();
             const categoryRank = new Map(CATEGORY_ORDER.map(function (cat, index) {
                 return [cat, index];
             }));
@@ -1087,8 +1105,21 @@
                 for (let i = 0; i < roundCategories.length && deck.length < count; i++) {
                     const items = byCategory.get(roundCategories[i]);
                     if (items && items.length > 0) {
-                        deck.push(items.shift());
-                        pickedInRound = true;
+                        let pickIndex = -1;
+                        for (let j = 0; j < items.length; j++) {
+                            const group = getQuestionGroup(items[j]);
+                            if (!group || !usedGroups.has(group)) {
+                                pickIndex = j;
+                                break;
+                            }
+                        }
+                        if (pickIndex >= 0) {
+                            const picked = items.splice(pickIndex, 1)[0];
+                            deck.push(picked);
+                            const group = getQuestionGroup(picked);
+                            if (group) usedGroups.add(group);
+                            pickedInRound = true;
+                        }
                     }
                 }
                 if (!pickedInRound) break;
@@ -1274,10 +1305,17 @@
             }
             const n = Math.min(QUICK_QUIZ_QUESTION_COUNT, allQuestions.length);
             let pool = allQuestions.filter(function (q) {
-                return !quickQuizIssuedIds.has(q._qid);
+                const group = getQuestionGroup(q);
+                return !quickQuizIssuedIds.has(q._qid) && (!group || !quickQuizIssuedGroups.has(group));
             });
             if (pool.length < n) {
+                pool = allQuestions.filter(function (q) {
+                    return !quickQuizIssuedIds.has(q._qid);
+                });
+            }
+            if (pool.length < n) {
                 quickQuizIssuedIds.clear();
+                quickQuizIssuedGroups.clear();
                 saveStoredStats();
                 pool = allQuestions.slice();
             }
@@ -1289,6 +1327,8 @@
             }
             for (let qi = 0; qi < deck.length; qi++) {
                 quickQuizIssuedIds.add(deck[qi]._qid);
+                const group = getQuestionGroup(deck[qi]);
+                if (group) quickQuizIssuedGroups.add(group);
             }
             saveStoredStats();
             questions = deck;
@@ -1454,6 +1494,8 @@
             if (isQuickQuizMode) {
                 for (let qi = 0; qi < questions.length; qi++) {
                     quickQuizIssuedIds.add(questions[qi]._qid);
+                    const group = getQuestionGroup(questions[qi]);
+                    if (group) quickQuizIssuedGroups.add(group);
                 }
                 saveStoredStats();
             }
@@ -1663,9 +1705,15 @@
                                 ? item.category.trim()
                                 : "未分類";
                         jsonExtra.push({
+                            id: item.id,
                             category: cat,
+                            difficulty: item.difficulty,
                             year: item.year,
                             session: item.session,
+                            duplicateGroup: item.duplicateGroup,
+                            learningPoint: item.learningPoint,
+                            qualityStatus: item.qualityStatus,
+                            variantRole: item.variantRole,
                             question: item.question,
                             choices: item.choices,
                             correctIndex: item.correctIndex,
@@ -1678,14 +1726,23 @@
                 loadWarningEl.textContent =
                     "questions.json を読み込めませんでした（ブラウザで file:// 直開きのときは制限で失敗することがあります）。内蔵の3問のみで起動しています。同じフォルダでローカルサーバ（例: python3 -m http.server）を立てて開いてください。";
             }
-            allQuestions = builtInQuestions.concat(jsonExtra).map(function (item, idx) {
+            const questionSource = jsonExtra.length > 0 ? jsonExtra : builtInQuestions;
+            allQuestions = questionSource.map(function (item, idx) {
                 const year = item.year !== undefined ? item.year : "サンプル";
                 const session = item.session !== undefined ? item.session : "";
-                const qidSource = [item.category || "", String(year), String(session), item.question, idx].join("|");
+                const qidSource = item.id !== undefined
+                    ? "denko_" + String(item.id)
+                    : [item.category || "", String(year), String(session), item.question, idx].join("|");
                 return {
+                    id: item.id,
                     category: item.category || "未分類",
+                    difficulty: item.difficulty,
                     year: year,
                     session: session,
+                    duplicateGroup: item.duplicateGroup,
+                    learningPoint: item.learningPoint,
+                    qualityStatus: item.qualityStatus,
+                    variantRole: item.variantRole,
                     question: item.question,
                     choices: item.choices,
                     correctIndex: item.correctIndex,
@@ -1698,11 +1755,9 @@
             subtitleEl.textContent =
                 "スマホ向け · 全 " +
                 allQuestions.length +
-                " 問（内蔵 " +
-                nIn +
-                " 問 ＋ JSON " +
-                nJson +
-                " 問）· 分野別学習";
+                (nJson > 0
+                    ? " 問 · 分野別学習"
+                    : " 問（内蔵 " + nIn + " 問。questions.json 読み込み失敗時の予備データ）· 分野別学習");
             buildCategoryMenu();
             renderCategoryStats();
             syncMenuQuickQuizLabel();
