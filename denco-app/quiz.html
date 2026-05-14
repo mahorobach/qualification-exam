@@ -1053,6 +1053,50 @@
             return deck;
         }
 
+        function pickBalancedQuickQuizDeck(pool, count) {
+            const byCategory = new Map();
+            const categories = [];
+            const categoryRank = new Map(CATEGORY_ORDER.map(function (cat, index) {
+                return [cat, index];
+            }));
+
+            pool.forEach(function (q) {
+                const cat = q.category || "未分類";
+                if (!byCategory.has(cat)) {
+                    byCategory.set(cat, []);
+                    categories.push(cat);
+                }
+                byCategory.get(cat).push(q);
+            });
+
+            byCategory.forEach(function (items, cat) {
+                byCategory.set(cat, shuffleQuizDeck(items));
+            });
+
+            const orderedCategories = shuffleArray(categories).sort(function (a, b) {
+                const ai = categoryRank.has(a) ? categoryRank.get(a) : 99;
+                const bi = categoryRank.has(b) ? categoryRank.get(b) : 99;
+                if (ai !== bi) return ai - bi;
+                return a.localeCompare(b, "ja");
+            });
+
+            const deck = [];
+            while (deck.length < count) {
+                let pickedInRound = false;
+                const roundCategories = shuffleArray(orderedCategories);
+                for (let i = 0; i < roundCategories.length && deck.length < count; i++) {
+                    const items = byCategory.get(roundCategories[i]);
+                    if (items && items.length > 0) {
+                        deck.push(items.shift());
+                        pickedInRound = true;
+                    }
+                }
+                if (!pickedInRound) break;
+            }
+
+            return shuffleQuizDeck(deck);
+        }
+
         function filterUnansweredByQid(list) {
             return list.filter(function (q) {
                 return !answeredQids.has(q._qid);
@@ -1237,13 +1281,16 @@
                 saveStoredStats();
                 pool = allQuestions.slice();
             }
-            let deck = shuffleQuizDeck(pool.slice());
-            deck = deck.slice(0, Math.min(n, deck.length));
+            const deck = pickBalancedQuickQuizDeck(pool.slice(), Math.min(n, pool.length));
             if (deck.length === 0) {
                 window.alert("出題できる問題がありません。");
                 initModeScreen();
                 return;
             }
+            for (let qi = 0; qi < deck.length; qi++) {
+                quickQuizIssuedIds.add(deck[qi]._qid);
+            }
+            saveStoredStats();
             questions = deck;
             sessionCategoryLabel = "ランダムクイズ（" + deck.length + "問）";
             skipAnswerRecording = true;
