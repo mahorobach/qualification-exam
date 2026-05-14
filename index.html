@@ -35,11 +35,6 @@
     "name": "資格トレイン",
     "url": "https://qualifications.app/",
     "description": "宅建士・CCNA・電験三種・行政書士・技術士などの人気資格の過去問クイズアプリを無料提供。通勤・通学のスキマ時間にスマホで資格対策。",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://qualifications.app/?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    },
     "publisher": {
       "@type": "Organization",
       "name": "資格トレイン"
@@ -127,13 +122,6 @@
       transition: opacity .15s;
     }
     .nav-links a:hover { opacity: 1; }
-    .nav-cta {
-      font-size: 0.78rem;
-      font-weight: 400;
-      color: var(--apple-blue) !important;
-      opacity: 1 !important;
-    }
-
     /* ── Search ── */
     .nav-search-btn {
       display: flex;
@@ -757,32 +745,6 @@
       background: var(--apple-mid);
     }
 
-    /* ── SNS ── */
-    .sns-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 12px;
-      margin-top: 56px;
-    }
-    .sns-card {
-      background: var(--white);
-      border-radius: var(--radius-card);
-      padding: 28px 20px;
-      text-decoration: none;
-      color: inherit;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-      transition: transform .25s, box-shadow .25s;
-      border: 1px solid var(--apple-mid);
-    }
-    .sns-card:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(0,0,0,0.07); border-color: transparent; }
-    .sns-icon { line-height: 1; }
-    .sns-name { font-size: 0.9rem; font-weight: 600; color: var(--apple-dark); }
-    .sns-handle { font-size: 0.72rem; color: var(--apple-muted); font-weight: 300; }
-
     /* ── Contact ── */
     .contact-wrap {
       background: var(--white);
@@ -958,9 +920,9 @@
     <p class="drawer-section-label">このページ</p>
     <ul class="drawer-nav">
       <li><a href="#concept"><span class="di">💡</span>コンセプト</a></li>
-      <li><a href="#apps"><span class="di">📱</span>アプリ一覧</a></li>
-      <li><a href="#sns"><span class="di">🔗</span>SNS・外部リンク</a></li>
-      <li><a href="#contact"><span class="di">✉️</span>お問い合わせ</a></li>
+      <li><a href="#apps"><span class="di">📱</span>アプリ</a></li>
+      <li><a href="blog/index.html"><span class="di">📝</span>blog</a></li>
+      <li><a href="contact.html"><span class="di">✉️</span>お問い合わせ</a></li>
     </ul>
   </div>
 
@@ -1022,8 +984,8 @@
     <ul class="nav-links">
       <li><a href="#concept">コンセプト</a></li>
       <li><a href="#apps">アプリ</a></li>
-      <li><a href="#sns">SNS</a></li>
-      <li><a href="#contact" class="nav-cta">お問い合わせ</a></li>
+      <li><a href="blog/index.html">blog</a></li>
+      <li><a href="contact.html">お問い合わせ</a></li>
     </ul>
     <button class="nav-search-btn" id="nav-search-btn" aria-label="検索">🔍</button>
     <button class="nav-hamburger" id="nav-hamburger" aria-label="メニューを開く">
@@ -1385,68 +1347,6 @@
   </div>
 </section>
 
-<!-- ══ SNS ══ -->
-<section id="sns" class="section section-gray">
-  <div class="container">
-    <div class="fade-up">
-      <p class="section-eyebrow">フォローする</p>
-      <h2 class="section-title">最新情報を<br>チェックしよう。</h2>
-      <p class="section-body">学習記事・解説・アップデート情報をSNSで発信しています。</p>
-    </div>
-    <div class="sns-grid">
-
-      <a href="#" class="sns-card fade-up" target="_blank" rel="noopener">
-        <svg class="sns-icon" width="42" height="42" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="36" height="36" rx="10" fill="#41C9B4"/>
-          <path d="M10 12h16M10 18h10M10 24h13" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
-        </svg>
-        <span class="sns-name">note</span>
-        <span class="sns-handle">学習記事・合格体験記</span>
-      </a>
-
-      <a href="#" class="sns-card fade-up" target="_blank" rel="noopener">
-        <svg class="sns-icon" width="42" height="42" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="ig-grad" x1="0" y1="36" x2="36" y2="0">
-              <stop offset="0%" stop-color="#f09433"/>
-              <stop offset="25%" stop-color="#e6683c"/>
-              <stop offset="50%" stop-color="#dc2743"/>
-              <stop offset="75%" stop-color="#cc2366"/>
-              <stop offset="100%" stop-color="#bc1888"/>
-            </linearGradient>
-          </defs>
-          <rect width="36" height="36" rx="10" fill="url(#ig-grad)"/>
-          <rect x="9" y="9" width="18" height="18" rx="5" stroke="white" stroke-width="2"/>
-          <circle cx="18" cy="18" r="5" stroke="white" stroke-width="2"/>
-          <circle cx="24" cy="12" r="1.2" fill="white"/>
-        </svg>
-        <span class="sns-name">Instagram</span>
-        <span class="sns-handle">学習Tips・図解</span>
-      </a>
-
-      <a href="#" class="sns-card fade-up" target="_blank" rel="noopener">
-        <svg class="sns-icon" width="42" height="42" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="36" height="36" rx="10" fill="#111"/>
-          <path d="M20.6 16.4L27 9h-1.5l-5.5 6.4L15.3 9H10l6.7 9.7L10 27h1.5l5.9-6.8 4.6 6.8H27l-6.4-10.6zm-2 2.3l-.7-1L12 10.2h2.3l4.3 6.2.7 1 5.6 8h-2.3l-4.5-6.6z" fill="white"/>
-        </svg>
-        <span class="sns-name">X（旧Twitter）</span>
-        <span class="sns-handle">速報・更新通知</span>
-      </a>
-
-      <a href="#" class="sns-card fade-up" target="_blank" rel="noopener">
-        <svg class="sns-icon" width="42" height="42" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="36" height="36" rx="10" fill="#FF0000"/>
-          <path d="M26.5 13.5C26.2 12.4 25.3 11.6 24.3 11.3 22.4 11 18 11 18 11s-4.4 0-6.3.3c-1 .3-1.9 1.1-2.2 2.2C9.2 15.4 9.2 18 9.2 18s0 2.6.3 4.5c.3 1.1 1.2 1.9 2.2 2.2 1.9.3 6.3.3 6.3.3s4.4 0 6.3-.3c1-.3 1.9-1.1 2.2-2.2.3-1.9.3-4.5.3-4.5s0-2.6-.3-4.5z" fill="white" fill-opacity=".9"/>
-          <path d="M16 21l5.5-3L16 15v6z" fill="#FF0000"/>
-        </svg>
-        <span class="sns-name">YouTube</span>
-        <span class="sns-handle">解説動画（準備中）</span>
-      </a>
-
-    </div>
-  </div>
-</section>
-
 <!-- ══ CONTACT ══ -->
 <section id="contact" class="section section-white">
   <div class="container-sm">
@@ -1517,9 +1417,9 @@
           <p class="footer-col-title">このページ</p>
           <ul>
             <li><a href="#concept">コンセプト</a></li>
-            <li><a href="#apps">アプリ一覧</a></li>
-            <li><a href="#sns">SNS・外部リンク</a></li>
-            <li><a href="#contact">お問い合わせ</a></li>
+            <li><a href="#apps">アプリ</a></li>
+            <li><a href="blog/index.html">blog</a></li>
+            <li><a href="contact.html">お問い合わせ</a></li>
           </ul>
         </div>
 
@@ -1609,11 +1509,10 @@
     el.style.color = "rgba(255,255,255,0.85)";
   });
   document.getElementById("nav-search-btn").style.color = "rgba(255,255,255,0.85)";
-  document.querySelector(".nav-cta").style.color = "#2997ff";
 
   window.addEventListener("scroll", () => {
     const overHero = window.scrollY < window.innerHeight * 0.8;
-    document.querySelectorAll(".nav-logo, .nav-links a:not(.nav-cta)").forEach(el => {
+    document.querySelectorAll(".nav-logo, .nav-links a").forEach(el => {
       el.style.color = overHero ? "rgba(255,255,255,0.85)" : "var(--apple-dark, #1d1d1f)";
     });
     if (!searchOpen) document.getElementById("nav-search-btn").style.color = overHero ? "rgba(255,255,255,0.85)" : "var(--apple-dark, #1d1d1f)";

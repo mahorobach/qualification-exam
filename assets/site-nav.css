@@ -1,0 +1,34 @@
+/**
+ * サイト共通：ヘッダーのデスクトップ用リンク列
+ * （各ページの .nav-inner 内に <ul class="nav-links">…</ul> を置く）
+ * モバイル幅では非表示のまま → 既存のハンバーガー・ドロワーで同じリンクを提供
+ */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-left: auto;
+  margin-right: 6px;
+}
+
+.nav-links a {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: inherit;
+  text-decoration: none;
+  opacity: 0.88;
+  transition: opacity 0.15s;
+}
+
+.nav-links a:hover {
+  opacity: 1;
+}
+
+@media (max-width: 900px) {
+  .nav-links {
+    display: none !important;
+  }
+}
