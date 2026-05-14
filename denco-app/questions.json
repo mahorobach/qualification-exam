@@ -3,7 +3,7 @@
     "id": 1,
     "category": "電気理論",
     "difficulty": "medium",
-    "question": "抵抗4Ωと6Ωを並列接続したときの合成抵抗として、正しいものはどれか。",
+    "question": "抵抗 4Ω と 6Ω を並列に接続した。合成抵抗として最も近い値を選べ。",
     "choices": [
       "1.2Ω",
       "2.4Ω",
@@ -16,7 +16,25 @@
     "duplicateGroup": "theory_parallel_resistance",
     "learningPoint": "並列抵抗の合成抵抗",
     "qualityStatus": "keep",
-    "variantRole": "basic"
+    "variantRole": "basic",
+    "questionTemplate": "抵抗 {r1}{unit} と {r2}{unit} を並列に接続した。合成抵抗として最も近い値を選べ。",
+    "params": {
+      "r1": 4,
+      "r2": 6,
+      "unit": "Ω"
+    },
+    "sourceFacts": {
+      "circuit": "two_resistors_parallel",
+      "values": {
+        "r1_ohm": 4,
+        "r2_ohm": 6
+      },
+      "askedValue": "equivalent_resistance"
+    },
+    "expressionPolicy": "question_text_generated_from_template; no official wording copied",
+    "isModified": true,
+    "source": "第二種電気工事士試験の公表過去問題を参考にした学習用類題",
+    "sourceUrl": "https://www.shiken.or.jp/construction/second/qa/index.html"
   },
   {
     "id": 2,

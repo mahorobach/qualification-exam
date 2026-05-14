@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 520" role="img" aria-labelledby="title desc">
+  <title id="title">Self-made branch circuit training diagram</title>
+  <desc id="desc">An original simplified wiring diagram for studying a single-phase branch circuit. This is not a trace of an official exam drawing.</desc>
+  <rect width="920" height="520" fill="#ffffff"/>
+  <g fill="none" stroke="#111827" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="56" y="72" width="190" height="310" rx="8"/>
+    <line x1="106" y1="124" x2="196" y2="124"/>
+    <line x1="106" y1="168" x2="196" y2="168"/>
+    <line x1="106" y1="212" x2="196" y2="212"/>
+    <line x1="106" y1="256" x2="196" y2="256"/>
+    <line x1="246" y1="168" x2="350" y2="168"/>
+    <line x1="246" y1="256" x2="350" y2="256"/>
+    <line x1="350" y1="168" x2="350" y2="120"/>
+    <line x1="350" y1="256" x2="350" y2="300"/>
+    <line x1="350" y1="120" x2="520" y2="120"/>
+    <line x1="350" y1="300" x2="520" y2="300"/>
+    <line x1="520" y1="120" x2="704" y2="120"/>
+    <line x1="520" y1="300" x2="704" y2="300"/>
+    <line x1="612" y1="120" x2="612" y2="202"/>
+    <line x1="612" y1="300" x2="612" y2="238"/>
+    <circle cx="612" cy="220" r="18"/>
+    <line x1="594" y1="220" x2="630" y2="220"/>
+    <line x1="612" y1="202" x2="612" y2="238"/>
+    <rect x="704" y="86" width="130" height="92" rx="8"/>
+    <circle cx="744" cy="132" r="12"/>
+    <circle cx="794" cy="132" r="12"/>
+    <line x1="732" y1="154" x2="806" y2="154"/>
+    <rect x="704" y="266" width="130" height="92" rx="8"/>
+    <circle cx="744" cy="312" r="12"/>
+    <circle cx="794" cy="312" r="12"/>
+    <line x1="732" y1="334" x2="806" y2="334"/>
+  </g>
+  <g font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Hiragino Sans', sans-serif" fill="#111827">
+    <text x="72" y="52" font-size="24" font-weight="700">単相100V 分岐回路の自作学習図</text>
+    <text x="92" y="110" font-size="18" font-weight="700">分電盤</text>
+    <text x="92" y="352" font-size="15">2P20A</text>
+    <text x="322" y="96" font-size="15">非接地側</text>
+    <text x="322" y="330" font-size="15">接地側</text>
+    <text x="576" y="256" font-size="16" font-weight="700">片切SW</text>
+    <text x="714" y="70" font-size="16" font-weight="700">照明器具</text>
+    <text x="716" y="250" font-size="16" font-weight="700">コンセント</text>
+    <text x="72" y="430" font-size="16">注: 接続関係の理解用に作成した独自図面。公式試験図面のトレースではありません。</text>
+  </g>
+</svg>

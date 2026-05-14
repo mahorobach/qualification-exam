@@ -1,4 +1,11 @@
 User-agent: *
 Allow: /
+Crawl-delay: 5
+
+User-agent: GPTBot
+Disallow: /denco-app/questions.json
+
+User-agent: Google-Extended
+Disallow: /denco-app/questions.json
 
 Sitemap: https://qualifications.app/sitemap.xml

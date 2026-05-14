@@ -151,6 +151,99 @@
             line-height: 1.7;
         }
 
+        .question-figure {
+            display: none;
+            margin: 0 0 18px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            overflow: hidden;
+            background: #f8fafc;
+        }
+
+        .question-figure.visible {
+            display: block;
+        }
+
+        .question-figure-btn {
+            appearance: none;
+            display: block;
+            width: 100%;
+            padding: 0;
+            border: 0;
+            background: transparent;
+            cursor: zoom-in;
+        }
+
+        .question-figure img {
+            display: block;
+            width: 100%;
+            max-height: 56vh;
+            object-fit: contain;
+            background: #fff;
+        }
+
+        .figure-caption {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            padding: 9px 12px;
+            color: var(--text-muted);
+            background: var(--surface-2);
+            font-size: 0.78rem;
+            line-height: 1.4;
+        }
+
+        .figure-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 500;
+            display: none;
+            background: rgba(0, 0, 0, 0.82);
+            padding: 18px;
+        }
+
+        .figure-modal.visible {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .figure-modal-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            color: #f8fafc;
+            font-size: 0.86rem;
+        }
+
+        .figure-modal-close {
+            appearance: none;
+            min-width: 44px;
+            min-height: 36px;
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.12);
+            color: #f8fafc;
+            font: inherit;
+            cursor: pointer;
+        }
+
+        .figure-modal-scroll {
+            flex: 1;
+            overflow: auto;
+            border-radius: 10px;
+            background: #fff;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .figure-modal-scroll img {
+            display: block;
+            width: max(1200px, 100%);
+            height: auto;
+            background: #fff;
+        }
+
         .choices {
             display: flex;
             flex-direction: column;
@@ -385,6 +478,21 @@
             text-align: center;
             margin: 16px 0 0;
             line-height: 1.55;
+        }
+
+        .source-notice {
+            margin-top: 12px;
+            padding: 12px 14px;
+            border: 1px solid rgba(61, 156, 240, 0.28);
+            border-radius: 10px;
+            background: rgba(61, 156, 240, 0.08);
+            color: var(--text-muted);
+            font-size: 0.76rem;
+            line-height: 1.7;
+        }
+
+        .source-notice strong {
+            color: var(--text);
         }
 
         .menu-mock-link {
@@ -733,6 +841,10 @@
                     </div>
                 </div>
                 <p class="how-guide-note">※ 本サイトで使用している問題は、第二種電気工事士試験の公式過去問をもとに内容・表現をアレンジして作成したオリジナル問題です。公式機関が提供する問題そのものではありません。正確な試験情報は（一財）電気技術者試験センターの公式サイトをご確認ください。</p>
+                <div class="source-notice">
+                    <strong>出典について</strong><br>
+                    出典：一般財団法人 電気技術者試験センター公表「第二種電気工事士試験の問題と解答」。本アプリの問題および図面は、第二種電気工事士試験の公表過去問題に基づき、事実関係を維持したまま独自に再構築・作図した学習用コンテンツです。図面・写真が必要な問題では、公式画像を取り込まず、自作図面または公式PDFへの参照で対応します。公式公表問題そのものを確認する場合は、同センター公式サイトをご確認ください。
+                </div>
             </div>
         </div>
 
@@ -762,6 +874,12 @@
             <div class="card" style="margin-bottom:12px;">
                 <span class="q-num-badge" id="exam-q-num">問題 1</span>
                 <p class="q-text" id="exam-q-text"></p>
+                <div class="question-figure" id="exam-question-figure">
+                    <button type="button" class="question-figure-btn" id="exam-question-figure-btn">
+                        <img id="exam-question-figure-img" alt="">
+                    </button>
+                    <div class="figure-caption"><span id="exam-question-figure-caption"></span><span>タップで拡大</span></div>
+                </div>
                 <div class="choices" id="exam-choices"></div>
             </div>
             <div class="exam-nav">
@@ -797,6 +915,10 @@
                 <div id="stats-list" class="stats-list"></div>
             </div>
             <p class="menu-footer-note">分野の問数は収録件数です（本試験の1回の出題数ではありません）。答えた問題は同じ分野でも出ません。範囲内を全部答えると、次に選んだとき自動で記録がリセットされランダムに再出題されます。戻すは下のリセット。</p>
+            <div class="source-notice">
+                <strong>出典について</strong><br>
+                出典：一般財団法人 電気技術者試験センター公表「第二種電気工事士試験の問題と解答」。本アプリの問題および図面は、公表過去問題に基づき、事実関係を維持したまま独自に再構築・作図した学習用コンテンツです。図面・写真が必要な問題では、公式画像を取り込まず、自作図面または公式PDFへの参照で対応します。
+            </div>
             </div><!-- /.card -->
         </div><!-- /#menu-screen -->
 
@@ -808,6 +930,12 @@
             <div class="card">
                 <span class="question-num" id="question-num">問題 1</span>
                 <p class="question-text" id="question-text"></p>
+                <div class="question-figure" id="question-figure">
+                    <button type="button" class="question-figure-btn" id="question-figure-btn">
+                        <img id="question-figure-img" alt="">
+                    </button>
+                    <div class="figure-caption"><span id="question-figure-caption"></span><span>タップで拡大</span></div>
+                </div>
                 <div class="choices" id="choices"></div>
                 <div class="feedback" id="feedback">
                     <p class="result-label" id="result-label"></p>
@@ -816,6 +944,16 @@
                         <button type="button" class="next-btn" id="next-btn">次の問題へ</button>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <div class="figure-modal" id="figure-modal" aria-hidden="true">
+            <div class="figure-modal-bar">
+                <span id="figure-modal-title">図面</span>
+                <button type="button" class="figure-modal-close" id="figure-modal-close">閉じる</button>
+            </div>
+            <div class="figure-modal-scroll">
+                <img id="figure-modal-img" alt="">
             </div>
         </div>
 
@@ -909,6 +1047,14 @@
         const questionTextEl = document.getElementById("question-text");
         const choicesEl = document.getElementById("choices");
         const feedbackEl = document.getElementById("feedback");
+        const questionFigureEl = document.getElementById("question-figure");
+        const questionFigureBtn = document.getElementById("question-figure-btn");
+        const questionFigureImg = document.getElementById("question-figure-img");
+        const questionFigureCaption = document.getElementById("question-figure-caption");
+        const figureModal = document.getElementById("figure-modal");
+        const figureModalImg = document.getElementById("figure-modal-img");
+        const figureModalTitle = document.getElementById("figure-modal-title");
+        const figureModalClose = document.getElementById("figure-modal-close");
         const resultLabelEl = document.getElementById("result-label");
         const explanationEl = document.getElementById("explanation");
         const nextBtn = document.getElementById("next-btn");
@@ -1022,6 +1168,67 @@
 
         function getQuestionSpacingKey(q) {
             return getQuestionGroup(q) || getQuestionStem(q && q.question);
+        }
+
+        function getFigureCaption(q) {
+            return q && (q.figureCaption || q.source || q.sourceLabel || "配線図");
+        }
+
+        function formatStructuredText(template, params) {
+            if (!template || !params || typeof params !== "object") return template || "";
+            return String(template).replace(/\{([a-zA-Z0-9_]+)\}/g, function (match, key) {
+                return Object.prototype.hasOwnProperty.call(params, key) ? String(params[key]) : match;
+            });
+        }
+
+        function getQuestionText(q) {
+            if (!q) return "";
+            return q.questionTemplate
+                ? formatStructuredText(q.questionTemplate, q.params)
+                : (q.question || "");
+        }
+
+        function getChoiceText(q, choice) {
+            if (!choice || typeof choice !== "object") return String(choice);
+            if (choice.template) return formatStructuredText(choice.template, q && q.params);
+            if (choice.text !== undefined) return String(choice.text);
+            return "";
+        }
+
+        function getChoices(q) {
+            if (!q || !Array.isArray(q.choices)) return [];
+            return q.choices.map(function (choice) { return getChoiceText(q, choice); });
+        }
+
+        function openFigureModal(src, title) {
+            if (!src) return;
+            figureModalImg.src = src;
+            figureModalImg.alt = title || "配線図";
+            figureModalTitle.textContent = title || "配線図";
+            figureModal.classList.add("visible");
+            figureModal.setAttribute("aria-hidden", "false");
+        }
+
+        function closeFigureModal() {
+            figureModal.classList.remove("visible");
+            figureModal.setAttribute("aria-hidden", "true");
+            figureModalImg.removeAttribute("src");
+        }
+
+        function renderFigure(q, el, img, caption, btn) {
+            if (!el || !img || !caption || !btn) return;
+            if (!q || !q.image) {
+                el.classList.remove("visible");
+                img.removeAttribute("src");
+                btn.onclick = null;
+                return;
+            }
+            const title = getFigureCaption(q);
+            img.src = q.image;
+            img.alt = title;
+            caption.textContent = title;
+            btn.onclick = function () { openFigureModal(q.image, title); };
+            el.classList.add("visible");
         }
 
         function avoidAdjacentDuplicateStems(list) {
@@ -1414,14 +1621,15 @@
             resultLabelEl.textContent = "";
             explanationEl.textContent = "";
             questionNumEl.textContent = sessionCategoryLabel + " · 問題 " + (currentIndex + 1);
-            questionTextEl.textContent = q.question;
+            questionTextEl.textContent = getQuestionText(q);
+            renderFigure(q, questionFigureEl, questionFigureImg, questionFigureCaption, questionFigureBtn);
             choicesEl.innerHTML = "";
 
             const total = questions.length;
             progressLabel.textContent = (currentIndex + 1) + " / " + total;
             progressFill.style.width = ((currentIndex + 1) / total * 100) + "%";
 
-            q.choices.forEach((label, index) => {
+            getChoices(q).forEach((label, index) => {
                 const btn = document.createElement("button");
                 btn.type = "button";
                 btn.className = "choice-btn";
@@ -1682,6 +1890,16 @@
             renderCategoryStats();
         });
 
+        figureModalClose.addEventListener("click", closeFigureModal);
+        figureModal.addEventListener("click", function (event) {
+            if (event.target === figureModal) closeFigureModal();
+        });
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "Escape" && figureModal.classList.contains("visible")) {
+                closeFigureModal();
+            }
+        });
+
         async function loadQuestionBank() {
             const jsonExtra = [];
             try {
@@ -1692,7 +1910,7 @@
                 for (const item of data) {
                     if (
                         item &&
-                        typeof item.question === "string" &&
+                        (typeof item.question === "string" || typeof item.questionTemplate === "string") &&
                         Array.isArray(item.choices) &&
                         item.choices.length === 4 &&
                         typeof item.correctIndex === "number" &&
@@ -1714,6 +1932,17 @@
                             learningPoint: item.learningPoint,
                             qualityStatus: item.qualityStatus,
                             variantRole: item.variantRole,
+                            source: item.source,
+                            sourceUrl: item.sourceUrl,
+                            sourcePage: item.sourcePage,
+                            sourceQuestion: item.sourceQuestion,
+                            isModified: item.isModified,
+                            questionTemplate: item.questionTemplate,
+                            params: item.params,
+                            sourceFacts: item.sourceFacts,
+                            expressionPolicy: item.expressionPolicy,
+                            image: item.image,
+                            figureCaption: item.figureCaption,
                             question: item.question,
                             choices: item.choices,
                             correctIndex: item.correctIndex,
@@ -1743,6 +1972,17 @@
                     learningPoint: item.learningPoint,
                     qualityStatus: item.qualityStatus,
                     variantRole: item.variantRole,
+                    source: item.source,
+                    sourceUrl: item.sourceUrl,
+                    sourcePage: item.sourcePage,
+                    sourceQuestion: item.sourceQuestion,
+                    isModified: item.isModified,
+                    questionTemplate: item.questionTemplate,
+                    params: item.params,
+                    sourceFacts: item.sourceFacts,
+                    expressionPolicy: item.expressionPolicy,
+                    image: item.image,
+                    figureCaption: item.figureCaption,
                     question: item.question,
                     choices: item.choices,
                     correctIndex: item.correctIndex,
@@ -1893,9 +2133,16 @@
         function renderExamQ() {
             const q = examQuestions[examIdx];
             document.getElementById("exam-q-num").textContent = (q.year ? q.year + "年 · " : "") + "問題 " + (examIdx + 1) + " / " + examQuestions.length;
-            document.getElementById("exam-q-text").textContent = q.question;
+            document.getElementById("exam-q-text").textContent = getQuestionText(q);
+            renderFigure(
+                q,
+                document.getElementById("exam-question-figure"),
+                document.getElementById("exam-question-figure-img"),
+                document.getElementById("exam-question-figure-caption"),
+                document.getElementById("exam-question-figure-btn")
+            );
             const ce = document.getElementById("exam-choices"); ce.innerHTML = "";
-            q.choices.forEach(function(label, idx) {
+            getChoices(q).forEach(function(label, idx) {
                 const btn = document.createElement("button"); btn.type = "button";
                 btn.className = "choice-btn" + (examAnswers[examIdx] === idx ? " selected" : "");
                 btn.textContent = label;
@@ -1965,7 +2212,7 @@
             qs.forEach(function(q,i){ const c=q.category||"未分類"; if(!catMap[c])catMap[c]={ok:0,done:0}; if(ans[i]!==null){catMap[c].done++;if(ans[i]===q.correctIndex)catMap[c].ok++;} });
             CATEGORY_ORDER.forEach(function(c){ if(!catMap[c])return; const s=catMap[c]; const r=s.done>0?Math.round(s.ok/s.done*100):0; const row=document.createElement("div"); row.className="res-cat-row"; row.innerHTML="<span>"+c+"</span><span style='color:"+(r>=60?"var(--correct)":"var(--wrong)")+";font-weight:600'>"+s.ok+"/"+s.done+"問 ("+r+"%)</span>"; catSummary.appendChild(row); });
             const listEl = document.getElementById("res-q-list"); listEl.innerHTML = "";
-            qs.forEach(function(q,i){ const ua=ans[i],isSkip=ua===null,isOk=!isSkip&&ua===q.correctIndex; const card=document.createElement("div"); card.className="res-q-card "+(isSkip?"skip":isOk?"ok":"ng"); const sc=isSkip?"var(--text-muted)":isOk?"var(--correct)":"var(--wrong)"; const si=isSkip?"— 未回答":isOk?"✓ 正解":"✗ 不正解"; let html="<div class='res-q-meta'>"+(q.year?q.year+"年 · ":"")+(q.category||"")+" · 問"+(i+1)+" <span style='color:"+sc+"'>"+si+"</span></div><div class='res-q-text'>"+escHtml(q.question)+"</div>"; if(!isSkip)html+="<div class='res-q-yours "+(isOk?"ok":"ng")+"'>あなたの解答："+escHtml(q.choices[ua])+"</div>"; if(!isOk)html+="<div class='res-q-correct'>正解："+escHtml(q.choices[q.correctIndex])+"</div>"; html+="<div class='res-q-exp'>"+escHtml(q.explanation)+"</div>"; card.innerHTML=html; listEl.appendChild(card); });
+            qs.forEach(function(q,i){ const ua=ans[i],isSkip=ua===null,isOk=!isSkip&&ua===q.correctIndex; const renderedChoices=getChoices(q); const card=document.createElement("div"); card.className="res-q-card "+(isSkip?"skip":isOk?"ok":"ng"); const sc=isSkip?"var(--text-muted)":isOk?"var(--correct)":"var(--wrong)"; const si=isSkip?"— 未回答":isOk?"✓ 正解":"✗ 不正解"; let html="<div class='res-q-meta'>"+(q.year?q.year+"年 · ":"")+(q.category||"")+" · 問"+(i+1)+" <span style='color:"+sc+"'>"+si+"</span></div><div class='res-q-text'>"+escHtml(getQuestionText(q))+"</div>"; if(!isSkip)html+="<div class='res-q-yours "+(isOk?"ok":"ng")+"'>あなたの解答："+escHtml(renderedChoices[ua])+"</div>"; if(!isOk)html+="<div class='res-q-correct'>正解："+escHtml(renderedChoices[q.correctIndex])+"</div>"; html+="<div class='res-q-exp'>"+escHtml(q.explanation)+"</div>"; card.innerHTML=html; listEl.appendChild(card); });
         }
 
         async function boot() {

@@ -107,6 +107,29 @@
 
 静的HTMLですが、`questions.json` を `fetch()` するページは `file://` 直開きだと読み込みに失敗することがあります。
 
+### 問題データ検証
+
+第二種電気工事士の問題を編集したら、表示確認の前に検証スクリプトを実行します。
+
+```bash
+node scripts/validate-denco-questions.mjs
+```
+
+この検証では、以下を確認します。
+
+- `id` の重複
+- 選択肢4件と `correctIndex` の範囲
+- 解説の欠落
+- `questionTemplate` と `params` から生成した問題文の一致
+- 自作図面以外の画像参照が混ざっていないこと
+- `duplicateGroup` / `learningPoint` / `variantRole` などの品質メタデータ
+
+構造化問題を追加する場合は、公式問題文をそのまま写さず、`sourceFacts` に事実関係、`questionTemplate` と `params` に表示文生成用のデータを入れます。図面・写真が必要な場合は、公式画像を取り込まず `images/diagrams/self-made/` 以下の自作SVGを使います。
+
+### ブラウザ確認
+
+検証後、ローカルサーバーで表示を確認します。
+
 ```bash
 python3 -m http.server 8000
 ```
@@ -146,4 +169,3 @@ Cloudflare WorkersのStatic Assetsとしてリポジトリ直下を配信しま�
 - 「AI解説」と表記する場合は、実際にAI連携があるページだけに限定する
 - 年度別演習は収録問題ベース。公式試験そのものではないため、必要以上に「本番完全再現」と表現しない
 - ブログ記事の試験制度・問題数・合格基準は、定期的に公式情報で確認する
-
