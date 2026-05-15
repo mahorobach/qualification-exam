@@ -1823,385 +1823,282 @@
     "explanation": "切削速度V=πDN/1000=π×50×600/1000≈94m/min。"
   },
   {
-    "category": "基礎科目",
-    "year": 2025,
-    "question": "ニュートンの運動方程式 F=ma で、m=5kg、a=2m/s² のときFはどれか。",
+    "category": "専門科目（機械部門）",
+    "year": 2024,
+    "question": "直径 D，長さ l の同一寸法の丸棒（棒1，棒2）が左端を壁，右端を剛体板で並列に接続されている。棒1の弾性係数 E₁，棒2の弾性係数 E₂ として，右端の剛体板に荷重 P を加えるとき，棒1に発生する応力 σ₁ として最も適切なものはどれか。",
     "choices": [
-      "2.5N",
-      "7N",
-      "10N",
-      "25N"
+      "4E₁P / [πD²(E₁+E₂)]",
+      "4E₂P / [πD²(E₁+E₂)]",
+      "2E₁P / [πD²(E₁+E₂)]",
+      "4P / [πD²(E₁+E₂)]"
     ],
-    "correctIndex": 2,
-    "explanation": "F=ma=5×2=10N。"
+    "correctIndex": 0,
+    "explanation": "断面積 A = πD²/4。変位適合（剛体板）：ε₁=ε₂ → σ₁/E₁=σ₂/E₂ → σ₂=σ₁E₂/E₁。力の釣り合い：A·σ₁+A·σ₂=P → A·σ₁(1+E₂/E₁)=P → σ₁=E₁P/[A(E₁+E₂)]=4E₁P/[πD²(E₁+E₂)]。",
+    "figureHtml": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 300 150\" width=\"300\" height=\"150\" style=\"max-width:100%;font-family:sans-serif;font-size:12px\">\n    <rect x=\"10\" y=\"40\" width=\"12\" height=\"80\" fill=\"#888\"/>\n    <line x1=\"22\" y1=\"60\" x2=\"240\" y2=\"60\" stroke=\"#555\" stroke-width=\"8\"/>\n    <line x1=\"22\" y1=\"100\" x2=\"240\" y2=\"100\" stroke=\"#999\" stroke-width=\"8\"/>\n    <rect x=\"240\" y=\"40\" width=\"12\" height=\"80\" fill=\"#555\"/>\n    <text x=\"130\" y=\"52\" text-anchor=\"middle\" font-size=\"10\">棒1: E₁</text>\n    <text x=\"130\" y=\"92\" text-anchor=\"middle\" font-size=\"10\">棒2: E₂</text>\n    <line x1=\"252\" y1=\"80\" x2=\"280\" y2=\"80\" stroke=\"#e44\" stroke-width=\"2\" marker-end=\"url(#ar)\"/>\n    <text x=\"285\" y=\"84\" font-size=\"11\" fill=\"#e44\">P</text>\n    <defs><marker id=\"ar\" markerWidth=\"6\" markerHeight=\"6\" refX=\"5\" refY=\"3\" orient=\"auto\"><path d=\"M0,0 L6,3 L0,6 z\" fill=\"#e44\"/></marker></defs>\n  </svg>"
   },
   {
-    "category": "基礎科目",
-    "year": 2025,
-    "question": "データを小さい順に並べたとき中央にくる値を表す統計量はどれか。",
+    "category": "専門科目（機械部門）",
+    "year": 2024,
+    "question": "薄肉球殻容器（内径 d = 6.0 m，肉厚 t = 3.0 mm）に内圧 p = 1.2 MPa が作用するとき，円周方向（膜）応力 σθ として最も近い値はどれか。",
     "choices": [
-      "平均値",
-      "中央値",
-      "分散",
-      "標準偏差"
+      "600 MPa",
+      "300 MPa",
+      "400 MPa",
+      "1200 MPa"
     ],
-    "correctIndex": 1,
-    "explanation": "中央値はデータを順序化したとき中央に位置する値。外れ値に平均値より影響されにくい。"
+    "correctIndex": 0,
+    "explanation": "薄肉球殻の膜応力は σθ = pd/(4t) = 1.2×6.0/(4×0.003) = 7.2/0.012 = 600 MPa。球殻は全方向で同じ応力（等二軸応力状態）となる。"
   },
   {
-    "category": "基礎科目",
-    "year": 2025,
-    "question": "表の工程で、ボトルネックとなる工程はどれか。",
+    "category": "専門科目（機械部門）",
+    "year": 2024,
+    "question": "σx = 40 MPa，σy = 20 MPa，τxy = 0 の平面応力状態において，x 軸から 60° 傾いた傾斜面にかかる垂直応力 σ と せん断応力 τ の組合せとして正しいものはどれか。",
     "choices": [
-      "工程A",
-      "工程B",
-      "工程C",
-      "工程D"
+      "σ = 25.0 MPa，τ = 8.66 MPa",
+      "σ = 35.0 MPa，τ = 8.66 MPa",
+      "σ = 25.0 MPa，τ = 17.3 MPa",
+      "σ = 30.0 MPa，τ = 10.0 MPa"
     ],
-    "correctIndex": 1,
-    "explanation": "処理時間が最も長い工程Bが全体の流れを制約するボトルネックになる。",
-    "figureHtml": "<div style='overflow:auto'><table style='width:100%;border-collapse:collapse;font-size:13px;color:#e8edf4'><tbody><tr><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>工程</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>A</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>B</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>C</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>D</td></tr><tr><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>1個あたり時間</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>4分</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>8分</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>5分</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>3分</td></tr></tbody></table></div>"
+    "correctIndex": 0,
+    "explanation": "θ = 60°（法線がx軸となす角）。σ = (σx+σy)/2 + (σx-σy)/2·cos(2×60°) = 30 + 10·cos120° = 30 - 5 = 25.0 MPa。τ = -(σx-σy)/2·sin(2×60°) = -10·sin120° = -10×(√3/2) = -8.66 MPa → |τ| = 8.66 MPa。"
   },
   {
-    "category": "基礎科目",
-    "year": 2025,
-    "question": "三角関数 sin 30° の値として正しいものはどれか。",
+    "category": "専門科目（機械部門）",
+    "year": 2024,
+    "question": "長さ l ，曲げ剛性 EI の単純支持はりの右半分（長さ l/2 の CB 区間）に等分布荷重 q が作用している。はりの中央点 C に生じる曲げモーメント M として正しいものはどれか。",
+    "choices": [
+      "M = ql²/16",
+      "M = ql²/8",
+      "M = ql²/32",
+      "M = 3ql²/16"
+    ],
+    "correctIndex": 0,
+    "explanation": "A点（左ピン）の支点反力：RA×l = q×(l/2)×(l/4)（合力ql/2が右端からl/4）→ RA = ql/8。中央C点でのモーメント：M_C = RA×(l/2) = (ql/8)×(l/2) = ql²/16。",
+    "figureHtml": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 300 115\" width=\"300\" height=\"115\" style=\"max-width:100%;font-family:sans-serif;font-size:12px\">\n    <line x1=\"30\" y1=\"80\" x2=\"270\" y2=\"80\" stroke=\"#333\" stroke-width=\"3\"/>\n    <polygon points=\"30,80 20,100 40,100\" fill=\"none\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <line x1=\"248\" y1=\"80\" x2=\"258\" y2=\"95\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <line x1=\"258\" y1=\"95\" x2=\"268\" y2=\"80\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <line x1=\"248\" y1=\"100\" x2=\"280\" y2=\"100\" stroke=\"#333\" stroke-width=\"1\"/>\n    <text x=\"30\" y=\"70\" text-anchor=\"middle\" font-size=\"10\">A</text>\n    <text x=\"150\" y=\"70\" text-anchor=\"middle\" font-size=\"10\">C</text>\n    <text x=\"270\" y=\"70\" text-anchor=\"middle\" font-size=\"10\">B</text>\n    <line x1=\"150\" y1=\"75\" x2=\"150\" y2=\"85\" stroke=\"#aaa\" stroke-width=\"1\" stroke-dasharray=\"2,2\"/>\n    <line x1=\"150\" y1=\"55\" x2=\"270\" y2=\"55\" stroke=\"#44f\" stroke-width=\"1.5\"/>\n    <line x1=\"155\" y1=\"60\" x2=\"155\" y2=\"75\" stroke=\"#44f\" stroke-width=\"1.5\" marker-end=\"url(#a2)\"/>\n    <line x1=\"175\" y1=\"60\" x2=\"175\" y2=\"75\" stroke=\"#44f\" stroke-width=\"1.5\" marker-end=\"url(#a2)\"/>\n    <line x1=\"195\" y1=\"60\" x2=\"195\" y2=\"75\" stroke=\"#44f\" stroke-width=\"1.5\" marker-end=\"url(#a2)\"/>\n    <line x1=\"215\" y1=\"60\" x2=\"215\" y2=\"75\" stroke=\"#44f\" stroke-width=\"1.5\" marker-end=\"url(#a2)\"/>\n    <line x1=\"235\" y1=\"60\" x2=\"235\" y2=\"75\" stroke=\"#44f\" stroke-width=\"1.5\" marker-end=\"url(#a2)\"/>\n    <text x=\"210\" y=\"52\" text-anchor=\"middle\" font-size=\"10\" fill=\"#44f\">q</text>\n    <defs><marker id=\"a2\" markerWidth=\"6\" markerHeight=\"6\" refX=\"3\" refY=\"5\" orient=\"auto\"><path d=\"M0,0 L6,0 L3,6 z\" fill=\"#44f\"/></marker></defs>\n  </svg>"
+  },
+  {
+    "category": "専門科目（機械部門）",
+    "year": 2024,
+    "question": "片持ちはり（曲げ剛性 EI，長さ l）に集中荷重 P を先端に，等分布荷重 q を全長に作用させるとき，先端のたわみが等しくなる P と q の関係として正しいものはどれか。",
+    "choices": [
+      "P = 3ql/8",
+      "P = ql/2",
+      "P = 3ql/4",
+      "P = ql/4"
+    ],
+    "correctIndex": 0,
+    "explanation": "先端たわみの公式：集中荷重P → δ_P = Pl³/(3EI)，等分布荷重q → δ_q = ql⁴/(8EI)。等しくなる条件：Pl³/(3EI) = ql⁴/(8EI) → P = 3ql/8。"
+  },
+  {
+    "category": "専門科目（機械部門）",
+    "year": 2024,
+    "question": "下図のように，曲げ剛性 EI，長さ L の柱の端部条件を変えたとき，それぞれの座屈荷重の大小関係として最も適切なものはどれか。ただし A は両端ピン（単純支持），B は一端固定・一端ピン，C は両端固定とする。",
+    "choices": [
+      "PA < PB < PC",
+      "PA < PC < PB",
+      "PB < PA < PC",
+      "PC < PB < PA"
+    ],
+    "correctIndex": 0,
+    "explanation": "オイラーの座屈荷重 Pcr = π²EI/L_e²（L_e：有効座屈長さ）。A（両端ピン）：L_e=L，PA=π²EI/L²。B（一端固定・一端ピン）：L_e≈0.7L，PB≈2π²EI/L²≈2PA。C（両端固定）：L_e=0.5L，PC=4π²EI/L²=4PA。よってPA < PB < PC。"
+  },
+  {
+    "category": "専門科目（機械部門）",
+    "year": 2024,
+    "question": "状態方程式 ẋ = Ax + Bu，出力方程式 y = Cx が次のように与えられるとき，入力 u から出力 y への伝達関数 G(s) として正しいものはどれか。A = [0,1;−6,−5]，B = [0;1]，C = [1,0]",
+    "choices": [
+      "1 / (s²+5s+6)",
+      "s / (s²+5s+6)",
+      "1 / (s²−5s+6)",
+      "(s+1) / (s²+5s+6)"
+    ],
+    "correctIndex": 0,
+    "explanation": "G(s) = C(sI−A)⁻¹B。sI−A = [s,−1;6,s+5]，det=s(s+5)+6=s²+5s+6。(sI−A)⁻¹ = 1/(s²+5s+6)×[s+5,1;−6,s]。G(s) = [1,0]×(...)×[0;1] = 1/(s²+5s+6)。"
+  },
+  {
+    "category": "専門科目（機械部門）",
+    "year": 2024,
+    "question": "s 領域で表された F(s) = (s+3) / (s²+6s+10) の逆ラプラス変換 f(t) として正しいものはどれか。",
+    "choices": [
+      "e^{−3t}(cost − 3sint)",
+      "e^{3t}(cost + 3sint)",
+      "e^{−3t}(cost + 3sint)",
+      "e^{−3t}cos2t"
+    ],
+    "correctIndex": 0,
+    "explanation": "s²+6s+10 = (s+3)²+1。F(s) = (s+3)/[(s+3)²+1] × 1 - 0·1/[(s+3)²+1]... \n実際：F(s) = (s+3)/[(s+3)²+1]。これはe^{-at}costのラプラス変換 (s+a)/[(s+a)²+1] の形（a=3）。f(t) = e^{-3t}cost。\n補正：(s+3+0×1)/[(s+3)²+1] = (s+3)/[(s+3)²+1] → f(t) = e^{-3t}cost。しかし選択肢①はe^{-3t}(cost−3sint)...正確には (s+3)/[(s+3)²+ω²]のωの問題。ω=1の場合 f(t)=e^{-3t}cost が正解。選択肢①のcost−3sintは別の分解。実際f(t)=e^{-3t}costが最も適切。"
+  },
+  {
+    "category": "専門科目（機械部門）",
+    "year": 2024,
+    "question": "伝達関数 G(s) = (s−3) / (s²+7s+12) の安定性に関する記述として最も適切なものはどれか。",
+    "choices": [
+      "2つの極（根）が負の値（−3，−4）を持つから，この系は安定である。",
+      "2つの極（根）が正の値（3，4）を持つから，この系は不安定である。",
+      "零点が 3 であるから，この系は不安定である。",
+      "零点が −3 であるから，この系は安定である。"
+    ],
+    "correctIndex": 0,
+    "explanation": "伝達関数の安定性は分母（極）の符号で決まる。分母 s²+7s+12 = (s+3)(s+4)。極は s=−3，s=−4（いずれも負の実部）。よってこの系は安定。零点（s=3）は安定性に無関係。"
+  },
+  {
+    "category": "専門科目（機械部門）",
+    "year": 2024,
+    "question": "フィードバック制御系で，プラント P(s) = 1/(s+2)，コントローラ C(s) = K（比例制御）の場合，閉ループ系の伝達関数 G_cl(s) として正しいものはどれか。",
+    "choices": [
+      "K / (s+2+K)",
+      "K / (s+K)",
+      "1 / (s+2+K)",
+      "K(s+2) / (s+2+K)"
+    ],
+    "correctIndex": 0,
+    "explanation": "フィードバック閉ループ：G_cl = P(s)C(s)/(1+P(s)C(s)) = [K/(s+2)] / [1+K/(s+2)] = K/(s+2+K)。極は s = −(2+K)（K>0なら安定）。"
+  },
+  {
+    "category": "専門科目（機械部門）",
+    "year": 2024,
+    "question": "質量 m = 0.5 kg，ばね定数 k = 800 N/m の 1 自由度振動系の臨界減衰係数 c_c として最も近い値はどれか。",
+    "choices": [
+      "40 Ns/m",
+      "20 Ns/m",
+      "80 Ns/m",
+      "10 Ns/m"
+    ],
+    "correctIndex": 0,
+    "explanation": "固有角振動数 ω_n = √(k/m) = √(800/0.5) = √1600 = 40 rad/s。臨界減衰係数 c_c = 2mω_n = 2×0.5×40 = 40 Ns/m。",
+    "figureHtml": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 300 100\" width=\"300\" height=\"100\" style=\"max-width:100%;font-family:sans-serif;font-size:12px\">\n    <rect x=\"10\" y=\"0\" width=\"280\" height=\"10\" fill=\"#888\"/>\n    <path d=\"M80,10 Q86,20 92,10 Q98,0 104,10 Q110,20 116,10 Q122,0 128,10\" fill=\"none\" stroke=\"#333\" stroke-width=\"2\"/>\n    <line x1=\"128\" y1=\"10\" x2=\"128\" y2=\"50\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <rect x=\"108\" y=\"50\" width=\"40\" height=\"30\" fill=\"#cde\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <text x=\"128\" y=\"70\" text-anchor=\"middle\" font-size=\"11\">m</text>\n    <line x1=\"200\" y1=\"10\" x2=\"200\" y2=\"45\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <rect x=\"185\" y=\"45\" width=\"30\" height=\"30\" fill=\"none\" stroke=\"#333\" stroke-width=\"2\"/>\n    <line x1=\"185\" y1=\"58\" x2=\"215\" y2=\"58\" stroke=\"#333\" stroke-width=\"3\"/>\n    <line x1=\"200\" y1=\"75\" x2=\"200\" y2=\"80\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <line x1=\"200\" y1=\"80\" x2=\"128\" y2=\"80\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <text x=\"80\" y=\"7\" text-anchor=\"middle\" font-size=\"10\">k</text>\n    <text x=\"210\" y=\"62\" font-size=\"10\">c</text>\n  </svg>"
+  },
+  {
+    "category": "専門科目（機械部門）",
+    "year": 2024,
+    "question": "密度 ρ，断面積 A，長さ l の均一な剛体棒が，一端 O でピン支持され，一端から距離 a の位置でばね定数 k のばねで支持されている。この系の固有角振動数 ω_n として最も適切なものはどれか。",
+    "choices": [
+      "√(3ka² / ρAl³)",
+      "√(ka² / ρAl³)",
+      "√(3k / ρAl)",
+      "√(ka / ρAl²)"
+    ],
+    "correctIndex": 0,
+    "explanation": "O点まわりの質量慣性モーメント I = ρAl³/3。小角度変位θに対するばねの復元モーメント = −k×(aθ)×a = −ka²θ。運動方程式：(ρAl³/3)θ̈ + ka²θ = 0。固有角振動数 ω_n = √(ka²/(ρAl³/3)) = √(3ka²/(ρAl³))。",
+    "figureHtml": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 270 115\" width=\"270\" height=\"115\" style=\"max-width:100%;font-family:sans-serif;font-size:12px\">\n    <rect x=\"0\" y=\"50\" width=\"12\" height=\"50\" fill=\"#888\"/>\n    <line x1=\"10\" y1=\"75\" x2=\"250\" y2=\"75\" stroke=\"#333\" stroke-width=\"5\"/>\n    <circle cx=\"10\" cy=\"75\" r=\"6\" fill=\"none\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <rect x=\"78\" y=\"20\" width=\"8\" height=\"50\" fill=\"#888\"/>\n    <path d=\"M86,35 Q90,28 94,35 Q98,42 102,35 Q106,28 110,35 Q114,42 118,35\" fill=\"none\" stroke=\"#333\" stroke-width=\"2\"/>\n    <line x1=\"118\" y1=\"35\" x2=\"118\" y2=\"75\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <text x=\"100\" y=\"15\" text-anchor=\"middle\" font-size=\"10\">k</text>\n    <line x1=\"10\" y1=\"88\" x2=\"118\" y2=\"88\" stroke=\"#aaa\" stroke-width=\"1\" stroke-dasharray=\"3,2\"/>\n    <text x=\"64\" y=\"100\" text-anchor=\"middle\" font-size=\"10\">a</text>\n    <line x1=\"10\" y1=\"93\" x2=\"250\" y2=\"93\" stroke=\"#aaa\" stroke-width=\"1\" stroke-dasharray=\"3,2\"/>\n    <text x=\"130\" y=\"105\" text-anchor=\"middle\" font-size=\"10\">l</text>\n  </svg>"
+  },
+  {
+    "category": "専門科目（機械部門）",
+    "year": 2024,
+    "question": "水平な床の上を速度 v₀ で運動する質量 m の物体が，傾斜角 45° の静止した質量 2m のくさびに弾性衝突した。摩擦を無視するとき，衝突後のくさびの速度 V として正しいものはどれか。",
+    "choices": [
+      "V = 2v₀/5",
+      "V = v₀/2",
+      "V = v₀/3",
+      "V = v₀/4"
+    ],
+    "correctIndex": 0,
+    "explanation": "弾性衝突：運動量保存とエネルギー保存，かつくさびの斜面（45°）に垂直な成分のみ力が作用（摩擦なし）。連立解くと V = 2v₀/5（くさびのx方向速度）。"
+  },
+  {
+    "category": "専門科目（機械部門）",
+    "year": 2024,
+    "question": "室温 20℃の部屋に，表面温度 250℃，放射率 ε = 0.9 の物体が置かれている。平均対流熱伝達率を 15 W/(m²·K) とするとき，物体表面からの総放熱流束として最も近い値はどれか。ただし，ステファン・ボルツマン定数を 5.67×10⁻⁸ W/(m²·K⁴) とする。",
+    "choices": [
+      "6.3 kW/m²",
+      "3.5 kW/m²",
+      "10 kW/m²",
+      "2.7 kW/m²"
+    ],
+    "correctIndex": 0,
+    "explanation": "対流熱流束 q_conv = h(T_s−T_∞) = 15×(250−20) = 15×230 = 3450 W/m²。放射熱流束 q_rad = ε×σ×(T_s⁴−T_∞⁴) = 0.9×5.67×10⁻⁸×(523⁴−293⁴)。523⁴≈7.49×10¹⁰，293⁴≈7.37×10⁹。q_rad ≈ 0.9×5.67×10⁻⁸×6.75×10¹⁰ ≈ 0.9×3.44×10³ ≈ 3096 W/m²。合計 q ≈ 3450+3096 ≈ 6546 W/m² ≈ 6.3 kW/m²。"
+  },
+  {
+    "category": "専門科目（機械部門）",
+    "year": 2024,
+    "question": "ガラス板（厚さ 12 mm，熱伝導率 1.5 W/(m·K)）とプラスチック板（厚さ 6 mm，熱伝導率 0.20 W/(m·K)）が密着している。ガラス板側の表面温度が 75℃，プラスチック板側の表面温度が 25℃のとき，両板の界面温度（ア）と単位面積あたりの熱流束（イ）の組合せとして最も適切なものはどれか。",
+    "choices": [
+      "（ア）64℃，（イ）1.32 kW/m²",
+      "（ア）64℃，（イ）0.84 kW/m²",
+      "（ア）48℃，（イ）1.32 kW/m²",
+      "（ア）48℃，（イ）0.84 kW/m²"
+    ],
+    "correctIndex": 0,
+    "explanation": "熱抵抗（単位面積あたり）：R_glass = 0.012/1.5 = 8.0×10⁻³ m²K/W，R_plastic = 0.006/0.2 = 3.0×10⁻² m²K/W。合計 R = 3.8×10⁻² m²K/W。熱流束 q = ΔT/R = 50/0.038 ≈ 1316 W/m² ≈ 1.32 kW/m²。界面温度 T_int = 75 − 1316×8×10⁻³ = 75 − 10.5 ≈ 64.5°C ≈ 64°C。"
+  },
+  {
+    "category": "専門科目（機械部門）",
+    "year": 2024,
+    "question": "一様流れ中に水平に置かれた平板（長さ L）上の層流強制対流について，平均熱伝達率 h は平板長さ L が 4 倍になると何倍になるか。",
+    "choices": [
+      "1/2 倍",
+      "1/4 倍",
+      "2 倍",
+      "4 倍"
+    ],
+    "correctIndex": 0,
+    "explanation": "層流平板の強制対流：Nu_L = 0.664·Re_L^0.5·Pr^(1/3)，h = Nu_L·λ/L ∝ L^(0.5-1) = L^(-0.5)。LをL→4L にすると h → h×(4L/L)^(-0.5) = h×4^(-0.5) = h×(1/2)。よって h は 1/2 倍。"
+  },
+  {
+    "category": "専門科目（機械部門）",
+    "year": 2024,
+    "question": "圧縮比 r = 8，比熱比 κ = 1.4 の理想オットーサイクルで，ある点では温度が 350 K，圧力が 0.12 MPa（断熱圧縮前の状態）とする。断熱圧縮後の温度として最も近い値はどれか。",
+    "choices": [
+      "806 K",
+      "620 K",
+      "980 K",
+      "1100 K"
+    ],
+    "correctIndex": 0,
+    "explanation": "断熱過程：TV^(κ-1) = const → T₁V₁^(κ-1) = T₂V₂^(κ-1) → T₂ = T₁×(V₁/V₂)^(κ-1) = T₁×r^(κ-1) = 350×8^0.4。8^0.4 = 8^(2/5) = (8^2)^(1/5) = 64^(1/5) ≈ 2.297。T₂ = 350×2.297 ≈ 804 K ≈ 806 K。"
+  },
+  {
+    "category": "専門科目（機械部門）",
+    "year": 2024,
+    "question": "xy 平面上の 2 次元流れで，速度場 u = A(x+y)，v = A(x-y)（A は定数）とするとき，z 軸（紙面垂直方向）まわりの渦度として正しいものはどれか。",
     "choices": [
       "0",
-      "1/2",
-      "√2/2",
-      "1"
-    ],
-    "correctIndex": 1,
-    "explanation": "基本角の値としてsin30°=1/2。"
-  },
-  {
-    "category": "基礎科目",
-    "year": 2025,
-    "question": "微分方程式 dy/dx=3y の一般解として正しいものはどれか。",
-    "choices": [
-      "y=C e^{3x}",
-      "y=3x+C",
-      "y=C/x³",
-      "y=C sin3x"
+      "2A",
+      "-2A",
+      "A"
     ],
     "correctIndex": 0,
-    "explanation": "dy/y=3dxより ln|y|=3x+C、したがって y=C e^{3x}。"
+    "explanation": "渦度 ω_z = ∂v/∂x - ∂u/∂y = A - A = 0。この流れは非回転流れ（渦なし流れ，ポテンシャル流れ）である。"
   },
   {
-    "category": "基礎科目",
-    "year": 2025,
-    "question": "CSV形式の特徴として正しいものはどれか。",
+    "category": "専門科目（機械部門）",
+    "year": 2024,
+    "question": "大きな容器に水が満たされ，水面より深さ h の側壁に小さな穴が空いている。側壁より流れ出る流速として最も適切なものはどれか。ただし，水の密度は ρ，重力加速度は g とし，粘性は無視する。",
     "choices": [
-      "値をカンマで区切るテキスト形式",
-      "画像圧縮形式",
-      "暗号鍵の形式",
-      "機械語の形式"
+      "√(2gh)",
+      "√(gh)",
+      "2gh",
+      "√(ρgh)"
     ],
     "correctIndex": 0,
-    "explanation": "CSVはComma-Separated Valuesで、値をカンマ区切りにしたテキスト形式。"
+    "explanation": "ベルヌーイの定理を水面（v≈0，z=h，p=p_atm）と穴（v=?，z=0，p=p_atm）に適用：ρgh = ρv²/2 → v = √(2gh)。トリチェリの定理と呼ばれる。",
+    "figureHtml": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 300 160\" width=\"300\" height=\"160\" style=\"max-width:100%;font-family:sans-serif;font-size:12px\">\n    <rect x=\"40\" y=\"20\" width=\"180\" height=\"130\" fill=\"rgba(100,160,255,0.2)\" stroke=\"#333\" stroke-width=\"2\"/>\n    <line x1=\"220\" y1=\"110\" x2=\"250\" y2=\"110\" stroke=\"#44a\" stroke-width=\"3\"/>\n    <line x1=\"250\" y1=\"110\" x2=\"280\" y2=\"110\" stroke=\"#44a\" stroke-width=\"2\" stroke-dasharray=\"3,2\" marker-end=\"url(#av)\"/>\n    <text x=\"270\" y=\"105\" font-size=\"11\" fill=\"#44a\">v</text>\n    <line x1=\"230\" y1=\"20\" x2=\"230\" y2=\"110\" stroke=\"#e44\" stroke-width=\"1.5\" stroke-dasharray=\"4,3\"/>\n    <text x=\"238\" y=\"65\" font-size=\"11\" fill=\"#e44\">h</text>\n    <line x1=\"220\" y1=\"20\" x2=\"245\" y2=\"20\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <line x1=\"220\" y1=\"110\" x2=\"245\" y2=\"110\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <defs><marker id=\"av\" markerWidth=\"6\" markerHeight=\"6\" refX=\"5\" refY=\"3\" orient=\"auto\"><path d=\"M0,0 L6,3 L0,6 z\" fill=\"#44a\"/></marker></defs>\n  </svg>"
   },
   {
-    "category": "基礎科目",
-    "year": 2025,
-    "question": "リスクの大きさを簡易的に評価するときによく使う考え方はどれか。",
+    "category": "専門科目（機械部門）",
+    "year": 2024,
+    "question": "流速 U = 30 m/s で流れる空気中に，直径 d = 6 mm の円柱アンテナが流れに直交して置かれている。空気の動粘性係数を 1.5×10⁻⁵ m²/s，ストローハル数を 0.2 として，放出される渦の周波数として最も近い値はどれか。",
     "choices": [
-      "発生確率×影響度",
-      "価格×色",
-      "重量÷温度",
-      "名称の長さ"
+      "1.0 kHz",
+      "2.0 kHz",
+      "500 Hz",
+      "5.0 kHz"
     ],
     "correctIndex": 0,
-    "explanation": "リスク評価では発生確率と影響度の組合せで優先度を決める考え方がよく使われる。"
+    "explanation": "ストローハル数 St = fd/U → f = St×U/d = 0.2×30/0.006 = 6/0.006 = 1000 Hz = 1.0 kHz。レイノルズ数 Re = Ud/ν = 30×0.006/1.5×10⁻⁵ = 12000（渦放出領域）。"
   },
   {
-    "category": "基礎科目",
-    "year": 2025,
-    "question": "表の選択肢のうち、SI基本単位に含まれるものはどれか。",
+    "category": "専門科目（機械部門）",
+    "year": 2024,
+    "question": "直径 d = 0.08 m のノズルから速度 v = 20 m/s で噴出する水が，同じ方向に速度 u = 5 m/s で動く大きな平板に垂直に衝突するとき，噴流が平板に及ぼす力として最も近い値はどれか。ただし，水の密度は 1000 kg/m³ とし，粘性の影響は無視する。",
     "choices": [
-      "ニュートン",
-      "ジュール",
-      "キログラム",
-      "パスカル"
-    ],
-    "correctIndex": 2,
-    "explanation": "kgはSI基本単位。N、J、Paは組立単位である。",
-    "figureHtml": "<div style='overflow:auto'><table style='width:100%;border-collapse:collapse;font-size:13px;color:#e8edf4'><tbody><tr><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>単位</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>分類</td></tr><tr><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>kg</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>質量の基本単位</td></tr><tr><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>N</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>kg・m/s²</td></tr><tr><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>J</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>N・m</td></tr><tr><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>Pa</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>N/m²</td></tr></tbody></table></div>"
-  },
-  {
-    "category": "適性科目（法令・倫理）",
-    "year": 2025,
-    "question": "技術士補として業務を行う場合の基本的な位置づけとして適切なものはどれか。",
-    "choices": [
-      "常に単独で技術士業務を行う",
-      "指導技術士の補助として業務を行う",
-      "登録なしで名称を使える",
-      "技術士法の義務は全く関係ない"
-    ],
-    "correctIndex": 1,
-    "explanation": "技術士補は登録を受け、指導技術士の補助として業務を行う位置づけである。"
-  },
-  {
-    "category": "適性科目（法令・倫理）",
-    "year": 2025,
-    "question": "知的財産に関する技術者の対応として適切なものはどれか。",
-    "choices": [
-      "他社図面を無断で流用する",
-      "権利関係を確認し必要な許諾を得る",
-      "出典を消せば自由に使える",
-      "社内資料なら外部公開してよい"
-    ],
-    "correctIndex": 1,
-    "explanation": "図面・写真・文章・発明などは権利関係を確認し、必要に応じて許諾を得る。"
-  },
-  {
-    "category": "適性科目（法令・倫理）",
-    "year": 2025,
-    "question": "環境負荷の大きい設計案を採用するか迷う場合の姿勢として適切なものはどれか。",
-    "choices": [
-      "初期費用だけで決める",
-      "ライフサイクル全体の環境負荷も比較する",
-      "廃棄段階は無視する",
-      "法令外なら何をしてもよい"
-    ],
-    "correctIndex": 1,
-    "explanation": "持続可能性の観点では、製造・使用・保守・廃棄を含むライフサイクル全体で考える。"
-  },
-  {
-    "category": "適性科目（法令・倫理）",
-    "year": 2025,
-    "question": "内部通報に関する技術者の姿勢として最も適切なものはどれか。",
-    "choices": [
-      "公益に関わる不正を知っても放置する",
-      "社内手続や法令を確認し適切な窓口へ相談する",
-      "証拠を改ざんして通報する",
-      "SNSだけで断定的に拡散する"
-    ],
-    "correctIndex": 1,
-    "explanation": "公益通報は事実確認、記録、適切な窓口の利用が重要である。"
-  },
-  {
-    "category": "適性科目（法令・倫理）",
-    "year": 2025,
-    "question": "説明責任に関する記述として適切なものはどれか。",
-    "choices": [
-      "専門家だけが分かればよい",
-      "利害関係者に根拠と限界を分かりやすく説明する",
-      "不確実性は隠す",
-      "都合のよい結果だけを示す"
-    ],
-    "correctIndex": 1,
-    "explanation": "技術判断では根拠、前提、限界、不確実性を分かりやすく説明する責任がある。"
-  },
-  {
-    "category": "適性科目（法令・倫理）",
-    "year": 2025,
-    "question": "品質不具合を発見したが出荷直前である場合の対応として適切なものはどれか。",
-    "choices": [
-      "出荷後に考える",
-      "リスクを評価し関係者へ報告して判断を仰ぐ",
-      "検査記録を削除する",
-      "顧客に知られなければよい"
-    ],
-    "correctIndex": 1,
-    "explanation": "品質不具合はリスク評価、報告、是正判断が必要であり、記録削除や隠ぺいは不適切。"
-  },
-  {
-    "category": "適性科目（法令・倫理）",
-    "year": 2025,
-    "question": "技術者の安全文化として適切なものはどれか。",
-    "choices": [
-      "ヒヤリハットを共有する",
-      "小さな異常は全て無視する",
-      "報告者を責める",
-      "過去事故から学ばない"
+      "1.13 kN",
+      "2.01 kN",
+      "0.50 kN",
+      "4.02 kN"
     ],
     "correctIndex": 0,
-    "explanation": "ヒヤリハットや小さな異常を共有し、事故予防につなげることが安全文化の基本である。"
-  },
-  {
-    "category": "適性科目（法令・倫理）",
-    "year": 2025,
-    "question": "契約上の要求と法令・安全要求が矛盾する場合の対応として適切なものはどれか。",
-    "choices": [
-      "契約だけを優先する",
-      "法令・安全要求を確認し、必要なら契約条件の見直しを提案する",
-      "安全要求を隠す",
-      "担当者の経験だけで無視する"
-    ],
-    "correctIndex": 1,
-    "explanation": "契約よりも法令遵守と安全確保が前提であり、矛盾があれば説明と調整が必要である。"
-  },
-  {
-    "category": "専門科目（機械部門）",
-    "year": 2025,
-    "question": "図の単純支持梁中央にP=16kNが作用する。最大曲げモーメントはどれか。",
-    "choices": [
-      "16kN・m",
-      "24kN・m",
-      "48kN・m",
-      "96kN・m"
-    ],
-    "correctIndex": 2,
-    "explanation": "中央集中荷重の単純支持梁ではMmax=PL/4。L=12mなので 16×12/4=48kN・m。",
-    "figureHtml": "<svg viewBox='0 0 420 170' xmlns='http://www.w3.org/2000/svg' style='max-width:100%;height:auto;display:block;margin:auto'><defs><marker id='a' markerWidth='8' markerHeight='6' refX='6' refY='3' orient='auto'><path d='M0,0L8,3L0,6z' fill='#f0c040'/></marker></defs><rect x='65' y='92' width='290' height='12' rx='2' fill='#6a8fc8'/><polygon points='65,104 48,130 82,130' fill='none' stroke='#a8c4e0' stroke-width='2'/><polygon points='355,104 338,130 372,130' fill='none' stroke='#a8c4e0' stroke-width='2'/><ellipse cx='355' cy='135' rx='7' ry='5' fill='none' stroke='#a8c4e0' stroke-width='2'/><line x1='210' y1='45' x2='210' y2='88' stroke='#f0c040' stroke-width='2.5' marker-end='url(#a)'/><text x='220' y='45' fill='#f0c040' font-size='14'>P=16kN</text><text x='190' y='78' fill='#8b9aad' font-size='12'>L=12m</text><line x1='65' y1='145' x2='355' y2='145' stroke='#8b9aad'/><line x1='65' y1='138' x2='65' y2='152' stroke='#8b9aad'/><line x1='355' y1='138' x2='355' y2='152' stroke='#8b9aad'/></svg>"
-  },
-  {
-    "category": "専門科目（機械部門）",
-    "year": 2025,
-    "question": "Taylorの工具寿命式 VT^n=C において、切削速度Vを上げると工具寿命Tは一般にどうなるか。",
-    "choices": [
-      "長くなる",
-      "短くなる",
-      "変わらない",
-      "必ず無限大になる"
-    ],
-    "correctIndex": 1,
-    "explanation": "Cとnが一定なら、Vが大きいほどTは小さくなる。高速切削は工具寿命を短くしやすい。"
-  },
-  {
-    "category": "専門科目（機械部門）",
-    "year": 2025,
-    "question": "鋳造で湯が凝固時に体積減少することに対応するため設けるものはどれか。",
-    "choices": [
-      "押湯",
-      "逃げ溝",
-      "キー溝",
-      "止め輪"
-    ],
-    "correctIndex": 0,
-    "explanation": "押湯は凝固収縮に対して溶湯を補給し、ひけ巣を防ぐために設ける。"
-  },
-  {
-    "category": "専門科目（機械部門）",
-    "year": 2025,
-    "question": "炭素鋼の焼入れの主目的として適切なものはどれか。",
-    "choices": [
-      "硬さを高める",
-      "密度を半分にする",
-      "導電率をゼロにする",
-      "必ず完全に軟化させる"
-    ],
-    "correctIndex": 0,
-    "explanation": "焼入れは急冷によってマルテンサイトなどを生成させ、硬さや強度を高める処理。"
-  },
-  {
-    "category": "専門科目（機械部門）",
-    "year": 2025,
-    "question": "PID制御の積分動作Iの主な役割はどれか。",
-    "choices": [
-      "定常偏差を減らす",
-      "測定値を常にゼロにする",
-      "ばね定数を変える",
-      "歯車比を変える"
-    ],
-    "correctIndex": 0,
-    "explanation": "積分動作は偏差を積算し、定常偏差の低減に効果がある。ただし安定性低下に注意。"
-  },
-  {
-    "category": "専門科目（機械部門）",
-    "year": 2025,
-    "question": "単位フィードバック系で開ループ伝達関数G(s)=K/sの閉ループ伝達関数はどれか。",
-    "choices": [
-      "K/s",
-      "K/(s+K)",
-      "s/(s+K)",
-      "1/(sK)"
-    ],
-    "correctIndex": 1,
-    "explanation": "閉ループ伝達関数はG/(1+G)=K/s /(1+K/s)=K/(s+K)。"
-  },
-  {
-    "category": "専門科目（機械部門）",
-    "year": 2025,
-    "question": "カム機構の主な用途として適切なものはどれか。",
-    "choices": [
-      "回転運動を所定の従節変位に変換する",
-      "水を加熱する",
-      "電気抵抗を測る",
-      "材料を焼入れする"
-    ],
-    "correctIndex": 0,
-    "explanation": "カムは輪郭形状により従節へ所定の変位・速度・加速度を与える機械要素である。"
-  },
-  {
-    "category": "専門科目（機械部門）",
-    "year": 2025,
-    "question": "回転体の運動エネルギーとして正しい式はどれか。",
-    "choices": [
-      "Iω²/2",
-      "mgh",
-      "kx²",
-      "pV"
-    ],
-    "correctIndex": 0,
-    "explanation": "回転運動のエネルギーはE=1/2 Iω²。直線運動の1/2 mv²に対応する。"
-  },
-  {
-    "category": "専門科目（機械部門）",
-    "year": 2025,
-    "question": "トルクT=100N・m、角速度ω=50rad/sで回転する軸の出力はどれか。",
-    "choices": [
-      "2kW",
-      "5kW",
-      "50kW",
-      "500kW"
-    ],
-    "correctIndex": 1,
-    "explanation": "回転動力P=Tω=100×50=5000W=5kW。"
-  },
-  {
-    "category": "専門科目（機械部門）",
-    "year": 2025,
-    "question": "冷凍機の成績係数COPの説明として正しいものはどれか。",
-    "choices": [
-      "冷凍能力/入力仕事",
-      "入力仕事/冷凍能力",
-      "高温熱源温度のみ",
-      "摩擦係数"
-    ],
-    "correctIndex": 0,
-    "explanation": "冷凍機COPは取り出す冷凍効果を入力仕事で割った値。値が大きいほど効率がよい。"
-  },
-  {
-    "category": "専門科目（機械部門）",
-    "year": 2025,
-    "question": "表のS-Nデータから、応力振幅が小さくなると疲労寿命は一般にどうなるか。",
-    "choices": [
-      "短くなる",
-      "長くなる",
-      "必ずゼロになる",
-      "材料と無関係になる"
-    ],
-    "correctIndex": 1,
-    "explanation": "S-N曲線では応力振幅が小さいほど破断までの繰返し数は増える傾向がある。",
-    "figureHtml": "<div style='overflow:auto'><table style='width:100%;border-collapse:collapse;font-size:13px;color:#e8edf4'><tbody><tr><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>応力振幅</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>300MPa</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>250MPa</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>200MPa</td></tr><tr><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>破断繰返し数</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>1e4</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>1e5</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>1e6</td></tr></tbody></table></div>"
-  },
-  {
-    "category": "専門科目（機械部門）",
-    "year": 2025,
-    "question": "有限要素法でメッシュを細かくする主な目的として適切なものはどれか。",
-    "choices": [
-      "形状・応力分布の近似精度を高める",
-      "必ず計算時間をゼロにする",
-      "材料強度を変える",
-      "境界条件を不要にする"
-    ],
-    "correctIndex": 0,
-    "explanation": "メッシュを細かくすると近似精度は上がりやすいが、計算時間やモデル作成負荷は増える。"
-  },
-  {
-    "category": "専門科目（機械部門）",
-    "year": 2025,
-    "question": "3Dプリンタの積層造形に関する説明として適切なものはどれか。",
-    "choices": [
-      "材料を層状に積み重ねて形状を作る",
-      "必ず切削だけで作る",
-      "全ての材料で熱処理不要",
-      "図面が不要になる"
-    ],
-    "correctIndex": 0,
-    "explanation": "積層造形は材料を層状に付加して形状を作る加工法で、複雑形状に強い。"
+    "explanation": "相対速度 = v - u = 20 - 5 = 15 m/s。噴流断面積 A = π/4×0.08² = 5.027×10⁻³ m²。力 F = ρA(v-u)² = 1000×5.027×10⁻³×15² = 1000×5.027×10⁻³×225 ≈ 1131 N ≈ 1.13 kN。"
   },
   {
     "category": "専門科目（機械部門）",
@@ -2563,283 +2460,5 @@
     ],
     "correctIndex": 0,
     "explanation": "レイノルズ数 Re_L = UL/ν = 15×0.15/(1.5×10⁻⁵) = 2.25/1.5×10⁻⁵ = 1.5×10⁵。平均ヌセルト数（層流）Nu = 0.664×Re_L^0.5×Pr^(1/3) = 0.664×√(1.5×10⁵)×0.89 = 0.664×387.3×0.89 ≈ 0.664×344.7 ≈ 229 ≈ 198（計算の四捨五入による）。"
-  },
-  {
-    "category": "専門科目（機械部門）",
-    "year": 2024,
-    "question": "直径 D，長さ l の同一寸法の丸棒（棒1，棒2）が左端を壁，右端を剛体板で並列に接続されている。棒1の弾性係数 E₁，棒2の弾性係数 E₂ として，右端の剛体板に荷重 P を加えるとき，棒1に発生する応力 σ₁ として最も適切なものはどれか。",
-    "choices": [
-      "4E₁P / [πD²(E₁+E₂)]",
-      "4E₂P / [πD²(E₁+E₂)]",
-      "2E₁P / [πD²(E₁+E₂)]",
-      "4P / [πD²(E₁+E₂)]"
-    ],
-    "correctIndex": 0,
-    "explanation": "断面積 A = πD²/4。変位適合（剛体板）：ε₁=ε₂ → σ₁/E₁=σ₂/E₂ → σ₂=σ₁E₂/E₁。力の釣り合い：A·σ₁+A·σ₂=P → A·σ₁(1+E₂/E₁)=P → σ₁=E₁P/[A(E₁+E₂)]=4E₁P/[πD²(E₁+E₂)]。",
-    "figureHtml": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 300 150\" width=\"300\" height=\"150\" style=\"max-width:100%;font-family:sans-serif;font-size:12px\">\n    <rect x=\"10\" y=\"40\" width=\"12\" height=\"80\" fill=\"#888\"/>\n    <line x1=\"22\" y1=\"60\" x2=\"240\" y2=\"60\" stroke=\"#555\" stroke-width=\"8\"/>\n    <line x1=\"22\" y1=\"100\" x2=\"240\" y2=\"100\" stroke=\"#999\" stroke-width=\"8\"/>\n    <rect x=\"240\" y=\"40\" width=\"12\" height=\"80\" fill=\"#555\"/>\n    <text x=\"130\" y=\"52\" text-anchor=\"middle\" font-size=\"10\">棒1: E₁</text>\n    <text x=\"130\" y=\"92\" text-anchor=\"middle\" font-size=\"10\">棒2: E₂</text>\n    <line x1=\"252\" y1=\"80\" x2=\"280\" y2=\"80\" stroke=\"#e44\" stroke-width=\"2\" marker-end=\"url(#ar)\"/>\n    <text x=\"285\" y=\"84\" font-size=\"11\" fill=\"#e44\">P</text>\n    <defs><marker id=\"ar\" markerWidth=\"6\" markerHeight=\"6\" refX=\"5\" refY=\"3\" orient=\"auto\"><path d=\"M0,0 L6,3 L0,6 z\" fill=\"#e44\"/></marker></defs>\n  </svg>"
-  },
-  {
-    "category": "専門科目（機械部門）",
-    "year": 2024,
-    "question": "薄肉球殻容器（内径 d = 6.0 m，肉厚 t = 3.0 mm）に内圧 p = 1.2 MPa が作用するとき，円周方向（膜）応力 σθ として最も近い値はどれか。",
-    "choices": [
-      "600 MPa",
-      "300 MPa",
-      "400 MPa",
-      "1200 MPa"
-    ],
-    "correctIndex": 0,
-    "explanation": "薄肉球殻の膜応力は σθ = pd/(4t) = 1.2×6.0/(4×0.003) = 7.2/0.012 = 600 MPa。球殻は全方向で同じ応力（等二軸応力状態）となる。"
-  },
-  {
-    "category": "専門科目（機械部門）",
-    "year": 2024,
-    "question": "σx = 40 MPa，σy = 20 MPa，τxy = 0 の平面応力状態において，x 軸から 60° 傾いた傾斜面にかかる垂直応力 σ と せん断応力 τ の組合せとして正しいものはどれか。",
-    "choices": [
-      "σ = 25.0 MPa，τ = 8.66 MPa",
-      "σ = 35.0 MPa，τ = 8.66 MPa",
-      "σ = 25.0 MPa，τ = 17.3 MPa",
-      "σ = 30.0 MPa，τ = 10.0 MPa"
-    ],
-    "correctIndex": 0,
-    "explanation": "θ = 60°（法線がx軸となす角）。σ = (σx+σy)/2 + (σx-σy)/2·cos(2×60°) = 30 + 10·cos120° = 30 - 5 = 25.0 MPa。τ = -(σx-σy)/2·sin(2×60°) = -10·sin120° = -10×(√3/2) = -8.66 MPa → |τ| = 8.66 MPa。"
-  },
-  {
-    "category": "専門科目（機械部門）",
-    "year": 2024,
-    "question": "長さ l ，曲げ剛性 EI の単純支持はりの右半分（長さ l/2 の CB 区間）に等分布荷重 q が作用している。はりの中央点 C に生じる曲げモーメント M として正しいものはどれか。",
-    "choices": [
-      "M = ql²/16",
-      "M = ql²/8",
-      "M = ql²/32",
-      "M = 3ql²/16"
-    ],
-    "correctIndex": 0,
-    "explanation": "A点（左ピン）の支点反力：RA×l = q×(l/2)×(l/4)（合力ql/2が右端からl/4）→ RA = ql/8。中央C点でのモーメント：M_C = RA×(l/2) = (ql/8)×(l/2) = ql²/16。",
-    "figureHtml": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 300 115\" width=\"300\" height=\"115\" style=\"max-width:100%;font-family:sans-serif;font-size:12px\">\n    <line x1=\"30\" y1=\"80\" x2=\"270\" y2=\"80\" stroke=\"#333\" stroke-width=\"3\"/>\n    <polygon points=\"30,80 20,100 40,100\" fill=\"none\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <line x1=\"248\" y1=\"80\" x2=\"258\" y2=\"95\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <line x1=\"258\" y1=\"95\" x2=\"268\" y2=\"80\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <line x1=\"248\" y1=\"100\" x2=\"280\" y2=\"100\" stroke=\"#333\" stroke-width=\"1\"/>\n    <text x=\"30\" y=\"70\" text-anchor=\"middle\" font-size=\"10\">A</text>\n    <text x=\"150\" y=\"70\" text-anchor=\"middle\" font-size=\"10\">C</text>\n    <text x=\"270\" y=\"70\" text-anchor=\"middle\" font-size=\"10\">B</text>\n    <line x1=\"150\" y1=\"75\" x2=\"150\" y2=\"85\" stroke=\"#aaa\" stroke-width=\"1\" stroke-dasharray=\"2,2\"/>\n    <line x1=\"150\" y1=\"55\" x2=\"270\" y2=\"55\" stroke=\"#44f\" stroke-width=\"1.5\"/>\n    <line x1=\"155\" y1=\"60\" x2=\"155\" y2=\"75\" stroke=\"#44f\" stroke-width=\"1.5\" marker-end=\"url(#a2)\"/>\n    <line x1=\"175\" y1=\"60\" x2=\"175\" y2=\"75\" stroke=\"#44f\" stroke-width=\"1.5\" marker-end=\"url(#a2)\"/>\n    <line x1=\"195\" y1=\"60\" x2=\"195\" y2=\"75\" stroke=\"#44f\" stroke-width=\"1.5\" marker-end=\"url(#a2)\"/>\n    <line x1=\"215\" y1=\"60\" x2=\"215\" y2=\"75\" stroke=\"#44f\" stroke-width=\"1.5\" marker-end=\"url(#a2)\"/>\n    <line x1=\"235\" y1=\"60\" x2=\"235\" y2=\"75\" stroke=\"#44f\" stroke-width=\"1.5\" marker-end=\"url(#a2)\"/>\n    <text x=\"210\" y=\"52\" text-anchor=\"middle\" font-size=\"10\" fill=\"#44f\">q</text>\n    <defs><marker id=\"a2\" markerWidth=\"6\" markerHeight=\"6\" refX=\"3\" refY=\"5\" orient=\"auto\"><path d=\"M0,0 L6,0 L3,6 z\" fill=\"#44f\"/></marker></defs>\n  </svg>"
-  },
-  {
-    "category": "専門科目（機械部門）",
-    "year": 2024,
-    "question": "片持ちはり（曲げ剛性 EI，長さ l）に集中荷重 P を先端に，等分布荷重 q を全長に作用させるとき，先端のたわみが等しくなる P と q の関係として正しいものはどれか。",
-    "choices": [
-      "P = 3ql/8",
-      "P = ql/2",
-      "P = 3ql/4",
-      "P = ql/4"
-    ],
-    "correctIndex": 0,
-    "explanation": "先端たわみの公式：集中荷重P → δ_P = Pl³/(3EI)，等分布荷重q → δ_q = ql⁴/(8EI)。等しくなる条件：Pl³/(3EI) = ql⁴/(8EI) → P = 3ql/8。"
-  },
-  {
-    "category": "専門科目（機械部門）",
-    "year": 2024,
-    "question": "下図のように，曲げ剛性 EI，長さ L の柱の端部条件を変えたとき，それぞれの座屈荷重の大小関係として最も適切なものはどれか。ただし A は両端ピン（単純支持），B は一端固定・一端ピン，C は両端固定とする。",
-    "choices": [
-      "PA < PB < PC",
-      "PA < PC < PB",
-      "PB < PA < PC",
-      "PC < PB < PA"
-    ],
-    "correctIndex": 0,
-    "explanation": "オイラーの座屈荷重 Pcr = π²EI/L_e²（L_e：有効座屈長さ）。A（両端ピン）：L_e=L，PA=π²EI/L²。B（一端固定・一端ピン）：L_e≈0.7L，PB≈2π²EI/L²≈2PA。C（両端固定）：L_e=0.5L，PC=4π²EI/L²=4PA。よってPA < PB < PC。"
-  },
-  {
-    "category": "専門科目（機械部門）",
-    "year": 2024,
-    "question": "状態方程式 ẋ = Ax + Bu，出力方程式 y = Cx が次のように与えられるとき，入力 u から出力 y への伝達関数 G(s) として正しいものはどれか。A = [0,1;−6,−5]，B = [0;1]，C = [1,0]",
-    "choices": [
-      "1 / (s²+5s+6)",
-      "s / (s²+5s+6)",
-      "1 / (s²−5s+6)",
-      "(s+1) / (s²+5s+6)"
-    ],
-    "correctIndex": 0,
-    "explanation": "G(s) = C(sI−A)⁻¹B。sI−A = [s,−1;6,s+5]，det=s(s+5)+6=s²+5s+6。(sI−A)⁻¹ = 1/(s²+5s+6)×[s+5,1;−6,s]。G(s) = [1,0]×(...)×[0;1] = 1/(s²+5s+6)。"
-  },
-  {
-    "category": "専門科目（機械部門）",
-    "year": 2024,
-    "question": "s 領域で表された F(s) = (s+3) / (s²+6s+10) の逆ラプラス変換 f(t) として正しいものはどれか。",
-    "choices": [
-      "e^{−3t}(cost − 3sint)",
-      "e^{3t}(cost + 3sint)",
-      "e^{−3t}(cost + 3sint)",
-      "e^{−3t}cos2t"
-    ],
-    "correctIndex": 0,
-    "explanation": "s²+6s+10 = (s+3)²+1。F(s) = (s+3)/[(s+3)²+1] × 1 - 0·1/[(s+3)²+1]... \n実際：F(s) = (s+3)/[(s+3)²+1]。これはe^{-at}costのラプラス変換 (s+a)/[(s+a)²+1] の形（a=3）。f(t) = e^{-3t}cost。\n補正：(s+3+0×1)/[(s+3)²+1] = (s+3)/[(s+3)²+1] → f(t) = e^{-3t}cost。しかし選択肢①はe^{-3t}(cost−3sint)...正確には (s+3)/[(s+3)²+ω²]のωの問題。ω=1の場合 f(t)=e^{-3t}cost が正解。選択肢①のcost−3sintは別の分解。実際f(t)=e^{-3t}costが最も適切。"
-  },
-  {
-    "category": "専門科目（機械部門）",
-    "year": 2024,
-    "question": "伝達関数 G(s) = (s−3) / (s²+7s+12) の安定性に関する記述として最も適切なものはどれか。",
-    "choices": [
-      "2つの極（根）が負の値（−3，−4）を持つから，この系は安定である。",
-      "2つの極（根）が正の値（3，4）を持つから，この系は不安定である。",
-      "零点が 3 であるから，この系は不安定である。",
-      "零点が −3 であるから，この系は安定である。"
-    ],
-    "correctIndex": 0,
-    "explanation": "伝達関数の安定性は分母（極）の符号で決まる。分母 s²+7s+12 = (s+3)(s+4)。極は s=−3，s=−4（いずれも負の実部）。よってこの系は安定。零点（s=3）は安定性に無関係。"
-  },
-  {
-    "category": "専門科目（機械部門）",
-    "year": 2024,
-    "question": "フィードバック制御系で，プラント P(s) = 1/(s+2)，コントローラ C(s) = K（比例制御）の場合，閉ループ系の伝達関数 G_cl(s) として正しいものはどれか。",
-    "choices": [
-      "K / (s+2+K)",
-      "K / (s+K)",
-      "1 / (s+2+K)",
-      "K(s+2) / (s+2+K)"
-    ],
-    "correctIndex": 0,
-    "explanation": "フィードバック閉ループ：G_cl = P(s)C(s)/(1+P(s)C(s)) = [K/(s+2)] / [1+K/(s+2)] = K/(s+2+K)。極は s = −(2+K)（K>0なら安定）。"
-  },
-  {
-    "category": "専門科目（機械部門）",
-    "year": 2024,
-    "question": "質量 m = 0.5 kg，ばね定数 k = 800 N/m の 1 自由度振動系の臨界減衰係数 c_c として最も近い値はどれか。",
-    "choices": [
-      "40 Ns/m",
-      "20 Ns/m",
-      "80 Ns/m",
-      "10 Ns/m"
-    ],
-    "correctIndex": 0,
-    "explanation": "固有角振動数 ω_n = √(k/m) = √(800/0.5) = √1600 = 40 rad/s。臨界減衰係数 c_c = 2mω_n = 2×0.5×40 = 40 Ns/m。",
-    "figureHtml": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 300 100\" width=\"300\" height=\"100\" style=\"max-width:100%;font-family:sans-serif;font-size:12px\">\n    <rect x=\"10\" y=\"0\" width=\"280\" height=\"10\" fill=\"#888\"/>\n    <path d=\"M80,10 Q86,20 92,10 Q98,0 104,10 Q110,20 116,10 Q122,0 128,10\" fill=\"none\" stroke=\"#333\" stroke-width=\"2\"/>\n    <line x1=\"128\" y1=\"10\" x2=\"128\" y2=\"50\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <rect x=\"108\" y=\"50\" width=\"40\" height=\"30\" fill=\"#cde\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <text x=\"128\" y=\"70\" text-anchor=\"middle\" font-size=\"11\">m</text>\n    <line x1=\"200\" y1=\"10\" x2=\"200\" y2=\"45\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <rect x=\"185\" y=\"45\" width=\"30\" height=\"30\" fill=\"none\" stroke=\"#333\" stroke-width=\"2\"/>\n    <line x1=\"185\" y1=\"58\" x2=\"215\" y2=\"58\" stroke=\"#333\" stroke-width=\"3\"/>\n    <line x1=\"200\" y1=\"75\" x2=\"200\" y2=\"80\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <line x1=\"200\" y1=\"80\" x2=\"128\" y2=\"80\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <text x=\"80\" y=\"7\" text-anchor=\"middle\" font-size=\"10\">k</text>\n    <text x=\"210\" y=\"62\" font-size=\"10\">c</text>\n  </svg>"
-  },
-  {
-    "category": "専門科目（機械部門）",
-    "year": 2024,
-    "question": "密度 ρ，断面積 A，長さ l の均一な剛体棒が，一端 O でピン支持され，一端から距離 a の位置でばね定数 k のばねで支持されている。この系の固有角振動数 ω_n として最も適切なものはどれか。",
-    "choices": [
-      "√(3ka² / ρAl³)",
-      "√(ka² / ρAl³)",
-      "√(3k / ρAl)",
-      "√(ka / ρAl²)"
-    ],
-    "correctIndex": 0,
-    "explanation": "O点まわりの質量慣性モーメント I = ρAl³/3。小角度変位θに対するばねの復元モーメント = −k×(aθ)×a = −ka²θ。運動方程式：(ρAl³/3)θ̈ + ka²θ = 0。固有角振動数 ω_n = √(ka²/(ρAl³/3)) = √(3ka²/(ρAl³))。",
-    "figureHtml": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 270 115\" width=\"270\" height=\"115\" style=\"max-width:100%;font-family:sans-serif;font-size:12px\">\n    <rect x=\"0\" y=\"50\" width=\"12\" height=\"50\" fill=\"#888\"/>\n    <line x1=\"10\" y1=\"75\" x2=\"250\" y2=\"75\" stroke=\"#333\" stroke-width=\"5\"/>\n    <circle cx=\"10\" cy=\"75\" r=\"6\" fill=\"none\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <rect x=\"78\" y=\"20\" width=\"8\" height=\"50\" fill=\"#888\"/>\n    <path d=\"M86,35 Q90,28 94,35 Q98,42 102,35 Q106,28 110,35 Q114,42 118,35\" fill=\"none\" stroke=\"#333\" stroke-width=\"2\"/>\n    <line x1=\"118\" y1=\"35\" x2=\"118\" y2=\"75\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <text x=\"100\" y=\"15\" text-anchor=\"middle\" font-size=\"10\">k</text>\n    <line x1=\"10\" y1=\"88\" x2=\"118\" y2=\"88\" stroke=\"#aaa\" stroke-width=\"1\" stroke-dasharray=\"3,2\"/>\n    <text x=\"64\" y=\"100\" text-anchor=\"middle\" font-size=\"10\">a</text>\n    <line x1=\"10\" y1=\"93\" x2=\"250\" y2=\"93\" stroke=\"#aaa\" stroke-width=\"1\" stroke-dasharray=\"3,2\"/>\n    <text x=\"130\" y=\"105\" text-anchor=\"middle\" font-size=\"10\">l</text>\n  </svg>"
-  },
-  {
-    "category": "専門科目（機械部門）",
-    "year": 2024,
-    "question": "水平な床の上を速度 v₀ で運動する質量 m の物体が，傾斜角 45° の静止した質量 2m のくさびに弾性衝突した。摩擦を無視するとき，衝突後のくさびの速度 V として正しいものはどれか。",
-    "choices": [
-      "V = 2v₀/5",
-      "V = v₀/2",
-      "V = v₀/3",
-      "V = v₀/4"
-    ],
-    "correctIndex": 0,
-    "explanation": "弾性衝突：運動量保存とエネルギー保存，かつくさびの斜面（45°）に垂直な成分のみ力が作用（摩擦なし）。連立解くと V = 2v₀/5（くさびのx方向速度）。"
-  },
-  {
-    "category": "専門科目（機械部門）",
-    "year": 2024,
-    "question": "室温 20℃の部屋に，表面温度 250℃，放射率 ε = 0.9 の物体が置かれている。平均対流熱伝達率を 15 W/(m²·K) とするとき，物体表面からの総放熱流束として最も近い値はどれか。ただし，ステファン・ボルツマン定数を 5.67×10⁻⁸ W/(m²·K⁴) とする。",
-    "choices": [
-      "6.3 kW/m²",
-      "3.5 kW/m²",
-      "10 kW/m²",
-      "2.7 kW/m²"
-    ],
-    "correctIndex": 0,
-    "explanation": "対流熱流束 q_conv = h(T_s−T_∞) = 15×(250−20) = 15×230 = 3450 W/m²。放射熱流束 q_rad = ε×σ×(T_s⁴−T_∞⁴) = 0.9×5.67×10⁻⁸×(523⁴−293⁴)。523⁴≈7.49×10¹⁰，293⁴≈7.37×10⁹。q_rad ≈ 0.9×5.67×10⁻⁸×6.75×10¹⁰ ≈ 0.9×3.44×10³ ≈ 3096 W/m²。合計 q ≈ 3450+3096 ≈ 6546 W/m² ≈ 6.3 kW/m²。"
-  },
-  {
-    "category": "専門科目（機械部門）",
-    "year": 2024,
-    "question": "ガラス板（厚さ 12 mm，熱伝導率 1.5 W/(m·K)）とプラスチック板（厚さ 6 mm，熱伝導率 0.20 W/(m·K)）が密着している。ガラス板側の表面温度が 75℃，プラスチック板側の表面温度が 25℃のとき，両板の界面温度（ア）と単位面積あたりの熱流束（イ）の組合せとして最も適切なものはどれか。",
-    "choices": [
-      "（ア）64℃，（イ）1.32 kW/m²",
-      "（ア）64℃，（イ）0.84 kW/m²",
-      "（ア）48℃，（イ）1.32 kW/m²",
-      "（ア）48℃，（イ）0.84 kW/m²"
-    ],
-    "correctIndex": 0,
-    "explanation": "熱抵抗（単位面積あたり）：R_glass = 0.012/1.5 = 8.0×10⁻³ m²K/W，R_plastic = 0.006/0.2 = 3.0×10⁻² m²K/W。合計 R = 3.8×10⁻² m²K/W。熱流束 q = ΔT/R = 50/0.038 ≈ 1316 W/m² ≈ 1.32 kW/m²。界面温度 T_int = 75 − 1316×8×10⁻³ = 75 − 10.5 ≈ 64.5°C ≈ 64°C。"
-  },
-  {
-    "category": "専門科目（機械部門）",
-    "year": 2024,
-    "question": "一様流れ中に水平に置かれた平板（長さ L）上の層流強制対流について，平均熱伝達率 h は平板長さ L が 4 倍になると何倍になるか。",
-    "choices": [
-      "1/2 倍",
-      "1/4 倍",
-      "2 倍",
-      "4 倍"
-    ],
-    "correctIndex": 0,
-    "explanation": "層流平板の強制対流：Nu_L = 0.664·Re_L^0.5·Pr^(1/3)，h = Nu_L·λ/L ∝ L^(0.5-1) = L^(-0.5)。LをL→4L にすると h → h×(4L/L)^(-0.5) = h×4^(-0.5) = h×(1/2)。よって h は 1/2 倍。"
-  },
-  {
-    "category": "専門科目（機械部門）",
-    "year": 2024,
-    "question": "圧縮比 r = 8，比熱比 κ = 1.4 の理想オットーサイクルで，ある点では温度が 350 K，圧力が 0.12 MPa（断熱圧縮前の状態）とする。断熱圧縮後の温度として最も近い値はどれか。",
-    "choices": [
-      "806 K",
-      "620 K",
-      "980 K",
-      "1100 K"
-    ],
-    "correctIndex": 0,
-    "explanation": "断熱過程：TV^(κ-1) = const → T₁V₁^(κ-1) = T₂V₂^(κ-1) → T₂ = T₁×(V₁/V₂)^(κ-1) = T₁×r^(κ-1) = 350×8^0.4。8^0.4 = 8^(2/5) = (8^2)^(1/5) = 64^(1/5) ≈ 2.297。T₂ = 350×2.297 ≈ 804 K ≈ 806 K。"
-  },
-  {
-    "category": "専門科目（機械部門）",
-    "year": 2024,
-    "question": "xy 平面上の 2 次元流れで，速度場 u = A(x+y)，v = A(x-y)（A は定数）とするとき，z 軸（紙面垂直方向）まわりの渦度として正しいものはどれか。",
-    "choices": [
-      "0",
-      "2A",
-      "-2A",
-      "A"
-    ],
-    "correctIndex": 0,
-    "explanation": "渦度 ω_z = ∂v/∂x - ∂u/∂y = A - A = 0。この流れは非回転流れ（渦なし流れ，ポテンシャル流れ）である。"
-  },
-  {
-    "category": "専門科目（機械部門）",
-    "year": 2024,
-    "question": "大きな容器に水が満たされ，水面より深さ h の側壁に小さな穴が空いている。側壁より流れ出る流速として最も適切なものはどれか。ただし，水の密度は ρ，重力加速度は g とし，粘性は無視する。",
-    "choices": [
-      "√(2gh)",
-      "√(gh)",
-      "2gh",
-      "√(ρgh)"
-    ],
-    "correctIndex": 0,
-    "explanation": "ベルヌーイの定理を水面（v≈0，z=h，p=p_atm）と穴（v=?，z=0，p=p_atm）に適用：ρgh = ρv²/2 → v = √(2gh)。トリチェリの定理と呼ばれる。",
-    "figureHtml": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 300 160\" width=\"300\" height=\"160\" style=\"max-width:100%;font-family:sans-serif;font-size:12px\">\n    <rect x=\"40\" y=\"20\" width=\"180\" height=\"130\" fill=\"rgba(100,160,255,0.2)\" stroke=\"#333\" stroke-width=\"2\"/>\n    <line x1=\"220\" y1=\"110\" x2=\"250\" y2=\"110\" stroke=\"#44a\" stroke-width=\"3\"/>\n    <line x1=\"250\" y1=\"110\" x2=\"280\" y2=\"110\" stroke=\"#44a\" stroke-width=\"2\" stroke-dasharray=\"3,2\" marker-end=\"url(#av)\"/>\n    <text x=\"270\" y=\"105\" font-size=\"11\" fill=\"#44a\">v</text>\n    <line x1=\"230\" y1=\"20\" x2=\"230\" y2=\"110\" stroke=\"#e44\" stroke-width=\"1.5\" stroke-dasharray=\"4,3\"/>\n    <text x=\"238\" y=\"65\" font-size=\"11\" fill=\"#e44\">h</text>\n    <line x1=\"220\" y1=\"20\" x2=\"245\" y2=\"20\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <line x1=\"220\" y1=\"110\" x2=\"245\" y2=\"110\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <defs><marker id=\"av\" markerWidth=\"6\" markerHeight=\"6\" refX=\"5\" refY=\"3\" orient=\"auto\"><path d=\"M0,0 L6,3 L0,6 z\" fill=\"#44a\"/></marker></defs>\n  </svg>"
-  },
-  {
-    "category": "専門科目（機械部門）",
-    "year": 2024,
-    "question": "流速 U = 30 m/s で流れる空気中に，直径 d = 6 mm の円柱アンテナが流れに直交して置かれている。空気の動粘性係数を 1.5×10⁻⁵ m²/s，ストローハル数を 0.2 として，放出される渦の周波数として最も近い値はどれか。",
-    "choices": [
-      "1.0 kHz",
-      "2.0 kHz",
-      "500 Hz",
-      "5.0 kHz"
-    ],
-    "correctIndex": 0,
-    "explanation": "ストローハル数 St = fd/U → f = St×U/d = 0.2×30/0.006 = 6/0.006 = 1000 Hz = 1.0 kHz。レイノルズ数 Re = Ud/ν = 30×0.006/1.5×10⁻⁵ = 12000（渦放出領域）。"
-  },
-  {
-    "category": "専門科目（機械部門）",
-    "year": 2024,
-    "question": "直径 d = 0.08 m のノズルから速度 v = 20 m/s で噴出する水が，同じ方向に速度 u = 5 m/s で動く大きな平板に垂直に衝突するとき，噴流が平板に及ぼす力として最も近い値はどれか。ただし，水の密度は 1000 kg/m³ とし，粘性の影響は無視する。",
-    "choices": [
-      "1.13 kN",
-      "2.01 kN",
-      "0.50 kN",
-      "4.02 kN"
-    ],
-    "correctIndex": 0,
-    "explanation": "相対速度 = v - u = 20 - 5 = 15 m/s。噴流断面積 A = π/4×0.08² = 5.027×10⁻³ m²。力 F = ρA(v-u)² = 1000×5.027×10⁻³×15² = 1000×5.027×10⁻³×225 ≈ 1131 N ≈ 1.13 kN。"
   }
 ]
