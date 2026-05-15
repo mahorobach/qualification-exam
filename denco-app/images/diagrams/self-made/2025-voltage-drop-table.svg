@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 400" role="img" aria-labelledby="title desc">
+<title id="title">電圧降下と導体抵抗表（問6）</title>
+<desc id="desc">単相2線式200V・距離100m・負荷10A、電圧降下4V以内の最小電線断面積を求める問題図（令和7年度上期 問6）</desc>
+<rect width="740" height="400" fill="#f8fafc"/>
+
+<!-- Circuit diagram top section -->
+<text x="40" y="36" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="17" font-weight="bold" fill="#111827">1φ2W 200V  配線長100m  負荷電流10A</text>
+
+<!-- Source -->
+<text x="42" y="85" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="15" fill="#111827">1φ2W</text>
+<text x="42" y="103" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="15" fill="#111827">200V</text>
+<circle cx="80" cy="90" r="20" fill="none" stroke="#1f2937" stroke-width="2.5"/>
+<text x="72" y="95" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="14" fill="#1f2937">〜</text>
+
+<!-- Top wire -->
+<line x1="100" y1="75" x2="480" y2="75" stroke="#1f2937" stroke-width="2.5"/>
+<!-- Bottom wire -->
+<line x1="100" y1="105" x2="480" y2="105" stroke="#1f2937" stroke-width="2.5"/>
+
+<!-- 10A current label -->
+<text x="260" y="62" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="16" text-anchor="middle" fill="#2563eb">10 A →</text>
+
+<!-- Length arrow -->
+<line x1="100" y1="118" x2="480" y2="118" stroke="#6b7280" stroke-width="1.5" marker-start="url(#arr)" marker-end="url(#arr)"/>
+<text x="290" y="134" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="15" text-anchor="middle" fill="#6b7280">100 m</text>
+
+<defs>
+<marker id="arr" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+<path d="M8,4 L0,0 L0,8 Z" fill="#6b7280"/>
+</marker>
+<marker id="arr2" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto-start-reverse">
+<path d="M0,4 L8,0 L8,8 Z" fill="#6b7280"/>
+</marker>
+</defs>
+
+<!-- Vs label -->
+<text x="90" y="68" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="14" fill="#111827">Vs</text>
+<!-- Vr label -->
+<text x="488" y="68" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="14" fill="#111827">Vr</text>
+
+<!-- Load box -->
+<rect x="480" y="64" width="60" height="52" rx="4" fill="#fff" stroke="#1f2937" stroke-width="2"/>
+<text x="510" y="88" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="13" text-anchor="middle" fill="#111827">抵抗</text>
+<text x="510" y="104" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="13" text-anchor="middle" fill="#111827">負荷</text>
+
+<!-- Voltage drop condition -->
+<text x="40" y="158" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="15" fill="#dc2626" font-weight="bold">電圧降下 Vs−Vr ≦ 4V → 最小断面積を選べ</text>
+
+<!-- Table -->
+<rect x="40" y="172" width="660" height="200" fill="#fff" stroke="#334155" stroke-width="2"/>
+<!-- Header row -->
+<rect x="40" y="172" width="660" height="42" fill="#e2e8f0" stroke="#334155" stroke-width="1"/>
+<text x="220" y="199" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="17" text-anchor="middle" font-weight="bold" fill="#111827">電線の太さ [mm²]</text>
+<text x="540" y="199" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="17" text-anchor="middle" font-weight="bold" fill="#111827">導体抵抗 [Ω/km]</text>
+<!-- Vertical divider -->
+<line x1="380" y1="172" x2="380" y2="372" stroke="#334155" stroke-width="1.5"/>
+<!-- Row dividers -->
+<line x1="40" y1="214" x2="700" y2="214" stroke="#cbd5e1" stroke-width="1"/>
+<line x1="40" y1="254" x2="700" y2="254" stroke="#cbd5e1" stroke-width="1"/>
+<line x1="40" y1="294" x2="700" y2="294" stroke="#cbd5e1" stroke-width="1"/>
+<line x1="40" y1="334" x2="700" y2="334" stroke="#cbd5e1" stroke-width="1"/>
+
+<!-- Data rows -->
+<text x="220" y="240" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="19" text-anchor="middle" fill="#111827">5.5</text>
+<text x="540" y="240" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="19" text-anchor="middle" fill="#111827">3.33</text>
+
+<text x="220" y="280" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="19" text-anchor="middle" fill="#111827">8</text>
+<text x="540" y="280" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="19" text-anchor="middle" fill="#111827">2.31</text>
+
+<text x="220" y="320" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="19" text-anchor="middle" fill="#059669" font-weight="bold">14</text>
+<text x="540" y="320" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="19" text-anchor="middle" fill="#059669" font-weight="bold">1.30</text>
+
+<text x="220" y="360" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="19" text-anchor="middle" fill="#111827">22</text>
+<text x="540" y="360" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="19" text-anchor="middle" fill="#111827">0.82</text>
+
+<!-- Note: answer row highlighted in green -->
+<text x="40" y="390" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="12" fill="#6b7280">往復2倍計算: 2×r×L×I ≦ 4V  例:14mm²→2×1.30×0.1×10=2.6V ✓  8mm²→2×2.31×0.1×10=4.62V ✗</text>
+</svg>

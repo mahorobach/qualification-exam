@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 320" role="img" aria-labelledby="title desc">
+<title id="title">問18 写真の工具（トーチランプ＝塩ビ管曲げ加工用）</title>
+<desc id="desc">硬質ポリ塩化ビニル電線管の曲げ加工に使用するトーチランプ（ガスバーナー）のイラスト</desc>
+<rect width="500" height="320" fill="#f8fafc"/>
+
+<text x="250" y="28" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="15" text-anchor="middle" font-weight="bold" fill="#111827">写真の工具の用途は。【正解：イ】</text>
+
+<!-- Gas cylinder body -->
+<rect x="200" y="180" width="100" height="110" rx="16" fill="#42a5f5" stroke="#1565c0" stroke-width="3"/>
+<ellipse cx="250" cy="180" rx="50" ry="16" fill="#64b5f6" stroke="#1565c0" stroke-width="2"/>
+<ellipse cx="250" cy="290" rx="50" ry="16" fill="#1e88e5" stroke="#1565c0" stroke-width="2"/>
+<!-- Cylinder label -->
+<text x="250" y="228" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="12" text-anchor="middle" fill="white" font-weight="bold">ガス缶</text>
+<text x="250" y="246" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="11" text-anchor="middle" fill="white">(ブタン)</text>
+
+<!-- Torch head connector -->
+<rect x="228" y="145" width="44" height="38" rx="5" fill="#78909c" stroke="#455a64" stroke-width="2"/>
+<!-- Valve knob -->
+<ellipse cx="250" cy="143" rx="22" ry="10" fill="#90a4ae" stroke="#546e7a" stroke-width="2"/>
+<rect x="240" y="133" width="20" height="12" rx="3" fill="#b0bec5" stroke="#78909c" stroke-width="1.5"/>
+
+<!-- Torch nozzle assembly -->
+<rect x="238" y="80" width="24" height="68" rx="4" fill="#616161" stroke="#424242" stroke-width="2"/>
+
+<!-- Nozzle tip -->
+<polygon points="250,48 238,82 262,82" fill="#424242" stroke="#212121" stroke-width="1.5"/>
+
+<!-- Flame effect -->
+<ellipse cx="250" cy="44" rx="10" ry="16" fill="#ff6f00" opacity="0.9"/>
+<ellipse cx="250" cy="38" rx="7" ry="12" fill="#ffca28" opacity="0.85"/>
+<ellipse cx="250" cy="34" rx="4" ry="8" fill="#fff59d" opacity="0.8"/>
+<!-- Flame flickers -->
+<ellipse cx="244" cy="42" rx="4" ry="10" fill="#ff8f00" opacity="0.7"/>
+<ellipse cx="256" cy="42" rx="4" ry="10" fill="#ff8f00" opacity="0.7"/>
+
+<!-- Label arrows -->
+<line x1="165" y1="65" x2="238" y2="65" stroke="#6b7280" stroke-width="1.5" marker-end="url(#marrow)"/>
+<text x="60" y="62" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="12" fill="#6b7280">炎で管を加熱</text>
+<text x="60" y="78" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="12" fill="#6b7280">→ 曲げ加工</text>
+
+<defs>
+<marker id="marrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+<path d="M0,0 L8,4 L0,8 Z" fill="#6b7280"/>
+</marker>
+</defs>
+
+<!-- Caption -->
+<text x="250" y="282" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="14" text-anchor="middle" font-weight="bold" fill="#1d4ed8">トーチランプ（ガスバーナー）</text>
+<text x="250" y="300" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="12" text-anchor="middle" fill="#6b7280">硬質ポリ塩化ビニル電線管(VE管)の曲げ加工に使用</text>
+<text x="250" y="316" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="12" text-anchor="middle" fill="#6b7280">（管を炎で均一に加熱して柔らかくし曲げる）</text>
+</svg>

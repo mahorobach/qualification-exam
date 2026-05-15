@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 280" role="img" aria-labelledby="title desc">
+<title id="title">幹線分岐回路（問9）</title>
+<desc id="desc">100A過電流遮断器保護の幹線から6m位置で分岐する場合の分岐線許容電流（令和7年度上期 問9）</desc>
+<rect width="680" height="280" fill="#f8fafc"/>
+
+<!-- Main feeder line -->
+<text x="30" y="32" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="16" font-weight="bold" fill="#111827">1φ2W 低圧屋内幹線</text>
+
+<line x1="30" y1="100" x2="620" y2="100" stroke="#1f2937" stroke-width="5"/>
+<text x="50" y="90" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="14" fill="#6b7280">電源←</text>
+<text x="570" y="90" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="14" fill="#6b7280">→負荷</text>
+
+<!-- Main breaker 100A (B symbol) -->
+<rect x="200" y="80" width="100" height="40" rx="6" fill="#fff" stroke="#1f2937" stroke-width="3"/>
+<text x="250" y="106" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="22" text-anchor="middle" font-weight="bold" fill="#111827">B 100A</text>
+
+<!-- Branch point at a -->
+<circle cx="400" cy="100" r="8" fill="#1f2937"/>
+<text x="407" y="90" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="16" font-weight="bold" fill="#2563eb">a</text>
+
+<!-- Branch line going down -->
+<line x1="400" y1="100" x2="400" y2="200" stroke="#1f2937" stroke-width="3"/>
+
+<!-- 6m measurement -->
+<line x1="410" y1="100" x2="410" y2="200" stroke="#6b7280" stroke-width="1" stroke-dasharray="4,3"/>
+<line x1="405" y1="100" x2="415" y2="100" stroke="#6b7280" stroke-width="1.5"/>
+<line x1="405" y1="200" x2="415" y2="200" stroke="#6b7280" stroke-width="1.5"/>
+<text x="420" y="155" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="16" fill="#6b7280">6 m</text>
+
+<!-- Branch breaker at b -->
+<rect x="340" y="195" width="120" height="40" rx="6" fill="#fff" stroke="#2563eb" stroke-width="2.5"/>
+<text x="400" y="221" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="22" text-anchor="middle" font-weight="bold" fill="#2563eb">B</text>
+<circle cx="400" cy="200" r="6" fill="#2563eb"/>
+<text x="467" y="215" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="16" fill="#2563eb">b</text>
+
+<!-- Load continuation -->
+<line x1="400" y1="235" x2="400" y2="260" stroke="#1f2937" stroke-width="3"/>
+<text x="370" y="275" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="14" fill="#6b7280">→ 負荷側</text>
+
+<!-- a-b wire label -->
+<text x="300" y="155" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="15" fill="#111827">a-b間の電線</text>
+<text x="295" y="175" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="15" fill="#dc2626">許容電流の最小値？</text>
+
+<!-- Rule note -->
+<rect x="30" y="220" width="300" height="50" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<text x="45" y="240" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="13" fill="#92400e">分岐6m: 幹線許容電流の35%以上</text>
+<text x="45" y="258" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="13" fill="#92400e">→ 100A × 35% = 35A（答：ロ）</text>
+</svg>

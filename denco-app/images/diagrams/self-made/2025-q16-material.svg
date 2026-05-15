@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 280" role="img" aria-labelledby="title desc">
+<title id="title">問16 写真の材料（硬質PVCカップリング）</title>
+<desc id="desc">硬質ポリ塩化ビニル電線管(VE管)相互を直線接続するためのカップリングのイラスト</desc>
+<rect width="500" height="280" fill="#f8fafc"/>
+
+<!-- Title -->
+<text x="250" y="30" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="16" text-anchor="middle" font-weight="bold" fill="#111827">写真の材料はどれか。【正解：イ】</text>
+
+<!-- Coupling body (center cylinder) -->
+<ellipse cx="250" cy="140" rx="42" ry="30" fill="#94a3b8" stroke="#475569" stroke-width="2"/>
+<rect x="208" y="110" width="84" height="60" fill="#94a3b8" stroke="#475569" stroke-width="2"/>
+<ellipse cx="250" cy="170" rx="42" ry="30" fill="#78909c" stroke="#475569" stroke-width="2"/>
+
+<!-- Left VE pipe inserted -->
+<ellipse cx="148" cy="140" rx="28" ry="20" fill="#b0bec5" stroke="#546e7a" stroke-width="2"/>
+<rect x="80" y="120" width="100" height="40" fill="#b0bec5" stroke="#546e7a" stroke-width="2"/>
+<ellipse cx="80" cy="140" rx="28" ry="20" fill="#cfd8dc" stroke="#546e7a" stroke-width="2"/>
+<!-- inner hole left -->
+<ellipse cx="80" cy="140" rx="18" ry="12" fill="#475569"/>
+<text x="100" y="175" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="13" text-anchor="middle" fill="#475569">VE管(左)</text>
+
+<!-- Right VE pipe inserted -->
+<ellipse cx="352" cy="140" rx="28" ry="20" fill="#b0bec5" stroke="#546e7a" stroke-width="2"/>
+<rect x="320" y="120" width="100" height="40" fill="#b0bec5" stroke="#546e7a" stroke-width="2"/>
+<ellipse cx="420" cy="140" rx="28" ry="20" fill="#cfd8dc" stroke="#546e7a" stroke-width="2"/>
+<!-- inner hole right -->
+<ellipse cx="420" cy="140" rx="18" ry="12" fill="#475569"/>
+<text x="390" y="175" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="13" text-anchor="middle" fill="#475569">VE管(右)</text>
+
+<!-- Labels -->
+<text x="250" y="220" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="14" text-anchor="middle" font-weight="bold" fill="#1d4ed8">TS形カップリング（VE管用）</text>
+<text x="250" y="240" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="13" text-anchor="middle" fill="#6b7280">硬質ポリ塩化ビニル電線管相互を直線接続する</text>
+<text x="250" y="258" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="13" text-anchor="middle" fill="#6b7280">（接着剤を使用するTS形）</text>
+</svg>

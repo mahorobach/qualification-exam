@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 260" role="img" aria-labelledby="title desc">
+<title id="title">問1 合成抵抗回路</title>
+<desc id="desc">S1閉・S2開のときの端子a-b間合成抵抗を求める回路図（令和7年度上期 第二種電気工事士 問1）</desc>
+<rect width="680" height="260" fill="#f8fafc"/>
+<!-- Top branch: a - 30Ω - S1(closed) - 30Ω - b -->
+<line x1="60" y1="80" x2="160" y2="80" stroke="#1f2937" stroke-width="3"/>
+<!-- R1 top-left -->
+<rect x="160" y="65" width="100" height="30" rx="4" fill="#fff" stroke="#1f2937" stroke-width="2.5"/>
+<text x="210" y="86" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="18" text-anchor="middle" fill="#111827">30 Ω</text>
+<line x1="260" y1="80" x2="340" y2="80" stroke="#1f2937" stroke-width="3"/>
+<!-- S1 closed symbol -->
+<circle cx="350" cy="80" r="5" fill="none" stroke="#1f2937" stroke-width="2.5"/>
+<line x1="355" y1="80" x2="420" y2="63" stroke="#1f2937" stroke-width="2.5"/>
+<circle cx="430" cy="60" r="5" fill="none" stroke="#1f2937" stroke-width="2.5"/>
+<text x="388" y="55" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="14" text-anchor="middle" fill="#059669" font-weight="bold">S₁ 閉</text>
+<line x1="435" y1="60" x2="480" y2="80" stroke="#1f2937" stroke-width="2.5"/>
+<line x1="480" y1="80" x2="520" y2="80" stroke="#1f2937" stroke-width="3"/>
+<!-- R2 top-right -->
+<rect x="520" y="65" width="100" height="30" rx="4" fill="#fff" stroke="#1f2937" stroke-width="2.5"/>
+<text x="570" y="86" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="18" text-anchor="middle" fill="#111827">30 Ω</text>
+<line x1="620" y1="80" x2="660" y2="80" stroke="#1f2937" stroke-width="3"/>
+
+<!-- Bottom branch: a - 30Ω - S2(open) - 30Ω - b -->
+<line x1="60" y1="180" x2="160" y2="180" stroke="#1f2937" stroke-width="3"/>
+<!-- R3 bottom-left -->
+<rect x="160" y="165" width="100" height="30" rx="4" fill="#fff" stroke="#1f2937" stroke-width="2.5"/>
+<text x="210" y="186" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="18" text-anchor="middle" fill="#111827">30 Ω</text>
+<line x1="260" y1="180" x2="340" y2="180" stroke="#1f2937" stroke-width="3"/>
+<!-- S2 open symbol -->
+<circle cx="350" cy="180" r="5" fill="none" stroke="#1f2937" stroke-width="2.5"/>
+<line x1="355" y1="180" x2="415" y2="163" stroke="#1f2937" stroke-width="2.5"/>
+<circle cx="430" cy="168" r="5" fill="none" stroke="#1f2937" stroke-width="2.5"/>
+<text x="390" y="160" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="14" text-anchor="middle" fill="#dc2626" font-weight="bold">S₂ 開</text>
+<!-- gap in S2 to show it's open -->
+<line x1="480" y1="180" x2="520" y2="180" stroke="#1f2937" stroke-width="3"/>
+<!-- R4 bottom-right -->
+<rect x="520" y="165" width="100" height="30" rx="4" fill="#fff" stroke="#1f2937" stroke-width="2.5"/>
+<text x="570" y="186" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="18" text-anchor="middle" fill="#111827">30 Ω</text>
+<line x1="620" y1="180" x2="660" y2="180" stroke="#1f2937" stroke-width="3"/>
+
+<!-- Left vertical connecting a (terminals) -->
+<line x1="60" y1="80" x2="60" y2="180" stroke="#1f2937" stroke-width="3"/>
+<!-- Right vertical connecting b (terminals) -->
+<line x1="660" y1="80" x2="660" y2="180" stroke="#1f2937" stroke-width="3"/>
+
+<!-- Terminal labels -->
+<circle cx="60" cy="80" r="7" fill="#2563eb"/>
+<circle cx="60" cy="180" r="7" fill="#2563eb"/>
+<text x="36" y="85" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="22" font-weight="bold" fill="#111827">a</text>
+<text x="36" y="185" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="22" font-weight="bold" fill="#111827">b</text>
+
+<!-- Note -->
+<text x="340" y="240" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="13" text-anchor="middle" fill="#6b7280">S₁閉・S₂開 → 有効経路：30+30=60 Ω</text>
+</svg>
