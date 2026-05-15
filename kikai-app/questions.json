@@ -16,7 +16,12 @@
     "category": "基礎科目",
     "year": 2024,
     "question": "同じ信頼度 0.9 の機器を3台直列接続したシステムの信頼度として正しいものはどれか。",
-    "choices": ["0.729", "0.900", "0.972", "0.999"],
+    "choices": [
+      "0.729",
+      "0.900",
+      "0.972",
+      "0.999"
+    ],
     "correctIndex": 0,
     "explanation": "直列システムの信頼度 R = R₁ × R₂ × R₃ = 0.9 × 0.9 × 0.9 = 0.729。直列接続では構成要素が1つでも故障するとシステムが停止するため、個々の信頼度より低くなる。"
   },
@@ -24,7 +29,12 @@
     "category": "基礎科目",
     "year": 2023,
     "question": "ある製品の不良率が 0.05（5%）のとき、10個取り出した製品にちょうど2個の不良品が含まれる確率として最も近い値はどれか。なお、₁₀C₂ = 45 とする。",
-    "choices": ["0.0746", "0.0746", "0.0250", "0.3151"],
+    "choices": [
+      "0.0746",
+      "0.0746",
+      "0.0250",
+      "0.3151"
+    ],
     "correctIndex": 0,
     "explanation": "二項分布 P(X=2) = ₁₀C₂ × (0.05)² × (0.95)⁸ = 45 × 0.0025 × 0.6634 ≈ 0.0746。不良率が低くてもサンプル数次第で複数の不良品が出る確率を二項分布で評価する。"
   },
@@ -32,7 +42,12 @@
     "category": "基礎科目",
     "year": 2024,
     "question": "バブルソートのアルゴリズムで n 個のデータを整列するとき、比較回数の最悪計算量のオーダーとして正しいものはどれか。",
-    "choices": ["O(log n)", "O(n)", "O(n log n)", "O(n²)"],
+    "choices": [
+      "O(log n)",
+      "O(n)",
+      "O(n log n)",
+      "O(n²)"
+    ],
     "correctIndex": 3,
     "explanation": "バブルソートは最悪の場合（逆順データ）に n(n-1)/2 回の比較が必要で、計算量は O(n²)。クイックソートの平均は O(n log n)、線形探索は O(n)、二分探索は O(log n)。"
   },
@@ -41,7 +56,12 @@
     "year": 2023,
     "question": "図に示すフローチャートの処理が終了したとき、変数 S の値はどれか。",
     "figureHtml": "<svg viewBox='0 0 420 300' xmlns='http://www.w3.org/2000/svg' style='max-width:100%;height:auto;display:block;margin:auto'><defs><marker id='arr' markerWidth='8' markerHeight='6' refX='6' refY='3' orient='auto'><path d='M0,0L8,3L0,6z' fill='#a8c4e0'/></marker></defs><ellipse cx='180' cy='28' rx='70' ry='20' fill='none' stroke='#3d9cf0' stroke-width='2'/><text x='180' y='33' text-anchor='middle' font-size='13' fill='#e8edf4' font-family='sans-serif'>スタート</text><line x1='180' y1='48' x2='180' y2='64' stroke='#a8c4e0' stroke-width='1.5' marker-end='url(#arr)'/><rect x='90' y='65' width='180' height='36' rx='4' fill='none' stroke='#3d9cf0' stroke-width='2'/><text x='180' y='88' text-anchor='middle' font-size='13' fill='#e8edf4' font-family='sans-serif'>S=0, x=1</text><line x1='180' y1='101' x2='180' y2='116' stroke='#a8c4e0' stroke-width='1.5' marker-end='url(#arr)'/><polygon points='180,117 245,148 180,179 115,148' fill='none' stroke='#f0c040' stroke-width='2'/><text x='180' y='153' text-anchor='middle' font-size='13' fill='#e8edf4' font-family='sans-serif'>x≦5?</text><line x1='180' y1='179' x2='180' y2='194' stroke='#a8c4e0' stroke-width='1.5' marker-end='url(#arr)'/><text x='188' y='193' font-size='11' fill='#4ecb71' font-family='sans-serif'>YES</text><rect x='100' y='195' width='160' height='44' rx='4' fill='none' stroke='#3d9cf0' stroke-width='2'/><text x='180' y='214' text-anchor='middle' font-size='12' fill='#e8edf4' font-family='sans-serif'>S = S + x</text><text x='180' y='231' text-anchor='middle' font-size='12' fill='#e8edf4' font-family='sans-serif'>x = x + 1</text><polyline points='100,217 55,217 55,148 115,148' fill='none' stroke='#a8c4e0' stroke-width='1.5' marker-end='url(#arr)'/><line x1='245' y1='148' x2='292' y2='148' stroke='#a8c4e0' stroke-width='1.5' marker-end='url(#arr)'/><text x='254' y='141' font-size='11' fill='#ff6b6b' font-family='sans-serif'>NO</text><rect x='293' y='128' width='110' height='40' rx='4' fill='none' stroke='#3d9cf0' stroke-width='2'/><text x='348' y='152' text-anchor='middle' font-size='13' fill='#e8edf4' font-family='sans-serif'>S を出力</text><line x1='348' y1='168' x2='348' y2='252' stroke='#a8c4e0' stroke-width='1.5' marker-end='url(#arr)'/><ellipse cx='348' cy='268' rx='65' ry='20' fill='none' stroke='#3d9cf0' stroke-width='2'/><text x='348' y='273' text-anchor='middle' font-size='13' fill='#e8edf4' font-family='sans-serif'>エンド</text></svg>",
-    "choices": ["10", "15", "20", "25"],
+    "choices": [
+      "10",
+      "15",
+      "20",
+      "25"
+    ],
     "correctIndex": 1,
     "explanation": "x が 1 から 5 まで順に S に加算される。S = 0+1+2+3+4+5 = 15。これは等差数列の和 n(n+1)/2 = 5×6/2 = 15 で求めることもできる。"
   },
@@ -49,7 +69,12 @@
     "category": "基礎科目",
     "year": 2024,
     "question": "2進数 10110₂ を10進数に変換した値として正しいものはどれか。",
-    "choices": ["14", "22", "26", "46"],
+    "choices": [
+      "14",
+      "22",
+      "26",
+      "46"
+    ],
     "correctIndex": 1,
     "explanation": "10110₂ = 1×2⁴ + 0×2³ + 1×2² + 1×2¹ + 0×2⁰ = 16 + 0 + 4 + 2 + 0 = 22。桁ごとに重み（2の累乗）を掛けて合計する。"
   },
@@ -57,7 +82,12 @@
     "category": "基礎科目",
     "year": 2023,
     "question": "微分方程式 dy/dx = −2y、初期条件 y(0) = 3 を満たす特殊解として正しいものはどれか。",
-    "choices": ["y = 3e²ˣ", "y = 3e⁻²ˣ", "y = −2x + 3", "y = e⁻²ˣ + 2"],
+    "choices": [
+      "y = 3e²ˣ",
+      "y = 3e⁻²ˣ",
+      "y = −2x + 3",
+      "y = e⁻²ˣ + 2"
+    ],
     "correctIndex": 1,
     "explanation": "変数分離法：dy/y = −2dx → ln|y| = −2x + C → y = Ae⁻²ˣ。初期条件 y(0)=3 より A=3、y = 3e⁻²ˣ。y が指数的に減衰する解。"
   },
@@ -65,7 +95,12 @@
     "category": "基礎科目",
     "year": 2024,
     "question": "行列 A = [[3, 1], [1, 3]] の固有値として正しいものはどれか。",
-    "choices": ["1 と 9", "2 と 4", "3 と 3", "−1 と 7"],
+    "choices": [
+      "1 と 9",
+      "2 と 4",
+      "3 と 3",
+      "−1 と 7"
+    ],
     "correctIndex": 1,
     "explanation": "特性方程式 det(A − λI) = (3−λ)² − 1 = 0 → λ² − 6λ + 8 = 0 → (λ−2)(λ−4) = 0。固有値は λ₁ = 2、λ₂ = 4。"
   },
@@ -73,7 +108,12 @@
     "category": "基礎科目",
     "year": 2023,
     "question": "ラプラス変換 L{e⁻²ᵗ sin(3t)} の結果として正しいものはどれか。",
-    "choices": ["3/((s+2)²+9)", "3/(s²+9)", "(s+2)/((s+2)²+9)", "1/(s+2)"],
+    "choices": [
+      "3/((s+2)²+9)",
+      "3/(s²+9)",
+      "(s+2)/((s+2)²+9)",
+      "1/(s+2)"
+    ],
     "correctIndex": 0,
     "explanation": "周波数移動定理（s-移動定理）：L{e⁻ᵃᵗ f(t)} = F(s+a)。L{sin(3t)} = 3/(s²+9) において s を s+2 に置き換えると 3/((s+2)²+9)。"
   },
@@ -95,7 +135,12 @@
     "year": 2023,
     "question": "図の応力−ひずみ線図において、縦軸（応力σ）と横軸（ひずみε）の原点 O から点 A（比例限度）の間の直線の傾きが表す材料定数はどれか。",
     "figureHtml": "<svg viewBox='0 0 380 230' xmlns='http://www.w3.org/2000/svg' style='max-width:100%;height:auto;display:block;margin:auto'><defs><marker id='arr' markerWidth='8' markerHeight='6' refX='6' refY='3' orient='auto'><path d='M0,0L8,3L0,6z' fill='#8b9aad'/></marker></defs><line x1='45' y1='195' x2='355' y2='195' stroke='#8b9aad' stroke-width='1.5' marker-end='url(#arr)'/><line x1='45' y1='195' x2='45' y2='25' stroke='#8b9aad' stroke-width='1.5' marker-end='url(#arr)'/><text x='358' y='199' fill='#8b9aad' font-size='13' font-family='sans-serif'>ε</text><text x='30' y='23' fill='#8b9aad' font-size='13' font-family='sans-serif'>σ</text><text x='30' y='200' fill='#8b9aad' font-size='11' font-family='sans-serif'>O</text><polyline points='45,195 105,105 118,112 128,110 260,78 300,120' fill='none' stroke='#3d9cf0' stroke-width='2.5'/><circle cx='105' cy='105' r='4' fill='#f0c040'/><text x='68' y='100' fill='#f0c040' font-size='10' font-family='sans-serif'>A:比例限度</text><circle cx='118' cy='112' r='4' fill='#4ecb71'/><text x='107' y='130' fill='#4ecb71' font-size='10' font-family='sans-serif'>B:降伏点</text><circle cx='260' cy='78' r='4' fill='#ff6b6b'/><text x='228' y='68' fill='#ff6b6b' font-size='10' font-family='sans-serif'>C:引張強さ</text><text x='293' y='118' fill='#ff6b6b' font-size='12' font-family='sans-serif'>×</text><text x='308' y='122' fill='#ff6b6b' font-size='10' font-family='sans-serif'>D:破断</text><line x1='45' y1='195' x2='105' y2='195' stroke='#8b9aad' stroke-width='1' stroke-dasharray='3,3'/><line x1='105' y1='195' x2='105' y2='105' stroke='#f0c040' stroke-width='1' stroke-dasharray='3,3'/><text x='68' y='175' fill='#8b9aad' font-size='10' font-family='sans-serif'>弾性域</text><text x='185' y='155' fill='#8b9aad' font-size='10' font-family='sans-serif'>塑性域</text></svg>",
-    "choices": ["ポアソン比", "縦弾性係数（ヤング率）E", "横弾性係数（剛性率）G", "体積弾性係数 K"],
+    "choices": [
+      "ポアソン比",
+      "縦弾性係数（ヤング率）E",
+      "横弾性係数（剛性率）G",
+      "体積弾性係数 K"
+    ],
     "correctIndex": 1,
     "explanation": "応力−ひずみ線図の弾性域の傾き σ/ε = E（縦弾性係数・ヤング率）。ポアソン比は横ひずみ/縦ひずみの比、横弾性係数はせん断応力/せん断ひずみ、体積弾性係数は静水圧と体積ひずみの比。"
   },
@@ -116,7 +161,12 @@
     "category": "基礎科目",
     "year": 2023,
     "question": "化石燃料の中で、同一発熱量あたりのCO₂排出量が最も少ないものはどれか。",
-    "choices": ["石炭", "石油（原油）", "天然ガス（LNG）", "コークス"],
+    "choices": [
+      "石炭",
+      "石油（原油）",
+      "天然ガス（LNG）",
+      "コークス"
+    ],
     "correctIndex": 2,
     "explanation": "天然ガス（主成分メタン CH₄）は炭素比率が最も低いため CO₂排出量が少ない。同一発熱量あたりCO₂排出量（相対）：石炭≒1.0、石油≒0.8、天然ガス≒0.6。水素含有量が多いほど発熱に対するCO₂排出が減る。"
   },
@@ -150,7 +200,12 @@
     "category": "基礎科目",
     "year": 2024,
     "question": "QC七つ道具のうち、特性（結果）とそれに影響する要因（原因）の関係を魚の骨状に整理して表したものはどれか。",
-    "choices": ["管理図", "特性要因図（フィッシュボーン図）", "散布図", "ヒストグラム"],
+    "choices": [
+      "管理図",
+      "特性要因図（フィッシュボーン図）",
+      "散布図",
+      "ヒストグラム"
+    ],
     "correctIndex": 1,
     "explanation": "特性要因図（石川図・フィッシュボーン図）は問題の特性（結果）と原因の関係を魚骨状に整理した図。QC7つ道具：パレート図・特性要因図・ヒストグラム・管理図・散布図・グラフ・チェックシート。"
   },
@@ -353,7 +408,12 @@
     "category": "専門科目（機械部門）",
     "year": 2024,
     "question": "直径 40mm の丸棒に引張荷重 P = 80kN が作用するとき、断面の引張応力として正しいものはどれか。",
-    "choices": ["31.8MPa", "63.7MPa", "127.3MPa", "254.6MPa"],
+    "choices": [
+      "31.8MPa",
+      "63.7MPa",
+      "127.3MPa",
+      "254.6MPa"
+    ],
     "correctIndex": 1,
     "explanation": "断面積 A = π×(0.04)²/4 = π×0.0016/4 = 1.257×10⁻³ m²。応力 σ = P/A = 80,000 / 1.257×10⁻³ ≈ 63.7×10⁶ Pa = 63.7 MPa。"
   },
@@ -362,7 +422,12 @@
     "year": 2024,
     "question": "図のように、スパン L = 6m の単純支持梁の中央に集中荷重 P = 12kN が作用するとき、梁中央の最大曲げモーメントはいくらか。",
     "figureHtml": "<svg viewBox='0 0 400 170' xmlns='http://www.w3.org/2000/svg' style='max-width:100%;height:auto;display:block;margin:auto'><defs><marker id='arr' markerWidth='8' markerHeight='6' refX='6' refY='3' orient='auto'><path d='M0,0L8,3L0,6z' fill='#4ecb71'/></marker><marker id='arrd' markerWidth='8' markerHeight='6' refX='6' refY='3' orient='auto'><path d='M0,0L8,3L0,6z' fill='#f0c040'/></marker></defs><rect x='55' y='90' width='290' height='14' fill='#6a8fc8' rx='2'/><polygon points='55,104 38,128 72,128' fill='none' stroke='#a8c4e0' stroke-width='2'/><line x1='24' y1='130' x2='88' y2='130' stroke='#a8c4e0' stroke-width='2'/><line x1='30' y1='130' x2='25' y2='137' stroke='#a8c4e0' stroke-width='1.5'/><line x1='42' y1='130' x2='37' y2='137' stroke='#a8c4e0' stroke-width='1.5'/><line x1='54' y1='130' x2='49' y2='137' stroke='#a8c4e0' stroke-width='1.5'/><line x1='66' y1='130' x2='61' y2='137' stroke='#a8c4e0' stroke-width='1.5'/><line x1='78' y1='130' x2='73' y2='137' stroke='#a8c4e0' stroke-width='1.5'/><polygon points='345,104 328,128 362,128' fill='none' stroke='#a8c4e0' stroke-width='2'/><ellipse cx='345' cy='133' rx='6' ry='5' fill='none' stroke='#a8c4e0' stroke-width='2'/><line x1='322' y1='138' x2='368' y2='138' stroke='#a8c4e0' stroke-width='2'/><line x1='200' y1='50' x2='200' y2='89' stroke='#f0c040' stroke-width='2.5' marker-end='url(#arrd)'/><text x='208' y='46' fill='#f0c040' font-size='15' font-family='sans-serif' font-weight='bold'>P</text><line x1='55' y1='152' x2='55' y2='115' stroke='#4ecb71' stroke-width='2' marker-end='url(#arr)'/><text x='34' y='162' fill='#4ecb71' font-size='12' font-family='sans-serif'>RA</text><line x1='345' y1='152' x2='345' y2='115' stroke='#4ecb71' stroke-width='2' marker-end='url(#arr)'/><text x='326' y='162' fill='#4ecb71' font-size='12' font-family='sans-serif'>RB</text><text x='38' y='88' fill='#e8edf4' font-size='13' font-family='sans-serif'>A</text><text x='348' y='88' fill='#e8edf4' font-size='13' font-family='sans-serif'>B</text><line x1='55' y1='76' x2='200' y2='76' stroke='#8b9aad' stroke-width='1'/><line x1='200' y1='76' x2='345' y2='76' stroke='#8b9aad' stroke-width='1'/><text x='127' y='72' text-anchor='middle' fill='#8b9aad' font-size='11' font-family='sans-serif'>L/2 = 3m</text><text x='272' y='72' text-anchor='middle' fill='#8b9aad' font-size='11' font-family='sans-serif'>L/2 = 3m</text></svg>",
-    "choices": ["9 kN·m", "18 kN·m", "36 kN·m", "72 kN·m"],
+    "choices": [
+      "9 kN·m",
+      "18 kN·m",
+      "36 kN·m",
+      "72 kN·m"
+    ],
     "correctIndex": 1,
     "explanation": "支点反力：RA = RB = P/2 = 6kN。中央（A端から3m）の曲げモーメント M = RA × L/2 = 6 × 3 = 18 kN·m。中央集中荷重の最大曲げモーメントは M_max = PL/4 = 12×6/4 = 18 kN·m。"
   },
@@ -371,7 +436,12 @@
     "year": 2023,
     "question": "図のような三角形トラスに、節点 C から鉛直下向きに P = 20kN の荷重が作用するとき、部材 AC の軸力の大きさとして最も近い値はどれか。なお、AC・BC と水平がなす角度はいずれも 45° とし、A はピン支点、B はローラー支点とする。",
     "figureHtml": "<svg viewBox='0 0 400 220' xmlns='http://www.w3.org/2000/svg' style='max-width:100%;height:auto;display:block;margin:auto'><defs><marker id='arr' markerWidth='8' markerHeight='6' refX='6' refY='3' orient='auto'><path d='M0,0L8,3L0,6z' fill='#f0c040'/></marker></defs><line x1='70' y1='170' x2='330' y2='170' stroke='#6a8fc8' stroke-width='3'/><line x1='70' y1='170' x2='200' y2='60' stroke='#6a8fc8' stroke-width='3'/><line x1='330' y1='170' x2='200' y2='60' stroke='#6a8fc8' stroke-width='3'/><polygon points='70,170 52,195 88,195' fill='none' stroke='#a8c4e0' stroke-width='2'/><line x1='36' y1='197' x2='104' y2='197' stroke='#a8c4e0' stroke-width='2'/><line x1='40' y1='197' x2='35' y2='204' stroke='#a8c4e0' stroke-width='1.5'/><line x1='54' y1='197' x2='49' y2='204' stroke='#a8c4e0' stroke-width='1.5'/><line x1='68' y1='197' x2='63' y2='204' stroke='#a8c4e0' stroke-width='1.5'/><line x1='82' y1='197' x2='77' y2='204' stroke='#a8c4e0' stroke-width='1.5'/><line x1='96' y1='197' x2='91' y2='204' stroke='#a8c4e0' stroke-width='1.5'/><polygon points='330,170 312,195 348,195' fill='none' stroke='#a8c4e0' stroke-width='2'/><ellipse cx='330' cy='200' rx='7' ry='6' fill='none' stroke='#a8c4e0' stroke-width='2'/><line x1='306' y1='206' x2='354' y2='206' stroke='#a8c4e0' stroke-width='2'/><line x1='200' y1='20' x2='200' y2='58' stroke='#f0c040' stroke-width='2.5' marker-end='url(#arr)'/><text x='208' y='18' fill='#f0c040' font-size='15' font-family='sans-serif' font-weight='bold'>P</text><circle cx='70' cy='170' r='5' fill='#3d9cf0'/><circle cx='330' cy='170' r='5' fill='#3d9cf0'/><circle cx='200' cy='60' r='5' fill='#3d9cf0'/><text x='50' y='168' fill='#e8edf4' font-size='13' font-family='sans-serif'>A</text><text x='336' y='168' fill='#e8edf4' font-size='13' font-family='sans-serif'>B</text><text x='208' y='58' fill='#e8edf4' font-size='13' font-family='sans-serif'>C</text><text x='112' y='126' fill='#8b9aad' font-size='11' font-family='sans-serif'>AC</text><text x='262' y='126' fill='#8b9aad' font-size='11' font-family='sans-serif'>BC</text><text x='183' y='183' fill='#8b9aad' font-size='11' font-family='sans-serif'>AB</text><text x='67' y='95' fill='#8b9aad' font-size='10' font-family='sans-serif'>45°</text><text x='300' y='95' fill='#8b9aad' font-size='10' font-family='sans-serif'>45°</text></svg>",
-    "choices": ["10.0 kN（引張）", "14.1 kN（圧縮）", "20.0 kN（圧縮）", "28.3 kN（引張）"],
+    "choices": [
+      "10.0 kN（引張）",
+      "14.1 kN（圧縮）",
+      "20.0 kN（圧縮）",
+      "28.3 kN（引張）"
+    ],
     "correctIndex": 1,
     "explanation": "対称トラスより RA=RB=10kN。節点 C の平衡：FAC=FBC（対称）、鉛直方向：2F×sin45° = P → F = P/(2sin45°) = 20/(2×0.707) ≈ 14.1kN。力の方向から AC・BC は圧縮材。"
   },
@@ -380,7 +450,12 @@
     "year": 2024,
     "question": "ある点の応力状態が σx = 80MPa、σy = 20MPa、τxy = 40MPa のとき、図のモールの応力円から求まる最大主応力 σ₁ の値として正しいものはどれか。",
     "figureHtml": "<svg viewBox='0 0 380 270' xmlns='http://www.w3.org/2000/svg' style='max-width:100%;height:auto;display:block;margin:auto'><defs><marker id='arr' markerWidth='8' markerHeight='6' refX='6' refY='3' orient='auto'><path d='M0,0L8,3L0,6z' fill='#8b9aad'/></marker></defs><line x1='25' y1='140' x2='360' y2='140' stroke='#8b9aad' stroke-width='1.5' marker-end='url(#arr)'/><line x1='150' y1='265' x2='150' y2='18' stroke='#8b9aad' stroke-width='1.5' marker-end='url(#arr)'/><text x='362' y='144' fill='#8b9aad' font-size='13' font-family='sans-serif'>σ</text><text x='138' y='16' fill='#8b9aad' font-size='13' font-family='sans-serif'>τ</text><circle cx='250' cy='140' r='100' fill='none' stroke='#3d9cf0' stroke-width='2'/><circle cx='250' cy='140' r='3' fill='#e8edf4'/><text x='256' y='133' fill='#8b9aad' font-size='10' font-family='sans-serif'>C(50,0)</text><circle cx='310' cy='60' r='5' fill='#f0c040'/><text x='316' y='56' fill='#f0c040' font-size='11' font-family='sans-serif'>A(80, 40)</text><circle cx='190' cy='220' r='5' fill='#4ecb71'/><text x='108' y='228' fill='#4ecb71' font-size='11' font-family='sans-serif'>B(20, −40)</text><line x1='310' y1='60' x2='190' y2='220' stroke='#a8c4e0' stroke-width='1.5' stroke-dasharray='4,3'/><circle cx='150' cy='140' r='4' fill='#ff6b6b'/><text x='128' y='130' fill='#ff6b6b' font-size='11' font-family='sans-serif'>σ₂=0</text><circle cx='350' cy='140' r='4' fill='#ff6b6b'/><text x='348' y='128' fill='#ff6b6b' font-size='11' font-family='sans-serif'>σ₁=?</text><text x='185' y='102' fill='#8b9aad' font-size='10' font-family='sans-serif'>R=50MPa</text></svg>",
-    "choices": ["50 MPa", "80 MPa", "100 MPa", "130 MPa"],
+    "choices": [
+      "50 MPa",
+      "80 MPa",
+      "100 MPa",
+      "130 MPa"
+    ],
     "correctIndex": 2,
     "explanation": "平均応力 σ_avg = (80+20)/2 = 50MPa。半径 R = √[(80-20)²/4 + 40²] = √[900+1600] = √2500 = 50MPa。最大主応力 σ₁ = σ_avg + R = 50+50 = 100MPa、最小主応力 σ₂ = 50-50 = 0MPa。"
   },
@@ -388,7 +463,12 @@
     "category": "専門科目（機械部門）",
     "year": 2023,
     "question": "両端ピン支持の柱にオイラーの座屈荷重が作用するとき、座屈荷重 Pcr の式として正しいものはどれか。ただし E:縦弾性係数、I:断面二次モーメント、L:柱の長さとする。",
-    "choices": ["Pcr = π²EI/L²", "Pcr = πEI/L²", "Pcr = π²EI/(2L)²", "Pcr = 2π²EI/L²"],
+    "choices": [
+      "Pcr = π²EI/L²",
+      "Pcr = πEI/L²",
+      "Pcr = π²EI/(2L)²",
+      "Pcr = 2π²EI/L²"
+    ],
     "correctIndex": 0,
     "explanation": "両端ピン支持（有効座屈長さ係数 K=1）のオイラー座屈荷重：Pcr = π²EI/(KL)² = π²EI/L²。両端固定（K=0.5）では Pcr = 4π²EI/L²。EI は曲げ剛性。"
   },
@@ -409,7 +489,12 @@
     "category": "専門科目（機械部門）",
     "year": 2023,
     "question": "高温熱源温度 TH = 600K、低温熱源温度 TL = 300K のカルノーサイクルの熱効率として正しいものはどれか。",
-    "choices": ["25%", "33%", "50%", "67%"],
+    "choices": [
+      "25%",
+      "33%",
+      "50%",
+      "67%"
+    ],
     "correctIndex": 2,
     "explanation": "カルノーサイクルの熱効率 η = 1 − TL/TH = 1 − 300/600 = 0.5 = 50%。これは同じ温度間で動作する全ての熱機関の中で最高効率を示す理論値（カルノーの定理）。"
   },
@@ -418,7 +503,12 @@
     "year": 2024,
     "question": "図のような理想オットーサイクルにおいて、圧縮比 r = 8、比熱比 γ = 1.4 のとき、熱効率として最も近い値はどれか。",
     "figureHtml": "<svg viewBox='0 0 380 240' xmlns='http://www.w3.org/2000/svg' style='max-width:100%;height:auto;display:block;margin:auto'><defs><marker id='arr' markerWidth='8' markerHeight='6' refX='6' refY='3' orient='auto'><path d='M0,0L8,3L0,6z' fill='#8b9aad'/></marker></defs><line x1='45' y1='205' x2='355' y2='205' stroke='#8b9aad' stroke-width='1.5' marker-end='url(#arr)'/><line x1='45' y1='205' x2='45' y2='20' stroke='#8b9aad' stroke-width='1.5' marker-end='url(#arr)'/><text x='358' y='209' fill='#8b9aad' font-size='13' font-family='sans-serif'>V</text><text x='30' y='18' fill='#8b9aad' font-size='13' font-family='sans-serif'>P</text><path d='M90,180 C89,160 88,130 85,58' fill='none' stroke='#3d9cf0' stroke-width='2.5'/><line x1='85' y1='58' x2='85' y2='32' stroke='#ff6b6b' stroke-width='2.5'/><path d='M85,32 C140,48 220,95 310,158' fill='none' stroke='#3d9cf0' stroke-width='2.5'/><line x1='310' y1='158' x2='310' y2='180' stroke='#4ecb71' stroke-width='2.5'/><line x1='90' y1='180' x2='310' y2='180' stroke='#8b9aad' stroke-width='1' stroke-dasharray='4,3'/><circle cx='90' cy='180' r='5' fill='#e8edf4'/><text x='84' y='198' fill='#e8edf4' font-size='13' font-family='sans-serif'>①</text><circle cx='85' cy='58' r='5' fill='#e8edf4'/><text x='60' y='58' fill='#e8edf4' font-size='13' font-family='sans-serif'>②</text><circle cx='85' cy='32' r='5' fill='#e8edf4'/><text x='60' y='30' fill='#e8edf4' font-size='13' font-family='sans-serif'>③</text><circle cx='310' cy='158' r='5' fill='#e8edf4'/><text x='316' y='152' fill='#e8edf4' font-size='13' font-family='sans-serif'>④</text><text x='52' y='115' fill='#3d9cf0' font-size='10' font-family='sans-serif'>①→②</text><text x='48' y='126' fill='#3d9cf0' font-size='10' font-family='sans-serif'>断熱圧縮</text><text x='74' y='44' fill='#ff6b6b' font-size='10' font-family='sans-serif'>②→③ 等積加熱</text><text x='168' y='92' fill='#3d9cf0' font-size='10' font-family='sans-serif'>③→④ 断熱膨張</text><text x='290' y='176' fill='#4ecb71' font-size='10' font-family='sans-serif'>④→① 等積冷却</text></svg>",
-    "choices": ["43.5%", "52.4%", "56.5%", "62.3%"],
+    "choices": [
+      "43.5%",
+      "52.4%",
+      "56.5%",
+      "62.3%"
+    ],
     "correctIndex": 2,
     "explanation": "オットーサイクル熱効率：η = 1 − 1/r^(γ-1) = 1 − 1/8^0.4。8^0.4 = 2^(3×0.4) = 2^1.2 ≈ 2.297。η = 1 − 1/2.297 ≈ 1 − 0.435 = 0.565 ≈ 56.5%。"
   },
@@ -426,7 +516,12 @@
     "category": "専門科目（機械部門）",
     "year": 2023,
     "question": "厚さ L = 0.1m、熱伝導率 λ = 0.5 W/(m·K) の平板壁の両面温度差が ΔT = 100K のとき、単位面積あたりの熱流束はいくらか。",
-    "choices": ["5 W/m²", "50 W/m²", "500 W/m²", "5000 W/m²"],
+    "choices": [
+      "5 W/m²",
+      "50 W/m²",
+      "500 W/m²",
+      "5000 W/m²"
+    ],
     "correctIndex": 2,
     "explanation": "フーリエの法則：熱流束 q = λ × ΔT/L = 0.5 × 100/0.1 = 500 W/m²。熱伝導率が大きいほど、温度差が大きいほど、厚さが薄いほど熱流束は大きくなる。"
   },
@@ -434,7 +529,12 @@
     "category": "専門科目（機械部門）",
     "year": 2024,
     "question": "ニュートン流体におけるニュートンの粘性法則を表す式として正しいものはどれか。ただし、τ：せん断応力、μ：粘性係数、u：流速、y：壁面からの距離とする。",
-    "choices": ["τ = μ(du/dy)", "τ = μ(dy/du)", "τ = (1/μ)(du/dy)", "τ = μ × u × y"],
+    "choices": [
+      "τ = μ(du/dy)",
+      "τ = μ(dy/du)",
+      "τ = (1/μ)(du/dy)",
+      "τ = μ × u × y"
+    ],
     "correctIndex": 0,
     "explanation": "ニュートンの粘性法則：τ = μ(du/dy)。せん断応力は速度勾配（du/dy）と粘性係数（μ）の積で表される。ニュートン流体とはこの関係が成立する流体（水・空気・油等）のこと。"
   },
@@ -455,7 +555,12 @@
     "category": "専門科目（機械部門）",
     "year": 2024,
     "question": "管内の完全発達層流（ハーゲン-ポアズイユ流れ）における流量 Q と管の直径 d の関係として正しいものはどれか。",
-    "choices": ["Q ∝ d²", "Q ∝ d³", "Q ∝ d⁴", "Q ∝ d"],
+    "choices": [
+      "Q ∝ d²",
+      "Q ∝ d³",
+      "Q ∝ d⁴",
+      "Q ∝ d"
+    ],
     "correctIndex": 2,
     "explanation": "ハーゲン-ポアズイユの式：Q = πd⁴ΔP/(128μL)。流量は直径の4乗に比例する。配管直径を2倍にすると流量は16倍になることを意味し、管径の選定が流量設計に極めて重要。"
   },
@@ -464,7 +569,12 @@
     "year": 2024,
     "question": "図のように、壁にばね定数 k [N/m] のばねで接続された質量 m [kg] の1自由度振動系の固有角振動数 ωn [rad/s] を表す式として正しいものはどれか。",
     "figureHtml": "<svg viewBox='0 0 380 165' xmlns='http://www.w3.org/2000/svg' style='max-width:100%;height:auto;display:block;margin:auto'><defs><marker id='arr' markerWidth='8' markerHeight='6' refX='6' refY='3' orient='auto'><path d='M0,0L8,3L0,6z' fill='#f0c040'/></marker></defs><rect x='18' y='38' width='22' height='105' fill='#6a8fc8'/><line x1='18' y1='143' x2='42' y2='143' stroke='#8b9aad' stroke-width='2'/><line x1='22' y1='143' x2='16' y2='152' stroke='#8b9aad' stroke-width='1.5'/><line x1='30' y1='143' x2='24' y2='152' stroke='#8b9aad' stroke-width='1.5'/><line x1='38' y1='143' x2='32' y2='152' stroke='#8b9aad' stroke-width='1.5'/><line x1='40' y1='90' x2='65' y2='90' stroke='#a8c4e0' stroke-width='2'/><polyline points='65,90 73,73 87,108 101,73 115,108 129,73 143,108 157,73 165,90' fill='none' stroke='#a8c4e0' stroke-width='2.5'/><line x1='165' y1='90' x2='192' y2='90' stroke='#a8c4e0' stroke-width='2'/><rect x='192' y='62' width='72' height='56' fill='none' stroke='#3d9cf0' stroke-width='2'/><text x='228' y='96' text-anchor='middle' fill='#e8edf4' font-size='18' font-family='sans-serif' font-weight='bold'>m</text><text x='115' y='65' text-anchor='middle' fill='#f0c040' font-size='14' font-family='sans-serif'>k</text><line x1='264' y1='82' x2='318' y2='82' stroke='#f0c040' stroke-width='2' marker-end='url(#arr)'/><text x='288' y='72' text-anchor='middle' fill='#f0c040' font-size='13' font-family='sans-serif'>x</text></svg>",
-    "choices": ["ωn = √(m/k)", "ωn = √(k/m)", "ωn = k/m", "ωn = 2π√(k/m)"],
+    "choices": [
+      "ωn = √(m/k)",
+      "ωn = √(k/m)",
+      "ωn = k/m",
+      "ωn = 2π√(k/m)"
+    ],
     "correctIndex": 1,
     "explanation": "運動方程式 mẍ + kx = 0 より ωn² = k/m、固有角振動数 ωn = √(k/m) [rad/s]。固有振動数 fn = ωn/(2π) = (1/2π)√(k/m) [Hz]。ばね定数を大きく・質量を小さくすると固有振動数が高くなる。"
   },
@@ -485,7 +595,12 @@
     "category": "専門科目（機械部門）",
     "year": 2024,
     "question": "質量 2kg の物体が速度 3m/s で運動し、静止している質量 4kg の物体と完全非弾性衝突した後の2物体の速度として正しいものはどれか。",
-    "choices": ["0.5 m/s", "1.0 m/s", "1.5 m/s", "2.0 m/s"],
+    "choices": [
+      "0.5 m/s",
+      "1.0 m/s",
+      "1.5 m/s",
+      "2.0 m/s"
+    ],
     "correctIndex": 1,
     "explanation": "完全非弾性衝突では衝突後2物体が一体となる。運動量保存：m₁v₁ = (m₁+m₂)v。v = m₁v₁/(m₁+m₂) = 2×3/(2+4) = 6/6 = 1.0 m/s。衝突後の運動エネルギーは保存されない（一部が熱・変形に変換）。"
   },
@@ -494,7 +609,12 @@
     "year": 2024,
     "question": "図のように、歯数 z₁ = 60 の歯車1と歯数 z₂ = 30 の歯車2が外接噛み合いしているとき、歯車1の回転数が 600rpm のとき歯車2の回転数はいくらか。",
     "figureHtml": "<svg viewBox='0 0 380 220' xmlns='http://www.w3.org/2000/svg' style='max-width:100%;height:auto;display:block;margin:auto'><defs><marker id='arr1' markerWidth='8' markerHeight='6' refX='6' refY='3' orient='auto'><path d='M0,0L8,3L0,6z' fill='#4ecb71'/></marker><marker id='arr2' markerWidth='8' markerHeight='6' refX='6' refY='3' orient='auto'><path d='M0,0L8,3L0,6z' fill='#f0c040'/></marker></defs><circle cx='125' cy='108' r='78' fill='none' stroke='#3d9cf0' stroke-width='2'/><circle cx='125' cy='108' r='78' fill='none' stroke='#3d9cf0' stroke-width='9' stroke-dasharray='13,9' stroke-dashoffset='2'/><circle cx='125' cy='108' r='10' fill='#6a8fc8'/><circle cx='278' cy='108' r='52' fill='none' stroke='#6a8fc8' stroke-width='2'/><circle cx='278' cy='108' r='52' fill='none' stroke='#6a8fc8' stroke-width='9' stroke-dasharray='9,6' stroke-dashoffset='2'/><circle cx='278' cy='108' r='10' fill='#6a8fc8'/><text x='125' y='100' text-anchor='middle' fill='#e8edf4' font-size='12' font-family='sans-serif'>歯車1</text><text x='125' y='118' text-anchor='middle' fill='#3d9cf0' font-size='13' font-family='sans-serif' font-weight='bold'>z₁=60</text><text x='278' y='100' text-anchor='middle' fill='#e8edf4' font-size='12' font-family='sans-serif'>歯車2</text><text x='278' y='118' text-anchor='middle' fill='#6a8fc8' font-size='13' font-family='sans-serif' font-weight='bold'>z₂=30</text><path d='M95,38 A78,78 0 0,0 56,78' fill='none' stroke='#4ecb71' stroke-width='2' marker-end='url(#arr1)'/><text x='60' y='42' fill='#4ecb71' font-size='12' font-family='sans-serif'>n₁=600rpm</text><path d='M308,68 A52,52 0 0,1 320,118' fill='none' stroke='#f0c040' stroke-width='2' marker-end='url(#arr2)'/><text x='318' y='68' fill='#f0c040' font-size='12' font-family='sans-serif'>n₂=?</text><line x1='125' y1='108' x2='278' y2='108' stroke='#8b9aad' stroke-width='1' stroke-dasharray='4,4'/></svg>",
-    "choices": ["300 rpm", "600 rpm", "900 rpm", "1200 rpm"],
+    "choices": [
+      "300 rpm",
+      "600 rpm",
+      "900 rpm",
+      "1200 rpm"
+    ],
     "correctIndex": 3,
     "explanation": "歯車の速度比（歯数比の逆数）：n₁/n₂ = z₂/z₁。n₂ = n₁ × z₁/z₂ = 600 × 60/30 = 1200 rpm。外接歯車は逆方向に回転し、歯数が少ない方が速く回転する（増速）。"
   },
@@ -502,7 +622,12 @@
     "category": "専門科目（機械部門）",
     "year": 2023,
     "question": "ねじのリード L と呼びピッチ p および条数 n の関係として正しいものはどれか。",
-    "choices": ["L = p/n", "L = p × n", "L = n/p", "L = p + n"],
+    "choices": [
+      "L = p/n",
+      "L = p × n",
+      "L = n/p",
+      "L = p + n"
+    ],
     "correctIndex": 1,
     "explanation": "リード L = ピッチ p × 条数 n。1条ねじ（n=1）ではリード=ピッチ。2条ねじ（n=2）では1回転で2ピッチ分進む（L = 2p）。条数が多いほど同じトルクで高速送りが可能だが自緩みしやすい。"
   },
@@ -510,7 +635,12 @@
     "category": "専門科目（機械部門）",
     "year": 2024,
     "question": "転がり軸受の寿命時間は、動等価荷重 P の何乗に反比例するか。ただし、ボール軸受を対象とする。",
-    "choices": ["1乗", "2乗", "3乗", "4乗"],
+    "choices": [
+      "1乗",
+      "2乗",
+      "3乗",
+      "4乗"
+    ],
     "correctIndex": 2,
     "explanation": "ボール軸受の基本定格寿命 L₁₀ = (C/P)³ × 10⁶回転。荷重を2倍にすると寿命は1/8（3乗）になる。ころ軸受では10/3乗。C は基本動定格荷重（規格値）、P は動等価荷重。"
   },
@@ -519,7 +649,12 @@
     "year": 2024,
     "question": "図のフィードバック制御系において、開ループ伝達関数が G(s)H(s) = K/(s(s+2)) で H(s) = 1（単位フィードバック）のとき、閉ループ伝達関数 C(s)/R(s) として正しいものはどれか。",
     "figureHtml": "<svg viewBox='0 0 430 160' xmlns='http://www.w3.org/2000/svg' style='max-width:100%;height:auto;display:block;margin:auto'><defs><marker id='arr' markerWidth='8' markerHeight='6' refX='6' refY='3' orient='auto'><path d='M0,0L8,3L0,6z' fill='#a8c4e0'/></marker></defs><text x='8' y='74' fill='#e8edf4' font-size='14' font-family='sans-serif'>R(s)</text><line x1='54' y1='70' x2='88' y2='70' stroke='#a8c4e0' stroke-width='1.5' marker-end='url(#arr)'/><circle cx='100' cy='70' r='14' fill='none' stroke='#a8c4e0' stroke-width='2'/><text x='93' y='63' fill='#4ecb71' font-size='14' font-family='sans-serif'>+</text><text x='97' y='82' fill='#ff6b6b' font-size='11' font-family='sans-serif'>−</text><line x1='114' y1='70' x2='150' y2='70' stroke='#a8c4e0' stroke-width='1.5' marker-end='url(#arr)'/><rect x='151' y='50' width='92' height='40' rx='4' fill='none' stroke='#3d9cf0' stroke-width='2'/><text x='197' y='72' text-anchor='middle' fill='#3d9cf0' font-size='13' font-family='sans-serif'>G(s)=</text><text x='197' y='86' text-anchor='middle' fill='#3d9cf0' font-size='12' font-family='sans-serif'>K/s(s+2)</text><line x1='243' y1='70' x2='280' y2='70' stroke='#a8c4e0' stroke-width='1.5' marker-end='url(#arr)'/><text x='292' y='74' fill='#e8edf4' font-size='14' font-family='sans-serif'>C(s)</text><line x1='290' y1='70' x2='345' y2='70' stroke='#a8c4e0' stroke-width='1.5'/><line x1='345' y1='70' x2='345' y2='120' stroke='#a8c4e0' stroke-width='1.5'/><line x1='345' y1='120' x2='243' y2='120' stroke='#a8c4e0' stroke-width='1.5'/><rect x='151' y='100' width='92' height='40' rx='4' fill='none' stroke='#6a8fc8' stroke-width='2'/><text x='197' y='125' text-anchor='middle' fill='#6a8fc8' font-size='14' font-family='sans-serif'>H(s)=1</text><line x1='151' y1='120' x2='112' y2='120' stroke='#a8c4e0' stroke-width='1.5'/><line x1='112' y1='120' x2='100' y2='84' stroke='#a8c4e0' stroke-width='1.5' marker-end='url(#arr)'/></svg>",
-    "choices": ["K/(s²+2s)", "K/(s²+2s+K)", "K/(s²+2s-K)", "K/(s(s+2)+K)"],
+    "choices": [
+      "K/(s²+2s)",
+      "K/(s²+2s+K)",
+      "K/(s²+2s-K)",
+      "K/(s(s+2)+K)"
+    ],
     "correctIndex": 1,
     "explanation": "単位フィードバック閉ループ伝達関数：C(s)/R(s) = G(s)/[1+G(s)H(s)] = [K/s(s+2)] / [1+K/s(s+2)] = K/[s(s+2)+K] = K/(s²+2s+K)。分母は特性方程式 s²+2s+K=0 を構成する。"
   },
@@ -535,5 +670,479 @@
     ],
     "correctIndex": 1,
     "explanation": "PID各要素の役割：P（比例）：偏差に比例した操作量で速応性向上・定常偏差は残る、I（積分）：偏差の積算により定常偏差をゼロにする（ただし安定性低下の恐れ）、D（微分）：偏差の変化率に比例し急変を抑制・速応性改善。"
+  },
+  {
+    "category": "基礎科目",
+    "year": 2022,
+    "question": "ベクトル a=(3,4) の大きさとして正しいものはどれか。",
+    "choices": [
+      "5",
+      "7",
+      "12",
+      "25"
+    ],
+    "correctIndex": 0,
+    "explanation": "ベクトルの大きさは √(3²+4²)=√25=5。直交成分の合成では三平方の定理を用いる。"
+  },
+  {
+    "category": "基礎科目",
+    "year": 2022,
+    "question": "ある測定値 10.2, 9.8, 10.0, 10.4, 9.6 の平均値として正しいものはどれか。",
+    "choices": [
+      "9.8",
+      "10.0",
+      "10.2",
+      "50.0"
+    ],
+    "correctIndex": 1,
+    "explanation": "合計は 50.0、データ数は5なので平均値は 50.0/5=10.0。"
+  },
+  {
+    "category": "基礎科目",
+    "year": 2022,
+    "question": "AND ゲートの出力が1になる入力の組合せとして正しいものはどれか。",
+    "choices": [
+      "A=0, B=0",
+      "A=0, B=1",
+      "A=1, B=0",
+      "A=1, B=1"
+    ],
+    "correctIndex": 3,
+    "explanation": "AND はすべての入力が1のときだけ出力が1になる論理演算である。"
+  },
+  {
+    "category": "基礎科目",
+    "year": 2022,
+    "question": "化学反応における触媒の説明として最も適切なものはどれか。",
+    "choices": [
+      "反応前後で必ず消費される物質",
+      "活性化エネルギーを変化させ反応速度に影響する物質",
+      "平衡定数を常に大きくする物質",
+      "生成物の質量を保存しない物質"
+    ],
+    "correctIndex": 1,
+    "explanation": "触媒は反応経路を変えて活性化エネルギーを下げるなど、反応速度に影響する。反応前後で正味には消費されない。"
+  },
+  {
+    "category": "適性科目（法令・倫理）",
+    "year": 2022,
+    "question": "技術者が安全上の重大な懸念を発見した場合の対応として最も適切なものはどれか。",
+    "choices": [
+      "納期を優先し、懸念は記録しない",
+      "関係者に根拠を示して報告し、必要な是正を提案する",
+      "依頼者の評判を守るため社外には一切説明しない",
+      "自分の担当外であれば確認しない"
+    ],
+    "correctIndex": 1,
+    "explanation": "技術者は公益確保と安全を重視し、根拠に基づいてリスクを共有し是正を促す必要がある。"
+  },
+  {
+    "category": "適性科目（法令・倫理）",
+    "year": 2022,
+    "question": "利益相反が生じる可能性がある業務を受ける際の姿勢として適切なものはどれか。",
+    "choices": [
+      "関係者に説明せず契約を進める",
+      "利益相反の可能性を開示し、公正性を確保する",
+      "報酬が高い依頼者だけを優先する",
+      "記録を残さず口頭で処理する"
+    ],
+    "correctIndex": 1,
+    "explanation": "利益相反は開示し、関係者の理解と公正な判断手続きを確保することが重要である。"
+  },
+  {
+    "category": "適性科目（法令・倫理）",
+    "year": 2022,
+    "question": "個人情報を含む試験データを扱うときの対応として適切なものはどれか。",
+    "choices": [
+      "目的外利用を自由に行う",
+      "必要最小限の範囲で利用し、アクセス管理を行う",
+      "匿名化しても外部提供は必ず違法である",
+      "退職後は自由に持ち出せる"
+    ],
+    "correctIndex": 1,
+    "explanation": "個人情報は利用目的を明確にし、必要最小限の取扱い、アクセス制限、漏えい防止を行う。"
+  },
+  {
+    "category": "専門科目（機械部門）",
+    "year": 2022,
+    "question": "図の片持ちはりの自由端に P=2kN が作用している。固定端に生じる曲げモーメントの大きさとして正しいものはどれか。",
+    "figureHtml": "<svg viewBox='0 0 420 170' xmlns='http://www.w3.org/2000/svg' style='max-width:100%;height:auto;display:block;margin:auto'><defs><marker id='arr' markerWidth='8' markerHeight='6' refX='6' refY='3' orient='auto'><path d='M0,0L8,3L0,6z' fill='#f0c040'/></marker></defs><rect x='35' y='42' width='24' height='90' fill='#6a8fc8'/><line x1='35' y1='42' x2='35' y2='132' stroke='#8b9aad' stroke-width='2'/><line x1='59' y1='87' x2='340' y2='87' stroke='#3d9cf0' stroke-width='10' stroke-linecap='round'/><line x1='340' y1='40' x2='340' y2='80' stroke='#f0c040' stroke-width='2.5' marker-end='url(#arr)'/><text x='350' y='46' fill='#f0c040' font-size='14' font-family='sans-serif'>P=2kN</text><line x1='60' y1='128' x2='340' y2='128' stroke='#8b9aad' stroke-width='1'/><line x1='60' y1='121' x2='60' y2='136' stroke='#8b9aad' stroke-width='1'/><line x1='340' y1='121' x2='340' y2='136' stroke='#8b9aad' stroke-width='1'/><text x='200' y='148' text-anchor='middle' fill='#8b9aad' font-size='12' font-family='sans-serif'>L=3m</text><text x='22' y='32' fill='#8b9aad' font-size='11' font-family='sans-serif'>固定端</text></svg>",
+    "choices": [
+      "2kN・m",
+      "3kN・m",
+      "6kN・m",
+      "9kN・m"
+    ],
+    "correctIndex": 2,
+    "explanation": "片持ちはりの固定端曲げモーメントは M=PL。P=2kN、L=3m より M=6kN・m。"
+  },
+  {
+    "category": "専門科目（機械部門）",
+    "year": 2022,
+    "question": "図の水平管で非圧縮性流体が定常的に流れる。A1=0.020m²、v1=3m/s、A2=0.010m² のとき v2 はどれか。",
+    "figureHtml": "<svg viewBox='0 0 430 180' xmlns='http://www.w3.org/2000/svg' style='max-width:100%;height:auto;display:block;margin:auto'><defs><marker id='arr' markerWidth='8' markerHeight='6' refX='6' refY='3' orient='auto'><path d='M0,0L8,3L0,6z' fill='#4ecb71'/></marker></defs><rect x='45' y='68' width='145' height='44' fill='none' stroke='#3d9cf0' stroke-width='3'/><rect x='240' y='78' width='120' height='24' fill='none' stroke='#3d9cf0' stroke-width='3'/><line x1='190' y1='68' x2='240' y2='78' stroke='#3d9cf0' stroke-width='3'/><line x1='190' y1='112' x2='240' y2='102' stroke='#3d9cf0' stroke-width='3'/><line x1='35' y1='90' x2='390' y2='90' stroke='#4ecb71' stroke-width='2' marker-end='url(#arr)'/><text x='80' y='55' fill='#e8edf4' font-size='12' font-family='sans-serif'>A1=0.020m²</text><text x='264' y='65' fill='#e8edf4' font-size='12' font-family='sans-serif'>A2=0.010m²</text><text x='65' y='132' fill='#f0c040' font-size='12' font-family='sans-serif'>v1=3m/s</text><text x='262' y='132' fill='#f0c040' font-size='12' font-family='sans-serif'>v2=?</text></svg>",
+    "choices": [
+      "1.5m/s",
+      "3m/s",
+      "6m/s",
+      "12m/s"
+    ],
+    "correctIndex": 2,
+    "explanation": "連続の式 A1v1=A2v2 より v2=(0.020×3)/0.010=6m/s。管断面積が半分になると流速は2倍になる。"
+  },
+  {
+    "category": "専門科目（機械部門）",
+    "year": 2022,
+    "question": "熱伝導率 k、面積 A、厚さ L の平板を通る定常熱伝導量 Q に比例しないものはどれか。",
+    "choices": [
+      "熱伝導率 k",
+      "伝熱面積 A",
+      "温度差 ΔT",
+      "厚さ L"
+    ],
+    "correctIndex": 3,
+    "explanation": "フーリエの法則 Q=kAΔT/L。厚さ L は分母にあるため、厚くなるほど熱伝導量は小さくなる。"
+  },
+  {
+    "category": "専門科目（機械部門）",
+    "year": 2022,
+    "question": "図の外歯車対で歯数 z1=48 の歯車が 300rpm で回転するとき、歯数 z2=24 の歯車の回転速度の大きさはどれか。",
+    "figureHtml": "<svg viewBox='0 0 400 220' xmlns='http://www.w3.org/2000/svg' style='max-width:100%;height:auto;display:block;margin:auto'><defs><marker id='a1' markerWidth='8' markerHeight='6' refX='6' refY='3' orient='auto'><path d='M0,0L8,3L0,6z' fill='#4ecb71'/></marker><marker id='a2' markerWidth='8' markerHeight='6' refX='6' refY='3' orient='auto'><path d='M0,0L8,3L0,6z' fill='#f0c040'/></marker></defs><circle cx='130' cy='110' r='70' fill='none' stroke='#3d9cf0' stroke-width='9' stroke-dasharray='12,8'/><circle cx='275' cy='110' r='45' fill='none' stroke='#6a8fc8' stroke-width='9' stroke-dasharray='9,6'/><circle cx='130' cy='110' r='8' fill='#e8edf4'/><circle cx='275' cy='110' r='8' fill='#e8edf4'/><text x='130' y='104' text-anchor='middle' fill='#e8edf4' font-size='12'>駆動</text><text x='130' y='122' text-anchor='middle' fill='#3d9cf0' font-size='13'>z1=48</text><text x='275' y='104' text-anchor='middle' fill='#e8edf4' font-size='12'>従動</text><text x='275' y='122' text-anchor='middle' fill='#6a8fc8' font-size='13'>z2=24</text><path d='M95,48 A70,70 0 0,0 61,95' fill='none' stroke='#4ecb71' stroke-width='2' marker-end='url(#a1)'/><text x='42' y='42' fill='#4ecb71' font-size='12'>n1=300rpm</text><path d='M302,75 A45,45 0 0,1 315,122' fill='none' stroke='#f0c040' stroke-width='2' marker-end='url(#a2)'/><text x='313' y='72' fill='#f0c040' font-size='12'>n2=?</text></svg>",
+    "choices": [
+      "150rpm",
+      "300rpm",
+      "600rpm",
+      "1200rpm"
+    ],
+    "correctIndex": 2,
+    "explanation": "外歯車では n1z1=n2z2。n2=300×48/24=600rpm。回転方向は反対だが、ここでは大きさを問う。"
+  },
+  {
+    "category": "専門科目（機械部門）",
+    "year": 2022,
+    "question": "1自由度ばね質量系の固有角振動数 ωn として正しいものはどれか。",
+    "choices": [
+      "m/k",
+      "k/m",
+      "√(k/m)",
+      "√(m/k)"
+    ],
+    "correctIndex": 2,
+    "explanation": "運動方程式 m x¨ + kx = 0 の固有角振動数は ωn=√(k/m)。質量が大きいほど低く、ばね定数が大きいほど高くなる。"
+  },
+  {
+    "category": "基礎科目",
+    "year": 2021,
+    "question": "関数 f(x)=x³ の x=2 における微分係数として正しいものはどれか。",
+    "choices": [
+      "4",
+      "6",
+      "8",
+      "12"
+    ],
+    "correctIndex": 3,
+    "explanation": "f′(x)=3x²。x=2 で f′(2)=3×4=12。"
+  },
+  {
+    "category": "基礎科目",
+    "year": 2021,
+    "question": "2進数 1101₂ と 0011₂ の和を2進数で表したものはどれか。",
+    "choices": [
+      "1110₂",
+      "10000₂",
+      "10110₂",
+      "11001₂"
+    ],
+    "correctIndex": 1,
+    "explanation": "1101₂=13、0011₂=3、和は16。16の2進表現は10000₂。"
+  },
+  {
+    "category": "基礎科目",
+    "year": 2021,
+    "question": "標準偏差が大きいデータ群の特徴として適切なものはどれか。",
+    "choices": [
+      "平均値が必ず大きい",
+      "データのばらつきが大きい",
+      "中央値が0である",
+      "データ数が少ない"
+    ],
+    "correctIndex": 1,
+    "explanation": "標準偏差は平均値まわりのばらつきの尺度であり、大きいほど散らばりが大きい。"
+  },
+  {
+    "category": "基礎科目",
+    "year": 2021,
+    "question": "再生可能エネルギーに分類されるものはどれか。",
+    "choices": [
+      "石炭火力",
+      "天然ガス火力",
+      "太陽光発電",
+      "重油ボイラ"
+    ],
+    "correctIndex": 2,
+    "explanation": "太陽光、風力、水力、地熱、バイオマスなどは再生可能エネルギーに分類される。"
+  },
+  {
+    "category": "適性科目（法令・倫理）",
+    "year": 2021,
+    "question": "技術報告書におけるデータ改ざんの扱いとして正しいものはどれか。",
+    "choices": [
+      "結論が正しければ許される",
+      "依頼者の了解があれば問題ない",
+      "技術者倫理に反し、信用を損なう行為である",
+      "小数点以下だけなら常に許容される"
+    ],
+    "correctIndex": 2,
+    "explanation": "データの改ざんは技術的判断の基礎を失わせ、公益や安全にも影響する重大な不正である。"
+  },
+  {
+    "category": "適性科目（法令・倫理）",
+    "year": 2021,
+    "question": "技術士補が業務を行う場合の基本的な位置づけとして適切なものはどれか。",
+    "choices": [
+      "常に単独で技術士業務を行える",
+      "指導技術士の補助として業務を行う",
+      "登録しなくても名称を使用できる",
+      "技術士法の義務は一切適用されない"
+    ],
+    "correctIndex": 1,
+    "explanation": "技術士補は登録を受け、指導技術士の補助として業務を行う位置づけである。"
+  },
+  {
+    "category": "適性科目（法令・倫理）",
+    "year": 2021,
+    "question": "持続可能性を考慮した設計判断として最も適切なものはどれか。",
+    "choices": [
+      "初期費用のみで材料を選ぶ",
+      "廃棄・保守・エネルギー消費も含めて評価する",
+      "リサイクル性は品質と無関係なので考えない",
+      "短期利益だけを評価する"
+    ],
+    "correctIndex": 1,
+    "explanation": "持続可能性の観点では、ライフサイクル全体の資源消費、環境負荷、保守性、廃棄性を考慮する。"
+  },
+  {
+    "category": "専門科目（機械部門）",
+    "year": 2021,
+    "question": "図のランキンサイクルにおいて、3→4 の過程として最も適切なものはどれか。",
+    "figureHtml": "<svg viewBox='0 0 390 250' xmlns='http://www.w3.org/2000/svg' style='max-width:100%;height:auto;display:block;margin:auto'><defs><marker id='arr' markerWidth='8' markerHeight='6' refX='6' refY='3' orient='auto'><path d='M0,0L8,3L0,6z' fill='#8b9aad'/></marker></defs><line x1='45' y1='210' x2='355' y2='210' stroke='#8b9aad' stroke-width='1.5' marker-end='url(#arr)'/><line x1='45' y1='210' x2='45' y2='28' stroke='#8b9aad' stroke-width='1.5' marker-end='url(#arr)'/><text x='358' y='214' fill='#8b9aad' font-size='13' font-family='sans-serif'>s</text><text x='31' y='27' fill='#8b9aad' font-size='13' font-family='sans-serif'>T</text><path d='M95,190 C128,80 250,80 288,190' fill='none' stroke='#6a8fc8' stroke-width='2'/><polyline points='110,188 120,72 270,72 292,188 110,188' fill='none' stroke='#3d9cf0' stroke-width='2.5'/><circle cx='110' cy='188' r='4' fill='#e8edf4'/><circle cx='120' cy='72' r='4' fill='#e8edf4'/><circle cx='270' cy='72' r='4' fill='#e8edf4'/><circle cx='292' cy='188' r='4' fill='#e8edf4'/><text x='94' y='202' fill='#e8edf4' font-size='12'>1</text><text x='105' y='63' fill='#e8edf4' font-size='12'>2</text><text x='278' y='63' fill='#e8edf4' font-size='12'>3</text><text x='300' y='202' fill='#e8edf4' font-size='12'>4</text><text x='164' y='58' fill='#f0c040' font-size='11'>ボイラ加熱</text><text x='247' y='128' fill='#4ecb71' font-size='11'>タービン</text><text x='152' y='205' fill='#8b9aad' font-size='11'>復水器</text></svg>",
+    "choices": [
+      "ポンプによる圧縮",
+      "ボイラでの加熱",
+      "タービンでの断熱膨張",
+      "復水器での放熱"
+    ],
+    "correctIndex": 2,
+    "explanation": "基本ランキンサイクルでは 1→2 がポンプ、2→3 がボイラ加熱、3→4 がタービン膨張、4→1 が復水器での凝縮である。"
+  },
+  {
+    "category": "専門科目（機械部門）",
+    "year": 2021,
+    "question": "図のローラ従節付き板カムで、カムの回転により直接得られる運動として最も適切なものはどれか。",
+    "figureHtml": "<svg viewBox='0 0 390 220' xmlns='http://www.w3.org/2000/svg' style='max-width:100%;height:auto;display:block;margin:auto'><defs><marker id='arr' markerWidth='8' markerHeight='6' refX='6' refY='3' orient='auto'><path d='M0,0L8,3L0,6z' fill='#f0c040'/></marker></defs><path d='M120,112 C120,62 190,48 222,82 C263,84 275,145 232,164 C201,196 123,174 120,112z' fill='none' stroke='#3d9cf0' stroke-width='3'/><circle cx='185' cy='122' r='8' fill='#6a8fc8'/><rect x='280' y='42' width='28' height='118' fill='none' stroke='#a8c4e0' stroke-width='2'/><circle cx='294' cy='91' r='13' fill='none' stroke='#f0c040' stroke-width='2'/><line x1='307' y1='91' x2='236' y2='91' stroke='#f0c040' stroke-width='2'/><line x1='294' y1='42' x2='294' y2='20' stroke='#f0c040' stroke-width='2' marker-end='url(#arr)'/><text x='305' y='29' fill='#f0c040' font-size='12'>従節変位</text><text x='150' y='202' fill='#8b9aad' font-size='12'>板カム</text><text x='278' y='176' fill='#8b9aad' font-size='12'>ローラ従節</text></svg>",
+    "choices": [
+      "従節の直線往復運動",
+      "従節軸の連続回転",
+      "歯車比による減速運動",
+      "流体の圧縮運動"
+    ],
+    "correctIndex": 0,
+    "explanation": "カム機構はカム輪郭によって従節に所定の変位を与える機構で、回転運動を直線往復運動などに変換する。"
+  },
+  {
+    "category": "専門科目（機械部門）",
+    "year": 2021,
+    "question": "軸にねじりモーメント T が作用するとき、同じ軸で T を2倍にした場合の最大せん断応力はどうなるか。",
+    "choices": [
+      "1/2になる",
+      "変わらない",
+      "2倍になる",
+      "4倍になる"
+    ],
+    "correctIndex": 2,
+    "explanation": "丸軸のねじりせん断応力は τ=Tr/J。軸寸法が同じなら τ は T に比例する。"
+  },
+  {
+    "category": "専門科目（機械部門）",
+    "year": 2021,
+    "question": "切削加工で構成刃先が発生しやすい条件として適切なものはどれか。",
+    "choices": [
+      "切削速度が低く、被削材が工具に凝着しやすい条件",
+      "切削速度が極めて高く、潤滑が完全な条件",
+      "切込みがゼロの条件",
+      "工具と被削材が接触しない条件"
+    ],
+    "correctIndex": 0,
+    "explanation": "構成刃先は低中速切削などで被削材が工具すくい面に凝着・成長して生じやすい。"
+  },
+  {
+    "category": "専門科目（機械部門）",
+    "year": 2021,
+    "question": "空気標準オットーサイクルの熱効率を高める要因として正しいものはどれか。",
+    "choices": [
+      "圧縮比を小さくする",
+      "比熱比を小さくする",
+      "圧縮比を大きくする",
+      "吸入温度を必ず高くする"
+    ],
+    "correctIndex": 2,
+    "explanation": "オットーサイクルの熱効率は η=1-1/r^(κ-1)。圧縮比 r が大きいほど熱効率は高くなる。"
+  },
+  {
+    "category": "基礎科目",
+    "year": 2020,
+    "question": "行列 [[1,2],[3,4]] の行列式として正しいものはどれか。",
+    "choices": [
+      "-2",
+      "2",
+      "5",
+      "10"
+    ],
+    "correctIndex": 0,
+    "explanation": "2×2行列の行列式は ad-bc。1×4-2×3=4-6=-2。"
+  },
+  {
+    "category": "基礎科目",
+    "year": 2020,
+    "question": "物体に一定の力を加えて同じ向きに距離 s だけ移動させたときの仕事 W として正しいものはどれか。",
+    "choices": [
+      "W=F/s",
+      "W=s/F",
+      "W=Fs",
+      "W=F+s"
+    ],
+    "correctIndex": 2,
+    "explanation": "力と変位が同方向なら仕事は W=Fs。単位は N・m = J。"
+  },
+  {
+    "category": "基礎科目",
+    "year": 2020,
+    "question": "CSV形式の説明として最も適切なものはどれか。",
+    "choices": [
+      "画像を圧縮する形式",
+      "値をカンマで区切って並べるテキスト形式",
+      "プログラムを機械語に変換する方式",
+      "暗号鍵を管理する方式"
+    ],
+    "correctIndex": 1,
+    "explanation": "CSV は Comma-Separated Values の略で、値をカンマ区切りで表すテキストデータ形式である。"
+  },
+  {
+    "category": "基礎科目",
+    "year": 2020,
+    "question": "pH=7 の水溶液の性質として最も適切なものはどれか。",
+    "choices": [
+      "強酸性",
+      "中性",
+      "強アルカリ性",
+      "酸化剤である"
+    ],
+    "correctIndex": 1,
+    "explanation": "標準的な水溶液では pH=7 は中性、7未満は酸性、7を超えるとアルカリ性を示す。"
+  },
+  {
+    "category": "適性科目（法令・倫理）",
+    "year": 2020,
+    "question": "技術士の名称を使用するために必要なこととして正しいものはどれか。",
+    "choices": [
+      "第一次試験に合格するだけでよい",
+      "技術士第二次試験に合格し登録を受ける",
+      "所属企業の承認だけでよい",
+      "実務経験があれば登録不要で名乗れる"
+    ],
+    "correctIndex": 1,
+    "explanation": "技術士の名称を使用するには、第二次試験合格後に所定の登録を受ける必要がある。"
+  },
+  {
+    "category": "適性科目（法令・倫理）",
+    "year": 2020,
+    "question": "守秘義務に関する説明として適切なものはどれか。",
+    "choices": [
+      "退職後は一切不要になる",
+      "正当な理由なく業務上知り得た秘密を漏らしてはならない",
+      "公開前の情報はSNSで共有してよい",
+      "依頼者情報は技術資料なら自由に配布できる"
+    ],
+    "correctIndex": 1,
+    "explanation": "業務上知り得た秘密は、正当な理由なく漏らしてはならない。退職後も守秘が求められる場合がある。"
+  },
+  {
+    "category": "適性科目（法令・倫理）",
+    "year": 2020,
+    "question": "製品事故の再発防止に向けた技術者の対応として最も適切なものはどれか。",
+    "choices": [
+      "原因を推定だけで決め、記録しない",
+      "事故情報を隠し、同じ設計を継続する",
+      "原因分析と対策を記録し、関係者に共有する",
+      "責任部署が不明なら調査をやめる"
+    ],
+    "correctIndex": 2,
+    "explanation": "事故時は事実に基づく原因分析、対策、記録、水平展開が重要である。"
+  },
+  {
+    "category": "専門科目（機械部門）",
+    "year": 2020,
+    "question": "図の対称三角トラスで頂点Cに鉛直下向き10kNが作用する。支点反力 RA, RB の大きさとして正しいものはどれか。",
+    "figureHtml": "<svg viewBox='0 0 420 220' xmlns='http://www.w3.org/2000/svg' style='max-width:100%;height:auto;display:block;margin:auto'><defs><marker id='arr' markerWidth='8' markerHeight='6' refX='6' refY='3' orient='auto'><path d='M0,0L8,3L0,6z' fill='#f0c040'/></marker></defs><line x1='80' y1='170' x2='340' y2='170' stroke='#6a8fc8' stroke-width='3'/><line x1='80' y1='170' x2='210' y2='60' stroke='#6a8fc8' stroke-width='3'/><line x1='340' y1='170' x2='210' y2='60' stroke='#6a8fc8' stroke-width='3'/><polygon points='80,170 62,195 98,195' fill='none' stroke='#a8c4e0' stroke-width='2'/><polygon points='340,170 322,195 358,195' fill='none' stroke='#a8c4e0' stroke-width='2'/><ellipse cx='340' cy='200' rx='7' ry='6' fill='none' stroke='#a8c4e0' stroke-width='2'/><line x1='210' y1='18' x2='210' y2='57' stroke='#f0c040' stroke-width='2.5' marker-end='url(#arr)'/><text x='220' y='24' fill='#f0c040' font-size='14'>10kN</text><text x='64' y='164' fill='#e8edf4' font-size='12'>A</text><text x='346' y='164' fill='#e8edf4' font-size='12'>B</text><text x='218' y='59' fill='#e8edf4' font-size='12'>C</text><text x='102' y='112' fill='#8b9aad' font-size='11'>AC</text><text x='288' y='112' fill='#8b9aad' font-size='11'>BC</text><text x='194' y='185' fill='#8b9aad' font-size='11'>AB</text><text x='96' y='92' fill='#8b9aad' font-size='10'>45°</text><text x='300' y='92' fill='#8b9aad' font-size='10'>45°</text></svg>",
+    "choices": [
+      "RA=0kN, RB=10kN",
+      "RA=5kN, RB=5kN",
+      "RA=10kN, RB=0kN",
+      "RA=10kN, RB=10kN"
+    ],
+    "correctIndex": 1,
+    "explanation": "荷重と形状が左右対称なので鉛直反力は等分される。RA+RB=10kN より RA=RB=5kN。"
+  },
+  {
+    "category": "専門科目（機械部門）",
+    "year": 2020,
+    "question": "ベルヌーイの定理を適用する基本条件として最も適切なものはどれか。",
+    "choices": [
+      "粘性損失が支配的な非定常流れ",
+      "非圧縮・定常・損失を無視できる流れ",
+      "必ず圧縮性を考慮する流れ",
+      "熱伝導だけを扱う現象"
+    ],
+    "correctIndex": 1,
+    "explanation": "基本形のベルヌーイの定理は、非圧縮、定常、同一流線上、損失を無視できる流れに適用する。"
+  },
+  {
+    "category": "専門科目（機械部門）",
+    "year": 2020,
+    "question": "炭素鋼の焼入れの主目的として最も適切なものはどれか。",
+    "choices": [
+      "軟化させ切削性だけを高める",
+      "硬さと強度を高める",
+      "表面の油分を除去する",
+      "密度を半分にする"
+    ],
+    "correctIndex": 1,
+    "explanation": "焼入れはオーステナイト化後に急冷し、マルテンサイトなどを生成させて硬さと強度を高める熱処理である。"
+  },
+  {
+    "category": "専門科目（機械部門）",
+    "year": 2020,
+    "question": "ねじ締結でばね座金や戻り止めナットを用いる主な目的はどれか。",
+    "choices": [
+      "ねじのピッチを変えるため",
+      "ゆるみを抑制するため",
+      "ねじ山をなくすため",
+      "必ず締付け力をゼロにするため"
+    ],
+    "correctIndex": 1,
+    "explanation": "振動や繰返し荷重でねじがゆるむことがあるため、ばね座金、戻り止めナット、接着剤などでゆるみを抑制する。"
+  },
+  {
+    "category": "専門科目（機械部門）",
+    "year": 2020,
+    "question": "比例制御のみの制御系で一般に残りやすいものはどれか。",
+    "choices": [
+      "定常偏差",
+      "絶対零度",
+      "材料の降伏点",
+      "流量係数"
+    ],
+    "correctIndex": 0,
+    "explanation": "比例制御だけでは負荷変動などに対して定常偏差が残ることがある。積分動作は定常偏差の低減に有効である。"
   }
 ]

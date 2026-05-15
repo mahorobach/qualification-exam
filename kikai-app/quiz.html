@@ -12,7 +12,7 @@
   </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <title>技術士第一次試験（機械部門）過去問クイズ</title>
+    <title>技術士第一次試験（機械部門）過去問風オリジナルクイズ</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
@@ -286,7 +286,7 @@
         }
         .sub-btn:hover { background: #2a3645; }
 
-        /* ── AI Panel ── */
+        /* ── Detail panel ── */
 
         /* Load warning */
         .load-warning {
@@ -321,13 +321,13 @@
             <div class="mode-grid">
                 <button type="button" class="mode-btn" id="btn-mode-year">
                     <span class="m-icon">📅</span>
-                    <span class="m-name">年度別（本番形式）</span>
+                    <span class="m-name">年度別演習</span>
                     <span class="m-desc">年度を選択してタイマー付きで解答。戻る・進むボタンで自由に移動可能。時間終了または終了ボタンで全問の解説を表示。</span>
                 </button>
                 <button type="button" class="mode-btn" id="btn-mode-cat">
                     <span class="m-icon">📚</span>
                     <span class="m-name">分野別（学習モード）</span>
-                    <span class="m-desc">科目を選んで1問ずつ解答。回答するたびに正誤と詳細解説を確認できます。AIへの質問機能付き。</span>
+                    <span class="m-desc">科目を選んで1問ずつ解答。回答するたびに正誤と詳細解説を確認できます。</span>
                 </button>
             </div>
         </div>
@@ -342,7 +342,7 @@
         <a href="#" class="back-link" id="lnk-year-back">← モード選択へ</a>
         <div class="card">
             <p class="screen-title">年度を選択</p>
-            <p class="screen-sub">解答する過去問の年度を選んでください</p>
+            <p class="screen-sub">解答する年度別のオリジナル演習を選んでください</p>
             <div class="sel-list" id="year-list"></div>
         </div>
         <div class="card" style="padding:14px 16px;">
@@ -701,6 +701,7 @@ function startExam(yearKey) {
     document.getElementById("all-done-notice").hidden = true;
     buildQNav();
     renderExamQ();
+    updateExamMeta();
     startTimer();
 }
 
@@ -1034,7 +1035,7 @@ document.getElementById("btn-retry").addEventListener("click", () => {
 });
 
 // ══════════════════════════════════════
-//  AI Panel (Practice mode only)
+//  Detail panel (Practice mode only)
 // ══════════════════════════════════════
 
 // ══════════════════════════════════════

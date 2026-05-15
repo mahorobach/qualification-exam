@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>専門科目（機械部門）の傾向と対策 | 技術士第一次試験</title>
+  <meta name="description" content="技術士第一次試験・機械部門の専門科目対策。材料力学、流体、熱、機械力学、機械要素、加工の頻出公式と図面問題の解き方を整理。" />
+  <link rel="canonical" href="https://qualifications.app/kikai-app/taisaku-specialty.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root { --bg:#0f1419; --surface:#1a222c; --surface2:#232d3a; --text:#e8edf4; --muted:#8b9aad; --accent:#3ecf8e; --blue:#3d9cf0; --gold:#f0c674; --line:rgba(255,255,255,.08); }
+    * { box-sizing:border-box; }
+    body { margin:0; min-height:100dvh; font-family:'Zen Kaku Gothic New','Hiragino Sans',sans-serif; color:var(--text); background:var(--bg); background-image:radial-gradient(ellipse 80% 45% at 50% -18%,rgba(62,207,142,.15),transparent); padding:calc(52px + max(18px,env(safe-area-inset-top))) 18px 42px; line-height:1.75; }
+    .nav { position:fixed; top:0; left:0; right:0; height:52px; z-index:10; display:flex; align-items:center; justify-content:space-between; padding:0 18px; background:rgba(15,20,25,.9); border-bottom:1px solid var(--line); backdrop-filter:blur(18px); }
+    .nav a { color:rgba(255,255,255,.82); text-decoration:none; font-size:.88rem; font-weight:700; }
+    .wrap { max-width:820px; margin:0 auto; }
+    .label { display:inline-flex; padding:4px 9px; border-radius:999px; background:rgba(62,207,142,.14); color:#9af4c9; font-size:.72rem; font-weight:700; }
+    h1 { margin:12px 0 8px; font-size:1.58rem; line-height:1.35; }
+    .lead { margin:0 0 18px; color:var(--muted); font-size:.94rem; }
+    .card { background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:18px; margin-bottom:14px; box-shadow:0 8px 28px rgba(0,0,0,.26); }
+    .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+    h2 { margin:0 0 12px; color:var(--accent); font-size:1.05rem; }
+    h3 { margin:14px 0 8px; font-size:.95rem; color:#d7ffe9; }
+    p, li { font-size:.9rem; }
+    p { margin:0 0 12px; }
+    ul { margin:0; padding-left:1.15em; }
+    li { margin:0 0 8px; }
+    .formula { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; }
+    .formula div { padding:10px 12px; background:var(--surface2); border:1px solid var(--line); border-radius:9px; font-size:.88rem; }
+    code { color:#d7ffe9; font-family:ui-monospace,SFMono-Regular,Menlo,monospace; }
+    .flow { display:grid; gap:8px; counter-reset:step; }
+    .flow div { position:relative; padding:10px 12px 10px 38px; background:var(--surface2); border:1px solid var(--line); border-radius:9px; font-size:.88rem; }
+    .flow div::before { counter-increment:step; content:counter(step); position:absolute; left:11px; top:10px; width:18px; height:18px; border-radius:50%; display:grid; place-items:center; background:rgba(62,207,142,.18); color:#9af4c9; font-size:.72rem; font-weight:700; }
+    .cta { display:block; text-align:center; margin-top:16px; padding:14px; border-radius:11px; background:linear-gradient(135deg,var(--accent),#a8ffd1); color:#071a11; text-decoration:none; font-weight:700; }
+    .note { color:var(--muted); font-size:.8rem; }
+    @media (max-width:720px) { .grid,.formula { grid-template-columns:1fr; } h1 { font-size:1.34rem; } .card { padding:16px; } }
+  </style>
+</head>
+<body>
+  <nav class="nav"><a href="index.html">← 技術士ポータル</a><a href="quiz.html">クイズを開く</a></nav>
+  <main class="wrap">
+    <span class="label">専門科目（機械部門）</span>
+    <h1>図面を式に直す力が、そのまま得点になる</h1>
+    <p class="lead">専門科目は、材料力学・流体・熱・機械力学・機械要素が繰り返し出やすい領域です。図面問題は見た目に圧されず、荷重、支点、流れ、温度、回転数を式へ置き換える練習が近道です。</p>
+
+    <section class="grid">
+      <div class="card">
+        <h2>頻出パターン</h2>
+        <ul>
+          <li>材料力学：応力、曲げモーメント、トラス、モールの応力円、座屈。</li>
+          <li>流体：連続の式、ベルヌーイ、レイノルズ数、ポンプ・配管。</li>
+          <li>熱：熱力学第一法則、カルノー、オットー、ランキン、熱伝導。</li>
+          <li>機械力学・制御：ばね質量系、固有振動数、PID、伝達関数。</li>
+          <li>機械要素・加工：歯車、ねじ、軸受、溶接、切削、熱処理。</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>図面問題の読み方</h2>
+        <div class="flow">
+          <div>まず「何を求めるか」を丸で囲む。反力、応力、速度、効率など。</div>
+          <div>図中の数値を単位つきで拾う。mmとm、kNとNの混在に注意。</div>
+          <div>支点・流れ方向・回転方向・熱の流れを確認する。</div>
+          <div>使う公式を1つに絞り、選択肢の桁で検算する。</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>覚えておくべき公式</h2>
+      <div class="formula">
+        <div><code>σ = P / A</code><br>引張・圧縮応力。断面積の単位に注意。</div>
+        <div><code>Mmax = PL / 4</code><br>中央集中荷重の単純支持梁。</div>
+        <div><code>Pcr = π²EI / L²</code><br>両端ピン柱のオイラー座屈。</div>
+        <div><code>A1v1 = A2v2</code><br>非圧縮性流体の連続の式。</div>
+        <div><code>ηc = 1 - TL / TH</code><br>カルノー効率。温度はKで使う。</div>
+        <div><code>ηotto = 1 - 1 / r^(κ-1)</code><br>圧縮比が大きいほど効率上昇。</div>
+        <div><code>ωn = √(k/m)</code><br>1自由度ばね質量系の固有角振動数。</div>
+        <div><code>n1z1 = n2z2</code><br>歯車の速度比。外歯車は回転方向が反対。</div>
+        <div><code>L = p × n</code><br>ねじのリード。ピッチ×条数。</div>
+        <div><code>L10 = (C/P)^3 × 10^6</code><br>ボール軸受寿命。荷重は3乗で効く。</div>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h2>分野別のコツ</h2>
+        <h3>材料力学</h3>
+        <p>荷重から反力、反力から曲げ、曲げから応力の順に考えます。図面問題は支点条件を見落とさないことが最重要です。</p>
+        <h3>熱・流体</h3>
+        <p>熱は温度をKへ、流体は断面積と速度の積を見るだけで解ける問題があります。公式に入れる前に保存される量を確認します。</p>
+      </div>
+      <div class="card">
+        <h2>直前チェック</h2>
+        <ul>
+          <li>面積は直径から出すなら <code>πd²/4</code>。</li>
+          <li>梁の中央集中荷重は <code>PL/4</code>、片持ちはり端荷重は <code>PL</code>。</li>
+          <li>熱効率の温度は摂氏ではなく絶対温度。</li>
+          <li>歯数が少ない歯車ほど速く回る。</li>
+          <li>軸受寿命は荷重が少し増えるだけで大きく低下する。</li>
+        </ul>
+        <a class="cta" href="quiz.html">専門科目をクイズで確認する</a>
+      </div>
+    </section>
+
+    <p class="note">※ 本ページの図面・公式整理は学習用です。公式問題や公式図面の転載ではありません。</p>
+  </main>
+</body>
+</html>
