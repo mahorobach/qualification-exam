@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/da8873c0823e389b7f9a1d40/script.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G4S7ZG2Y34"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-G4S7ZG2Y34');
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>AIと見直した電気工事士クイズ開発記2：著作権リスクをどう考えたか | 資格トレイン</title>
+    <meta name="description" content="第二種電気工事士クイズを作る中で、公式過去問の図面・写真・文章をどう扱うべきかをAIと検討した開発記録。事実と表現の違い、自作図面方針、販売時の注意をまとめました。" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3002712486184435" crossorigin="anonymous"></script>
+    <style>
+      :root{--white:#fff;--dark:#1d1d1f;--gray:#f5f5f7;--mid:#e8e8ed;--muted:#6e6e73;--blue:#0071e3;--nav-h:52px}
+      *{box-sizing:border-box;margin:0;padding:0} body{font-family:"Noto Sans JP","Hiragino Sans",-apple-system,sans-serif;color:var(--dark);line-height:1.85;font-size:17px;background:var(--white);-webkit-font-smoothing:antialiased}
+      .nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:10;background:rgba(255,255,255,.86);backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,0,0,.08);display:flex;align-items:center}.nav-inner{max-width:980px;margin:0 auto;padding:0 22px;width:100%;display:flex;justify-content:space-between;align-items:center}.nav a{text-decoration:none;color:var(--dark);font-weight:600}.nav button{border:0;background:var(--gray);border-radius:999px;padding:8px 12px}.breadcrumb{padding:calc(var(--nav-h) + 18px) 22px 0;max-width:760px;margin:0 auto;font-size:.78rem;color:var(--muted)}.breadcrumb a{color:var(--blue);text-decoration:none}
+      .hero{padding:54px 22px 42px;text-align:center;background:linear-gradient(135deg,#fff7ed,#ffedd5)}.badge{display:inline-block;font-size:.72rem;font-weight:700;color:#c2410c;background:rgba(234,88,12,.1);padding:4px 14px;border-radius:999px;margin-bottom:18px}.hero h1{font-size:clamp(1.55rem,4vw,2.25rem);line-height:1.3;max-width:780px;margin:0 auto 18px;font-weight:900}.meta{font-size:.78rem;color:var(--muted);display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+      .wrap{max-width:760px;margin:0 auto;padding:52px 22px 76px}.toc{background:var(--gray);border-radius:14px;padding:22px 26px;margin:30px 0 46px}.toc p{font-size:.74rem;font-weight:700;color:var(--muted);letter-spacing:.1em;margin-bottom:10px}.toc ol{padding-left:1.4em}.toc a{color:var(--blue);text-decoration:none}h2{font-size:1.35rem;margin:48px 0 16px;padding-bottom:10px;border-bottom:2px solid var(--mid)}h3{font-size:1.05rem;margin:28px 0 10px}p,li{font-size:.96rem;color:#333;font-weight:300}p{margin-bottom:18px}ul{padding-left:1.5em;margin:0 0 18px;display:flex;flex-direction:column;gap:8px}strong{font-weight:700;color:var(--dark)}.point{background:rgba(234,88,12,.07);border-left:3px solid #ea580c;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0}.point p{margin:0}.note{font-size:.86rem;color:var(--muted);background:var(--gray);padding:14px 18px;border-radius:12px}.cta{background:var(--dark);color:#fff;border-radius:18px;padding:30px 26px;text-align:center;margin-top:44px}.cta p{color:rgba(255,255,255,.7)}.cta a{display:inline-block;margin-top:10px;background:var(--blue);color:#fff;text-decoration:none;padding:12px 24px;border-radius:999px}footer{background:var(--dark);color:rgba(255,255,255,.55);padding:34px 22px;text-align:center;font-size:.75rem}
+    </style>
+  </head>
+  <body>
+    <nav class="nav"><div class="nav-inner"><a href="../index.html">🚃 資格トレイン</a><button onclick="location.href='index.html'">ブログ一覧</button></div></nav>
+    <nav class="breadcrumb"><a href="../index.html">トップ</a> › <a href="index.html">ブログ</a> › 電気工事士クイズ開発記2</nav>
+    <header class="hero">
+      <span class="badge">開発日誌</span>
+      <h1>AIと見直した電気工事士クイズ開発記2：著作権リスクをどう考えたか</h1>
+      <div class="meta"><span>📅 2026年5月15日</span><span>⏱ 読了約6分</span><span>✍️ 資格トレイン編集部</span></div>
+    </header>
+    <article class="wrap">
+      <p>重複問題を見直しているうちに、もう一つ大きな問題が出てきました。第二種電気工事士の学科試験には、図面や写真を見て答える問題があります。では、公式過去問の図面や写真をそのままアプリに入れてよいのか。</p>
+      <p>私はここで一度立ち止まりました。便利なアプリを作りたい気持ちはあります。しかし、便利さを理由に、他者の表現をそのまま使うのは危うい。AIと対話しながら、法的リスクと運営リスクを整理しました。</p>
+      <p class="note">この記事は開発上の判断をまとめたもので、法律相談ではありません。最終判断が必要な場合は専門家への確認が必要です。</p>
+      <nav class="toc" aria-label="目次"><p>目次</p><ol><li><a href="#sec1">事実と表現を分けて考える</a></li><li><a href="#sec2">図面と写真は特に危ない</a></li><li><a href="#sec3">販売するならさらに慎重に</a></li><li><a href="#sec4">私が選んだ方針</a></li><li><a href="#sec5">出典を明記する意味</a></li></ol></nav>
+      <h2 id="sec1">事実と表現を分けて考える</h2>
+      <p>最初に整理したのは、<strong>事実</strong>と<strong>表現</strong>の違いです。たとえば、ある回路でAとBがつながっているという接続関係は事実です。電気工事士試験で問われる法令の数値や、スイッチの使い方も、学習すべき知識そのものです。</p>
+      <p>一方で、その回路をどんな線幅で、どんな配置で、どんな紙面レイアウトで描くかは表現です。公式PDFの図面や写真は、単なる事実ではなく、誰かが作成した表現物です。</p>
+      <div class="point"><p><strong>判断の軸：</strong>知識や事実は学習コンテンツとして扱える。しかし、公式図面・公式写真・公式問題文をそのまま取り込むのは避ける。</p></div>
+      <h2 id="sec2">図面と写真は特に危ない</h2>
+      <p>文章であれば、構造化して言い換えたり、問題の聞き方を変えたりできます。しかし図面や写真は、そのまま使えば「その画像データ」を使うことになります。ここは言い逃れが難しい部分です。</p>
+      <p>特にアプリとして公開する場合、画像検索や権利保護ツールで検知される可能性もあります。App StoreやGoogle Playで販売するなら、通報一つで配信停止やアカウントリスクに発展する可能性も考えなければいけません。</p>
+      <h2 id="sec3">販売するならさらに慎重に</h2>
+      <p>無料の学習支援として公開する場合でも注意は必要です。まして販売するなら、公式過去問の画像や原文を商品価値の中心にしてはいけないと判断しました。</p>
+      <p>「他のアプリもやっているから大丈夫」と考えるのは危険です。それは許可されているのではなく、単に今は問題化していないだけかもしれません。長く運営するなら、最初からクリーンな作りにしておく方が良いと思いました。</p>
+      <h2 id="sec4">私が選んだ方針</h2>
+      <p>そこで、次の方針にしました。</p>
+      <ul>
+        <li>公式PDFの図面・写真をそのまま取り込まない</li>
+        <li>回路構成や接続関係などの事実だけを読み取る</li>
+        <li>図面が必要な場合は、自作SVGや模式図として描き直す</li>
+        <li>器具写真は、実物写真ではなく特徴を示すアイコンに置き換える</li>
+        <li>問題文も、公式文のコピーではなく、構造化した学習用の文にする</li>
+      </ul>
+      <p>この方針なら、学習に必要な知識は残しつつ、他者の創作的表現をそのまま使うリスクをかなり下げられます。</p>
+      <h2 id="sec5">出典を明記する意味</h2>
+      <p>もう一つ大事にしたのは、出典と方針を明記することです。試験センターの公表問題を参考にしていること、自作図面として再構築していること、公式画像を取り込んでいないことをアプリ内に記載しました。</p>
+      <p>出典を書けば何でも使ってよい、という意味ではありません。むしろ、権利を尊重しながら学習コンテンツとして再構成している姿勢を明確にするためのものです。</p>
+      <p>この検討を通じて、アプリの方向性が変わりました。単に過去問を並べるのではなく、<strong>安全に、長く運営できる学習ツールを作る</strong>。ここを軸にすることにしました。</p>
+      <div class="cta"><p>次の記事では、この方針を実際にどのような実装へ落とし込んだかを書きます。</p><a href="denco-quiz-implementation.html">第3回を読む</a></div>
+    </article>
+    <footer>© 2024-2026 Shikaku Train. All rights reserved.</footer>
+  </body>
+</html>

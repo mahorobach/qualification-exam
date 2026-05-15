@@ -126,6 +126,21 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://qualifications.app/blog/denco-quiz-duplicate-review.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://qualifications.app/blog/denco-quiz-copyright-review.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://qualifications.app/blog/denco-quiz-implementation.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://qualifications.app/blog/gijutsu-shi-kikai-goukaku.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

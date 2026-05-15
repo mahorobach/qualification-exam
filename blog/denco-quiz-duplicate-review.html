@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/da8873c0823e389b7f9a1d40/script.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G4S7ZG2Y34"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-G4S7ZG2Y34');
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>AIと見直した電気工事士クイズ開発記1：同じ問題が出る理由を検証した | 資格トレイン</title>
+    <meta name="description" content="第二種電気工事士クイズで同じような問題が出る理由を、AIと対話しながら検証した開発記録。選択肢違い、数値違い、重複グループ、出題履歴の扱いを整理しました。" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3002712486184435" crossorigin="anonymous"></script>
+    <style>
+      :root{--white:#fff;--dark:#1d1d1f;--gray:#f5f5f7;--mid:#e8e8ed;--muted:#6e6e73;--blue:#0071e3;--nav-h:52px}
+      *{box-sizing:border-box;margin:0;padding:0} body{font-family:"Noto Sans JP","Hiragino Sans",-apple-system,sans-serif;color:var(--dark);line-height:1.85;font-size:17px;background:var(--white);-webkit-font-smoothing:antialiased}
+      .nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:10;background:rgba(255,255,255,.86);backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,0,0,.08);display:flex;align-items:center}.nav-inner{max-width:980px;margin:0 auto;padding:0 22px;width:100%;display:flex;justify-content:space-between;align-items:center}.nav a{text-decoration:none;color:var(--dark);font-weight:600}.nav button{border:0;background:var(--gray);border-radius:999px;padding:8px 12px}
+      .breadcrumb{padding:calc(var(--nav-h) + 18px) 22px 0;max-width:760px;margin:0 auto;font-size:.78rem;color:var(--muted)}.breadcrumb a{color:var(--blue);text-decoration:none}.hero{padding:54px 22px 42px;text-align:center;background:linear-gradient(135deg,#eef6ff,#dbeafe)}.badge{display:inline-block;font-size:.72rem;font-weight:700;color:var(--blue);background:rgba(0,113,227,.1);padding:4px 14px;border-radius:999px;margin-bottom:18px}.hero h1{font-size:clamp(1.55rem,4vw,2.25rem);line-height:1.3;max-width:780px;margin:0 auto 18px;font-weight:900}.meta{font-size:.78rem;color:var(--muted);display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+      .wrap{max-width:760px;margin:0 auto;padding:52px 22px 76px}.toc{background:var(--gray);border-radius:14px;padding:22px 26px;margin:30px 0 46px}.toc p{font-size:.74rem;font-weight:700;color:var(--muted);letter-spacing:.1em;margin-bottom:10px}.toc ol{padding-left:1.4em}.toc a{color:var(--blue);text-decoration:none}h2{font-size:1.35rem;margin:48px 0 16px;padding-bottom:10px;border-bottom:2px solid var(--mid)}h3{font-size:1.05rem;margin:28px 0 10px}p,li{font-size:.96rem;color:#333;font-weight:300}p{margin-bottom:18px}ul{padding-left:1.5em;margin:0 0 18px;display:flex;flex-direction:column;gap:8px}strong{font-weight:700;color:var(--dark)}.point{background:rgba(0,113,227,.06);border-left:3px solid var(--blue);border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0}.point p{margin:0}.cta{background:var(--dark);color:#fff;border-radius:18px;padding:30px 26px;text-align:center;margin-top:44px}.cta p{color:rgba(255,255,255,.7)}.cta a{display:inline-block;margin-top:10px;background:var(--blue);color:#fff;text-decoration:none;padding:12px 24px;border-radius:999px}footer{background:var(--dark);color:rgba(255,255,255,.55);padding:34px 22px;text-align:center;font-size:.75rem}
+    </style>
+  </head>
+  <body>
+    <nav class="nav"><div class="nav-inner"><a href="../index.html">🚃 資格トレイン</a><button onclick="location.href='index.html'">ブログ一覧</button></div></nav>
+    <nav class="breadcrumb"><a href="../index.html">トップ</a> › <a href="index.html">ブログ</a> › 電気工事士クイズ開発記1</nav>
+    <header class="hero">
+      <span class="badge">開発日誌</span>
+      <h1>AIと見直した電気工事士クイズ開発記1：同じ問題が出る理由を検証した</h1>
+      <div class="meta"><span>📅 2026年5月15日</span><span>⏱ 読了約5分</span><span>✍️ 資格トレイン編集部</span></div>
+    </header>
+    <article class="wrap">
+      <p>第二種電気工事士アプリを作っていて、最初に気になったのは「同じ問題が出てくる」という感覚でした。システム上は別の問題として扱っていても、学習者から見れば同じ問題に見える。ここを放置すると、問題数を増やしても学習体験は良くなりません。</p>
+      <p>そこでAIと対話しながら、単に「問題を増やす」のではなく、まず重複の正体を調べることにしました。</p>
+      <nav class="toc" aria-label="目次"><p>目次</p><ol><li><a href="#sec1">最初の違和感</a></li><li><a href="#sec2">AI的には違うが人間には同じ</a></li><li><a href="#sec3">出題履歴の扱い</a></li><li><a href="#sec4">duplicateGroupという考え方</a></li><li><a href="#sec5">学んだこと</a></li></ol></nav>
+      <h2 id="sec1">最初の違和感</h2>
+      <p>「クイズを始める」を押すと、20問のランダムクイズが出ます。理屈としては、過去に出た問題を避けながら次の20問を出すようにしたい。しかし実際に解いていると、同じような問題が何度も出てくる感覚がありました。</p>
+      <p>最初は、履歴の保存ができていないのではないかと疑いました。ブラウザを閉じると記録が消えるのか、localStorageに残るのか、同じ問題IDを避けているのか。このあたりをAIに確認しながら、コードを追っていきました。</p>
+      <h2 id="sec2">AI的には違うが人間には同じ</h2>
+      <p>調べていくと、問題は単純なID重複ではありませんでした。問題文が少し違う、数値が違う、選択肢の順番が違う。データとしては別物です。</p>
+      <p>しかし学習者の感覚では、問われている論点が同じなら「また同じ問題だ」と感じます。たとえば、同じ公式を使う計算問題で数値だけが違う場合や、接地抵抗の数字を問う問題が何度も出る場合です。</p>
+      <div class="point"><p><strong>ここで重要だった気づき：</strong>アプリにとっての重複と、学習者にとっての重複は違う。問題IDだけでは、体感重複は防げない。</p></div>
+      <h2 id="sec3">出題履歴の扱い</h2>
+      <p>出題履歴はブラウザのlocalStorageに保存する方針にしました。つまり、ブラウザを閉じても通常は残ります。ただし、別端末・別ブラウザ・プライベートブラウズ・ユーザーがストレージを削除した場合は別です。</p>
+      <p>この仕様は、ログインなしの無料学習アプリとしては現実的です。サーバー側に履歴を保存しないのでコストを抑えられますし、個人情報を扱う範囲も小さくできます。</p>
+      <h2 id="sec4">duplicateGroupという考え方</h2>
+      <p>そこで導入したのが、<strong>duplicateGroup</strong>という考え方です。完全に同じ問題ではなくても、同じ学習論点の問題には同じグループ名を付ける。ランダム20問では、同じグループができるだけ近くに出ないようにする。</p>
+      <p>これにより、選択肢の順番だけが違う問題、数字だけが違う問題、表現だけが違う問題を「同じ論点」として扱えるようになります。</p>
+      <ul>
+        <li>問題IDは個別問題を識別する</li>
+        <li>duplicateGroupは学習論点の重複を識別する</li>
+        <li>random 20問では、IDとグループの両方を見て出題を調整する</li>
+      </ul>
+      <h2 id="sec5">学んだこと</h2>
+      <p>この検証で、問題品質は「問題数」だけでは決まらないと分かりました。200問あっても、同じ論点ばかりなら学習者は飽きます。逆に、数が少なくても論点が整理されていれば、学習効果は高くなります。</p>
+      <p>AIとの対話で良かったのは、私が感じた違和感を「仕様の問題」と「データ品質の問題」に分解できたことです。ここから、アプリの改善方針ははっきりしました。問題を増やす前に、まず重複を見える化する。これが最初の一歩でした。</p>
+      <div class="cta"><p>続きでは、過去問アプリを作るうえで避けて通れない著作権リスクについて整理します。</p><a href="denco-quiz-copyright-review.html">第2回を読む</a></div>
+    </article>
+    <footer>© 2024-2026 Shikaku Train. All rights reserved.</footer>
+  </body>
+</html>
