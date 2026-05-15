@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" role="img" aria-labelledby="title desc">
+  <title id="title">Self-made three-way switch control diagram</title>
+  <desc id="desc">An original schematic showing one lamp controlled from two locations with two three-way switches. This is not a trace of an official exam drawing.</desc>
+  <rect width="900" height="420" fill="#fff"/>
+  <g fill="none" stroke="#111827" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="80" y1="90" x2="220" y2="90"/>
+    <line x1="80" y1="310" x2="760" y2="310"/>
+    <rect x="220" y="58" width="94" height="94" rx="10"/>
+    <rect x="520" y="58" width="94" height="94" rx="10"/>
+    <line x1="314" y1="90" x2="520" y2="90"/>
+    <line x1="314" y1="126" x2="520" y2="126"/>
+    <line x1="614" y1="90" x2="730" y2="90"/>
+    <line x1="730" y1="90" x2="730" y2="170"/>
+    <circle cx="730" cy="210" r="40"/>
+    <line x1="702" y1="182" x2="758" y2="238"/>
+    <line x1="758" y1="182" x2="702" y2="238"/>
+    <line x1="730" y1="250" x2="730" y2="310"/>
+    <circle cx="248" cy="90" r="6" fill="#111827"/>
+    <circle cx="286" cy="90" r="6" fill="#111827"/>
+    <circle cx="286" cy="126" r="6" fill="#111827"/>
+    <line x1="248" y1="90" x2="286" y2="126"/>
+    <circle cx="548" cy="90" r="6" fill="#111827"/>
+    <circle cx="586" cy="90" r="6" fill="#111827"/>
+    <circle cx="548" cy="126" r="6" fill="#111827"/>
+    <line x1="548" y1="90" x2="586" y2="90"/>
+  </g>
+  <g font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Hiragino Sans', sans-serif" fill="#111827">
+    <text x="60" y="48" font-size="24" font-weight="700">2か所から1灯を操作する自作模式図</text>
+    <text x="62" y="84" font-size="16">非接地側</text>
+    <text x="62" y="304" font-size="16">接地側</text>
+    <text x="230" y="180" font-size="18" font-weight="700">3路SW</text>
+    <text x="530" y="180" font-size="18" font-weight="700">3路SW</text>
+    <text x="700" y="275" font-size="18" font-weight="700">照明</text>
+    <text x="60" y="370" font-size="15">注: 接続関係の理解用に作成した独自図面。公式試験図面のトレースではありません。</text>
+  </g>
+</svg>

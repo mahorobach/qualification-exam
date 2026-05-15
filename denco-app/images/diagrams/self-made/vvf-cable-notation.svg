@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 360" role="img" aria-labelledby="title desc">
+  <title id="title">Self-made VVF cable notation diagram</title>
+  <desc id="desc">Original schematic explaining the meaning of VVF cable notation such as 2.0-3C. This is not copied from official exam figures.</desc>
+  <rect width="900" height="360" fill="#fff"/>
+  <g font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Hiragino Sans', sans-serif" fill="#111827">
+    <text x="54" y="52" font-size="24" font-weight="700">VVFケーブル表記の読み取り（自作整理図）</text>
+    <rect x="80" y="95" width="740" height="92" rx="14" fill="#f8fafc" stroke="#111827" stroke-width="3"/>
+    <text x="450" y="156" text-anchor="middle" font-size="48" font-weight="800">VVF 2.0 - 3C</text>
+    <path d="M330 188v54" stroke="#111827" stroke-width="3"/>
+    <path d="M570 188v54" stroke="#111827" stroke-width="3"/>
+    <path d="M680 188v54" stroke="#111827" stroke-width="3"/>
+    <text x="330" y="270" text-anchor="middle" font-size="20" font-weight="700">導体径</text>
+    <text x="330" y="298" text-anchor="middle" font-size="18">2.0mm</text>
+    <text x="570" y="270" text-anchor="middle" font-size="20" font-weight="700">区切り</text>
+    <text x="680" y="270" text-anchor="middle" font-size="20" font-weight="700">心線数</text>
+    <text x="680" y="298" text-anchor="middle" font-size="18">3心</text>
+    <text x="54" y="335" font-size="15">注: 表記規則を説明する独自図面。公式試験図面のトレースではありません。</text>
+  </g>
+</svg>

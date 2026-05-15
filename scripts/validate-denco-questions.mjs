@@ -84,14 +84,19 @@ if (!Array.isArray(questions)) {
       if (!q.figureCaption) warn(id, "image questions should include figureCaption");
     }
 
+    if (/写真/.test(String(q.question || "")) && !q.image) {
+      warn(id, "question mentions a photo but has no self-made image; rewrite as text features or add a self-made schematic");
+    }
+
     if (q.sourceUrl && !String(q.sourceUrl).startsWith("https://www.shiken.or.jp/")) {
       warn(id, "sourceUrl is not the official exam center domain");
     }
   });
 }
 
-if (questions.length !== 200) {
-  warn(null, `expected 200 questions, found ${questions.length}`);
+const minimumQuestionCount = 200;
+if (questions.length < minimumQuestionCount) {
+  warn(null, `expected at least ${minimumQuestionCount} questions, found ${questions.length}`);
 }
 
 if (warnings.length) {

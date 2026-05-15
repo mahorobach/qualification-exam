@@ -792,7 +792,7 @@
                     </button>
                     <button type="button" class="mode-btn" id="btn-mode-year">
                         <span class="mode-icon">📅</span>
-                        <span><span class="mode-name">年度別演習</span><span class="mode-desc">年度を選んで120分タイマー付きで解答。問題を行き来でき、終了後に全解説を確認できます。</span></span>
+                        <span><span class="mode-name">年度別演習</span><span class="mode-desc">年度ベースで本番形式50問・120分タイマー付きで解答。配分不足分は問題バンクから補完します。</span></span>
                     </button>
                     <a class="mock-link-btn" href="mock-sets.html">
                         <span class="mode-icon">📋</span>
@@ -821,7 +821,7 @@
                     </div>
                     <div class="how-item">
                         <div class="how-num">2</div>
-                        <div class="how-text"><strong>年度別演習</strong>：年度を選んでタイマー付きで解答。解き終わった後に解説をまとめて確認できます。</div>
+                        <div class="how-text"><strong>年度別演習</strong>：年度ベースで、本番形式50問（一般30問＋配線図系20問）を解答。配分不足分は問題バンクから補完します。</div>
                     </div>
                     <div class="how-item">
                         <div class="how-num">3</div>
@@ -971,6 +971,10 @@
     <script>
         /** 「クイズを始める」（?mode=all）1セットあたりの出題数。実験で前後させる場合はここだけ変える */
         const QUICK_QUIZ_QUESTION_COUNT = 20;
+        const EXAM_TOTAL_QUESTION_COUNT = 50;
+        const EXAM_GENERAL_QUESTION_COUNT = 30;
+        const EXAM_DIAGRAM_QUESTION_COUNT = 20;
+        const EXAM_DIAGRAM_CATEGORY = "配線図・記号・識別";
 
         function syncMenuQuickQuizLabel() {
             const el = document.getElementById("btn-menu-quick-quiz");
@@ -1164,6 +1168,17 @@
 
         function getQuestionGroup(q) {
             return q && q.duplicateGroup ? String(q.duplicateGroup) : "";
+        }
+
+        function getQuestionUid(q) {
+            if (!q) return "";
+            if (q._qid) return String(q._qid);
+            if (q.id !== undefined) return "id:" + String(q.id);
+            return getQuestionStem(q.question);
+        }
+
+        function isExamDiagramQuestion(q) {
+            return (q && (q.category || "未分類")) === EXAM_DIAGRAM_CATEGORY;
         }
 
         function getQuestionSpacingKey(q) {
@@ -1388,6 +1403,84 @@
             return avoidAdjacentDuplicateStems(shuffleArray(out));
         }
 
+        function addQuestionToExamDeck(q, deck, usedIds, usedGroups) {
+            const uid = getQuestionUid(q);
+            if (!uid || usedIds.has(uid)) return false;
+            const group = getQuestionGroup(q);
+            if (group && usedGroups.has(group)) return false;
+            deck.push(q);
+            usedIds.add(uid);
+            if (group) usedGroups.add(group);
+            return true;
+        }
+
+        function difficultyTargets(total, easyRatio, medRatio, hardRatio) {
+            const totalRatio = easyRatio + medRatio + hardRatio;
+            let easy = Math.round(total * easyRatio / totalRatio);
+            let medium = Math.round(total * medRatio / totalRatio);
+            let hard = Math.round(total * hardRatio / totalRatio);
+            medium += total - (easy + medium + hard);
+            return { easy: easy, medium: medium, hard: hard };
+        }
+
+        function selectByDifficulty(candidates, total, easyRatio, medRatio, hardRatio, deck, usedIds, usedGroups) {
+            const byDiff = {
+                easy: shuffleArray(candidates.filter(function(q){ return (q.difficulty || "medium") === "easy"; })),
+                medium: shuffleArray(candidates.filter(function(q){ return (q.difficulty || "medium") === "medium"; })),
+                hard: shuffleArray(candidates.filter(function(q){ return (q.difficulty || "medium") === "hard"; }))
+            };
+            const targets = difficultyTargets(total, easyRatio, medRatio, hardRatio);
+
+            function take(diff, count) {
+                let added = 0;
+                const pool = byDiff[diff] || [];
+                for (let i = 0; i < pool.length && added < count && deck.length < total; i++) {
+                    if (addQuestionToExamDeck(pool[i], deck, usedIds, usedGroups)) added++;
+                }
+                return added;
+            }
+
+            take("easy", targets.easy);
+            take("medium", targets.medium);
+            take("hard", targets.hard);
+
+            const remaining = total - deck.length;
+            if (remaining > 0) {
+                const fill = shuffleArray(candidates.slice());
+                for (let i = 0; i < fill.length && deck.length < total; i++) {
+                    addQuestionToExamDeck(fill[i], deck, usedIds, usedGroups);
+                }
+            }
+        }
+
+        function buildExamLikeDeck(primary, supplement, total, easyRatio, medRatio, hardRatio) {
+            const deck = [];
+            const usedIds = new Set();
+            const usedGroups = new Set();
+            const diagramTarget = Math.min(EXAM_DIAGRAM_QUESTION_COUNT, total);
+            const generalTarget = Math.min(EXAM_GENERAL_QUESTION_COUNT, total - diagramTarget);
+            const primaryDiagram = primary.filter(isExamDiagramQuestion);
+            const primaryGeneral = primary.filter(function(q){ return !isExamDiagramQuestion(q); });
+            const supplementDiagram = supplement.filter(isExamDiagramQuestion);
+            const supplementGeneral = supplement.filter(function(q){ return !isExamDiagramQuestion(q); });
+
+            selectByDifficulty(primaryDiagram, diagramTarget, easyRatio, medRatio, hardRatio, deck, usedIds, usedGroups);
+            if (deck.length < diagramTarget) {
+                selectByDifficulty(supplementDiagram, diagramTarget, easyRatio, medRatio, hardRatio, deck, usedIds, usedGroups);
+            }
+
+            const generalStart = deck.length;
+            selectByDifficulty(primaryGeneral, generalStart + generalTarget, easyRatio, medRatio, hardRatio, deck, usedIds, usedGroups);
+            if (deck.length < total) {
+                selectByDifficulty(supplementGeneral, total, easyRatio, medRatio, hardRatio, deck, usedIds, usedGroups);
+            }
+            if (deck.length < total) {
+                selectByDifficulty(primary.concat(supplement), total, easyRatio, medRatio, hardRatio, deck, usedIds, usedGroups);
+            }
+
+            return avoidAdjacentDuplicateStems(shuffleArray(deck.slice(0, total)));
+        }
+
         function buildBalancedMock(all, total) {
             const cats = CATEGORY_ORDER.filter(function (c) {
                 return all.some(function (q) { return (q.category || "未分類") === c; });
@@ -1411,49 +1504,11 @@
         /**
          * 難易度ウェイト指定で50問を選ぶ。
          * easyRatio / medRatio / hardRatio の比率で easy/medium/hard 問題を配分し、
-         * 不足分は他難易度から補う。カテゴリ内でランダムに選択。
+         * 本番形式に合わせて一般30問 + 配線図・記号・識別20問を優先する。
+         * 不足分は同じ問題バンク内の他問題から補う。
          */
         function buildDifficultyWeightedMock(all, total, easyRatio, medRatio, hardRatio) {
-            const byDiff = {
-                easy:   shuffleArray(all.filter(function(q){ return (q.difficulty || "medium") === "easy"; })),
-                medium: shuffleArray(all.filter(function(q){ return (q.difficulty || "medium") === "medium"; })),
-                hard:   shuffleArray(all.filter(function(q){ return (q.difficulty || "medium") === "hard"; }))
-            };
-            const totalRatio = easyRatio + medRatio + hardRatio;
-            let nEasy   = Math.round(total * easyRatio  / totalRatio);
-            let nMedium = Math.round(total * medRatio   / totalRatio);
-            let nHard   = Math.round(total * hardRatio  / totalRatio);
-
-            // 合計をtotalに合わせる（端数調整はmediumで吸収）
-            let diff = total - (nEasy + nMedium + nHard);
-            nMedium += diff;
-
-            // 実際の在庫に合わせてキャップ
-            nEasy   = Math.min(nEasy,   byDiff.easy.length);
-            nMedium = Math.min(nMedium, byDiff.medium.length);
-            nHard   = Math.min(nHard,   byDiff.hard.length);
-
-            // 不足分を他難易度で補完
-            let shortage = total - (nEasy + nMedium + nHard);
-            if (shortage > 0) {
-                const addM = Math.min(shortage, byDiff.medium.length - nMedium);
-                nMedium += addM; shortage -= addM;
-            }
-            if (shortage > 0) {
-                const addH = Math.min(shortage, byDiff.hard.length - nHard);
-                nHard += addH; shortage -= addH;
-            }
-            if (shortage > 0) {
-                const addE = Math.min(shortage, byDiff.easy.length - nEasy);
-                nEasy += addE;
-            }
-
-            const pool = [
-                ...byDiff.easy.slice(0, nEasy),
-                ...byDiff.medium.slice(0, nMedium),
-                ...byDiff.hard.slice(0, nHard)
-            ];
-            return avoidAdjacentDuplicateStems(shuffleArray(pool));
+            return buildExamLikeDeck(all, all, total, easyRatio, medRatio, hardRatio);
         }
 
         const MOCK_SETS = {
@@ -2096,12 +2151,12 @@
             });
             Object.keys(byYear).sort(function(a,b){return Number(b)-Number(a);}).forEach(function(y) {
                 const btn = document.createElement("button"); btn.type = "button"; btn.className = "sel-item";
-                btn.innerHTML = "<strong>" + y + "年度</strong><span class='s-meta'>全 " + byYear[y] + " 問</span>";
+                btn.innerHTML = "<strong>" + y + "年度ベース</strong><span class='s-meta'>本番形式 50問</span>";
                 btn.addEventListener("click", function() { startYearExam(y); }); el.appendChild(btn);
             });
             const allBtn = document.createElement("button"); allBtn.type = "button"; allBtn.className = "sel-item";
             allBtn.style.borderColor = "rgba(61,156,240,0.35)";
-            allBtn.innerHTML = "<strong>🔀 全年度ランダム</strong><span class='s-meta'>全 " + allQuestions.length + " 問</span>";
+            allBtn.innerHTML = "<strong>🔀 全年度ランダム</strong><span class='s-meta'>本番形式 50問</span>";
             allBtn.addEventListener("click", function() { startYearExam("__all__"); }); el.appendChild(allBtn);
         }
 
@@ -2109,9 +2164,15 @@
         function startYearExam(yearKey) {
             examYearKey = yearKey; clearInterval(examTimerInt);
             let pool = yearKey === "__all__"
-                ? shuffleArray(allQuestions.slice())
-                : allQuestions.filter(function(q){ return String(q.year||"") === yearKey; })
-                    .sort(function(a,b){ return (CATEGORY_ORDER.indexOf(a.category)<0?99:CATEGORY_ORDER.indexOf(a.category)) - (CATEGORY_ORDER.indexOf(b.category)<0?99:CATEGORY_ORDER.indexOf(b.category)); });
+                ? buildExamLikeDeck(allQuestions.slice(), allQuestions.slice(), EXAM_TOTAL_QUESTION_COUNT, 30, 50, 20)
+                : buildExamLikeDeck(
+                    allQuestions.filter(function(q){ return String(q.year||"") === yearKey; }),
+                    allQuestions.slice(),
+                    EXAM_TOTAL_QUESTION_COUNT,
+                    30,
+                    50,
+                    20
+                ).sort(function(a,b){ return (CATEGORY_ORDER.indexOf(a.category)<0?99:CATEGORY_ORDER.indexOf(a.category)) - (CATEGORY_ORDER.indexOf(b.category)<0?99:CATEGORY_ORDER.indexOf(b.category)); });
             examQuestions = pool; examAnswers = new Array(pool.length).fill(null); examIdx = 0; examTimerSec = 120 * 60;
             showNewScreen("s-exam");
             document.getElementById("all-done-notice").hidden = true;

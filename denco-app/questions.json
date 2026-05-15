@@ -287,7 +287,7 @@
     "id": 15,
     "category": "機器・試験・計測",
     "difficulty": "medium",
-    "question": "写真のような器具の名称として、正しいものはどれか。（アウトレットボックスの記述：金属製の四角い箱で、KOの打抜き穴が複数ある）",
+    "question": "次の特徴に該当する材料の名称として、正しいものはどれか。（金属製の四角い箱で、KOの打抜き穴が複数ある）",
     "choices": [
       "プルボックス",
       "アウトレットボックス",
@@ -298,9 +298,17 @@
     "explanation": "アウトレットボックス（コンクリートボックス含む）は金属管工事でのスイッチ・コンセント取付けや電線の接続箇所に使用する四角い金属製ボックス。打ち抜き穴（ノックアウト）が特徴。",
     "year": "2022",
     "duplicateGroup": "q015",
-    "learningPoint": "写真のような器具の名称（アウトレットボックスの記述：金属製の四角い箱で、",
+    "learningPoint": "金属製の四角い箱で、KOの打抜き穴が複数ある材料の名称",
     "qualityStatus": "keep",
-    "variantRole": "standard"
+    "variantRole": "self_made_icon_identification",
+    "image": "images/diagrams/self-made/outlet-box-icon.svg",
+    "figureCaption": "自作アイコン: アウトレットボックスの識別ポイント",
+    "isModified": true,
+    "sourceFacts": [
+      "アウトレットボックスは金属製の四角い箱として識別されることがある",
+      "KOの打抜き穴が複数あることが特徴である"
+    ],
+    "expressionPolicy": "question_text_rewritten_as_feature_identification; self-made icon; no official photo copied"
   },
   {
     "id": 16,
@@ -2584,22 +2592,36 @@
   },
   {
     "id": 136,
-    "category": "屋内配線・施工",
+    "category": "配線図・記号・識別",
     "difficulty": "medium",
-    "question": "低圧屋内配線において、電灯回路の片切スイッチは必ず接続しなければならない電線はどれか。",
+    "question": "図の片切スイッチは、電灯回路のどの電線側に入れるのが原則として適切か。",
     "choices": [
-      "接地側電線（白）に必ず接続する",
-      "非接地側電線（黒）に必ず接続する",
-      "接地線（緑）に接続する",
-      "接地側・非接地側どちらに接続しても差し支えない"
+      "接地側電線（白線）に入れる",
+      "非接地側電線に入れる",
+      "接地線（緑線）に入れる",
+      "照明器具の器具本体に直列に入れる"
     ],
     "correctIndex": 1,
-    "explanation": "電技解釈第182条等：スイッチは必ず非接地側電線（黒線・L側）に接続する。スイッチをOFFにしたときに負荷側の電線を接地電位に保ち、電球の交換等の作業時の感電を防止するため。接地側電線（白）にスイッチを入れると、スイッチOFF時も非接地側と負荷が接続されたままになる。",
+    "explanation": "片切スイッチは原則として非接地側電線に入れる。スイッチを切ったときに負荷側が充電されたままになりにくく、器具交換や点検時の感電リスクを下げられる。接地側電線だけを開閉すると、負荷側に電圧が残るおそれがある。",
     "year": "2022",
-    "duplicateGroup": "q136",
-    "learningPoint": "低圧屋内配線において、電灯回路の片切スイッチは必ず接続しなければならない",
+    "duplicateGroup": "diagram_single_pole_switch_ungrounded_side",
+    "learningPoint": "片切スイッチは非接地側電線に入れる",
     "qualityStatus": "keep",
-    "variantRole": "standard"
+    "variantRole": "self_made_diagram_reading",
+    "questionTemplate": "図の片切スイッチは、電灯回路のどの電線側に入れるのが原則として適切か。",
+    "params": {},
+    "sourceFacts": {
+      "circuit": "single_phase_100v_branch_with_single_pole_switch",
+      "switchType": "single_pole",
+      "askedValue": "proper_switch_conductor_side",
+      "principle": "switch_on_ungrounded_conductor"
+    },
+    "expressionPolicy": "question_text_generated_from_template; self-made diagram; no official wording or drawing copied",
+    "image": "images/diagrams/self-made/branch-circuit-example.svg",
+    "figureCaption": "自作図面：単相100V分岐回路と片切スイッチ",
+    "isModified": true,
+    "source": "第二種電気工事士試験の公表過去問題を参考にした学習用類題",
+    "sourceUrl": "https://www.shiken.or.jp/construction/second/qa/index.html"
   },
   {
     "id": 137,
@@ -3816,5 +3838,155 @@
     "learningPoint": "登録有効期間の確認",
     "qualityStatus": "keep",
     "variantRole": "reinforcement"
+  },
+  {
+    "id": 201,
+    "category": "配線図・記号・識別",
+    "difficulty": "medium",
+    "question": "図のように1つの照明を2か所から操作する回路で、両端に用いるスイッチの組合せとして適切なものはどれか。",
+    "questionTemplate": "図のように1つの照明を2か所から操作する回路で、両端に用いるスイッチの組合せとして適切なものはどれか。",
+    "params": {},
+    "choices": [
+      "片切スイッチ2個",
+      "3路スイッチ2個",
+      "4路スイッチ2個",
+      "3路スイッチ1個と片切スイッチ1個"
+    ],
+    "correctIndex": 1,
+    "explanation": "1つの照明を2か所から点滅させる回路では、両端に3路スイッチを1個ずつ用いる。4路スイッチは3か所以上から操作する場合に、3路スイッチの間へ入れる。",
+    "image": "images/diagrams/self-made/three-way-switch-control.svg",
+    "figureCaption": "自作図: 2か所操作の照明回路を抽象化した模式図",
+    "source": "第二種電気工事士試験の公表過去問題を参考にした学習用類題",
+    "sourceUrl": "https://www.shiken.or.jp/answer/",
+    "isModified": true,
+    "sourceFacts": [
+      "1つの照明を2か所から操作する回路では3路スイッチを2個用いる",
+      "4路スイッチは3か所以上の操作で中間に用いる"
+    ],
+    "expressionPolicy": "question_text_generated_from_template; self-made diagram; no official wording or drawing copied",
+    "duplicateGroup": "diagram_three_way_switch_two_locations",
+    "learningPoint": "2か所点滅には3路スイッチ2個を使う",
+    "qualityStatus": "keep",
+    "variantRole": "self_made_diagram_reading"
+  },
+  {
+    "id": 202,
+    "category": "配線図・記号・識別",
+    "difficulty": "hard",
+    "question": "図のように1つの照明を3か所から操作する回路で、中央に入るスイッチとして適切なものはどれか。",
+    "questionTemplate": "図のように1つの照明を3か所から操作する回路で、中央に入るスイッチとして適切なものはどれか。",
+    "params": {},
+    "choices": [
+      "片切スイッチ",
+      "3路スイッチ",
+      "4路スイッチ",
+      "確認表示灯付きスイッチ"
+    ],
+    "correctIndex": 2,
+    "explanation": "3か所から1つの照明を操作する場合は、両端に3路スイッチ、中央に4路スイッチを用いる。片切スイッチや確認表示灯付きスイッチは、この多箇所点滅の中央スイッチにはならない。",
+    "image": "images/diagrams/self-made/four-way-switch-control.svg",
+    "figureCaption": "自作図: 3か所操作の照明回路を抽象化した模式図",
+    "source": "第二種電気工事士試験の公表過去問題を参考にした学習用類題",
+    "sourceUrl": "https://www.shiken.or.jp/answer/",
+    "isModified": true,
+    "sourceFacts": [
+      "3か所点滅では3路スイッチ2個の間に4路スイッチを入れる",
+      "4路スイッチは中間スイッチとして使う"
+    ],
+    "expressionPolicy": "question_text_generated_from_template; self-made diagram; no official wording or drawing copied",
+    "duplicateGroup": "diagram_four_way_switch_three_locations",
+    "learningPoint": "3か所点滅では3路スイッチ2個の間に4路スイッチを入れる",
+    "qualityStatus": "keep",
+    "variantRole": "self_made_diagram_reading"
+  },
+  {
+    "id": 203,
+    "category": "配線図・記号・識別",
+    "difficulty": "easy",
+    "question": "図の整理に基づき、防雨形コンセントを示す傍記として適切なものはどれか。",
+    "questionTemplate": "図の整理に基づき、防雨形コンセントを示す傍記として適切なものはどれか。",
+    "params": {},
+    "choices": [
+      "E",
+      "ET",
+      "WP",
+      "T"
+    ],
+    "correctIndex": 2,
+    "explanation": "コンセントの傍記でWPは防雨形を示す。Eは接地極、ETは接地端子、Tは抜け止め形を表すため、屋外や水気のある場所で問われる防雨形はWPで判断する。",
+    "image": "images/diagrams/self-made/outlet-suffix-symbols.svg",
+    "figureCaption": "自作図: コンセント傍記の代表例を整理した模式図",
+    "source": "第二種電気工事士試験の公表過去問題を参考にした学習用類題",
+    "sourceUrl": "https://www.shiken.or.jp/answer/",
+    "isModified": true,
+    "sourceFacts": [
+      "WPは防雨形コンセントを示す傍記である",
+      "Eは接地極、ETは接地端子、Tは抜け止め形を示す"
+    ],
+    "expressionPolicy": "question_text_generated_from_template; self-made diagram; no official wording or drawing copied",
+    "duplicateGroup": "diagram_outlet_suffix_weatherproof",
+    "learningPoint": "WPは防雨形コンセントを示す",
+    "qualityStatus": "keep",
+    "variantRole": "self_made_diagram_reading"
+  },
+  {
+    "id": 204,
+    "category": "配線図・記号・識別",
+    "difficulty": "easy",
+    "question": "図のような単線図の電線本数表示で、線上の斜線表示が省略されている場合、一般に何本として扱うか。",
+    "questionTemplate": "図のような単線図の電線本数表示で、線上の斜線表示が省略されている場合、一般に何本として扱うか。",
+    "params": {},
+    "choices": [
+      "1本",
+      "2本",
+      "3本",
+      "4本"
+    ],
+    "correctIndex": 1,
+    "explanation": "単線図では、電線本数を斜線で示すことがある。斜線表示が省略されている場合は、特別な注記がない限り一般に2本として扱う。",
+    "image": "images/diagrams/self-made/wire-count-slashes.svg",
+    "figureCaption": "自作図: 単線図の斜線による電線本数表示を整理した模式図",
+    "source": "第二種電気工事士試験の公表過去問題を参考にした学習用類題",
+    "sourceUrl": "https://www.shiken.or.jp/answer/",
+    "isModified": true,
+    "sourceFacts": [
+      "単線図の斜線は電線本数を表す",
+      "斜線表示がない場合は一般に2本として扱う"
+    ],
+    "expressionPolicy": "question_text_generated_from_template; self-made diagram; no official wording or drawing copied",
+    "duplicateGroup": "wiring_diagram_wire_count",
+    "learningPoint": "斜線省略時は原則2本として読む",
+    "qualityStatus": "keep",
+    "variantRole": "self_made_diagram_reading"
+  },
+  {
+    "id": 205,
+    "category": "配線図・記号・識別",
+    "difficulty": "medium",
+    "question": "図の「VVF 2.0-3C」において、「3C」が示す内容として適切なものはどれか。",
+    "questionTemplate": "図の「VVF 2.0-3C」において、「3C」が示す内容として適切なものはどれか。",
+    "params": {},
+    "choices": [
+      "導体径3.0mm",
+      "3心",
+      "許容電流3A",
+      "3種接地付き"
+    ],
+    "correctIndex": 1,
+    "explanation": "VVF 2.0-3Cの2.0は導体径2.0mmを示し、3Cは3心を示す。Cは心線数の表記として読むため、導体径や許容電流、接地種別ではない。",
+    "image": "images/diagrams/self-made/vvf-cable-notation.svg",
+    "figureCaption": "自作図: VVFケーブル表記を分解して示した模式図",
+    "source": "第二種電気工事士試験の公表過去問題を参考にした学習用類題",
+    "sourceUrl": "https://www.shiken.or.jp/answer/",
+    "isModified": true,
+    "sourceFacts": [
+      "VVF 2.0-3Cの2.0は導体径2.0mmを示す",
+      "3Cは3心を示す"
+    ],
+    "expressionPolicy": "question_text_generated_from_template; self-made diagram; no official wording or drawing copied",
+    "duplicateGroup": "diagram_vvf_cable_notation",
+    "learningPoint": "VVF表記の3Cは3心を示す",
+    "qualityStatus": "keep",
+    "variantRole": "self_made_diagram_reading"
   }
 ]
