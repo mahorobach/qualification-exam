@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 320" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 320" width="500" height="320" role="img" aria-labelledby="title desc">
 <title id="title">問17 写真の器具（配線用遮断器 電動機保護兼用）</title>
 <desc id="desc">配線用遮断器（電動機保護兼用）のイラスト。熱動電磁式でモーター保護機能を持つ。</desc>
 <rect width="500" height="320" fill="#f8fafc"/>
 
-<text x="250" y="28" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="15" text-anchor="middle" font-weight="bold" fill="#111827">写真の器具の名称は。【正解：ハ】</text>
+<text x="250" y="28" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="15" text-anchor="middle" font-weight="bold" fill="#111827">写真の器具の名称は。</text>
 
 <!-- Main breaker body -->
 <rect x="150" y="45" width="200" height="200" rx="8" fill="#37474f" stroke="#263238" stroke-width="3"/>

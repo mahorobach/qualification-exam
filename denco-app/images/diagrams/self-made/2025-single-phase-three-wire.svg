@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 340" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 340" width="700" height="340" role="img" aria-labelledby="title desc">
 <title id="title">単相3線式回路の電圧計算（問7）</title>
 <desc id="desc">単相3線式103/103V・各線0.1Ω・上負荷20A・下負荷10AのときのA-B間電圧を求める回路図（令和7年度上期 問7）</desc>
 <rect width="700" height="340" fill="#f8fafc"/>
@@ -78,5 +78,5 @@
 
 <!-- Note -->
 <text x="40" y="318" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="13" fill="#6b7280">中性線電流=20−10=10A（負荷→電源方向） Va=103−0.1×20=101V　Vb=0+0.1×10=1V</text>
-<text x="40" y="335" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="13" fill="#6b7280">→ a-b間電圧 = Va − Vb = 101 − 1 = 100 V（答：ロ）</text>
+<text x="40" y="335" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="13" fill="#6b7280">a-b間電圧 [V] = ？</text>
 </svg>

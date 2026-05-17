@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 200" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 200" width="500" height="200" role="img" aria-labelledby="title desc">
 <title id="title">問27 直動式指示電気計器の記号（永久磁石可動コイル形・水平置き直流）</title>
 <desc id="desc">目盛板にある2つの記号の意味を問う問題。永久磁石可動コイル形、水平置き使用、直流回路用。</desc>
 <rect width="500" height="200" fill="#f8fafc"/>
 
-<text x="250" y="26" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="14" text-anchor="middle" font-weight="bold" fill="#111827">目盛板の記号の意味と使用回路（答：イ）</text>
+<text x="250" y="26" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="14" text-anchor="middle" font-weight="bold" fill="#111827">目盛板の記号の意味と使用回路</text>
 
 <!-- Left symbol: circle with horseshoe (永久磁石可動コイル形) -->
 <g transform="translate(80, 60)">
@@ -30,7 +30,4 @@
   <text x="60" y="114" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="11" text-anchor="middle" fill="#374151">（目盛板水平）</text>
 </g>
 
-<!-- Answer box -->
-<rect x="30" y="168" width="440" height="28" rx="6" fill="#ecfdf5" stroke="#059669" stroke-width="1.5"/>
-<text x="250" y="187" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="13" text-anchor="middle" fill="#065f46">正解：イ → 永久磁石可動コイル形・目盛板を水平に・直流回路で使用</text>
 </svg>

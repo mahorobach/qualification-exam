@@ -1,10 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 280" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 280" width="500" height="280" role="img" aria-labelledby="title desc">
 <title id="title">問16 写真の材料（硬質PVCカップリング）</title>
 <desc id="desc">硬質ポリ塩化ビニル電線管(VE管)相互を直線接続するためのカップリングのイラスト</desc>
 <rect width="500" height="280" fill="#f8fafc"/>
 
 <!-- Title -->
-<text x="250" y="30" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="16" text-anchor="middle" font-weight="bold" fill="#111827">写真の材料はどれか。【正解：イ】</text>
+<text x="250" y="30" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="16" text-anchor="middle" font-weight="bold" fill="#111827">写真の材料はどれか。</text>
 
 <!-- Coupling body (center cylinder) -->
 <ellipse cx="250" cy="140" rx="42" ry="30" fill="#94a3b8" stroke="#475569" stroke-width="2"/>

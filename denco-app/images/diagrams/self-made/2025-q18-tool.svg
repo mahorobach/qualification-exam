@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 320" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 320" width="500" height="320" role="img" aria-labelledby="title desc">
 <title id="title">問18 写真の工具（トーチランプ＝塩ビ管曲げ加工用）</title>
 <desc id="desc">硬質ポリ塩化ビニル電線管の曲げ加工に使用するトーチランプ（ガスバーナー）のイラスト</desc>
 <rect width="500" height="320" fill="#f8fafc"/>
 
-<text x="250" y="28" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="15" text-anchor="middle" font-weight="bold" fill="#111827">写真の工具の用途は。【正解：イ】</text>
+<text x="250" y="28" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="15" text-anchor="middle" font-weight="bold" fill="#111827">写真の工具の用途は。</text>
 
 <!-- Gas cylinder body -->
 <rect x="200" y="180" width="100" height="110" rx="16" fill="#42a5f5" stroke="#1565c0" stroke-width="3"/>
