@@ -1,0 +1,937 @@
+{
+  "description": "2024年問題の削除バックアップ。PDF参照で作り直し予定。",
+  "removedAt": "2026-05-16",
+  "questions": [
+    {
+      "id": 3,
+      "category": "電気理論",
+      "difficulty": "medium",
+      "question": "抵抗3Ω、誘導リアクタンス4ΩのRL直列回路のインピーダンスとして、正しいものはどれか。",
+      "choices": [
+        "3.5Ω",
+        "5Ω",
+        "7Ω",
+        "25Ω"
+      ],
+      "correctIndex": 1,
+      "explanation": "インピーダンスZ = √(R² + XL²) = √(3² + 4²) = √(9 + 16) = √25 = 5Ω。直角三角形の3-4-5の関係を使う。",
+      "year": "2024",
+      "duplicateGroup": "theory_rl_impedance",
+      "learningPoint": "RL直列回路のインピーダンス",
+      "qualityStatus": "keep",
+      "variantRole": "basic"
+    },
+    {
+      "id": 6,
+      "category": "電気理論",
+      "difficulty": "hard",
+      "question": "三相3線式200V回路の線電流が10Aのとき、三相電力はいくらか。ただし、力率は1とする。",
+      "choices": [
+        "1000W",
+        "2000W",
+        "3464W",
+        "6000W"
+      ],
+      "correctIndex": 2,
+      "explanation": "三相電力P = √3 × VL × IL × cosθ = √3 × 200 × 10 × 1 ≒ 1.732 × 2000 ≒ 3464W。三相では√3の係数がつく。",
+      "year": "2024",
+      "duplicateGroup": "theory_three_phase_power",
+      "learningPoint": "三相交流の電力計算",
+      "qualityStatus": "keep",
+      "variantRole": "basic"
+    },
+    {
+      "id": 9,
+      "category": "屋内配線・施工",
+      "difficulty": "medium",
+      "question": "屋内配線の電線の接続において、絶縁電線の絶縁物と同等以上の絶縁効力のあるもので接続部分を被覆しなければならない。この規定の例外として認められているものはどれか。",
+      "choices": [
+        "ジョイントボックス内での接続",
+        "露出場所での接続",
+        "差込形コネクタを使用した接続",
+        "ねじ式コネクタを使用した接続"
+      ],
+      "correctIndex": 2,
+      "explanation": "差込形コネクタ（ワゴ等）は、コネクタ自体が絶縁物で覆われているため、別途絶縁テープ等での被覆が不要。ジョイントボックス内でも接続部への絶縁処置は必要。",
+      "year": "2024",
+      "duplicateGroup": "q009",
+      "learningPoint": "屋内配線の電線の接続において、絶縁電線の絶縁物と同等以上の絶縁効力のある",
+      "qualityStatus": "keep",
+      "variantRole": "standard"
+    },
+    {
+      "id": 14,
+      "category": "機器・試験・計測",
+      "difficulty": "medium",
+      "question": "単相100V用の電動機に使用するコンデンサの目的として、最も正しいものはどれか。",
+      "choices": [
+        "始動トルクを増加させる",
+        "消費電力を減らす",
+        "回転速度を上げる",
+        "過電流から保護する"
+      ],
+      "correctIndex": 0,
+      "explanation": "単相誘導電動機は単独では起動できないため、コンデンサを用いて補助巻線に位相差を持たせ、回転磁界を作り始動トルクを発生させる（コンデンサ始動形・コンデンサ運転形）。",
+      "year": "2024",
+      "duplicateGroup": "q014",
+      "learningPoint": "単相100V用の電動機に使用するコンデンサの目的として、最も正しいものは",
+      "qualityStatus": "keep",
+      "variantRole": "standard"
+    },
+    {
+      "id": 17,
+      "category": "機器・試験・計測",
+      "difficulty": "easy",
+      "question": "低圧の電路に使用するヒューズについて、正しい記述はどれか。",
+      "choices": [
+        "ヒューズは何度でも繰り返し使用できる",
+        "ヒューズの定格電流は電路の許容電流より大きくてよい",
+        "ヒューズは電流が流れると溶断して回路を遮断する",
+        "ヒューズは電圧が上昇すると作動する"
+      ],
+      "correctIndex": 2,
+      "explanation": "ヒューズは過電流が流れたときに溶断して回路を保護する装置。一度溶断すると交換が必要（一回限り）。定格電流は保護する電路の許容電流以下に選定する。",
+      "year": "2024",
+      "duplicateGroup": "q017",
+      "learningPoint": "低圧の電路に使用するヒューズについて、正しい記述はどれか",
+      "qualityStatus": "keep",
+      "variantRole": "basic"
+    },
+    {
+      "id": 20,
+      "category": "機器・試験・計測",
+      "difficulty": "easy",
+      "question": "蛍光灯に使用するグロースタータ（点灯管）の役割として、正しいものはどれか。",
+      "choices": [
+        "蛍光灯の明るさを調整する",
+        "フィラメントを予熱して始動を助ける",
+        "電流を整流する",
+        "高電圧パルスを持続的に発生させる"
+      ],
+      "correctIndex": 1,
+      "explanation": "グロースタータ（点灯管）内のバイメタルがグロー放電の熱で湾曲し、回路が閉じてフィラメントを予熱する。その後回路が開くことで安定器（チョーク）に高電圧を発生させ点灯する。",
+      "year": "2024",
+      "duplicateGroup": "q020",
+      "learningPoint": "蛍光灯に使用するグロースタータ（点灯管）の役割",
+      "qualityStatus": "keep",
+      "variantRole": "basic"
+    },
+    {
+      "id": 22,
+      "category": "屋内配線・施工",
+      "difficulty": "medium",
+      "question": "金属管工事において、管の曲げ加工を行う際、管の内径が小さくならないよう注意が必要である。曲げ半径の最小値として、正しいものはどれか。",
+      "choices": [
+        "管の内径の2倍以上",
+        "管の内径の4倍以上",
+        "管の外径の4倍以上",
+        "管の外径の6倍以上"
+      ],
+      "correctIndex": 3,
+      "explanation": "電技解釈第158条：金属管の曲げ半径は、管の外径の6倍以上とする。これより小さいと管がつぶれて電線の挿入が困難になる。",
+      "year": "2024",
+      "duplicateGroup": "q022",
+      "learningPoint": "金属管工事において、管の曲げ加工を行う際、管の内径が小さくならないよう注",
+      "qualityStatus": "keep",
+      "variantRole": "standard"
+    },
+    {
+      "id": 28,
+      "category": "機器・試験・計測",
+      "difficulty": "medium",
+      "question": "低圧電路の対地電圧が150V以下の場合、電技解釈に定める絶縁抵抗値の最小値として、正しいものはどれか。",
+      "choices": [
+        "0.1MΩ以上",
+        "0.2MΩ以上",
+        "0.4MΩ以上",
+        "1MΩ以上"
+      ],
+      "correctIndex": 0,
+      "explanation": "電技解釈第58条：対地電圧150V以下の電路の絶縁抵抗は0.1MΩ以上。300V以下（150V超）は0.2MΩ以上、300V超は0.4MΩ以上。数値を整理して覚える。",
+      "year": "2024",
+      "duplicateGroup": "insulation_resistance_standard",
+      "learningPoint": "低圧電路の絶縁抵抗基準値",
+      "qualityStatus": "keep",
+      "variantRole": "basic"
+    },
+    {
+      "id": 33,
+      "category": "配線図・記号・識別",
+      "difficulty": "medium",
+      "question": "配線図において、「PF管16」と表記されているとき、この16が示す意味はどれか。",
+      "choices": [
+        "管の肉厚が16mm",
+        "管の外径が16mm",
+        "管の呼び径が16（内径が約16mm）",
+        "管内に入れる電線本数が最大16本"
+      ],
+      "correctIndex": 2,
+      "explanation": "PF管・CD管の「16」は呼び径（名称上の径）で、概ね内径が16mm程度であることを示す。同様に「22」「28」「36」「42」等のサイズがある。外径や肉厚ではない。",
+      "year": "2024",
+      "duplicateGroup": "q033",
+      "learningPoint": "配線図において、「PF管16」と表記されているとき、この16が示す意味は",
+      "qualityStatus": "keep",
+      "variantRole": "standard"
+    },
+    {
+      "id": 36,
+      "category": "配線図・記号・識別",
+      "difficulty": "hard",
+      "question": "住宅の分電盤から各部屋への配線において、一般的なコンセント回路の分岐回路に使用する配線用遮断器の定格電流と電線の太さの組み合わせとして、最も標準的なものはどれか。",
+      "choices": [
+        "15A遮断器・VVF1.6mm",
+        "20A遮断器・VVF1.6mm",
+        "20A遮断器・VVF2.0mm",
+        "30A遮断器・VVF2.0mm"
+      ],
+      "correctIndex": 1,
+      "explanation": "一般住宅のコンセント分岐回路は20A配線用遮断器にVVF1.6mm（許容電流19A）の組み合わせが標準。ただし電技解釈では20Aに対しVVF2.0mm以上が原則だが、20A配線用遮断器（ヒューズなし）はVVF1.6mmとの組み合わせが認められている。",
+      "year": "2024",
+      "duplicateGroup": "q036",
+      "learningPoint": "住宅の分電盤から各部屋への配線において、一般的なコンセント回路の分岐回路",
+      "qualityStatus": "keep",
+      "variantRole": "application"
+    },
+    {
+      "id": 39,
+      "category": "配線図・記号・識別",
+      "difficulty": "hard",
+      "question": "配線図において、負荷（電灯等）の傍記表示「100V 60W」が示す意味として、正しいものはどれか。",
+      "choices": [
+        "最大使用電圧100V、最大消費電力60W",
+        "定格電圧100V、定格消費電力60W",
+        "最低使用電圧100V、最低消費電力60W",
+        "電源電圧100V、皮相電力60VA"
+      ],
+      "correctIndex": 1,
+      "explanation": "配線図の負荷傍記表示「100V 60W」は定格電圧100V、定格消費電力60Wを意味する。照明器具等の仕様を示し、分岐回路の容量計算の基礎となる。",
+      "year": "2024",
+      "duplicateGroup": "q039",
+      "learningPoint": "配線図において、負荷（電灯等）の傍記表示「100V 60W」が示す意味",
+      "qualityStatus": "keep",
+      "variantRole": "application"
+    },
+    {
+      "id": 43,
+      "category": "法令",
+      "difficulty": "hard",
+      "question": "電気工事士法において、電気工事士が主任電気工事士となるために必要な実務経験年数として、正しいものはどれか（第二種電気工事士の場合）。",
+      "choices": [
+        "1年以上",
+        "3年以上",
+        "5年以上",
+        "10年以上"
+      ],
+      "correctIndex": 1,
+      "explanation": "電気工事業法（電気工事業の業務の適正化に関する法律）第19条：主任電気工事士は、第一種電気工事士または第二種電気工事士取得後3年以上の実務経験が必要。令和4年以降も要件は変わっていない。",
+      "year": "2024",
+      "duplicateGroup": "law_chief_electrician",
+      "learningPoint": "主任電気工事士の実務経験",
+      "qualityStatus": "keep",
+      "variantRole": "basic"
+    },
+    {
+      "id": 46,
+      "category": "法令",
+      "difficulty": "hard",
+      "question": "電気工事士法施行規則における軽微な工事として、電気工事士でなくても行えるものはどれか。",
+      "choices": [
+        "コンセントの取り替え",
+        "照明器具の取り替え（配線への接続を含む）",
+        "差込プラグの取り替え（コード・キャブタイヤケーブルへの接続）",
+        "分電盤の配線用遮断器の取り替え"
+      ],
+      "correctIndex": 2,
+      "explanation": "電源コードやキャブタイヤケーブルへの差込プラグの取り付け・取り替えは軽微な工事に該当し、電気工事士でなくても行える。コンセント、照明器具の固定配線への接続、分電盤内の遮断器取り替えは資格が必要な電気工事に該当する。",
+      "year": "2024",
+      "duplicateGroup": "q046",
+      "learningPoint": "電気工事士法施行規則における軽微な工事として、電気工事士でなくても行える",
+      "qualityStatus": "keep",
+      "variantRole": "application"
+    },
+    {
+      "id": 49,
+      "category": "法令",
+      "difficulty": "medium",
+      "question": "電気工事士法において、電気工事士免状を携帯せずに電気工事に従事した場合の罰則として、正しいものはどれか。",
+      "choices": [
+        "1年以下の懲役または10万円以下の罰金",
+        "6ヶ月以下の懲役または50万円以下の罰金",
+        "3万円以下の罰金",
+        "免状の返納命令のみ"
+      ],
+      "correctIndex": 2,
+      "explanation": "電気工事士法第21条：電気工事士が免状を携帯せずに電気工事に従事した場合は3万円以下の罰金（行政罰）。無資格で電気工事に従事した場合は3万円以下の罰金（別途）。免状の不正取得等は1年以下の懲役または3万円以下の罰金。",
+      "year": "2024",
+      "duplicateGroup": "q049",
+      "learningPoint": "電気工事士法において、電気工事士免状を携帯せずに電気工事に従事した場合の",
+      "qualityStatus": "keep",
+      "variantRole": "standard"
+    },
+    {
+      "id": 51,
+      "category": "機器・試験・計測",
+      "difficulty": "easy",
+      "question": "絶縁被覆付き圧着端子（リングスリーブ）の「小」サイズが接続できる電線の組み合わせとして、正しいものはどれか。",
+      "choices": [
+        "1.6mm×2本のみ",
+        "1.6mm×2〜4本または2.0mm×2本",
+        "2.0mm×3本以上",
+        "3.5mm²以上の電線"
+      ],
+      "correctIndex": 1,
+      "explanation": "リングスリーブ「小」は、1.6mm×2〜4本、または1.6mm×1本と2.0mm×1本、または2.0mm×2本の接続に使用する。「中」は2.0mm×3〜4本等に使用。圧着マークは○（小）またはリングスリーブ記号で刻印される。",
+      "year": "2024",
+      "duplicateGroup": "q051",
+      "learningPoint": "絶縁被覆付き圧着端子（リングスリーブ）の「小」サイズが接続できる電線の組",
+      "qualityStatus": "keep",
+      "variantRole": "basic"
+    },
+    {
+      "id": 54,
+      "category": "接地・漏電保護",
+      "difficulty": "easy",
+      "question": "接地線（アース線）に使用する電線の色として、電気設備技術基準の解釈で定められているものはどれか。",
+      "choices": [
+        "赤色",
+        "黒色",
+        "緑色または緑/黄色の縞模様",
+        "白色"
+      ],
+      "correctIndex": 2,
+      "explanation": "電技解釈第12条：接地線には緑色または緑色と黄色の縞模様の電線を使用する（国際規格IEC準拠）。接地側電線には白色または灰色を使用する。非接地側電線には黒色・赤色等を使用する。",
+      "year": "2024",
+      "duplicateGroup": "q054",
+      "learningPoint": "接地線（アース線）に使用する電線の色として、電気設備技術基準の解釈で定め",
+      "qualityStatus": "keep",
+      "variantRole": "basic"
+    },
+    {
+      "id": 56,
+      "category": "機器・試験・計測",
+      "difficulty": "medium",
+      "question": "配線用遮断器（MCCB）の過電流遮断機能の動作方式として、正しいものはどれか。",
+      "choices": [
+        "小過電流：バイメタル（熱動式）、大電流（短絡）：電磁石（電磁式）の組み合わせ",
+        "過電流・短絡ともに電磁石のみで動作する",
+        "過電流・短絡ともにバイメタルのみで動作する",
+        "零相変流器と電磁石の組み合わせで動作する"
+      ],
+      "correctIndex": 0,
+      "explanation": "配線用遮断器（熱電磁式）は、小さな過電流ではバイメタルが熱で変形してトリップ（熱動式）、短絡等の大電流では電磁石が瞬時動作してトリップ（電磁式）する二段構えの動作方式。",
+      "year": "2024",
+      "duplicateGroup": "q056",
+      "learningPoint": "配線用遮断器（MCCB）の過電流遮断機能の動作方式",
+      "qualityStatus": "keep",
+      "variantRole": "standard"
+    },
+    {
+      "id": 60,
+      "category": "機器・試験・計測",
+      "difficulty": "medium",
+      "question": "EM-EEFケーブル（エコケーブル）の特徴として、正しいものはどれか。",
+      "choices": [
+        "難燃性が低く火災時に有毒ガスを発生しない",
+        "ハロゲンフリーの絶縁体を使用し燃焼時の有毒ガスが少ない",
+        "油脂に強く工場の床下配線に適している",
+        "耐熱性が高く許容温度が150℃である"
+      ],
+      "correctIndex": 1,
+      "explanation": "EM-EEF（エコケーブル）はハロゲンを含まないポリオレフィン系材料を使用したビニルシースの代替品。燃焼時に塩化水素などの有毒ガスや腐食性ガスの発生が少なく、環境・防災面で優れる。形状・許容電流はVVFと同等。",
+      "year": "2024",
+      "duplicateGroup": "q060",
+      "learningPoint": "EM-EEFケーブル（エコケーブル）の特徴",
+      "qualityStatus": "keep",
+      "variantRole": "standard"
+    },
+    {
+      "id": 63,
+      "category": "機器・試験・計測",
+      "difficulty": "medium",
+      "question": "低圧カットアウトスイッチ（ナイフスイッチ）の取り付け方向として、正しいものはどれか。",
+      "choices": [
+        "ナイフ（刃）が上方向になるように取り付ける",
+        "ナイフ（刃）が下方向になるように取り付ける",
+        "水平方向に取り付ける",
+        "どの方向でも差し支えない"
+      ],
+      "correctIndex": 0,
+      "explanation": "カットアウトスイッチ（ナイフスイッチ）は、刃（ナイフ）が上向きになるよう（開放時にナイフが下がる向き）に取り付ける。これはOFF時にナイフが自重で接触部から離れ、誤接触防止と感電防止のための規定。",
+      "year": "2024",
+      "duplicateGroup": "q063",
+      "learningPoint": "低圧カットアウトスイッチ（ナイフスイッチ）の取り付け方向",
+      "qualityStatus": "keep",
+      "variantRole": "standard"
+    },
+    {
+      "id": 66,
+      "category": "機器・試験・計測",
+      "difficulty": "easy",
+      "question": "電線（VVFケーブル）の外装をはぎ取る専用工具として、ストリッパがある。ワイヤストリッパを使用する主な目的はどれか。",
+      "choices": [
+        "電線を正確な長さに切断する",
+        "電線の被覆を一定の深さで均一に剥ぎ取る",
+        "電線管にねじを切る",
+        "電線を圧着端子に接続する"
+      ],
+      "correctIndex": 1,
+      "explanation": "ワイヤストリッパは電線の絶縁被覆を心線を傷つけずに一定の深さで均一に剥ぎ取るための専用工具。電工ナイフより作業が速く、心線への傷（ニックス）が生じにくい。電線サイズに応じた刃の選択が重要。",
+      "year": "2024",
+      "duplicateGroup": "q066",
+      "learningPoint": "電線（VVFケーブル）の外装をはぎ取る専用工具として、ストリッパがある。",
+      "qualityStatus": "keep",
+      "variantRole": "basic"
+    },
+    {
+      "id": 69,
+      "category": "機器・試験・計測",
+      "difficulty": "medium",
+      "question": "プルボックスの主な使用目的として、正しいものはどれか。",
+      "choices": [
+        "電線管の直角曲げに使用する",
+        "多数の電線管が集まる場所での電線の引き入れ・接続作業のスペースを確保する",
+        "照明器具を天井に取り付けるための補強に使用する",
+        "分電盤内の電線を束ねるために使用する"
+      ],
+      "correctIndex": 1,
+      "explanation": "プルボックスは多数の電線管が集合する場所（分岐・接続点）で、電線の引き入れ・引き出しおよび接続作業のスペースを確保するために設置する金属製の箱。アウトレットボックスより大型で、幹線分岐等の大容量配線に使用される。",
+      "year": "2024",
+      "duplicateGroup": "q069",
+      "learningPoint": "プルボックスの主な使用目的",
+      "qualityStatus": "keep",
+      "variantRole": "standard"
+    },
+    {
+      "id": 72,
+      "category": "配線図・記号・識別",
+      "difficulty": "easy",
+      "question": "配線図において、蛍光灯の図記号として使われるものはどれか。",
+      "choices": [
+        "○（白丸）",
+        "長方形の中に直線2本",
+        "○の中に×印",
+        "■（黒四角）"
+      ],
+      "correctIndex": 1,
+      "explanation": "蛍光灯の図記号は長方形（器具の形）の中に直線を2本書いた形（ランプが2本の場合など）で表す。白熱灯は「○」、換気扇は「○に×」で表す。蛍光灯器具の種類（直付け・埋め込み等）で形状が変わる場合もある。",
+      "year": "2024",
+      "duplicateGroup": "q072",
+      "learningPoint": "配線図において、蛍光灯の図記号として使われるものはどれか",
+      "qualityStatus": "keep",
+      "variantRole": "basic"
+    },
+    {
+      "id": 75,
+      "category": "配線図・記号・識別",
+      "difficulty": "medium",
+      "question": "配線図において、接地極付き接地端子付きコンセント（アース端子付き）の傍記として使われる記号はどれか。",
+      "choices": [
+        "「E」のみ",
+        "「EET」",
+        "「2E」",
+        "「接地」"
+      ],
+      "correctIndex": 1,
+      "explanation": "接地極付き接地端子付きコンセントの図記号には「EET」と傍記する。「E」は接地端子のみ付き、「ET」は接地端子付き、「EET」は接地極付き接地端子付きを示す。洗濯機や食洗器の専用コンセントに使用される。",
+      "year": "2024",
+      "duplicateGroup": "q075",
+      "learningPoint": "配線図において、接地極付き接地端子付きコンセント（アース端子付き）の傍記",
+      "qualityStatus": "keep",
+      "variantRole": "standard"
+    },
+    {
+      "id": 78,
+      "category": "配線図・記号・識別",
+      "difficulty": "hard",
+      "question": "単線図において、片切スイッチ1個で照明1個を点滅する基本回路を複線図に書き起こす場合、回路全体で必要な電線の最少本数はどれか。",
+      "choices": [
+        "1本",
+        "2本",
+        "3本",
+        "4本"
+      ],
+      "correctIndex": 2,
+      "explanation": "片切スイッチ1個・照明1個の基本回路では、電源からスイッチへ非接地側電線1本、スイッチから照明へ戻るスイッチ線1本、電源から照明へ接地側電線1本の合計3本が必要。片切スイッチは非接地側電線に入れる。",
+      "year": "2024",
+      "duplicateGroup": "wiring_diagram_wire_count",
+      "learningPoint": "片切スイッチ基本回路の複線図",
+      "qualityStatus": "keep",
+      "variantRole": "basic"
+    },
+    {
+      "id": 81,
+      "category": "配線図・記号・識別",
+      "difficulty": "hard",
+      "question": "単相3線式100/200V配線図において、エアコン専用200V回路の配線に使用される電線として正しいものはどれか。",
+      "choices": [
+        "白（接地側）1本のみ",
+        "黒（非接地側L1）・白（中性線）の2本",
+        "黒（非接地側L1）・赤（非接地側L2）の2本",
+        "黒（L1）・白（中性線）・赤（L2）の3本"
+      ],
+      "correctIndex": 2,
+      "explanation": "単相3線式200V回路は両外側の電圧線（L1：黒とL2：赤）から取り出す。中性線（白）は不要。中性線（白）を含む3本使用するのは100V/200V切替コンセント等の場合。",
+      "year": "2024",
+      "duplicateGroup": "q081",
+      "learningPoint": "単相3線式100/200V配線図において、エアコン専用200V回路の配線",
+      "qualityStatus": "keep",
+      "variantRole": "application"
+    },
+    {
+      "id": 84,
+      "category": "配線図・記号・識別",
+      "difficulty": "hard",
+      "question": "住宅配線図において、浴室の換気扇と洗面所の照明を別々にON/OFFできるようにするために使用するスイッチはどれか。",
+      "choices": [
+        "片切スイッチ1個（同時制御）",
+        "2連スイッチ（片切スイッチ2個を一体化したもの）",
+        "3路スイッチ2個",
+        "4路スイッチ1個"
+      ],
+      "correctIndex": 1,
+      "explanation": "換気扇と照明を別々に操作したい場合は、片切スイッチを2個並べた2連スイッチを用いる。1個の片切スイッチでは同時制御になり、3路スイッチは2箇所操作、4路スイッチは3箇所以上操作に使う。",
+      "year": "2024",
+      "duplicateGroup": "q084",
+      "learningPoint": "住宅配線図において、浴室の換気扇と洗面所の照明を別々にON/OFFできる",
+      "qualityStatus": "keep",
+      "variantRole": "application"
+    },
+    {
+      "id": 87,
+      "category": "配線図・記号・識別",
+      "difficulty": "hard",
+      "question": "配線図において、照明回路で使用電力（W数）の合計を求める場合、配線図に記載された負荷の「定格電圧・定格電力」から合計消費電流を計算する。100V回路で400Wの照明と600Wの照明を同一分岐回路に接続した場合、合計電流はいくらか。",
+      "choices": [
+        "4A",
+        "6A",
+        "10A",
+        "14A"
+      ],
+      "correctIndex": 2,
+      "explanation": "合計電力 = 400W + 600W = 1000W。合計電流 I = P / V = 1000 / 100 = 10A。この回路には15A分岐回路が必要（10A < 15A）。力率は1（抵抗負荷）として計算。",
+      "year": "2024",
+      "duplicateGroup": "q087",
+      "learningPoint": "配線図において、照明回路で使用電力（W数）の合計を求める場合、配線図に記",
+      "qualityStatus": "keep",
+      "variantRole": "application"
+    },
+    {
+      "id": 90,
+      "category": "配線図・記号・識別",
+      "difficulty": "medium",
+      "question": "配線図で「接地側電線」を示す電線の色として、内線規程で定められているものはどれか。",
+      "choices": [
+        "黒色",
+        "赤色",
+        "白色または灰色",
+        "青色"
+      ],
+      "correctIndex": 2,
+      "explanation": "内線規程（JEAC 8001）：接地側電線は白色または灰色で識別する。非接地側電線は黒色・赤色・青色等を使用する。接地線（アース線）は緑色または緑/黄色の縞模様。複線図作成時に白線（接地側）と黒線（非接地側）の識別は必須。",
+      "year": "2024",
+      "duplicateGroup": "q090",
+      "learningPoint": "配線図で「接地側電線」を示す電線の色として、内線規程で定められているもの",
+      "qualityStatus": "keep",
+      "variantRole": "standard"
+    },
+    {
+      "id": 92,
+      "category": "法令",
+      "difficulty": "medium",
+      "question": "電気工事士法上の「一般用電気工作物」の定義として、正しいものはどれか。",
+      "choices": [
+        "最大電力500kW未満のすべての電気工作物",
+        "小規模な発電設備を含む一般住宅・小規模店舗等の600V以下の電気工作物",
+        "工場・ビル等の高圧受電設備を含むすべての自家用電気工作物",
+        "電力会社が管理するすべての送配電設備"
+      ],
+      "correctIndex": 1,
+      "explanation": "一般用電気工作物は主に一般住宅・小規模店舗等の低圧（600V以下）で受電する電気工作物（同一の構内で最大電力50kW未満の需要設備）。一定要件の太陽光・風力等小規模発電も含む。第二種電気工事士はこの範囲の工事ができる。",
+      "year": "2024",
+      "duplicateGroup": "q092",
+      "learningPoint": "電気工事士法上の「一般用電気工作物」の定義",
+      "qualityStatus": "keep",
+      "variantRole": "standard"
+    },
+    {
+      "id": 95,
+      "category": "法令",
+      "difficulty": "medium",
+      "question": "特殊電気工事資格者（ネオン工事）が行える工事として、正しいものはどれか。",
+      "choices": [
+        "一般住宅のすべての低圧電気工事",
+        "ネオン放電灯設備の設置・変更工事（ネオン変圧器を含む）",
+        "高圧受電設備の設置工事",
+        "避雷設備の設置工事"
+      ],
+      "correctIndex": 1,
+      "explanation": "特殊電気工事資格者（ネオン工事）は、ネオン放電灯設備（ネオン変圧器・ネオン管等）の設置・変更工事に従事できる資格。第二種電気工事士の資格があっても、ネオン工事は特殊電気工事資格者の取得が必要。",
+      "year": "2024",
+      "duplicateGroup": "q095",
+      "learningPoint": "特殊電気工事資格者（ネオン工事）が行える工事",
+      "qualityStatus": "keep",
+      "variantRole": "standard"
+    },
+    {
+      "id": 98,
+      "category": "法令",
+      "difficulty": "medium",
+      "question": "電気工事業法において、電気工事業者が廃業した場合の届出期間として、正しいものはどれか。",
+      "choices": [
+        "廃業の日から10日以内",
+        "廃業の日から30日以内",
+        "廃業の日から90日以内",
+        "届出の義務はない"
+      ],
+      "correctIndex": 1,
+      "explanation": "電気工事業法第15条：電気工事業者が廃業・法人解散等した場合は、廃業等の日から30日以内に登録行政庁（都道府県知事または経済産業大臣）に届出が必要。",
+      "year": "2024",
+      "duplicateGroup": "q098",
+      "learningPoint": "電気工事業法において、電気工事業者が廃業した場合の届出期間",
+      "qualityStatus": "keep",
+      "variantRole": "standard"
+    },
+    {
+      "id": 101,
+      "category": "法令",
+      "difficulty": "easy",
+      "question": "電気工事士法の目的として、正しいものはどれか。",
+      "choices": [
+        "電力会社の電気設備の安全確保を目的とする",
+        "電気工事の作業に従事する者の資格と義務を定め、電気工事の欠陥による障害の発生を防止することを目的とする",
+        "電気工事業者の経営安定化を目的とする",
+        "電気用品の安全性確保を目的とする"
+      ],
+      "correctIndex": 1,
+      "explanation": "電気工事士法第1条（目的）：電気工事の作業に従事する者の資格および義務を定め、もって電気工事の欠陥による災害の発生の防止に寄与することを目的とする。電気用品は電気用品安全法が所管。",
+      "year": "2024",
+      "duplicateGroup": "q101",
+      "learningPoint": "電気工事士法の目的",
+      "qualityStatus": "keep",
+      "variantRole": "basic"
+    },
+    {
+      "id": 102,
+      "category": "接地・漏電保護",
+      "difficulty": "medium",
+      "question": "電技解釈における接地工事の種類と接地抵抗値の組み合わせとして、誤っているものはどれか。",
+      "choices": [
+        "A種：10Ω以下",
+        "B種：変圧器の高圧側1線地絡電流で計算（150/Ig以下）",
+        "C種：10Ω以下（0.5秒遮断なら500Ω以下）",
+        "D種：500Ω以下（0.5秒遮断なら1000Ω以下）"
+      ],
+      "correctIndex": 3,
+      "explanation": "D種接地工事の接地抵抗は100Ω以下（0.5秒以内に動作する漏電遮断器設置の場合は500Ω以下）。選択肢の「500Ω・1000Ω」は誤り。A種：10Ω以下、B種：150/Ig以下（Igは地絡電流）、C種：10Ω以下が正しい。",
+      "year": "2024",
+      "duplicateGroup": "q102",
+      "learningPoint": "電技解釈における接地工事の種類と接地抵抗値の組み合わせ",
+      "qualityStatus": "keep",
+      "variantRole": "standard"
+    },
+    {
+      "id": 105,
+      "category": "法令",
+      "difficulty": "medium",
+      "question": "自家用電気工作物（最大電力500kW未満の需要設備）の低圧部分の電気工事を行うために必要な資格として、正しいものはどれか。",
+      "choices": [
+        "第二種電気工事士のみで可能",
+        "第一種電気工事士または認定電気工事従事者",
+        "電気主任技術者（第三種以上）のみ",
+        "資格は不要（自家用なので）"
+      ],
+      "correctIndex": 1,
+      "explanation": "自家用電気工作物の低圧部分（600V以下）は、第一種電気工事士または認定電気工事従事者が従事できる（電気工事士法第3条）。第二種電気工事士のみでは不可。電気主任技術者は監督のみで工事作業は行わない。",
+      "year": "2024",
+      "duplicateGroup": "q105",
+      "learningPoint": "自家用電気工作物（最大電力500kW未満の需要設備）の低圧部分の電気工事",
+      "qualityStatus": "keep",
+      "variantRole": "standard"
+    },
+    {
+      "id": 109,
+      "category": "法令",
+      "difficulty": "medium",
+      "question": "電気設備技術基準における「高圧」の定義として、正しいものはどれか。",
+      "choices": [
+        "直流・交流ともに600V超7000V以下",
+        "直流750V超7000V以下、交流600V超7000V以下",
+        "直流・交流ともに1000V超36kV以下",
+        "交流7000V超66kV以下"
+      ],
+      "correctIndex": 1,
+      "explanation": "電技第2条：高圧は直流750V超7000V以下、交流600V超7000V以下（低圧の上限より高く、特別高圧未満）。7000V超が特別高圧。低圧は直流750V以下・交流600V以下。",
+      "year": "2024",
+      "duplicateGroup": "q109",
+      "learningPoint": "電気設備技術基準における「高圧」の定義",
+      "qualityStatus": "keep",
+      "variantRole": "standard"
+    },
+    {
+      "id": 113,
+      "category": "電気理論",
+      "difficulty": "medium",
+      "question": "正弦波交流の最大値が141.4Vのとき、実効値として最も近い値はどれか。",
+      "choices": [
+        "70.7V",
+        "100V",
+        "141.4V",
+        "200V"
+      ],
+      "correctIndex": 1,
+      "explanation": "実効値 V = Vm / √2 = 141.4 / 1.414 ≒ 100V。正弦波交流は実効値が家庭用電圧（100V・200V）として表示される。最大値（振幅）は実効値の√2倍。",
+      "year": "2024",
+      "duplicateGroup": "q113",
+      "learningPoint": "正弦波交流の最大値が141.4Vのとき、実効値として最も近い値はどれか",
+      "qualityStatus": "keep",
+      "variantRole": "standard"
+    },
+    {
+      "id": 116,
+      "category": "電気理論",
+      "difficulty": "medium",
+      "question": "静電容量4μFと6μFのコンデンサを並列接続したときの合成静電容量はいくらか。",
+      "choices": [
+        "2.4μF",
+        "5μF",
+        "10μF",
+        "24μF"
+      ],
+      "correctIndex": 2,
+      "explanation": "コンデンサの並列合成静電容量：C = C1 + C2 = 4 + 6 = 10μF。コンデンサの並列は静電容量が加算される（抵抗の直列と同じ計算式）。直列接続の場合は1/C = 1/C1 + 1/C2（抵抗の並列と同じ）。",
+      "year": "2024",
+      "duplicateGroup": "q116",
+      "learningPoint": "静電容量4μFと6μFのコンデンサを並列接続したときの合成静電容量はいく",
+      "qualityStatus": "keep",
+      "variantRole": "standard"
+    },
+    {
+      "id": 119,
+      "category": "電気理論",
+      "difficulty": "hard",
+      "question": "単相変圧器（理想変圧器）において、一次側に100V・10Aが流れているとき、二次側の電圧が200Vであれば二次側電流はいくらか。",
+      "choices": [
+        "20A",
+        "10A",
+        "5A",
+        "2.5A"
+      ],
+      "correctIndex": 2,
+      "explanation": "理想変圧器では入出力の皮相電力が等しい。V1 × I1 = V2 × I2。I2 = V1 × I1 / V2 = 100 × 10 / 200 = 5A。電圧が2倍になると電流は1/2になる（巻数比の逆数）。",
+      "year": "2024",
+      "duplicateGroup": "q119",
+      "learningPoint": "単相変圧器（理想変圧器）において、一次側に100V・10Aが流れていると",
+      "qualityStatus": "keep",
+      "variantRole": "application"
+    },
+    {
+      "id": 122,
+      "category": "電気理論",
+      "difficulty": "hard",
+      "question": "抵抗R1=6Ω とR2=3Ωを並列接続し、さらにR3=2Ωを直列接続した回路に12Vを印加したとき、流れる全電流はいくらか。",
+      "choices": [
+        "1A",
+        "2A",
+        "3A",
+        "4A"
+      ],
+      "correctIndex": 2,
+      "explanation": "並列合成抵抗：1/Rp = 1/6 + 1/3 = 1/6 + 2/6 = 3/6、Rp = 2Ω。全体の合成抵抗：R = Rp + R3 = 2 + 2 = 4Ω。全電流：I = V/R = 12/4 = 3A。",
+      "year": "2024",
+      "duplicateGroup": "q122",
+      "learningPoint": "抵抗R1=6Ω とR2=3Ωを並列接続し、さらにR3=2Ωを直列接続した",
+      "qualityStatus": "keep",
+      "variantRole": "application"
+    },
+    {
+      "id": 123,
+      "category": "屋内配線・施工",
+      "difficulty": "medium",
+      "question": "VVF1.6mmの導体（単線）の許容電流として、正しいものはどれか。（周囲温度30℃、電線管なし・空中の場合）",
+      "choices": [
+        "10A",
+        "15A",
+        "19A",
+        "27A"
+      ],
+      "correctIndex": 2,
+      "explanation": "VVF1.6mm（断面積2mm²相当）の許容電流は19A（空中・周囲温度30℃の場合）。電線管内に収める場合は補正係数を適用して小さくなる。VVF2.0mmは24A、2.6mmは34A。",
+      "year": "2024",
+      "duplicateGroup": "q123",
+      "learningPoint": "VVF1.6mmの導体（単線）の許容電流（周囲温度30℃、電線管なし・空",
+      "qualityStatus": "keep",
+      "variantRole": "standard"
+    },
+    {
+      "id": 126,
+      "category": "屋内配線・施工",
+      "difficulty": "hard",
+      "question": "電圧降下の計算式（単相2線式の場合）として、正しいものはどれか。",
+      "choices": [
+        "e = I × L（電流×距離）",
+        "e = 2 × I × R（2×電流×抵抗）",
+        "e = √3 × I × R",
+        "e = I² × R"
+      ],
+      "correctIndex": 1,
+      "explanation": "単相2線式の電圧降下：e = 2IR（往路と復路の2本分の抵抗降下の合計）。R = ρL/A（抵抗率×長さ/断面積）。三相3線式はe = √3 × IR。電圧降下は幹線・分岐回路を合わせて最大値（供給電圧の2%以内が推奨）。",
+      "year": "2024",
+      "duplicateGroup": "q126",
+      "learningPoint": "電圧降下の計算式（単相2線式の場合）",
+      "qualityStatus": "keep",
+      "variantRole": "application"
+    },
+    {
+      "id": 129,
+      "category": "屋内配線・施工",
+      "difficulty": "hard",
+      "question": "住宅の分岐回路設計において、100V・15Aのエアコン専用回路に必要な電線（VVF）の太さとして、最低限必要なものはどれか。",
+      "choices": [
+        "VVF1.2mm",
+        "VVF1.6mm",
+        "VVF2.0mm",
+        "VVF2.6mm"
+      ],
+      "correctIndex": 1,
+      "explanation": "15A回路の電線は許容電流が15A以上必要。VVF1.6mmの許容電流は19A（空中配線）でこれを満たす。ただし20A専用回路や長距離配線で電圧降下が問題になる場合はVVF2.0mmを選択する。",
+      "year": "2024",
+      "duplicateGroup": "q129",
+      "learningPoint": "住宅の分岐回路設計において、100V・15Aのエアコン専用回路に必要な電",
+      "qualityStatus": "keep",
+      "variantRole": "application"
+    },
+    {
+      "id": 132,
+      "category": "屋内配線・施工",
+      "difficulty": "hard",
+      "question": "単相3線式100/200V配線において、中性線の断線防止が重要な理由として、正しいものはどれか。",
+      "choices": [
+        "中性線が断線すると電流が流れなくなり機器が動作しない",
+        "中性線が断線すると両外線間の200Vが各機器に不均等にかかり、一部機器に過電圧が印加されて損傷するおそれがある",
+        "中性線が断線すると漏電遮断器が動作して回路が遮断される",
+        "中性線は接地側のため断線しても安全上問題ない"
+      ],
+      "correctIndex": 1,
+      "explanation": "中性線断線時、L1-L2間の200Vが両側の負荷の抵抗比で分圧される。低抵抗の機器には低電圧、高抵抗の機器には高電圧（最大200V近く）がかかり、機器損傷・火災の原因となる。そのため中性線には過電流遮断器を設けず断線防止を最優先する。",
+      "year": "2024",
+      "duplicateGroup": "q132",
+      "learningPoint": "単相3線式100/200V配線において、中性線の断線防止が重要な理由",
+      "qualityStatus": "keep",
+      "variantRole": "application"
+    },
+    {
+      "id": 135,
+      "category": "屋内配線・施工",
+      "difficulty": "hard",
+      "question": "地中電線路を直接埋設式で施工する場合、車道下における電線の埋設深さの最小値として正しいものはどれか。",
+      "choices": [
+        "0.3m以上",
+        "0.6m以上",
+        "1.0m以上",
+        "1.2m以上"
+      ],
+      "correctIndex": 3,
+      "explanation": "直接埋設式の地中電線路では、車両その他の重量物の圧力を受けるおそれがある場所は1.2m以上、その他の場所は0.6m以上の深さが必要。車道下は重量物の圧力を受ける場所なので1.2m以上が正しい。",
+      "year": "2024",
+      "duplicateGroup": "underground_burial_depth",
+      "learningPoint": "直接埋設式の埋設深さ（重量物あり）",
+      "qualityStatus": "keep",
+      "variantRole": "basic"
+    },
+    {
+      "id": 138,
+      "category": "屋内配線・施工",
+      "difficulty": "medium",
+      "question": "防爆工事が必要な可燃性ガスが存在する危険場所における電気工事の施工方法として、正しいものはどれか。",
+      "choices": [
+        "一般用の合成樹脂管（PF管）を使用して配線する",
+        "VVFケーブルをそのまま露出配線する",
+        "防爆型の電気機器と金属管配線等を使用する",
+        "すべての電気設備の設置を禁止する"
+      ],
+      "correctIndex": 2,
+      "explanation": "可燃性ガスが滞留するおそれがある危険場所（ガソリンスタンド・塗装工場等）では、防爆型電気機器を使用し、厚鋼電線管工事やケーブル工事（防爆型）で施工する。一般型機器からの火花・アーク・高温が点火源になるため特別な対策が必要。",
+      "year": "2024",
+      "duplicateGroup": "q138",
+      "learningPoint": "防爆工事が必要な可燃性ガスが存在する危険場所における電気工事の施工方法",
+      "qualityStatus": "keep",
+      "variantRole": "standard"
+    },
+    {
+      "id": 141,
+      "category": "屋内配線・施工",
+      "difficulty": "hard",
+      "question": "湿気の多い場所（浴室・洗面所等）における低圧配線の施工方法として、不適切なものはどれか。",
+      "choices": [
+        "防湿型（防水型）の照明器具を使用する",
+        "ケーブル工事（VVFケーブル）で施工する",
+        "金属管工事で施工する（防湿処理を施す）",
+        "1種金属製可とう電線管（フレキシブル）工事のみで全配線する"
+      ],
+      "correctIndex": 3,
+      "explanation": "1種金属製可とう電線管は湿気・水気のある場所での使用は禁止（2種は可）。湿気の多い場所では、ケーブル工事・金属管工事（防湿処理）・2種金属製可とう電線管工事・合成樹脂管工事が認められる。照明器具は防湿型（IP44以上等）を使用する。",
+      "year": "2024",
+      "duplicateGroup": "q141",
+      "learningPoint": "湿気の多い場所（浴室・洗面所等）における低圧配線の施工方法として、不適切",
+      "qualityStatus": "keep",
+      "variantRole": "application"
+    },
+    {
+      "id": 144,
+      "category": "機器・試験・計測",
+      "difficulty": "easy",
+      "question": "電路に電圧が印加されているか（活線か停電か）を確認するために使用する計器として、正しいものはどれか。",
+      "choices": [
+        "絶縁抵抗計（メガー）",
+        "接地抵抗計",
+        "検電器（ネオン式またはデジタル式）",
+        "回路計（テスタ）の抵抗レンジ"
+      ],
+      "correctIndex": 2,
+      "explanation": "検電器は電路に電圧が印加されているかを素早く確認するための安全確認用器具。ネオン式（発光で電圧確認）やデジタル式（近接型）がある。電気工事作業前の停電確認に必ず使用する。テスタの抵抗レンジは通電状態での使用は危険。",
+      "year": "2024",
+      "duplicateGroup": "q144",
+      "learningPoint": "電路に電圧が印加されているか（活線か停電か）を確認するために使用する計器",
+      "qualityStatus": "keep",
+      "variantRole": "basic"
+    },
+    {
+      "id": 147,
+      "category": "機器・試験・計測",
+      "difficulty": "hard",
+      "question": "低圧（300V以下）の電路の絶縁抵抗を測定する際に使用する絶縁抵抗計（メガー）の測定電圧として、適切なものはどれか。",
+      "choices": [
+        "24V直流",
+        "100V交流",
+        "500V直流",
+        "500V交流"
+      ],
+      "correctIndex": 2,
+      "explanation": "低圧電路（300V以下）の絶縁抵抗測定には500V直流のメガーを使用する。低圧電路の絶縁抵抗は0.1〜0.4MΩが基準値で、500Vの直流高電圧を印加して測定する。1000V以上のメガーは高圧電路用。交流電圧は使用しない（絶縁抵抗計は直流）。",
+      "year": "2024",
+      "duplicateGroup": "insulation_resistance_measurement",
+      "learningPoint": "絶縁抵抗計の測定電圧",
+      "qualityStatus": "keep",
+      "variantRole": "instrument"
+    },
+    {
+      "id": 150,
+      "category": "機器・試験・計測",
+      "difficulty": "medium",
+      "question": "低圧電路の漏れ電流を測定する方法として、正しいものはどれか。",
+      "choices": [
+        "メガーを使用して停電状態で測定する",
+        "クランプメータで往路と復路の電線をまとめてクランプして通電状態で測定する",
+        "テスタの電圧レンジで接地線と電線間の電圧を測定する",
+        "検電器で電線に近接させて漏れ電流を数値で読む"
+      ],
+      "correctIndex": 1,
+      "explanation": "漏れ電流測定は、クランプメータ（漏れ電流測定モード）で往路と復路の全電線をまとめてクランプし、通電状態で測定する。正常な回路では往路と復路の電流が等しく差電流（漏れ電流）はほぼ0mA。最大漏れ電流は最大供給電流の1/2000（内線規程）が目安。",
+      "year": "2024",
+      "duplicateGroup": "q150",
+      "learningPoint": "低圧電路の漏れ電流を測定する方法",
+      "qualityStatus": "keep",
+      "variantRole": "standard"
+    }
+  ]
+}

@@ -792,7 +792,7 @@
                     </button>
                     <button type="button" class="mode-btn" id="btn-mode-year">
                         <span class="mode-icon">📅</span>
-                        <span><span class="mode-name">年度別演習</span><span class="mode-desc">年度ベースで本番形式50問・120分タイマー付きで解答。配分不足分は問題バンクから補完します。</span></span>
+                        <span><span class="mode-name">年度別演習</span><span class="mode-desc">年度ベースで本番形式50問・120分タイマー付きで解答。</span></span>
                     </button>
                     <a class="mock-link-btn" href="mock-sets.html">
                         <span class="mode-icon">📋</span>
@@ -821,7 +821,7 @@
                     </div>
                     <div class="how-item">
                         <div class="how-num">2</div>
-                        <div class="how-text"><strong>年度別演習</strong>：年度ベースで、本番形式50問（一般30問＋配線図系20問）を解答。配分不足分は問題バンクから補完します。</div>
+                        <div class="how-text"><strong>年度別演習</strong>：年度ベースで、本番形式50問（一般30問＋配線図系20問）を解答。年度の問題数が50問に満たない場合はその年度の問題のみで出題します。</div>
                     </div>
                     <div class="how-item">
                         <div class="how-num">3</div>
@@ -2167,7 +2167,7 @@
                 ? buildExamLikeDeck(allQuestions.slice(), allQuestions.slice(), EXAM_TOTAL_QUESTION_COUNT, 30, 50, 20)
                 : buildExamLikeDeck(
                     allQuestions.filter(function(q){ return String(q.year||"") === yearKey; }),
-                    allQuestions.slice(),
+                    allQuestions.filter(function(q){ return String(q.year||"") === yearKey; }),
                     EXAM_TOTAL_QUESTION_COUNT,
                     30,
                     50,
@@ -2193,7 +2193,8 @@
 
         function renderExamQ() {
             const q = examQuestions[examIdx];
-            document.getElementById("exam-q-num").textContent = (q.year ? q.year + "年 · " : "") + "問題 " + (examIdx + 1) + " / " + examQuestions.length;
+            const sessionLabel = q.session ? q.session + " " : "";
+            document.getElementById("exam-q-num").textContent = (q.year ? q.year + "年 " + sessionLabel + "· " : "") + "問題 " + (examIdx + 1) + " / " + examQuestions.length;
             document.getElementById("exam-q-text").textContent = getQuestionText(q);
             renderFigure(
                 q,

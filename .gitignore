@@ -4,3 +4,6 @@ Thumbs.db
 node_modules/
 .env
 .env.local
+
+# 公式過去問PDF（著作権のためコミット禁止）
+kakomon/

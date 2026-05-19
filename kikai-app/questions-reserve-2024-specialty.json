@@ -1,0 +1,287 @@
+{
+  "description": "2024年専門科目の整理で除外した問題。将来の活用候補。問35（旋削切削速度）は解説充実後に再追加を検討。",
+  "removedAt": "2026-05-16",
+  "questions": [
+    {
+      "category": "専門科目（機械部門）",
+      "year": 2024,
+      "question": "直径40mmの丸棒に引張荷重80kNが作用する。断面平均応力として最も近いものはどれか。",
+      "choices": [
+        "32MPa",
+        "64MPa",
+        "80MPa",
+        "160MPa"
+      ],
+      "correctIndex": 1,
+      "explanation": "断面積A=πd²/4=π×40²/4≈1257mm²。応力=80000N/1257mm²≈63.7MPa。"
+    },
+    {
+      "category": "専門科目（機械部門）",
+      "year": 2024,
+      "question": "図の単純支持梁中央にP=12kNが作用する。最大曲げモーメントはどれか。",
+      "choices": [
+        "12kN・m",
+        "18kN・m",
+        "36kN・m",
+        "72kN・m"
+      ],
+      "correctIndex": 2,
+      "explanation": "中央集中荷重の単純支持梁ではMmax=PL/4。L=12mなので 12×12/4=36kN・m。",
+      "figureHtml": "<svg viewBox='0 0 420 170' xmlns='http://www.w3.org/2000/svg' style='max-width:100%;height:auto;display:block;margin:auto'><defs><marker id='a' markerWidth='8' markerHeight='6' refX='6' refY='3' orient='auto'><path d='M0,0L8,3L0,6z' fill='#f0c040'/></marker></defs><rect x='65' y='92' width='290' height='12' rx='2' fill='#6a8fc8'/><polygon points='65,104 48,130 82,130' fill='none' stroke='#a8c4e0' stroke-width='2'/><polygon points='355,104 338,130 372,130' fill='none' stroke='#a8c4e0' stroke-width='2'/><ellipse cx='355' cy='135' rx='7' ry='5' fill='none' stroke='#a8c4e0' stroke-width='2'/><line x1='210' y1='45' x2='210' y2='88' stroke='#f0c040' stroke-width='2.5' marker-end='url(#a)'/><text x='220' y='45' fill='#f0c040' font-size='14'>P=12kN</text><text x='190' y='78' fill='#8b9aad' font-size='12'>L=12m</text><line x1='65' y1='145' x2='355' y2='145' stroke='#8b9aad'/><line x1='65' y1='138' x2='65' y2='152' stroke='#8b9aad'/><line x1='355' y1='138' x2='355' y2='152' stroke='#8b9aad'/></svg>"
+    },
+    {
+      "category": "専門科目（機械部門）",
+      "year": 2024,
+      "question": "図の片持ちはり自由端にP=3kNが作用する。固定端曲げモーメントの大きさはどれか。",
+      "choices": [
+        "3kN・m",
+        "6kN・m",
+        "12kN・m",
+        "24kN・m"
+      ],
+      "correctIndex": 2,
+      "explanation": "片持ちはりの自由端集中荷重では固定端曲げモーメントM=PL=3×4=12kN・m。",
+      "figureHtml": "<svg viewBox='0 0 420 160' xmlns='http://www.w3.org/2000/svg' style='max-width:100%;height:auto;display:block;margin:auto'><defs><marker id='a' markerWidth='8' markerHeight='6' refX='6' refY='3' orient='auto'><path d='M0,0L8,3L0,6z' fill='#f0c040'/></marker></defs><rect x='45' y='38' width='24' height='94' fill='#6a8fc8'/><line x1='69' y1='86' x2='345' y2='86' stroke='#3d9cf0' stroke-width='10' stroke-linecap='round'/><line x1='345' y1='42' x2='345' y2='79' stroke='#f0c040' stroke-width='2.5' marker-end='url(#a)'/><text x='352' y='48' fill='#f0c040' font-size='14'>P=3kN</text><line x1='70' y1='125' x2='345' y2='125' stroke='#8b9aad'/><text x='198' y='145' fill='#8b9aad' font-size='12'>L=4m</text></svg>"
+    },
+    {
+      "category": "専門科目（機械部門）",
+      "year": 2024,
+      "question": "丸軸のねじりモーメントを2倍にし、軸径を同じとした場合、最大せん断応力はどうなるか。",
+      "choices": [
+        "1/2になる",
+        "変わらない",
+        "2倍になる",
+        "4倍になる"
+      ],
+      "correctIndex": 2,
+      "explanation": "丸軸のねじりせん断応力はτ=Tr/J。寸法が同じならTに比例する。"
+    },
+    {
+      "category": "専門科目（機械部門）",
+      "year": 2024,
+      "question": "両端ピン支持柱のオイラー座屈荷重として正しい式はどれか。",
+      "choices": [
+        "π²EI/L²",
+        "2πEI/L",
+        "EI/L",
+        "πEI²/L²"
+      ],
+      "correctIndex": 0,
+      "explanation": "両端ピン支持の有効長さはLなので、Pcr=π²EI/L²。端部条件が変わると有効長さが変わる。"
+    },
+    {
+      "category": "専門科目（機械部門）",
+      "year": 2024,
+      "question": "図の対称トラスで頂点Cに鉛直下向き20kNが作用する。支点反力RA,RBはどれか。",
+      "choices": [
+        "RA=0,RB=20kN",
+        "RA=10kN,RB=10kN",
+        "RA=20kN,RB=0",
+        "RA=20kN,RB=20kN"
+      ],
+      "correctIndex": 1,
+      "explanation": "左右対称で鉛直荷重20kNなので反力は等分され、RA=RB=10kN。",
+      "figureHtml": "<svg viewBox='0 0 420 170' xmlns='http://www.w3.org/2000/svg' style='max-width:100%;height:auto;display:block;margin:auto'><defs><marker id='a' markerWidth='8' markerHeight='6' refX='6' refY='3' orient='auto'><path d='M0,0L8,3L0,6z' fill='#f0c040'/></marker></defs><rect x='65' y='92' width='290' height='12' rx='2' fill='#6a8fc8'/><polygon points='65,104 48,130 82,130' fill='none' stroke='#a8c4e0' stroke-width='2'/><polygon points='355,104 338,130 372,130' fill='none' stroke='#a8c4e0' stroke-width='2'/><ellipse cx='355' cy='135' rx='7' ry='5' fill='none' stroke='#a8c4e0' stroke-width='2'/><line x1='210' y1='45' x2='210' y2='88' stroke='#f0c040' stroke-width='2.5' marker-end='url(#a)'/><text x='220' y='45' fill='#f0c040' font-size='14'>P=20kN</text><text x='190' y='78' fill='#8b9aad' font-size='12'>L=6m</text><line x1='65' y1='145' x2='355' y2='145' stroke='#8b9aad'/><line x1='65' y1='138' x2='65' y2='152' stroke='#8b9aad'/><line x1='355' y1='138' x2='355' y2='152' stroke='#8b9aad'/></svg>"
+    },
+    {
+      "category": "専門科目（機械部門）",
+      "year": 2024,
+      "question": "図のモールの応力円で中心C=50MPa、半径R=30MPaのとき最大主応力σ1はどれか。",
+      "choices": [
+        "20MPa",
+        "50MPa",
+        "80MPa",
+        "100MPa"
+      ],
+      "correctIndex": 2,
+      "explanation": "最大主応力は中心+半径なのでσ1=50+30=80MPa。",
+      "figureHtml": "<svg viewBox='0 0 380 240' xmlns='http://www.w3.org/2000/svg' style='max-width:100%;height:auto;display:block;margin:auto'><line x1='30' y1='130' x2='355' y2='130' stroke='#8b9aad'/><line x1='150' y1='218' x2='150' y2='22' stroke='#8b9aad'/><text x='358' y='134' fill='#8b9aad' font-size='13'>σ</text><text x='138' y='20' fill='#8b9aad' font-size='13'>τ</text><circle cx='230' cy='130' r='80' fill='none' stroke='#3d9cf0' stroke-width='2'/><circle cx='230' cy='130' r='3' fill='#e8edf4'/><circle cx='310' cy='130' r='4' fill='#f0c040'/><text x='205' y='118' fill='#8b9aad' font-size='11'>C=50</text><text x='196' y='78' fill='#8b9aad' font-size='11'>R=30</text><text x='312' y='122' fill='#f0c040' font-size='11'>σ1</text></svg>"
+    },
+    {
+      "category": "専門科目（機械部門）",
+      "year": 2024,
+      "question": "図の管路でA1=0.030m²、v1=2m/s、A2=0.010m²のときv2はどれか。",
+      "choices": [
+        "2m/s",
+        "3m/s",
+        "6m/s",
+        "9m/s"
+      ],
+      "correctIndex": 2,
+      "explanation": "連続の式A1v1=A2v2よりv2=0.030×2/0.010=6m/s。",
+      "figureHtml": "<svg viewBox='0 0 430 180' xmlns='http://www.w3.org/2000/svg' style='max-width:100%;height:auto;display:block;margin:auto'><defs><marker id='a' markerWidth='8' markerHeight='6' refX='6' refY='3' orient='auto'><path d='M0,0L8,3L0,6z' fill='#4ecb71'/></marker></defs><rect x='45' y='65' width='150' height='50' fill='none' stroke='#3d9cf0' stroke-width='3'/><rect x='248' y='80' width='112' height='20' fill='none' stroke='#3d9cf0' stroke-width='3'/><line x1='195' y1='65' x2='248' y2='80' stroke='#3d9cf0' stroke-width='3'/><line x1='195' y1='115' x2='248' y2='100' stroke='#3d9cf0' stroke-width='3'/><line x1='30' y1='90' x2='395' y2='90' stroke='#4ecb71' stroke-width='2' marker-end='url(#a)'/><text x='62' y='50' fill='#e8edf4' font-size='12'>A1=0.030m², v1=2m/s</text><text x='255' y='64' fill='#e8edf4' font-size='12'>A2=0.010m²</text><text x='282' y='128' fill='#f0c040' font-size='12'>v2=?</text></svg>"
+    },
+    {
+      "category": "専門科目（機械部門）",
+      "year": 2024,
+      "question": "非圧縮・定常・損失なしの流れで、同一流線上のエネルギー保存を表す式はどれか。",
+      "choices": [
+        "ベルヌーイの式",
+        "フックの法則",
+        "フーリエの法則",
+        "オームの法則"
+      ],
+      "correctIndex": 0,
+      "explanation": "ベルヌーイの式は圧力、速度、高さのエネルギー保存を表す。"
+    },
+    {
+      "category": "専門科目（機械部門）",
+      "year": 2024,
+      "question": "レイノルズ数 Re=ρVD/μ の説明として正しいものはどれか。",
+      "choices": [
+        "粘性力と慣性力の比を表す無次元数",
+        "熱効率を表す",
+        "歯車比を表す",
+        "材料の硬さを表す"
+      ],
+      "correctIndex": 0,
+      "explanation": "Reは慣性力と粘性力の比を表し、層流・乱流の判定に用いられる。"
+    },
+    {
+      "category": "専門科目（機械部門）",
+      "year": 2024,
+      "question": "ポンプが流量0.05m³/sの水を全揚程20mで送る。水力は約いくらか。ただしρ=1000kg/m³、g=9.8m/s²とする。",
+      "choices": [
+        "4.9kW",
+        "9.8kW",
+        "19.6kW",
+        "98kW"
+      ],
+      "correctIndex": 1,
+      "explanation": "水力P=ρgQH=1000×9.8×0.05×20=9800W=9.8kW。"
+    },
+    {
+      "category": "専門科目（機械部門）",
+      "year": 2024,
+      "question": "平板の定常熱伝導で熱流量Qを大きくする条件として正しいものはどれか。",
+      "choices": [
+        "厚さを大きくする",
+        "温度差を小さくする",
+        "熱伝導率を大きくする",
+        "面積を小さくする"
+      ],
+      "correctIndex": 2,
+      "explanation": "Q=kAΔT/L。熱伝導率、面積、温度差が大きいほどQは増え、厚さが大きいほど減る。"
+    },
+    {
+      "category": "専門科目（機械部門）",
+      "year": 2024,
+      "question": "高温熱源600K、低温熱源300Kのカルノーサイクル効率はどれか。",
+      "choices": [
+        "25%",
+        "50%",
+        "67%",
+        "100%"
+      ],
+      "correctIndex": 1,
+      "explanation": "η=1-TL/TH=1-300/600=0.5。温度は必ずKで扱う。"
+    },
+    {
+      "category": "専門科目（機械部門）",
+      "year": 2024,
+      "question": "図の理想オットーサイクルで、2→3の過程として最も適切なものはどれか。",
+      "choices": [
+        "断熱圧縮",
+        "定容加熱",
+        "断熱膨張",
+        "定容冷却"
+      ],
+      "correctIndex": 1,
+      "explanation": "オットーサイクルでは1→2断熱圧縮、2→3定容加熱、3→4断熱膨張、4→1定容冷却。",
+      "figureHtml": "<svg viewBox='0 0 390 250' xmlns='http://www.w3.org/2000/svg' style='max-width:100%;height:auto;display:block;margin:auto'><defs><marker id='a' markerWidth='8' markerHeight='6' refX='6' refY='3' orient='auto'><path d='M0,0L8,3L0,6z' fill='#8b9aad'/></marker></defs><line x1='45' y1='210' x2='355' y2='210' stroke='#8b9aad' marker-end='url(#a)'/><line x1='45' y1='210' x2='45' y2='28' stroke='#8b9aad' marker-end='url(#a)'/><text x='358' y='214' fill='#8b9aad' font-size='13'>v</text><text x='31' y='27' fill='#8b9aad' font-size='13'>p</text><path d='M92,185 C88,120 82,80 80,45' fill='none' stroke='#3d9cf0' stroke-width='2.5'/><line x1='80' y1='45' x2='80' y2='25' stroke='#ff6b6b' stroke-width='2.5'/><path d='M80,25 C140,48 225,95 318,165' fill='none' stroke='#3d9cf0' stroke-width='2.5'/><line x1='318' y1='165' x2='318' y2='185' stroke='#4ecb71' stroke-width='2.5'/><line x1='92' y1='185' x2='318' y2='185' stroke='#8b9aad' stroke-dasharray='4,3'/><text x='96' y='203' fill='#e8edf4' font-size='13'>1</text><text x='62' y='48' fill='#e8edf4' font-size='13'>2</text><text x='62' y='25' fill='#e8edf4' font-size='13'>3</text><text x='325' y='166' fill='#e8edf4' font-size='13'>4</text><text x='130' y='60' fill='#f0c040' font-size='11'>定容加熱</text><text x='180' y='105' fill='#3d9cf0' font-size='11'>断熱膨張</text></svg>"
+    },
+    {
+      "category": "専門科目（機械部門）",
+      "year": 2024,
+      "question": "理想気体で温度一定のまま体積を2倍にした場合、圧力はどうなるか。",
+      "choices": [
+        "2倍になる",
+        "1/2になる",
+        "4倍になる",
+        "変わらない"
+      ],
+      "correctIndex": 1,
+      "explanation": "等温変化ではpV=一定。体積が2倍なら圧力は1/2になる。"
+    },
+    {
+      "category": "専門科目（機械部門）",
+      "year": 2024,
+      "question": "図のばね質量系で、m=4kg、k=1600N/mの固有角振動数はどれか。",
+      "choices": [
+        "10rad/s",
+        "20rad/s",
+        "40rad/s",
+        "400rad/s"
+      ],
+      "correctIndex": 1,
+      "explanation": "ωn=√(k/m)=√(1600/4)=√400=20rad/s。",
+      "figureHtml": "<svg viewBox='0 0 390 170' xmlns='http://www.w3.org/2000/svg' style='max-width:100%;height:auto;display:block;margin:auto'><rect x='20' y='35' width='24' height='100' fill='#6a8fc8'/><line x1='44' y1='85' x2='70' y2='85' stroke='#a8c4e0' stroke-width='2'/><polyline points='70,85 80,68 96,102 112,68 128,102 144,68 160,102 176,68 186,85' fill='none' stroke='#a8c4e0' stroke-width='2.5'/><rect x='186' y='58' width='72' height='54' fill='none' stroke='#3d9cf0' stroke-width='2'/><text x='222' y='91' text-anchor='middle' fill='#e8edf4' font-size='16'>m=4kg</text><text x='125' y='60' fill='#f0c040' font-size='13'>k=1.6N/m</text></svg>"
+    },
+    {
+      "category": "専門科目（機械部門）",
+      "year": 2024,
+      "question": "減衰比ζが1より小さい1自由度振動系の自由振動として一般に正しいものはどれか。",
+      "choices": [
+        "非振動で単調に戻る",
+        "振動しながら減衰する",
+        "振幅が必ず増大する",
+        "変位が常にゼロ"
+      ],
+      "correctIndex": 1,
+      "explanation": "ζ<1は不足減衰で、振動しながら減衰する応答となる。"
+    },
+    {
+      "category": "専門科目（機械部門）",
+      "year": 2024,
+      "question": "図の外歯車対でz1=60、z2=30、n1=500rpmのとき、歯車2の回転速度の大きさはどれか。",
+      "choices": [
+        "250rpm",
+        "500rpm",
+        "1000rpm",
+        "1500rpm"
+      ],
+      "correctIndex": 2,
+      "explanation": "n1z1=n2z2よりn2=500×60/30=1000rpm。外歯車なので回転方向は反対。",
+      "figureHtml": "<svg viewBox='0 0 400 220' xmlns='http://www.w3.org/2000/svg' style='max-width:100%;height:auto;display:block;margin:auto'><defs><marker id='a1' markerWidth='8' markerHeight='6' refX='6' refY='3' orient='auto'><path d='M0,0L8,3L0,6z' fill='#4ecb71'/></marker><marker id='a2' markerWidth='8' markerHeight='6' refX='6' refY='3' orient='auto'><path d='M0,0L8,3L0,6z' fill='#f0c040'/></marker></defs><circle cx='130' cy='110' r='70' fill='none' stroke='#3d9cf0' stroke-width='9' stroke-dasharray='12,8'/><circle cx='275' cy='110' r='45' fill='none' stroke='#6a8fc8' stroke-width='9' stroke-dasharray='9,6'/><circle cx='130' cy='110' r='8' fill='#e8edf4'/><circle cx='275' cy='110' r='8' fill='#e8edf4'/><text x='130' y='104' text-anchor='middle' fill='#e8edf4' font-size='12'>歯車1</text><text x='130' y='122' text-anchor='middle' fill='#3d9cf0' font-size='13'>z1=60</text><text x='275' y='104' text-anchor='middle' fill='#e8edf4' font-size='12'>歯車2</text><text x='275' y='122' text-anchor='middle' fill='#6a8fc8' font-size='13'>z2=30</text><path d='M95,48 A70,70 0 0,0 61,95' fill='none' stroke='#4ecb71' stroke-width='2' marker-end='url(#a1)'/><text x='42' y='42' fill='#4ecb71' font-size='12'>n1=500rpm</text><path d='M302,75 A45,45 0 0,1 315,122' fill='none' stroke='#f0c040' stroke-width='2' marker-end='url(#a2)'/><text x='313' y='72' fill='#f0c040' font-size='12'>n2=?</text></svg>"
+    },
+    {
+      "category": "専門科目（機械部門）",
+      "year": 2024,
+      "question": "ベルト伝動で滑りがないとき、プーリ周速度について正しいものはどれか。",
+      "choices": [
+        "両プーリで等しい",
+        "小プーリだけゼロ",
+        "大プーリが必ず2倍",
+        "回転数と無関係"
+      ],
+      "correctIndex": 0,
+      "explanation": "滑りなしのベルト伝動では、接触するベルトの速度、つまり両プーリの周速度が等しい。"
+    },
+    {
+      "category": "専門科目（機械部門）",
+      "year": 2024,
+      "question": "ボール軸受の基本定格寿命は動等価荷重Pのおおよそ何乗に反比例するか。",
+      "choices": [
+        "1乗",
+        "2乗",
+        "3乗",
+        "10乗"
+      ],
+      "correctIndex": 2,
+      "explanation": "ボール軸受はL10=(C/P)^3×10^6回転。荷重が増えると寿命は3乗で大きく低下する。"
+    },
+    {
+      "category": "専門科目（機械部門）",
+      "year": 2024,
+      "question": "旋削で直径D=50mm、回転数N=600min⁻¹の切削速度として最も近いものはどれか。",
+      "choices": [
+        "47m/min",
+        "94m/min",
+        "188m/min",
+        "600m/min"
+      ],
+      "correctIndex": 1,
+      "explanation": "切削速度V=πDN/1000=π×50×600/1000≈94m/min。"
+    }
+  ]
+}
