@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 520" width="100%" style="max-width:640px" font-family="sans-serif">
+  <desc>2025年度下期 問題11用。配線図中の⑪ボックス内で、差込形コネクタの極数と最少個数を数えやすくした学習用拡大図。</desc>
+  <rect width="640" height="520" fill="#f9f9f6"/>
+
+  <defs>
+    <marker id="arrow-red" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#cc0000"/>
+    </marker>
+    <filter id="soft-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <!-- Header -->
+  <text x="28" y="36" font-size="18" font-weight="bold" fill="#1f2937">配線図 ⑪ 拡大図</text>
+  <text x="28" y="60" font-size="12" fill="#4b5563">ジョイントボックス内の接続本数から、差込形コネクタの種類と最少個数を数える図</text>
+
+  <!-- Main box -->
+  <rect x="36" y="92" width="398" height="344" rx="4" fill="white" stroke="#555" stroke-width="1.5"/>
+  <text x="235" y="122" text-anchor="middle" font-size="14" font-weight="bold" fill="#374151">2階 ジョイントボックス ⑪</text>
+
+  <!-- Junction box icon -->
+  <g filter="url(#soft-shadow)">
+    <rect x="250" y="176" width="118" height="92" rx="8" fill="#fffbea" stroke="#8a7a32" stroke-width="2"/>
+    <text x="309" y="226" text-anchor="middle" font-size="18" font-weight="bold" fill="#6b5a16">JB</text>
+  </g>
+  <circle cx="226" cy="176" r="20" fill="#e8f0ff" stroke="#3355aa" stroke-width="2.2"/>
+  <text x="226" y="183" text-anchor="middle" font-size="18" font-weight="bold" fill="#3355aa">⑪</text>
+  <text x="258" y="292" font-size="13" fill="#4b5563">接続先：ク・ケ・コ</text>
+
+  <!-- Cable paths -->
+  <line x1="68" y1="180" x2="250" y2="198" stroke="#cc0000" stroke-width="2"/>
+  <line x1="68" y1="212" x2="250" y2="212" stroke="#6b7280" stroke-width="2"/>
+  <text x="72" y="166" font-size="12" fill="#4b5563">電源側</text>
+
+  <line x1="368" y1="196" x2="506" y2="156" stroke="#cc0000" stroke-width="2"/>
+  <line x1="368" y1="214" x2="506" y2="194" stroke="#6b7280" stroke-width="2"/>
+  <text x="450" y="144" font-size="12" fill="#4b5563">スイッチ（ク）</text>
+
+  <line x1="368" y1="228" x2="506" y2="270" stroke="#cc0000" stroke-width="2"/>
+  <line x1="368" y1="246" x2="506" y2="308" stroke="#6b7280" stroke-width="2"/>
+  <text x="450" y="328" font-size="12" fill="#4b5563">スイッチ（ケ）</text>
+
+  <line x1="310" y1="268" x2="310" y2="396" stroke="#6b7280" stroke-width="2"/>
+  <line x1="328" y1="268" x2="404" y2="396" stroke="#cc0000" stroke-width="2"/>
+  <text x="308" y="416" font-size="12" fill="#4b5563">コ方向</text>
+
+  <!-- Connector count area -->
+  <rect x="70" y="316" width="322" height="104" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="88" y="340" font-size="13" font-weight="bold" fill="#374151">ボックス内の接続</text>
+
+  <rect x="88" y="354" width="70" height="28" rx="4" fill="#eef2ff" stroke="#3355aa" stroke-width="1.4"/>
+  <text x="123" y="373" text-anchor="middle" font-size="12" font-weight="bold" fill="#3355aa">3極 × 1</text>
+  <text x="168" y="373" font-size="11" fill="#4b5563">白線3本をまとめる</text>
+
+  <rect x="88" y="386" width="70" height="28" rx="4" fill="#fff7ed" stroke="#c2410c" stroke-width="1.4"/>
+  <text x="123" y="405" text-anchor="middle" font-size="12" font-weight="bold" fill="#c2410c">2極 × 2</text>
+  <text x="168" y="405" font-size="11" fill="#4b5563">黒線2本の接続が2か所</text>
+
+  <!-- Callout -->
+  <path d="M458 116 H594 Q606 116 606 128 V284 Q606 296 594 296 H458 Q446 296 446 284 V128 Q446 116 458 116 Z" fill="#fffdf3" stroke="#d6a300" stroke-width="1.6"/>
+  <text x="472" y="144" font-size="14" font-weight="bold" fill="#374151">数え方</text>
+  <text x="472" y="172" font-size="13" fill="#374151">差込形コネクタは</text>
+  <text x="472" y="195" font-size="13" fill="#374151">接続する電線本数に</text>
+  <text x="472" y="218" font-size="13" fill="#374151">合う極数を使う。</text>
+  <text x="472" y="247" font-size="13" font-weight="bold" fill="#3355aa">3極1個 + 2極2個</text>
+  <line x1="446" y1="228" x2="360" y2="228" stroke="#cc0000" stroke-width="2" marker-end="url(#arrow-red)"/>
+
+  <!-- Connector icons -->
+  <rect x="470" y="334" width="40" height="58" rx="4" fill="#eef2ff" stroke="#3355aa" stroke-width="1.4"/>
+  <circle cx="490" cy="350" r="4" fill="#3355aa"/>
+  <circle cx="490" cy="363" r="4" fill="#3355aa"/>
+  <circle cx="490" cy="376" r="4" fill="#3355aa"/>
+  <text x="490" y="412" text-anchor="middle" font-size="11" fill="#4b5563">3極</text>
+  <rect x="538" y="344" width="40" height="44" rx="4" fill="#fff7ed" stroke="#c2410c" stroke-width="1.4"/>
+  <circle cx="558" cy="359" r="4" fill="#c2410c"/>
+  <circle cx="558" cy="373" r="4" fill="#c2410c"/>
+  <text x="558" y="412" text-anchor="middle" font-size="11" fill="#4b5563">2極</text>
+
+  <!-- Legend -->
+  <line x1="36" y1="466" x2="82" y2="466" stroke="#cc0000" stroke-width="2"/>
+  <text x="92" y="470" font-size="11" fill="#4b5563">非接地側（黒線）</text>
+  <line x1="228" y1="466" x2="274" y2="466" stroke="#6b7280" stroke-width="2"/>
+  <text x="284" y="470" font-size="11" fill="#4b5563">接地側（白線）</text>
+  <rect x="424" y="452" width="28" height="22" rx="3" fill="#fffbea" stroke="#8a7a32" stroke-width="1.2"/>
+  <text x="462" y="470" font-size="11" fill="#4b5563">ジョイントボックス</text>
+</svg>

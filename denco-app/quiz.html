@@ -1230,6 +1230,13 @@
             figureModalImg.removeAttribute("src");
         }
 
+        const DIAGRAM_ASSET_VERSION = "20260527-0015";
+        function getVersionedImageSrc(src) {
+            if (!src || /^(data:|blob:|https?:)/.test(src)) return src;
+            const glue = src.indexOf("?") >= 0 ? "&" : "?";
+            return src + glue + "v=" + DIAGRAM_ASSET_VERSION;
+        }
+
         function renderFigure(q, el, img, caption, btn) {
             if (!el || !img || !caption || !btn) return;
             if (!q || !q.image) {
@@ -1239,10 +1246,11 @@
                 return;
             }
             const title = getFigureCaption(q);
-            img.src = q.image;
+            const imageSrc = getVersionedImageSrc(q.image);
+            img.src = imageSrc;
             img.alt = title;
             caption.textContent = title;
-            btn.onclick = function () { openFigureModal(q.image, title); };
+            btn.onclick = function () { openFigureModal(imageSrc, title); };
             el.classList.add("visible");
         }
 

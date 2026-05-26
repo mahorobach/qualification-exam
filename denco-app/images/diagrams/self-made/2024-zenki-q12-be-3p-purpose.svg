@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 500" width="760" height="500" role="img" aria-labelledby="title desc">
+  <title id="title">2024年前期 問題12 BE 3P</title>
+  <desc id="desc">2024年度前期配線図の⑨に示す動力分電盤内BE 3Pを読み取りやすくした学習用自作図。機能の正解文は図中に表示しない。</desc>
+  <style>
+    text { font-family: Arial, "Hiragino Sans", "Yu Gothic", sans-serif; }
+    .parking { fill: #eef7ef; stroke: #64748b; stroke-width: 1.8; }
+    .panel { fill: #f3f4f6; stroke: #111827; stroke-width: 2.5; }
+    .breaker { fill: #ffffff; stroke: #111827; stroke-width: 2.2; }
+    .bus { stroke: #111827; stroke-width: 3; stroke-linecap: round; }
+    .branch { stroke: #334155; stroke-width: 2; stroke-linecap: round; }
+    .mark { fill: #fff; stroke: #2563eb; stroke-width: 3; }
+    .num { font-size: 18px; font-weight: 700; fill: #1d4ed8; text-anchor: middle; dominant-baseline: central; }
+    .label { font-size: 15px; fill: #334155; }
+    .small { font-size: 12px; fill: #475569; }
+    .room-name { font-size: 17px; font-weight: 700; fill: #334155; text-anchor: middle; }
+  </style>
+
+  <rect width="760" height="500" fill="#ffffff"/>
+
+  <rect x="28" y="22" width="704" height="58" rx="10" fill="#eaf2ff" stroke="#bfdbfe"/>
+  <text x="380" y="47" text-anchor="middle" font-size="20" font-weight="700" fill="#0f172a">2024年度前期 配線図（学習用模式図）</text>
+  <text x="380" y="69" text-anchor="middle" font-size="13" fill="#475569">⑨で示す動力分電盤内の「BE 3P」を確認するための整理図</text>
+
+  <!-- Context area -->
+  <rect x="82" y="112" width="250" height="270" class="parking" rx="5"/>
+  <text x="207" y="260" class="room-name">駐車場</text>
+  <rect x="218" y="136" width="74" height="54" rx="5" class="panel"/>
+  <text x="255" y="158" text-anchor="middle" font-size="13" font-weight="700" fill="#111827">動力盤</text>
+  <text x="255" y="176" text-anchor="middle" font-size="13" fill="#334155">3φ3W</text>
+  <rect x="235" y="198" width="52" height="28" rx="4" class="breaker"/>
+  <text x="261" y="217" text-anchor="middle" font-size="13" font-weight="700" fill="#111827">BE 3P</text>
+  <circle cx="218" cy="212" r="18" class="mark"/>
+  <text x="218" y="212" class="num">⑨</text>
+  <path d="M235 212 H190" class="branch"/>
+
+  <!-- Enlarged panel -->
+  <rect x="396" y="116" width="248" height="206" rx="10" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="520" y="150" text-anchor="middle" font-size="17" font-weight="700" fill="#0f172a">動力分電盤 結線図</text>
+  <text x="520" y="172" text-anchor="middle" class="small">3φ3W 200V</text>
+  <line x1="440" y1="218" x2="604" y2="218" class="bus"/>
+  <rect x="454" y="196" width="64" height="44" rx="5" class="breaker"/>
+  <text x="486" y="223" text-anchor="middle" font-size="14" font-weight="700" fill="#111827">BE 3P</text>
+  <circle cx="436" cy="218" r="16" class="mark"/>
+  <text x="436" y="218" class="num" font-size="16">⑨</text>
+  <line x1="532" y1="218" x2="532" y2="262" class="branch"/>
+  <line x1="572" y1="218" x2="572" y2="262" class="branch"/>
+  <text x="532" y="282" text-anchor="middle" class="small">空調機</text>
+  <text x="572" y="282" text-anchor="middle" class="small">冷蔵庫</text>
+
+  <rect x="84" y="408" width="592" height="56" rx="8" fill="#f8fafc" stroke="#cbd5e1"/>
+  <g transform="translate(116 436)">
+    <circle cx="0" cy="0" r="14" class="mark"/>
+    <text x="0" y="0" class="num" font-size="15">⑨</text>
+    <text x="30" y="-5" class="label" font-weight="700">対象位置</text>
+    <text x="30" y="19" class="small">動力分電盤内の「BE 3P」。器具の目的は選択肢から判断する。</text>
+  </g>
+</svg>

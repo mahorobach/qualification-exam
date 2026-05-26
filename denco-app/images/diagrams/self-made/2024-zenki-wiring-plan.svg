@@ -21,8 +21,9 @@
   <rect x="0" y="0" width="620" height="680" fill="#fff"/>
 
   <!-- Title -->
-  <rect x="0" y="0" width="620" height="28" fill="#2a5298"/>
-  <text x="310" y="18" text-anchor="middle" font-size="12" font-weight="bold" fill="white">2024年度前期　鉄骨軽量コンクリート造 単層店舗兼事務所　配線図（学習用模式図）</text>
+  <rect x="0" y="0" width="620" height="34" fill="#2a5298"/>
+  <text x="310" y="14" text-anchor="middle" font-size="11" font-weight="bold" fill="white">2024年度前期 配線図（学習用模式図）</text>
+  <text x="310" y="28" text-anchor="middle" font-size="8" fill="#dbeafe">鉄骨軽量コンクリート造 単層店舗兼事務所</text>
 
   <!-- ===== BUILDING ===== -->
   <!-- Main building outer wall -->

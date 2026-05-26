@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 500" width="760" height="500" role="img" aria-labelledby="title desc">
+  <title id="title">2024年後期 問題13 ⑰地中ケーブル保護部</title>
+  <desc id="desc">2024年度後期配線図の⑰に示す地中引込ケーブル保護部分を読み取りやすくした学習用自作図。部材名称の正解語は図中に表示しない。</desc>
+  <style>
+    text { font-family: Arial, "Hiragino Sans", "Yu Gothic", sans-serif; }
+    .ground { fill: #f3f4f6; stroke: #9ca3af; stroke-width: 1.5; }
+    .warehouse { fill: #f8efd6; stroke: #64748b; stroke-width: 1.8; }
+    .parking { fill: #eeeeee; stroke: #64748b; stroke-width: 1.8; }
+    .channel { fill: #e5e7eb; stroke: #6b7280; stroke-width: 3; }
+    .inside { fill: #f9fafb; stroke: #9ca3af; stroke-width: 1.5; }
+    .cable { fill: none; stroke: #111827; stroke-width: 5; stroke-linecap: round; stroke-dasharray: 10 5; }
+    .mark { fill: #fff; stroke: #2563eb; stroke-width: 3; }
+    .num { font-size: 18px; font-weight: 700; fill: #1d4ed8; text-anchor: middle; dominant-baseline: central; }
+    .label { font-size: 15px; fill: #334155; }
+    .small { font-size: 12px; fill: #475569; }
+    .room-name { font-size: 17px; font-weight: 700; fill: #334155; text-anchor: middle; }
+  </style>
+
+  <rect width="760" height="500" fill="#ffffff"/>
+
+  <rect x="28" y="22" width="704" height="58" rx="10" fill="#eaf2ff" stroke="#bfdbfe"/>
+  <text x="380" y="47" text-anchor="middle" font-size="20" font-weight="700" fill="#0f172a">2024年度後期 配線図（学習用模式図）</text>
+  <text x="380" y="69" text-anchor="middle" font-size="13" fill="#475569">⑰で示す地中ケーブル保護部分を確認するための整理図</text>
+
+  <!-- Context area -->
+  <rect x="100" y="116" width="170" height="110" class="warehouse" rx="4"/>
+  <text x="185" y="178" class="room-name">倉庫</text>
+  <rect x="100" y="240" width="170" height="110" class="parking" rx="4"/>
+  <text x="185" y="302" class="room-name">駐車場</text>
+  <rect x="314" y="116" width="56" height="234" class="ground"/>
+  <text x="385" y="236" class="small">地中引込ケーブル</text>
+  <line x1="342" y1="116" x2="342" y2="350" class="cable"/>
+
+  <!-- Target trough-like part -->
+  <rect x="314" y="252" width="56" height="38" rx="4" class="channel"/>
+  <rect x="326" y="262" width="32" height="18" rx="3" class="inside"/>
+  <circle cx="304" cy="271" r="18" class="mark"/>
+  <text x="304" y="271" class="num">⑰</text>
+
+  <!-- Enlarged cross section -->
+  <rect x="450" y="126" width="220" height="194" rx="10" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="560" y="158" text-anchor="middle" font-size="17" font-weight="700" fill="#0f172a">⑰ 断面イメージ</text>
+  <path d="M492 226 L512 190 H608 L628 226 V264 H492 Z" class="channel"/>
+  <path d="M520 226 H600 V248 H520 Z" class="inside"/>
+  <path d="M526 237 H594" class="cable"/>
+  <text x="560" y="292" text-anchor="middle" class="small">地中でケーブルを収めて保護する溝状部材</text>
+
+  <rect x="84" y="400" width="592" height="58" rx="8" fill="#f8fafc" stroke="#cbd5e1"/>
+  <g transform="translate(116 429)">
+    <circle cx="0" cy="0" r="14" class="mark"/>
+    <text x="0" y="0" class="num" font-size="15">⑰</text>
+    <text x="30" y="-5" class="label" font-weight="700">対象位置</text>
+    <text x="30" y="19" class="small">屋外地中でケーブルを収めて保護する部材を選ぶ。</text>
+  </g>
+</svg>

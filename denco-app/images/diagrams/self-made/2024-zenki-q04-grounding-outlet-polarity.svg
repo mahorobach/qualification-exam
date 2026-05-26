@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 560" width="760" height="560" role="img" aria-labelledby="title desc">
+  <title id="title">2024年前期 問題4 接地極付きコンセント</title>
+  <desc id="desc">2024年度前期配線図の③に示す、傍記Eの接地極付きコンセントの位置を読み取りやすくした学習用自作図。刃受けの正解形状は図示しない。</desc>
+  <style>
+    text { font-family: Arial, "Hiragino Sans", "Yu Gothic", sans-serif; }
+    .wall { fill: #fffdf7; stroke: #4b5563; stroke-width: 2; }
+    .area { fill: #f8fafc; stroke: #64748b; stroke-width: 1.5; }
+    .shop { fill: #fffdf2; stroke: #64748b; stroke-width: 1.5; }
+    .office { fill: #f1f5ff; stroke: #64748b; stroke-width: 1.5; }
+    .cooler { fill: #eefbf1; stroke: #64748b; stroke-width: 1.5; }
+    .parking { fill: #eef7ef; stroke: #64748b; stroke-width: 1.5; }
+    .wire { fill: none; stroke: #111827; stroke-width: 2; }
+    .wire-thin { fill: none; stroke: #334155; stroke-width: 1.5; }
+    .mark { fill: #fff; stroke: #2563eb; stroke-width: 3; }
+    .num { font-size: 18px; font-weight: 700; fill: #1d4ed8; text-anchor: middle; dominant-baseline: central; }
+    .label { font-size: 14px; fill: #334155; }
+    .small { font-size: 12px; fill: #475569; }
+    .room-name { font-size: 17px; font-weight: 700; fill: #334155; text-anchor: middle; }
+  </style>
+
+  <rect width="760" height="560" fill="#ffffff"/>
+
+  <rect x="28" y="24" width="704" height="58" rx="10" fill="#eaf2ff" stroke="#bfdbfe"/>
+  <text x="380" y="48" text-anchor="middle" font-size="20" font-weight="700" fill="#0f172a">2024年度前期 配線図（学習用模式図）</text>
+  <text x="380" y="70" text-anchor="middle" font-size="13" fill="#475569">③の「E」傍記付きコンセント記号を確認するための整理図</text>
+
+  <!-- Simplified floor plan -->
+  <rect x="58" y="110" width="486" height="310" class="wall" rx="4"/>
+  <rect x="58" y="110" width="205" height="150" class="office"/>
+  <text x="160" y="151" class="room-name">事務所</text>
+  <rect x="263" y="110" width="101" height="82" class="area"/>
+  <text x="314" y="154" class="room-name" font-size="14">手洗い</text>
+  <rect x="364" y="110" width="180" height="150" class="cooler"/>
+  <text x="454" y="151" class="room-name" font-size="15">冷蔵庫コーナー</text>
+  <rect x="58" y="260" width="486" height="160" class="shop"/>
+  <text x="301" y="340" class="room-name">店舗</text>
+
+  <rect x="570" y="110" width="132" height="310" class="parking" rx="4"/>
+  <text x="636" y="271" class="room-name">駐車場</text>
+
+  <!-- Reference symbols kept light so target stands out -->
+  <g opacity="0.45">
+    <rect x="115" y="171" width="34" height="19" fill="#fff" stroke="#111827" stroke-width="1.5"/>
+    <text x="132" y="185" text-anchor="middle" font-size="11">RT</text>
+    <circle cx="205" cy="191" r="8" fill="#fff" stroke="#111827" stroke-width="1.5"/>
+    <line x1="197" y1="191" x2="213" y2="191" stroke="#111827"/>
+    <line x1="205" y1="183" x2="205" y2="199" stroke="#111827"/>
+    <rect x="395" y="181" width="18" height="24" fill="#fff" stroke="#111827" stroke-width="1.5"/>
+    <text x="404" y="221" text-anchor="middle" font-size="11">ET</text>
+    <circle cx="455" cy="203" r="14" fill="#fff" stroke="#111827" stroke-width="1.5"/>
+    <text x="455" y="208" text-anchor="middle" font-size="13">M</text>
+    <rect x="486" y="327" width="18" height="24" fill="#fff" stroke="#111827" stroke-width="1.5"/>
+    <text x="495" y="365" text-anchor="middle" font-size="11">ET 20A</text>
+  </g>
+
+  <!-- Target outlet symbol -->
+  <path d="M220 314 L150 336 L122 336" class="wire"/>
+  <rect x="103" y="323" width="24" height="30" rx="2" fill="#fff" stroke="#111827" stroke-width="2.2"/>
+  <line x1="115" y1="353" x2="115" y2="362" stroke="#111827" stroke-width="2"/>
+  <text x="115" y="382" text-anchor="middle" font-size="17" font-weight="700" fill="#111827">E</text>
+  <circle cx="84" cy="338" r="18" class="mark"/>
+  <text x="84" y="338" class="num">③</text>
+
+  <rect x="64" y="438" width="632" height="84" rx="8" fill="#f8fafc" stroke="#cbd5e1"/>
+  <g transform="translate(95 465)">
+    <circle cx="0" cy="0" r="15" class="mark"/>
+    <text x="0" y="0" class="num" font-size="16">③</text>
+    <text x="30" y="-5" class="label" font-weight="700">対象位置</text>
+    <text x="30" y="19" class="small">店舗内の「E」傍記付きコンセント。刃受けの上下配置は選択肢で判断する。</text>
+  </g>
+  <g transform="translate(565 462)">
+    <rect x="0" y="0" width="26" height="32" rx="2" fill="#fff" stroke="#111827" stroke-width="2"/>
+    <line x1="13" y1="32" x2="13" y2="42" stroke="#111827" stroke-width="2"/>
+    <text x="13" y="62" text-anchor="middle" font-size="15" font-weight="700" fill="#111827">E</text>
+    <text x="42" y="20" class="small">図記号</text>
+  </g>
+</svg>

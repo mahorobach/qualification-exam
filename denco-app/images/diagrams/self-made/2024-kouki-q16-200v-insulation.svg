@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 460" width="760" height="460" role="img" aria-labelledby="title desc">
+  <title id="title">2024年後期 問題16 ⑧200V回路</title>
+  <desc id="desc">2024年度後期配線図の⑧に示す200V回路と大地間の絶縁抵抗測定対象を示す学習用自作図。最小値は図示しない。</desc>
+  <style>text{font-family:Arial,"Hiragino Sans","Yu Gothic",sans-serif}.area{fill:#f8fafc;stroke:#64748b;stroke-width:1.8}.line{stroke:#111827;stroke-width:4;stroke-linecap:round}.ground{stroke:#16a34a;stroke-width:3;fill:none}.mark{fill:#fff;stroke:#2563eb;stroke-width:3}.num{font-size:18px;font-weight:700;fill:#1d4ed8;text-anchor:middle;dominant-baseline:central}.small{font-size:12px;fill:#475569}.label{font-size:15px;fill:#334155}.title{font-size:20px;font-weight:700;fill:#0f172a;text-anchor:middle}</style>
+  <rect width="760" height="460" fill="#fff"/>
+  <rect x="28" y="22" width="704" height="58" rx="10" fill="#eaf2ff" stroke="#bfdbfe"/>
+  <text x="380" y="47" class="title">2024年度後期 配線図（学習用模式図）</text>
+  <text x="380" y="69" text-anchor="middle" class="small">⑧で示す200V回路と大地間を確認するための整理図</text>
+  <rect x="84" y="118" width="456" height="216" rx="4" class="area"/>
+  <text x="312" y="174" text-anchor="middle" font-size="18" font-weight="700" fill="#334155">1階工場</text>
+  <line x1="150" y1="230" x2="440" y2="230" class="line"/>
+  <line x1="150" y1="260" x2="440" y2="260" class="line" opacity=".55"/>
+  <text x="150" y="210" class="label">200V回路</text>
+  <path d="M484 220 v74M462 294h44M470 307h28M478 319h12" class="ground"/>
+  <text x="510" y="300" class="small">大地</text>
+  <circle cx="130" cy="245" r="18" class="mark"/><text x="130" y="245" class="num">⑧</text>
+  <rect x="84" y="376" width="592" height="48" rx="8" fill="#f8fafc" stroke="#cbd5e1"/>
+  <circle cx="116" cy="400" r="14" class="mark"/><text x="116" y="400" class="num" font-size="15">⑧</text>
+  <text x="146" y="405" class="label" font-weight="700">対象位置</text>
+  <text x="242" y="405" class="small">電路と大地間の絶縁抵抗として許容される最小値を選ぶ。</text>
+</svg>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 460" width="760" height="460" role="img" aria-labelledby="title desc">
+  <title id="title">2024年後期 問題22 ⑭点滅器取付け</title>
+  <desc id="desc">2024年度後期配線図の⑭に示す点滅器の取付け位置を読み取りやすくした学習用自作図。材料名の正解判定に関わる語は最小限にする。</desc>
+  <style>text{font-family:Arial,"Hiragino Sans","Yu Gothic",sans-serif}.floor{fill:#ecf8ee;stroke:#64748b;stroke-width:1.8}.box{fill:#fff;stroke:#111827;stroke-width:2.4}.switch{fill:#fff;stroke:#111827;stroke-width:2.4}.wire{stroke:#111827;stroke-width:3;fill:none}.mark{fill:#fff;stroke:#2563eb;stroke-width:3}.num{font-size:18px;font-weight:700;fill:#1d4ed8;text-anchor:middle;dominant-baseline:central}.small{font-size:12px;fill:#475569}.label{font-size:15px;fill:#334155}.title{font-size:20px;font-weight:700;fill:#0f172a;text-anchor:middle}</style>
+  <rect width="760" height="460" fill="#fff"/>
+  <rect x="28" y="22" width="704" height="58" rx="10" fill="#eaf2ff" stroke="#bfdbfe"/>
+  <text x="380" y="47" class="title">2024年度後期 配線図（学習用模式図）</text>
+  <text x="380" y="69" text-anchor="middle" class="small">⑭で示す点滅器の取付け工事を確認するための整理図</text>
+  <rect x="96" y="116" width="430" height="220" rx="4" class="floor"/>
+  <text x="312" y="178" text-anchor="middle" font-size="18" font-weight="700" fill="#334155">2階事務室</text>
+  <rect x="264" y="224" width="78" height="64" rx="6" class="box"/>
+  <rect x="282" y="240" width="42" height="30" rx="4" class="switch"/>
+  <path d="M303 240v-44M303 270v34" class="wire"/>
+  <circle cx="248" cy="256" r="18" class="mark"/><text x="248" y="256" class="num">⑭</text>
+  <rect x="454" y="190" width="150" height="120" rx="10" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="529" y="222" text-anchor="middle" font-size="16" font-weight="700" fill="#0f172a">取付けイメージ</text>
+  <rect x="500" y="246" width="58" height="42" rx="5" class="switch"/>
+  <path d="M529 246v-22M529 288v20" class="wire"/>
+  <rect x="84" y="380" width="592" height="48" rx="8" fill="#f8fafc" stroke="#cbd5e1"/>
+  <circle cx="116" cy="404" r="14" class="mark"/><text x="116" y="404" class="num" font-size="15">⑭</text>
+  <text x="146" y="409" class="label" font-weight="700">対象位置</text>
+  <text x="242" y="409" class="small">点滅器を壁面に取り付ける工事で、使用しない材料を選ぶ。</text>
+</svg>

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 460" width="760" height="460" role="img" aria-labelledby="title desc">
+  <title id="title">2024年後期 問題8 1φ3W引込口</title>
+  <desc id="desc">2024年度後期配線図の①に示す1φ3W 100/200V引込口を読み取りやすくした学習用自作図。心線本数そのものは図示しない。</desc>
+  <style>
+    text { font-family: Arial, "Hiragino Sans", "Yu Gothic", sans-serif; }
+    .floor { fill: #f8fafc; stroke: #64748b; stroke-width: 1.8; }
+    .office { fill: #ecf8ee; stroke: #64748b; stroke-width: 1.5; }
+    .hall { fill: #f7f1e2; stroke: #64748b; stroke-width: 1.5; }
+    .feed { fill: none; stroke: #111827; stroke-width: 4; stroke-linecap: round; }
+    .dash { fill: none; stroke: #334155; stroke-width: 2; stroke-dasharray: 8 5; }
+    .mark { fill: #fff; stroke: #2563eb; stroke-width: 3; }
+    .num { font-size: 18px; font-weight: 700; fill: #1d4ed8; text-anchor: middle; dominant-baseline: central; }
+    .label { font-size: 15px; fill: #334155; }
+    .small { font-size: 12px; fill: #475569; }
+    .room-name { font-size: 17px; font-weight: 700; fill: #334155; text-anchor: middle; }
+  </style>
+
+  <rect width="760" height="460" fill="#ffffff"/>
+
+  <rect x="28" y="22" width="704" height="58" rx="10" fill="#eaf2ff" stroke="#bfdbfe"/>
+  <text x="380" y="47" text-anchor="middle" font-size="20" font-weight="700" fill="#0f172a">2024年度後期 配線図（学習用模式図）</text>
+  <text x="380" y="69" text-anchor="middle" font-size="13" fill="#475569">①で示す 1φ3W 100/200V の引込口を確認するための整理図</text>
+
+  <!-- Second floor area around the service entrance -->
+  <rect x="84" y="120" width="430" height="160" class="floor" rx="4"/>
+  <rect x="96" y="132" width="230" height="136" class="office"/>
+  <text x="211" y="205" class="room-name">2階事務室</text>
+  <rect x="338" y="132" width="160" height="88" class="hall"/>
+  <text x="418" y="182" class="room-name" font-size="15">イロハ</text>
+  <rect x="352" y="228" width="74" height="32" fill="#dbeafe" stroke="#1e3a8a" stroke-width="1.5"/>
+  <text x="389" y="249" text-anchor="middle" font-size="14" font-weight="700" fill="#1e3a8a">L-2</text>
+
+  <!-- Service entrance -->
+  <path d="M498 92 V132 H482" class="feed"/>
+  <circle cx="498" cy="118" r="18" class="mark"/>
+  <text x="498" y="118" class="num">①</text>
+  <text x="524" y="121" class="label" font-weight="700">引込口</text>
+  <rect x="238" y="316" width="284" height="50" rx="8" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="380" y="347" text-anchor="middle" font-size="24" font-weight="700" fill="#0f172a">1φ3W 100/200V</text>
+  <path d="M498 136 C518 170 510 212 454 230" class="dash"/>
+
+  <rect x="84" y="388" width="592" height="48" rx="8" fill="#f8fafc" stroke="#cbd5e1"/>
+  <g transform="translate(116 412)">
+    <circle cx="0" cy="0" r="14" class="mark"/>
+    <text x="0" y="0" class="num" font-size="15">①</text>
+    <text x="30" y="5" class="label" font-weight="700">対象位置</text>
+    <text x="126" y="5" class="small">単相3線式100/200Vの引込口。最少心線数は表記から判断する。</text>
+  </g>
+</svg>

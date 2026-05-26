@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 520" width="760" height="520" role="img" aria-labelledby="title desc">
+  <title id="title">2024年後期 問題20 ⑫リングスリーブ接続</title>
+  <desc id="desc">2024年度後期配線図の⑫ジョイントボックス内で圧着接続する接続本数を整理した学習用自作図。</desc>
+  <style>text{font-family:Arial,"Hiragino Sans","Yu Gothic",sans-serif}.floor{fill:#ecf8ee;stroke:#64748b;stroke-width:1.8}.box{fill:#fff7dc;stroke:#111827;stroke-width:2.4}.wire1{stroke:#111827;stroke-width:5;stroke-linecap:round}.wire2{stroke:#94a3b8;stroke-width:5;stroke-linecap:round}.wire3{stroke:#dc2626;stroke-width:5;stroke-linecap:round}.sleeve{fill:#fbbf24;stroke:#92400e;stroke-width:2}.mark{fill:#fff;stroke:#2563eb;stroke-width:3}.num{font-size:18px;font-weight:700;fill:#1d4ed8;text-anchor:middle;dominant-baseline:central}.small{font-size:12px;fill:#475569}.label{font-size:15px;fill:#334155}.title{font-size:20px;font-weight:700;fill:#0f172a;text-anchor:middle}</style>
+  <rect width="760" height="520" fill="#fff"/>
+  <rect x="28" y="22" width="704" height="58" rx="10" fill="#eaf2ff" stroke="#bfdbfe"/>
+  <text x="380" y="47" class="title">2024年度後期 配線図（学習用模式図）</text>
+  <text x="380" y="69" text-anchor="middle" class="small">⑫のジョイントボックス内で圧着接続する接続本数を確認するための整理図</text>
+  <rect x="82" y="110" width="430" height="120" rx="4" class="floor"/>
+  <text x="297" y="174" text-anchor="middle" font-size="18" font-weight="700" fill="#334155">2階事務室</text>
+  <rect x="126" y="104" width="42" height="42" rx="4" class="box"/>
+  <circle cx="147" cy="125" r="18" class="mark"/><text x="147" y="125" class="num">⑫</text>
+  <rect x="92" y="250" width="576" height="200" rx="10" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="380" y="278" text-anchor="middle" font-size="17" font-weight="700" fill="#0f172a">⑫ ボックス内の圧着接続点</text>
+  <g transform="translate(126 390)"><path d="M0 0h48M90 0h48" class="wire1"/><ellipse cx="69" cy="0" rx="20" ry="10" class="sleeve"/><text x="69" y="42" text-anchor="middle" class="small">2本接続</text></g>
+  <g transform="translate(266 390)"><path d="M0 0h48M90 0h48" class="wire2"/><ellipse cx="69" cy="0" rx="20" ry="10" class="sleeve"/><text x="69" y="42" text-anchor="middle" class="small">2本接続</text></g>
+  <g transform="translate(406 390)"><path d="M0 0h48M90 0h48" class="wire1"/><ellipse cx="69" cy="0" rx="20" ry="10" class="sleeve"/><text x="69" y="42" text-anchor="middle" class="small">2本接続</text></g>
+  <g transform="translate(546 390)"><path d="M0 0h34M78 0h34" class="wire2"/><ellipse cx="56" cy="0" rx="20" ry="10" class="sleeve"/><text x="56" y="42" text-anchor="middle" class="small">2本接続</text></g>
+  <g transform="translate(210 310)"><text x="73" y="-14" text-anchor="middle" class="small">3本接続</text><path d="M0 0h52M94 0h52" class="wire1"/><path d="M0 24h52M94 24h52" class="wire2"/><path d="M0 48h52M94 48h52" class="wire3"/><ellipse cx="73" cy="24" rx="22" ry="12" class="sleeve"/></g>
+  <g transform="translate(410 310)"><text x="73" y="-14" text-anchor="middle" class="small">3本接続</text><path d="M0 0h52M94 0h52" class="wire1"/><path d="M0 24h52M94 24h52" class="wire2"/><path d="M0 48h52M94 48h52" class="wire3"/><ellipse cx="73" cy="24" rx="22" ry="12" class="sleeve"/></g>
+  <rect x="84" y="466" width="592" height="36" rx="8" fill="#f8fafc" stroke="#cbd5e1"/>
+  <circle cx="116" cy="484" r="13" class="mark"/><text x="116" y="484" class="num" font-size="14">⑫</text>
+  <text x="146" y="489" class="label" font-weight="700">対象位置</text>
+  <text x="242" y="489" class="small">VVF1.6の接続本数からリングスリーブの種類と個数を選ぶ。</text>
+</svg>

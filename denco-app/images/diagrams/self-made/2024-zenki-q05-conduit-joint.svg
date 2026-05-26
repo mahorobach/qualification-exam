@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 500" width="760" height="500" role="img" aria-labelledby="title desc">
+  <title id="title">2024年前期 問題5 電線管相互の接続部</title>
+  <desc id="desc">2024年度前期配線図の⑫に示す、電線管相互の接続部を読み取りやすくした学習用自作図。部材名そのものは図示しない。</desc>
+  <style>
+    text { font-family: Arial, "Hiragino Sans", "Yu Gothic", sans-serif; }
+    .room { fill: #f8fafc; stroke: #64748b; stroke-width: 1.5; }
+    .office { fill: #f1f5ff; stroke: #64748b; stroke-width: 1.5; }
+    .wash { fill: #eef6ff; stroke: #64748b; stroke-width: 1.5; }
+    .shop { fill: #fffdf2; stroke: #64748b; stroke-width: 1.5; }
+    .pipe { fill: none; stroke: #111827; stroke-width: 7; stroke-linecap: round; }
+    .pipe-inner { fill: none; stroke: #f8fafc; stroke-width: 2; stroke-linecap: round; opacity: 0.9; }
+    .joint { fill: #ffffff; stroke: #111827; stroke-width: 3; }
+    .wire { fill: none; stroke: #334155; stroke-width: 2; }
+    .mark { fill: #fff; stroke: #2563eb; stroke-width: 3; }
+    .num { font-size: 18px; font-weight: 700; fill: #1d4ed8; text-anchor: middle; dominant-baseline: central; }
+    .label { font-size: 15px; fill: #334155; }
+    .small { font-size: 12px; fill: #475569; }
+    .room-name { font-size: 17px; font-weight: 700; fill: #334155; text-anchor: middle; }
+  </style>
+
+  <rect width="760" height="500" fill="#ffffff"/>
+
+  <rect x="28" y="22" width="704" height="58" rx="10" fill="#eaf2ff" stroke="#bfdbfe"/>
+  <text x="380" y="47" text-anchor="middle" font-size="20" font-weight="700" fill="#0f172a">2024年度前期 配線図（学習用模式図）</text>
+  <text x="380" y="69" text-anchor="middle" font-size="13" fill="#475569">⑫で示す電線管相互の接続部を確認するための整理図</text>
+
+  <!-- Simplified plan around office and wash area -->
+  <rect x="58" y="110" width="382" height="260" class="room" rx="4"/>
+  <rect x="58" y="110" width="200" height="150" class="office"/>
+  <text x="158" y="151" class="room-name">事務所</text>
+  <rect x="258" y="110" width="182" height="88" class="wash"/>
+  <text x="349" y="157" class="room-name">手洗い</text>
+  <rect x="58" y="260" width="382" height="110" class="shop"/>
+  <text x="249" y="326" class="room-name">店舗</text>
+
+  <!-- Nearby symbols for orientation -->
+  <g opacity="0.45">
+    <rect x="96" y="174" width="38" height="22" fill="#fff" stroke="#111827" stroke-width="1.5"/>
+    <text x="115" y="189" text-anchor="middle" font-size="12">RT</text>
+    <circle cx="181" cy="219" r="10" fill="#fff" stroke="#111827" stroke-width="1.5"/>
+    <line x1="171" y1="219" x2="191" y2="219" stroke="#111827"/>
+    <line x1="181" y1="209" x2="181" y2="229" stroke="#111827"/>
+    <rect x="168" y="257" width="21" height="21" fill="#eef2ff" stroke="#111827" stroke-width="1.5"/>
+  </g>
+
+  <!-- Conduit route with target joint -->
+  <path d="M132 185 L213 185 L267 185" class="pipe"/>
+  <path d="M132 185 L213 185 L267 185" class="pipe-inner"/>
+  <rect x="212" y="172" width="42" height="26" rx="13" class="joint"/>
+  <line x1="222" y1="185" x2="244" y2="185" stroke="#111827" stroke-width="2"/>
+  <circle cx="234" cy="185" r="19" class="mark"/>
+  <text x="234" y="185" class="num">⑫</text>
+
+  <path d="M132 185 L132 248 L182 248" class="wire"/>
+  <path d="M254 185 L312 185" class="wire"/>
+
+  <!-- Enlarged detail -->
+  <rect x="490" y="112" width="218" height="206" rx="10" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="599" y="145" text-anchor="middle" font-size="16" font-weight="700" fill="#0f172a">⑫ 拡大</text>
+  <line x1="528" y1="221" x2="590" y2="221" class="pipe"/>
+  <line x1="608" y1="221" x2="670" y2="221" class="pipe"/>
+  <rect x="580" y="196" width="58" height="50" rx="25" class="joint"/>
+  <line x1="590" y1="221" x2="628" y2="221" stroke="#111827" stroke-width="2"/>
+  <text x="599" y="285" text-anchor="middle" class="small">管と管の直線接続部</text>
+
+  <rect x="64" y="395" width="632" height="72" rx="8" fill="#f8fafc" stroke="#cbd5e1"/>
+  <g transform="translate(96 430)">
+    <circle cx="0" cy="0" r="15" class="mark"/>
+    <text x="0" y="0" class="num" font-size="16">⑫</text>
+    <text x="30" y="-6" class="label" font-weight="700">対象位置</text>
+    <text x="30" y="18" class="small">電線管どうしを一直線につなぐ箇所。名称は選択肢から判断する。</text>
+  </g>
+</svg>

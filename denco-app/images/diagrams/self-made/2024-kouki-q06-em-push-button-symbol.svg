@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 500" width="760" height="500" role="img" aria-labelledby="title desc">
+  <title id="title">2024年後期 問題6 ③の図記号</title>
+  <desc id="desc">2024年度後期配線図の③に示す図記号を読み取りやすくした学習用自作図。選択肢の正解名称は図中に表示しない。</desc>
+  <style>
+    text { font-family: Arial, "Hiragino Sans", "Yu Gothic", sans-serif; }
+    .wall { fill: #fffdf7; stroke: #4b5563; stroke-width: 2; }
+    .factory { fill: #f8fafc; stroke: #64748b; stroke-width: 1.5; }
+    .warehouse { fill: #f8efd6; stroke: #64748b; stroke-width: 1.5; }
+    .parking { fill: #eeeeee; stroke: #64748b; stroke-width: 1.5; }
+    .road { fill: #e5e7eb; stroke: #9ca3af; stroke-width: 1; }
+    .panel { fill: #fee2e2; stroke: #7f1d1d; stroke-width: 1.5; }
+    .cable { fill: none; stroke: #111827; stroke-width: 2.5; stroke-dasharray: 8 4; }
+    .wire { fill: none; stroke: #334155; stroke-width: 2; }
+    .symbol { fill: #fff; stroke: #111827; stroke-width: 2.2; }
+    .mark { fill: #fff; stroke: #2563eb; stroke-width: 3; }
+    .num { font-size: 18px; font-weight: 700; fill: #1d4ed8; text-anchor: middle; dominant-baseline: central; }
+    .label { font-size: 15px; fill: #334155; }
+    .small { font-size: 12px; fill: #475569; }
+    .room-name { font-size: 17px; font-weight: 700; fill: #334155; text-anchor: middle; }
+  </style>
+
+  <rect width="760" height="500" fill="#ffffff"/>
+
+  <rect x="28" y="22" width="704" height="58" rx="10" fill="#eaf2ff" stroke="#bfdbfe"/>
+  <text x="380" y="47" text-anchor="middle" font-size="20" font-weight="700" fill="#0f172a">2024年度後期 配線図（学習用模式図）</text>
+  <text x="380" y="69" text-anchor="middle" font-size="13" fill="#475569">③で示す図記号を確認するための整理図</text>
+
+  <!-- Simplified first floor area around the target -->
+  <rect x="62" y="112" width="420" height="250" class="wall" rx="4"/>
+  <rect x="62" y="112" width="420" height="205" class="factory"/>
+  <text x="270" y="222" class="room-name">1階工場</text>
+  <rect x="92" y="262" width="52" height="22" class="panel"/>
+  <text x="118" y="277" text-anchor="middle" font-size="12" fill="#7f1d1d">P-2</text>
+  <rect x="238" y="183" width="52" height="22" class="panel"/>
+  <text x="264" y="198" text-anchor="middle" font-size="12" fill="#7f1d1d">P-1</text>
+  <rect x="62" y="326" width="420" height="36" class="road"/>
+  <text x="272" y="349" text-anchor="middle" font-size="14" fill="#64748b">公道</text>
+
+  <rect x="510" y="112" width="150" height="118" class="warehouse" rx="3"/>
+  <text x="585" y="176" class="room-name">倉庫</text>
+  <rect x="510" y="242" width="150" height="120" class="parking" rx="3"/>
+  <text x="585" y="306" class="room-name">駐車場</text>
+  <line x1="662" y1="112" x2="662" y2="362" class="cable"/>
+  <text x="676" y="236" class="small">EM-CE5.5</text>
+
+  <!-- Target symbol -->
+  <rect x="493" y="258" width="28" height="28" rx="2" class="symbol"/>
+  <circle cx="507" cy="272" r="5" fill="#fff" stroke="#111827" stroke-width="2"/>
+  <path d="M482 272 H493" class="wire"/>
+  <circle cx="478" cy="272" r="18" class="mark"/>
+  <text x="478" y="272" class="num">③</text>
+
+  <!-- Enlarged symbol -->
+  <rect x="94" y="390" width="572" height="78" rx="8" fill="#f8fafc" stroke="#cbd5e1"/>
+  <g transform="translate(132 429)">
+    <circle cx="0" cy="0" r="16" class="mark"/>
+    <text x="0" y="0" class="num" font-size="16">③</text>
+    <text x="36" y="-10" class="label" font-weight="700">対象位置</text>
+    <text x="36" y="16" class="small">駐車場側にある四角枠と丸印の図記号。名称は選択肢から判断する。</text>
+  </g>
+  <g transform="translate(560 412)">
+    <rect x="0" y="0" width="42" height="42" rx="3" class="symbol"/>
+    <circle cx="21" cy="21" r="8" fill="#fff" stroke="#111827" stroke-width="2.5"/>
+    <text x="65" y="27" class="small">拡大</text>
+  </g>
+</svg>

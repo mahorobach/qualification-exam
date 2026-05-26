@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 500" width="760" height="500" role="img" aria-labelledby="title desc">
+  <title id="title">2024年後期 問題9 ⑲ジョイントボックス接続作業</title>
+  <desc id="desc">2024年度後期配線図の⑲に示すジョイントボックス内の電線相互接続作業を読み取りやすくした学習用自作図。選択肢の工具名は図中に表示しない。</desc>
+  <style>
+    text { font-family: Arial, "Hiragino Sans", "Yu Gothic", sans-serif; }
+    .factory { fill: #f8fafc; stroke: #64748b; stroke-width: 1.8; }
+    .panel { fill: #fee2e2; stroke: #7f1d1d; stroke-width: 1.5; }
+    .box { fill: #fff7dc; stroke: #111827; stroke-width: 2.5; }
+    .wire-b { fill: none; stroke: #111827; stroke-width: 5; stroke-linecap: round; }
+    .wire-w { fill: none; stroke: #94a3b8; stroke-width: 5; stroke-linecap: round; }
+    .wire-r { fill: none; stroke: #dc2626; stroke-width: 5; stroke-linecap: round; }
+    .sleeve { fill: #fbbf24; stroke: #92400e; stroke-width: 2; }
+    .mark { fill: #fff; stroke: #2563eb; stroke-width: 3; }
+    .num { font-size: 18px; font-weight: 700; fill: #1d4ed8; text-anchor: middle; dominant-baseline: central; }
+    .label { font-size: 15px; fill: #334155; }
+    .small { font-size: 12px; fill: #475569; }
+    .room-name { font-size: 17px; font-weight: 700; fill: #334155; text-anchor: middle; }
+  </style>
+
+  <rect width="760" height="500" fill="#ffffff"/>
+
+  <rect x="28" y="22" width="704" height="58" rx="10" fill="#eaf2ff" stroke="#bfdbfe"/>
+  <text x="380" y="47" text-anchor="middle" font-size="20" font-weight="700" fill="#0f172a">2024年度後期 配線図（学習用模式図）</text>
+  <text x="380" y="69" text-anchor="middle" font-size="13" fill="#475569">⑲のジョイントボックス内で行う接続作業を確認するための整理図</text>
+
+  <!-- Simplified first floor factory area -->
+  <rect x="70" y="114" width="420" height="250" class="factory" rx="4"/>
+  <text x="280" y="220" class="room-name">1階工場</text>
+  <rect x="158" y="264" width="60" height="26" class="panel"/>
+  <text x="188" y="282" text-anchor="middle" font-size="13" fill="#7f1d1d">P-2</text>
+  <rect x="270" y="172" width="60" height="26" class="panel"/>
+  <text x="300" y="190" text-anchor="middle" font-size="13" fill="#7f1d1d">P-1</text>
+
+  <!-- Target location -->
+  <path d="M218 277 H256" fill="none" stroke="#334155" stroke-width="2" stroke-dasharray="4 4"/>
+  <rect x="248" y="250" width="44" height="44" rx="3" class="box"/>
+  <circle cx="236" cy="272" r="18" class="mark"/>
+  <text x="236" y="272" class="num">⑲</text>
+
+  <!-- Enlarged box -->
+  <rect x="526" y="116" width="152" height="152" rx="10" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="602" y="146" text-anchor="middle" font-size="16" font-weight="700" fill="#0f172a">⑲ 拡大</text>
+  <rect x="562" y="170" width="80" height="72" rx="6" class="box"/>
+  <path d="M562 188 H532" class="wire-b"/>
+  <path d="M562 206 H532" class="wire-w"/>
+  <path d="M562 224 H532" class="wire-r"/>
+  <path d="M642 188 H672" class="wire-b"/>
+  <path d="M642 206 H672" class="wire-w"/>
+  <path d="M642 224 H672" class="wire-r"/>
+  <ellipse cx="602" cy="188" rx="18" ry="8" class="sleeve"/>
+  <ellipse cx="602" cy="206" rx="18" ry="8" class="sleeve"/>
+  <ellipse cx="602" cy="224" rx="18" ry="8" class="sleeve"/>
+  <text x="602" y="289" text-anchor="middle" class="small">電線相互を接続する作業</text>
+
+  <rect x="84" y="400" width="592" height="64" rx="8" fill="#f8fafc" stroke="#cbd5e1"/>
+  <g transform="translate(116 432)">
+    <circle cx="0" cy="0" r="14" class="mark"/>
+    <text x="0" y="0" class="num" font-size="15">⑲</text>
+    <text x="30" y="-5" class="label" font-weight="700">対象位置</text>
+    <text x="30" y="19" class="small">ジョイントボックス内で電線を切断・被覆処理・接続する場面を想定する。</text>
+  </g>
+</svg>

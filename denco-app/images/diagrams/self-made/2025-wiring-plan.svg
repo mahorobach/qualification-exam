@@ -49,7 +49,7 @@
 <rect x="240" y="40" width="235" height="280" fill="#f0fdf4" stroke="#15803d" stroke-width="2"/>
 <text x="357" y="60" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#15803d">受水槽室</text>
 
-<!-- ---- Pump room equipment ---- -->
+<!-- Pump room equipment -->
 <!-- Pump P1 (給水加圧ポンプ) -->
 <circle cx="100" cy="120" r="14" fill="#fff" stroke="#2563eb" stroke-width="2.5"/>
 <text x="100" y="124" font-family="Arial,sans-serif" font-size="12" text-anchor="middle" fill="#2563eb" font-weight="bold">M</text>

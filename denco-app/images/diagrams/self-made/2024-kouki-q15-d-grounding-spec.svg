@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 460" width="760" height="460" role="img" aria-labelledby="title desc">
+  <title id="title">2024年後期 問題15 ⑦D種接地</title>
+  <desc id="desc">2024年度後期配線図の⑦に示すD種接地工事の位置を読み取りやすくした学習用自作図。接地線太さや接地抵抗値は図示しない。</desc>
+  <style>text{font-family:Arial,"Hiragino Sans","Yu Gothic",sans-serif}.area{fill:#f8fafc;stroke:#64748b;stroke-width:1.8}.earth{stroke:#111827;stroke-width:3;fill:none}.mark{fill:#fff;stroke:#2563eb;stroke-width:3}.num{font-size:18px;font-weight:700;fill:#1d4ed8;text-anchor:middle;dominant-baseline:central}.label{font-size:15px;fill:#334155}.small{font-size:12px;fill:#475569}.title{font-size:20px;font-weight:700;fill:#0f172a;text-anchor:middle}</style>
+  <rect width="760" height="460" fill="#fff"/>
+  <rect x="28" y="22" width="704" height="58" rx="10" fill="#eaf2ff" stroke="#bfdbfe"/>
+  <text x="380" y="47" class="title">2024年度後期 配線図（学習用模式図）</text>
+  <text x="380" y="69" text-anchor="middle" class="small">⑦で示すD種接地工事の位置を確認するための整理図</text>
+  <rect x="92" y="116" width="430" height="230" rx="4" class="area"/>
+  <text x="307" y="218" text-anchor="middle" font-size="18" font-weight="700" fill="#334155">1階工場</text>
+  <path d="M305 228 v62" class="earth"/>
+  <path d="M283 290 h44M290 303 h30M298 315 h14" class="earth"/>
+  <text x="344" y="303" class="label">D種</text>
+  <circle cx="260" cy="282" r="18" class="mark"/><text x="260" y="282" class="num">⑦</text>
+  <rect x="84" y="382" width="592" height="48" rx="8" fill="#f8fafc" stroke="#cbd5e1"/>
+  <circle cx="116" cy="406" r="14" class="mark"/><text x="116" y="406" class="num" font-size="15">⑦</text>
+  <text x="146" y="411" class="label" font-weight="700">対象位置</text>
+  <text x="242" y="411" class="small">D種接地工事の電線太さと接地抵抗値は選択肢から判断する。</text>
+</svg>

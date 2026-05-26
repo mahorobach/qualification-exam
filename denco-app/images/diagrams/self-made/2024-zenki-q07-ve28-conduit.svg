@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 460" width="760" height="460" role="img" aria-labelledby="title desc">
+  <title id="title">2024年前期 問題7 VE28表記</title>
+  <desc id="desc">2024年度前期配線図の⑤に示すVE28表記を読み取りやすくした学習用自作図。VE28の意味は図中に表示しない。</desc>
+  <style>
+    text { font-family: Arial, "Hiragino Sans", "Yu Gothic", sans-serif; }
+    .building { fill: #fffdf7; stroke: #4b5563; stroke-width: 2; }
+    .office { fill: #f1f5ff; stroke: #64748b; stroke-width: 1.5; }
+    .shop { fill: #fffdf2; stroke: #64748b; stroke-width: 1.5; }
+    .parking { fill: #eef7ef; stroke: #64748b; stroke-width: 1.5; }
+    .conduit { fill: none; stroke: #111827; stroke-width: 3; stroke-dasharray: 10 6; }
+    .mark { fill: #fff; stroke: #2563eb; stroke-width: 3; }
+    .num { font-size: 18px; font-weight: 700; fill: #1d4ed8; text-anchor: middle; dominant-baseline: central; }
+    .label { font-size: 15px; fill: #334155; }
+    .small { font-size: 12px; fill: #475569; }
+    .room-name { font-size: 17px; font-weight: 700; fill: #334155; text-anchor: middle; }
+  </style>
+
+  <rect width="760" height="460" fill="#ffffff"/>
+
+  <rect x="28" y="22" width="704" height="58" rx="10" fill="#eaf2ff" stroke="#bfdbfe"/>
+  <text x="380" y="47" text-anchor="middle" font-size="20" font-weight="700" fill="#0f172a">2024年度前期 配線図（学習用模式図）</text>
+  <text x="380" y="69" text-anchor="middle" font-size="13" fill="#475569">⑤で示す配線の「VE28」表記を確認するための整理図</text>
+
+  <!-- Simplified plan -->
+  <rect x="70" y="112" width="440" height="170" class="building" rx="4"/>
+  <rect x="70" y="112" width="190" height="90" class="office"/>
+  <text x="165" y="163" class="room-name">事務所</text>
+  <rect x="70" y="202" width="440" height="80" class="shop"/>
+  <text x="290" y="250" class="room-name">店舗</text>
+  <rect x="540" y="112" width="150" height="170" class="parking" rx="4"/>
+  <text x="615" y="203" class="room-name">駐車場</text>
+
+  <!-- Target underground conduit -->
+  <line x1="96" y1="340" x2="664" y2="340" class="conduit"/>
+  <circle cx="138" cy="340" r="18" class="mark"/>
+  <text x="138" y="340" class="num">⑤</text>
+  <rect x="284" y="309" width="192" height="46" rx="8" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="380" y="338" text-anchor="middle" font-size="22" font-weight="700" fill="#0f172a">VE28</text>
+  <text x="380" y="372" text-anchor="middle" class="small">配線図中の傍記</text>
+
+  <rect x="84" y="388" width="592" height="48" rx="8" fill="#f8fafc" stroke="#cbd5e1"/>
+  <g transform="translate(116 412)">
+    <circle cx="0" cy="0" r="14" class="mark"/>
+    <text x="0" y="0" class="num" font-size="15">⑤</text>
+    <text x="30" y="5" class="label" font-weight="700">対象位置</text>
+    <text x="126" y="5" class="small">破線で示された配線に付く「VE28」の意味を選択肢から判断する。</text>
+  </g>
+</svg>
