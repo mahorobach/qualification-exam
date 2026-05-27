@@ -792,7 +792,7 @@
                     </button>
                     <button type="button" class="mode-btn" id="btn-mode-year">
                         <span class="mode-icon">📅</span>
-                        <span><span class="mode-name">年度別演習</span><span class="mode-desc">年度ベースで本番形式50問・120分タイマー付きで解答。</span></span>
+                        <span><span class="mode-name">年度別演習</span><span class="mode-desc">年度・期別で本番形式50問・120分タイマー付きで解答。</span></span>
                     </button>
                     <a class="mock-link-btn" href="mock-sets.html">
                         <span class="mode-icon">📋</span>
@@ -821,7 +821,7 @@
                     </div>
                     <div class="how-item">
                         <div class="how-num">2</div>
-                        <div class="how-text"><strong>年度別演習</strong>：年度ベースで、本番形式50問（一般30問＋配線図系20問）を解答。年度の問題数が50問に満たない場合はその年度の問題のみで出題します。</div>
+                        <div class="how-text"><strong>年度別演習</strong>：年度・期別で、本番形式50問（一般30問＋配線図系20問）を解答。対象の問題数が50問に満たない場合は、その範囲の問題のみで出題します。</div>
                     </div>
                     <div class="how-item">
                         <div class="how-num">3</div>
@@ -852,8 +852,8 @@
         <div id="s-year-sel" hidden>
             <a href="koujishi-index.html" class="back-link" id="lnk-year-back">← 第二種電気工事士 学習ポータルへ</a>
             <div class="card">
-                <p class="screen-title">年度を選択</p>
-                <p class="screen-sub">解答する年度を選んでください</p>
+                <p class="screen-title">年度・期を選択</p>
+                <p class="screen-sub">解答する年度と前期・後期を選んでください</p>
                 <div class="sel-list" id="year-sel-list"></div>
             </div>
             <div class="info-card">120分タイマー付きで収録範囲内の問題が出題されます。問題を行き来しながら解答し、終了後に全問の解説を一覧で確認できます。</div>
@@ -2072,7 +2072,7 @@
 
         // ── Exam mode variables ──────────────────────────────────
         let examQuestions = [], examAnswers = [], examIdx = 0;
-        let examTimerSec = 0, examTimerInt = null, examYearKey = null;
+        let examTimerSec = 0, examTimerInt = null, examYearKey = null, examSelectionLabel = "";
 
         const NEW_SCREENS = ["s-mode","s-year-sel","s-exam","s-exam-results"];
 
@@ -2149,18 +2149,58 @@
             answeredQids.clear(); saveStoredStats();
             window.alert("リセットしました。全問が再出題されます。");
         });
-        // Year selection
+        function normalizeSessionLabel(session) {
+            const s = String(session || "").trim();
+            if (s === "上期") return "前期";
+            if (s === "下期") return "後期";
+            return s;
+        }
+
+        function makeExamPeriodKey(year, session) {
+            return String(year || "").trim() + "::" + String(session || "").trim();
+        }
+
+        function parseExamPeriodKey(key) {
+            const parts = String(key || "").split("::");
+            return { year: parts[0] || "", session: parts.slice(1).join("::") || "" };
+        }
+
+        function sessionSortRank(session) {
+            const s = normalizeSessionLabel(session);
+            if (s === "前期") return 1;
+            if (s === "後期") return 2;
+            return 3;
+        }
+
+        function formatExamPeriodLabel(year, session) {
+            const s = normalizeSessionLabel(session);
+            return String(year || "") + "年" + (s ? " " + s : "");
+        }
+
+        // Year/session selection
         function buildYearSel() {
             const el = document.getElementById("year-sel-list"); el.innerHTML = "";
-            const byYear = {};
+            const periods = {};
             allQuestions.forEach(function(q) {
                 const y = String(q.year || "").trim();
-                if (/^\d{4}$/.test(y)) { if (!byYear[y]) byYear[y] = 0; byYear[y]++; }
+                if (/^\d{4}$/.test(y)) {
+                    const s = String(q.session || "").trim();
+                    const key = makeExamPeriodKey(y, s);
+                    if (!periods[key]) periods[key] = { year: y, session: s, count: 0 };
+                    periods[key].count++;
+                }
             });
-            Object.keys(byYear).sort(function(a,b){return Number(b)-Number(a);}).forEach(function(y) {
+            Object.keys(periods).sort(function(a,b){
+                const pa = periods[a], pb = periods[b];
+                const yd = Number(pb.year) - Number(pa.year);
+                if (yd !== 0) return yd;
+                return sessionSortRank(pa.session) - sessionSortRank(pb.session);
+            }).forEach(function(key) {
+                const item = periods[key];
                 const btn = document.createElement("button"); btn.type = "button"; btn.className = "sel-item";
-                btn.innerHTML = "<strong>" + y + "年度ベース</strong><span class='s-meta'>本番形式 50問</span>";
-                btn.addEventListener("click", function() { startYearExam(y); }); el.appendChild(btn);
+                const title = item.session ? formatExamPeriodLabel(item.year, item.session) : item.year + "年度ベース";
+                btn.innerHTML = "<strong>" + title + "</strong><span class='s-meta'>本番形式 50問 · 収録 " + item.count + "問</span>";
+                btn.addEventListener("click", function() { startYearExam(key); }); el.appendChild(btn);
             });
             const allBtn = document.createElement("button"); allBtn.type = "button"; allBtn.className = "sel-item";
             allBtn.style.borderColor = "rgba(61,156,240,0.35)";
@@ -2171,11 +2211,18 @@
         // Year exam
         function startYearExam(yearKey) {
             examYearKey = yearKey; clearInterval(examTimerInt);
+            const period = parseExamPeriodKey(yearKey);
+            const periodPool = yearKey === "__all__"
+                ? allQuestions.slice()
+                : allQuestions.filter(function(q) {
+                    return String(q.year || "") === period.year && String(q.session || "") === period.session;
+                });
+            examSelectionLabel = yearKey === "__all__" ? "全年度ランダム" : formatExamPeriodLabel(period.year, period.session);
             let pool = yearKey === "__all__"
                 ? buildExamLikeDeck(allQuestions.slice(), allQuestions.slice(), EXAM_TOTAL_QUESTION_COUNT, 30, 50, 20)
                 : buildExamLikeDeck(
-                    allQuestions.filter(function(q){ return String(q.year||"") === yearKey; }),
-                    allQuestions.filter(function(q){ return String(q.year||"") === yearKey; }),
+                    periodPool,
+                    periodPool,
                     EXAM_TOTAL_QUESTION_COUNT,
                     30,
                     50,
@@ -2271,7 +2318,7 @@
             const answered = ans.filter(function(a){return a!==null;}).length;
             const correct = qs.reduce(function(s,q,i){return s+(ans[i]===q.correctIndex?1:0);},0);
             const pct = answered > 0 ? Math.round(correct/answered*100) : 0, pass = pct >= 60;
-            document.getElementById("res-title").textContent = examYearKey==="__all__" ? "全年度ランダム 結果" : examYearKey + "年度 結果";
+            document.getElementById("res-title").textContent = examSelectionLabel + " 結果";
             document.getElementById("res-score").textContent = correct + " / " + answered + " 問正解";
             const banner = document.getElementById("res-banner");
             if (pass) { banner.style.cssText="background:rgba(62,207,142,0.12);border:1px solid rgba(62,207,142,0.45);color:#b8f0d4;border-radius:10px;"; banner.textContent="✓ 合格ライン到達（正答率 "+pct+"%）"; }
@@ -2282,7 +2329,7 @@
             qs.forEach(function(q,i){ const c=q.category||"未分類"; if(!catMap[c])catMap[c]={ok:0,done:0}; if(ans[i]!==null){catMap[c].done++;if(ans[i]===q.correctIndex)catMap[c].ok++;} });
             CATEGORY_ORDER.forEach(function(c){ if(!catMap[c])return; const s=catMap[c]; const r=s.done>0?Math.round(s.ok/s.done*100):0; const row=document.createElement("div"); row.className="res-cat-row"; row.innerHTML="<span>"+c+"</span><span style='color:"+(r>=60?"var(--correct)":"var(--wrong)")+";font-weight:600'>"+s.ok+"/"+s.done+"問 ("+r+"%)</span>"; catSummary.appendChild(row); });
             const listEl = document.getElementById("res-q-list"); listEl.innerHTML = "";
-            qs.forEach(function(q,i){ const ua=ans[i],isSkip=ua===null,isOk=!isSkip&&ua===q.correctIndex; const renderedChoices=getChoices(q); const card=document.createElement("div"); card.className="res-q-card "+(isSkip?"skip":isOk?"ok":"ng"); const sc=isSkip?"var(--text-muted)":isOk?"var(--correct)":"var(--wrong)"; const si=isSkip?"— 未回答":isOk?"✓ 正解":"✗ 不正解"; let html="<div class='res-q-meta'>"+(q.year?q.year+"年 · ":"")+(q.category||"")+" · 問"+(i+1)+" <span style='color:"+sc+"'>"+si+"</span></div><div class='res-q-text'>"+escHtml(getQuestionText(q))+"</div>"; if(!isSkip)html+="<div class='res-q-yours "+(isOk?"ok":"ng")+"'>あなたの解答："+escHtml(renderedChoices[ua])+"</div>"; if(!isOk)html+="<div class='res-q-correct'>正解："+escHtml(renderedChoices[q.correctIndex])+"</div>"; html+="<div class='res-q-exp'>"+escHtml(q.explanation)+"</div>"; card.innerHTML=html; listEl.appendChild(card); });
+            qs.forEach(function(q,i){ const ua=ans[i],isSkip=ua===null,isOk=!isSkip&&ua===q.correctIndex; const renderedChoices=getChoices(q); const card=document.createElement("div"); card.className="res-q-card "+(isSkip?"skip":isOk?"ok":"ng"); const sc=isSkip?"var(--text-muted)":isOk?"var(--correct)":"var(--wrong)"; const si=isSkip?"— 未回答":isOk?"✓ 正解":"✗ 不正解"; const periodMeta=q.year?formatExamPeriodLabel(q.year,q.session)+" · ":""; let html="<div class='res-q-meta'>"+periodMeta+(q.category||"")+" · 問"+(i+1)+" <span style='color:"+sc+"'>"+si+"</span></div><div class='res-q-text'>"+escHtml(getQuestionText(q))+"</div>"; if(!isSkip)html+="<div class='res-q-yours "+(isOk?"ok":"ng")+"'>あなたの解答："+escHtml(renderedChoices[ua])+"</div>"; if(!isOk)html+="<div class='res-q-correct'>正解："+escHtml(renderedChoices[q.correctIndex])+"</div>"; html+="<div class='res-q-exp'>"+escHtml(q.explanation)+"</div>"; card.innerHTML=html; listEl.appendChild(card); });
         }
 
         async function boot() {
