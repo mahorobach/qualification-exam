@@ -9,17 +9,13 @@
  */
 const CANONICAL_HOST = 'qualifications.app';
 const PRIVATE_APP_PREFIXES = [
-  '/ap-app',
   '/ccna-app',
   '/chishitsu-app',
-  '/fe-app',
   '/fudosan-app',
   '/gyosei-app',
-  '/ipa-app',
   '/kanri-app',
   '/mansion-app',
   '/sekispe-app',
-  '/takken-app',
 ];
 
 /**
