@@ -1,6 +1,17 @@
 User-agent: *
 Allow: /
 Crawl-delay: 5
+Disallow: /ap-app/
+Disallow: /ccna-app/
+Disallow: /chishitsu-app/
+Disallow: /fe-app/
+Disallow: /fudosan-app/
+Disallow: /gyosei-app/
+Disallow: /ipa-app/
+Disallow: /kanri-app/
+Disallow: /mansion-app/
+Disallow: /sekispe-app/
+Disallow: /takken-app/
 
 User-agent: GPTBot
 Disallow: /denco-app/questions.json

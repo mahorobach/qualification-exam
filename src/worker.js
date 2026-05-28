@@ -8,6 +8,19 @@
  * 変数名: GEMINI_API_KEY
  */
 const CANONICAL_HOST = 'qualifications.app';
+const PRIVATE_APP_PREFIXES = [
+  '/ap-app',
+  '/ccna-app',
+  '/chishitsu-app',
+  '/fe-app',
+  '/fudosan-app',
+  '/gyosei-app',
+  '/ipa-app',
+  '/kanri-app',
+  '/mansion-app',
+  '/sekispe-app',
+  '/takken-app',
+];
 
 /**
  * 本番ドメイン上でのみ: www → apex、ディレクトリURL（末尾 /）→ index.html
@@ -44,6 +57,19 @@ export default {
     if (redirect) return redirect;
 
     const url = new URL(request.url);
+    if (
+      PRIVATE_APP_PREFIXES.some(
+        (prefix) => url.pathname === prefix || url.pathname.startsWith(`${prefix}/`)
+      )
+    ) {
+      return new Response('Not Found', {
+        status: 404,
+        headers: {
+          'Content-Type': 'text/plain; charset=utf-8',
+          'X-Robots-Tag': 'noindex, nofollow',
+        },
+      });
+    }
 
     // Gemini API プロキシ
     if (url.pathname === '/api/gemini' && request.method === 'POST') {
