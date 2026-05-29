@@ -3,49 +3,232 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>専門科目（機械部門）の傾向と対策 | 技術士第一次試験</title>
+  <title>専門科目（機械部門）の傾向と対策 | 技術士第一次試験 | 資格トレイン</title>
   <meta name="description" content="技術士第一次試験・機械部門の専門科目対策。材料力学、流体、熱、機械力学、機械要素、加工の頻出公式と図面問題の解き方を整理。" />
   <link rel="canonical" href="https://qualifications.app/kikai-app/taisaku-specialty.html" />
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../tokens.css" />
+  <link rel="stylesheet" href="../base.css" />
   <style>
-    :root { --bg:#0f1419; --surface:#1a222c; --surface2:#232d3a; --text:#e8edf4; --muted:#8b9aad; --accent:#3ecf8e; --blue:#3d9cf0; --gold:#f0c674; --line:rgba(255,255,255,.08); }
-    * { box-sizing:border-box; }
-    body { margin:0; min-height:100dvh; font-family:'Zen Kaku Gothic New','Hiragino Sans',sans-serif; color:var(--text); background:var(--bg); background-image:radial-gradient(ellipse 80% 45% at 50% -18%,rgba(62,207,142,.15),transparent); padding:calc(52px + max(18px,env(safe-area-inset-top))) 18px 42px; line-height:1.75; }
-    .nav { position:fixed; top:0; left:0; right:0; height:52px; z-index:10; display:flex; align-items:center; justify-content:space-between; padding:0 18px; background:rgba(15,20,25,.9); border-bottom:1px solid var(--line); backdrop-filter:blur(18px); }
-    .nav a { color:rgba(255,255,255,.82); text-decoration:none; font-size:.88rem; font-weight:700; }
-    .wrap { max-width:820px; margin:0 auto; }
-    .label { display:inline-flex; padding:4px 9px; border-radius:999px; background:rgba(62,207,142,.14); color:#9af4c9; font-size:.72rem; font-weight:700; }
-    h1 { margin:12px 0 8px; font-size:1.58rem; line-height:1.35; }
-    .lead { margin:0 0 18px; color:var(--muted); font-size:.94rem; }
-    .card { background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:18px; margin-bottom:14px; box-shadow:0 8px 28px rgba(0,0,0,.26); }
-    .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
-    h2 { margin:0 0 12px; color:var(--accent); font-size:1.05rem; }
-    h3 { margin:14px 0 8px; font-size:.95rem; color:#d7ffe9; }
-    p, li { font-size:.9rem; }
-    p { margin:0 0 12px; }
-    ul { margin:0; padding-left:1.15em; }
-    li { margin:0 0 8px; }
-    .formula { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; }
-    .formula div { padding:10px 12px; background:var(--surface2); border:1px solid var(--line); border-radius:9px; font-size:.88rem; }
-    code { color:#d7ffe9; font-family:ui-monospace,SFMono-Regular,Menlo,monospace; }
-    .flow { display:grid; gap:8px; counter-reset:step; }
-    .flow div { position:relative; padding:10px 12px 10px 38px; background:var(--surface2); border:1px solid var(--line); border-radius:9px; font-size:.88rem; }
-    .flow div::before { counter-increment:step; content:counter(step); position:absolute; left:11px; top:10px; width:18px; height:18px; border-radius:50%; display:grid; place-items:center; background:rgba(62,207,142,.18); color:#9af4c9; font-size:.72rem; font-weight:700; }
-    .cta { display:block; text-align:center; margin-top:16px; padding:14px; border-radius:11px; background:linear-gradient(135deg,var(--accent),#a8ffd1); color:#071a11; text-decoration:none; font-weight:700; }
-    .note { color:var(--muted); font-size:.8rem; }
-    @media (max-width:720px) { .grid,.formula { grid-template-columns:1fr; } h1 { font-size:1.34rem; } .card { padding:16px; } }
+    body {
+      min-height: 100dvh;
+      padding: calc(52px + max(18px,env(safe-area-inset-top))) 18px max(42px,env(safe-area-inset-bottom));
+    }
+    .wrap { max-width: 820px; margin: 0 auto; }
+    .hero { margin-bottom: 24px; }
+
+    .subj-label {
+      display: inline-flex; align-items: center;
+      padding: 4px 12px; border-radius: 999px;
+      background: var(--subj-expert-soft); color: var(--subj-expert);
+      font-size: 0.75rem; font-weight: 700;
+    }
+
+    h1 { margin: 12px 0 8px; font-size: clamp(1.35rem,4vw,1.6rem); line-height: 1.38; }
+    .lead { margin: 0 0 18px; color: var(--text-muted); font-size: 0.94rem; line-height: 1.85; }
+
+    .grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 14px; }
+
+    .card {
+      border-radius: var(--radius);
+      padding: 20px;
+      margin-bottom: 14px;
+    }
+    .card h2 {
+      display: flex; align-items: center; gap: 10px;
+      margin: 0 0 14px; font-size: 1.05rem; font-weight: 700; color: var(--text);
+    }
+    .card h2::before {
+      content: ""; flex: 0 0 4px; width: 4px; height: 1.05em;
+      background: var(--subj-expert); border-radius: 2px;
+    }
+    h3 { margin: 14px 0 8px; font-size: 0.95rem; color: var(--text); }
+    p { margin: 0 0 12px; font-size: 0.9rem; line-height: 1.8; }
+    ul { margin: 0; padding-left: 1.15em; }
+    li { margin: 0 0 8px; font-size: 0.9rem; line-height: 1.7; color: var(--text); }
+
+    .formula-grid {
+      display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 8px;
+    }
+    .formula-grid div {
+      padding: 10px 12px; background: var(--surface-2);
+      border: 1px solid var(--line); border-radius: var(--radius-sm); font-size: 0.88rem;
+    }
+    code { color: var(--subj-expert); font-family: ui-monospace,SFMono-Regular,Menlo,monospace; }
+
+    .flow-list { display: grid; gap: 8px; counter-reset: step; }
+    .flow-list div {
+      position: relative; padding: 10px 12px 10px 40px;
+      background: var(--surface-2); border: 1px solid var(--line);
+      border-radius: var(--radius-sm); font-size: 0.88rem; color: var(--text);
+    }
+    .flow-list div::before {
+      counter-increment: step; content: counter(step);
+      position: absolute; left: 11px; top: 10px;
+      width: 20px; height: 20px; border-radius: 50%;
+      display: grid; place-items: center;
+      background: var(--subj-expert-soft); color: var(--subj-expert);
+      font-size: 0.72rem; font-weight: 700;
+    }
+
+    .cta {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      width: 100%; min-height: 52px; margin-top: 16px; padding: 14px;
+      border: none; border-radius: 999px;
+      background: var(--accent); color: #ffffff;
+      font-family: inherit; font-size: 1rem; font-weight: 700;
+      text-decoration: none; box-shadow: var(--shadow-cta);
+      transition: opacity .15s;
+    }
+    .cta::after { content: "→"; }
+    .cta:hover { opacity: .94; }
+
+    .note { color: var(--text-muted); font-size: 0.8rem; margin-top: 8px; }
+
+    @media (max-width: 680px) {
+      .grid, .formula-grid { grid-template-columns: 1fr; }
+      h1 { font-size: 1.3rem; }
+    }
+
+    /* ── Hamburger ── */
+    .nav-hamburger {
+      display: flex; flex-direction: column; justify-content: center; gap: 5px;
+      width: 36px; height: 36px; padding: 6px;
+      background: none; border: none; cursor: pointer;
+      border-radius: 8px; transition: background .15s; flex-shrink: 0;
+    }
+    .nav-hamburger:hover { background: rgba(0,0,0,0.06); }
+    .nav-hamburger span {
+      display: block; height: 1.5px; border-radius: 2px; background: currentColor;
+      transition: transform .3s, opacity .3s, width .3s; width: 20px;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; width: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+    /* ── Drawer ── */
+    .drawer-overlay {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.45);
+      z-index: 190; opacity: 0; pointer-events: none; transition: opacity .3s;
+    }
+    .drawer-overlay.open { opacity: 1; pointer-events: auto; }
+    .drawer {
+      position: fixed; top: 0; right: 0; bottom: 0; width: min(320px, 85vw);
+      background: #ffffff; z-index: 195;
+      transform: translateX(100%);
+      transition: transform .35s cubic-bezier(.25,.46,.45,.94);
+      display: flex; flex-direction: column; overflow-y: auto;
+    }
+    .drawer.open { transform: translateX(0); }
+    .drawer-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 20px; border-bottom: 1px solid #e8e8ed; flex-shrink: 0;
+    }
+    .drawer-logo {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 0.95rem; font-weight: 600; color: #1d1d1f; text-decoration: none;
+    }
+    .drawer-close {
+      width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;
+      background: #f5f5f7; border: none; border-radius: 50%; cursor: pointer; font-size: 1.1rem; color: #6e6e73;
+    }
+    .drawer-close:hover { background: #e8e8ed; }
+    .drawer-section { padding: 20px 20px 8px; }
+    .drawer-section-label {
+      font-size: 0.68rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+      color: #6e6e73; margin-bottom: 8px; padding-left: 4px;
+    }
+    .drawer-nav { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; }
+    .drawer-nav a {
+      display: flex; align-items: center; gap: 12px; padding: 11px 12px; border-radius: 10px;
+      text-decoration: none; color: #1d1d1f; font-size: 0.95rem; font-weight: 400; transition: background .15s;
+    }
+    .drawer-nav a:hover { background: #f5f5f7; }
+    .drawer-nav a .di { font-size: 1.1rem; width: 24px; text-align: center; }
+    .drawer-divider { height: 1px; background: #e8e8ed; margin: 8px 20px; }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--surface);
+      border-top: 1px solid var(--line);
+      padding: 56px 0 max(36px,env(safe-area-inset-bottom));
+    }
+    .footer-container { max-width: 980px; margin: 0 auto; padding: 0 22px; }
+    .footer-inner { display: flex; gap: 48px; flex-wrap: wrap; margin-bottom: 40px; }
+    .footer-brand-col { flex-shrink: 0; }
+    .footer-brand { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+    .footer-brand-name { font-size: 1rem; font-weight: 700; color: var(--text); }
+    .footer-brand-desc { font-size: 0.8rem; color: var(--text-muted); font-weight: 400; line-height: 1.8; max-width: 220px; }
+    .footer-cols { display: flex; gap: 40px; flex-wrap: wrap; flex: 1; }
+    .footer-col-title { font-size: 0.68rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 14px; }
+    .footer-col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul a { font-size: 0.85rem; color: var(--text-muted); text-decoration: none; font-weight: 500; transition: color .15s; }
+    .footer-col ul a:hover { color: var(--accent); }
+    .footer-bottom { padding-top: 24px; border-top: 1px solid var(--line); }
+    .footer-copy { font-size: 0.72rem; color: var(--text-muted); font-weight: 400; }
+    @media (max-width: 680px) {
+      .footer-inner { flex-direction: column; gap: 28px; }
+      .footer-cols { gap: 28px; }
+    }
   </style>
 </head>
 <body>
-  <nav class="nav"><a href="index.html">← 技術士ポータル</a><a href="quiz.html">クイズを開く</a></nav>
+<div class="drawer-overlay" id="drawer-overlay"></div>
+<aside class="drawer" id="drawer" aria-label="サイトメニュー">
+  <div class="drawer-header">
+    <a href="../index.html" class="drawer-logo"><span style="width:26px;height:26px;display:block;"><svg style="width:26px;height:26px;" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="100" height="100" rx="24" fill="#2f6fdb"/><rect x="24" y="18" width="52" height="56" rx="16" fill="#fff"/><rect x="31" y="29" width="16" height="15" rx="4" fill="#2f6fdb"/><rect x="53" y="29" width="16" height="15" rx="4" fill="#2f6fdb"/><rect x="40" y="53" width="20" height="6" rx="3" fill="#2f6fdb"/><circle cx="35" cy="80" r="5" fill="#fff"/><circle cx="65" cy="80" r="5" fill="#fff"/></svg></span><span>資格トレイン</span></a>
+    <button class="drawer-close" id="drawer-close" aria-label="閉じる">✕</button>
+  </div>
+  <div class="drawer-section">
+    <p class="drawer-section-label">技術士（機械部門）</p>
+    <ul class="drawer-nav">
+      <li><a href="index.html"><span class="di">⚙️</span>学習ポータル</a></li>
+      <li><a href="quiz.html"><span class="di">📝</span>クイズを開く</a></li>
+      <li><a href="taisaku-basic.html"><span class="di">📘</span>基礎科目 傾向と対策</a></li>
+      <li><a href="taisaku-ethics.html"><span class="di">🛡️</span>適性科目 傾向と対策</a></li>
+      <li><a href="taisaku-specialty.html"><span class="di">⚙️</span>専門科目 傾向と対策</a></li>
+    </ul>
+  </div>
+  <div class="drawer-divider"></div>
+  <div class="drawer-section">
+    <p class="drawer-section-label">資格問題一覧</p>
+    <ul class="drawer-nav">
+      <li><a href="../denco-app/index.html"><span class="di">⚡</span>電気資格ポータル</a></li>
+      <li><a href="../gyosei-app/index.html"><span class="di">📋</span>行政書士</a></li>
+    </ul>
+  </div>
+  <div class="drawer-divider"></div>
+  <div class="drawer-section">
+    <p class="drawer-section-label">サイト情報</p>
+    <ul class="drawer-nav">
+      <li><a href="../about.html"><span class="di">🏢</span>運営者情報</a></li>
+      <li><a href="../contact.html"><span class="di">✉️</span>お問い合わせ</a></li>
+      <li><a href="../privacy.html"><span class="di">🔒</span>プライバシーポリシー</a></li>
+    </ul>
+  </div>
+</aside>
+<nav style="position:fixed;top:0;left:0;right:0;height:52px;z-index:100;backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line);display:flex;align-items:center;background:rgba(255,255,255,0.85);">
+  <div style="max-width:820px;margin:0 auto;padding:0 18px;width:100%;display:flex;align-items:center;justify-content:space-between;">
+    <a href="../index.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--text);font-size:0.95rem;font-weight:700;">
+      <span style="width:26px;height:26px;display:block;"><svg style="width:26px;height:26px;" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="100" height="100" rx="24" fill="#2f6fdb"/><rect x="24" y="18" width="52" height="56" rx="16" fill="#fff"/><rect x="31" y="29" width="16" height="15" rx="4" fill="#2f6fdb"/><rect x="53" y="29" width="16" height="15" rx="4" fill="#2f6fdb"/><rect x="40" y="53" width="20" height="6" rx="3" fill="#2f6fdb"/><circle cx="35" cy="80" r="5" fill="#fff"/><circle cx="65" cy="80" r="5" fill="#fff"/></svg></span>
+      <span>資格トレイン</span>
+    </a>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="メニューを開く" style="color:var(--text);">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
   <main class="wrap">
-    <span class="label">専門科目（機械部門）</span>
-    <h1>図面を式に直す力が、そのまま得点になる</h1>
-    <p class="lead">専門科目は、材料力学・流体・熱・機械力学・機械要素が繰り返し出やすい領域です。図面問題は見た目に圧されず、荷重、支点、流れ、温度、回転数を式へ置き換える練習が近道です。</p>
+    <section class="hero">
+      <span class="subj-label">専門科目（機械部門）</span>
+      <h1>図面を式に直す力が、そのまま得点になる</h1>
+      <p class="lead">専門科目は、材料力学・流体・熱・機械力学・機械要素が繰り返し出やすい領域です。図面問題は見た目に圧されず、荷重、支点、流れ、温度、回転数を式へ置き換える練習が近道です。</p>
+    </section>
 
-    <section class="grid">
+    <div class="grid">
       <div class="card">
         <h2>頻出パターン</h2>
         <ul>
@@ -58,18 +241,18 @@
       </div>
       <div class="card">
         <h2>図面問題の読み方</h2>
-        <div class="flow">
+        <div class="flow-list">
           <div>まず「何を求めるか」を丸で囲む。反力、応力、速度、効率など。</div>
           <div>図中の数値を単位つきで拾う。mmとm、kNとNの混在に注意。</div>
           <div>支点・流れ方向・回転方向・熱の流れを確認する。</div>
           <div>使う公式を1つに絞り、選択肢の桁で検算する。</div>
         </div>
       </div>
-    </section>
+    </div>
 
-    <section class="card">
+    <div class="card">
       <h2>覚えておくべき公式</h2>
-      <div class="formula">
+      <div class="formula-grid">
         <div><code>σ = P / A</code><br>引張・圧縮応力。断面積の単位に注意。</div>
         <div><code>Mmax = PL / 4</code><br>中央集中荷重の単純支持梁。</div>
         <div><code>Pcr = π²EI / L²</code><br>両端ピン柱のオイラー座屈。</div>
@@ -81,9 +264,9 @@
         <div><code>L = p × n</code><br>ねじのリード。ピッチ×条数。</div>
         <div><code>L10 = (C/P)^3 × 10^6</code><br>ボール軸受寿命。荷重は3乗で効く。</div>
       </div>
-    </section>
+    </div>
 
-    <section class="grid">
+    <div class="grid">
       <div class="card">
         <h2>分野別のコツ</h2>
         <h3>材料力学</h3>
@@ -102,9 +285,61 @@
         </ul>
         <a class="cta" href="quiz.html">専門科目をクイズで確認する</a>
       </div>
-    </section>
+    </div>
 
     <p class="note">※ 本ページの図面・公式整理は学習用です。公式問題や公式図面の転載ではありません。</p>
   </main>
+
+<footer>
+  <div class="footer-container">
+    <div class="footer-inner">
+      <div class="footer-brand-col">
+        <div class="footer-brand">
+          <span style="width:30px;height:30px;display:block;"><svg style="width:30px;height:30px;" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="100" height="100" rx="24" fill="#2f6fdb"/><rect x="24" y="18" width="52" height="56" rx="16" fill="#fff"/><rect x="31" y="29" width="16" height="15" rx="4" fill="#2f6fdb"/><rect x="53" y="29" width="16" height="15" rx="4" fill="#2f6fdb"/><rect x="40" y="53" width="20" height="6" rx="3" fill="#2f6fdb"/><circle cx="35" cy="80" r="5" fill="#fff"/><circle cx="65" cy="80" r="5" fill="#fff"/></svg></span>
+          <span class="footer-brand-name">資格トレイン</span>
+        </div>
+        <p class="footer-brand-desc">通勤・通学のスキマ時間で<br>資格合格をサポートする<br>無料学習プラットフォーム</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <p class="footer-col-title">技術士（機械部門）</p>
+          <ul>
+            <li><a href="index.html">学習ポータル</a></li>
+            <li><a href="quiz.html">クイズを開く</a></li>
+            <li><a href="taisaku-basic.html">基礎科目 傾向と対策</a></li>
+            <li><a href="taisaku-ethics.html">適性科目 傾向と対策</a></li>
+            <li><a href="taisaku-specialty.html">専門科目 傾向と対策</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-title">サイト情報</p>
+          <ul>
+            <li><a href="../about.html">運営者情報</a></li>
+            <li><a href="../contact.html">お問い合わせ</a></li>
+            <li><a href="../privacy.html">プライバシーポリシー</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">Copyright © 2024 mahorobaチャンネル / 資格トレイン. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function() {
+  var hamburger = document.getElementById('nav-hamburger');
+  var drawer    = document.getElementById('drawer');
+  var overlay   = document.getElementById('drawer-overlay');
+  var drawerClose = document.getElementById('drawer-close');
+  function openDrawer() { drawer.classList.add('open'); overlay.classList.add('open'); hamburger.classList.add('open'); document.body.style.overflow = 'hidden'; }
+  function closeDrawer() { drawer.classList.remove('open'); overlay.classList.remove('open'); hamburger.classList.remove('open'); document.body.style.overflow = ''; }
+  hamburger.addEventListener('click', function() { drawer.classList.contains('open') ? closeDrawer() : openDrawer(); });
+  drawerClose.addEventListener('click', closeDrawer);
+  overlay.addEventListener('click', closeDrawer);
+  drawer.querySelectorAll('a').forEach(function(a) { a.addEventListener('click', closeDrawer); });
+})();
+</script>
 </body>
 </html>

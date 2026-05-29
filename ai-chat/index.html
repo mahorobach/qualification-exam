@@ -2,7 +2,6 @@
 <html lang="ja">
 <head>
   <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/da8873c0823e389b7f9a1d40/script.js"></script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3002712486184435" crossorigin="anonymous"></script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-G4S7ZG2Y34"></script>
   <script>
@@ -16,33 +15,18 @@
   <title>AI学習アシスタント | 資格トレイン</title>
   <meta name="description" content="資格トレインのAI学習アシスタント。宅建士・基本情報技術者・CCNA・電験三種・行政書士・地質調査技士・機械設計技術者の勉強方法や試験対策を何でも質問できます。">
   <link rel="canonical" href="https://qualifications.app/ai-chat/">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../tokens.css" />
   <style>
-    :root {
-      --bg: #080c14;
-      --surface: #0f1826;
-      --surface-2: #162030;
-      --surface-3: #1c2840;
-      --text: #c8d8f0;
-      --text-muted: #6888b0;
-      --accent: #3b8fe8;
-      --accent-soft: rgba(59,143,232,0.15);
-      --accent-glow: rgba(59,143,232,0.3);
-      --ai-bg: rgba(139,92,246,0.1);
-      --ai-border: rgba(139,92,246,0.25);
-      --user-bg: rgba(59,143,232,0.12);
-      --user-border: rgba(59,143,232,0.3);
-      --radius: 14px;
-    }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html, body { height: 100%; }
     body {
-      font-family: "Zen Kaku Gothic New","Hiragino Sans",sans-serif;
+      font-family: var(--font);
       font-size: 16px; line-height: 1.65;
       color: var(--text); background: var(--bg);
-      background-image: radial-gradient(ellipse 80% 40% at 50% -10%, rgba(59,143,232,0.1), transparent);
       display: flex; flex-direction: column;
       min-height: 100dvh;
     }
@@ -53,12 +37,12 @@
       height: 52px; flex-shrink: 0;
       display: flex; align-items: center; justify-content: space-between;
       padding: 0 20px;
-      background: rgba(8,12,20,0.92);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      background: rgba(250,247,241,.88);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--line);
     }
-    nav .brand { display: flex; align-items: center; gap: 7px; text-decoration: none; color: rgba(255,255,255,0.9); font-size: 0.95rem; font-weight: 700; }
-    nav .back  { display: flex; align-items: center; gap: 4px; text-decoration: none; color: rgba(255,255,255,0.5); font-size: 0.8rem; }
+    nav .brand { display: flex; align-items: center; gap: 8px; text-decoration: none; color: var(--text); font-size: 0.9rem; font-weight: 600; }
+    nav .back  { display: flex; align-items: center; gap: 4px; text-decoration: none; color: var(--text-muted); font-size: 0.8rem; }
     nav .back:hover { color: var(--accent); }
 
     /* ─── Layout ─── */
@@ -82,9 +66,8 @@
       font-size: 3rem;
       display: block;
       margin-bottom: 10px;
-      filter: drop-shadow(0 0 20px rgba(139,92,246,0.5));
     }
-    .chat-header h1 { font-size: 1.3rem; font-weight: 700; margin-bottom: 6px; }
+    .chat-header h1 { font-size: 1.3rem; font-weight: 700; margin-bottom: 6px; color: var(--text); }
     .chat-header p  { font-size: 0.84rem; color: var(--text-muted); }
 
     /* ─── Suggestion chips ─── */
@@ -98,9 +81,9 @@
     }
     .chip {
       padding: 7px 14px;
-      background: var(--surface-2);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 999px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--r-pill);
       font-family: inherit;
       font-size: 0.82rem;
       color: var(--text-muted);
@@ -108,9 +91,9 @@
       transition: background .2s, border-color .2s, color .2s;
     }
     .chip:hover {
-      background: var(--surface-3);
-      border-color: rgba(59,143,232,0.4);
-      color: var(--text);
+      background: var(--accent-soft);
+      border-color: rgba(47,111,219,.35);
+      color: var(--accent);
     }
 
     /* ─── Messages ─── */
@@ -140,41 +123,41 @@
       font-size: 1rem;
       flex-shrink: 0;
     }
-    .msg.ai   .msg-avatar { background: rgba(139,92,246,0.2); }
+    .msg.ai   .msg-avatar { background: #f0ecfe; }
     .msg.user .msg-avatar { background: var(--accent-soft); }
     .msg-body {
       max-width: calc(100% - 50px);
       padding: 12px 16px;
-      border-radius: 14px;
+      border-radius: var(--r-md);
       font-size: 0.93rem;
       line-height: 1.8;
       white-space: pre-wrap;
       word-break: break-word;
     }
-    .msg.ai   .msg-body { background: var(--ai-bg);   border: 1px solid var(--ai-border);  border-bottom-left-radius: 4px; }
-    .msg.user .msg-body { background: var(--user-bg); border: 1px solid var(--user-border); border-bottom-right-radius: 4px; color: #c0dcff; }
+    .msg.ai   .msg-body { background: #f5f2fc; border: 1px solid rgba(139,92,246,.18); border-bottom-left-radius: 4px; color: var(--text); }
+    .msg.user .msg-body { background: var(--accent-soft); border: 1px solid rgba(47,111,219,.25); border-bottom-right-radius: 4px; color: var(--accent); }
     .msg.loading .msg-body { color: var(--text-muted); font-style: italic; }
-    .msg-body.error { color: #f07178; }
+    .msg-body.error { color: var(--danger); }
 
     /* ─── Input area ─── */
     .input-wrap {
       flex-shrink: 0;
       padding: 14px 0 max(20px, env(safe-area-inset-bottom));
-      border-top: 1px solid rgba(255,255,255,0.07);
+      border-top: 1px solid var(--line);
     }
     .input-row {
       display: flex;
       gap: 10px;
       align-items: flex-end;
       background: var(--surface);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 16px;
+      border: 1px solid var(--line);
+      border-radius: var(--r-lg);
       padding: 10px 14px;
       transition: border-color .2s;
     }
     .input-row:focus-within {
-      border-color: rgba(59,143,232,0.5);
-      box-shadow: 0 0 0 3px rgba(59,143,232,0.1);
+      border-color: rgba(47,111,219,.45);
+      box-shadow: 0 0 0 3px rgba(47,111,219,.08);
     }
     textarea {
       flex: 1;
@@ -192,14 +175,15 @@
     textarea::placeholder { color: var(--text-muted); }
     .send-btn {
       width: 40px; height: 40px;
-      border-radius: 12px;
+      border-radius: var(--r-md);
       border: none;
-      background: linear-gradient(135deg, #3b8fe8, #6070e8);
+      background: var(--accent);
       color: #fff;
       font-size: 1.1rem;
       cursor: pointer;
       display: flex; align-items: center; justify-content: center;
       flex-shrink: 0;
+      box-shadow: var(--shadow-cta);
       transition: opacity .15s, transform .15s;
     }
     .send-btn:hover:not(:disabled) { opacity: .9; transform: scale(1.05); }
@@ -217,21 +201,25 @@
       margin: 0 auto 10px;
       padding: 5px 14px;
       background: transparent;
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 999px;
+      border: 1px solid var(--line);
+      border-radius: var(--r-pill);
       color: var(--text-muted);
       font-family: inherit;
       font-size: 0.78rem;
       cursor: pointer;
       transition: border-color .2s, color .2s;
     }
-    .clear-btn:hover { border-color: rgba(255,255,255,0.25); color: var(--text); }
+    .clear-btn:hover { border-color: rgba(47,111,219,.35); color: var(--accent); }
   </style>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3002712486184435" crossorigin="anonymous"></script>
 </head>
 <body>
 
 <nav>
-  <a href="../index.html" class="brand"><span>🚃</span><span>資格トレイン</span></a>
+  <a href="../index.html" class="brand">
+    <svg width="24" height="24" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="100" height="100" rx="24" fill="#2f6fdb"/><rect x="24" y="18" width="52" height="56" rx="16" fill="#ffffff"/><rect x="31" y="29" width="16" height="15" rx="4" fill="#2f6fdb"/><rect x="53" y="29" width="16" height="15" rx="4" fill="#2f6fdb"/><rect x="40" y="53" width="20" height="6" rx="3" fill="#2f6fdb"/><circle cx="35" cy="80" r="5" fill="#ffffff"/><circle cx="65" cy="80" r="5" fill="#ffffff"/></svg>
+    資格トレイン
+  </a>
   <a href="../index.html" class="back">← トップへ</a>
 </nav>
 
@@ -364,13 +352,6 @@ async function sendMessage() {
   const loadingBody = addMsg('ai', '考え中…', 'loading');
   sendBtn.disabled = true;
   inputEl.disabled = true;
-
-  // システムプロンプト + 会話履歴を組み合わせてリクエスト
-  const contents = [
-    { role: 'user', parts: [{ text: SYSTEM_PROMPT + '\n\n---\n\n' + text }] },
-    ...history.slice(0, -1).flatMap(m => [m]),
-    history[history.length - 1],
-  ];
 
   // シンプルに最新の質問にシステムプロンプトを付けて送信
   const prompt = SYSTEM_PROMPT + '\n\n---\n\n' +
