@@ -1,0 +1,97 @@
+/* ============================================================
+   base.css — 資格トレイン 共通ベーススタイル（やわらかB案）
+   tokens.css の値を参照して、サイト全体の見た目を決めます。
+   読み込み順：① tokens.css → ② base.css → ③ 各ページ固有CSS
+   ============================================================ */
+
+/* —— 1. 土台 ———————————————————————————————— */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-weight: var(--fw-body);
+  font-size: 16.5px;
+  line-height: 1.85;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+@media (min-width: 768px) {
+  body { font-size: 17px; }
+}
+
+/* —— 2. 見出し（太さでメリハリ。明朝は使わない）———————— */
+h1, h2, h3, h4 {
+  font-family: var(--font);
+  color: var(--text);
+  line-height: 1.4;
+  margin: 0 0 .6em;
+  text-wrap: pretty;
+}
+h1 { font-weight: var(--fw-heading); font-size: clamp(1.7rem, 5vw, 2.6rem); letter-spacing: .01em; }
+h2 { font-weight: var(--fw-bold);    font-size: clamp(1.3rem, 3.4vw, 1.7rem); }
+h3 { font-weight: var(--fw-bold);    font-size: 1.15rem; }
+
+p  { margin: 0 0 1em; text-wrap: pretty; }
+
+/* 数字・タイマー・数式・コードは等幅でそろえる */
+.num, time, code, kbd, .formula-item {
+  font-variant-numeric: tabular-nums;
+}
+code, kbd {
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+}
+
+/* —— 3. リンク・ボタン ————————————————————————— */
+a { color: var(--accent); text-underline-offset: .15em; }
+
+button, .btn {
+  font-family: var(--font);
+  font-weight: var(--fw-bold);
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  border-radius: var(--r-pill);
+  padding: 15px 26px;
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 48px;
+}
+.btn-primary {
+  background: var(--accent); color: #fff;
+  box-shadow: var(--shadow-cta);
+}
+.btn-ghost {
+  background: var(--surface); color: var(--text);
+  border: 1px solid var(--line);
+}
+
+/* —— 4. カード ——————————————————————————————— */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* —— 5. 科目バッジ・色分け（拡張可能）————————————————
+   要素に data-subj="basic|ethics|expert|…" を付けるだけで色が決まる */
+.badge {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-weight: var(--fw-bold); font-size: .8rem;
+  border-radius: var(--r-pill); padding: 4px 12px;
+}
+[data-subj="basic"]   { --c: var(--subj-basic);   --c-soft: var(--subj-basic-soft); }
+[data-subj="ethics"]  { --c: var(--subj-ethics);  --c-soft: var(--subj-ethics-soft); }
+[data-subj="expert"]  { --c: var(--subj-expert);  --c-soft: var(--subj-expert-soft); }
+[data-subj="kiso"]    { --c: var(--subj-kiso);    --c-soft: var(--subj-kiso-soft); }
+[data-subj="tekisei"] { --c: var(--subj-tekisei); --c-soft: var(--subj-tekisei-soft); }
+[data-subj="senmon"]  { --c: var(--subj-senmon);  --c-soft: var(--subj-senmon-soft); }
+.badge[data-subj]     { color: var(--c); background: var(--c-soft); }
+.subj-bar[data-subj]  { background: var(--c); }
+.subj-icon[data-subj] { color: var(--c); background: var(--c-soft); }
+
+/* —— 6. 正誤・状態 ————————————————————————————— */
+.is-correct   { color: var(--success); background: var(--success-soft); }
+.is-incorrect { color: var(--danger);  background: var(--danger-soft); }

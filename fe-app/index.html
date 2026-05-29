@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
 <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/da8873c0823e389b7f9a1d40/script.js"></script>
@@ -11,295 +11,637 @@
     gtag('js', new Date());
     gtag('config', 'G-G4S7ZG2Y34');
   </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <title>基本情報技術者（FE）学習ポータル | 資格トレイン</title>
-    <meta name="description" content="基本情報技術者試験（FE）の過去問クイズアプリ。コンピュータ基礎・アルゴリズム・ネットワーク・データベース・ソフトウェア開発を年度別・分野別で学習。AI解説機能付き。">
-    <meta name="keywords" content="基本情報技術者,FE,過去問,クイズ,IPA,IT,資格,独学,合格">
-    <meta property="og:title" content="基本情報技術者（FE）過去問クイズ | 資格トレイン">
-    <meta property="og:description" content="基本情報技術者試験の過去問クイズアプリ。5分野を年度別・分野別で学習。AI解説機能付き。">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://qualifications.app/fe-app/index.html">
-    <meta property="og:locale" content="ja_JP">
-    <meta name="twitter:card" content="summary">
-    <link rel="canonical" href="https://qualifications.app/fe-app/index.html">
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "基本情報技術者（FE）過去問クイズ | 資格トレイン",
-      "url": "https://qualifications.app/fe-app/index.html",
-      "description": "基本情報技術者試験（FE）の過去問クイズアプリ。コンピュータ基礎・アルゴリズム・ネットワーク・データベース・ソフトウェア開発を年度別・分野別で学習。AI解説機能付き。",
-      "applicationCategory": "EducationalApplication",
-      "operatingSystem": "Web",
-      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" },
-      "educationalUse": "資格試験対策",
-      "inLanguage": "ja"
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>基本情報技術者（FE）学習ポータル | 資格トレイン</title>
+  <meta name="description" content="基本情報技術者試験（FE）の過去問クイズアプリ。コンピュータ基礎・アルゴリズム・ネットワーク・データベース・ソフトウェア開発を年度別・分野別で学習。AI解説機能付き。" />
+  <meta name="keywords" content="基本情報技術者,FE,過去問,クイズ,IPA,IT,資格,独学,合格" />
+  <meta property="og:title" content="基本情報技術者（FE）過去問クイズ | 資格トレイン" />
+  <meta property="og:description" content="基本情報技術者試験の過去問クイズアプリ。分野別・年度別・擬似問題集でスマホ学習できます。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://qualifications.app/fe-app/index.html" />
+  <meta property="og:locale" content="ja_JP" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="canonical" href="https://qualifications.app/fe-app/index.html" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "基本情報技術者（FE）過去問クイズ | 資格トレイン",
+    "url": "https://qualifications.app/fe-app/index.html",
+    "description": "基本情報技術者試験（FE）の過去問クイズアプリ。コンピュータ基礎・アルゴリズム・ネットワーク・データベース・ソフトウェア開発を年度別・分野別で学習。AI解説機能付き。",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Web",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" },
+    "educationalUse": "資格試験対策",
+    "inLanguage": "ja"
+  }
+  </script>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../tokens.css" />
+  <link rel="stylesheet" href="../base.css" />
+  <style>
+    :root {
+      --fe-tech: #2f6fdb;
+      --fe-tech-soft: #e9f0fc;
+      --fe-algo: #1f9d7a;
+      --fe-algo-soft: #e6f5ef;
+      --fe-sec: #d9842a;
+      --fe-sec-soft: #fbeede;
+      --fe-db: #7b61d1;
+      --fe-db-soft: #eeeafd;
+      --fe-dev: #cf5f7a;
+      --fe-dev-soft: #fbeaf0;
     }
-    </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --accent: #3b8fe8;
-            --accent-soft: rgba(59,143,232,0.15);
-            --bg: #080c14;
-            --surface: #0f1826;
-            --surface-2: #162030;
-            --text: #c8d8f0;
-            --text-muted: #6888b0;
-            --radius: 14px;
-            --ipa-portal-grad: linear-gradient(135deg, #0d3a52, #156080 45%, #1a7a9e);
-            --ipa-portal-border: 1px solid rgba(120, 200, 230, 0.28);
-            --ipa-portal-shadow: 0 3px 14px rgba(13, 58, 82, 0.55);
-            --ipa-portal-shadow-hover: 0 4px 18px rgba(21, 96, 128, 0.45);
-        }
-        .nav-ipa-portal {
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            text-decoration: none;
-            font-size: 0.72rem;
-            font-weight: 600;
-            color: rgba(232, 248, 252, 0.96);
-            background: var(--ipa-portal-grad);
-            padding: 6px 10px;
-            border-radius: 20px;
-            box-shadow: var(--ipa-portal-shadow);
-            border: var(--ipa-portal-border);
-            transition: opacity 0.15s, box-shadow 0.2s;
-            white-space: nowrap;
-        }
-        .nav-ipa-portal:hover { opacity: 0.92; box-shadow: var(--ipa-portal-shadow-hover); }
-        *, *::before, *::after { box-sizing: border-box; margin: 0; }
-        body { font-family: "Zen Kaku Gothic New","Hiragino Sans",sans-serif; font-size: 16px; color: var(--text); background: var(--bg); background-image: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(59,143,232,0.12), transparent); min-height: 100dvh; padding-top: 52px; }
-        .wrap { max-width: 560px; margin: 0 auto; padding: 0 18px; }
 
-        header { padding: 40px 18px 30px; text-align: center; }
-        .icon { font-size: 3.2rem; display: block; margin-bottom: 12px; }
-        h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 8px; }
-        .lead { font-size: 0.9rem; color: var(--text-muted); line-height: 1.7; max-width: 380px; margin: 0 auto; }
+    body {
+      min-height: 100dvh;
+      padding: calc(52px + max(16px, env(safe-area-inset-top))) 18px max(32px, env(safe-area-inset-bottom));
+    }
 
-        .card { background: var(--surface); border-radius: var(--radius); padding: 22px 20px; box-shadow: 0 8px 32px rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.07); margin: 0 18px 16px; }
-        h2 { font-size: 1.05rem; font-weight: 700; margin-bottom: 14px; color: var(--accent); }
-        p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.75; margin-bottom: 12px; }
-        p:last-child { margin-bottom: 0; }
-        strong { color: var(--text); }
+    .wrap { max-width: 660px; margin: 0 auto; }
+    header { text-align: center; margin-bottom: 30px; }
 
-        .cta { display: block; width: 100%; padding: 16px; text-align: center; font-family: inherit; font-size: 1rem; font-weight: 700; color: #080c14; background: linear-gradient(135deg,#3b8fe8,#60b0f8); border: none; border-radius: 12px; cursor: pointer; text-decoration: none; box-shadow: 0 4px 20px rgba(59,143,232,0.4); margin-bottom: 10px; transition: opacity .15s; }
-        .cta:hover { opacity: .9; }
-        .cta-secondary { background: transparent; color: var(--accent); border: 1.5px solid rgba(59,143,232,0.5); box-shadow: none; }
-        .cta-secondary:hover { background: var(--accent-soft); opacity: 1; }
+    header .icon {
+      width: 64px; height: 64px;
+      margin: 0 auto 16px;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--fe-tech-soft);
+      color: var(--fe-tech);
+      border-radius: 18px;
+    }
+    .ic { width: 24px; height: 24px; display: block; flex: 0 0 auto; }
+    header .icon .ic { width: 34px; height: 34px; }
+    .brand-mark { width: 26px; height: 26px; flex: 0 0 auto; display: block; }
 
-        .subjects { display: flex; flex-direction: column; gap: 10px; }
-        .subject { display: flex; align-items: flex-start; gap: 12px; padding: 12px 14px; background: var(--surface-2); border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); }
-        .sub-badge { display: inline-block; font-size: 0.72rem; font-weight: 700; padding: 3px 10px; border-radius: 999px; margin-bottom: 5px; }
-        .badge-hw  { background: rgba(59,143,232,0.2);  color: #90c4f8; }
-        .badge-alg { background: rgba(60,207,142,0.2);  color: #88f0c8; }
-        .badge-net { background: rgba(240,198,116,0.2); color: #f8d880; }
-        .badge-db  { background: rgba(180,100,220,0.2); color: #d4a0f8; }
-        .badge-dev { background: rgba(240,120,80,0.2);  color: #f8a888; }
-        .sub-q { font-size: 0.75rem; font-weight: 700; color: var(--text-muted); margin-bottom: 4px; }
-        .sub-desc { font-size: 0.82rem; color: var(--text-muted); line-height: 1.65; }
+    header h1 {
+      font-size: 1.6rem;
+      font-weight: 900;
+      line-height: 1.42;
+      margin: 0 0 12px;
+      letter-spacing: 0.01em;
+      text-wrap: pretty;
+    }
+    header .lead {
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1.85;
+      color: var(--text-muted);
+      text-wrap: pretty;
+    }
 
-        .score-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
-        .score-table th, .score-table td { border: 1px solid rgba(255,255,255,0.1); padding: 8px 12px; text-align: left; }
-        .score-table th { background: rgba(255,255,255,0.05); font-weight: 700; }
-        .score-table td { color: var(--text-muted); }
-        .note { font-size: 0.78rem; color: var(--text-muted); line-height: 1.75; }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    .stat {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow);
+      padding: 16px 8px;
+      text-align: center;
+    }
+    .stat-num { font-weight: 900; font-size: 1.7rem; line-height: 1; color: var(--text); }
+    .stat-num span { font-size: 0.8rem; font-weight: 700; color: var(--text-muted); margin-left: 2px; }
+    .stat-lbl { font-size: 0.8rem; color: var(--text-muted); margin-top: 6px; }
 
-        .how-list { display: flex; flex-direction: column; gap: 10px; }
-        .how-item { display: flex; gap: 12px; align-items: flex-start; }
-        .how-num  { min-width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; background: var(--accent-soft); border-radius: 50%; color: var(--accent); font-weight: 700; font-size: 0.85rem; }
-        .how-text { font-size: 0.85rem; color: var(--text-muted); line-height: 1.65; padding-top: 4px; }
-        .how-text code { font-size: 0.8em; }
+    .card {
+      border-radius: var(--radius);
+      padding: 24px 22px;
+      margin-bottom: 18px;
+    }
+    .card h2 {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin: 0 0 16px;
+      color: var(--text);
+    }
+    .card h2::before {
+      content: "";
+      width: 4px; height: 1.05em;
+      background: var(--accent);
+      border-radius: 2px;
+      flex: 0 0 auto;
+    }
+    .card p, .card li {
+      margin: 0 0 12px;
+      font-size: 1rem;
+      line-height: 1.85;
+      color: var(--text);
+      text-wrap: pretty;
+    }
+    .card strong { font-weight: 700; }
 
-        #exam-subjects, #portal-how-to-use { scroll-margin-top: 64px; }
+    .cta {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      width: 100%;
+      min-height: 56px;
+      text-align: center;
+      padding: 16px;
+      font-family: inherit;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #ffffff;
+      background: var(--accent);
+      border: none;
+      border-radius: 999px;
+      text-decoration: none;
+      box-shadow: var(--shadow-cta);
+      transition: opacity 0.15s, transform 0.1s;
+    }
+    .cta::after { content: "→"; font-weight: 700; }
+    .cta:hover { opacity: 0.94; }
+    .cta:active { transform: translateY(1px); }
 
-        .mode-row-link {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 10px 12px;
-            background: var(--surface-2);
-            border-radius: 10px;
-            border: 1px solid rgba(255,255,255,0.06);
-            text-decoration: none;
-            color: inherit;
-            transition: background .15s, border-color .15s;
-        }
-        .mode-row-link:hover { background: #1a2838; border-color: rgba(59,143,232,0.35); }
+    .mode-links { display: flex; flex-direction: column; gap: 10px; margin-top: 16px; }
+    .mode-row-link {
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: 12px;
+      align-items: center;
+      padding: 13px 14px;
+      background: var(--surface-2);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      color: inherit;
+      text-decoration: none;
+      transition: background .15s, border-color .15s;
+    }
+    .mode-row-link:hover { background: var(--surface); border-color: rgba(47,111,219,0.35); }
+    .mode-icon {
+      width: 44px; height: 44px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--accent);
+      background: var(--accent-soft);
+      border-radius: 13px;
+    }
+    .mode-name { font-size: 0.92rem; font-weight: 700; color: var(--text); line-height: 1.4; }
+    .mode-desc { font-size: 0.8rem; color: var(--text-muted); line-height: 1.65; margin-top: 2px; }
 
-        .top-link { display: block; text-align: center; padding: 10px 18px; font-size: 0.84rem; color: var(--text-muted); text-decoration: none; }
-        .top-link:hover { color: var(--accent); text-decoration: underline; }
+    .subject-grid { display: flex; flex-direction: column; gap: 14px; margin-bottom: 16px; }
+    .subject-item {
+      --subject-color: var(--fe-tech);
+      --subject-soft: var(--fe-tech-soft);
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .subject-item.alg { --subject-color: var(--fe-algo); --subject-soft: var(--fe-algo-soft); }
+    .subject-item.sec { --subject-color: var(--fe-sec); --subject-soft: var(--fe-sec-soft); }
+    .subject-item.db { --subject-color: var(--fe-db); --subject-soft: var(--fe-db-soft); }
+    .subject-item.dev { --subject-color: var(--fe-dev); --subject-soft: var(--fe-dev-soft); }
+    .subj-bar { height: 5px; background: var(--subject-color); }
+    .subj-inner { padding: 18px; }
+    .subj-row { display: flex; align-items: center; gap: 14px; margin-bottom: 12px; }
+    .subj-icon {
+      width: 48px; height: 48px;
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      flex: 0 0 auto;
+      background: var(--subject-soft);
+      color: var(--subject-color);
+    }
+    .subject-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 3px 11px;
+      border-radius: 999px;
+      margin-bottom: 5px;
+      background: var(--subject-soft);
+      color: var(--subject-color);
+    }
+    .subject-name { font-size: 1.08rem; font-weight: 700; margin: 0; color: var(--text); line-height: 1.35; }
+    .subject-desc { font-size: 0.92rem; color: var(--text-muted); margin: 0 0 14px; line-height: 1.8; text-wrap: pretty; }
+    .subj-foot {
+      display: flex; align-items: center; justify-content: space-between; gap: 10px;
+      border-top: 1px solid var(--line);
+      padding-top: 12px;
+    }
+    .subj-meta { font-size: 0.82rem; color: var(--text-muted); white-space: nowrap; }
+    .subject-action {
+      display: inline-flex; align-items: center; gap: 4px;
+      color: var(--subject-color);
+      font-size: 0.88rem;
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+    }
 
-        footer { text-align: center; padding: 20px 18px 40px; font-size: 0.78rem; color: var(--text-muted); }
-        footer nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-bottom: 12px; }
-        footer nav a { color: var(--text-muted); text-decoration: none; }
-        footer nav a:hover { color: var(--accent); }
-    </style>
+    .score-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; overflow: hidden; border-radius: var(--radius-sm); }
+    .score-table th, .score-table td { border: 1px solid var(--line); padding: 10px 12px; text-align: left; vertical-align: top; }
+    .score-table th { background: var(--surface-2); font-weight: 700; color: var(--text); white-space: nowrap; }
+    .score-table td { color: var(--text-muted); line-height: 1.75; }
+
+    .steps { display: flex; flex-direction: column; gap: 12px; }
+    .step { display: flex; gap: 14px; align-items: flex-start; }
+    .step-no {
+      width: 30px; height: 30px;
+      flex: 0 0 auto;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-weight: 900;
+      font-size: 0.95rem;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .step-tx { font-size: 0.96rem; line-height: 1.7; color: var(--text); padding-top: 3px; text-wrap: pretty; }
+    .note {
+      font-size: 0.88rem;
+      line-height: 1.75;
+      color: var(--text-muted);
+      margin-top: 14px;
+    }
+    .top-link {
+      display: block;
+      text-align: center;
+      padding: 8px 0 24px;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+    .top-link:hover { color: var(--accent); text-decoration: underline; }
+
+    .nav-hamburger {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 36px;
+      height: 36px;
+      padding: 6px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: background .15s;
+      flex-shrink: 0;
+    }
+    .nav-hamburger:hover { background: rgba(0,0,0,0.06); }
+    .nav-hamburger span {
+      display: block;
+      height: 1.5px;
+      border-radius: 2px;
+      background: currentColor;
+      transition: transform .3s, opacity .3s, width .3s;
+      width: 20px;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; width: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+    .drawer-overlay {
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.45);
+      z-index: 190; opacity: 0;
+      pointer-events: none;
+      transition: opacity .3s;
+    }
+    .drawer-overlay.open { opacity: 1; pointer-events: auto; }
+    .drawer {
+      position: fixed; top: 0; right: 0; bottom: 0;
+      width: min(320px, 85vw);
+      background: #ffffff;
+      z-index: 195;
+      transform: translateX(100%);
+      transition: transform .35s cubic-bezier(.25,.46,.45,.94);
+      display: flex; flex-direction: column;
+      overflow-y: auto;
+    }
+    .drawer.open { transform: translateX(0); }
+    .drawer-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 20px;
+      border-bottom: 1px solid #e8e8ed;
+      flex-shrink: 0;
+    }
+    .drawer-logo {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 0.95rem; font-weight: 600;
+      color: #1d1d1f; text-decoration: none;
+    }
+    .drawer-close {
+      width: 32px; height: 32px;
+      display: flex; align-items: center; justify-content: center;
+      background: #f5f5f7; border: none; border-radius: 50%;
+      cursor: pointer; font-size: 1.1rem; color: #6e6e73;
+    }
+    .drawer-close:hover { background: #e8e8ed; }
+    .drawer-section { padding: 20px 20px 8px; }
+    .drawer-section-label {
+      font-size: 0.68rem; font-weight: 700;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: #6e6e73; margin-bottom: 8px; padding-left: 4px;
+    }
+    .drawer-nav { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; }
+    .drawer-nav a {
+      display: flex; align-items: center; gap: 12px;
+      padding: 11px 12px; border-radius: 10px;
+      text-decoration: none; color: #1d1d1f;
+      font-size: 0.95rem; font-weight: 400;
+      transition: background .15s;
+    }
+    .drawer-nav a:hover { background: #f5f5f7; }
+    .drawer-nav a .di { font-size: 1.1rem; width: 24px; text-align: center; }
+    .drawer-divider { height: 1px; background: #e8e8ed; margin: 8px 20px; }
+
+    footer {
+      background: var(--surface);
+      border-top: 1px solid var(--line);
+      padding: 56px 0 max(36px, env(safe-area-inset-bottom));
+      margin: 8px -18px calc(-1 * max(32px, env(safe-area-inset-bottom)));
+    }
+    .footer-container { max-width: 980px; margin: 0 auto; padding: 0 22px; }
+    .footer-inner { display: flex; gap: 48px; flex-wrap: wrap; margin-bottom: 40px; }
+    .footer-brand-col { flex-shrink: 0; }
+    .footer-brand { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+    .footer-brand-name { font-size: 1rem; font-weight: 700; color: var(--text); }
+    .footer-brand-desc { font-size: 0.8rem; color: var(--text-muted); font-weight: 400; line-height: 1.8; max-width: 220px; }
+    .footer-cols { display: flex; gap: 40px; flex-wrap: wrap; flex: 1; }
+    .footer-col-title { font-size: 0.68rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 14px; }
+    .footer-col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul a { font-size: 0.85rem; color: var(--text-muted); text-decoration: none; font-weight: 500; transition: color .15s; }
+    .footer-col ul a:hover { color: var(--accent); }
+    .footer-bottom { padding-top: 24px; border-top: 1px solid var(--line); }
+    .footer-copy { font-size: 0.72rem; color: var(--text-muted); font-weight: 400; margin: 0; }
+
+    @media (max-width: 680px) {
+      .stats { gap: 8px; }
+      .stat { padding: 14px 6px; }
+      .stat-num { font-size: 1.45rem; }
+      .subj-foot { align-items: flex-start; flex-direction: column; }
+      .score-table { font-size: 0.84rem; }
+      .footer-inner { flex-direction: column; gap: 28px; }
+      .footer-cols { gap: 28px; }
+    }
+  </style>
 </head>
 <body>
 <script>
 (function () {
-    try {
-        var p = new URLSearchParams(window.location.search);
-        if (p.get("howto") === "1") {
-            window.location.replace("quiz.html");
-            return;
-        }
-        if (p.get("set") || p.get("mode")) {
-            window.location.replace("quiz.html" + window.location.search + window.location.hash);
-        }
-    } catch (e) {}
+  try {
+    var p = new URLSearchParams(window.location.search);
+    if (p.get("howto") === "1") {
+      window.location.replace("quiz.html");
+      return;
+    }
+    if (p.get("set") || p.get("mode")) {
+      window.location.replace("quiz.html" + window.location.search + window.location.hash);
+    }
+  } catch (e) {}
 })();
 </script>
 
-<nav style="position:fixed;top:0;left:0;right:0;min-height:52px;z-index:200;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;padding:8px 18px;background:rgba(8,12,20,0.92);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(255,255,255,0.08);">
-  <a href="../index.html" style="display:flex;align-items:center;gap:7px;text-decoration:none;color:rgba(255,255,255,0.85);font-size:0.9rem;font-weight:600;letter-spacing:-.01em;">
-    <span>🚃</span><span>資格トレイン</span>
-  </a>
-  <a href="../ipa-app/index.html" class="nav-ipa-portal">🖥️ 情報処理資格ポータル</a>
+<div class="drawer-overlay" id="drawer-overlay"></div>
+<aside class="drawer" id="drawer" aria-label="サイトメニュー">
+  <div class="drawer-header">
+    <a href="../index.html" class="drawer-logo"><span class="brand-mark"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="100" height="100" rx="24" fill="#2f6fdb"/><rect x="24" y="18" width="52" height="56" rx="16" fill="#fff"/><rect x="31" y="29" width="16" height="15" rx="4" fill="#2f6fdb"/><rect x="53" y="29" width="16" height="15" rx="4" fill="#2f6fdb"/><rect x="40" y="53" width="20" height="6" rx="3" fill="#2f6fdb"/><circle cx="35" cy="80" r="5" fill="#fff"/><circle cx="65" cy="80" r="5" fill="#fff"/></svg></span><span>資格トレイン</span></a>
+    <button class="drawer-close" id="drawer-close" aria-label="閉じる">✕</button>
+  </div>
+  <div class="drawer-section">
+    <p class="drawer-section-label">基本情報技術者</p>
+    <ul class="drawer-nav">
+      <li><a href="index.html"><span class="di">FE</span>学習ポータル</a></li>
+      <li><a href="quiz.html"><span class="di">Q</span>クイズを開く</a></li>
+      <li><a href="mock-sets.html"><span class="di">M</span>擬似問題集</a></li>
+      <li><a href="../ipa-app/index.html"><span class="di">IPA</span>情報処理資格ポータル</a></li>
+    </ul>
+  </div>
+  <div class="drawer-divider"></div>
+  <div class="drawer-section">
+    <p class="drawer-section-label">資格問題一覧</p>
+    <ul class="drawer-nav">
+      <li><a href="../ap-app/index.html"><span class="di">AP</span>応用情報技術者</a></li>
+      <li><a href="../sekispe-app/index.html"><span class="di">SC</span>情報処理安全確保支援士</a></li>
+      <li><a href="../denco-app/index.html"><span class="di">電</span>電気資格ポータル</a></li>
+    </ul>
+  </div>
+  <div class="drawer-divider"></div>
+  <div class="drawer-section">
+    <p class="drawer-section-label">サイト情報</p>
+    <ul class="drawer-nav">
+      <li><a href="../about.html"><span class="di">i</span>運営者情報</a></li>
+      <li><a href="../contact.html"><span class="di">@</span>お問い合わせ</a></li>
+      <li><a href="../privacy.html"><span class="di">P</span>プライバシーポリシー</a></li>
+    </ul>
+  </div>
+</aside>
+
+<nav style="position:fixed;top:0;left:0;right:0;height:52px;z-index:100;backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line);display:flex;align-items:center;background:rgba(255,255,255,0.85);">
+  <div style="max-width:660px;margin:0 auto;padding:0 18px;width:100%;display:flex;align-items:center;justify-content:space-between;">
+    <a href="../index.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--text);font-size:0.95rem;font-weight:700;">
+      <span class="brand-mark"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="100" height="100" rx="24" fill="#2f6fdb"/><rect x="24" y="18" width="52" height="56" rx="16" fill="#fff"/><rect x="31" y="29" width="16" height="15" rx="4" fill="#2f6fdb"/><rect x="53" y="29" width="16" height="15" rx="4" fill="#2f6fdb"/><rect x="40" y="53" width="20" height="6" rx="3" fill="#2f6fdb"/><circle cx="35" cy="80" r="5" fill="#fff"/><circle cx="65" cy="80" r="5" fill="#fff"/></svg></span>
+      <span>資格トレイン</span>
+    </a>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="メニューを開く" style="color:var(--text);">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 </nav>
 
-<header>
-    <span class="icon">💻</span>
-    <h1>基本情報技術者 学習ポータル</h1>
-    <p class="lead">IPA基本情報技術者試験の5分野を、過去問ベースでスマホ学習できるアプリ。年度別の本番形式と分野別の解説モードに対応。</p>
-</header>
-
 <div class="wrap">
-    <div class="card">
-        <a class="cta" href="?mode=all">クイズを始める →</a>
-        <div style="margin-top:16px;display:flex;flex-direction:column;gap:8px;">
-            <a href="?mode=year" class="mode-row-link">
-                <span style="font-size:1.1rem;">📅</span>
-                <div>
-                    <div style="font-size:0.85rem;font-weight:700;color:var(--text);">本番モード（年度別）</div>
-                    <div style="font-size:0.78rem;color:var(--text-muted);">年度を選んで150分タイマー付きで解答</div>
-                </div>
-            </a>
-            <a href="mock-sets.html" class="mode-row-link">
-                <span style="font-size:1.1rem;">📋</span>
-                <div>
-                    <div style="font-size:0.85rem;font-weight:700;color:var(--text);">擬似問題集</div>
-                    <div style="font-size:0.78rem;color:var(--text-muted);">5分野ミックスのセットで実力チェック</div>
-                </div>
-            </a>
-            <a href="?mode=category" class="mode-row-link">
-                <span style="font-size:1.1rem;">📚</span>
-                <div>
-                    <div style="font-size:0.85rem;font-weight:700;color:var(--text);">学習モード（分野別）</div>
-                    <div style="font-size:0.78rem;color:var(--text-muted);">苦手な分野を選んで1問ずつ解答・解説確認</div>
-                </div>
-            </a>
-        </div>
+  <header>
+    <span class="icon"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></svg></span>
+    <h1>基本情報技術者 学習ポータル</h1>
+    <p class="lead">IPA基本情報技術者試験の科目A・科目Bを、年度別演習・分野別学習・擬似問題集でスマホから復習できます。</p>
+  </header>
+
+  <div class="stats">
+    <div class="stat"><div class="stat-num">320<span>問</span></div><div class="stat-lbl">全問題数</div></div>
+    <div class="stat"><div class="stat-num">9<span>分野</span></div><div class="stat-lbl">出題カテゴリ</div></div>
+    <div class="stat"><div class="stat-num">20<span>問</span></div><div class="stat-lbl">ランダム演習</div></div>
+  </div>
+
+  <section class="card" aria-labelledby="sec-start">
+    <h2 id="sec-start">クイズを始める</h2>
+    <p>全 <strong>320 問</strong>のオリジナル問題から、分野別・年度別・ランダム20問で演習できます。解答後は正誤と解説を確認し、分野別の正答率で苦手を追えます。</p>
+    <a class="cta" href="?mode=all">クイズを始める</a>
+    <div class="mode-links">
+      <a href="?mode=year" class="mode-row-link">
+        <span class="mode-icon"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>
+        <span><span class="mode-name">本番モード（年度別）</span><span class="mode-desc">年度を選び、150分タイマー付きで解答します。</span></span>
+      </a>
+      <a href="mock-sets.html" class="mode-row-link">
+        <span class="mode-icon"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span>
+        <span><span class="mode-name">擬似問題集</span><span class="mode-desc">5分野ミックスのセットで実力を確認します。</span></span>
+      </a>
+      <a href="?mode=category" class="mode-row-link">
+        <span class="mode-icon"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>
+        <span><span class="mode-name">学習モード（分野別）</span><span class="mode-desc">苦手分野を選び、1問ずつ解説を確認します。</span></span>
+      </a>
     </div>
+  </section>
 
-    <section class="card" id="exam-subjects" aria-labelledby="exam-subjects-heading">
-        <h2 id="exam-subjects-heading">📖 試験科目について</h2>
-        <div class="subjects">
-            <div class="subject">
-                <div style="flex:1">
-                    <span class="sub-badge badge-hw">コンピュータ基礎</span>
-                    <div class="sub-q">シラバス：テクノロジ系（ハードウェア・ソフトウェア等）</div>
-                    <div class="sub-desc">2進数・16進数・浮動小数点、論理演算・論理回路、CPU（パイプライン・キャッシュ）、メモリ・DMA・RAID、OS（仮想記憶・デッドロック）など。</div>
-                </div>
-            </div>
-            <div class="subject">
-                <div style="flex:1">
-                    <span class="sub-badge badge-alg">アルゴリズム</span>
-                    <div class="sub-q">アルゴリズム・データ構造</div>
-                    <div class="sub-desc">ソート・探索、スタック・キュー・木・ハッシュ、計算量（O記法）、動的計画法・再帰など。</div>
-                </div>
-            </div>
-            <div class="subject">
-                <div style="flex:1">
-                    <span class="sub-badge badge-net">ネットワーク・セキュリティ</span>
-                    <div class="sub-q">ネットワーク・セキュリティ</div>
-                    <div class="sub-desc">TCP/IP・OSI、IPアドレス・サブネット、DNS・TLS・HTTP(S)、公開鍵暗号・ハッシュ、XSS・SQLi・フィッシング対策など。</div>
-                </div>
-            </div>
-            <div class="subject">
-                <div style="flex:1">
-                    <span class="sub-badge badge-db">データベース</span>
-                    <div class="sub-q">データベース</div>
-                    <div class="sub-desc">リレーショナルDB・正規化、SQL、トランザクション・ACID、ビュー・インデックス・E-R図など。</div>
-                </div>
-            </div>
-            <div class="subject">
-                <div style="flex:1">
-                    <span class="sub-badge badge-dev">ソフトウェア開発</span>
-                    <div class="sub-q">開発工程・マネジメント</div>
-                    <div class="sub-desc">オブジェクト指向、テスト手法、Git・アジャイル・スクラム・CI/CD、デザインパターン・UMLなど。</div>
-                </div>
-            </div>
+  <section class="card" id="exam-subjects" aria-labelledby="exam-subjects-heading">
+    <h2 id="exam-subjects-heading">試験科目について</h2>
+    <div class="subject-grid">
+      <div class="subject-item tech">
+        <div class="subj-bar"></div>
+        <div class="subj-inner">
+          <div class="subj-row">
+            <span class="subj-icon"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/></svg></span>
+            <div><span class="subject-badge">テクノロジ</span><p class="subject-name">コンピュータ基礎</p></div>
+          </div>
+          <p class="subject-desc">2進数・論理回路、CPU、メモリ、OS、ハードウェア・ソフトウェアなど。科目Aの土台になる領域です。</p>
+          <div class="subj-foot"><span class="subj-meta">40問収録</span><a class="subject-action" href="?mode=category">分野別で学習 →</a></div>
         </div>
-    </section>
-
-    <div class="card">
-        <h2>✅ 合格基準</h2>
-        <table class="score-table">
-            <thead>
-                <tr><th>項目</th><th>内容</th></tr>
-            </thead>
-            <tbody>
-                <tr><td>試験形式</td><td>CBT（通年実施）</td></tr>
-                <tr><td>科目A試験時間</td><td>150分（例：90問程度・出題数は要項で確認）</td></tr>
-                <tr><td>科目B試験時間</td><td>100分（アルゴリズム・プログラミング等）</td></tr>
-                <tr><td>合格基準（目安）</td><td>各科目で一定の正答率以上（年度のIPA要項で確認）</td></tr>
-                <tr><td>主催</td><td>IPA（情報処理推進機構）</td></tr>
-            </tbody>
-        </table>
-        <p class="note" style="margin-top:12px;">出題数・合格ラインは年度・試験区分で変わることがあります。<strong>最新の試験要項</strong>を必ずIPA公式で確認してください。</p>
-    </div>
-
-    <div class="card" id="portal-how-to-use">
-        <h2>💡 使い方</h2>
-        <div class="how-list">
-            <div class="how-item">
-                <div class="how-num">1</div>
-                <div class="how-text"><strong style="color:var(--text)">クイズを始める</strong>：ポータルから、全問からランダムに<strong>20問</strong>（収録が少ないときはその範囲内）のセットで開始できます。成績は<strong style="color:var(--text)">分野別正答率（累計）</strong>に反映されます。問題数はアプリ内 <code>QUICK_QUIZ_QUESTION_COUNT</code> で変更できます。</div>
-            </div>
-            <div class="how-item">
-                <div class="how-num">2</div>
-                <div class="how-text"><strong style="color:var(--text)">分野別（学習モード）</strong>：分野を選んで1問ずつ解答。正誤と解説をその場で確認できます。</div>
-            </div>
-            <div class="how-item">
-                <div class="how-num">3</div>
-                <div class="how-text"><strong style="color:var(--text)">年度別（本番形式）</strong>：年度を選択して150分タイマー付きで練習。問題を行き来しながら解答し、終了後に全解説を確認できます。</div>
-            </div>
-            <div class="how-item">
-                <div class="how-num">4</div>
-                <div class="how-text"><strong style="color:var(--text)">擬似問題集</strong>：5分野ミックスのセットで実力チェックできます（最大50問・収録数が少ない場合は全問）。モード選択からも同じページに進めます。</div>
-            </div>
-            <div class="how-item">
-                <div class="how-num">5</div>
-                <div class="how-text"><strong style="color:var(--text)">AI解説</strong>：分野別モードなどで、理解が足りない箇所を深掘りして質問できます（機能の有無は画面の案内に従ってください）。</div>
-            </div>
-            <div class="how-item">
-                <div class="how-num">6</div>
-                <div class="how-text"><strong style="color:var(--text)">弱点の把握</strong>：分野ごとの正答率を見て、苦手分野の復習に活かせます。</div>
-            </div>
+      </div>
+      <div class="subject-item alg">
+        <div class="subj-bar"></div>
+        <div class="subj-inner">
+          <div class="subj-row">
+            <span class="subj-icon"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3v18"/><path d="M6 7h8a4 4 0 0 1 0 8H6"/><path d="M14 15l4 6"/></svg></span>
+            <div><span class="subject-badge">科目B</span><p class="subject-name">アルゴリズム・データ構造</p></div>
+          </div>
+          <p class="subject-desc">ソート、探索、木・ハッシュ、計算量、再帰、動的計画法、擬似言語。得点差が出やすい中心分野です。</p>
+          <div class="subj-foot"><span class="subj-meta">87問収録</span><a class="subject-action" href="?mode=category">分野別で学習 →</a></div>
         </div>
-        <p class="note" style="margin-top:16px;">試験概要・操作の補足は <a href="?howto=1" style="color:var(--accent);text-decoration:none;">過去問クイズ（モード選択）</a> にも記載があります。</p>
-        <p style="margin-top:16px;font-size:0.8rem;color:var(--text-muted);line-height:1.8;">※ 本サイトで使用している問題は、IPAの公開シラバス・試験範囲および一般的なIT技術知識をもとに独自作成したオリジナル問題です。実際の試験問題は使用していません。合格を保証するものではありません。</p>
+      </div>
+      <div class="subject-item sec">
+        <div class="subj-bar"></div>
+        <div class="subj-inner">
+          <div class="subj-row">
+            <span class="subj-icon"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span>
+            <div><span class="subject-badge">セキュリティ</span><p class="subject-name">ネットワーク・セキュリティ</p></div>
+          </div>
+          <p class="subject-desc">TCP/IP、DNS、TLS、公開鍵暗号、ハッシュ、XSS、SQLインジェクション、フィッシング対策など。</p>
+          <div class="subj-foot"><span class="subj-meta">73問収録</span><a class="subject-action" href="?mode=category">分野別で学習 →</a></div>
+        </div>
+      </div>
+      <div class="subject-item db">
+        <div class="subj-bar"></div>
+        <div class="subj-inner">
+          <div class="subj-row">
+            <span class="subj-icon"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5"/><path d="M3 12c0 1.7 4 3 9 3s9-1.3 9-3"/></svg></span>
+            <div><span class="subject-badge">DB</span><p class="subject-name">データベース</p></div>
+          </div>
+          <p class="subject-desc">リレーショナルDB、正規化、SQL、トランザクション、ACID、ビュー・インデックス・E-R図を確認します。</p>
+          <div class="subj-foot"><span class="subj-meta">30問収録</span><a class="subject-action" href="?mode=category">分野別で学習 →</a></div>
+        </div>
+      </div>
+      <div class="subject-item dev">
+        <div class="subj-bar"></div>
+        <div class="subj-inner">
+          <div class="subj-row">
+            <span class="subj-icon"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/><path d="m14.5 4-5 16"/></svg></span>
+            <div><span class="subject-badge">開発</span><p class="subject-name">ソフトウェア開発・マネジメント</p></div>
+          </div>
+          <p class="subject-desc">オブジェクト指向、テスト、Git、アジャイル、UML、プロジェクト管理、ストラテジ系の頻出論点を扱います。</p>
+          <div class="subj-foot"><span class="subj-meta">90問収録</span><a class="subject-action" href="?mode=category">分野別で学習 →</a></div>
+        </div>
+      </div>
     </div>
+    <p class="note">※ 収録数は現在の問題データに基づく目安です。科目Bのアルゴリズム・セキュリティ問題も含みます。</p>
+  </section>
 
-    <a href="../index.html" class="top-link">← 資格トレイン トップへ</a>
+  <section class="card" aria-labelledby="sec-pass">
+    <h2 id="sec-pass">合格基準</h2>
+    <table class="score-table">
+      <thead>
+        <tr><th>項目</th><th>内容</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>試験形式</td><td>CBT方式。科目Aと科目Bをそれぞれ受験します。</td></tr>
+        <tr><td>科目A</td><td>テクノロジ系・マネジメント系・ストラテジ系の幅広い知識を問う試験です。</td></tr>
+        <tr><td>科目B</td><td>アルゴリズムとプログラミング、情報セキュリティを中心に問われます。</td></tr>
+        <tr><td>学習方針</td><td>科目Aは頻出語句と計算型、科目Bは手順を追う練習を優先すると得点に結びつきやすいです。</td></tr>
+        <tr><td>主催</td><td>IPA（情報処理推進機構）</td></tr>
+      </tbody>
+    </table>
+    <p class="note">試験時間・出題数・合格基準は変更される場合があります。受験前にIPA公式の最新要項を確認してください。</p>
+  </section>
+
+  <section class="card" id="portal-how-to-use" aria-labelledby="sec-howto">
+    <h2 id="sec-howto">使い方</h2>
+    <div class="steps">
+      <div class="step"><span class="step-no">1</span><span class="step-tx">「クイズを始める」から、全問題の中からランダム20問を解きます。</span></div>
+      <div class="step"><span class="step-no">2</span><span class="step-tx">年度別モードでは、年度を選んで150分タイマー付きで本番形式に近い演習をします。</span></div>
+      <div class="step"><span class="step-no">3</span><span class="step-tx">分野別モードでは、苦手なカテゴリを選び、1問ずつ正誤と解説を確認します。</span></div>
+      <div class="step"><span class="step-no">4</span><span class="step-tx">擬似問題集では、複数分野を混ぜたセットで理解度をチェックできます。</span></div>
+      <div class="step"><span class="step-no">5</span><span class="step-tx">分野ごとの正答率を見ながら、アルゴリズム・セキュリティなど得点差が出る範囲を重点復習します。</span></div>
+    </div>
+    <p class="note">※ 本サイトの問題は、IPAの公開シラバス・試験範囲および一般的なIT技術知識をもとに独自作成した学習用のオリジナル問題です。実際の試験問題は使用していません。</p>
+  </section>
+
+  <a href="../index.html" class="top-link">← 資格トレイン トップへ</a>
 </div>
 
 <footer>
-    <nav>
-        <a href="../index.html">トップ</a>
-        <a href="../takken-app/index.html">宅建士</a>
-        <a href="../denco-app/index.html">電気資格</a>
-        <a href="../ipa-app/index.html">情報処理資格ポータル</a>
-        <a href="index.html">基本情報技術者</a>
-        <a href="../ap-app/index.html">応用情報技術者</a>
-    </nav>
-    <p>© 2024 資格トレイン</p>
+  <div class="footer-container">
+    <div class="footer-inner">
+      <div class="footer-brand-col">
+        <div class="footer-brand">
+          <span class="brand-mark" style="width:30px;height:30px;"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="100" height="100" rx="24" fill="#2f6fdb"/><rect x="24" y="18" width="52" height="56" rx="16" fill="#fff"/><rect x="31" y="29" width="16" height="15" rx="4" fill="#2f6fdb"/><rect x="53" y="29" width="16" height="15" rx="4" fill="#2f6fdb"/><rect x="40" y="53" width="20" height="6" rx="3" fill="#2f6fdb"/><circle cx="35" cy="80" r="5" fill="#fff"/><circle cx="65" cy="80" r="5" fill="#fff"/></svg></span>
+          <span class="footer-brand-name">資格トレイン</span>
+        </div>
+        <p class="footer-brand-desc">通勤・通学のスキマ時間で<br>資格合格をサポートする<br>無料学習プラットフォーム</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <p class="footer-col-title">基本情報技術者</p>
+          <ul>
+            <li><a href="index.html">学習ポータル</a></li>
+            <li><a href="quiz.html">クイズを開く</a></li>
+            <li><a href="mock-sets.html">擬似問題集</a></li>
+            <li><a href="../ipa-app/index.html">情報処理資格ポータル</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-title">関連アプリ</p>
+          <ul>
+            <li><a href="../ap-app/index.html">応用情報技術者</a></li>
+            <li><a href="../sekispe-app/index.html">情報処理安全確保支援士</a></li>
+            <li><a href="../denco-app/index.html">電気資格ポータル</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-title">サイト情報</p>
+          <ul>
+            <li><a href="../about.html">運営者情報</a></li>
+            <li><a href="../contact.html">お問い合わせ</a></li>
+            <li><a href="../privacy.html">プライバシーポリシー</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">Copyright © 2024 mahorobaチャンネル / 資格トレイン. All rights reserved.</p>
+    </div>
+  </div>
 </footer>
+
+<script>
+(function() {
+  var hamburger = document.getElementById('nav-hamburger');
+  var drawer = document.getElementById('drawer');
+  var overlay = document.getElementById('drawer-overlay');
+  var drawerClose = document.getElementById('drawer-close');
+  function openDrawer() {
+    drawer.classList.add('open');
+    overlay.classList.add('open');
+    hamburger.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeDrawer() {
+    drawer.classList.remove('open');
+    overlay.classList.remove('open');
+    hamburger.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  hamburger.addEventListener('click', function() { drawer.classList.contains('open') ? closeDrawer() : openDrawer(); });
+  drawerClose.addEventListener('click', closeDrawer);
+  overlay.addEventListener('click', closeDrawer);
+  drawer.querySelectorAll('a').forEach(function(a) { a.addEventListener('click', closeDrawer); });
+})();
+</script>
 </body>
 </html>

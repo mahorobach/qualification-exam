@@ -1,0 +1,50 @@
+/* ============================================================
+   tokens.css — 資格トレイン デザイントークン（単一の管理元）
+   このファイル1か所を変えると、全画面・全アプリに反映されます。
+   ============================================================ */
+:root {
+  /* —— 書体（ゴシック1書体で統一）—————————————————— */
+  --font: 'Zen Kaku Gothic New', system-ui, sans-serif;
+  --fw-body: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+  --fw-heading: 900;
+
+  /* —— ベースカラー（明るい生成り基調）—————————————— */
+  --bg: #faf7f1;          /* 画面背景（生成り） */
+  --surface: #ffffff;     /* カード面 */
+  --surface-2: #f5f2ea;   /* 補助面 */
+  --text: #2b2a26;        /* 本文・見出し */
+  --ink: #2b2a26;         /* alias: --text */
+  --text-muted: #6f6a60;  /* 補足テキスト */
+  --ink-sub: #6f6a60;     /* alias: --text-muted */
+  --line: #ece7dd;        /* 罫線・境界 */
+
+  /* —— アクション / 状態 ———————————————————————— */
+  --accent: #2f6fdb;      --accent-soft: #e9f0fc;   /* 主ボタン・リンク */
+  --primary: #2f6fdb;     --primary-soft: #e9f0fc;  /* alias: --accent */
+  --success: #1f9d7a;     --success-soft: #e6f5ef;  /* 正解・合格 */
+  --danger: #d9534f;      --danger-soft: #fbeceb;   /* 不正解・苦手 */
+
+  /* —— 科目カラー・システム ———————————————————————
+     分野を増やすときは、ここに2行（本体＋soft）足すだけ */
+  --subj-basic: #2f6fdb;   --subj-basic-soft: #e9f0fc;   /* 基礎 */
+  --subj-ethics: #1f9d7a;  --subj-ethics-soft: #e6f5ef;  /* 適性 */
+  --subj-expert: #d9842a;  --subj-expert-soft: #fbeede;  /* 専門 */
+  /* kiso/tekisei/senmon: aliases for base.css compatibility */
+  --subj-kiso: #2f6fdb;    --subj-kiso-soft: #e9f0fc;
+  --subj-tekisei: #1f9d7a; --subj-tekisei-soft: #e6f5ef;
+  --subj-senmon: #d9842a;  --subj-senmon-soft: #fbeede;
+
+  /* —— 角丸 ——————————————————————————————————— */
+  --radius: 20px;
+  --radius-sm: 14px;
+  --r-sm: 12px;
+  --r-md: 16px;
+  --r-lg: 20px;
+  --r-pill: 999px;
+
+  /* —— 影 ————————————————————————————————————— */
+  --shadow: 0 4px 16px rgba(90, 75, 50, .06);
+  --shadow-cta: 0 8px 22px rgba(47, 111, 219, .28);
+}
