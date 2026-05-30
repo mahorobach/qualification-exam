@@ -139,8 +139,8 @@
       .cta:active { transform: translateY(1px); }
 
       .note {
-        font-size: 0.88rem;
-        line-height: 1.75;
+        font-size: 0.92rem;
+        line-height: 1.8;
         color: var(--text-muted);
         margin-top: 14px;
       }
@@ -149,8 +149,8 @@
       .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 18px; }
       .stat { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-sm); box-shadow: var(--shadow); padding: 16px 8px; text-align: center; }
       .stat-num { font-weight: 900; font-size: 1.7rem; line-height: 1; color: var(--ink); }
-      .stat-num span { font-size: 0.8rem; font-weight: 700; color: var(--text-muted); margin-left: 2px; }
-      .stat-lbl { font-size: 0.8rem; color: var(--text-muted); margin-top: 6px; }
+      .stat-num span { font-size: 0.85rem; font-weight: 700; color: var(--text-muted); margin-left: 2px; }
+      .stat-lbl { font-size: 0.88rem; color: var(--text-muted); margin-top: 6px; }
 
       /* アイコン */
       .ic { width: 24px; height: 24px; display: block; flex: 0 0 auto; }
@@ -185,8 +185,8 @@
       .subject-desc { font-size: 0.92rem; color: var(--text-muted); margin: 0 0 14px; line-height: 1.8; text-wrap: pretty; }
 
       .subj-foot { display: flex; align-items: center; justify-content: space-between; gap: 10px; border-top: 1px solid var(--line); padding-top: 12px; }
-      .subj-meta { font-size: 0.82rem; color: var(--text-muted); white-space: nowrap; }
-      .subject-action { display: inline-flex; align-items: center; gap: 4px; font-size: 0.88rem; font-weight: 700; text-decoration: none; white-space: nowrap; }
+      .subj-meta { font-size: 0.88rem; color: var(--text-muted); white-space: nowrap; }
+      .subject-action { display: inline-flex; align-items: center; gap: 4px; font-size: 0.92rem; font-weight: 700; text-decoration: none; white-space: nowrap; }
       .subject-item.basic  .subject-action { color: var(--subj-basic); }
       .subject-item.ethics .subject-action { color: var(--subj-ethics); }
       .subject-item.expert .subject-action { color: var(--subj-expert); }
@@ -253,7 +253,7 @@
         text-decoration: none; color: #1d1d1f; font-size: 0.95rem; font-weight: 400; transition: background .15s;
       }
       .drawer-nav a:hover { background: #f5f5f7; }
-      .drawer-nav a .di { font-size: 1.1rem; width: 24px; text-align: center; }
+      .drawer-nav a .di { width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; color: var(--text-muted); flex-shrink: 0; }
       .drawer-divider { height: 1px; background: #e8e8ed; margin: 8px 20px; }
 
       /* ── Footer ── */
@@ -292,27 +292,27 @@
   <div class="drawer-section">
     <p class="drawer-section-label">トップページ</p>
     <ul class="drawer-nav">
-      <li><a href="../index.html#concept"><span class="di">💡</span>コンセプト</a></li>
-      <li><a href="../index.html#apps"><span class="di">📱</span>アプリ一覧</a></li>
-      <li><a href="../index.html#contact"><span class="di">✉️</span>お問い合わせ</a></li>
+      <li><a href="../index.html#concept"><span class="di"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></span>コンセプト</a></li>
+      <li><a href="../index.html#apps"><span class="di"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></span>アプリ一覧</a></li>
+      <li><a href="../index.html#contact"><span class="di"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>お問い合わせ</a></li>
     </ul>
   </div>
   <div class="drawer-divider"></div>
   <div class="drawer-section">
     <p class="drawer-section-label">資格問題一覧</p>
     <ul class="drawer-nav">
-      <li><a href="index.html"><span class="di">⚙️</span>技術士（機械部門）</a></li>
-      <li><a href="../denco-app/index.html"><span class="di">⚡</span>電気資格ポータル</a></li>
-      <li><a href="../gyosei-app/index.html"><span class="di">📋</span>行政書士</a></li>
+      <li><a href="index.html"><span class="di"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9z"/></svg></span>技術士（機械部門）</a></li>
+      <li><a href="../denco-app/index.html"><span class="di"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>電気資格ポータル</a></li>
+      <li><a href="../gyosei-app/index.html"><span class="di"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></span>行政書士</a></li>
     </ul>
   </div>
   <div class="drawer-divider"></div>
   <div class="drawer-section">
     <p class="drawer-section-label">サイト情報</p>
     <ul class="drawer-nav">
-      <li><a href="../about.html"><span class="di">🏢</span>運営者情報</a></li>
-      <li><a href="../contact.html"><span class="di">✉️</span>お問い合わせ</a></li>
-      <li><a href="../privacy.html"><span class="di">🔒</span>プライバシーポリシー</a></li>
+      <li><a href="../about.html"><span class="di"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>運営者情報</a></li>
+      <li><a href="../contact.html"><span class="di"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>お問い合わせ</a></li>
+      <li><a href="../privacy.html"><span class="di"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>プライバシーポリシー</a></li>
     </ul>
   </div>
 </aside>
@@ -336,15 +336,15 @@
       </header>
 
       <div class="stats">
-        <div class="stat"><div class="stat-num">239<span>問</span></div><div class="stat-lbl">全問題数</div></div>
-        <div class="stat"><div class="stat-num">101<span>問</span></div><div class="stat-lbl">2024年度</div></div>
+        <div class="stat"><div class="stat-num">218<span>問</span></div><div class="stat-lbl">全問題数</div></div>
+        <div class="stat"><div class="stat-num">80<span>問</span></div><div class="stat-lbl">2024年度</div></div>
         <div class="stat"><div class="stat-num">80<span>問</span></div><div class="stat-lbl">2025年度</div></div>
       </div>
 
       <section class="card" aria-labelledby="sec-start">
         <h2 id="sec-start">クイズを始める</h2>
         <p>
-          2024年度は101問、2025年度は80問（専門35問・基礎30問・適性15問）を含む、全体で <strong>239 問</strong>の過去問風オリジナルクイズに挑戦できます。図表入り問題も含め、科目別・年度別に学習できます。
+          2024・2025年度は各80問（専門35問・基礎30問・適性15問）を含む、全体で <strong>218 問</strong>の過去問風オリジナルクイズに挑戦できます。図表入り問題も含め、科目別・年度別に学習できます。
         </p>
         <a class="cta" href="quiz.html">クイズを開く</a>
         <p class="note">
