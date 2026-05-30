@@ -164,16 +164,11 @@
         border-radius: var(--radius);
         box-shadow: var(--shadow);
         overflow: hidden;
-        position: relative;
+        cursor: pointer;
         transition: box-shadow 0.15s, transform 0.1s;
       }
       .subject-item:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.10); transform: translateY(-1px); }
       .subject-item:active { transform: translateY(0); }
-      .subject-item-link {
-        position: absolute; inset: 0; z-index: 1;
-        border-radius: var(--radius);
-      }
-      .subject-action { position: relative; z-index: 2; }
       .subj-bar { height: 5px; }
       .subject-item.basic  .subj-bar { background: var(--subj-basic); }
       .subject-item.ethics .subj-bar { background: var(--subj-ethics); }
@@ -364,8 +359,7 @@
       <section class="card" aria-labelledby="sec-subjects">
         <h2 id="sec-subjects">試験科目について</h2>
         <div class="subject-grid">
-          <div class="subject-item basic">
-            <a class="subject-item-link" href="quiz.html?subject=basic&amp;count=20" aria-label="基礎科目クイズ（20問）を始める"></a>
+          <div class="subject-item basic" data-quiz-href="quiz.html?subject=basic&count=20">
             <div class="subj-bar"></div>
             <div class="subj-inner">
               <div class="subj-row">
@@ -384,8 +378,7 @@
               </div>
             </div>
           </div>
-          <div class="subject-item ethics">
-            <a class="subject-item-link" href="quiz.html?subject=ethics&amp;count=20" aria-label="適性科目クイズ（20問）を始める"></a>
+          <div class="subject-item ethics" data-quiz-href="quiz.html?subject=ethics&count=20">
             <div class="subj-bar"></div>
             <div class="subj-inner">
               <div class="subj-row">
@@ -404,8 +397,7 @@
               </div>
             </div>
           </div>
-          <div class="subject-item expert">
-            <a class="subject-item-link" href="quiz.html?subject=expert&amp;count=20" aria-label="専門科目クイズ（20問）を始める"></a>
+          <div class="subject-item expert" data-quiz-href="quiz.html?subject=expert&count=20">
             <div class="subj-bar"></div>
             <div class="subj-inner">
               <div class="subj-row">
@@ -486,6 +478,15 @@
   </div>
 </footer>
 
+<script>
+  document.querySelectorAll('.subject-item[data-quiz-href]').forEach(function(el) {
+    el.addEventListener('click', function(e) {
+      if (!e.target.closest('.subject-action')) {
+        window.location.href = el.dataset.quizHref;
+      }
+    });
+  });
+</script>
 <script>
   (function() {
     var hamburger = document.getElementById('nav-hamburger');
