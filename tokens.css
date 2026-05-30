@@ -44,6 +44,15 @@
   --r-lg: 20px;
   --r-pill: 999px;
 
+  /* —— アプリ別カラー（トップLPのカード等）————————————
+     資格アプリを増やすときは、ここに1組（本体＋soft）足すだけ */
+  --c-blue:   #2f6fdb;   --c-blue-s:   #e9f0fc;  /* 電気 */
+  --c-green:  #1f9d7a;   --c-green-s:  #e6f5ef;  /* 基本情報FE */
+  --c-amber:  #d9842a;   --c-amber-s:  #fbeede;  /* 宅建 */
+  --c-violet: #7c5cd0;   --c-violet-s: #efeafb;  /* 技術士機械 */
+  --c-rose:   #d65a7a;   --c-rose-s:   #fbe9ef;  /* 応用情報AP */
+  --c-teal:   #2596be;   --c-teal-s:   #e3f2f8;  /* 情報処理ポータル */
+
   /* —— 影 ————————————————————————————————————— */
   --shadow: 0 4px 16px rgba(90, 75, 50, .06);
   --shadow-cta: 0 8px 22px rgba(47, 111, 219, .28);
