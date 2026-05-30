@@ -267,6 +267,52 @@
     .q-result-card { border-radius: 14px; }
   </style>
 
+  <style>
+    /* ===== 科目選択ピッカー（kikai スタイル） ===== */
+    .ic { display: block; flex: 0 0 auto; }
+    .backbar { display: inline-flex; align-items: center; gap: 6px; padding: 14px 0 2px; color: var(--text-muted); font-size: 0.9rem; background: none; border: none; cursor: pointer; font-family: inherit; }
+    .backbar:hover { color: var(--text); }
+    .backbar .ic { width: 20px; height: 20px; }
+    .page-head { padding: 24px 0 18px; }
+    .page-head h1 { font-size: 1.45rem; font-weight: 900; line-height: 1.4; margin: 0 0 6px; letter-spacing: .01em; }
+    .page-head .lead { margin: 0; font-size: 0.95rem; line-height: 1.75; color: var(--text-muted); text-wrap: pretty; }
+    .picker { display: flex; flex-direction: column; gap: 12px; }
+    .pick { display: flex; align-items: center; gap: 14px; width: 100%; text-align: left; padding: 16px 18px; background: var(--surface); border: 2px solid var(--line); border-radius: 16px; box-shadow: var(--shadow); cursor: pointer; font-family: inherit; transition: border-color .15s, box-shadow .15s, background .15s; }
+    .pick:hover { border-color: color-mix(in srgb, var(--c) 45%, var(--line)); }
+    .pick[aria-pressed="true"] { border-color: var(--c); box-shadow: 0 6px 18px color-mix(in srgb, var(--c) 22%, transparent); background: color-mix(in srgb, var(--c-soft) 55%, var(--surface)); }
+    .pick-icon { width: 46px; height: 46px; border-radius: 14px; display: flex; align-items: center; justify-content: center; flex: 0 0 auto; background: var(--c-soft); color: var(--c); }
+    .pick-icon .ic { width: 24px; height: 24px; }
+    .pick-body { flex: 1; min-width: 0; }
+    .pick-name { font-size: 1.04rem; font-weight: 700; line-height: 1.35; display: block; color: var(--text); }
+    .pick-meta { font-size: 0.84rem; color: var(--text-muted); margin-top: 2px; display: block; }
+    .pick-meta b { color: var(--c); font-weight: 700; }
+    .pick-radio { width: 24px; height: 24px; border-radius: 50%; flex: 0 0 auto; border: 2px solid var(--line); background: var(--surface); display: flex; align-items: center; justify-content: center; transition: background .15s, border-color .15s; }
+    .pick-radio .ic { width: 15px; height: 15px; opacity: 0; transform: scale(.6); transition: opacity .15s, transform .15s; color: #fff; }
+    .pick[aria-pressed="true"] .pick-radio { background: var(--c); border-color: var(--c); }
+    .pick[aria-pressed="true"] .pick-radio .ic { opacity: 1; transform: scale(1); }
+    .pick[data-subj="all"]   { --c: var(--ap-tech);  --c-soft: var(--ap-tech-soft); }
+    .pick[data-subj="tech"]  { --c: var(--ap-tech);  --c-soft: var(--ap-tech-soft); }
+    .pick[data-subj="algo"]  { --c: var(--ap-alg);   --c-soft: var(--ap-alg-soft); }
+    .pick[data-subj="sec"]   { --c: var(--ap-sec);   --c-soft: var(--ap-sec-soft); }
+    .pick[data-subj="db"]    { --c: var(--ap-db);    --c-soft: var(--ap-db-soft); }
+    .pick[data-subj="dev"]   { --c: var(--ap-dev);   --c-soft: var(--ap-dev-soft); }
+    .toggle-card { display: flex; align-items: center; gap: 14px; width: 100%; text-align: left; margin-top: 14px; padding: 16px 18px; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow); cursor: pointer; font-family: inherit; }
+    .toggle-icon { width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; flex: 0 0 auto; background: var(--danger-soft); color: var(--danger); }
+    .toggle-icon .ic { width: 22px; height: 22px; }
+    .toggle-body { flex: 1; }
+    .toggle-title { font-size: 0.98rem; font-weight: 700; display: block; color: var(--text); }
+    .toggle-desc  { font-size: 0.82rem; color: var(--text-muted); margin-top: 1px; display: block; }
+    .switch { width: 48px; height: 28px; border-radius: 999px; background: var(--line); position: relative; flex: 0 0 auto; transition: background .2s; }
+    .switch .knob { position: absolute; top: 3px; left: 3px; width: 22px; height: 22px; border-radius: 50%; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.2); transition: transform .2s; }
+    .toggle-card[aria-pressed="true"] .switch { background: var(--success); }
+    .toggle-card[aria-pressed="true"] .switch .knob { transform: translateX(20px); }
+    .start { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; min-height: 56px; margin-top: 20px; padding: 16px; font-family: inherit; font-size: 1.08rem; font-weight: 700; color: #fff; background: var(--accent); border: none; border-radius: 999px; box-shadow: var(--shadow-cta); cursor: pointer; transition: opacity .15s, transform .1s; }
+    .start:hover { opacity: .94; }
+    .start:active { transform: translateY(1px); }
+    .start .ic { width: 20px; height: 20px; }
+    .cat-foot-note { font-size: 0.83rem; line-height: 1.7; color: var(--text-muted); margin-top: 16px; text-wrap: pretty; }
+  </style>
+
 </head>
 <body>
 <nav style="position:fixed;top:0;left:0;right:0;min-height:52px;z-index:200;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;padding:8px 18px;background:rgba(255,255,255,0.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line);">
@@ -326,17 +372,30 @@
 
   <!-- Screen 2: 分野選択 -->
   <div id="s-cat-sel" hidden>
-    <a href="index.html" class="back-link" id="lnk-cat-back">← 学習ポータルへ</a>
-    <h2 style="font-size:1.2rem;font-weight:900;color:var(--text);margin:0 0 10px;text-align:center;">学習モード（分野別）</h2>
-    <div class="card">
-      <p class="screen-title">分野を選択してください。</p>
-      <button type="button" class="menu-quick-quiz-btn" id="btn-cat-quick-quiz">クイズを始める（ランダム２０問）</button>
-      <div class="sel-list" id="cat-list"></div>
+    <button type="button" class="backbar" id="lnk-cat-back">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+      モード選択へ
+    </button>
+    <div class="page-head">
+      <h1>分野を選ぶ</h1>
+      <p class="lead">分野別（学習モード）・1問ずつ解答します。分野を選んで始めましょう。</p>
     </div>
-    <div class="stats-box">
-      <p class="stats-title">分野ごとの正答率（累計）</p>
-      <div id="cat-stats"></div>
-    </div>
+    <div class="picker" id="cat-list"></div>
+    <button type="button" class="toggle-card" id="cat-weak-toggle" aria-pressed="false">
+      <span class="toggle-icon">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c1 3 4 4.5 4 8a4 4 0 0 1-8 0c0-1 .3-1.8.8-2.5C9 9 9.5 10 11 10c.5-3-1-4.5 1-8z"/><path d="M8.5 14a3.5 3.5 0 0 0 7 0c0-1.5-1-2.5-1.5-3"/></svg>
+      </span>
+      <span class="toggle-body">
+        <span class="toggle-title">苦手問題だけ再出題</span>
+        <span class="toggle-desc">前回まで不正解だった問題を集中復習</span>
+      </span>
+      <span class="switch"><span class="knob"></span></span>
+    </button>
+    <button type="button" class="start" id="btn-cat-start">
+      このクイズを始める
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+    </button>
+    <p class="cat-foot-note">※ 学習記録はこのブラウザに保存されます。正解した問題は苦手リストから自動的に外れます。</p>
   </div>
 
   <!-- Screen 3: 年度別試験 -->
@@ -414,6 +473,21 @@ const CAT_BADGE = {
   "ネットワーク・セキュリティ": "badge-net",
   "データベース": "badge-db",
   "ソフトウェア開発": "badge-dev"
+};
+const CAT_SUBJ = {
+  "コンピュータ基礎":         "tech",
+  "アルゴリズム・データ構造": "algo",
+  "ネットワーク・セキュリティ":"sec",
+  "データベース":             "db",
+  "ソフトウェア開発":         "dev"
+};
+const CAT_ICON_SVG = {
+  all:   '<path d="M12 3v4M12 17v4M3 12h4M17 12h4"/><path d="m6.3 6.3 2.4 2.4M15.3 15.3l2.4 2.4M17.7 6.3l-2.4 2.4M8.7 15.3l-2.4 2.4"/>',
+  tech:  '<rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M15 2v2M9 2v2M15 20v2M9 20v2M2 15h2M2 9h2M20 15h2M20 9h2"/>',
+  algo:  '<path d="M16 3h5v5M4 20 21 3"/><path d="M21 16v5h-5"/><path d="M15 15 21 21"/><path d="M4 4l5 5"/>',
+  sec:   '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/>',
+  db:    '<ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4.03 3 9 3s9-1.34 9-3"/>',
+  dev:   '<path d="m9 8-4 4 4 4M15 8l4 4-4 4"/>',
 };
 
 /** 「クイズを始める」1セットあたりの出題数（?mode=all も同じ） */
@@ -541,6 +615,17 @@ const btnCatQuickQuiz = document.getElementById("btn-cat-quick-quiz");
 if (btnCatQuickQuiz) btnCatQuickQuiz.addEventListener("click", () => { startQuickQuiz(); });
 document.getElementById("btn-mode-year").addEventListener("click", () => { showScreen("s-year-sel"); buildYearList(); });
 document.getElementById("btn-mode-cat").addEventListener("click",  () => { showScreen("s-cat-sel");  buildCatList(); });
+document.getElementById("lnk-cat-back").addEventListener("click", () => { showScreen("s-mode"); renderStats("mode-stats"); });
+let selectedCat = "__all__";
+let catWeakOnly = false;
+document.getElementById("cat-weak-toggle").addEventListener("click", function() {
+  catWeakOnly = this.getAttribute("aria-pressed") !== "true";
+  this.setAttribute("aria-pressed", catWeakOnly ? "true" : "false");
+  buildCatList();
+});
+document.getElementById("btn-cat-start").addEventListener("click", () => {
+  startPrac(selectedCat, catWeakOnly);
+});
 
 function buildYearList() {
   const el = document.getElementById("year-list"); el.innerHTML = "";
@@ -558,37 +643,49 @@ function buildYearList() {
   allBtn.innerHTML=`<strong>全年度ランダム</strong><span class="s-meta">全 ${allQuestions.length} 問をシャッフル出題（150分）</span>`;
   allBtn.addEventListener("click", ()=>startExam("__all__")); el.appendChild(allBtn);
 }
+function catCount(key) {
+  if (key === "__all__") return catWeakOnly
+    ? allQuestions.filter(q => wrongQids.has(q._qid)).length
+    : allQuestions.length;
+  const qs = allQuestions.filter(q => q.category === key);
+  return catWeakOnly ? qs.filter(q => wrongQids.has(q._qid)).length : qs.length;
+}
+function catAccuracy(key) {
+  const stats = key === "__all__"
+    ? CAT_ORDER.reduce((acc, c) => { const s = categoryStats[c]; if (s) { acc.c += s.correct; acc.a += s.attempted; } return acc; }, { c: 0, a: 0 })
+    : { c: categoryStats[key]?.correct || 0, a: categoryStats[key]?.attempted || 0 };
+  return stats.a > 0 ? Math.round(stats.c / stats.a * 100) : null;
+}
+function makeSvgIcon(path) {
+  return '<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' + path + '</svg>';
+}
 function buildCatList() {
-  const el=document.getElementById("cat-list"); el.innerHTML="";
-  const counts={}; allQuestions.forEach(q=>{ const c=q.category||"未分類"; counts[c]=(counts[c]||0)+1; });
-  const allBtn=document.createElement("button"); allBtn.type="button"; allBtn.className="sel-item";
-  allBtn.innerHTML=`<strong>すべての分野</strong><span class="s-meta">未出題優先・全 ${allQuestions.length} 問から</span>`;
-  allBtn.addEventListener("click", ()=>startPrac("__all__")); el.appendChild(allBtn);
+  const el = document.getElementById("cat-list"); el.innerHTML = "";
+  const counts = {}; allQuestions.forEach(q => { const c = q.category || "未分類"; counts[c] = (counts[c] || 0) + 1; });
+
+  const opts = [{ key: "__all__", name: "すべての分野（混合）", subj: "all" }]
+    .concat(CAT_ORDER.filter(c => counts[c]).map(c => ({ key: c, name: c, subj: CAT_SUBJ[c] || "tech" })));
+
+  opts.forEach(o => {
+    const cnt = catCount(o.key);
+    const acc = catAccuracy(o.key);
+    const active = selectedCat === o.key;
+    const btn = document.createElement("button");
+    btn.type = "button"; btn.className = "pick";
+    btn.dataset.subj = o.subj; btn.dataset.cat = o.key;
+    btn.setAttribute("aria-pressed", active ? "true" : "false");
+    const iconSvg = makeSvgIcon(CAT_ICON_SVG[o.subj] || CAT_ICON_SVG.tech);
+    const meta = (catWeakOnly ? "苦手 " + cnt + " 問" : cnt + " 問")
+      + (acc !== null ? "・累計正答率 <b>" + acc + "%</b>" : "");
+    btn.innerHTML =
+      '<span class="pick-icon">' + iconSvg + '</span>' +
+      '<span class="pick-body"><span class="pick-name">' + o.name + '</span>' +
+      '<span class="pick-meta">' + meta + '</span></span>' +
+      '<span class="pick-radio">' + makeSvgIcon('<path d="m5 12 4 4 10-11"/>') + '</span>';
+    btn.addEventListener("click", () => { selectedCat = o.key; buildCatList(); });
+    el.appendChild(btn);
+  });
   syncQuickQuizLabels();
-  CAT_ORDER.forEach(c=>{
-    if(!counts[c]) return;
-    const b=CAT_BADGE[c]||""; const btn=document.createElement("button"); btn.type="button"; btn.className="sel-item";
-    btn.innerHTML=`<span class="sub-badge ${b}">${c}</span><span class="s-meta">${counts[c]} 問</span>`;
-    btn.addEventListener("click", ()=>startPrac(c)); el.appendChild(btn);
-  });
-  const weakCount = allQuestions.filter(q => wrongQids.has(q._qid)).length;
-  const weakBtn = document.createElement("button");
-  weakBtn.type="button"; weakBtn.className="weak-btn";
-  weakBtn.innerHTML='<span class="weak-btn-icon" aria-hidden="true">!</span><span>間違った問題だけ再出題（'+weakCount+'問）</span>';
-  weakBtn.addEventListener("click", () => {
-    if(!weakCount){window.alert("間違った問題がまだありません。まず通常学習で問題を解いてください。");return;}
-    startPrac("__all__", true);
-  });
-  el.appendChild(weakBtn);
-  const resetBtn = document.createElement("button");
-  resetBtn.type="button"; resetBtn.className="reset-answered-btn";
-  resetBtn.innerHTML='<span class="reset-answered-icon" aria-hidden="true">R</span><span>回答済み（同じ問題）を出題に戻す</span>';
-  resetBtn.addEventListener("click", () => {
-    if(!window.confirm("一度答えた問題の記録を消し、再び出題されるようにします。よろしいですか？"))return;
-    pracAttemptedQids.clear(); saveStats(); buildCatList();
-  });
-  el.appendChild(resetBtn);
-  renderStats("cat-stats");
 }
 function startExam(yearKey) {
   isQuickQuizMode = false;
