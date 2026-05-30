@@ -164,7 +164,16 @@
         border-radius: var(--radius);
         box-shadow: var(--shadow);
         overflow: hidden;
+        position: relative;
+        transition: box-shadow 0.15s, transform 0.1s;
       }
+      .subject-item:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.10); transform: translateY(-1px); }
+      .subject-item:active { transform: translateY(0); }
+      .subject-item-link {
+        position: absolute; inset: 0; z-index: 1;
+        border-radius: var(--radius);
+      }
+      .subject-action { position: relative; z-index: 2; }
       .subj-bar { height: 5px; }
       .subject-item.basic  .subj-bar { background: var(--subj-basic); }
       .subject-item.ethics .subj-bar { background: var(--subj-ethics); }
@@ -356,6 +365,7 @@
         <h2 id="sec-subjects">試験科目について</h2>
         <div class="subject-grid">
           <div class="subject-item basic">
+            <a class="subject-item-link" href="quiz.html?subject=basic&amp;count=20" aria-label="基礎科目クイズ（20問）を始める"></a>
             <div class="subj-bar"></div>
             <div class="subj-inner">
               <div class="subj-row">
@@ -369,12 +379,13 @@
                 科学技術全般の基礎知識（数学・物理・化学・情報技術・環境）を問う科目。5つの問題群から各3問、計15問を選択して回答します（本試験）。
               </p>
               <div class="subj-foot">
-                <span class="subj-meta">全15問 / 制限60分</span>
+                <span class="subj-meta">20問 / 分野別演習</span>
                 <a class="subject-action" href="taisaku-basic.html">傾向と対策 →</a>
               </div>
             </div>
           </div>
           <div class="subject-item ethics">
+            <a class="subject-item-link" href="quiz.html?subject=ethics&amp;count=20" aria-label="適性科目クイズ（20問）を始める"></a>
             <div class="subj-bar"></div>
             <div class="subj-inner">
               <div class="subj-row">
@@ -388,12 +399,13 @@
                 技術士法・技術者倫理・公益確保など、技術士として求められる適性・倫理観を問う科目。15 問全問を回答します（本試験）。
               </p>
               <div class="subj-foot">
-                <span class="subj-meta">全15問 / 制限60分</span>
+                <span class="subj-meta">20問 / 分野別演習</span>
                 <a class="subject-action" href="taisaku-ethics.html">傾向と対策 →</a>
               </div>
             </div>
           </div>
           <div class="subject-item expert">
+            <a class="subject-item-link" href="quiz.html?subject=expert&amp;count=20" aria-label="専門科目クイズ（20問）を始める"></a>
             <div class="subj-bar"></div>
             <div class="subj-inner">
               <div class="subj-row">
@@ -407,7 +419,7 @@
                 材料力学・機械力学・熱工学・流体力学・加工技術など、機械工学の専門知識を問う科目。35 問中 25 問を選択して回答します（本試験）。
               </p>
               <div class="subj-foot">
-                <span class="subj-meta">35問中25問 / 制限110分</span>
+                <span class="subj-meta">20問 / 分野別演習</span>
                 <a class="subject-action" href="taisaku-specialty.html">傾向と対策 →</a>
               </div>
             </div>

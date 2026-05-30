@@ -546,6 +546,8 @@ function startPrac(catKey, opts) {
 
   if (pracWeakOnly) pool = pool.filter(q => wrongSet[qKey(q)]);
 
+  if (opts.count && opts.count > 0) pool = shuffle(pool).slice(0, opts.count);
+
   if (pool.length === 0) {
     window.alert(pracWeakOnly
       ? "この科目に苦手問題はありません。まずは通常の出題で挑戦しましょう。"
@@ -767,7 +769,20 @@ async function boot() {
   loadStats();
   loadWrong();
   await loadQuestions();
-  initModeScreen();
+
+  const params = new URLSearchParams(location.search);
+  const subjParam = params.get("subject");
+  const countParam = parseInt(params.get("count"), 10) || 0;
+  const SUBJ_MAP = {
+    "basic":  "基礎科目",
+    "ethics": "適性科目（法令・倫理）",
+    "expert": "専門科目（機械部門）"
+  };
+  if (subjParam && SUBJ_MAP[subjParam]) {
+    startPrac(SUBJ_MAP[subjParam], { count: countParam || 0 });
+  } else {
+    initModeScreen();
+  }
 }
 boot();
 
