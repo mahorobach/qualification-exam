@@ -1,1213 +1,580 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
-<head>
-<script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/da8873c0823e389b7f9a1d40/script.js"></script>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G4S7ZG2Y34"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-G4S7ZG2Y34');
-  </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <title>技術士第一次試験（機械部門）過去問風オリジナルクイズ | 資格トレイン</title>
-    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../tokens.css">
-    <link rel="stylesheet" href="../base.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>技術士第一次試験（機械部門）クイズ | 資格トレイン</title>
+    <meta name="description" content="技術士第一次試験・機械部門の過去問クイズ。年度別演習と分野別学習、苦手復習に対応。基礎・適性・専門を1問ずつ解いて学習できます。" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet" />
     <style>
-        body {
-            min-height: 100dvh;
-            padding: calc(52px + max(16px,env(safe-area-inset-top))) 18px max(32px,env(safe-area-inset-bottom));
-        }
-        .app { max-width: 480px; margin: 0 auto; }
+      /* ============================================================
+         デザイントークン（やわらかB案・一括管理）
+         ============================================================ */
+      :root {
+        --font: 'Zen Kaku Gothic New', 'Hiragino Sans', system-ui, sans-serif;
 
-        /* ── Common ── */
-        .back-link {
-            display: inline-flex; align-items: center; gap: 4px;
-            color: var(--accent); text-decoration: none; font-size: 0.85rem;
-            margin-bottom: 14px;
-        }
-        .back-link:hover { text-decoration: underline; }
+        --bg: #faf7f1;
+        --surface: #ffffff;
+        --surface-2: #f5f2ea;
+        --text: #2b2a26;
+        --text-muted: #6f6a60;
+        --line: #ece7dd;
 
-        .card {
-            border-radius: var(--radius-sm);
-            padding: 22px 20px;
-            margin-bottom: 14px;
-        }
-        .screen-title {
-            font-size: 1.1rem; font-weight: 700;
-            text-align: center; margin: 0 0 6px; color: var(--text);
-        }
-        .screen-sub {
-            font-size: 0.82rem; color: var(--text-muted);
-            text-align: center; margin: 0 0 20px;
-        }
+        --accent: #2f6fdb;       --accent-soft: #e9f0fc;
+        --success: #1f9d7a;      --success-soft: #e6f5ef;
+        --danger:  #d6483b;      --danger-soft:  #fbe9e7;
 
-        /* ── Mode Screen ── */
-        .mode-grid { display: grid; gap: 12px; }
-        .mode-btn {
-            appearance: none; width: 100%; text-align: left;
-            padding: 18px 20px; font-family: inherit; color: var(--text);
-            background: var(--surface);
-            border: 1px solid var(--line);
-            border-radius: var(--radius-sm); cursor: pointer;
-            transition: background .2s, border-color .2s, box-shadow .2s;
-        }
-        .mode-btn:hover { background: var(--surface-2); border-color: rgba(47,111,219,0.35); box-shadow: var(--shadow); }
-        .mode-btn .m-icon { font-size: 1.8rem; margin-bottom: 8px; display: block; }
-        .mode-btn .m-name { font-size: 1.0rem; font-weight: 700; display: block; margin-bottom: 4px; color: var(--text); }
-        .mode-btn .m-desc { font-size: 0.8rem; color: var(--text-muted); display: block; line-height: 1.55; }
+        /* 科目カラー */
+        --subj-basic:  #2f6fdb;  --subj-basic-soft:  #e9f0fc;
+        --subj-ethics: #1f9d7a;  --subj-ethics-soft: #e6f5ef;
+        --subj-expert: #d9842a;  --subj-expert-soft: #fbeede;
+        --subj-all:    #2f6fdb;  --subj-all-soft:    #e9f0fc;
 
-        /* ── Selection Lists ── */
-        .sel-list { display: flex; flex-direction: column; gap: 10px; }
-        .sel-item {
-            appearance: none; width: 100%; text-align: left;
-            padding: 14px 16px; font-family: inherit; font-size: 0.95rem; font-weight: 500;
-            color: var(--text); background: var(--surface);
-            border: 1px solid var(--line); border-radius: var(--radius-sm);
-            cursor: pointer; transition: background .2s, border-color .2s;
-        }
-        .sel-item:hover { background: var(--surface-2); border-color: rgba(47,111,219,0.35); }
-        .sel-item .s-meta { display: block; font-size: 0.78rem; color: var(--text-muted); margin-top: 3px; font-weight: 400; }
+        --radius: 20px;
+        --radius-sm: 16px;
+        --shadow: 0 4px 16px rgba(90, 75, 50, 0.06);
+        --shadow-cta: 0 8px 22px rgba(47, 111, 219, 0.28);
+      }
 
-        /* Badges */
-        .cat-badge {
-            display: inline-block; font-size: 0.7rem; font-weight: 700;
-            padding: 2px 8px; border-radius: 999px; margin-right: 6px; vertical-align: middle;
-        }
-        .badge-basic  { background: var(--subj-basic-soft);  color: var(--subj-basic); }
-        .badge-ethics { background: var(--subj-ethics-soft); color: var(--subj-ethics); }
-        .badge-expert { background: var(--subj-expert-soft); color: var(--subj-expert); }
+      * { box-sizing: border-box; }
 
-        /* ── Stats Box ── */
-        .stats-box {
-            background: var(--surface); border: 1px solid var(--line);
-            border-radius: var(--radius-sm); padding: 14px; box-shadow: var(--shadow);
-        }
-        .stats-title { margin: 0 0 10px; font-size: 0.82rem; color: var(--text-muted); }
-        .stats-row { display: flex; justify-content: space-between; font-size: 0.84rem; padding: 3px 0; }
+      body {
+        margin: 0;
+        min-height: 100dvh;
+        font-family: var(--font);
+        font-size: 16.5px;
+        line-height: 1.85;
+        color: var(--text);
+        background: var(--bg);
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+        padding: calc(52px + max(8px, env(safe-area-inset-top))) 0 max(40px, env(safe-area-inset-bottom));
+      }
 
-        /* ── Exam Mode (Year) ── */
-        .exam-header {
-            display: flex; align-items: center;
-            justify-content: space-between; gap: 10px; margin-bottom: 12px;
-        }
-        .timer-box {
-            display: flex; flex-direction: column; align-items: center;
-            background: var(--surface-2); border-radius: var(--radius-sm); padding: 6px 12px;
-            border: 1px solid var(--line);
-        }
-        .timer-label { font-size: 0.64rem; color: var(--text-muted); }
-        .timer-val {
-            font-size: 1.25rem; font-weight: 700; color: var(--accent);
-            font-variant-numeric: tabular-nums; letter-spacing: 0.04em;
-        }
-        .timer-val.warn   { color: var(--subj-expert); }
-        .timer-val.danger { color: var(--danger); animation: blink 1s ease infinite; }
-        @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.5} }
+      .wrap { max-width: 660px; margin: 0 auto; padding: 0 18px; }
 
-        .exam-meta { font-size: 0.8rem; color: var(--text-muted); text-align: center; flex: 1; line-height: 1.5; }
+      .ic { display: block; flex: 0 0 auto; }
+      .brand-mark { width: 26px; height: 26px; flex: 0 0 auto; display: block; }
 
-        .end-btn {
-            appearance: none; padding: 8px 12px; font-family: inherit;
-            font-size: 0.82rem; font-weight: 600; color: var(--danger);
-            background: var(--danger-soft); border: 1px solid rgba(217,83,79,0.4);
-            border-radius: var(--radius-sm); cursor: pointer; white-space: nowrap;
-        }
-        .end-btn:hover { background: var(--danger-soft); opacity: .8; }
+      h1, h2, h3, p { margin: 0; }
 
-        /* Question navigator */
-        .q-nav {
-            display: flex; flex-wrap: wrap; gap: 6px;
-            padding: 12px; background: var(--surface);
-            border-radius: var(--radius-sm); border: 1px solid var(--line);
-            margin-bottom: 12px;
-        }
-        .q-dot {
-            appearance: none; width: 34px; height: 34px;
-            border-radius: 8px; border: 1px solid var(--line);
-            background: transparent; color: var(--text-muted);
-            font-size: 0.78rem; font-family: inherit; cursor: pointer;
-            transition: all .15s;
-        }
-        .q-dot.answered { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
-        .q-dot.current  { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent-soft); font-weight: 700; }
-        .q-dot:hover:not(.current) { background: var(--surface-2); }
+      /* —— 戻るリンク —— */
+      .backbar {
+        display: inline-flex; align-items: center; gap: 6px;
+        padding: 16px 0 4px;
+        color: var(--text-muted);
+        font-size: 0.9rem; font-weight: 500;
+        text-decoration: none;
+        background: none; border: none; cursor: pointer;
+        font-family: inherit;
+      }
+      .backbar:hover { color: var(--text); }
 
-        /* All-answered notice */
-        .notice-bar {
-            padding: 10px 14px; background: var(--success-soft);
-            border: 1px solid var(--success); border-radius: var(--radius-sm);
-            font-size: 0.86rem; color: var(--success); margin-bottom: 12px; text-align: center;
-        }
+      /* —— ページ見出し —— */
+      .page-head { padding: 12px 0 18px; }
+      .page-head .eyebrow {
+        display: inline-block;
+        font-size: 0.74rem; font-weight: 700; letter-spacing: .14em;
+        color: var(--accent); text-transform: uppercase;
+        margin-bottom: 8px;
+      }
+      .page-head h1 { font-size: 1.5rem; font-weight: 900; line-height: 1.38; letter-spacing: .01em; }
+      .page-head .lead { margin-top: 8px; font-size: 0.95rem; line-height: 1.75; color: var(--text-muted); text-wrap: pretty; }
 
-        /* ── Question Card ── */
-        .q-num-badge {
-            display: inline-block; font-size: 0.72rem; font-weight: 500;
-            color: var(--accent); background: var(--accent-soft);
-            padding: 4px 10px; border-radius: 999px; margin-bottom: 14px;
-        }
-        .q-fig {
-            margin: 0 0 18px; text-align: center; background: var(--surface-2);
-            border-radius: var(--radius-sm); padding: 14px 10px 10px;
-            border: 1px solid var(--line);
-        }
-        .q-text { font-size: 1rem; font-weight: 500; margin: 0 0 20px; line-height: 1.75; color: var(--text); }
-        .choices { display: flex; flex-direction: column; gap: 10px; }
-        .choice-btn {
-            appearance: none; width: 100%; text-align: left;
-            padding: 14px 16px; font-family: inherit; font-size: 0.95rem;
-            color: var(--text); background: var(--surface-2);
-            border: 1px solid var(--line); border-radius: var(--radius-sm);
-            cursor: pointer; transition: background .2s, border-color .2s; line-height: 1.45;
-        }
-        .choice-btn:hover:not(:disabled) { background: var(--surface); border-color: rgba(47,111,219,0.35); }
-        .choice-btn.selected   { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
-        .choice-btn.correct-pick { background: var(--success-soft); border-color: var(--success); color: var(--success); }
-        .choice-btn.wrong-pick   { background: var(--danger-soft); border-color: var(--danger); }
-        .choice-btn:disabled { cursor: default; opacity: .85; }
+      .load-warning {
+        margin: 12px 0; padding: 12px 14px;
+        background: var(--danger-soft); color: var(--danger);
+        border-radius: 12px; font-size: 0.85rem; line-height: 1.6;
+      }
 
-        /* Exam nav */
-        .exam-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
-        .nav-btn {
-            appearance: none; padding: 14px; font-family: inherit;
-            font-size: 0.9rem; font-weight: 600; color: var(--text);
-            background: var(--surface); border: 1px solid var(--line);
-            border-radius: var(--radius-sm); cursor: pointer; transition: background .2s;
-        }
-        .nav-btn:hover:not(:disabled) { background: var(--surface-2); }
-        .nav-btn:disabled { opacity: .35; cursor: default; }
-        .nav-btn.primary {
-            color: #ffffff; background: var(--accent);
-            border: none; box-shadow: var(--shadow-cta);
-        }
-        .nav-btn.primary:hover:not(:disabled) { opacity: .9; }
+      /* ════════ モード選択 ════════ */
+      .mode-grid { display: flex; flex-direction: column; gap: 14px; }
+      .mode-card {
+        display: flex; align-items: center; gap: 16px;
+        width: 100%; text-align: left;
+        padding: 20px;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        cursor: pointer; font-family: inherit;
+        transition: transform .12s, box-shadow .15s, border-color .15s;
+      }
+      .mode-card:hover { transform: translateY(-2px); box-shadow: 0 10px 26px rgba(90,75,50,.1); border-color: color-mix(in srgb, var(--mc) 35%, var(--line)); }
+      .mode-card:active { transform: translateY(0); }
+      .mode-card[data-mc="year"]  { --mc: var(--subj-expert); --mc-soft: var(--subj-expert-soft); }
+      .mode-card[data-mc="cat"]   { --mc: var(--subj-basic);  --mc-soft: var(--subj-basic-soft); }
+      .mc-icon {
+        width: 56px; height: 56px; border-radius: 16px; flex: 0 0 auto;
+        display: flex; align-items: center; justify-content: center;
+        background: var(--mc-soft); color: var(--mc);
+      }
+      .mc-icon .ic { width: 28px; height: 28px; }
+      .mc-body { flex: 1; min-width: 0; }
+      .mc-title { font-size: 1.12rem; font-weight: 700; line-height: 1.4; }
+      .mc-desc { font-size: 0.86rem; color: var(--text-muted); margin-top: 3px; line-height: 1.6; }
+      .mc-chev { color: var(--text-muted); }
+      .mc-chev .ic { width: 22px; height: 22px; }
 
-        /* ── Practice Mode ── */
-        .progress {
-            display: flex; align-items: center;
-            justify-content: space-between; margin-bottom: 14px;
-            font-size: 0.8rem; color: var(--text-muted);
-        }
-        .progress-bar { flex: 1; height: 4px; background: var(--line); border-radius: 2px; margin: 0 12px; overflow: hidden; }
-        .progress-bar span { display: block; height: 100%; background: var(--accent); border-radius: 2px; transition: width .35s ease; }
+      /* 累計正答率パネル */
+      .stat-panel {
+        margin-top: 26px; padding: 20px;
+        background: var(--surface); border: 1px solid var(--line);
+        border-radius: var(--radius); box-shadow: var(--shadow);
+      }
+      .stat-panel h2 {
+        display: flex; align-items: center; gap: 8px;
+        font-size: 0.84rem; font-weight: 700; letter-spacing: .04em;
+        color: var(--text-muted); margin-bottom: 16px;
+      }
+      .stat-panel h2 .ic { width: 17px; height: 17px; }
+      .acc-row { display: flex; align-items: center; gap: 12px; padding: 7px 0; }
+      .acc-row[data-subj="basic"]  { --c: var(--subj-basic); }
+      .acc-row[data-subj="ethics"] { --c: var(--subj-ethics); }
+      .acc-row[data-subj="expert"] { --c: var(--subj-expert); }
+      .acc-name { flex: 0 0 38%; font-size: 0.84rem; font-weight: 500; }
+      .acc-bar { flex: 1; height: 8px; border-radius: 999px; background: var(--surface-2); overflow: hidden; }
+      .acc-fill { display: block; height: 100%; border-radius: 999px; background: var(--c); transition: width .5s; }
+      .acc-val { flex: 0 0 auto; min-width: 46px; text-align: right; font-size: 0.84rem; font-weight: 700; color: var(--c); font-variant-numeric: tabular-nums; }
 
-        .feedback { margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--line); display: none; }
-        .feedback.visible { display: block; animation: fadeIn .35s ease; }
-        @keyframes fadeIn { from{opacity:0;transform:translateY(6px)} to{opacity:1;transform:translateY(0)} }
-        .result-label { font-size: 1.1rem; font-weight: 700; margin: 0 0 10px; }
-        .result-label.ok { color: var(--success); }
-        .result-label.ng { color: var(--danger); }
-        .explanation { font-size: 0.88rem; color: var(--text-muted); margin: 0; line-height: 1.8; }
+      /* ════════ 選択リスト（年度・科目） ════════ */
+      .sel-list { display: flex; flex-direction: column; gap: 12px; }
+      .sel-item {
+        display: flex; align-items: center; gap: 14px;
+        width: 100%; text-align: left;
+        padding: 16px 18px;
+        background: var(--surface); border: 1px solid var(--line);
+        border-radius: var(--radius-sm); box-shadow: var(--shadow);
+        cursor: pointer; font-family: inherit;
+        transition: transform .12s, border-color .15s;
+      }
+      .sel-item:hover { transform: translateX(2px); border-color: var(--accent); }
+      .sel-item.accent { border-color: color-mix(in srgb, var(--accent) 30%, var(--line)); background: color-mix(in srgb, var(--accent-soft) 50%, var(--surface)); }
+      .sel-icon { width: 44px; height: 44px; border-radius: 13px; flex: 0 0 auto; display: flex; align-items: center; justify-content: center; }
+      .sel-icon[data-subj="basic"]  { background: var(--subj-basic-soft);  color: var(--subj-basic); }
+      .sel-icon[data-subj="ethics"] { background: var(--subj-ethics-soft); color: var(--subj-ethics); }
+      .sel-icon[data-subj="expert"] { background: var(--subj-expert-soft); color: var(--subj-expert); }
+      .sel-body { flex: 1; min-width: 0; }
+      .sel-name { font-size: 1.04rem; font-weight: 700; display: block; }
+      .s-meta { font-size: 0.82rem; color: var(--text-muted); display: block; margin-top: 1px; }
+      .sel-chev { color: var(--text-muted); }
 
-        .next-btn {
-            width: 100%; padding: 15px; margin-top: 20px; font-family: inherit;
-            font-size: 1rem; font-weight: 700; color: #ffffff;
-            background: var(--accent); border: none;
-            border-radius: 999px; cursor: pointer;
-            box-shadow: var(--shadow-cta); transition: opacity .15s;
-        }
-        .next-btn:hover { opacity: .9; }
+      /* ════════ 科目ピッカー（分野別・ラジオ） ════════ */
+      .picker { display: flex; flex-direction: column; gap: 12px; }
+      .pick {
+        display: flex; align-items: center; gap: 14px;
+        width: 100%; text-align: left;
+        padding: 16px 18px;
+        background: var(--surface); border: 2px solid var(--line);
+        border-radius: var(--radius-sm); box-shadow: var(--shadow);
+        cursor: pointer; font-family: inherit;
+        transition: border-color .15s, box-shadow .15s, background .15s;
+      }
+      .pick:hover { border-color: color-mix(in srgb, var(--c) 45%, var(--line)); }
+      .pick[aria-pressed="true"] {
+        border-color: var(--c);
+        box-shadow: 0 6px 18px color-mix(in srgb, var(--c) 22%, transparent);
+        background: color-mix(in srgb, var(--c-soft) 55%, var(--surface));
+      }
+      .pick-icon { width: 46px; height: 46px; border-radius: 14px; display: flex; align-items: center; justify-content: center; flex: 0 0 auto; background: var(--c-soft); color: var(--c); }
+      .pick-body { flex: 1; min-width: 0; }
+      .pick-name { font-size: 1.04rem; font-weight: 700; line-height: 1.35; display: block; }
+      .pick-meta { font-size: 0.84rem; color: var(--text-muted); margin-top: 2px; display: block; }
+      .pick-meta b { color: var(--c); font-weight: 700; }
+      .pick-radio { width: 24px; height: 24px; border-radius: 50%; flex: 0 0 auto; border: 2px solid var(--line); background: var(--surface); display: flex; align-items: center; justify-content: center; transition: background .15s, border-color .15s; }
+      .pick-radio .ic { width: 15px; height: 15px; opacity: 0; transform: scale(.6); transition: opacity .15s, transform .15s; color: #fff; }
+      .pick[aria-pressed="true"] .pick-radio { background: var(--c); border-color: var(--c); }
+      .pick[aria-pressed="true"] .pick-radio .ic { opacity: 1; transform: scale(1); }
+      .pick[data-subj="all"]    { --c: var(--subj-all);    --c-soft: var(--subj-all-soft); }
+      .pick[data-subj="basic"]  { --c: var(--subj-basic);  --c-soft: var(--subj-basic-soft); }
+      .pick[data-subj="ethics"] { --c: var(--subj-ethics); --c-soft: var(--subj-ethics-soft); }
+      .pick[data-subj="expert"] { --c: var(--subj-expert); --c-soft: var(--subj-expert-soft); }
 
-        /* ── Results Screen ── */
-        .res-header { text-align: center; padding-bottom: 16px; border-bottom: 1px solid var(--line); margin-bottom: 16px; }
-        .res-title { font-size: 1.15rem; font-weight: 700; margin: 0 0 12px; color: var(--text); }
-        .res-score { font-size: 2.4rem; font-weight: 700; color: var(--accent); margin-bottom: 10px; font-variant-numeric: tabular-nums; }
-        .pass-banner {
-            display: inline-block; font-size: 1.05rem; font-weight: 700;
-            padding: 9px 20px; border-radius: var(--radius-sm); margin-bottom: 8px;
-        }
-        .pass-banner.pass { color: var(--success); background: var(--success-soft); border: 2px solid var(--success); }
-        .pass-banner.fail { color: var(--danger);  background: var(--danger-soft);  border: 2px solid var(--danger); }
-        .res-msg { font-size: 0.86rem; color: var(--text-muted); margin: 6px 0 0; }
+      /* 苦手トグル */
+      .toggle-card {
+        display: flex; align-items: center; gap: 14px;
+        width: 100%; text-align: left;
+        margin-top: 14px; padding: 16px 18px;
+        background: var(--surface); border: 1px solid var(--line);
+        border-radius: var(--radius-sm); box-shadow: var(--shadow);
+        cursor: pointer; font-family: inherit;
+      }
+      .toggle-icon { width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; flex: 0 0 auto; background: var(--danger-soft); color: var(--danger); }
+      .toggle-icon .ic { width: 22px; height: 22px; }
+      .toggle-body { flex: 1; }
+      .toggle-title { font-size: 0.98rem; font-weight: 700; display: block; }
+      .toggle-desc { font-size: 0.82rem; color: var(--text-muted); margin-top: 1px; display: block; }
+      .switch { width: 48px; height: 28px; border-radius: 999px; background: var(--line); position: relative; flex: 0 0 auto; transition: background .2s; }
+      .switch .knob { position: absolute; top: 3px; left: 3px; width: 22px; height: 22px; border-radius: 50%; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.2); transition: transform .2s; }
+      .toggle-card[aria-pressed="true"] .switch { background: var(--success); }
+      .toggle-card[aria-pressed="true"] .switch .knob { transform: translateX(20px); }
 
-        .cat-summary { display: grid; gap: 6px; margin-bottom: 16px; }
-        .cat-summary-row {
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 8px 12px; background: var(--surface-2); border-radius: var(--radius-sm);
-            font-size: 0.84rem; color: var(--text);
-        }
+      /* CTA */
+      .start {
+        display: flex; align-items: center; justify-content: center; gap: 8px;
+        width: 100%; min-height: 56px; margin-top: 20px; padding: 16px;
+        font-family: inherit; font-size: 1.08rem; font-weight: 700;
+        color: #fff; background: var(--accent); border: none;
+        border-radius: 999px; box-shadow: var(--shadow-cta);
+        cursor: pointer; transition: opacity .15s, transform .1s;
+      }
+      .start:hover { opacity: .94; }
+      .start:active { transform: translateY(1px); }
+      .start .ic { width: 20px; height: 20px; }
+      .foot-note { font-size: 0.83rem; line-height: 1.7; color: var(--text-muted); margin-top: 16px; text-wrap: pretty; }
 
-        .q-card-list { display: flex; flex-direction: column; gap: 14px; margin-bottom: 20px; }
-        .q-result-card {
-            background: var(--surface-2); border-radius: var(--radius-sm); padding: 14px 16px;
-            border-left: 4px solid transparent;
-        }
-        .q-result-card.ok      { border-left-color: var(--success); }
-        .q-result-card.ng      { border-left-color: var(--danger); }
-        .q-result-card.skipped { border-left-color: var(--text-muted); }
-        .q-res-meta { font-size: 0.72rem; color: var(--text-muted); margin-bottom: 6px; }
-        .q-res-text { font-size: 0.88rem; font-weight: 600; line-height: 1.65; margin-bottom: 8px; color: var(--text); }
-        .q-res-your { font-size: 0.82rem; margin-bottom: 4px; color: var(--text); }
-        .q-res-your.ok { color: var(--success); }
-        .q-res-your.ng { color: var(--danger); }
-        .q-res-correct { font-size: 0.82rem; color: var(--success); margin-bottom: 6px; }
-        .q-res-exp { font-size: 0.8rem; color: var(--text-muted); line-height: 1.75; }
+      /* ════════ 出題共通：問題カード ════════ */
+      .q-pill { display: inline-flex; align-items: center; gap: 5px; padding: 4px 10px; border-radius: 999px; font-size: 0.76rem; font-weight: 700; }
+      .q-pill.sm { padding: 2px 8px; font-size: 0.7rem; }
+      .q-pill[data-subj="basic"]  { background: var(--subj-basic-soft);  color: var(--subj-basic); }
+      .q-pill[data-subj="ethics"] { background: var(--subj-ethics-soft); color: var(--subj-ethics); }
+      .q-pill[data-subj="expert"] { background: var(--subj-expert-soft); color: var(--subj-expert); }
+      .q-pill[data-subj="all"]    { background: var(--subj-all-soft);    color: var(--subj-all); }
+      .q-count { font-size: 0.82rem; color: var(--text-muted); font-weight: 500; }
 
-        .action-col { display: flex; flex-direction: column; gap: 10px; }
-        .cta-btn {
-            width: 100%; padding: 15px; font-family: inherit; font-size: 1rem; font-weight: 700;
-            color: #ffffff; background: var(--accent);
-            border: none; border-radius: 999px; cursor: pointer;
-            box-shadow: var(--shadow-cta); transition: opacity .15s;
-        }
-        .cta-btn:hover { opacity: .9; }
-        .sub-btn {
-            width: 100%; padding: 13px; font-family: inherit; font-size: 0.95rem; font-weight: 600;
-            color: var(--text); background: var(--surface);
-            border: 1px solid var(--line); border-radius: 999px; cursor: pointer;
-            transition: background .2s;
-        }
-        .sub-btn:hover { background: var(--surface-2); }
+      .q-card {
+        background: var(--surface); border: 1px solid var(--line);
+        border-radius: var(--radius); box-shadow: var(--shadow);
+        padding: 22px; margin-top: 4px;
+      }
+      .q-num { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+      .q-fig { margin: 4px 0 16px; padding: 14px; background: var(--surface-2); border-radius: 12px; }
+      .q-text { font-size: 1.1rem; font-weight: 700; line-height: 1.75; margin-bottom: 18px; text-wrap: pretty; }
 
-        /* Load warning */
-        .load-warning {
-            padding: 12px 14px; font-size: 0.82rem; color: var(--subj-expert);
-            background: var(--subj-expert-soft); border: 1px solid rgba(217,132,42,0.4);
-            border-radius: var(--radius-sm); margin-bottom: 14px;
-        }
+      .choices { display: flex; flex-direction: column; gap: 10px; }
+      .choice-btn {
+        display: flex; align-items: center; gap: 12px;
+        width: 100%; text-align: left;
+        padding: 14px 16px;
+        background: var(--surface); border: 2px solid var(--line);
+        border-radius: 14px; cursor: pointer; font-family: inherit;
+        transition: border-color .12s, background .12s;
+      }
+      .choice-btn:hover:not(:disabled) { border-color: var(--accent); }
+      .choice-btn:disabled { cursor: default; }
+      .choice-key { width: 28px; height: 28px; border-radius: 8px; flex: 0 0 auto; display: flex; align-items: center; justify-content: center; background: var(--surface-2); color: var(--text-muted); font-weight: 700; font-size: 0.9rem; }
+      .choice-label { font-size: 0.98rem; line-height: 1.6; font-weight: 500; }
+      .choice-btn.selected { border-color: var(--accent); background: var(--accent-soft); }
+      .choice-btn.selected .choice-key { background: var(--accent); color: #fff; }
+      .choice-btn.correct-pick { border-color: var(--success); background: var(--success-soft); }
+      .choice-btn.correct-pick .choice-key { background: var(--success); color: #fff; }
+      .choice-btn.wrong-pick { border-color: var(--danger); background: var(--danger-soft); }
+      .choice-btn.wrong-pick .choice-key { background: var(--danger); color: #fff; }
 
-        /* Section label */
-        .section-label { font-size: 0.82rem; font-weight: 700; color: var(--text-muted); margin: 0 0 10px; letter-spacing: .04em; }
+      /* 演習フィードバック */
+      .feedback { max-height: 0; overflow: hidden; opacity: 0; transition: max-height .3s, opacity .3s, margin .3s; }
+      .feedback.visible { max-height: 600px; opacity: 1; margin-top: 16px; }
+      .result-label { display: inline-flex; align-items: center; gap: 6px; font-weight: 700; font-size: 1rem; }
+      .result-label.ok { color: var(--success); }
+      .result-label.ng { color: var(--danger); }
+      .explanation { margin-top: 10px; padding: 14px 16px; background: var(--surface-2); border-radius: 12px; font-size: 0.92rem; line-height: 1.8; color: var(--text); }
 
-        /* ── Hamburger ── */
-        .nav-hamburger {
-            display: flex; flex-direction: column; justify-content: center; gap: 5px;
-            width: 36px; height: 36px; padding: 6px;
-            background: none; border: none; cursor: pointer;
-            border-radius: 8px; transition: background .15s; flex-shrink: 0;
-        }
-        .nav-hamburger:hover { background: rgba(0,0,0,0.06); }
-        .nav-hamburger span {
-            display: block; height: 1.5px; border-radius: 2px; background: currentColor;
-            transition: transform .3s, opacity .3s, width .3s; width: 20px;
-        }
-        .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
-        .nav-hamburger.open span:nth-child(2) { opacity: 0; width: 0; }
-        .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+      /* 進捗バー（演習） */
+      .prac-prog { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+      .prac-prog-track { flex: 1; height: 8px; border-radius: 999px; background: var(--surface-2); overflow: hidden; }
+      .prac-prog-fill { display: block; height: 100%; background: var(--accent); border-radius: 999px; transition: width .35s; }
+      .prac-prog-label { font-size: 0.82rem; font-weight: 700; color: var(--text-muted); font-variant-numeric: tabular-nums; flex: 0 0 auto; }
 
-        /* ── Drawer ── */
-        .drawer-overlay {
-            position: fixed; inset: 0; background: rgba(0,0,0,0.45);
-            z-index: 190; opacity: 0; pointer-events: none; transition: opacity .3s;
-        }
-        .drawer-overlay.open { opacity: 1; pointer-events: auto; }
-        .drawer {
-            position: fixed; top: 0; right: 0; bottom: 0; width: min(320px, 85vw);
-            background: #ffffff; z-index: 195;
-            transform: translateX(100%);
-            transition: transform .35s cubic-bezier(.25,.46,.45,.94);
-            display: flex; flex-direction: column; overflow-y: auto;
-        }
-        .drawer.open { transform: translateX(0); }
-        .drawer-header {
-            display: flex; align-items: center; justify-content: space-between;
-            padding: 16px 20px; border-bottom: 1px solid #e8e8ed; flex-shrink: 0;
-        }
-        .drawer-logo {
-            display: flex; align-items: center; gap: 8px;
-            font-size: 0.95rem; font-weight: 600; color: #1d1d1f; text-decoration: none;
-        }
-        .drawer-close {
-            width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;
-            background: #f5f5f7; border: none; border-radius: 50%; cursor: pointer; font-size: 1.1rem; color: #6e6e73;
-        }
-        .drawer-close:hover { background: #e8e8ed; }
-        .drawer-section { padding: 20px 20px 8px; }
-        .drawer-section-label {
-            font-size: 0.68rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
-            color: #6e6e73; margin-bottom: 8px; padding-left: 4px;
-        }
-        .drawer-nav { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; }
-        .drawer-nav a {
-            display: flex; align-items: center; gap: 12px; padding: 11px 12px; border-radius: 10px;
-            text-decoration: none; color: #1d1d1f; font-size: 0.95rem; font-weight: 400; transition: background .15s;
-        }
-        .drawer-nav a:hover { background: #f5f5f7; }
-        .drawer-nav a .di { font-size: 1.1rem; width: 24px; text-align: center; }
-        .drawer-divider { height: 1px; background: #e8e8ed; margin: 8px 20px; }
+      /* ナビ操作 */
+      .qnav-row { display: flex; gap: 10px; margin-top: 18px; }
+      .btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-family: inherit; font-weight: 700; border-radius: 999px; cursor: pointer; border: 1px solid var(--line); transition: opacity .15s, transform .1s, background .15s; }
+      .btn:active { transform: translateY(1px); }
+      .btn-ghost { background: var(--surface); color: var(--text); padding: 13px 18px; font-size: 0.95rem; }
+      .btn-ghost:hover { background: var(--surface-2); }
+      .btn-ghost:disabled { opacity: .4; cursor: default; }
+      .btn-primary { background: var(--accent); color: #fff; border-color: var(--accent); padding: 13px 22px; font-size: 0.98rem; box-shadow: var(--shadow-cta); }
+      .btn-primary:hover { opacity: .94; }
+      .btn-primary.full { flex: 1; }
+      .btn .ic { width: 18px; height: 18px; }
+
+      /* ════════ 年度試験モード ════════ */
+      .exam-bar {
+        display: flex; align-items: center; justify-content: space-between; gap: 12px;
+        position: sticky; top: calc(52px + env(safe-area-inset-top)); z-index: 20;
+        margin: 0 -18px 14px; padding: 12px 18px;
+        background: color-mix(in srgb, var(--bg) 88%, transparent);
+        backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+        border-bottom: 1px solid var(--line);
+      }
+      .timer { display: inline-flex; align-items: center; gap: 7px; font-weight: 700; }
+      .timer .ic { width: 18px; height: 18px; color: var(--text-muted); }
+      .timer-val { font-size: 1.1rem; font-variant-numeric: tabular-nums; letter-spacing: .02em; }
+      .timer-val.warn { color: var(--subj-expert); }
+      .timer-val.danger { color: var(--danger); }
+      .exam-meta { font-size: 0.82rem; color: var(--text-muted); font-weight: 500; }
+      .btn-end { background: none; border: 1px solid var(--danger); color: var(--danger); padding: 8px 14px; border-radius: 999px; font-family: inherit; font-weight: 700; font-size: 0.84rem; cursor: pointer; }
+      .btn-end:hover { background: var(--danger-soft); }
+
+      .q-nav { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 16px; }
+      .q-dot { width: 36px; height: 36px; border-radius: 10px; border: 1px solid var(--line); background: var(--surface); color: var(--text-muted); font-family: inherit; font-weight: 700; font-size: 0.85rem; cursor: pointer; transition: border-color .12s, background .12s; }
+      .q-dot:hover { border-color: var(--accent); }
+      .q-dot.answered { background: var(--accent-soft); border-color: var(--accent-soft); color: var(--accent); }
+      .q-dot.current { border-color: var(--accent); border-width: 2px; color: var(--accent); }
+      .done-notice { display: flex; align-items: center; gap: 8px; margin-top: 16px; padding: 14px 16px; background: var(--success-soft); color: var(--success); border-radius: 12px; font-size: 0.9rem; font-weight: 700; }
+
+      /* ════════ 結果画面 ════════ */
+      .res-hero { display: flex; align-items: center; gap: 22px; padding: 24px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); }
+      .res-ring { width: 116px; height: 116px; border-radius: 50%; flex: 0 0 auto; display: flex; align-items: center; justify-content: center; }
+      .res-ring-inner { width: 88px; height: 88px; border-radius: 50%; background: var(--surface); display: flex; flex-direction: column; align-items: center; justify-content: center; }
+      .res-ring-pct { font-size: 1.9rem; font-weight: 900; line-height: 1; }
+      .res-ring-pct span { font-size: 0.9rem; font-weight: 700; }
+      .res-hero-body { flex: 1; min-width: 0; }
+      .res-score { font-size: 1.5rem; font-weight: 900; }
+      .res-score span { font-size: 0.95rem; font-weight: 700; color: var(--text-muted); }
+      .pass-banner { display: inline-flex; align-items: center; gap: 6px; margin-top: 8px; padding: 5px 12px; border-radius: 999px; font-size: 0.82rem; font-weight: 700; }
+      .pass-banner.pass { background: var(--success-soft); color: var(--success); }
+      .pass-banner.fail { background: var(--subj-expert-soft); color: var(--subj-expert); }
+      .res-msg { margin-top: 18px; font-size: 0.92rem; line-height: 1.75; color: var(--text-muted); text-wrap: pretty; }
+
+      .res-section-label { font-size: 0.78rem; font-weight: 700; letter-spacing: .04em; color: var(--text-muted); margin: 28px 0 12px; }
+      .res-cat-summary { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-sm); box-shadow: var(--shadow); padding: 16px 18px; }
+
+      .rev-list { display: flex; flex-direction: column; gap: 12px; }
+      .rev-card { background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--line); border-radius: 14px; box-shadow: var(--shadow); overflow: hidden; }
+      .rev-card.ok   { border-left-color: var(--success); }
+      .rev-card.ng   { border-left-color: var(--danger); }
+      .rev-card.skip { border-left-color: var(--text-muted); }
+      .rev-head { display: flex; align-items: center; gap: 10px; padding: 12px 16px; border-bottom: 1px solid var(--line); }
+      .rev-qno { font-weight: 900; font-size: 0.9rem; }
+      .rev-status { margin-left: auto; display: inline-flex; align-items: center; gap: 4px; font-size: 0.76rem; font-weight: 700; padding: 3px 10px; border-radius: 999px; }
+      .rev-status.ok   { background: var(--success-soft); color: var(--success); }
+      .rev-status.ng   { background: var(--danger-soft); color: var(--danger); }
+      .rev-status.skip { background: var(--surface-2); color: var(--text-muted); }
+      .rev-body { padding: 14px 16px; }
+      .rev-q { font-weight: 700; line-height: 1.7; font-size: 0.96rem; margin-bottom: 10px; text-wrap: pretty; }
+      .rev-ans { display: flex; flex-direction: column; gap: 6px; margin-bottom: 10px; }
+      .rev-line { display: flex; gap: 10px; font-size: 0.9rem; line-height: 1.6; }
+      .rev-line span:first-child { flex: 0 0 48px; font-weight: 700; font-size: 0.78rem; padding-top: 2px; }
+      .rev-line.ok span:first-child { color: var(--success); }
+      .rev-line.ng span:first-child { color: var(--danger); }
+      .rev-exp { padding: 12px 14px; background: var(--surface-2); border-radius: 10px; font-size: 0.88rem; line-height: 1.8; color: var(--text-muted); }
+
+      .res-actions { display: flex; gap: 10px; margin: 28px 0 8px; }
+
+      /* ── Hamburger ── */
+      .nav-hamburger { display: flex; flex-direction: column; justify-content: center; gap: 5px; width: 36px; height: 36px; padding: 6px; background: none; border: none; cursor: pointer; border-radius: 8px; transition: background .15s; flex-shrink: 0; }
+      .nav-hamburger:hover { background: rgba(0,0,0,0.06); }
+      .nav-hamburger span { display: block; height: 1.5px; border-radius: 2px; background: currentColor; transition: transform .3s, opacity .3s, width .3s; width: 20px; }
+      .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+      .nav-hamburger.open span:nth-child(2) { opacity: 0; width: 0; }
+      .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+      /* ── Drawer ── */
+      .drawer-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.45); z-index: 190; opacity: 0; pointer-events: none; transition: opacity .3s; }
+      .drawer-overlay.open { opacity: 1; pointer-events: auto; }
+      .drawer { position: fixed; top: 0; right: 0; bottom: 0; width: min(320px, 85vw); background: #ffffff; z-index: 195; transform: translateX(100%); transition: transform .35s cubic-bezier(.25,.46,.45,.94); display: flex; flex-direction: column; overflow-y: auto; }
+      .drawer.open { transform: translateX(0); }
+      .drawer-header { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; border-bottom: 1px solid #e8e8ed; flex-shrink: 0; }
+      .drawer-logo { display: flex; align-items: center; gap: 8px; font-size: 0.95rem; font-weight: 700; color: #1d1d1f; text-decoration: none; }
+      .drawer-close { width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; background: #f5f5f7; border: none; border-radius: 50%; cursor: pointer; font-size: 1.1rem; color: #6e6e73; }
+      .drawer-close:hover { background: #e8e8ed; }
+      .drawer-section { padding: 20px 20px 8px; }
+      .drawer-section-label { font-size: 0.68rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #6e6e73; margin-bottom: 8px; padding-left: 4px; }
+      .drawer-nav { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; }
+      .drawer-nav a { display: flex; align-items: center; gap: 12px; padding: 11px 12px; border-radius: 10px; text-decoration: none; color: #1d1d1f; font-size: 0.95rem; transition: background .15s; }
+      .drawer-nav a:hover { background: #f5f5f7; }
+      .drawer-nav a .di { font-size: 1.1rem; width: 24px; text-align: center; }
+      .drawer-divider { height: 1px; background: #e8e8ed; margin: 8px 20px; }
     </style>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3002712486184435" crossorigin="anonymous"></script>
-</head>
-<body>
-<div class="drawer-overlay" id="drawer-overlay"></div>
-<aside class="drawer" id="drawer" aria-label="サイトメニュー">
-  <div class="drawer-header">
-    <a href="../index.html" class="drawer-logo"><span style="width:26px;height:26px;display:block;"><svg style="width:26px;height:26px;" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="100" height="100" rx="24" fill="#2f6fdb"/><rect x="24" y="18" width="52" height="56" rx="16" fill="#fff"/><rect x="31" y="29" width="16" height="15" rx="4" fill="#2f6fdb"/><rect x="53" y="29" width="16" height="15" rx="4" fill="#2f6fdb"/><rect x="40" y="53" width="20" height="6" rx="3" fill="#2f6fdb"/><circle cx="35" cy="80" r="5" fill="#fff"/><circle cx="65" cy="80" r="5" fill="#fff"/></svg></span><span>資格トレイン</span></a>
-    <button class="drawer-close" id="drawer-close" aria-label="閉じる">✕</button>
-  </div>
-  <div class="drawer-section">
-    <p class="drawer-section-label">トップページ</p>
-    <ul class="drawer-nav">
-      <li><a href="../index.html#concept"><span class="di">💡</span>コンセプト</a></li>
-      <li><a href="../index.html#apps"><span class="di">📱</span>アプリ一覧</a></li>
-    </ul>
-  </div>
-  <div class="drawer-divider"></div>
-  <div class="drawer-section">
-    <p class="drawer-section-label">技術士（機械部門）</p>
-    <ul class="drawer-nav">
-      <li><a href="index.html"><span class="di">⚙️</span>学習ポータル</a></li>
-      <li><a href="taisaku-basic.html"><span class="di">📘</span>基礎科目 傾向と対策</a></li>
-      <li><a href="taisaku-ethics.html"><span class="di">🛡️</span>適性科目 傾向と対策</a></li>
-      <li><a href="taisaku-specialty.html"><span class="di">⚙️</span>専門科目 傾向と対策</a></li>
-    </ul>
-  </div>
-  <div class="drawer-divider"></div>
-  <div class="drawer-section">
-    <p class="drawer-section-label">資格問題一覧</p>
-    <ul class="drawer-nav">
-      <li><a href="../denco-app/index.html"><span class="di">⚡</span>電気資格ポータル</a></li>
-      <li><a href="../gyosei-app/index.html"><span class="di">📋</span>行政書士</a></li>
-    </ul>
-  </div>
-  <div class="drawer-divider"></div>
-  <div class="drawer-section">
-    <p class="drawer-section-label">サイト情報</p>
-    <ul class="drawer-nav">
-      <li><a href="../about.html"><span class="di">🏢</span>運営者情報</a></li>
-      <li><a href="../privacy.html"><span class="di">🔒</span>プライバシーポリシー</a></li>
-    </ul>
-  </div>
-</aside>
-<nav style="position:fixed;top:0;left:0;right:0;height:52px;z-index:200;display:flex;align-items:center;background:rgba(255,255,255,0.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line);">
-  <div style="max-width:480px;margin:0 auto;padding:0 18px;width:100%;display:flex;align-items:center;justify-content:space-between;">
-    <a href="../index.html" style="display:flex;align-items:center;gap:7px;text-decoration:none;color:var(--text);font-size:0.9rem;font-weight:700;">
-      <span style="width:26px;height:26px;display:block;"><svg style="width:26px;height:26px;" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="100" height="100" rx="24" fill="#2f6fdb"/><rect x="24" y="18" width="52" height="56" rx="16" fill="#fff"/><rect x="31" y="29" width="16" height="15" rx="4" fill="#2f6fdb"/><rect x="53" y="29" width="16" height="15" rx="4" fill="#2f6fdb"/><rect x="40" y="53" width="20" height="6" rx="3" fill="#2f6fdb"/><circle cx="35" cy="80" r="5" fill="#fff"/><circle cx="65" cy="80" r="5" fill="#fff"/></svg></span>
-      <span>資格トレイン</span>
-    </a>
-    <button class="nav-hamburger" id="nav-hamburger" aria-label="メニューを開く" style="color:var(--text);">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
-<div class="app">
-    <p id="load-warning" class="load-warning" hidden></p>
+  </head>
+  <body>
+    <div class="drawer-overlay" id="drawer-overlay"></div>
+    <aside class="drawer" id="drawer" aria-label="サイトメニュー">
+      <div class="drawer-header">
+        <a href="../index.html" class="drawer-logo"><span class="brand-mark"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="100" height="100" rx="24" fill="#2f6fdb"/><rect x="24" y="18" width="52" height="56" rx="16" fill="#fff"/><rect x="31" y="29" width="16" height="15" rx="4" fill="#2f6fdb"/><rect x="53" y="29" width="16" height="15" rx="4" fill="#2f6fdb"/><rect x="40" y="53" width="20" height="6" rx="3" fill="#2f6fdb"/><circle cx="35" cy="80" r="5" fill="#fff"/><circle cx="65" cy="80" r="5" fill="#fff"/></svg></span><span>資格トレイン</span></a>
+        <button class="drawer-close" id="drawer-close" aria-label="閉じる">✕</button>
+      </div>
+      <div class="drawer-section">
+        <p class="drawer-section-label">機械部門</p>
+        <ul class="drawer-nav">
+          <li><a href="index.html"><span class="di">🏠</span>アプリトップ</a></li>
+          <li><a href="quiz.html"><span class="di">📝</span>クイズに挑戦</a></li>
+        </ul>
+      </div>
+      <div class="drawer-divider"></div>
+      <div class="drawer-section">
+        <p class="drawer-section-label">資格問題一覧</p>
+        <ul class="drawer-nav">
+          <li><a href="../denco-app/index.html"><span class="di">⚡</span>電気資格ポータル</a></li>
+          <li><a href="../gyosei-app/index.html"><span class="di">📋</span>行政書士</a></li>
+        </ul>
+      </div>
+      <div class="drawer-divider"></div>
+      <div class="drawer-section">
+        <p class="drawer-section-label">サイト情報</p>
+        <ul class="drawer-nav">
+          <li><a href="../about.html"><span class="di">🏢</span>運営者情報</a></li>
+          <li><a href="../contact.html"><span class="di">✉️</span>お問い合わせ</a></li>
+          <li><a href="../privacy.html"><span class="di">🔒</span>プライバシーポリシー</a></li>
+        </ul>
+      </div>
+    </aside>
+    <nav class="nav" style="position:fixed;top:0;left:0;right:0;height:52px;z-index:100;backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line);display:flex;align-items:center;background:rgba(255,255,255,0.85);">
+      <div class="nav-inner" style="max-width:660px;margin:0 auto;padding:0 18px;width:100%;display:flex;align-items:center;justify-content:space-between;">
+        <a href="index.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--text);font-size:0.95rem;font-weight:700;">
+          <span class="brand-mark"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="100" height="100" rx="24" fill="#2f6fdb"/><rect x="24" y="18" width="52" height="56" rx="16" fill="#fff"/><rect x="31" y="29" width="16" height="15" rx="4" fill="#2f6fdb"/><rect x="53" y="29" width="16" height="15" rx="4" fill="#2f6fdb"/><rect x="40" y="53" width="20" height="6" rx="3" fill="#2f6fdb"/><circle cx="35" cy="80" r="5" fill="#fff"/><circle cx="65" cy="80" r="5" fill="#fff"/></svg></span><span>資格トレイン</span>
+        </a>
+        <button class="nav-hamburger" id="nav-hamburger" aria-label="メニューを開く" style="color:var(--text);">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
 
-    <!-- ══ Screen 0: モード選択 ══ -->
-    <div id="s-mode">
-        <a href="index.html" class="back-link">← トップページへ</a>
-        <div class="card">
-            <p class="screen-title">技術士第一次試験（機械部門）</p>
-            <p class="screen-sub">学習モードを選択してください</p>
-            <div class="mode-grid">
-                <button type="button" class="mode-btn" id="btn-mode-year">
-                    <span class="m-icon">📅</span>
-                    <span class="m-name">年度別演習</span>
-                    <span class="m-desc">年度を選択してタイマー付きで解答。戻る・進むボタンで自由に移動可能。時間終了または終了ボタンで全問の解説を表示。</span>
-                </button>
-                <button type="button" class="mode-btn" id="btn-mode-cat">
-                    <span class="m-icon">📚</span>
-                    <span class="m-name">分野別（学習モード）</span>
-                    <span class="m-desc">科目を選んで1問ずつ解答。回答するたびに正誤と詳細解説を確認できます。</span>
-                </button>
-            </div>
-        </div>
-        <div class="stats-box">
-            <p class="stats-title">科目ごとの正答率（累計）</p>
-            <div id="mode-stats"></div>
-        </div>
-    </div>
+    <main class="wrap">
+      <p class="load-warning" id="load-warning" hidden></p>
 
-    <!-- ══ Screen 1: 年度選択 ══ -->
-    <div id="s-year-sel" hidden>
-        <a href="#" class="back-link" id="lnk-year-back">← モード選択へ</a>
-        <div class="card">
-            <p class="screen-title">年度を選択</p>
-            <p class="screen-sub">解答する年度別のオリジナル演習を選んでください</p>
-            <div class="sel-list" id="year-list"></div>
+      <!-- ════════ 0. モード選択 ════════ -->
+      <section id="s-mode" data-screen-label="モード選択">
+        <div class="page-head">
+          <span class="eyebrow">技術士第一次試験・機械部門</span>
+          <h1>学習モードを選ぶ</h1>
+          <p class="lead">本番形式で挑戦するなら「年度別演習」、苦手をじっくり潰すなら「分野別学習」がおすすめです。</p>
         </div>
-        <div class="card" style="padding:14px 16px;">
-            <p class="section-label">タイマーについて</p>
-            <p style="font-size:0.82rem;color:var(--text-muted);margin:0;line-height:1.7">
-                年度を選ぶと科目ごとに本番と同じ試験時間でチャレンジできます（基礎・適性 各 60 分、専門 110 分）。
-                全年度ランダムは <strong style="color:var(--text)">110 分</strong> です。
-            </p>
+        <div class="mode-grid">
+          <button type="button" class="mode-card" data-mc="year" id="btn-mode-year">
+            <span class="mc-icon"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>
+            <span class="mc-body">
+              <span class="mc-title">年度別演習</span>
+              <span class="mc-desc">本番と同じ時間制限つき。年度・科目を選んでまとめて採点します。</span>
+            </span>
+            <span class="mc-chev"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></span>
+          </button>
+          <button type="button" class="mode-card" data-mc="cat" id="btn-mode-cat">
+            <span class="mc-icon"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 9 5-9 5-9-5 9-5z"/><path d="m3 12 9 5 9-5"/><path d="m3 17 9 5 9-5"/></svg></span>
+            <span class="mc-body">
+              <span class="mc-title">分野別学習</span>
+              <span class="mc-desc">1問ずつ解いて即解説。苦手だけ再出題もできます。</span>
+            </span>
+            <span class="mc-chev"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></span>
+          </button>
         </div>
-    </div>
 
-    <!-- ══ Screen 1b: 科目選択（年度別） ══ -->
-    <div id="s-subject-sel" hidden>
-        <a href="#" class="back-link" id="lnk-subject-back">← 年度選択へ</a>
-        <div class="card">
-            <p class="screen-title" id="subject-sel-year">2024年度</p>
-            <p class="screen-sub">受験する科目を選んでください</p>
-            <div class="sel-list" id="subject-list"></div>
+        <div class="stat-panel">
+          <h2><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>科目別の累計正答率</h2>
+          <div id="mode-stats"></div>
         </div>
-        <div class="card" style="padding:14px 16px;">
-            <p class="section-label">試験時間について</p>
-            <p style="font-size:0.82rem;color:var(--text-muted);margin:0;line-height:1.7">
-                各科目の試験時間は技術士第一次試験の本番と同じ設定です。<br>
-                <strong style="color:var(--text)">基礎科目・適性科目 各 60 分</strong>、
-                <strong style="color:var(--text)">専門科目 110 分</strong>。<br>
-                時間内であれば何度でも回答を変更できます。時間切れまたは「終了する」ボタンで採点されます。
-            </p>
-        </div>
-    </div>
+      </section>
 
-    <!-- ══ Screen 2: 科目選択 ══ -->
-    <div id="s-cat-sel" hidden>
-        <a href="#" class="back-link" id="lnk-cat-back">← モード選択へ</a>
-        <div class="card">
-            <p class="screen-title">科目を選択</p>
-            <p class="screen-sub">学習する科目を選んでください</p>
-            <div class="sel-list" id="cat-list"></div>
+      <!-- ════════ 1. 年度選択 ════════ -->
+      <section id="s-year-sel" data-screen-label="年度選択" hidden>
+        <button type="button" class="backbar" id="lnk-year-back"><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>モード選択へ</button>
+        <div class="page-head">
+          <h1>年度を選ぶ</h1>
+          <p class="lead">挑戦する過去問の年度を選んでください。全年度ランダムでの腕試しもできます。</p>
         </div>
-        <div class="stats-box">
-            <p class="stats-title">科目ごとの正答率（累計）</p>
-            <div id="cat-stats"></div>
-        </div>
-    </div>
+        <div class="sel-list" id="year-list"></div>
+      </section>
 
-    <!-- ══ Screen 3: 年度別 試験 ══ -->
-    <div id="s-exam" hidden>
-        <div class="exam-header">
-            <div class="timer-box">
-                <span class="timer-label">残り時間</span>
-                <span class="timer-val" id="timer-val">60:00</span>
-            </div>
-            <div class="exam-meta" id="exam-meta">回答済み 0 / 0 問</div>
-            <button type="button" class="end-btn" id="btn-end-exam">終了する</button>
+      <!-- ════════ 1b. 科目選択（年度内） ════════ -->
+      <section id="s-subject-sel" data-screen-label="年度内科目選択" hidden>
+        <button type="button" class="backbar" id="lnk-subject-back"><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>年度選択へ</button>
+        <div class="page-head">
+          <h1 id="subject-sel-year">科目を選ぶ</h1>
+          <p class="lead">受験する科目を選んでください。科目ごとに制限時間が設定されています。</p>
+        </div>
+        <div class="sel-list" id="subject-list"></div>
+      </section>
+
+      <!-- ════════ 2. 科目選択（分野別・ラジオ） ════════ -->
+      <section id="s-cat-sel" data-screen-label="科目選択" hidden>
+        <button type="button" class="backbar" id="lnk-cat-back"><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>モード選択へ</button>
+        <div class="page-head">
+          <h1>科目を選ぶ</h1>
+          <p class="lead">分野別（学習モード）・1問ずつ解答します。科目を選んで始めましょう。</p>
+        </div>
+        <div class="picker" id="cat-list"></div>
+        <button type="button" class="toggle-card" id="cat-weak-toggle" aria-pressed="false">
+          <span class="toggle-icon"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c1 3 4 4.5 4 8a4 4 0 0 1-8 0c0-1 .3-1.8.8-2.5C9 9 9.5 10 11 10c.5-3-1-4.5 1-8z"/><path d="M8.5 14a3.5 3.5 0 0 0 7 0c0-1.5-1-2.5-1.5-3"/></svg></span>
+          <span class="toggle-body">
+            <span class="toggle-title">苦手問題だけ再出題</span>
+            <span class="toggle-desc">前回まで不正解だった問題を集中復習</span>
+          </span>
+          <span class="switch"><span class="knob"></span></span>
+        </button>
+        <button type="button" class="start" id="btn-cat-start">
+          このクイズを始める
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </button>
+        <p class="foot-note">※ 学習記録はこのブラウザに保存されます。正解した問題は苦手リストから自動的に外れます。</p>
+      </section>
+
+      <!-- ════════ 3. 年度試験モード ════════ -->
+      <section id="s-exam" data-screen-label="年度試験" hidden>
+        <div class="exam-bar">
+          <span class="timer"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span class="timer-val" id="timer-val">00:00</span></span>
+          <span class="exam-meta" id="exam-meta"></span>
+          <button type="button" class="btn-end" id="btn-end-exam">終了して採点</button>
+        </div>
+        <div class="q-card">
+          <div class="q-num" id="exam-q-num"></div>
+          <div class="q-fig" id="exam-q-fig" hidden></div>
+          <p class="q-text" id="exam-q-text"></p>
+          <div class="choices" id="exam-choices"></div>
+        </div>
+        <div class="done-notice" id="all-done-notice" hidden>
+          <svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg>
+          全問回答しました。「終了して採点」で結果を確認できます。
+        </div>
+        <div class="qnav-row">
+          <button type="button" class="btn btn-ghost" id="btn-exam-prev"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>前へ</button>
+          <button type="button" class="btn btn-primary full" id="btn-exam-next">次の問題</button>
         </div>
         <div class="q-nav" id="q-nav"></div>
-        <div id="all-done-notice" class="notice-bar" hidden>
-            ✅ 全問回答済み。「終了する」ボタンで結果を確認できます。
+      </section>
+
+      <!-- ════════ 4. 分野別演習モード ════════ -->
+      <section id="s-prac" data-screen-label="分野別演習" hidden>
+        <button type="button" class="backbar" id="lnk-prac-back"><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>科目選択へ</button>
+        <div class="prac-prog">
+          <span class="prac-prog-track"><span class="prac-prog-fill" id="prac-prog-fill" style="width:0%"></span></span>
+          <span class="prac-prog-label" id="prac-prog-label">0 / 0</span>
         </div>
-        <div class="card" style="margin-bottom:12px;">
-            <span class="q-num-badge" id="exam-q-num">問題 1</span>
-            <div id="exam-q-fig" class="q-fig" hidden></div>
-            <p class="q-text" id="exam-q-text"></p>
-            <div class="choices" id="exam-choices"></div>
+        <div class="q-card">
+          <div class="q-num" id="prac-q-num"></div>
+          <div class="q-fig" id="prac-q-fig" hidden></div>
+          <p class="q-text" id="prac-q-text"></p>
+          <div class="choices" id="prac-choices"></div>
+          <div class="feedback" id="prac-feedback">
+            <span class="result-label" id="prac-result-label"></span>
+            <div class="explanation" id="prac-explanation"></div>
+          </div>
         </div>
-        <div class="exam-nav">
-            <button type="button" class="nav-btn" id="btn-exam-prev">← 前の問題</button>
-            <button type="button" class="nav-btn primary" id="btn-exam-next">次の問題 →</button>
+        <div class="qnav-row">
+          <button type="button" class="btn btn-primary full" id="btn-prac-next">次の問題へ</button>
         </div>
-    </div>
+      </section>
 
-    <!-- ══ Screen 4: 分野別 練習 ══ -->
-    <div id="s-prac" hidden>
-        <a href="#" class="back-link" id="lnk-prac-back">← 科目選択へ</a>
-        <div class="progress">
-            <span id="prac-prog-label">1 / 1</span>
-            <div class="progress-bar"><span id="prac-prog-fill" style="width:0%"></span></div>
+      <!-- ════════ 5. 結果 ════════ -->
+      <section id="s-results" data-screen-label="結果" hidden>
+        <div class="page-head">
+          <span class="eyebrow" id="res-title">結果</span>
+          <h1>採点結果</h1>
         </div>
-        <div class="card">
-            <span class="q-num-badge" id="prac-q-num">問題 1</span>
-            <div id="prac-q-fig" class="q-fig" hidden></div>
-            <p class="q-text" id="prac-q-text"></p>
-            <div class="choices" id="prac-choices"></div>
-            <div class="feedback" id="prac-feedback">
-                <p class="result-label" id="prac-result-label"></p>
-                <p class="explanation" id="prac-explanation"></p>
-                <button type="button" class="next-btn" id="btn-prac-next">次の問題へ</button>
-            </div>
+        <div class="res-hero">
+          <div class="res-ring" id="res-ring"><div class="res-ring-inner"><span class="res-ring-pct" id="res-ring-pct">0<span>%</span></span></div></div>
+          <div class="res-hero-body">
+            <div class="res-score" id="res-score">0<span> / 0 問</span></div>
+            <span class="pass-banner" id="res-banner"></span>
+            <p class="res-msg" id="res-msg"></p>
+          </div>
         </div>
-    </div>
 
-    <!-- ══ Screen 5: 結果 ══ -->
-    <div id="s-results" hidden>
-        <div class="card">
-            <!-- ヘッダー -->
-            <div class="res-header">
-                <p class="res-title" id="res-title">結果</p>
-                <div class="res-score" id="res-score">0 / 0</div>
-                <div id="res-banner"></div>
-                <p class="res-msg" id="res-msg"></p>
-            </div>
+        <p class="res-section-label">科目別の正答数</p>
+        <div class="res-cat-summary" id="res-cat-summary"></div>
 
-            <!-- 科目別成績 -->
-            <p class="section-label">科目別成績</p>
-            <div class="cat-summary" id="res-cat-summary" style="margin-bottom:16px;"></div>
-
-            <!-- 全問解説 -->
-            <p class="section-label">全問題の解説</p>
-            <div class="q-card-list" id="res-q-list"></div>
-
-            <!-- アクションボタン -->
-            <div class="action-col">
-                <button type="button" class="cta-btn" id="btn-retry">もう一度解く</button>
-                <button type="button" class="sub-btn" id="btn-to-menu">モード選択へ戻る</button>
-            </div>
+        <div class="res-actions">
+          <button type="button" class="btn btn-ghost" id="btn-to-menu">メニューへ</button>
+          <button type="button" class="btn btn-primary full" id="btn-retry"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/><path d="M3 21v-5h5"/></svg>もう一度挑戦</button>
         </div>
-    </div>
-</div><!-- /.app -->
 
-<script>
-// ══════════════════════════════════════
-//  Config & Constants
-// ══════════════════════════════════════
+        <p class="res-section-label">全問題の解説</p>
+        <div class="rev-list" id="res-q-list"></div>
+      </section>
+    </main>
 
-const CAT_ORDER = ["基礎科目", "適性科目（法令・倫理）", "専門科目（機械部門）"];
-const CAT_BADGE = {
-    "基礎科目": "badge-basic",
-    "適性科目（法令・倫理）": "badge-ethics",
-    "専門科目（機械部門）": "badge-expert"
-};
-const CAT_SHORT = {
-    "基礎科目": "基礎",
-    "適性科目（法令・倫理）": "適性",
-    "専門科目（機械部門）": "専門"
-};
-
-// ══════════════════════════════════════
-//  State
-// ══════════════════════════════════════
-let allQuestions = [];
-let categoryStats = {};
-
-// Per-category timer (minutes)
-const CAT_TIMER_MIN = {
-    "基礎科目": 60,
-    "適性科目（法令・倫理）": 60,
-    "専門科目（機械部門）": 110
-};
-
-// Exam (year) mode
-let examQuestions = [];
-let examAnswers   = [];   // number|null per question
-let examIdx       = 0;
-let examTimerSec  = 0;
-let examTimerInt  = null;
-let examYearKey   = null;
-let examCatKey    = null;  // null = all subjects
-
-// Practice (cat) mode
-let pracQuestions = [];
-let pracIdx       = 0;
-let pracAnswered  = false;
-let pracRecord    = [];   // selected index per question
-
-// For retry
-let currentMode   = null; // "year"|"prac"
-let currentCatKey = null;
-
-// ══════════════════════════════════════
-//  Screen management
-// ══════════════════════════════════════
-const SCREENS = ["s-mode","s-year-sel","s-subject-sel","s-cat-sel","s-exam","s-prac","s-results"];
-function showScreen(id) {
-    SCREENS.forEach(s => document.getElementById(s).hidden = (s !== id));
-}
-
-// ══════════════════════════════════════
-//  Persistence
-// ══════════════════════════════════════
-function loadStats() {
-    try { categoryStats = JSON.parse(localStorage.getItem("kikaiCategoryStats") || "{}") || {}; }
-    catch(e) { categoryStats = {}; }
-}
-function saveStats() {
-    localStorage.setItem("kikaiCategoryStats", JSON.stringify(categoryStats));
-}
-function recordAnswer(cat, isCorrect) {
-    if (!categoryStats[cat]) categoryStats[cat] = { correct: 0, attempted: 0 };
-    categoryStats[cat].attempted++;
-    if (isCorrect) categoryStats[cat].correct++;
-    saveStats();
-}
-
-// ══════════════════════════════════════
-//  Stats rendering
-// ══════════════════════════════════════
-function renderStats(containerId) {
-    const el = document.getElementById(containerId);
-    el.innerHTML = "";
-    CAT_ORDER.forEach(cat => {
-        const st = categoryStats[cat] || { correct: 0, attempted: 0 };
-        const row = document.createElement("div");
-        row.className = "stats-row";
-        const left = document.createElement("span");
-        left.textContent = cat;
-        left.style.fontSize = "0.82rem";
-        const right = document.createElement("span");
-        right.style.fontSize = "0.82rem";
-        if (!st.attempted) {
-            right.textContent = "—";
-            right.style.color = "var(--text-muted)";
-        } else {
-            const rate = Math.round(st.correct / st.attempted * 100);
-            right.textContent = rate + "% (" + st.correct + "/" + st.attempted + ")";
-            right.style.color = rate >= 50 ? "var(--success)" : "var(--danger)";
-        }
-        row.appendChild(left);
-        row.appendChild(right);
-        el.appendChild(row);
-    });
-}
-
-// ══════════════════════════════════════
-//  Question loading
-// ══════════════════════════════════════
-async function loadQuestions() {
-    try {
-        const res = await fetch("questions.json", { cache: "no-store" });
-        if (!res.ok) throw new Error("HTTP " + res.status);
-        const data = await res.json();
-        if (!Array.isArray(data)) throw new Error("not array");
-        allQuestions = data.filter(q =>
-            q && typeof q.question === "string" &&
-            Array.isArray(q.choices) && q.choices.length === 4 &&
-            typeof q.correctIndex === "number"
-        );
-    } catch(err) {
-        const w = document.getElementById("load-warning");
-        w.hidden = false;
-        w.textContent = "questions.json を読み込めませんでした。python3 -m http.server などでローカルサーバー経由で開いてください。";
-    }
-}
-
-// ══════════════════════════════════════
-//  Utility
-// ══════════════════════════════════════
-function shuffle(arr) {
-    const a = arr.slice();
-    for (let i = a.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [a[i], a[j]] = [a[j], a[i]];
-    }
-    return a;
-}
-
-// ══════════════════════════════════════
-//  Screen 0: Mode Selection
-// ══════════════════════════════════════
-function initModeScreen() {
-    renderStats("mode-stats");
-    showScreen("s-mode");
-}
-
-document.getElementById("btn-mode-year").addEventListener("click", () => {
-    showScreen("s-year-sel");
-    buildYearList();
-});
-document.getElementById("btn-mode-cat").addEventListener("click", () => {
-    showScreen("s-cat-sel");
-    buildCatList();
-});
-
-// ══════════════════════════════════════
-//  Screen 1: Year Selection
-// ══════════════════════════════════════
-function buildYearList() {
-    const el = document.getElementById("year-list");
-    el.innerHTML = "";
-
-    // Group by year
-    const byYear = {};
-    allQuestions.forEach(q => {
-        const y = String(q.year || "");
-        if (!byYear[y]) byYear[y] = {};
-        const c = q.category || "未分類";
-        byYear[y][c] = (byYear[y][c] || 0) + 1;
-    });
-
-    const years = Object.keys(byYear).filter(y => /^\d{4}$/.test(y)).sort((a,b) => Number(b)-Number(a));
-
-    years.forEach(y => {
-        const cats = byYear[y];
-        const total = Object.values(cats).reduce((s,n) => s+n, 0);
-        const detail = CAT_ORDER.filter(c => cats[c])
-            .map(c => (CAT_SHORT[c]||c) + ":" + cats[c] + "問").join(" / ");
-        const btn = document.createElement("button");
-        btn.type = "button";
-        btn.className = "sel-item";
-        btn.innerHTML = `<strong>${y}年度</strong><span class="s-meta">全 ${total} 問 ／ ${detail}</span>`;
-        btn.addEventListener("click", () => showSubjectSel(y));
-        el.appendChild(btn);
-    });
-
-    // All years random
-    const allBtn = document.createElement("button");
-    allBtn.type = "button";
-    allBtn.className = "sel-item";
-    allBtn.style.borderColor = "rgba(47,111,219,0.3)";
-    allBtn.innerHTML = `<strong>🔀 全年度ランダム</strong><span class="s-meta">全 ${allQuestions.length} 問をシャッフル出題（110分）</span>`;
-    allBtn.addEventListener("click", () => startExam("__all__"));
-    el.appendChild(allBtn);
-}
-
-document.getElementById("lnk-year-back").addEventListener("click", e => {
-    e.preventDefault(); initModeScreen();
-});
-
-// ══════════════════════════════════════
-//  Screen 1b: Subject Selection (within a year)
-// ══════════════════════════════════════
-function showSubjectSel(year) {
-    document.getElementById("subject-sel-year").textContent = year + "年度";
-    buildSubjectList(year);
-    showScreen("s-subject-sel");
-}
-
-function buildSubjectList(year) {
-    const el = document.getElementById("subject-list");
-    el.innerHTML = "";
-
-    const yearQs = allQuestions.filter(q => String(q.year || "") === year);
-    const counts = {};
-    yearQs.forEach(q => { const c = q.category || "未分類"; counts[c] = (counts[c] || 0) + 1; });
-
-    CAT_ORDER.forEach(c => {
-        if (!counts[c]) return;
-        const badge = CAT_BADGE[c] || "";
-        const short = CAT_SHORT[c] || c;
-        const mins  = CAT_TIMER_MIN[c] || 60;
-        const btn = document.createElement("button");
-        btn.type = "button";
-        btn.className = "sel-item";
-        btn.innerHTML =
-            `<span><span class="cat-badge ${badge}">${short}</span><strong>${c}</strong></span>` +
-            `<span class="s-meta">${counts[c]} 問 ／ ${mins} 分</span>`;
-        btn.addEventListener("click", () => startExam(year, c));
-        el.appendChild(btn);
-    });
-}
-
-document.getElementById("lnk-subject-back").addEventListener("click", e => {
-    e.preventDefault();
-    showScreen("s-year-sel");
-    buildYearList();
-});
-
-// ══════════════════════════════════════
-//  Screen 2: Category Selection
-// ══════════════════════════════════════
-function buildCatList() {
-    const el = document.getElementById("cat-list");
-    el.innerHTML = "";
-
-    const counts = {};
-    allQuestions.forEach(q => {
-        const c = q.category || "未分類";
-        counts[c] = (counts[c] || 0) + 1;
-    });
-
-    // All
-    const allBtn = document.createElement("button");
-    allBtn.type = "button";
-    allBtn.className = "sel-item";
-    allBtn.innerHTML = `<strong>すべての科目</strong><span class="s-meta">全 ${allQuestions.length} 問をシャッフル</span>`;
-    allBtn.addEventListener("click", () => startPrac("__all__"));
-    el.appendChild(allBtn);
-
-    CAT_ORDER.forEach(c => {
-        if (!counts[c]) return;
-        const b = CAT_BADGE[c] || "";
-        const s = CAT_SHORT[c] || c;
-        const btn = document.createElement("button");
-        btn.type = "button";
-        btn.className = "sel-item";
-        btn.innerHTML = `<span><span class="cat-badge ${b}">${s}</span><strong>${c}</strong></span><span class="s-meta">${counts[c]} 問</span>`;
-        btn.addEventListener("click", () => startPrac(c));
-        el.appendChild(btn);
-    });
-
-    renderStats("cat-stats");
-}
-
-document.getElementById("lnk-cat-back").addEventListener("click", e => {
-    e.preventDefault(); initModeScreen();
-});
-
-// ══════════════════════════════════════
-//  Screen 3: Exam Mode (Year)
-// ══════════════════════════════════════
-function startExam(yearKey, catKey) {
-    currentMode = "year";
-    examYearKey = yearKey;
-    examCatKey  = catKey || null;
-    clearInterval(examTimerInt);
-
-    let pool;
-    if (yearKey === "__all__") {
-        pool = shuffle(allQuestions.slice());
-        examTimerSec = 110 * 60;
-    } else {
-        pool = allQuestions.filter(q => String(q.year || "") === yearKey);
-        if (catKey) {
-            pool = pool.filter(q => q.category === catKey);
-        }
-        pool.sort((a, b) => {
-            const ai = CAT_ORDER.indexOf(a.category);
-            const bi = CAT_ORDER.indexOf(b.category);
-            return (ai < 0 ? 99 : ai) - (bi < 0 ? 99 : bi);
-        });
-        examTimerSec = (catKey ? (CAT_TIMER_MIN[catKey] || 60) : 60) * 60;
-    }
-
-    examQuestions = pool;
-    examAnswers   = new Array(pool.length).fill(null);
-    examIdx       = 0;
-
-    showScreen("s-exam");
-    document.getElementById("all-done-notice").hidden = true;
-    buildQNav();
-    renderExamQ();
-    updateExamMeta();
-    startTimer();
-}
-
-function buildQNav() {
-    const nav = document.getElementById("q-nav");
-    nav.innerHTML = "";
-    examQuestions.forEach((q, i) => {
-        const b = document.createElement("button");
-        b.type = "button";
-        b.className = "q-dot" +
-            (i === examIdx ? " current" : "") +
-            (examAnswers[i] !== null ? " answered" : "");
-        b.textContent = i + 1;
-        b.title = (q.category || "") + " Q" + (i+1);
-        b.addEventListener("click", () => { examIdx = i; buildQNav(); renderExamQ(); });
-        nav.appendChild(b);
-    });
-}
-
-function renderExamQ() {
-    const q = examQuestions[examIdx];
-
-    // Badge
-    const badge = CAT_BADGE[q.category] || "";
-    const short = CAT_SHORT[q.category] || q.category;
-    document.getElementById("exam-q-num").innerHTML =
-        `<span class="cat-badge ${badge}">${short}</span> ${q.year}年 · 問題 ${examIdx + 1} / ${examQuestions.length}`;
-
-    // Figure
-    const fig = document.getElementById("exam-q-fig");
-    if (q.figureHtml) { fig.innerHTML = q.figureHtml; fig.hidden = false; }
-    else { fig.innerHTML = ""; fig.hidden = true; }
-
-    document.getElementById("exam-q-text").textContent = q.question;
-
-    // Choices
-    const choicesEl = document.getElementById("exam-choices");
-    choicesEl.innerHTML = "";
-    q.choices.forEach((label, idx) => {
-        const btn = document.createElement("button");
-        btn.type = "button";
-        btn.className = "choice-btn" + (examAnswers[examIdx] === idx ? " selected" : "");
-        btn.textContent = label;
-        btn.addEventListener("click", () => {
-            examAnswers[examIdx] = idx;
-            buildQNav();
-            updateExamMeta();
-            renderExamQ();
-            checkAllExamDone();
-        });
-        choicesEl.appendChild(btn);
-    });
-
-    document.getElementById("btn-exam-prev").disabled = examIdx === 0;
-    document.getElementById("btn-exam-next").disabled = examIdx === examQuestions.length - 1;
-    document.getElementById("btn-exam-next").textContent =
-        examIdx === examQuestions.length - 1 ? "最後の問題" : "次の問題 →";
-}
-
-function updateExamMeta() {
-    const answered = examAnswers.filter(a => a !== null).length;
-    document.getElementById("exam-meta").textContent =
-        "回答済み " + answered + " / " + examQuestions.length + " 問";
-}
-
-function checkAllExamDone() {
-    const answered = examAnswers.filter(a => a !== null).length;
-    document.getElementById("all-done-notice").hidden = answered < examQuestions.length;
-}
-
-document.getElementById("btn-exam-prev").addEventListener("click", () => {
-    if (examIdx > 0) { examIdx--; buildQNav(); renderExamQ(); }
-});
-document.getElementById("btn-exam-next").addEventListener("click", () => {
-    if (examIdx < examQuestions.length - 1) { examIdx++; buildQNav(); renderExamQ(); }
-});
-document.getElementById("btn-end-exam").addEventListener("click", () => {
-    const unanswered = examAnswers.filter(a => a === null).length;
-    const msg = unanswered > 0
-        ? `未回答が ${unanswered} 問あります。このまま終了して採点しますか？`
-        : "試験を終了して結果を表示します。よろしいですか？";
-    if (!window.confirm(msg)) return;
-    endExam();
-});
-
-function startTimer() {
-    clearInterval(examTimerInt);
-    renderTimer();
-    examTimerInt = setInterval(() => {
-        examTimerSec--;
-        renderTimer();
-        if (examTimerSec <= 0) {
-            clearInterval(examTimerInt);
-            window.alert("⏰ 時間になりました。採点結果を表示します。");
-            endExam();
-        }
-    }, 1000);
-}
-
-function renderTimer() {
-    const el = document.getElementById("timer-val");
-    const m = Math.floor(examTimerSec / 60);
-    const s = examTimerSec % 60;
-    el.textContent = String(m).padStart(2, "0") + ":" + String(s).padStart(2, "0");
-    el.className = "timer-val";
-    if (examTimerSec <= 60)  el.classList.add("danger");
-    else if (examTimerSec <= 300) el.classList.add("warn");
-}
-
-function endExam() {
-    clearInterval(examTimerInt);
-    // Record to stats
-    examQuestions.forEach((q, i) => {
-        if (examAnswers[i] !== null) {
-            recordAnswer(q.category || "未分類", examAnswers[i] === q.correctIndex);
-        }
-    });
-    showResults("year");
-}
-
-// ══════════════════════════════════════
-//  Screen 4: Practice Mode (Category)
-// ══════════════════════════════════════
-function startPrac(catKey) {
-    currentMode = "prac";
-    currentCatKey = catKey;
-
-    const pool = catKey === "__all__"
-        ? shuffle(allQuestions.slice())
-        : shuffle(allQuestions.filter(q => q.category === catKey));
-
-    pracQuestions = pool;
-    pracIdx       = 0;
-    pracAnswered  = false;
-    pracRecord    = new Array(pool.length).fill(null);
-
-    showScreen("s-prac");
-    renderPracQ();
-}
-
-function renderPracQ() {
-    const q = pracQuestions[pracIdx];
-    pracAnswered = false;
-
-    const total = pracQuestions.length;
-    document.getElementById("prac-prog-label").textContent = (pracIdx + 1) + " / " + total;
-    document.getElementById("prac-prog-fill").style.width = ((pracIdx + 1) / total * 100) + "%";
-
-    const badge = CAT_BADGE[q.category] || "";
-    const short = CAT_SHORT[q.category] || q.category;
-    document.getElementById("prac-q-num").innerHTML =
-        `<span class="cat-badge ${badge}">${short}</span> ${q.year}年 · 問題 ${pracIdx + 1}`;
-
-    const fig = document.getElementById("prac-q-fig");
-    if (q.figureHtml) { fig.innerHTML = q.figureHtml; fig.hidden = false; }
-    else { fig.innerHTML = ""; fig.hidden = true; }
-
-    document.getElementById("prac-q-text").textContent = q.question;
-
-    const choicesEl = document.getElementById("prac-choices");
-    choicesEl.innerHTML = "";
-    q.choices.forEach((label, idx) => {
-        const btn = document.createElement("button");
-        btn.type = "button";
-        btn.className = "choice-btn";
-        btn.textContent = label;
-        btn.addEventListener("click", () => onPracChoose(idx));
-        choicesEl.appendChild(btn);
-    });
-
-    // Reset feedback
-    document.getElementById("prac-feedback").classList.remove("visible");
-    document.getElementById("prac-result-label").textContent = "";
-    document.getElementById("prac-explanation").textContent = "";
-    document.getElementById("btn-prac-next").textContent =
-        pracIdx === pracQuestions.length - 1 ? "結果を見る" : "次の問題へ";
-}
-
-function onPracChoose(selectedIdx) {
-    if (pracAnswered) return;
-    pracAnswered = true;
-
-    const q = pracQuestions[pracIdx];
-    const isCorrect = selectedIdx === q.correctIndex;
-
-    pracRecord[pracIdx] = selectedIdx;
-    recordAnswer(q.category || "未分類", isCorrect);
-
-    const buttons = document.getElementById("prac-choices").querySelectorAll(".choice-btn");
-    buttons.forEach((btn, i) => {
-        btn.disabled = true;
-        if (i === q.correctIndex) btn.classList.add("correct-pick");
-        else if (i === selectedIdx) btn.classList.add("wrong-pick");
-    });
-
-    const lbl = document.getElementById("prac-result-label");
-    lbl.textContent = isCorrect ? "✓ 正解！" : "✗ 不正解…";
-    lbl.className = "result-label " + (isCorrect ? "ok" : "ng");
-    document.getElementById("prac-explanation").textContent = q.explanation;
-
-    document.getElementById("prac-feedback").classList.add("visible");
-}
-
-document.getElementById("btn-prac-next").addEventListener("click", () => {
-    if (!pracAnswered) {
-        if (!window.confirm("この問題を未回答のままスキップしますか？")) return;
-    }
-    if (pracIdx < pracQuestions.length - 1) {
-        pracIdx++;
-        renderPracQ();
-    } else {
-        showResults("prac");
-    }
-});
-
-document.getElementById("lnk-prac-back").addEventListener("click", e => {
-    e.preventDefault();
-    showScreen("s-cat-sel");
-    buildCatList();
-});
-
-// ══════════════════════════════════════
-//  Screen 5: Results
-// ══════════════════════════════════════
-function showResults(mode) {
-    showScreen("s-results");
-
-    const qs  = mode === "year" ? examQuestions : pracQuestions;
-    const ans = mode === "year" ? examAnswers   : pracRecord;
-
-    // Score
-    const answered = ans.filter(a => a !== null).length;
-    const correct  = qs.reduce((s, q, i) => s + (ans[i] === q.correctIndex ? 1 : 0), 0);
-    const pct      = answered > 0 ? Math.round(correct / answered * 100) : 0;
-    const pass     = pct >= 50;
-
-    document.getElementById("res-title").textContent =
-        mode === "year"
-            ? (examYearKey === "__all__"
-                ? "全年度ランダム 結果"
-                : examYearKey + "年度 " + (examCatKey ? (CAT_SHORT[examCatKey] || examCatKey) : "全科目") + " 結果")
-            : "分野別学習 結果";
-
-    document.getElementById("res-score").textContent = correct + " / " + answered + " 問正解";
-
-    const banner = document.getElementById("res-banner");
-    banner.className = "pass-banner " + (pass ? "pass" : "fail");
-    banner.textContent = pass
-        ? "✓ 合格ライン到達（正答率 " + pct + "%）"
-        : "✗ 不合格（正答率 " + pct + "% ／ 合格基準 50%以上）";
-
-    document.getElementById("res-msg").textContent =
-        pct === 100 ? "全問正解！素晴らしい成績です。" :
-        pct >= 70 ? "よく出来ています。苦手な問題の解説を確認しましょう。" :
-        "解説をじっくり読んで基礎を固めましょう。";
-
-    // Per-category breakdown
-    const catSummary = document.getElementById("res-cat-summary");
-    catSummary.innerHTML = "";
-    const catMap = {};
-    qs.forEach((q, i) => {
-        const c = q.category || "未分類";
-        if (!catMap[c]) catMap[c] = { ok: 0, done: 0, total: 0 };
-        catMap[c].total++;
-        if (ans[i] !== null) {
-            catMap[c].done++;
-            if (ans[i] === q.correctIndex) catMap[c].ok++;
-        }
-    });
-    CAT_ORDER.forEach(c => {
-        if (!catMap[c]) return;
-        const s = catMap[c];
-        const r = s.done > 0 ? Math.round(s.ok / s.done * 100) : 0;
-        const badge = CAT_BADGE[c] || "";
-        const short = CAT_SHORT[c] || c;
-        const row = document.createElement("div");
-        row.className = "cat-summary-row";
-        row.innerHTML = `<span><span class="cat-badge ${badge}">${short}</span>${c}</span>
-            <span style="color:${r >= 50 ? 'var(--success)' : 'var(--danger)'}; font-weight:600">
-                ${s.ok}/${s.done}問 (${r}%)
-            </span>`;
-        catSummary.appendChild(row);
-    });
-
-    // All question cards
-    const listEl = document.getElementById("res-q-list");
-    listEl.innerHTML = "";
-    qs.forEach((q, i) => {
-        const userAns  = ans[i];
-        const isSkip   = userAns === null;
-        const isOk     = !isSkip && userAns === q.correctIndex;
-        const badge    = CAT_BADGE[q.category] || "";
-        const short    = CAT_SHORT[q.category] || q.category;
-
-        const card = document.createElement("div");
-        card.className = "q-result-card " + (isSkip ? "skipped" : isOk ? "ok" : "ng");
-
-        const statusIcon = isSkip ? "— 未回答" : isOk ? "✓ 正解" : "✗ 不正解";
-        const statusColor = isSkip ? "var(--text-muted)" : isOk ? "var(--success)" : "var(--danger)";
-
-        let html = `<div class="q-res-meta">
-            <span class="cat-badge ${badge}">${short}</span>
-            <strong>問${i+1}</strong> · ${q.year}年
-            <span style="color:${statusColor};margin-left:8px;">${statusIcon}</span>
-        </div>
-        <div class="q-res-text">${escHtml(q.question)}</div>`;
-
-        if (!isSkip) {
-            html += `<div class="q-res-your ${isOk ? 'ok' : 'ng'}">あなたの解答：${escHtml(q.choices[userAns])}</div>`;
-        }
-        if (!isOk) {
-            html += `<div class="q-res-correct">正解：${escHtml(q.choices[q.correctIndex])}</div>`;
-        }
-        html += `<div class="q-res-exp">${escHtml(q.explanation)}</div>`;
-
-        card.innerHTML = html;
-        listEl.appendChild(card);
-    });
-}
-
-function escHtml(str) {
-    return String(str)
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;");
-}
-
-document.getElementById("btn-to-menu").addEventListener("click", () => initModeScreen());
-document.getElementById("btn-retry").addEventListener("click", () => {
-    if (currentMode === "year") startExam(examYearKey, examCatKey);
-    else startPrac(currentCatKey);
-});
-
-// ══════════════════════════════════════
-//  Boot
-// ══════════════════════════════════════
-async function boot() {
-    loadStats();
-    await loadQuestions();
-    initModeScreen();
-}
-boot();
-</script>
-
-<script>
-(function() {
-    var hamburger = document.getElementById('nav-hamburger');
-    var drawer    = document.getElementById('drawer');
-    var overlay   = document.getElementById('drawer-overlay');
-    var drawerClose = document.getElementById('drawer-close');
-    function openDrawer() { drawer.classList.add('open'); overlay.classList.add('open'); hamburger.classList.add('open'); document.body.style.overflow = 'hidden'; }
-    function closeDrawer() { drawer.classList.remove('open'); overlay.classList.remove('open'); hamburger.classList.remove('open'); document.body.style.overflow = ''; }
-    hamburger.addEventListener('click', function() { drawer.classList.contains('open') ? closeDrawer() : openDrawer(); });
-    drawerClose.addEventListener('click', closeDrawer);
-    overlay.addEventListener('click', closeDrawer);
-    drawer.querySelectorAll('a').forEach(function(a) { a.addEventListener('click', closeDrawer); });
-})();
-</script>
-</body>
+    <script src="quiz-app.js"></script>
+  </body>
 </html>
