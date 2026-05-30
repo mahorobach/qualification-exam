@@ -355,8 +355,12 @@ function renderCatCards() {
       '<span class="pick-meta">' + meta + '</span></span>' +
       '<span class="pick-radio">' + icon("check", { size: 15, stroke: 3 }) + '</span>';
     btn.addEventListener("click", () => {
-      selectedCat = o.key;
-      renderCatCards();
+      if (o.key !== "__all__") {
+        startPrac(o.key, { count: 20 });
+      } else {
+        selectedCat = o.key;
+        renderCatCards();
+      }
     });
     el.appendChild(btn);
   });
