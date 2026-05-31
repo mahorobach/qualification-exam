@@ -9,14 +9,15 @@
 // ══════════════════════════════════════
 // 問題文の（ア）〜（エ）前で改行してHTMLを返す
 function renderQuestionText(el, text) {
+  // （ア）〜（キ）の前で改行（〜が続く範囲指定の場合は除外）
   const html = escHtml(text)
-    .replace(/\s*（ア）/g, '<br>（ア）')
-    .replace(/\s*（イ）/g, '<br>（イ）')
-    .replace(/\s*（ウ）/g, '<br>（ウ）')
-    .replace(/\s*（エ）/g, '<br>（エ）')
-    .replace(/\s*（オ）/g, '<br>（オ）')
-    .replace(/\s*（カ）/g, '<br>（カ）')
-    .replace(/\s*（キ）/g, '<br>（キ）');
+    .replace(/\s*（ア）(?!〜)/g, '<br>（ア）')
+    .replace(/\s*（イ）(?!〜)/g, '<br>（イ）')
+    .replace(/\s*（ウ）(?!〜)/g, '<br>（ウ）')
+    .replace(/\s*（エ）(?!〜)/g, '<br>（エ）')
+    .replace(/\s*（オ）(?!〜)/g, '<br>（オ）')
+    .replace(/\s*（カ）(?!〜)/g, '<br>（カ）')
+    .replace(/\s*（キ）(?!〜)/g, '<br>（キ）');
   el.innerHTML = html;
 }
 
@@ -961,7 +962,7 @@ function showResults(mode) {
         '<span class="rev-status ' + statusCls + '">' + statusIco + ' ' + statusTxt + '</span>' +
       '</div>' +
       '<div class="rev-body">' +
-        '<p class="rev-q">' + escHtml(q.question).replace(/\s*（ア）/g,'<br>（ア）').replace(/\s*（イ）/g,'<br>（イ）').replace(/\s*（ウ）/g,'<br>（ウ）').replace(/\s*（エ）/g,'<br>（エ）').replace(/\s*（オ）/g,'<br>（オ）').replace(/\s*（カ）/g,'<br>（カ）').replace(/\s*（キ）/g,'<br>（キ）') + '</p>';
+        '<p class="rev-q">' + escHtml(q.question).replace(/\s*（ア）(?!〜)/g,'<br>（ア）').replace(/\s*（イ）(?!〜)/g,'<br>（イ）').replace(/\s*（ウ）(?!〜)/g,'<br>（ウ）').replace(/\s*（エ）(?!〜)/g,'<br>（エ）').replace(/\s*（オ）(?!〜)/g,'<br>（オ）').replace(/\s*（カ）(?!〜)/g,'<br>（カ）').replace(/\s*（キ）(?!〜)/g,'<br>（キ）') + '</p>';
     html += '<div class="rev-ans">';
     if (!isSkip && !isOk) {
       html += '<div class="rev-line ng"><span>あなた</span><span>' + escHtml(q.choices[userAns]) + '</span></div>';
