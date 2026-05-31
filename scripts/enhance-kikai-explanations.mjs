@@ -83,7 +83,7 @@ ${q.explanation}
 
 解説:`;
 
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${API_KEY}`;
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent?key=${API_KEY}`;
 
   const body = {
     contents: [{ parts: [{ text: prompt }] }],
@@ -135,12 +135,12 @@ async function main() {
       }
 
       // レート制限対策（2秒待機）
-      await new Promise(r => setTimeout(r, 2000));
+      await new Promise(r => setTimeout(r, 4500)); // 無料枠: 15req/min → 4秒以上
 
     } catch (e) {
       console.error(`  ❌ エラー: ${e.message}`);
       errors++;
-      await new Promise(r => setTimeout(r, 3000));
+      await new Promise(r => setTimeout(r, 6000));
     }
   }
 
