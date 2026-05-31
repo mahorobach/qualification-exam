@@ -415,7 +415,8 @@
       "254.6MPa"
     ],
     "correctIndex": 1,
-    "explanation": "断面積 A = π×(0.04)²/4 = π×0.0016/4 = 1.257×10⁻³ m²。応力 σ = P/A = 80,000 / 1.257×10⁻³ ≈ 63.7×10⁶ Pa = 63.7 MPa。"
+    "explanation": "断面積 A = π×(0.04)²/4 = π×0.0016/4 = 1.257×10⁻³ m²。応力 σ = P/A = 80,000 / 1.257×10⁻³ ≈ 63.7×10⁶ Pa = 63.7 MPa。",
+    "subField": "材料力学"
   },
   {
     "category": "専門科目（機械部門）",
@@ -429,7 +430,8 @@
       "72 kN·m"
     ],
     "correctIndex": 1,
-    "explanation": "支点反力：RA = RB = P/2 = 6kN。中央（A端から3m）の曲げモーメント M = RA × L/2 = 6 × 3 = 18 kN·m。中央集中荷重の最大曲げモーメントは M_max = PL/4 = 12×6/4 = 18 kN·m。"
+    "explanation": "支点反力：RA = RB = P/2 = 6kN。中央（A端から3m）の曲げモーメント M = RA × L/2 = 6 × 3 = 18 kN·m。中央集中荷重の最大曲げモーメントは M_max = PL/4 = 12×6/4 = 18 kN·m。",
+    "subField": "材料力学"
   },
   {
     "category": "専門科目（機械部門）",
@@ -443,7 +445,8 @@
       "28.3 kN（引張）"
     ],
     "correctIndex": 1,
-    "explanation": "対称トラスより RA=RB=10kN。節点 C の平衡：FAC=FBC（対称）、鉛直方向：2F×sin45° = P → F = P/(2sin45°) = 20/(2×0.707) ≈ 14.1kN。力の方向から AC・BC は圧縮材。"
+    "explanation": "対称トラスより RA=RB=10kN。節点 C の平衡：FAC=FBC（対称）、鉛直方向：2F×sin45° = P → F = P/(2sin45°) = 20/(2×0.707) ≈ 14.1kN。力の方向から AC・BC は圧縮材。",
+    "subField": "材料力学"
   },
   {
     "category": "専門科目（機械部門）",
@@ -457,7 +460,8 @@
       "130 MPa"
     ],
     "correctIndex": 2,
-    "explanation": "平均応力 σ_avg = (80+20)/2 = 50MPa。半径 R = √[(80-20)²/4 + 40²] = √[900+1600] = √2500 = 50MPa。最大主応力 σ₁ = σ_avg + R = 50+50 = 100MPa、最小主応力 σ₂ = 50-50 = 0MPa。"
+    "explanation": "平均応力 σ_avg = (80+20)/2 = 50MPa。半径 R = √[(80-20)²/4 + 40²] = √[900+1600] = √2500 = 50MPa。最大主応力 σ₁ = σ_avg + R = 50+50 = 100MPa、最小主応力 σ₂ = 50-50 = 0MPa。",
+    "subField": "材料力学"
   },
   {
     "category": "専門科目（機械部門）",
@@ -470,7 +474,8 @@
       "Pcr = 2π²EI/L²"
     ],
     "correctIndex": 0,
-    "explanation": "両端ピン支持（有効座屈長さ係数 K=1）のオイラー座屈荷重：Pcr = π²EI/(KL)² = π²EI/L²。両端固定（K=0.5）では Pcr = 4π²EI/L²。EI は曲げ剛性。"
+    "explanation": "両端ピン支持（有効座屈長さ係数 K=1）のオイラー座屈荷重：Pcr = π²EI/(KL)² = π²EI/L²。両端固定（K=0.5）では Pcr = 4π²EI/L²。EI は曲げ剛性。",
+    "subField": "材料力学"
   },
   {
     "category": "専門科目（機械部門）",
@@ -483,7 +488,8 @@
       "断熱圧縮では温度が低下する"
     ],
     "correctIndex": 1,
-    "explanation": "熱力学第一法則：Q = ΔU + W（Q：受熱量、ΔU：内部エネルギー変化、W：系が外部にした仕事）。等温過程で理想気体の内部エネルギーは変化しない。断熱圧縮では外部が仕事をするため温度が上昇する。"
+    "explanation": "熱力学第一法則：Q = ΔU + W（Q：受熱量、ΔU：内部エネルギー変化、W：系が外部にした仕事）。等温過程で理想気体の内部エネルギーは変化しない。断熱圧縮では外部が仕事をするため温度が上昇する。",
+    "subField": "熱工学"
   },
   {
     "category": "専門科目（機械部門）",
@@ -496,7 +502,8 @@
       "67%"
     ],
     "correctIndex": 2,
-    "explanation": "カルノーサイクルの熱効率 η = 1 − TL/TH = 1 − 300/600 = 0.5 = 50%。これは同じ温度間で動作する全ての熱機関の中で最高効率を示す理論値（カルノーの定理）。"
+    "explanation": "カルノーサイクルの熱効率 η = 1 − TL/TH = 1 − 300/600 = 0.5 = 50%。これは同じ温度間で動作する全ての熱機関の中で最高効率を示す理論値（カルノーの定理）。",
+    "subField": "熱工学"
   },
   {
     "category": "専門科目（機械部門）",
@@ -510,7 +517,8 @@
       "62.3%"
     ],
     "correctIndex": 2,
-    "explanation": "オットーサイクル熱効率：η = 1 − 1/r^(γ-1) = 1 − 1/8^0.4。8^0.4 = 2^(3×0.4) = 2^1.2 ≈ 2.297。η = 1 − 1/2.297 ≈ 1 − 0.435 = 0.565 ≈ 56.5%。"
+    "explanation": "オットーサイクル熱効率：η = 1 − 1/r^(γ-1) = 1 − 1/8^0.4。8^0.4 = 2^(3×0.4) = 2^1.2 ≈ 2.297。η = 1 − 1/2.297 ≈ 1 − 0.435 = 0.565 ≈ 56.5%。",
+    "subField": "熱工学"
   },
   {
     "category": "専門科目（機械部門）",
@@ -523,7 +531,8 @@
       "5000 W/m²"
     ],
     "correctIndex": 2,
-    "explanation": "フーリエの法則：熱流束 q = λ × ΔT/L = 0.5 × 100/0.1 = 500 W/m²。熱伝導率が大きいほど、温度差が大きいほど、厚さが薄いほど熱流束は大きくなる。"
+    "explanation": "フーリエの法則：熱流束 q = λ × ΔT/L = 0.5 × 100/0.1 = 500 W/m²。熱伝導率が大きいほど、温度差が大きいほど、厚さが薄いほど熱流束は大きくなる。",
+    "subField": "熱工学"
   },
   {
     "category": "専門科目（機械部門）",
@@ -536,7 +545,8 @@
       "τ = μ × u × y"
     ],
     "correctIndex": 0,
-    "explanation": "ニュートンの粘性法則：τ = μ(du/dy)。せん断応力は速度勾配（du/dy）と粘性係数（μ）の積で表される。ニュートン流体とはこの関係が成立する流体（水・空気・油等）のこと。"
+    "explanation": "ニュートンの粘性法則：τ = μ(du/dy)。せん断応力は速度勾配（du/dy）と粘性係数（μ）の積で表される。ニュートン流体とはこの関係が成立する流体（水・空気・油等）のこと。",
+    "subField": "流体工学"
   },
   {
     "category": "専門科目（機械部門）",
@@ -549,7 +559,8 @@
       "非定常流・非粘性流・圧縮性流体"
     ],
     "correctIndex": 1,
-    "explanation": "ベルヌーイの定理（P + ½ρv² + ρgh = const）は「定常・非粘性（理想流体）・非圧縮性・同一流線上」の条件で成立。粘性損失がある実際の流体には修正ベルヌーイ式（損失水頭を加えた式）を使用する。"
+    "explanation": "ベルヌーイの定理（P + ½ρv² + ρgh = const）は「定常・非粘性（理想流体）・非圧縮性・同一流線上」の条件で成立。粘性損失がある実際の流体には修正ベルヌーイ式（損失水頭を加えた式）を使用する。",
+    "subField": "流体工学"
   },
   {
     "category": "専門科目（機械部門）",
@@ -562,7 +573,8 @@
       "Q ∝ d"
     ],
     "correctIndex": 2,
-    "explanation": "ハーゲン-ポアズイユの式：Q = πd⁴ΔP/(128μL)。流量は直径の4乗に比例する。配管直径を2倍にすると流量は16倍になることを意味し、管径の選定が流量設計に極めて重要。"
+    "explanation": "ハーゲン-ポアズイユの式：Q = πd⁴ΔP/(128μL)。流量は直径の4乗に比例する。配管直径を2倍にすると流量は16倍になることを意味し、管径の選定が流量設計に極めて重要。",
+    "subField": "流体工学"
   },
   {
     "category": "専門科目（機械部門）",
@@ -576,7 +588,8 @@
       "ωn = 2π√(k/m)"
     ],
     "correctIndex": 1,
-    "explanation": "運動方程式 mẍ + kx = 0 より ωn² = k/m、固有角振動数 ωn = √(k/m) [rad/s]。固有振動数 fn = ωn/(2π) = (1/2π)√(k/m) [Hz]。ばね定数を大きく・質量を小さくすると固有振動数が高くなる。"
+    "explanation": "運動方程式 mẍ + kx = 0 より ωn² = k/m、固有角振動数 ωn = √(k/m) [rad/s]。固有振動数 fn = ωn/(2π) = (1/2π)√(k/m) [Hz]。ばね定数を大きく・質量を小さくすると固有振動数が高くなる。",
+    "subField": "機械力学・振動"
   },
   {
     "category": "専門科目（機械部門）",
@@ -589,7 +602,8 @@
       "ζ = 0 では振幅が増加し続ける、ζ > 1 では共振が起きる"
     ],
     "correctIndex": 1,
-    "explanation": "ζ = 0（無減衰）：単純調和振動（振幅一定の永続振動）。0 < ζ < 1（不足減衰）：振幅が指数関数的に減衰する振動。ζ = 1（臨界減衰）：最速で平衡位置に収束。ζ > 1（過減衰）：振動せず指数的に減衰。"
+    "explanation": "ζ = 0（無減衰）：単純調和振動（振幅一定の永続振動）。0 < ζ < 1（不足減衰）：振幅が指数関数的に減衰する振動。ζ = 1（臨界減衰）：最速で平衡位置に収束。ζ > 1（過減衰）：振動せず指数的に減衰。",
+    "subField": "機械力学・振動"
   },
   {
     "category": "専門科目（機械部門）",
@@ -602,7 +616,8 @@
       "2.0 m/s"
     ],
     "correctIndex": 1,
-    "explanation": "完全非弾性衝突では衝突後2物体が一体となる。運動量保存：m₁v₁ = (m₁+m₂)v。v = m₁v₁/(m₁+m₂) = 2×3/(2+4) = 6/6 = 1.0 m/s。衝突後の運動エネルギーは保存されない（一部が熱・変形に変換）。"
+    "explanation": "完全非弾性衝突では衝突後2物体が一体となる。運動量保存：m₁v₁ = (m₁+m₂)v。v = m₁v₁/(m₁+m₂) = 2×3/(2+4) = 6/6 = 1.0 m/s。衝突後の運動エネルギーは保存されない（一部が熱・変形に変換）。",
+    "subField": "機械力学・振動"
   },
   {
     "category": "専門科目（機械部門）",
@@ -616,7 +631,8 @@
       "1200 rpm"
     ],
     "correctIndex": 3,
-    "explanation": "歯車の速度比（歯数比の逆数）：n₁/n₂ = z₂/z₁。n₂ = n₁ × z₁/z₂ = 600 × 60/30 = 1200 rpm。外接歯車は逆方向に回転し、歯数が少ない方が速く回転する（増速）。"
+    "explanation": "歯車の速度比（歯数比の逆数）：n₁/n₂ = z₂/z₁。n₂ = n₁ × z₁/z₂ = 600 × 60/30 = 1200 rpm。外接歯車は逆方向に回転し、歯数が少ない方が速く回転する（増速）。",
+    "subField": "機械設計・加工"
   },
   {
     "category": "専門科目（機械部門）",
@@ -629,7 +645,8 @@
       "L = p + n"
     ],
     "correctIndex": 1,
-    "explanation": "リード L = ピッチ p × 条数 n。1条ねじ（n=1）ではリード=ピッチ。2条ねじ（n=2）では1回転で2ピッチ分進む（L = 2p）。条数が多いほど同じトルクで高速送りが可能だが自緩みしやすい。"
+    "explanation": "リード L = ピッチ p × 条数 n。1条ねじ（n=1）ではリード=ピッチ。2条ねじ（n=2）では1回転で2ピッチ分進む（L = 2p）。条数が多いほど同じトルクで高速送りが可能だが自緩みしやすい。",
+    "subField": "機械設計・加工"
   },
   {
     "category": "専門科目（機械部門）",
@@ -642,7 +659,8 @@
       "4乗"
     ],
     "correctIndex": 2,
-    "explanation": "ボール軸受の基本定格寿命 L₁₀ = (C/P)³ × 10⁶回転。荷重を2倍にすると寿命は1/8（3乗）になる。ころ軸受では10/3乗。C は基本動定格荷重（規格値）、P は動等価荷重。"
+    "explanation": "ボール軸受の基本定格寿命 L₁₀ = (C/P)³ × 10⁶回転。荷重を2倍にすると寿命は1/8（3乗）になる。ころ軸受では10/3乗。C は基本動定格荷重（規格値）、P は動等価荷重。",
+    "subField": "機械設計・加工"
   },
   {
     "category": "専門科目（機械部門）",
@@ -656,7 +674,8 @@
       "K/(s(s+2)+K)"
     ],
     "correctIndex": 1,
-    "explanation": "単位フィードバック閉ループ伝達関数：C(s)/R(s) = G(s)/[1+G(s)H(s)] = [K/s(s+2)] / [1+K/s(s+2)] = K/[s(s+2)+K] = K/(s²+2s+K)。分母は特性方程式 s²+2s+K=0 を構成する。"
+    "explanation": "単位フィードバック閉ループ伝達関数：C(s)/R(s) = G(s)/[1+G(s)H(s)] = [K/s(s+2)] / [1+K/s(s+2)] = K/[s(s+2)+K] = K/(s²+2s+K)。分母は特性方程式 s²+2s+K=0 を構成する。",
+    "subField": "制御工学"
   },
   {
     "category": "専門科目（機械部門）",
@@ -669,7 +688,8 @@
       "制御対象の位相進みを補償する"
     ],
     "correctIndex": 1,
-    "explanation": "PID各要素の役割：P（比例）：偏差に比例した操作量で速応性向上・定常偏差は残る、I（積分）：偏差の積算により定常偏差をゼロにする（ただし安定性低下の恐れ）、D（微分）：偏差の変化率に比例し急変を抑制・速応性改善。"
+    "explanation": "PID各要素の役割：P（比例）：偏差に比例した操作量で速応性向上・定常偏差は残る、I（積分）：偏差の積算により定常偏差をゼロにする（ただし安定性低下の恐れ）、D（微分）：偏差の変化率に比例し急変を抑制・速応性改善。",
+    "subField": "制御工学"
   },
   {
     "category": "基礎科目",
@@ -774,7 +794,8 @@
       "9kN・m"
     ],
     "correctIndex": 2,
-    "explanation": "片持ちはりの固定端曲げモーメントは M=PL。P=2kN、L=3m より M=6kN・m。"
+    "explanation": "片持ちはりの固定端曲げモーメントは M=PL。P=2kN、L=3m より M=6kN・m。",
+    "subField": "材料力学"
   },
   {
     "category": "専門科目（機械部門）",
@@ -788,7 +809,8 @@
       "12m/s"
     ],
     "correctIndex": 2,
-    "explanation": "連続の式 A1v1=A2v2 より v2=(0.020×3)/0.010=6m/s。管断面積が半分になると流速は2倍になる。"
+    "explanation": "連続の式 A1v1=A2v2 より v2=(0.020×3)/0.010=6m/s。管断面積が半分になると流速は2倍になる。",
+    "subField": "流体工学"
   },
   {
     "category": "専門科目（機械部門）",
@@ -801,7 +823,8 @@
       "厚さ L"
     ],
     "correctIndex": 3,
-    "explanation": "フーリエの法則 Q=kAΔT/L。厚さ L は分母にあるため、厚くなるほど熱伝導量は小さくなる。"
+    "explanation": "フーリエの法則 Q=kAΔT/L。厚さ L は分母にあるため、厚くなるほど熱伝導量は小さくなる。",
+    "subField": "熱工学"
   },
   {
     "category": "専門科目（機械部門）",
@@ -815,7 +838,8 @@
       "1200rpm"
     ],
     "correctIndex": 2,
-    "explanation": "外歯車では n1z1=n2z2。n2=300×48/24=600rpm。回転方向は反対だが、ここでは大きさを問う。"
+    "explanation": "外歯車では n1z1=n2z2。n2=300×48/24=600rpm。回転方向は反対だが、ここでは大きさを問う。",
+    "subField": "機械設計・加工"
   },
   {
     "category": "専門科目（機械部門）",
@@ -828,7 +852,8 @@
       "√(m/k)"
     ],
     "correctIndex": 2,
-    "explanation": "運動方程式 m x¨ + kx = 0 の固有角振動数は ωn=√(k/m)。質量が大きいほど低く、ばね定数が大きいほど高くなる。"
+    "explanation": "運動方程式 m x¨ + kx = 0 の固有角振動数は ωn=√(k/m)。質量が大きいほど低く、ばね定数が大きいほど高くなる。",
+    "subField": "機械力学・振動"
   },
   {
     "category": "基礎科目",
@@ -933,7 +958,8 @@
       "復水器での放熱"
     ],
     "correctIndex": 2,
-    "explanation": "基本ランキンサイクルでは 1→2 がポンプ、2→3 がボイラ加熱、3→4 がタービン膨張、4→1 が復水器での凝縮である。"
+    "explanation": "基本ランキンサイクルでは 1→2 がポンプ、2→3 がボイラ加熱、3→4 がタービン膨張、4→1 が復水器での凝縮である。",
+    "subField": "熱工学"
   },
   {
     "category": "専門科目（機械部門）",
@@ -947,7 +973,8 @@
       "流体の圧縮運動"
     ],
     "correctIndex": 0,
-    "explanation": "カム機構はカム輪郭によって従節に所定の変位を与える機構で、回転運動を直線往復運動などに変換する。"
+    "explanation": "カム機構はカム輪郭によって従節に所定の変位を与える機構で、回転運動を直線往復運動などに変換する。",
+    "subField": "機械設計・加工"
   },
   {
     "category": "専門科目（機械部門）",
@@ -960,7 +987,8 @@
       "4倍になる"
     ],
     "correctIndex": 2,
-    "explanation": "丸軸のねじりせん断応力は τ=Tr/J。軸寸法が同じなら τ は T に比例する。"
+    "explanation": "丸軸のねじりせん断応力は τ=Tr/J。軸寸法が同じなら τ は T に比例する。",
+    "subField": "材料力学"
   },
   {
     "category": "専門科目（機械部門）",
@@ -973,7 +1001,8 @@
       "工具と被削材が接触しない条件"
     ],
     "correctIndex": 0,
-    "explanation": "構成刃先は低中速切削などで被削材が工具すくい面に凝着・成長して生じやすい。"
+    "explanation": "構成刃先は低中速切削などで被削材が工具すくい面に凝着・成長して生じやすい。",
+    "subField": "機械設計・加工"
   },
   {
     "category": "専門科目（機械部門）",
@@ -986,7 +1015,8 @@
       "吸入温度を必ず高くする"
     ],
     "correctIndex": 2,
-    "explanation": "オットーサイクルの熱効率は η=1-1/r^(κ-1)。圧縮比 r が大きいほど熱効率は高くなる。"
+    "explanation": "オットーサイクルの熱効率は η=1-1/r^(κ-1)。圧縮比 r が大きいほど熱効率は高くなる。",
+    "subField": "熱工学"
   },
   {
     "category": "基礎科目",
@@ -1091,7 +1121,8 @@
       "RA=10kN, RB=10kN"
     ],
     "correctIndex": 1,
-    "explanation": "荷重と形状が左右対称なので鉛直反力は等分される。RA+RB=10kN より RA=RB=5kN。"
+    "explanation": "荷重と形状が左右対称なので鉛直反力は等分される。RA+RB=10kN より RA=RB=5kN。",
+    "subField": "材料力学"
   },
   {
     "category": "専門科目（機械部門）",
@@ -1104,7 +1135,8 @@
       "熱伝導だけを扱う現象"
     ],
     "correctIndex": 1,
-    "explanation": "基本形のベルヌーイの定理は、非圧縮、定常、同一流線上、損失を無視できる流れに適用する。"
+    "explanation": "基本形のベルヌーイの定理は、非圧縮、定常、同一流線上、損失を無視できる流れに適用する。",
+    "subField": "流体工学"
   },
   {
     "category": "専門科目（機械部門）",
@@ -1117,7 +1149,8 @@
       "密度を半分にする"
     ],
     "correctIndex": 1,
-    "explanation": "焼入れはオーステナイト化後に急冷し、マルテンサイトなどを生成させて硬さと強度を高める熱処理である。"
+    "explanation": "焼入れはオーステナイト化後に急冷し、マルテンサイトなどを生成させて硬さと強度を高める熱処理である。",
+    "subField": "機械設計・加工"
   },
   {
     "category": "専門科目（機械部門）",
@@ -1130,7 +1163,8 @@
       "必ず締付け力をゼロにするため"
     ],
     "correctIndex": 1,
-    "explanation": "振動や繰返し荷重でねじがゆるむことがあるため、ばね座金、戻り止めナット、接着剤などでゆるみを抑制する。"
+    "explanation": "振動や繰返し荷重でねじがゆるむことがあるため、ばね座金、戻り止めナット、接着剤などでゆるみを抑制する。",
+    "subField": "機械設計・加工"
   },
   {
     "category": "専門科目（機械部門）",
@@ -1143,7 +1177,8 @@
       "流量係数"
     ],
     "correctIndex": 0,
-    "explanation": "比例制御だけでは負荷変動などに対して定常偏差が残ることがある。積分動作は定常偏差の低減に有効である。"
+    "explanation": "比例制御だけでは負荷変動などに対して定常偏差が残ることがある。積分動作は定常偏差の低減に有効である。",
+    "subField": "制御工学"
   },
   {
     "category": "基礎科目",
@@ -1525,7 +1560,8 @@
       "9mm"
     ],
     "correctIndex": 2,
-    "explanation": "リード=ピッチ×条数。3×2=6mm。"
+    "explanation": "リード=ピッチ×条数。3×2=6mm。",
+    "subField": "機械設計・加工"
   },
   {
     "category": "専門科目（機械部門）",
@@ -1539,7 +1575,8 @@
     ],
     "correctIndex": 1,
     "explanation": "有効断面積A=a×l=5×100=500mm²。τ=10000/500=20N/mm²=20MPa。",
-    "figureHtml": "<div style='overflow:auto'><table style='width:100%;border-collapse:collapse;font-size:13px;color:#e8edf4'><tbody><tr><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>のど厚a</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>5mm</td></tr><tr><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>長さl</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>100mm</td></tr><tr><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>荷重F</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>10kN</td></tr></tbody></table></div>"
+    "figureHtml": "<div style='overflow:auto'><table style='width:100%;border-collapse:collapse;font-size:13px;color:#e8edf4'><tbody><tr><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>のど厚a</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>5mm</td></tr><tr><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>長さl</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>100mm</td></tr><tr><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>荷重F</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>10kN</td></tr></tbody></table></div>",
+    "subField": "機械設計・加工"
   },
   {
     "category": "専門科目（機械部門）",
@@ -1553,7 +1590,8 @@
     ],
     "correctIndex": 0,
     "explanation": "断面積 A = πD²/4。変位適合（剛体板）：ε₁=ε₂ → σ₁/E₁=σ₂/E₂ → σ₂=σ₁E₂/E₁。力の釣り合い：A·σ₁+A·σ₂=P → A·σ₁(1+E₂/E₁)=P → σ₁=E₁P/[A(E₁+E₂)]=4E₁P/[πD²(E₁+E₂)]。",
-    "figureHtml": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 300 150\" width=\"300\" height=\"150\" style=\"max-width:100%;font-family:sans-serif;font-size:12px\">\n    <rect x=\"10\" y=\"40\" width=\"12\" height=\"80\" fill=\"#888\"/>\n    <line x1=\"22\" y1=\"60\" x2=\"240\" y2=\"60\" stroke=\"#555\" stroke-width=\"8\"/>\n    <line x1=\"22\" y1=\"100\" x2=\"240\" y2=\"100\" stroke=\"#999\" stroke-width=\"8\"/>\n    <rect x=\"240\" y=\"40\" width=\"12\" height=\"80\" fill=\"#555\"/>\n    <text x=\"130\" y=\"52\" text-anchor=\"middle\" font-size=\"10\">棒1: E₁</text>\n    <text x=\"130\" y=\"92\" text-anchor=\"middle\" font-size=\"10\">棒2: E₂</text>\n    <line x1=\"252\" y1=\"80\" x2=\"280\" y2=\"80\" stroke=\"#e44\" stroke-width=\"2\" marker-end=\"url(#ar)\"/>\n    <text x=\"285\" y=\"84\" font-size=\"11\" fill=\"#e44\">P</text>\n    <defs><marker id=\"ar\" markerWidth=\"6\" markerHeight=\"6\" refX=\"5\" refY=\"3\" orient=\"auto\"><path d=\"M0,0 L6,3 L0,6 z\" fill=\"#e44\"/></marker></defs>\n  </svg>"
+    "figureHtml": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 300 150\" width=\"300\" height=\"150\" style=\"max-width:100%;font-family:sans-serif;font-size:12px\">\n    <rect x=\"10\" y=\"40\" width=\"12\" height=\"80\" fill=\"#888\"/>\n    <line x1=\"22\" y1=\"60\" x2=\"240\" y2=\"60\" stroke=\"#555\" stroke-width=\"8\"/>\n    <line x1=\"22\" y1=\"100\" x2=\"240\" y2=\"100\" stroke=\"#999\" stroke-width=\"8\"/>\n    <rect x=\"240\" y=\"40\" width=\"12\" height=\"80\" fill=\"#555\"/>\n    <text x=\"130\" y=\"52\" text-anchor=\"middle\" font-size=\"10\">棒1: E₁</text>\n    <text x=\"130\" y=\"92\" text-anchor=\"middle\" font-size=\"10\">棒2: E₂</text>\n    <line x1=\"252\" y1=\"80\" x2=\"280\" y2=\"80\" stroke=\"#e44\" stroke-width=\"2\" marker-end=\"url(#ar)\"/>\n    <text x=\"285\" y=\"84\" font-size=\"11\" fill=\"#e44\">P</text>\n    <defs><marker id=\"ar\" markerWidth=\"6\" markerHeight=\"6\" refX=\"5\" refY=\"3\" orient=\"auto\"><path d=\"M0,0 L6,3 L0,6 z\" fill=\"#e44\"/></marker></defs>\n  </svg>",
+    "subField": "材料力学"
   },
   {
     "category": "専門科目（機械部門）",
@@ -1566,7 +1604,8 @@
       "1200 MPa"
     ],
     "correctIndex": 0,
-    "explanation": "薄肉球殻の膜応力は σθ = pd/(4t) = 1.2×6.0/(4×0.003) = 7.2/0.012 = 600 MPa。球殻は全方向で同じ応力（等二軸応力状態）となる。"
+    "explanation": "薄肉球殻の膜応力は σθ = pd/(4t) = 1.2×6.0/(4×0.003) = 7.2/0.012 = 600 MPa。球殻は全方向で同じ応力（等二軸応力状態）となる。",
+    "subField": "材料力学"
   },
   {
     "category": "専門科目（機械部門）",
@@ -1579,7 +1618,8 @@
       "σ = 30.0 MPa，τ = 10.0 MPa"
     ],
     "correctIndex": 0,
-    "explanation": "θ = 60°（法線がx軸となす角）。σ = (σx+σy)/2 + (σx-σy)/2·cos(2×60°) = 30 + 10·cos120° = 30 - 5 = 25.0 MPa。τ = -(σx-σy)/2·sin(2×60°) = -10·sin120° = -10×(√3/2) = -8.66 MPa → |τ| = 8.66 MPa。"
+    "explanation": "θ = 60°（法線がx軸となす角）。σ = (σx+σy)/2 + (σx-σy)/2·cos(2×60°) = 30 + 10·cos120° = 30 - 5 = 25.0 MPa。τ = -(σx-σy)/2·sin(2×60°) = -10·sin120° = -10×(√3/2) = -8.66 MPa → |τ| = 8.66 MPa。",
+    "subField": "材料力学"
   },
   {
     "category": "専門科目（機械部門）",
@@ -1593,7 +1633,8 @@
     ],
     "correctIndex": 0,
     "explanation": "A点（左ピン）の支点反力：RA×l = q×(l/2)×(l/4)（合力ql/2が右端からl/4）→ RA = ql/8。中央C点でのモーメント：M_C = RA×(l/2) = (ql/8)×(l/2) = ql²/16。",
-    "figureHtml": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 300 115\" width=\"300\" height=\"115\" style=\"max-width:100%;font-family:sans-serif;font-size:12px\">\n    <line x1=\"30\" y1=\"80\" x2=\"270\" y2=\"80\" stroke=\"#333\" stroke-width=\"3\"/>\n    <polygon points=\"30,80 20,100 40,100\" fill=\"none\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <line x1=\"248\" y1=\"80\" x2=\"258\" y2=\"95\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <line x1=\"258\" y1=\"95\" x2=\"268\" y2=\"80\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <line x1=\"248\" y1=\"100\" x2=\"280\" y2=\"100\" stroke=\"#333\" stroke-width=\"1\"/>\n    <text x=\"30\" y=\"70\" text-anchor=\"middle\" font-size=\"10\">A</text>\n    <text x=\"150\" y=\"70\" text-anchor=\"middle\" font-size=\"10\">C</text>\n    <text x=\"270\" y=\"70\" text-anchor=\"middle\" font-size=\"10\">B</text>\n    <line x1=\"150\" y1=\"75\" x2=\"150\" y2=\"85\" stroke=\"#aaa\" stroke-width=\"1\" stroke-dasharray=\"2,2\"/>\n    <line x1=\"150\" y1=\"55\" x2=\"270\" y2=\"55\" stroke=\"#44f\" stroke-width=\"1.5\"/>\n    <line x1=\"155\" y1=\"60\" x2=\"155\" y2=\"75\" stroke=\"#44f\" stroke-width=\"1.5\" marker-end=\"url(#a2)\"/>\n    <line x1=\"175\" y1=\"60\" x2=\"175\" y2=\"75\" stroke=\"#44f\" stroke-width=\"1.5\" marker-end=\"url(#a2)\"/>\n    <line x1=\"195\" y1=\"60\" x2=\"195\" y2=\"75\" stroke=\"#44f\" stroke-width=\"1.5\" marker-end=\"url(#a2)\"/>\n    <line x1=\"215\" y1=\"60\" x2=\"215\" y2=\"75\" stroke=\"#44f\" stroke-width=\"1.5\" marker-end=\"url(#a2)\"/>\n    <line x1=\"235\" y1=\"60\" x2=\"235\" y2=\"75\" stroke=\"#44f\" stroke-width=\"1.5\" marker-end=\"url(#a2)\"/>\n    <text x=\"210\" y=\"52\" text-anchor=\"middle\" font-size=\"10\" fill=\"#44f\">q</text>\n    <defs><marker id=\"a2\" markerWidth=\"6\" markerHeight=\"6\" refX=\"3\" refY=\"5\" orient=\"auto\"><path d=\"M0,0 L6,0 L3,6 z\" fill=\"#44f\"/></marker></defs>\n  </svg>"
+    "figureHtml": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 300 115\" width=\"300\" height=\"115\" style=\"max-width:100%;font-family:sans-serif;font-size:12px\">\n    <line x1=\"30\" y1=\"80\" x2=\"270\" y2=\"80\" stroke=\"#333\" stroke-width=\"3\"/>\n    <polygon points=\"30,80 20,100 40,100\" fill=\"none\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <line x1=\"248\" y1=\"80\" x2=\"258\" y2=\"95\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <line x1=\"258\" y1=\"95\" x2=\"268\" y2=\"80\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <line x1=\"248\" y1=\"100\" x2=\"280\" y2=\"100\" stroke=\"#333\" stroke-width=\"1\"/>\n    <text x=\"30\" y=\"70\" text-anchor=\"middle\" font-size=\"10\">A</text>\n    <text x=\"150\" y=\"70\" text-anchor=\"middle\" font-size=\"10\">C</text>\n    <text x=\"270\" y=\"70\" text-anchor=\"middle\" font-size=\"10\">B</text>\n    <line x1=\"150\" y1=\"75\" x2=\"150\" y2=\"85\" stroke=\"#aaa\" stroke-width=\"1\" stroke-dasharray=\"2,2\"/>\n    <line x1=\"150\" y1=\"55\" x2=\"270\" y2=\"55\" stroke=\"#44f\" stroke-width=\"1.5\"/>\n    <line x1=\"155\" y1=\"60\" x2=\"155\" y2=\"75\" stroke=\"#44f\" stroke-width=\"1.5\" marker-end=\"url(#a2)\"/>\n    <line x1=\"175\" y1=\"60\" x2=\"175\" y2=\"75\" stroke=\"#44f\" stroke-width=\"1.5\" marker-end=\"url(#a2)\"/>\n    <line x1=\"195\" y1=\"60\" x2=\"195\" y2=\"75\" stroke=\"#44f\" stroke-width=\"1.5\" marker-end=\"url(#a2)\"/>\n    <line x1=\"215\" y1=\"60\" x2=\"215\" y2=\"75\" stroke=\"#44f\" stroke-width=\"1.5\" marker-end=\"url(#a2)\"/>\n    <line x1=\"235\" y1=\"60\" x2=\"235\" y2=\"75\" stroke=\"#44f\" stroke-width=\"1.5\" marker-end=\"url(#a2)\"/>\n    <text x=\"210\" y=\"52\" text-anchor=\"middle\" font-size=\"10\" fill=\"#44f\">q</text>\n    <defs><marker id=\"a2\" markerWidth=\"6\" markerHeight=\"6\" refX=\"3\" refY=\"5\" orient=\"auto\"><path d=\"M0,0 L6,0 L3,6 z\" fill=\"#44f\"/></marker></defs>\n  </svg>",
+    "subField": "材料力学"
   },
   {
     "category": "専門科目（機械部門）",
@@ -1606,7 +1647,8 @@
       "P = ql/4"
     ],
     "correctIndex": 0,
-    "explanation": "先端たわみの公式：集中荷重P → δ_P = Pl³/(3EI)，等分布荷重q → δ_q = ql⁴/(8EI)。等しくなる条件：Pl³/(3EI) = ql⁴/(8EI) → P = 3ql/8。"
+    "explanation": "先端たわみの公式：集中荷重P → δ_P = Pl³/(3EI)，等分布荷重q → δ_q = ql⁴/(8EI)。等しくなる条件：Pl³/(3EI) = ql⁴/(8EI) → P = 3ql/8。",
+    "subField": "材料力学"
   },
   {
     "category": "専門科目（機械部門）",
@@ -1619,7 +1661,8 @@
       "PC < PB < PA"
     ],
     "correctIndex": 0,
-    "explanation": "オイラーの座屈荷重 Pcr = π²EI/L_e²（L_e：有効座屈長さ）。A（両端ピン）：L_e=L，PA=π²EI/L²。B（一端固定・一端ピン）：L_e≈0.7L，PB≈2π²EI/L²≈2PA。C（両端固定）：L_e=0.5L，PC=4π²EI/L²=4PA。よってPA < PB < PC。"
+    "explanation": "オイラーの座屈荷重 Pcr = π²EI/L_e²（L_e：有効座屈長さ）。A（両端ピン）：L_e=L，PA=π²EI/L²。B（一端固定・一端ピン）：L_e≈0.7L，PB≈2π²EI/L²≈2PA。C（両端固定）：L_e=0.5L，PC=4π²EI/L²=4PA。よってPA < PB < PC。",
+    "subField": "材料力学"
   },
   {
     "category": "専門科目（機械部門）",
@@ -1632,7 +1675,8 @@
       "(s+1) / (s²+5s+6)"
     ],
     "correctIndex": 0,
-    "explanation": "G(s) = C(sI−A)⁻¹B。sI−A = [s,−1;6,s+5]，det=s(s+5)+6=s²+5s+6。(sI−A)⁻¹ = 1/(s²+5s+6)×[s+5,1;−6,s]。G(s) = [1,0]×(...)×[0;1] = 1/(s²+5s+6)。"
+    "explanation": "G(s) = C(sI−A)⁻¹B。sI−A = [s,−1;6,s+5]，det=s(s+5)+6=s²+5s+6。(sI−A)⁻¹ = 1/(s²+5s+6)×[s+5,1;−6,s]。G(s) = [1,0]×(...)×[0;1] = 1/(s²+5s+6)。",
+    "subField": "制御工学"
   },
   {
     "category": "専門科目（機械部門）",
@@ -1645,7 +1689,8 @@
       "e^{−3t}cos2t"
     ],
     "correctIndex": 0,
-    "explanation": "s²+6s+10 = (s+3)²+1。F(s) = (s+3)/[(s+3)²+1] × 1 - 0·1/[(s+3)²+1]... \n実際：F(s) = (s+3)/[(s+3)²+1]。これはe^{-at}costのラプラス変換 (s+a)/[(s+a)²+1] の形（a=3）。f(t) = e^{-3t}cost。\n補正：(s+3+0×1)/[(s+3)²+1] = (s+3)/[(s+3)²+1] → f(t) = e^{-3t}cost。しかし選択肢①はe^{-3t}(cost−3sint)...正確には (s+3)/[(s+3)²+ω²]のωの問題。ω=1の場合 f(t)=e^{-3t}cost が正解。選択肢①のcost−3sintは別の分解。実際f(t)=e^{-3t}costが最も適切。"
+    "explanation": "s²+6s+10 = (s+3)²+1。F(s) = (s+3)/[(s+3)²+1] × 1 - 0·1/[(s+3)²+1]... \n実際：F(s) = (s+3)/[(s+3)²+1]。これはe^{-at}costのラプラス変換 (s+a)/[(s+a)²+1] の形（a=3）。f(t) = e^{-3t}cost。\n補正：(s+3+0×1)/[(s+3)²+1] = (s+3)/[(s+3)²+1] → f(t) = e^{-3t}cost。しかし選択肢①はe^{-3t}(cost−3sint)...正確には (s+3)/[(s+3)²+ω²]のωの問題。ω=1の場合 f(t)=e^{-3t}cost が正解。選択肢①のcost−3sintは別の分解。実際f(t)=e^{-3t}costが最も適切。",
+    "subField": "制御工学"
   },
   {
     "category": "専門科目（機械部門）",
@@ -1658,7 +1703,8 @@
       "零点が −3 であるから，この系は安定である。"
     ],
     "correctIndex": 0,
-    "explanation": "伝達関数の安定性は分母（極）の符号で決まる。分母 s²+7s+12 = (s+3)(s+4)。極は s=−3，s=−4（いずれも負の実部）。よってこの系は安定。零点（s=3）は安定性に無関係。"
+    "explanation": "伝達関数の安定性は分母（極）の符号で決まる。分母 s²+7s+12 = (s+3)(s+4)。極は s=−3，s=−4（いずれも負の実部）。よってこの系は安定。零点（s=3）は安定性に無関係。",
+    "subField": "制御工学"
   },
   {
     "category": "専門科目（機械部門）",
@@ -1671,7 +1717,8 @@
       "K(s+2) / (s+2+K)"
     ],
     "correctIndex": 0,
-    "explanation": "フィードバック閉ループ：G_cl = P(s)C(s)/(1+P(s)C(s)) = [K/(s+2)] / [1+K/(s+2)] = K/(s+2+K)。極は s = −(2+K)（K>0なら安定）。"
+    "explanation": "フィードバック閉ループ：G_cl = P(s)C(s)/(1+P(s)C(s)) = [K/(s+2)] / [1+K/(s+2)] = K/(s+2+K)。極は s = −(2+K)（K>0なら安定）。",
+    "subField": "制御工学"
   },
   {
     "category": "専門科目（機械部門）",
@@ -1685,7 +1732,8 @@
     ],
     "correctIndex": 0,
     "explanation": "固有角振動数 ω_n = √(k/m) = √(800/0.5) = √1600 = 40 rad/s。臨界減衰係数 c_c = 2mω_n = 2×0.5×40 = 40 Ns/m。",
-    "figureHtml": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 300 100\" width=\"300\" height=\"100\" style=\"max-width:100%;font-family:sans-serif;font-size:12px\">\n    <rect x=\"10\" y=\"0\" width=\"280\" height=\"10\" fill=\"#888\"/>\n    <path d=\"M80,10 Q86,20 92,10 Q98,0 104,10 Q110,20 116,10 Q122,0 128,10\" fill=\"none\" stroke=\"#333\" stroke-width=\"2\"/>\n    <line x1=\"128\" y1=\"10\" x2=\"128\" y2=\"50\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <rect x=\"108\" y=\"50\" width=\"40\" height=\"30\" fill=\"#cde\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <text x=\"128\" y=\"70\" text-anchor=\"middle\" font-size=\"11\">m</text>\n    <line x1=\"200\" y1=\"10\" x2=\"200\" y2=\"45\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <rect x=\"185\" y=\"45\" width=\"30\" height=\"30\" fill=\"none\" stroke=\"#333\" stroke-width=\"2\"/>\n    <line x1=\"185\" y1=\"58\" x2=\"215\" y2=\"58\" stroke=\"#333\" stroke-width=\"3\"/>\n    <line x1=\"200\" y1=\"75\" x2=\"200\" y2=\"80\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <line x1=\"200\" y1=\"80\" x2=\"128\" y2=\"80\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <text x=\"80\" y=\"7\" text-anchor=\"middle\" font-size=\"10\">k</text>\n    <text x=\"210\" y=\"62\" font-size=\"10\">c</text>\n  </svg>"
+    "figureHtml": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 300 100\" width=\"300\" height=\"100\" style=\"max-width:100%;font-family:sans-serif;font-size:12px\">\n    <rect x=\"10\" y=\"0\" width=\"280\" height=\"10\" fill=\"#888\"/>\n    <path d=\"M80,10 Q86,20 92,10 Q98,0 104,10 Q110,20 116,10 Q122,0 128,10\" fill=\"none\" stroke=\"#333\" stroke-width=\"2\"/>\n    <line x1=\"128\" y1=\"10\" x2=\"128\" y2=\"50\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <rect x=\"108\" y=\"50\" width=\"40\" height=\"30\" fill=\"#cde\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <text x=\"128\" y=\"70\" text-anchor=\"middle\" font-size=\"11\">m</text>\n    <line x1=\"200\" y1=\"10\" x2=\"200\" y2=\"45\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <rect x=\"185\" y=\"45\" width=\"30\" height=\"30\" fill=\"none\" stroke=\"#333\" stroke-width=\"2\"/>\n    <line x1=\"185\" y1=\"58\" x2=\"215\" y2=\"58\" stroke=\"#333\" stroke-width=\"3\"/>\n    <line x1=\"200\" y1=\"75\" x2=\"200\" y2=\"80\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <line x1=\"200\" y1=\"80\" x2=\"128\" y2=\"80\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <text x=\"80\" y=\"7\" text-anchor=\"middle\" font-size=\"10\">k</text>\n    <text x=\"210\" y=\"62\" font-size=\"10\">c</text>\n  </svg>",
+    "subField": "機械力学・振動"
   },
   {
     "category": "専門科目（機械部門）",
@@ -1699,7 +1747,8 @@
     ],
     "correctIndex": 0,
     "explanation": "O点まわりの質量慣性モーメント I = ρAl³/3。小角度変位θに対するばねの復元モーメント = −k×(aθ)×a = −ka²θ。運動方程式：(ρAl³/3)θ̈ + ka²θ = 0。固有角振動数 ω_n = √(ka²/(ρAl³/3)) = √(3ka²/(ρAl³))。",
-    "figureHtml": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 270 115\" width=\"270\" height=\"115\" style=\"max-width:100%;font-family:sans-serif;font-size:12px\">\n    <rect x=\"0\" y=\"50\" width=\"12\" height=\"50\" fill=\"#888\"/>\n    <line x1=\"10\" y1=\"75\" x2=\"250\" y2=\"75\" stroke=\"#333\" stroke-width=\"5\"/>\n    <circle cx=\"10\" cy=\"75\" r=\"6\" fill=\"none\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <rect x=\"78\" y=\"20\" width=\"8\" height=\"50\" fill=\"#888\"/>\n    <path d=\"M86,35 Q90,28 94,35 Q98,42 102,35 Q106,28 110,35 Q114,42 118,35\" fill=\"none\" stroke=\"#333\" stroke-width=\"2\"/>\n    <line x1=\"118\" y1=\"35\" x2=\"118\" y2=\"75\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <text x=\"100\" y=\"15\" text-anchor=\"middle\" font-size=\"10\">k</text>\n    <line x1=\"10\" y1=\"88\" x2=\"118\" y2=\"88\" stroke=\"#aaa\" stroke-width=\"1\" stroke-dasharray=\"3,2\"/>\n    <text x=\"64\" y=\"100\" text-anchor=\"middle\" font-size=\"10\">a</text>\n    <line x1=\"10\" y1=\"93\" x2=\"250\" y2=\"93\" stroke=\"#aaa\" stroke-width=\"1\" stroke-dasharray=\"3,2\"/>\n    <text x=\"130\" y=\"105\" text-anchor=\"middle\" font-size=\"10\">l</text>\n  </svg>"
+    "figureHtml": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 270 115\" width=\"270\" height=\"115\" style=\"max-width:100%;font-family:sans-serif;font-size:12px\">\n    <rect x=\"0\" y=\"50\" width=\"12\" height=\"50\" fill=\"#888\"/>\n    <line x1=\"10\" y1=\"75\" x2=\"250\" y2=\"75\" stroke=\"#333\" stroke-width=\"5\"/>\n    <circle cx=\"10\" cy=\"75\" r=\"6\" fill=\"none\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <rect x=\"78\" y=\"20\" width=\"8\" height=\"50\" fill=\"#888\"/>\n    <path d=\"M86,35 Q90,28 94,35 Q98,42 102,35 Q106,28 110,35 Q114,42 118,35\" fill=\"none\" stroke=\"#333\" stroke-width=\"2\"/>\n    <line x1=\"118\" y1=\"35\" x2=\"118\" y2=\"75\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <text x=\"100\" y=\"15\" text-anchor=\"middle\" font-size=\"10\">k</text>\n    <line x1=\"10\" y1=\"88\" x2=\"118\" y2=\"88\" stroke=\"#aaa\" stroke-width=\"1\" stroke-dasharray=\"3,2\"/>\n    <text x=\"64\" y=\"100\" text-anchor=\"middle\" font-size=\"10\">a</text>\n    <line x1=\"10\" y1=\"93\" x2=\"250\" y2=\"93\" stroke=\"#aaa\" stroke-width=\"1\" stroke-dasharray=\"3,2\"/>\n    <text x=\"130\" y=\"105\" text-anchor=\"middle\" font-size=\"10\">l</text>\n  </svg>",
+    "subField": "機械力学・振動"
   },
   {
     "category": "専門科目（機械部門）",
@@ -1712,7 +1761,8 @@
       "V = v₀/4"
     ],
     "correctIndex": 0,
-    "explanation": "弾性衝突：運動量保存とエネルギー保存，かつくさびの斜面（45°）に垂直な成分のみ力が作用（摩擦なし）。連立解くと V = 2v₀/5（くさびのx方向速度）。"
+    "explanation": "弾性衝突：運動量保存とエネルギー保存，かつくさびの斜面（45°）に垂直な成分のみ力が作用（摩擦なし）。連立解くと V = 2v₀/5（くさびのx方向速度）。",
+    "subField": "機械力学・振動"
   },
   {
     "category": "専門科目（機械部門）",
@@ -1725,7 +1775,8 @@
       "2.7 kW/m²"
     ],
     "correctIndex": 0,
-    "explanation": "対流熱流束 q_conv = h(T_s−T_∞) = 15×(250−20) = 15×230 = 3450 W/m²。放射熱流束 q_rad = ε×σ×(T_s⁴−T_∞⁴) = 0.9×5.67×10⁻⁸×(523⁴−293⁴)。523⁴≈7.49×10¹⁰，293⁴≈7.37×10⁹。q_rad ≈ 0.9×5.67×10⁻⁸×6.75×10¹⁰ ≈ 0.9×3.44×10³ ≈ 3096 W/m²。合計 q ≈ 3450+3096 ≈ 6546 W/m² ≈ 6.3 kW/m²。"
+    "explanation": "対流熱流束 q_conv = h(T_s−T_∞) = 15×(250−20) = 15×230 = 3450 W/m²。放射熱流束 q_rad = ε×σ×(T_s⁴−T_∞⁴) = 0.9×5.67×10⁻⁸×(523⁴−293⁴)。523⁴≈7.49×10¹⁰，293⁴≈7.37×10⁹。q_rad ≈ 0.9×5.67×10⁻⁸×6.75×10¹⁰ ≈ 0.9×3.44×10³ ≈ 3096 W/m²。合計 q ≈ 3450+3096 ≈ 6546 W/m² ≈ 6.3 kW/m²。",
+    "subField": "熱工学"
   },
   {
     "category": "専門科目（機械部門）",
@@ -1738,7 +1789,8 @@
       "（ア）48℃，（イ）0.84 kW/m²"
     ],
     "correctIndex": 0,
-    "explanation": "熱抵抗（単位面積あたり）：R_glass = 0.012/1.5 = 8.0×10⁻³ m²K/W，R_plastic = 0.006/0.2 = 3.0×10⁻² m²K/W。合計 R = 3.8×10⁻² m²K/W。熱流束 q = ΔT/R = 50/0.038 ≈ 1316 W/m² ≈ 1.32 kW/m²。界面温度 T_int = 75 − 1316×8×10⁻³ = 75 − 10.5 ≈ 64.5°C ≈ 64°C。"
+    "explanation": "熱抵抗（単位面積あたり）：R_glass = 0.012/1.5 = 8.0×10⁻³ m²K/W，R_plastic = 0.006/0.2 = 3.0×10⁻² m²K/W。合計 R = 3.8×10⁻² m²K/W。熱流束 q = ΔT/R = 50/0.038 ≈ 1316 W/m² ≈ 1.32 kW/m²。界面温度 T_int = 75 − 1316×8×10⁻³ = 75 − 10.5 ≈ 64.5°C ≈ 64°C。",
+    "subField": "熱工学"
   },
   {
     "category": "専門科目（機械部門）",
@@ -1751,7 +1803,8 @@
       "4 倍"
     ],
     "correctIndex": 0,
-    "explanation": "層流平板の強制対流：Nu_L = 0.664·Re_L^0.5·Pr^(1/3)，h = Nu_L·λ/L ∝ L^(0.5-1) = L^(-0.5)。LをL→4L にすると h → h×(4L/L)^(-0.5) = h×4^(-0.5) = h×(1/2)。よって h は 1/2 倍。"
+    "explanation": "層流平板の強制対流：Nu_L = 0.664·Re_L^0.5·Pr^(1/3)，h = Nu_L·λ/L ∝ L^(0.5-1) = L^(-0.5)。LをL→4L にすると h → h×(4L/L)^(-0.5) = h×4^(-0.5) = h×(1/2)。よって h は 1/2 倍。",
+    "subField": "熱工学"
   },
   {
     "category": "専門科目（機械部門）",
@@ -1764,7 +1817,8 @@
       "1100 K"
     ],
     "correctIndex": 0,
-    "explanation": "断熱過程：TV^(κ-1) = const → T₁V₁^(κ-1) = T₂V₂^(κ-1) → T₂ = T₁×(V₁/V₂)^(κ-1) = T₁×r^(κ-1) = 350×8^0.4。8^0.4 = 8^(2/5) = (8^2)^(1/5) = 64^(1/5) ≈ 2.297。T₂ = 350×2.297 ≈ 804 K ≈ 806 K。"
+    "explanation": "断熱過程：TV^(κ-1) = const → T₁V₁^(κ-1) = T₂V₂^(κ-1) → T₂ = T₁×(V₁/V₂)^(κ-1) = T₁×r^(κ-1) = 350×8^0.4。8^0.4 = 8^(2/5) = (8^2)^(1/5) = 64^(1/5) ≈ 2.297。T₂ = 350×2.297 ≈ 804 K ≈ 806 K。",
+    "subField": "熱工学"
   },
   {
     "category": "専門科目（機械部門）",
@@ -1777,7 +1831,8 @@
       "A"
     ],
     "correctIndex": 0,
-    "explanation": "渦度 ω_z = ∂v/∂x - ∂u/∂y = A - A = 0。この流れは非回転流れ（渦なし流れ，ポテンシャル流れ）である。"
+    "explanation": "渦度 ω_z = ∂v/∂x - ∂u/∂y = A - A = 0。この流れは非回転流れ（渦なし流れ，ポテンシャル流れ）である。",
+    "subField": "流体工学"
   },
   {
     "category": "専門科目（機械部門）",
@@ -1791,7 +1846,8 @@
     ],
     "correctIndex": 0,
     "explanation": "ベルヌーイの定理を水面（v≈0，z=h，p=p_atm）と穴（v=?，z=0，p=p_atm）に適用：ρgh = ρv²/2 → v = √(2gh)。トリチェリの定理と呼ばれる。",
-    "figureHtml": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 300 160\" width=\"300\" height=\"160\" style=\"max-width:100%;font-family:sans-serif;font-size:12px\">\n    <rect x=\"40\" y=\"20\" width=\"180\" height=\"130\" fill=\"rgba(100,160,255,0.2)\" stroke=\"#333\" stroke-width=\"2\"/>\n    <line x1=\"220\" y1=\"110\" x2=\"250\" y2=\"110\" stroke=\"#44a\" stroke-width=\"3\"/>\n    <line x1=\"250\" y1=\"110\" x2=\"280\" y2=\"110\" stroke=\"#44a\" stroke-width=\"2\" stroke-dasharray=\"3,2\" marker-end=\"url(#av)\"/>\n    <text x=\"270\" y=\"105\" font-size=\"11\" fill=\"#44a\">v</text>\n    <line x1=\"230\" y1=\"20\" x2=\"230\" y2=\"110\" stroke=\"#e44\" stroke-width=\"1.5\" stroke-dasharray=\"4,3\"/>\n    <text x=\"238\" y=\"65\" font-size=\"11\" fill=\"#e44\">h</text>\n    <line x1=\"220\" y1=\"20\" x2=\"245\" y2=\"20\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <line x1=\"220\" y1=\"110\" x2=\"245\" y2=\"110\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <defs><marker id=\"av\" markerWidth=\"6\" markerHeight=\"6\" refX=\"5\" refY=\"3\" orient=\"auto\"><path d=\"M0,0 L6,3 L0,6 z\" fill=\"#44a\"/></marker></defs>\n  </svg>"
+    "figureHtml": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 300 160\" width=\"300\" height=\"160\" style=\"max-width:100%;font-family:sans-serif;font-size:12px\">\n    <rect x=\"40\" y=\"20\" width=\"180\" height=\"130\" fill=\"rgba(100,160,255,0.2)\" stroke=\"#333\" stroke-width=\"2\"/>\n    <line x1=\"220\" y1=\"110\" x2=\"250\" y2=\"110\" stroke=\"#44a\" stroke-width=\"3\"/>\n    <line x1=\"250\" y1=\"110\" x2=\"280\" y2=\"110\" stroke=\"#44a\" stroke-width=\"2\" stroke-dasharray=\"3,2\" marker-end=\"url(#av)\"/>\n    <text x=\"270\" y=\"105\" font-size=\"11\" fill=\"#44a\">v</text>\n    <line x1=\"230\" y1=\"20\" x2=\"230\" y2=\"110\" stroke=\"#e44\" stroke-width=\"1.5\" stroke-dasharray=\"4,3\"/>\n    <text x=\"238\" y=\"65\" font-size=\"11\" fill=\"#e44\">h</text>\n    <line x1=\"220\" y1=\"20\" x2=\"245\" y2=\"20\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <line x1=\"220\" y1=\"110\" x2=\"245\" y2=\"110\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <defs><marker id=\"av\" markerWidth=\"6\" markerHeight=\"6\" refX=\"5\" refY=\"3\" orient=\"auto\"><path d=\"M0,0 L6,3 L0,6 z\" fill=\"#44a\"/></marker></defs>\n  </svg>",
+    "subField": "流体工学"
   },
   {
     "category": "専門科目（機械部門）",
@@ -1804,7 +1860,8 @@
       "5.0 kHz"
     ],
     "correctIndex": 0,
-    "explanation": "ストローハル数 St = fd/U → f = St×U/d = 0.2×30/0.006 = 6/0.006 = 1000 Hz = 1.0 kHz。レイノルズ数 Re = Ud/ν = 30×0.006/1.5×10⁻⁵ = 12000（渦放出領域）。"
+    "explanation": "ストローハル数 St = fd/U → f = St×U/d = 0.2×30/0.006 = 6/0.006 = 1000 Hz = 1.0 kHz。レイノルズ数 Re = Ud/ν = 30×0.006/1.5×10⁻⁵ = 12000（渦放出領域）。",
+    "subField": "流体工学"
   },
   {
     "category": "専門科目（機械部門）",
@@ -1817,7 +1874,8 @@
       "4.02 kN"
     ],
     "correctIndex": 0,
-    "explanation": "相対速度 = v - u = 20 - 5 = 15 m/s。噴流断面積 A = π/4×0.08² = 5.027×10⁻³ m²。力 F = ρA(v-u)² = 1000×5.027×10⁻³×15² = 1000×5.027×10⁻³×225 ≈ 1131 N ≈ 1.13 kN。"
+    "explanation": "相対速度 = v - u = 20 - 5 = 15 m/s。噴流断面積 A = π/4×0.08² = 5.027×10⁻³ m²。力 F = ρA(v-u)² = 1000×5.027×10⁻³×15² = 1000×5.027×10⁻³×225 ≈ 1131 N ≈ 1.13 kN。",
+    "subField": "流体工学"
   },
   {
     "category": "専門科目（機械部門）",
@@ -1830,7 +1888,8 @@
       "4.0 × 10⁻⁴"
     ],
     "correctIndex": 1,
-    "explanation": "薄肉円筒の円周方向応力 σθ = pd/(2t) = 1.6×0.25/(2×0.005) = 40 MPa。軸方向応力 σz = pd/(4t) = 20 MPa。円周方向ひずみ εθ = (σθ − ν σz)/E = (40 − 0.3×20)/(200×10³) = 34/200000 = 1.7×10⁻⁴。"
+    "explanation": "薄肉円筒の円周方向応力 σθ = pd/(2t) = 1.6×0.25/(2×0.005) = 40 MPa。軸方向応力 σz = pd/(4t) = 20 MPa。円周方向ひずみ εθ = (σθ − ν σz)/E = (40 − 0.3×20)/(200×10³) = 34/200000 = 1.7×10⁻⁴。",
+    "subField": "材料力学"
   },
   {
     "category": "専門科目（機械部門）",
@@ -1844,7 +1903,8 @@
     ],
     "correctIndex": 2,
     "explanation": "最大主せん断応力 τmax = √[((σx−σy)/2)² + τxy²] = √[30² + 40²] = √[900 + 1600] = √2500 = 50 MPa。モールの応力円の半径に相当する。",
-    "figureHtml": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 280 165\" width=\"280\" height=\"165\" style=\"max-width:100%;font-family:sans-serif;font-size:12px\">\n    <rect x=\"100\" y=\"50\" width=\"80\" height=\"60\" fill=\"none\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <text x=\"135\" y=\"30\" text-anchor=\"middle\" font-size=\"11\">σx=90</text>\n    <line x1=\"180\" y1=\"80\" x2=\"210\" y2=\"80\" stroke=\"#e44\" stroke-width=\"2\" marker-end=\"url(#arr)\"/>\n    <line x1=\"100\" y1=\"80\" x2=\"70\" y2=\"80\" stroke=\"#e44\" stroke-width=\"2\" marker-end=\"url(#arr)\"/>\n    <text x=\"225\" y=\"84\" font-size=\"11\" fill=\"#e44\">σx</text>\n    <line x1=\"140\" y1=\"50\" x2=\"140\" y2=\"20\" stroke=\"#44e\" stroke-width=\"2\" marker-end=\"url(#arr2)\"/>\n    <line x1=\"140\" y1=\"110\" x2=\"140\" y2=\"140\" stroke=\"#44e\" stroke-width=\"2\" marker-end=\"url(#arr3)\"/>\n    <text x=\"148\" y=\"16\" font-size=\"11\" fill=\"#44e\">σy</text>\n    <defs>\n      <marker id=\"arr\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\"><path d=\"M0,0 L0,6 L8,3 z\" fill=\"#e44\"/></marker>\n      <marker id=\"arr2\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\"><path d=\"M0,0 L0,6 L8,3 z\" fill=\"#44e\"/></marker>\n      <marker id=\"arr3\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\" markerUnits=\"strokeWidth\"><path d=\"M0,6 L8,3 L0,0 z\" fill=\"#44e\"/></marker>\n    </defs>\n    <text x=\"160\" y=\"160\" text-anchor=\"middle\" font-size=\"10\" fill=\"#666\">σx=90, σy=30, τxy=40 [MPa]</text>\n  </svg>"
+    "figureHtml": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 280 165\" width=\"280\" height=\"165\" style=\"max-width:100%;font-family:sans-serif;font-size:12px\">\n    <rect x=\"100\" y=\"50\" width=\"80\" height=\"60\" fill=\"none\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <text x=\"135\" y=\"30\" text-anchor=\"middle\" font-size=\"11\">σx=90</text>\n    <line x1=\"180\" y1=\"80\" x2=\"210\" y2=\"80\" stroke=\"#e44\" stroke-width=\"2\" marker-end=\"url(#arr)\"/>\n    <line x1=\"100\" y1=\"80\" x2=\"70\" y2=\"80\" stroke=\"#e44\" stroke-width=\"2\" marker-end=\"url(#arr)\"/>\n    <text x=\"225\" y=\"84\" font-size=\"11\" fill=\"#e44\">σx</text>\n    <line x1=\"140\" y1=\"50\" x2=\"140\" y2=\"20\" stroke=\"#44e\" stroke-width=\"2\" marker-end=\"url(#arr2)\"/>\n    <line x1=\"140\" y1=\"110\" x2=\"140\" y2=\"140\" stroke=\"#44e\" stroke-width=\"2\" marker-end=\"url(#arr3)\"/>\n    <text x=\"148\" y=\"16\" font-size=\"11\" fill=\"#44e\">σy</text>\n    <defs>\n      <marker id=\"arr\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\"><path d=\"M0,0 L0,6 L8,3 z\" fill=\"#e44\"/></marker>\n      <marker id=\"arr2\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\"><path d=\"M0,0 L0,6 L8,3 z\" fill=\"#44e\"/></marker>\n      <marker id=\"arr3\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\" markerUnits=\"strokeWidth\"><path d=\"M0,6 L8,3 L0,0 z\" fill=\"#44e\"/></marker>\n    </defs>\n    <text x=\"160\" y=\"160\" text-anchor=\"middle\" font-size=\"10\" fill=\"#666\">σx=90, σy=30, τxy=40 [MPa]</text>\n  </svg>",
+    "subField": "材料力学"
   },
   {
     "category": "専門科目（機械部門）",
@@ -1858,7 +1918,8 @@
     ],
     "correctIndex": 0,
     "explanation": "集中荷重Pを受ける片持ちはりのひずみエネルギーは U = P²l³/(6EI) = 30²×0.6³/(6×150) = 900×0.216/900 = 0.216/6 = 0.036 J。",
-    "figureHtml": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 300 140\" width=\"300\" height=\"140\" style=\"max-width:100%;font-family:sans-serif;font-size:12px\">\n    <rect x=\"10\" y=\"55\" width=\"20\" height=\"60\" fill=\"#888\"/>\n    <line x1=\"30\" y1=\"85\" x2=\"260\" y2=\"85\" stroke=\"#333\" stroke-width=\"3\"/>\n    <line x1=\"260\" y1=\"85\" x2=\"260\" y2=\"120\" stroke=\"#e44\" stroke-width=\"2\" marker-end=\"url(#arrd)\"/>\n    <text x=\"272\" y=\"110\" font-size=\"11\" fill=\"#e44\">P</text>\n    <text x=\"140\" y=\"75\" text-anchor=\"middle\" font-size=\"11\">l = 0.6 m</text>\n    <defs><marker id=\"arrd\" markerWidth=\"8\" markerHeight=\"8\" refX=\"4\" refY=\"4\" orient=\"auto\"><path d=\"M4,0 L4,8 L0,4 z\" fill=\"#e44\"/></marker></defs>\n  </svg>"
+    "figureHtml": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 300 140\" width=\"300\" height=\"140\" style=\"max-width:100%;font-family:sans-serif;font-size:12px\">\n    <rect x=\"10\" y=\"55\" width=\"20\" height=\"60\" fill=\"#888\"/>\n    <line x1=\"30\" y1=\"85\" x2=\"260\" y2=\"85\" stroke=\"#333\" stroke-width=\"3\"/>\n    <line x1=\"260\" y1=\"85\" x2=\"260\" y2=\"120\" stroke=\"#e44\" stroke-width=\"2\" marker-end=\"url(#arrd)\"/>\n    <text x=\"272\" y=\"110\" font-size=\"11\" fill=\"#e44\">P</text>\n    <text x=\"140\" y=\"75\" text-anchor=\"middle\" font-size=\"11\">l = 0.6 m</text>\n    <defs><marker id=\"arrd\" markerWidth=\"8\" markerHeight=\"8\" refX=\"4\" refY=\"4\" orient=\"auto\"><path d=\"M4,0 L4,8 L0,4 z\" fill=\"#e44\"/></marker></defs>\n  </svg>",
+    "subField": "材料力学"
   },
   {
     "category": "専門科目（機械部門）",
@@ -1872,7 +1933,8 @@
     ],
     "correctIndex": 0,
     "explanation": "下端から x の位置の断面には，x より下の自重 ρgAx が引張力として作用する（Aは断面積）。最大引張応力は固定端（x=l）で σmax = ρgl となる。破断条件は σmax < σB より l < σB/(ρg)。",
-    "figureHtml": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 260 165\" width=\"260\" height=\"165\" style=\"max-width:100%;font-family:sans-serif;font-size:12px\">\n    <rect x=\"130\" y=\"0\" width=\"40\" height=\"15\" fill=\"#888\"/>\n    <line x1=\"150\" y1=\"15\" x2=\"150\" y2=\"130\" stroke=\"#555\" stroke-width=\"14\"/>\n    <line x1=\"150\" y1=\"130\" x2=\"150\" y2=\"155\" stroke=\"#777\" stroke-width=\"2\" marker-end=\"url(#arrg)\"/>\n    <text x=\"165\" y=\"150\" font-size=\"11\" fill=\"#555\">W=ρgAl</text>\n    <text x=\"30\" y=\"75\" font-size=\"11\">l</text>\n    <line x1=\"50\" y1=\"15\" x2=\"50\" y2=\"130\" stroke=\"#aaa\" stroke-width=\"1\" stroke-dasharray=\"4,3\"/>\n    <defs><marker id=\"arrg\" markerWidth=\"8\" markerHeight=\"8\" refX=\"4\" refY=\"7\" orient=\"auto\"><path d=\"M0,0 L8,0 L4,8 z\" fill=\"#777\"/></marker></defs>\n  </svg>"
+    "figureHtml": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 260 165\" width=\"260\" height=\"165\" style=\"max-width:100%;font-family:sans-serif;font-size:12px\">\n    <rect x=\"130\" y=\"0\" width=\"40\" height=\"15\" fill=\"#888\"/>\n    <line x1=\"150\" y1=\"15\" x2=\"150\" y2=\"130\" stroke=\"#555\" stroke-width=\"14\"/>\n    <line x1=\"150\" y1=\"130\" x2=\"150\" y2=\"155\" stroke=\"#777\" stroke-width=\"2\" marker-end=\"url(#arrg)\"/>\n    <text x=\"165\" y=\"150\" font-size=\"11\" fill=\"#555\">W=ρgAl</text>\n    <text x=\"30\" y=\"75\" font-size=\"11\">l</text>\n    <line x1=\"50\" y1=\"15\" x2=\"50\" y2=\"130\" stroke=\"#aaa\" stroke-width=\"1\" stroke-dasharray=\"4,3\"/>\n    <defs><marker id=\"arrg\" markerWidth=\"8\" markerHeight=\"8\" refX=\"4\" refY=\"7\" orient=\"auto\"><path d=\"M0,0 L8,0 L4,8 z\" fill=\"#777\"/></marker></defs>\n  </svg>",
+    "subField": "材料力学"
   },
   {
     "category": "専門科目（機械部門）",
@@ -1886,7 +1948,8 @@
     ],
     "correctIndex": 0,
     "explanation": "自由端を原点にとると，位置 ξ（自由端から固定端方向）での荷重強度は q = q₀ξ/l。固定端での曲げモーメント M = ∫₀ˡ (q₀ξ/l)·ξ dξ = (q₀/l)·[ξ³/3]₀ˡ = q₀l²/3。…ただし荷重の作用向きを考慮すると M = q₀l²/6 となる（合力 q₀l/2 が自由端から l/3 の位置に作用）。合力 R = q₀l/2，作用点は自由端から l/3 → M_固定端 = R × l/3 × (2/1 修正)…正確には固定端から：合力 q₀l/2 は固定端から l/3 の位置 → M = (q₀l/2)×(l/3) = q₀l²/6。",
-    "figureHtml": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 300 140\" width=\"300\" height=\"140\" style=\"max-width:100%;font-family:sans-serif;font-size:12px\">\n    <rect x=\"10\" y=\"55\" width=\"20\" height=\"70\" fill=\"#888\"/>\n    <line x1=\"30\" y1=\"90\" x2=\"270\" y2=\"90\" stroke=\"#333\" stroke-width=\"3\"/>\n    <polygon points=\"270,45 270,90 30,90\" fill=\"rgba(100,160,255,0.3)\" stroke=\"#44f\" stroke-width=\"1\"/>\n    <text x=\"272\" y=\"50\" font-size=\"11\" fill=\"#44f\">q₀</text>\n    <text x=\"140\" y=\"110\" text-anchor=\"middle\" font-size=\"11\">l</text>\n  </svg>"
+    "figureHtml": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 300 140\" width=\"300\" height=\"140\" style=\"max-width:100%;font-family:sans-serif;font-size:12px\">\n    <rect x=\"10\" y=\"55\" width=\"20\" height=\"70\" fill=\"#888\"/>\n    <line x1=\"30\" y1=\"90\" x2=\"270\" y2=\"90\" stroke=\"#333\" stroke-width=\"3\"/>\n    <polygon points=\"270,45 270,90 30,90\" fill=\"rgba(100,160,255,0.3)\" stroke=\"#44f\" stroke-width=\"1\"/>\n    <text x=\"272\" y=\"50\" font-size=\"11\" fill=\"#44f\">q₀</text>\n    <text x=\"140\" y=\"110\" text-anchor=\"middle\" font-size=\"11\">l</text>\n  </svg>",
+    "subField": "材料力学"
   },
   {
     "category": "専門科目（機械部門）",
@@ -1900,7 +1963,8 @@
     ],
     "correctIndex": 3,
     "explanation": "ねじれ角 φ = TL/(GJ)。極断面2次モーメント J = πd⁴/32 に比例。φ₁/φ₂ = (l₁/l₂)×(d₂⁴/d₁⁴) = (100/100)×(40/20)⁴ = 1×16 = 16。直径の比が2倍でも断面4次に効くため大きな差が生じる。",
-    "figureHtml": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 300 145\" width=\"300\" height=\"145\" style=\"max-width:100%;font-family:sans-serif;font-size:12px\">\n    <rect x=\"10\" y=\"65\" width=\"15\" height=\"40\" fill=\"#888\"/>\n    <rect x=\"25\" y=\"73\" width=\"100\" height=\"24\" fill=\"#bbb\" stroke=\"#555\" stroke-width=\"1.5\"/>\n    <text x=\"75\" y=\"69\" text-anchor=\"middle\" font-size=\"10\">d₁=20, l₁=100</text>\n    <rect x=\"125\" y=\"61\" width=\"100\" height=\"48\" fill=\"#999\" stroke=\"#555\" stroke-width=\"1.5\"/>\n    <text x=\"175\" y=\"57\" text-anchor=\"middle\" font-size=\"10\">d₂=40, l₂=100</text>\n    <line x1=\"225\" y1=\"85\" x2=\"255\" y2=\"85\" stroke=\"#e44\" stroke-width=\"2\"/>\n    <text x=\"260\" y=\"89\" font-size=\"11\" fill=\"#e44\">T</text>\n  </svg>"
+    "figureHtml": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 300 145\" width=\"300\" height=\"145\" style=\"max-width:100%;font-family:sans-serif;font-size:12px\">\n    <rect x=\"10\" y=\"65\" width=\"15\" height=\"40\" fill=\"#888\"/>\n    <rect x=\"25\" y=\"73\" width=\"100\" height=\"24\" fill=\"#bbb\" stroke=\"#555\" stroke-width=\"1.5\"/>\n    <text x=\"75\" y=\"69\" text-anchor=\"middle\" font-size=\"10\">d₁=20, l₁=100</text>\n    <rect x=\"125\" y=\"61\" width=\"100\" height=\"48\" fill=\"#999\" stroke=\"#555\" stroke-width=\"1.5\"/>\n    <text x=\"175\" y=\"57\" text-anchor=\"middle\" font-size=\"10\">d₂=40, l₂=100</text>\n    <line x1=\"225\" y1=\"85\" x2=\"255\" y2=\"85\" stroke=\"#e44\" stroke-width=\"2\"/>\n    <text x=\"260\" y=\"89\" font-size=\"11\" fill=\"#e44\">T</text>\n  </svg>",
+    "subField": "材料力学"
   },
   {
     "category": "専門科目（機械部門）",
@@ -1913,7 +1977,8 @@
       "√2"
     ],
     "correctIndex": 0,
-    "explanation": "線形破壊力学において K_I = σ√(πa)×F（形状係数）。相似形2倍ならき裂長さ a→2a，形状係数 F は同じ。K_Ic = σ_f1√(πa₀)F = σ_f2√(π×2a₀)F より σ_f2/σ_f1 = √(a₀/(2a₀)) = 1/√2。"
+    "explanation": "線形破壊力学において K_I = σ√(πa)×F（形状係数）。相似形2倍ならき裂長さ a→2a，形状係数 F は同じ。K_Ic = σ_f1√(πa₀)F = σ_f2√(π×2a₀)F より σ_f2/σ_f1 = √(a₀/(2a₀)) = 1/√2。",
+    "subField": "材料力学"
   },
   {
     "category": "専門科目（機械部門）",
@@ -1926,7 +1991,8 @@
       "0 < K < 3"
     ],
     "correctIndex": 0,
-    "explanation": "特性方程式は s(s+1)(s+3) + K = 0 → s³ + 4s² + 3s + K = 0。ラウス表：第1列 [1, 3, (12-K)/4, K]。安定条件：(12-K)/4 > 0 かつ K > 0 → 0 < K < 12。"
+    "explanation": "特性方程式は s(s+1)(s+3) + K = 0 → s³ + 4s² + 3s + K = 0。ラウス表：第1列 [1, 3, (12-K)/4, K]。安定条件：(12-K)/4 > 0 かつ K > 0 → 0 < K < 12。",
+    "subField": "制御工学"
   },
   {
     "category": "専門科目（機械部門）",
@@ -1939,7 +2005,8 @@
       "e^{-t} - e^{-4t}"
     ],
     "correctIndex": 0,
-    "explanation": "Y(s) = 4 / [s(s+1)(s+4)]。部分分数展開：A/s + B/(s+1) + C/(s+4)。A = 4/(1×4) = 1, B = 4/[(-1)(3)] = -4/3, C = 4/[(-4)(-3)] = 1/3。y(t) = 1 - (4/3)e^{-t} + (1/3)e^{-4t}。"
+    "explanation": "Y(s) = 4 / [s(s+1)(s+4)]。部分分数展開：A/s + B/(s+1) + C/(s+4)。A = 4/(1×4) = 1, B = 4/[(-1)(3)] = -4/3, C = 4/[(-4)(-3)] = 1/3。y(t) = 1 - (4/3)e^{-t} + (1/3)e^{-4t}。",
+    "subField": "制御工学"
   },
   {
     "category": "専門科目（機械部門）",
@@ -1953,7 +2020,8 @@
     ],
     "correctIndex": 0,
     "explanation": "直列伝達関数 G = G₁G₂，フィードバック要素 H の閉ループ系伝達関数は G/(1+GH) = G₁G₂/(1+G₁G₂H) となる。",
-    "figureHtml": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 280 150\" width=\"280\" height=\"150\" style=\"max-width:100%;font-family:sans-serif;font-size:12px\">\n    <line x1=\"10\" y1=\"70\" x2=\"50\" y2=\"70\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <circle cx=\"55\" cy=\"70\" r=\"10\" fill=\"none\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <text x=\"55\" y=\"75\" text-anchor=\"middle\" font-size=\"14\">+</text>\n    <line x1=\"65\" y1=\"70\" x2=\"95\" y2=\"70\" stroke=\"#333\" stroke-width=\"1.5\" marker-end=\"url(#a1)\"/>\n    <rect x=\"95\" y=\"55\" width=\"40\" height=\"30\" fill=\"#e8f0ff\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <text x=\"115\" y=\"75\" text-anchor=\"middle\" font-size=\"13\">G₁</text>\n    <line x1=\"135\" y1=\"70\" x2=\"165\" y2=\"70\" stroke=\"#333\" stroke-width=\"1.5\" marker-end=\"url(#a1)\"/>\n    <rect x=\"165\" y=\"55\" width=\"40\" height=\"30\" fill=\"#e8f0ff\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <text x=\"185\" y=\"75\" text-anchor=\"middle\" font-size=\"13\">G₂</text>\n    <line x1=\"205\" y1=\"70\" x2=\"260\" y2=\"70\" stroke=\"#333\" stroke-width=\"1.5\" marker-end=\"url(#a1)\"/>\n    <line x1=\"235\" y1=\"70\" x2=\"235\" y2=\"120\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <line x1=\"235\" y1=\"120\" x2=\"115\" y2=\"120\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <rect x=\"95\" y=\"105\" width=\"40\" height=\"30\" fill=\"#ffe8e8\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <text x=\"115\" y=\"125\" text-anchor=\"middle\" font-size=\"13\">H</text>\n    <line x1=\"95\" y1=\"120\" x2=\"55\" y2=\"120\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <line x1=\"55\" y1=\"120\" x2=\"55\" y2=\"82\" stroke=\"#333\" stroke-width=\"1.5\" marker-end=\"url(#a2)\"/>\n    <text x=\"30\" y=\"67\" font-size=\"12\">R</text>\n    <text x=\"248\" y=\"67\" font-size=\"12\">Y</text>\n    <defs>\n      <marker id=\"a1\" markerWidth=\"6\" markerHeight=\"6\" refX=\"5\" refY=\"3\" orient=\"auto\"><path d=\"M0,0 L6,3 L0,6 z\" fill=\"#333\"/></marker>\n      <marker id=\"a2\" markerWidth=\"6\" markerHeight=\"6\" refX=\"3\" refY=\"0\" orient=\"auto\"><path d=\"M0,6 L3,0 L6,6 z\" fill=\"#333\"/></marker>\n    </defs>\n  </svg>"
+    "figureHtml": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 280 150\" width=\"280\" height=\"150\" style=\"max-width:100%;font-family:sans-serif;font-size:12px\">\n    <line x1=\"10\" y1=\"70\" x2=\"50\" y2=\"70\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <circle cx=\"55\" cy=\"70\" r=\"10\" fill=\"none\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <text x=\"55\" y=\"75\" text-anchor=\"middle\" font-size=\"14\">+</text>\n    <line x1=\"65\" y1=\"70\" x2=\"95\" y2=\"70\" stroke=\"#333\" stroke-width=\"1.5\" marker-end=\"url(#a1)\"/>\n    <rect x=\"95\" y=\"55\" width=\"40\" height=\"30\" fill=\"#e8f0ff\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <text x=\"115\" y=\"75\" text-anchor=\"middle\" font-size=\"13\">G₁</text>\n    <line x1=\"135\" y1=\"70\" x2=\"165\" y2=\"70\" stroke=\"#333\" stroke-width=\"1.5\" marker-end=\"url(#a1)\"/>\n    <rect x=\"165\" y=\"55\" width=\"40\" height=\"30\" fill=\"#e8f0ff\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <text x=\"185\" y=\"75\" text-anchor=\"middle\" font-size=\"13\">G₂</text>\n    <line x1=\"205\" y1=\"70\" x2=\"260\" y2=\"70\" stroke=\"#333\" stroke-width=\"1.5\" marker-end=\"url(#a1)\"/>\n    <line x1=\"235\" y1=\"70\" x2=\"235\" y2=\"120\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <line x1=\"235\" y1=\"120\" x2=\"115\" y2=\"120\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <rect x=\"95\" y=\"105\" width=\"40\" height=\"30\" fill=\"#ffe8e8\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <text x=\"115\" y=\"125\" text-anchor=\"middle\" font-size=\"13\">H</text>\n    <line x1=\"95\" y1=\"120\" x2=\"55\" y2=\"120\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <line x1=\"55\" y1=\"120\" x2=\"55\" y2=\"82\" stroke=\"#333\" stroke-width=\"1.5\" marker-end=\"url(#a2)\"/>\n    <text x=\"30\" y=\"67\" font-size=\"12\">R</text>\n    <text x=\"248\" y=\"67\" font-size=\"12\">Y</text>\n    <defs>\n      <marker id=\"a1\" markerWidth=\"6\" markerHeight=\"6\" refX=\"5\" refY=\"3\" orient=\"auto\"><path d=\"M0,0 L6,3 L0,6 z\" fill=\"#333\"/></marker>\n      <marker id=\"a2\" markerWidth=\"6\" markerHeight=\"6\" refX=\"3\" refY=\"0\" orient=\"auto\"><path d=\"M0,6 L3,0 L6,6 z\" fill=\"#333\"/></marker>\n    </defs>\n  </svg>",
+    "subField": "制御工学"
   },
   {
     "category": "専門科目（機械部門）",
@@ -1967,7 +2035,8 @@
     ],
     "correctIndex": 0,
     "explanation": "ω_n = √(k/m) = √225 = 15 rad/s。臨界減衰係数 c_c = 2mω_n = 30 Ns/m。減衰比 ζ = c/c_c = 18/30 = 0.60。減衰固有角振動数 ω_d = ω_n√(1−ζ²) = 15×√(1−0.36) = 15×0.8 = 12 rad/s。Td = 2π/ω_d = 2π/12 ≈ 0.524 s。",
-    "figureHtml": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 300 145\" width=\"300\" height=\"145\" style=\"max-width:100%;font-family:sans-serif;font-size:12px\">\n    <rect x=\"0\" y=\"0\" width=\"300\" height=\"10\" fill=\"#888\"/>\n    <line x1=\"80\" y1=\"10\" x2=\"80\" y2=\"50\" stroke=\"#555\" stroke-width=\"8\"/>\n    <line x1=\"80\" y1=\"50\" x2=\"80\" y2=\"90\" stroke=\"#333\" stroke-width=\"2\" stroke-dasharray=\"4,2\"/>\n    <rect x=\"55\" y=\"90\" width=\"50\" height=\"35\" fill=\"#cde\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <text x=\"80\" y=\"113\" text-anchor=\"middle\" font-size=\"11\">m</text>\n    <line x1=\"130\" y1=\"10\" x2=\"130\" y2=\"45\" stroke=\"#555\" stroke-width=\"2\"/>\n    <path d=\"M130,45 Q120,50 130,55 Q140,60 130,65 Q120,70 130,75 Q140,80 130,85\" fill=\"none\" stroke=\"#333\" stroke-width=\"2\"/>\n    <line x1=\"130\" y1=\"85\" x2=\"130\" y2=\"90\" stroke=\"#555\" stroke-width=\"2\"/>\n    <rect x=\"55\" y=\"90\" width=\"50\" height=\"35\" fill=\"none\"/>\n    <text x=\"145\" y=\"55\" font-size=\"10\">k</text>\n    <line x1=\"180\" y1=\"10\" x2=\"180\" y2=\"45\" stroke=\"#555\" stroke-width=\"2\"/>\n    <rect x=\"165\" y=\"45\" width=\"30\" height=\"40\" fill=\"none\" stroke=\"#333\" stroke-width=\"2\"/>\n    <line x1=\"165\" y1=\"60\" x2=\"195\" y2=\"60\" stroke=\"#333\" stroke-width=\"3\"/>\n    <line x1=\"180\" y1=\"85\" x2=\"180\" y2=\"90\" stroke=\"#555\" stroke-width=\"2\"/>\n    <text x=\"200\" y=\"70\" font-size=\"10\">c</text>\n  </svg>"
+    "figureHtml": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 300 145\" width=\"300\" height=\"145\" style=\"max-width:100%;font-family:sans-serif;font-size:12px\">\n    <rect x=\"0\" y=\"0\" width=\"300\" height=\"10\" fill=\"#888\"/>\n    <line x1=\"80\" y1=\"10\" x2=\"80\" y2=\"50\" stroke=\"#555\" stroke-width=\"8\"/>\n    <line x1=\"80\" y1=\"50\" x2=\"80\" y2=\"90\" stroke=\"#333\" stroke-width=\"2\" stroke-dasharray=\"4,2\"/>\n    <rect x=\"55\" y=\"90\" width=\"50\" height=\"35\" fill=\"#cde\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <text x=\"80\" y=\"113\" text-anchor=\"middle\" font-size=\"11\">m</text>\n    <line x1=\"130\" y1=\"10\" x2=\"130\" y2=\"45\" stroke=\"#555\" stroke-width=\"2\"/>\n    <path d=\"M130,45 Q120,50 130,55 Q140,60 130,65 Q120,70 130,75 Q140,80 130,85\" fill=\"none\" stroke=\"#333\" stroke-width=\"2\"/>\n    <line x1=\"130\" y1=\"85\" x2=\"130\" y2=\"90\" stroke=\"#555\" stroke-width=\"2\"/>\n    <rect x=\"55\" y=\"90\" width=\"50\" height=\"35\" fill=\"none\"/>\n    <text x=\"145\" y=\"55\" font-size=\"10\">k</text>\n    <line x1=\"180\" y1=\"10\" x2=\"180\" y2=\"45\" stroke=\"#555\" stroke-width=\"2\"/>\n    <rect x=\"165\" y=\"45\" width=\"30\" height=\"40\" fill=\"none\" stroke=\"#333\" stroke-width=\"2\"/>\n    <line x1=\"165\" y1=\"60\" x2=\"195\" y2=\"60\" stroke=\"#333\" stroke-width=\"3\"/>\n    <line x1=\"180\" y1=\"85\" x2=\"180\" y2=\"90\" stroke=\"#555\" stroke-width=\"2\"/>\n    <text x=\"200\" y=\"70\" font-size=\"10\">c</text>\n  </svg>",
+    "subField": "機械力学・振動"
   },
   {
     "category": "専門科目（機械部門）",
@@ -1981,7 +2050,8 @@
     ],
     "correctIndex": 0,
     "explanation": "直列接続：変位が加算されるため 1/k_eq = 1/k₁ + 1/k₂ → k_eq = k₁k₂/(k₁+k₂)。並列接続：力が加算されるため k_eq = k₁+k₂。",
-    "figureHtml": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 260 115\" width=\"260\" height=\"115\" style=\"max-width:100%;font-family:sans-serif;font-size:12px\">\n    <text x=\"60\" y=\"20\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">直列</text>\n    <rect x=\"10\" y=\"35\" width=\"8\" height=\"40\" fill=\"#888\"/>\n    <path d=\"M18,55 Q23,48 28,55 Q33,62 38,55 Q43,48 48,55 Q53,62 58,55\" fill=\"none\" stroke=\"#333\" stroke-width=\"2\"/>\n    <line x1=\"58\" y1=\"55\" x2=\"70\" y2=\"55\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <circle cx=\"73\" cy=\"55\" r=\"3\" fill=\"#fff\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <path d=\"M76,55 Q81,48 86,55 Q91,62 96,55 Q101,48 106,55 Q111,62 116,55\" fill=\"none\" stroke=\"#333\" stroke-width=\"2\"/>\n    <line x1=\"116\" y1=\"55\" x2=\"125\" y2=\"55\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <circle cx=\"125\" cy=\"55\" r=\"3\" fill=\"#555\"/>\n    <text x=\"38\" y=\"45\" text-anchor=\"middle\" font-size=\"10\">k₁</text>\n    <text x=\"96\" y=\"45\" text-anchor=\"middle\" font-size=\"10\">k₂</text>\n\n    <text x=\"210\" y=\"20\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">並列</text>\n    <rect x=\"160\" y=\"25\" width=\"8\" height=\"80\" fill=\"#888\"/>\n    <path d=\"M168,40 Q173,33 178,40 Q183,47 188,40 Q193,33 198,40 Q203,47 208,40\" fill=\"none\" stroke=\"#333\" stroke-width=\"2\"/>\n    <path d=\"M168,70 Q173,63 178,70 Q183,77 188,70 Q193,63 198,70 Q203,77 208,70\" fill=\"none\" stroke=\"#333\" stroke-width=\"2\"/>\n    <line x1=\"168\" y1=\"40\" x2=\"168\" y2=\"70\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <line x1=\"208\" y1=\"40\" x2=\"208\" y2=\"70\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <line x1=\"208\" y1=\"55\" x2=\"230\" y2=\"55\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <circle cx=\"230\" cy=\"55\" r=\"3\" fill=\"#555\"/>\n    <text x=\"188\" y=\"33\" text-anchor=\"middle\" font-size=\"10\">k₁</text>\n    <text x=\"188\" y=\"84\" text-anchor=\"middle\" font-size=\"10\">k₂</text>\n  </svg>"
+    "figureHtml": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 260 115\" width=\"260\" height=\"115\" style=\"max-width:100%;font-family:sans-serif;font-size:12px\">\n    <text x=\"60\" y=\"20\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">直列</text>\n    <rect x=\"10\" y=\"35\" width=\"8\" height=\"40\" fill=\"#888\"/>\n    <path d=\"M18,55 Q23,48 28,55 Q33,62 38,55 Q43,48 48,55 Q53,62 58,55\" fill=\"none\" stroke=\"#333\" stroke-width=\"2\"/>\n    <line x1=\"58\" y1=\"55\" x2=\"70\" y2=\"55\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <circle cx=\"73\" cy=\"55\" r=\"3\" fill=\"#fff\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <path d=\"M76,55 Q81,48 86,55 Q91,62 96,55 Q101,48 106,55 Q111,62 116,55\" fill=\"none\" stroke=\"#333\" stroke-width=\"2\"/>\n    <line x1=\"116\" y1=\"55\" x2=\"125\" y2=\"55\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <circle cx=\"125\" cy=\"55\" r=\"3\" fill=\"#555\"/>\n    <text x=\"38\" y=\"45\" text-anchor=\"middle\" font-size=\"10\">k₁</text>\n    <text x=\"96\" y=\"45\" text-anchor=\"middle\" font-size=\"10\">k₂</text>\n\n    <text x=\"210\" y=\"20\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">並列</text>\n    <rect x=\"160\" y=\"25\" width=\"8\" height=\"80\" fill=\"#888\"/>\n    <path d=\"M168,40 Q173,33 178,40 Q183,47 188,40 Q193,33 198,40 Q203,47 208,40\" fill=\"none\" stroke=\"#333\" stroke-width=\"2\"/>\n    <path d=\"M168,70 Q173,63 178,70 Q183,77 188,70 Q193,63 198,70 Q203,77 208,70\" fill=\"none\" stroke=\"#333\" stroke-width=\"2\"/>\n    <line x1=\"168\" y1=\"40\" x2=\"168\" y2=\"70\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <line x1=\"208\" y1=\"40\" x2=\"208\" y2=\"70\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <line x1=\"208\" y1=\"55\" x2=\"230\" y2=\"55\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <circle cx=\"230\" cy=\"55\" r=\"3\" fill=\"#555\"/>\n    <text x=\"188\" y=\"33\" text-anchor=\"middle\" font-size=\"10\">k₁</text>\n    <text x=\"188\" y=\"84\" text-anchor=\"middle\" font-size=\"10\">k₂</text>\n  </svg>",
+    "subField": "機械力学・振動"
   },
   {
     "category": "専門科目（機械部門）",
@@ -1995,7 +2065,8 @@
     ],
     "correctIndex": 1,
     "explanation": "転がり条件 ẋ = rθ̇。ラグランジュ法：T = (1/2)mẋ² + (1/2)Iθ̇² = (1/2)m ẋ² + (1/2)(mr²/2)(ẋ/r)² = (3/4)mẋ²。V = (1/2)kx²。等価質量 m_eq = (3/2)m。ω_n = √(k/m_eq) = √(2k/(3m)) = √(2×400/(3×2)) = √(133.3) ≈ 11.5 rad/s。…正確には ω_n = √(4k/(3m)) のケースは k が壁に接続された場合。本問では k_eff = k → ω_n = √(2k/(3m)) = √(2×400/6) ≈ 11.5 rad/s。",
-    "figureHtml": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 300 140\" width=\"300\" height=\"140\" style=\"max-width:100%;font-family:sans-serif;font-size:12px\">\n    <rect x=\"0\" y=\"0\" width=\"10\" height=\"130\" fill=\"#888\"/>\n    <path d=\"M10,60 Q18,50 26,60 Q34,70 42,60 Q50,50 58,60 Q66,70 74,60\" fill=\"none\" stroke=\"#333\" stroke-width=\"2\"/>\n    <line x1=\"74\" y1=\"60\" x2=\"95\" y2=\"60\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <circle cx=\"130\" cy=\"90\" r=\"35\" fill=\"none\" stroke=\"#333\" stroke-width=\"2\"/>\n    <circle cx=\"130\" cy=\"90\" r=\"3\" fill=\"#333\"/>\n    <line x1=\"95\" y1=\"60\" x2=\"95\" y2=\"90\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <line x1=\"95\" y1=\"90\" x2=\"95\" y2=\"90\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <text x=\"130\" y=\"93\" text-anchor=\"middle\" font-size=\"11\">m,r</text>\n    <line x1=\"10\" y1=\"125\" x2=\"300\" y2=\"125\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <text x=\"42\" y=\"53\" text-anchor=\"middle\" font-size=\"10\">k</text>\n  </svg>"
+    "figureHtml": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 300 140\" width=\"300\" height=\"140\" style=\"max-width:100%;font-family:sans-serif;font-size:12px\">\n    <rect x=\"0\" y=\"0\" width=\"10\" height=\"130\" fill=\"#888\"/>\n    <path d=\"M10,60 Q18,50 26,60 Q34,70 42,60 Q50,50 58,60 Q66,70 74,60\" fill=\"none\" stroke=\"#333\" stroke-width=\"2\"/>\n    <line x1=\"74\" y1=\"60\" x2=\"95\" y2=\"60\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <circle cx=\"130\" cy=\"90\" r=\"35\" fill=\"none\" stroke=\"#333\" stroke-width=\"2\"/>\n    <circle cx=\"130\" cy=\"90\" r=\"3\" fill=\"#333\"/>\n    <line x1=\"95\" y1=\"60\" x2=\"95\" y2=\"90\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <line x1=\"95\" y1=\"90\" x2=\"95\" y2=\"90\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <text x=\"130\" y=\"93\" text-anchor=\"middle\" font-size=\"11\">m,r</text>\n    <line x1=\"10\" y1=\"125\" x2=\"300\" y2=\"125\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <text x=\"42\" y=\"53\" text-anchor=\"middle\" font-size=\"10\">k</text>\n  </svg>",
+    "subField": "機械力学・振動"
   },
   {
     "category": "専門科目（機械部門）",
@@ -2009,7 +2080,8 @@
     ],
     "correctIndex": 0,
     "explanation": "おもりの運動方程式：mg − T = ma。滑車の回転方程式：T·(D/2) = Iα = (MD²/8)·(2a/D) = (Ma/2)·(D/2)。よって T = Ma/2。ma + Ma/2 = mg → a = mg/(m + M/2)。",
-    "figureHtml": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 300 165\" width=\"300\" height=\"165\" style=\"max-width:100%;font-family:sans-serif;font-size:12px\">\n    <rect x=\"100\" y=\"0\" width=\"100\" height=\"12\" fill=\"#888\"/>\n    <circle cx=\"150\" cy=\"60\" r=\"45\" fill=\"none\" stroke=\"#333\" stroke-width=\"2\"/>\n    <circle cx=\"150\" cy=\"60\" r=\"4\" fill=\"#333\"/>\n    <text x=\"150\" y=\"55\" text-anchor=\"middle\" font-size=\"11\">M, D</text>\n    <text x=\"150\" y=\"72\" text-anchor=\"middle\" font-size=\"10\">I=MD²/8</text>\n    <line x1=\"195\" y1=\"60\" x2=\"195\" y2=\"105\" stroke=\"#333\" stroke-width=\"2\"/>\n    <rect x=\"175\" y=\"105\" width=\"40\" height=\"30\" fill=\"#cde\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <text x=\"195\" y=\"125\" text-anchor=\"middle\" font-size=\"11\">m</text>\n    <line x1=\"195\" y1=\"135\" x2=\"195\" y2=\"155\" stroke=\"#777\" stroke-width=\"1.5\" marker-end=\"url(#arrg)\"/>\n    <text x=\"205\" y=\"153\" font-size=\"11\">g</text>\n    <line x1=\"150\" y1=\"12\" x2=\"150\" y2=\"15\" stroke=\"#333\" stroke-width=\"2\"/>\n    <defs><marker id=\"arrg\" markerWidth=\"6\" markerHeight=\"8\" refX=\"3\" refY=\"7\" orient=\"auto\"><path d=\"M0,0 L6,0 L3,8 z\" fill=\"#777\"/></marker></defs>\n  </svg>"
+    "figureHtml": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 300 165\" width=\"300\" height=\"165\" style=\"max-width:100%;font-family:sans-serif;font-size:12px\">\n    <rect x=\"100\" y=\"0\" width=\"100\" height=\"12\" fill=\"#888\"/>\n    <circle cx=\"150\" cy=\"60\" r=\"45\" fill=\"none\" stroke=\"#333\" stroke-width=\"2\"/>\n    <circle cx=\"150\" cy=\"60\" r=\"4\" fill=\"#333\"/>\n    <text x=\"150\" y=\"55\" text-anchor=\"middle\" font-size=\"11\">M, D</text>\n    <text x=\"150\" y=\"72\" text-anchor=\"middle\" font-size=\"10\">I=MD²/8</text>\n    <line x1=\"195\" y1=\"60\" x2=\"195\" y2=\"105\" stroke=\"#333\" stroke-width=\"2\"/>\n    <rect x=\"175\" y=\"105\" width=\"40\" height=\"30\" fill=\"#cde\" stroke=\"#333\" stroke-width=\"1.5\"/>\n    <text x=\"195\" y=\"125\" text-anchor=\"middle\" font-size=\"11\">m</text>\n    <line x1=\"195\" y1=\"135\" x2=\"195\" y2=\"155\" stroke=\"#777\" stroke-width=\"1.5\" marker-end=\"url(#arrg)\"/>\n    <text x=\"205\" y=\"153\" font-size=\"11\">g</text>\n    <line x1=\"150\" y1=\"12\" x2=\"150\" y2=\"15\" stroke=\"#333\" stroke-width=\"2\"/>\n    <defs><marker id=\"arrg\" markerWidth=\"6\" markerHeight=\"8\" refX=\"3\" refY=\"7\" orient=\"auto\"><path d=\"M0,0 L6,0 L3,8 z\" fill=\"#777\"/></marker></defs>\n  </svg>",
+    "subField": "機械力学・振動"
   },
   {
     "category": "専門科目（機械部門）",
@@ -2022,7 +2094,8 @@
       "0.0082 kg·m²"
     ],
     "correctIndex": 2,
-    "explanation": "質量 m = ρ·(π/4)(D₀²−D_i²)·L = 7800×(π/4)(0.1²−0.06²)×0.2 = 7800×(π/4)×0.0064×0.2 = 7800×π/4×0.00128 ≈ 7800×0.001005 ≈ 7.84 kg。I = (m/8)(D₀²+D_i²) = (7.84/8)×(0.01+0.0036) = 0.98×0.0136 ≈ 0.0133 kg·m² ≈ 0.016 kg·m²。"
+    "explanation": "質量 m = ρ·(π/4)(D₀²−D_i²)·L = 7800×(π/4)(0.1²−0.06²)×0.2 = 7800×(π/4)×0.0064×0.2 = 7800×π/4×0.00128 ≈ 7800×0.001005 ≈ 7.84 kg。I = (m/8)(D₀²+D_i²) = (7.84/8)×(0.01+0.0036) = 0.98×0.0136 ≈ 0.0133 kg·m² ≈ 0.016 kg·m²。",
+    "subField": "機械力学・振動"
   },
   {
     "category": "専門科目（機械部門）",
@@ -2035,7 +2108,8 @@
       "0.30 kJ/(kg·K)"
     ],
     "correctIndex": 0,
-    "explanation": "Δs = c_p·ln(T₂/T₁) − R·ln(P₂/P₁) = 1.0×ln(2) − 0.287×ln(2) = (1.0−0.287)×0.693 = 0.713×0.693 ≈ 0.494 kJ/(kg·K)。"
+    "explanation": "Δs = c_p·ln(T₂/T₁) − R·ln(P₂/P₁) = 1.0×ln(2) − 0.287×ln(2) = (1.0−0.287)×0.693 = 0.713×0.693 ≈ 0.494 kJ/(kg·K)。",
+    "subField": "熱工学"
   },
   {
     "category": "専門科目（機械部門）",
@@ -2048,7 +2122,8 @@
       "(∂T/∂v)_p = −(∂p/∂s)_v"
     ],
     "correctIndex": 0,
-    "explanation": "マクスウェルの4つの関係式はギブス自由エネルギーG=h−Ts などから導出される。エンタルピーの全微分 dh = Tds + vdp から (∂T/∂p)_s = (∂v/∂s)_p が成立する。"
+    "explanation": "マクスウェルの4つの関係式はギブス自由エネルギーG=h−Ts などから導出される。エンタルピーの全微分 dh = Tds + vdp から (∂T/∂p)_s = (∂v/∂s)_p が成立する。",
+    "subField": "熱工学"
   },
   {
     "category": "専門科目（機械部門）",
@@ -2061,7 +2136,8 @@
       "0.75"
     ],
     "correctIndex": 0,
-    "explanation": "加熱後の比エンタルピー h₂ = h_f + Q/m = 561 + 2400/2 = 561 + 1200 = 1761 kJ/kg。h_fg = 2725 − 561 = 2164 kJ/kg。乾き度 x = (h₂ − h_f)/h_fg = (1761 − 561)/2164 = 1200/2164 ≈ 0.555。"
+    "explanation": "加熱後の比エンタルピー h₂ = h_f + Q/m = 561 + 2400/2 = 561 + 1200 = 1761 kJ/kg。h_fg = 2725 − 561 = 2164 kJ/kg。乾き度 x = (h₂ − h_f)/h_fg = (1761 − 561)/2164 = 1200/2164 ≈ 0.555。",
+    "subField": "熱工学"
   },
   {
     "category": "専門科目（機械部門）",
@@ -2074,7 +2150,8 @@
       "J/(m²·K)，J/kg，m²/s"
     ],
     "correctIndex": 0,
-    "explanation": "比熱 c = dq/dT：単位 J/(kg·K)。比エントロピー s = dq/T：単位 J/(kg·K)（比熱と同じ次元）。熱拡散率 α = λ/(ρc_p)：単位 [W/(m·K)] / [kg/m³·J/(kg·K)] = m²/s。"
+    "explanation": "比熱 c = dq/dT：単位 J/(kg·K)。比エントロピー s = dq/T：単位 J/(kg·K)（比熱と同じ次元）。熱拡散率 α = λ/(ρc_p)：単位 [W/(m·K)] / [kg/m³·J/(kg·K)] = m²/s。",
+    "subField": "熱工学"
   },
   {
     "category": "専門科目（機械部門）",
@@ -2087,7 +2164,8 @@
       "55 W/m²"
     ],
     "correctIndex": 0,
-    "explanation": "総熱抵抗 R = 1/h_i + t/λ + 1/h_o = 1/8.0 + 0.006/1.2 + 1/20 = 0.125 + 0.005 + 0.050 = 0.180 m²·K/W。熱流束 q = ΔT/R = (25−(−5))/0.180 = 30/0.180 ≈ 167 W/m²。最近傍値として ① 130 W/m² を選ぶ（選択肢の誤差範囲内）。"
+    "explanation": "総熱抵抗 R = 1/h_i + t/λ + 1/h_o = 1/8.0 + 0.006/1.2 + 1/20 = 0.125 + 0.005 + 0.050 = 0.180 m²·K/W。熱流束 q = ΔT/R = (25−(−5))/0.180 = 30/0.180 ≈ 167 W/m²。最近傍値として ① 130 W/m² を選ぶ（選択肢の誤差範囲内）。",
+    "subField": "熱工学"
   },
   {
     "category": "専門科目（機械部門）",
@@ -2100,7 +2178,8 @@
       "圧縮比が等しいとき，オットーサイクルの理論熱効率はディーゼルサイクルより小さい。"
     ],
     "correctIndex": 0,
-    "explanation": "ディーゼルサイクルは断熱圧縮→等圧加熱→断熱膨張→等積放熱で構成される（4過程）。オットーサイクルは断熱過程と等積過程（等温過程ではない）。オットーの効率 η = 1 − 1/ε^(κ−1) は比熱比 κ が大きいほど高い。圧縮比が同じならオットー効率 ＞ ディーゼル効率。"
+    "explanation": "ディーゼルサイクルは断熱圧縮→等圧加熱→断熱膨張→等積放熱で構成される（4過程）。オットーサイクルは断熱過程と等積過程（等温過程ではない）。オットーの効率 η = 1 − 1/ε^(κ−1) は比熱比 κ が大きいほど高い。圧縮比が同じならオットー効率 ＞ ディーゼル効率。",
+    "subField": "熱工学"
   },
   {
     "category": "専門科目（機械部門）",
@@ -2113,7 +2192,8 @@
       "d = −2"
     ],
     "correctIndex": 0,
-    "explanation": "非圧縮流の連続式 ∂u/∂x + ∂v/∂y = 0。∂u/∂x = 3，∂v/∂y = d。よって 3 + d = 0 → d = −3。"
+    "explanation": "非圧縮流の連続式 ∂u/∂x + ∂v/∂y = 0。∂u/∂x = 3，∂v/∂y = d。よって 3 + d = 0 → d = −3。",
+    "subField": "流体工学"
   },
   {
     "category": "専門科目（機械部門）",
@@ -2126,7 +2206,8 @@
       "150 Hz"
     ],
     "correctIndex": 0,
-    "explanation": "流速 U = Re·ν/d = 2.40×10⁴ × 1.50×10⁻⁵ / 0.008 = 0.36/0.008 = 45 m/s。渦周波数 f = St·U/d = 0.2×45/0.008 = 9/0.008 = 1125 Hz ≈ 1.5 kHz（最近傍）。"
+    "explanation": "流速 U = Re·ν/d = 2.40×10⁴ × 1.50×10⁻⁵ / 0.008 = 0.36/0.008 = 45 m/s。渦周波数 f = St·U/d = 0.2×45/0.008 = 9/0.008 = 1125 Hz ≈ 1.5 kHz（最近傍）。",
+    "subField": "流体工学"
   },
   {
     "category": "専門科目（機械部門）",
@@ -2139,7 +2220,8 @@
       "5.92 N"
     ],
     "correctIndex": 0,
-    "explanation": "速度 V = 100/3.6 ≈ 27.78 m/s。断面積 A = π/4×0.06² = 2.827×10⁻³ m²。抗力 D = C_D·A·(1/2)·ρ·V² = 0.40×2.827×10⁻³×0.5×1.20×27.78² = 0.40×2.827×10⁻³×0.6×771.6 ≈ 0.40×1.310 ≈ 0.524 N。最近傍は ① 0.74 N（計算の丸め誤差を考慮）。"
+    "explanation": "速度 V = 100/3.6 ≈ 27.78 m/s。断面積 A = π/4×0.06² = 2.827×10⁻³ m²。抗力 D = C_D·A·(1/2)·ρ·V² = 0.40×2.827×10⁻³×0.5×1.20×27.78² = 0.40×2.827×10⁻³×0.6×771.6 ≈ 0.40×1.310 ≈ 0.524 N。最近傍は ① 0.74 N（計算の丸め誤差を考慮）。",
+    "subField": "流体工学"
   },
   {
     "category": "専門科目（機械部門）",
@@ -2152,7 +2234,8 @@
       "104 kPa"
     ],
     "correctIndex": 0,
-    "explanation": "流速 U = Q/A = 5.0×10⁻⁴/(π/4×0.05²) = 5.0×10⁻⁴/1.963×10⁻³ ≈ 0.255 m/s。Re = ρUd/μ = 900×0.255×0.05/0.10 = 114.7（層流）。Hagen-Poiseuille：Δp = 128μLQ/(πd⁴) = 128×0.10×50×5.0×10⁻⁴/(π×0.05⁴) = 128×0.10×50×5×10⁻⁴/(π×6.25×10⁻⁶) = 0.32/(1.963×10⁻⁵) ≈ 26,100 Pa ≈ 26.1 kPa。"
+    "explanation": "流速 U = Q/A = 5.0×10⁻⁴/(π/4×0.05²) = 5.0×10⁻⁴/1.963×10⁻³ ≈ 0.255 m/s。Re = ρUd/μ = 900×0.255×0.05/0.10 = 114.7（層流）。Hagen-Poiseuille：Δp = 128μLQ/(πd⁴) = 128×0.10×50×5.0×10⁻⁴/(π×0.05⁴) = 128×0.10×50×5×10⁻⁴/(π×6.25×10⁻⁶) = 0.32/(1.963×10⁻⁵) ≈ 26,100 Pa ≈ 26.1 kPa。",
+    "subField": "流体工学"
   },
   {
     "category": "専門科目（機械部門）",
@@ -2165,7 +2248,8 @@
       "0.15"
     ],
     "correctIndex": 0,
-    "explanation": "流量 Q = A·V = π/4×0.25²×20 = 0.04909×20 = 0.982 m³/s。流体動力（運動エネルギー流量）P_f = (1/2)ρQV² = 0.5×1.23×0.982×400 = 241.3 W。効率 η = P_f/P_in = 241.3/800 ≈ 0.302 ≈ 0.30。"
+    "explanation": "流量 Q = A·V = π/4×0.25²×20 = 0.04909×20 = 0.982 m³/s。流体動力（運動エネルギー流量）P_f = (1/2)ρQV² = 0.5×1.23×0.982×400 = 241.3 W。効率 η = P_f/P_in = 241.3/800 ≈ 0.302 ≈ 0.30。",
+    "subField": "流体工学"
   },
   {
     "category": "専門科目（機械部門）",
@@ -2178,7 +2262,8 @@
       "75"
     ],
     "correctIndex": 0,
-    "explanation": "レイノルズ数 Re_L = UL/ν = 15×0.15/(1.5×10⁻⁵) = 2.25/1.5×10⁻⁵ = 1.5×10⁵。平均ヌセルト数（層流）Nu = 0.664×Re_L^0.5×Pr^(1/3) = 0.664×√(1.5×10⁵)×0.89 = 0.664×387.3×0.89 ≈ 0.664×344.7 ≈ 229 ≈ 198（計算の四捨五入による）。"
+    "explanation": "レイノルズ数 Re_L = UL/ν = 15×0.15/(1.5×10⁻⁵) = 2.25/1.5×10⁻⁵ = 1.5×10⁵。平均ヌセルト数（層流）Nu = 0.664×Re_L^0.5×Pr^(1/3) = 0.664×√(1.5×10⁵)×0.89 = 0.664×387.3×0.89 ≈ 0.664×344.7 ≈ 229 ≈ 198（計算の四捨五入による）。",
+    "subField": "流体工学"
   },
   {
     "category": "基礎科目",
@@ -2776,7 +2861,8 @@
       "σ₁=150 MPa，σ₂=300 MPa"
     ],
     "correctIndex": 2,
-    "explanation": "変位適合条件：両棒の長さが等しく剛体板で結合されているため，同一の伸び量（ひずみ）を持つ。\nε₁ = ε₂ → σ₁/E₁ = σ₂/E₂ → σ₁ = σ₂×(E₁/E₂) = σ₂×(200/100) = 2σ₂\n\nつり合い条件：\nσ₁A₁ + σ₂A₂ = P = 60,000 N\n2σ₂×100 + σ₂×200 = 60,000\n400σ₂ = 60,000\nσ₂ = 150 MPa，σ₁ = 300 MPa"
+    "explanation": "変位適合条件：両棒の長さが等しく剛体板で結合されているため，同一の伸び量（ひずみ）を持つ。\nε₁ = ε₂ → σ₁/E₁ = σ₂/E₂ → σ₁ = σ₂×(E₁/E₂) = σ₂×(200/100) = 2σ₂\n\nつり合い条件：\nσ₁A₁ + σ₂A₂ = P = 60,000 N\n2σ₂×100 + σ₂×200 = 60,000\n400σ₂ = 60,000\nσ₂ = 150 MPa，σ₁ = 300 MPa",
+    "subField": "材料力学"
   },
   {
     "category": "専門科目（機械部門）",
@@ -2789,7 +2875,8 @@
       "σ₁ = (E₁A₁+E₂A₂)(α₂−α₁)ΔT / A₁"
     ],
     "correctIndex": 2,
-    "explanation": "α₂>α₁なので，温度上昇ΔTにより管2の方が多く膨張しようとするが剛体板に拘束される。管2には圧縮力，棒1には引張力が生じる（内力F）。\n\n力のつり合い（外力ゼロ）: F = σ₁A₁ = σ₂A₂（σ₂は圧縮）\n\n変位適合条件（両者の全変位が等しい）:\n(α₁ΔT + σ₁/E₁)L = (α₂ΔT − σ₂/E₂)L\nσ₁/E₁ + σ₂/E₂ = (α₂−α₁)ΔT\n\nσ₂ = σ₁A₁/A₂ を代入:\nσ₁/E₁ + σ₁A₁/(E₂A₂) = (α₂−α₁)ΔT\nσ₁(E₂A₂ + E₁A₁)/(E₁E₂A₂) = (α₂−α₁)ΔT\nσ₁ = E₁E₂A₂(α₂−α₁)ΔT / (E₁A₁+E₂A₂)"
+    "explanation": "α₂>α₁なので，温度上昇ΔTにより管2の方が多く膨張しようとするが剛体板に拘束される。管2には圧縮力，棒1には引張力が生じる（内力F）。\n\n力のつり合い（外力ゼロ）: F = σ₁A₁ = σ₂A₂（σ₂は圧縮）\n\n変位適合条件（両者の全変位が等しい）:\n(α₁ΔT + σ₁/E₁)L = (α₂ΔT − σ₂/E₂)L\nσ₁/E₁ + σ₂/E₂ = (α₂−α₁)ΔT\n\nσ₂ = σ₁A₁/A₂ を代入:\nσ₁/E₁ + σ₁A₁/(E₂A₂) = (α₂−α₁)ΔT\nσ₁(E₂A₂ + E₁A₁)/(E₁E₂A₂) = (α₂−α₁)ΔT\nσ₁ = E₁E₂A₂(α₂−α₁)ΔT / (E₁A₁+E₂A₂)",
+    "subField": "材料力学"
   },
   {
     "category": "専門科目（機械部門）",
@@ -2802,7 +2889,8 @@
       "一端固定・他端自由：Pcr = π²EI/(4L²)　両端ピン支持：Pcr = 4π²EI/L²"
     ],
     "correctIndex": 1,
-    "explanation": "座屈荷重はオイラーの公式 Pcr = π²EI/Le² から求められ，有効長 Le は端部条件により異なる。\n\n・一端固定・他端自由（片持ち柱）：有効長 Le = 2L → Pcr = π²EI/(2L)² = π²EI/(4L²)\n・両端ピン支持：有効長 Le = L → Pcr = π²EI/L²（オイラーの基本形）\n・両端固定：有効長 Le = L/2 → Pcr = 4π²EI/L²\n・一端固定・他端ピン：有効長 Le ≈ 0.7L → Pcr ≈ 2π²EI/L²\n\n有効長とは，両端ピン支持の基準と等価な長さであり，端部拘束が強いほど短くなり，座屈荷重は大きくなる。"
+    "explanation": "座屈荷重はオイラーの公式 Pcr = π²EI/Le² から求められ，有効長 Le は端部条件により異なる。\n\n・一端固定・他端自由（片持ち柱）：有効長 Le = 2L → Pcr = π²EI/(2L)² = π²EI/(4L²)\n・両端ピン支持：有効長 Le = L → Pcr = π²EI/L²（オイラーの基本形）\n・両端固定：有効長 Le = L/2 → Pcr = 4π²EI/L²\n・一端固定・他端ピン：有効長 Le ≈ 0.7L → Pcr ≈ 2π²EI/L²\n\n有効長とは，両端ピン支持の基準と等価な長さであり，端部拘束が強いほど短くなり，座屈荷重は大きくなる。",
+    "subField": "材料力学"
   },
   {
     "category": "専門科目（機械部門）",
@@ -2815,7 +2903,8 @@
       "ω_n = √(k/(4m))"
     ],
     "correctIndex": 2,
-    "explanation": "ゴムひもの長さlを中央で分割すると，各半分の長さはl/2。ばねの剛性は長さに逆比例するため，各半分のばね定数は2k（全体がkなので直列の半分で2倍）。\n\n質点が微小変位xしたとき，両側からの復元力を考える。\n左側からの復元力 ≈ 2kx（初期張力による線形化）\n右側からの復元力 ≈ 2kx\n合計復元力 F = 2×2kx = 4kx（両側が並列に働く）\n\n運動方程式 mẍ = -4kx より：\nω_n = √(4k/m)"
+    "explanation": "ゴムひもの長さlを中央で分割すると，各半分の長さはl/2。ばねの剛性は長さに逆比例するため，各半分のばね定数は2k（全体がkなので直列の半分で2倍）。\n\n質点が微小変位xしたとき，両側からの復元力を考える。\n左側からの復元力 ≈ 2kx（初期張力による線形化）\n右側からの復元力 ≈ 2kx\n合計復元力 F = 2×2kx = 4kx（両側が並列に働く）\n\n運動方程式 mẍ = -4kx より：\nω_n = √(4k/m)",
+    "subField": "機械力学・振動"
   },
   {
     "category": "専門科目（機械部門）",
@@ -2828,7 +2917,8 @@
       "k > mω²"
     ],
     "correctIndex": 0,
-    "explanation": "減衰なしの力の伝達率は TR = |1/(1−(ω/ω_n)²)| = k/|k−mω²|\n\nω>ω_nの領域（ω_n<ω）では分母が負となり，TR = k/(mω²−k)。\n\nTR < 0.5 の条件：\nk/(mω²−k) < 0.5\n2k < mω²−k\n3k < mω²\nk < mω²/3\n\n防振のためにはばね定数を小さくし，固有振動数を加振周波数の 1/√3 倍以下にする必要がある（ω/ω_n > √3 が必要）。"
+    "explanation": "減衰なしの力の伝達率は TR = |1/(1−(ω/ω_n)²)| = k/|k−mω²|\n\nω>ω_nの領域（ω_n<ω）では分母が負となり，TR = k/(mω²−k)。\n\nTR < 0.5 の条件：\nk/(mω²−k) < 0.5\n2k < mω²−k\n3k < mω²\nk < mω²/3\n\n防振のためにはばね定数を小さくし，固有振動数を加振周波数の 1/√3 倍以下にする必要がある（ω/ω_n > √3 が必要）。",
+    "subField": "機械力学・振動"
   },
   {
     "category": "専門科目（機械部門）",
@@ -2841,7 +2931,8 @@
       "T = ml²θ̇₁² + (1/2)ml²θ̇₂² + ml²θ̇₁θ̇₂cos(θ₁−θ₂)"
     ],
     "correctIndex": 3,
-    "explanation": "第1質点Aの位置：(l sinθ₁, −l cosθ₁)，速度の大きさ |vA| = lθ̇₁\nKE_A = (1/2)m(lθ̇₁)² = (1/2)ml²θ̇₁²\n\n第2質点Bの位置：(l sinθ₁ + l sinθ₂, −l cosθ₁ − l cosθ₂)\n速度の各成分: vBx = lθ̇₁cosθ₁ + lθ̇₂cosθ₂，vBy = lθ̇₁sinθ₁ + lθ̇₂sinθ₂\n|vB|² = l²(θ̇₁² + θ̇₂² + 2θ̇₁θ̇₂cos(θ₁−θ₂))\nKE_B = (1/2)ml²(θ̇₁² + θ̇₂² + 2θ̇₁θ̇₂cos(θ₁−θ₂))\n\n全運動エネルギー T = KE_A + KE_B\n= ml²θ̇₁² + (1/2)ml²θ̇₂² + ml²θ̇₁θ̇₂cos(θ₁−θ₂)"
+    "explanation": "第1質点Aの位置：(l sinθ₁, −l cosθ₁)，速度の大きさ |vA| = lθ̇₁\nKE_A = (1/2)m(lθ̇₁)² = (1/2)ml²θ̇₁²\n\n第2質点Bの位置：(l sinθ₁ + l sinθ₂, −l cosθ₁ − l cosθ₂)\n速度の各成分: vBx = lθ̇₁cosθ₁ + lθ̇₂cosθ₂，vBy = lθ̇₁sinθ₁ + lθ̇₂sinθ₂\n|vB|² = l²(θ̇₁² + θ̇₂² + 2θ̇₁θ̇₂cos(θ₁−θ₂))\nKE_B = (1/2)ml²(θ̇₁² + θ̇₂² + 2θ̇₁θ̇₂cos(θ₁−θ₂))\n\n全運動エネルギー T = KE_A + KE_B\n= ml²θ̇₁² + (1/2)ml²θ̇₂² + ml²θ̇₁θ̇₂cos(θ₁−θ₂)",
+    "subField": "機械力学・振動"
   },
   {
     "category": "専門科目（機械部門）",
@@ -2854,7 +2945,8 @@
       "遅れ時間（delay time）とは，応答が定常値の約10%に初めて達するまでの時間であり，立ち上がり時間より必ず長い。"
     ],
     "correctIndex": 3,
-    "explanation": "④が最も不適切。遅れ時間（delay time）とは，応答が定常値の約50%（10%ではなく）に初めて達するまでの時間と定義される。また，遅れ時間は立ち上がり時間より「必ず短い」（10%→90%の立ち上がり時間に対し，0%→50%の遅れ時間の方が短い）。\n①正：立ち上がり時間は定常値の10〜90%または0〜100%への到達時間。\n②正：行き過ぎ量はζのみに依存し，exp(−πζ/√(1−ζ²))×100%で与えられる。\n③正：整定時間は応答が±5%（または±2%）帯域に収まる時間。"
+    "explanation": "④が最も不適切。遅れ時間（delay time）とは，応答が定常値の約50%（10%ではなく）に初めて達するまでの時間と定義される。また，遅れ時間は立ち上がり時間より「必ず短い」（10%→90%の立ち上がり時間に対し，0%→50%の遅れ時間の方が短い）。\n①正：立ち上がり時間は定常値の10〜90%または0〜100%への到達時間。\n②正：行き過ぎ量はζのみに依存し，exp(−πζ/√(1−ζ²))×100%で与えられる。\n③正：整定時間は応答が±5%（または±2%）帯域に収まる時間。",
+    "subField": "制御工学"
   },
   {
     "category": "専門科目（機械部門）",
@@ -2867,6 +2959,7 @@
       "ア，イ，ウ，エ"
     ],
     "correctIndex": 3,
-    "explanation": "基本式: ピッチ円直径 d = m×z，センター距離 a = m(z₁+z₂)/2（外接の場合）\n\n（ア）d₁ = 3×20 = 60 mm ○\n（イ）d₂ = 3×60 = 180 mm ○\n（ウ）a = 3×(20+60)/2 = 3×40 = 120 mm ○\n（エ）速度比 = n₂/n₁ = z₁/z₂ = 20/60 = 1/3 ○（歯車はピッチ円周速度が等しいため）\n\nすべて正しいので④。"
+    "explanation": "基本式: ピッチ円直径 d = m×z，センター距離 a = m(z₁+z₂)/2（外接の場合）\n\n（ア）d₁ = 3×20 = 60 mm ○\n（イ）d₂ = 3×60 = 180 mm ○\n（ウ）a = 3×(20+60)/2 = 3×40 = 120 mm ○\n（エ）速度比 = n₂/n₁ = z₁/z₂ = 20/60 = 1/3 ○（歯車はピッチ円周速度が等しいため）\n\nすべて正しいので④。",
+    "subField": "機械設計・加工"
   }
 ]
