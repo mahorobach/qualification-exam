@@ -211,6 +211,15 @@ document.getElementById("btn-mode-cat").addEventListener("click", () => {
   showScreen("s-cat-sel");
   enterCatSel();
 });
+document.getElementById("btn-mode-basic").addEventListener("click", () => {
+  startPrac("基礎科目", { count: 20 });
+});
+document.getElementById("btn-mode-ethics").addEventListener("click", () => {
+  startPrac("適性科目（法令・倫理）", { count: 20 });
+});
+document.getElementById("btn-mode-expert").addEventListener("click", () => {
+  startPrac("専門科目（機械部門）", { count: 20 });
+});
 
 // ══════════════════════════════════════
 //  Screen 1: Year Selection
