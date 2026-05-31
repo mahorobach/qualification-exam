@@ -4,6 +4,39 @@
 //  追加: 「苦手問題だけ再出題」機能（kikaiWrongQuestions）。
 // ============================================================
 
+// ══════════════════════════════════════
+//  リッチ解説レンダラー（KaTeX + marked）
+// ══════════════════════════════════════
+function renderExplanation(el, q) {
+  if (q.richExplanation) {
+    // marked で Markdown → HTML
+    const html = marked.parse(q.richExplanation);
+    const div = document.createElement("div");
+    div.className = "rich-explanation";
+    div.innerHTML = html;
+    el.innerHTML = "";
+    el.appendChild(div);
+    // KaTeX で数式をレンダリング（ライブラリ読み込み待ち）
+    function applyKatex() {
+      if (window.renderMathInElement) {
+        renderMathInElement(div, {
+          delimiters: [
+            { left: "$$", right: "$$", display: true },
+            { left: "$",  right: "$",  display: false }
+          ],
+          throwOnError: false
+        });
+      } else {
+        setTimeout(applyKatex, 100);
+      }
+    }
+    applyKatex();
+  } else {
+    el.textContent = q.explanation || "";
+    el.className = "explanation";
+  }
+}
+
 // ── アイコン（Lucide系インラインSVG） ──
 const ICON_PATHS = {
   gear: '<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>',
@@ -730,7 +763,7 @@ function onPracChoose(selectedIdx) {
   const lbl = document.getElementById("prac-result-label");
   lbl.innerHTML = (isCorrect ? icon("checkCircle", { size: 18 }) + " 正解！" : icon("flame", { size: 18 }) + " 不正解…");
   lbl.className = "result-label " + (isCorrect ? "ok" : "ng");
-  document.getElementById("prac-explanation").textContent = q.explanation;
+  renderExplanation(document.getElementById("prac-explanation"), q);
 
   document.getElementById("prac-feedback").classList.add("visible");
 }
@@ -846,9 +879,12 @@ function showResults(mode) {
     }
     html += '<div class="rev-line ok"><span>正解</span><span>' + escHtml(q.choices[q.correctIndex]) + '</span></div>';
     html += '</div>';
-    html += '<div class="rev-exp">' + escHtml(q.explanation) + '</div>';
+    html += '<div class="rev-exp" data-q-idx="' + i + '"></div>';
     html += '</div>';
     card.innerHTML = html;
+    // rev-exp に解説を注入（richExplanation 対応）
+    const revExp = card.querySelector('.rev-exp[data-q-idx]');
+    if (revExp) renderExplanation(revExp, q);
     listEl.appendChild(card);
   });
 }

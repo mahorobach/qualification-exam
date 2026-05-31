@@ -416,7 +416,8 @@
     ],
     "correctIndex": 1,
     "explanation": "断面積 A = π×(0.04)²/4 = π×0.0016/4 = 1.257×10⁻³ m²。応力 σ = P/A = 80,000 / 1.257×10⁻³ ≈ 63.7×10⁶ Pa = 63.7 MPa。",
-    "subField": "材料力学"
+    "subField": "材料力学",
+    "richExplanation": "## 解法手順\n\n### 1. 断面積を計算する\n\n直径 $d = 40\\,\\text{mm} = 0.04\\,\\text{m}$ の丸棒の断面積は、\n\n$$A = \\frac{\\pi d^2}{4} = \\frac{\\pi \\times (0.04)^2}{4} = \\frac{\\pi \\times 0.0016}{4} \\approx 1.257 \\times 10^{-3}\\,\\text{m}^2$$\n\n### 2. 引張応力を計算する\n\n引張応力 $\\sigma$ の定義式：\n\n$$\\sigma = \\frac{P}{A}$$\n\n数値を代入すると、\n\n$$\\sigma = \\frac{80{,}000\\,\\text{N}}{1.257 \\times 10^{-3}\\,\\text{m}^2} \\approx 63.7 \\times 10^6\\,\\text{Pa} = \\textbf{63.7 MPa}$$\n\n### 結論\n\n**正解は② 63.7 MPa**\n\n---\n\n**💡 ポイント**\n- 直径を半径に変換するのを忘れずに（$r = d/2$）\n- 単位変換：1 kN = 1,000 N、1 MPa = $10^6\\,\\text{Pa}$\n- 断面積の公式 $A = \\pi r^2 = \\pi d^2 / 4$ は必須知識"
   },
   {
     "category": "専門科目（機械部門）",
