@@ -65,6 +65,7 @@ const CAT_TIMER_MIN = {
 // ══════════════════════════════════════
 let allQuestions = [];
 let categoryStats = {};
+let subFieldStats = {};   // { "材料力学": { correct, attempted }, ... }
 let wrongSet = {};        // { qKey: true } 苦手（直近で不正解）問題
 
 // Exam (year) mode
@@ -94,7 +95,7 @@ let currentCatKey = null;
 // ══════════════════════════════════════
 //  Screen management
 // ══════════════════════════════════════
-const SCREENS = ["s-mode","s-year-sel","s-subject-sel","s-cat-sel","s-exam","s-prac","s-results"];
+const SCREENS = ["s-mode","s-expert-sel","s-year-sel","s-subject-sel","s-cat-sel","s-exam","s-prac","s-results"];
 function showScreen(id) {
   SCREENS.forEach(s => document.getElementById(s).hidden = (s !== id));
   window.scrollTo(0, 0);
@@ -106,14 +107,22 @@ function showScreen(id) {
 function loadStats() {
   try { categoryStats = JSON.parse(localStorage.getItem("kikaiCategoryStats") || "{}") || {}; }
   catch(e) { categoryStats = {}; }
+  try { subFieldStats = JSON.parse(localStorage.getItem("kikaiSubFieldStats") || "{}") || {}; }
+  catch(e) { subFieldStats = {}; }
 }
 function saveStats() {
   localStorage.setItem("kikaiCategoryStats", JSON.stringify(categoryStats));
+  localStorage.setItem("kikaiSubFieldStats", JSON.stringify(subFieldStats));
 }
-function recordAnswer(cat, isCorrect) {
+function recordAnswer(cat, isCorrect, sf) {
   if (!categoryStats[cat]) categoryStats[cat] = { correct: 0, attempted: 0 };
   categoryStats[cat].attempted++;
   if (isCorrect) categoryStats[cat].correct++;
+  if (sf) {
+    if (!subFieldStats[sf]) subFieldStats[sf] = { correct: 0, attempted: 0 };
+    subFieldStats[sf].attempted++;
+    if (isCorrect) subFieldStats[sf].correct++;
+  }
   saveStats();
 }
 
@@ -218,7 +227,90 @@ document.getElementById("btn-mode-ethics").addEventListener("click", () => {
   startPrac("適性科目（法令・倫理）", { count: 20 });
 });
 document.getElementById("btn-mode-expert").addEventListener("click", () => {
+  showExpertSel();
+});
+
+// ══════════════════════════════════════
+//  専門科目サブカテゴリ選択画面
+// ══════════════════════════════════════
+const SUBFIELDS = ["材料力学", "機械力学・振動", "熱工学", "流体工学", "機械設計・加工", "制御工学"];
+const SUBFIELD_ICON = {
+  "材料力学":     '<path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>',
+  "機械力学・振動": '<path d="M12 2c1 3 4 4.5 4 8a4 4 0 0 1-8 0c0-1 .3-1.8.8-2.5C9 9 9.5 10 11 10c.5-3-1-4.5 1-8z"/>',
+  "熱工学":       '<path d="M12 2v20M2 12h20"/>',
+  "流体工学":     '<path d="M12 22a8 8 0 0 1-8-8c0-4.3 7-12 8-12s8 7.7 8 12a8 8 0 0 1-8 8z"/>',
+  "機械設計・加工": '<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>',
+  "制御工学":     '<rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>'
+};
+
+function showExpertSel() {
+  buildExpertSelScreen();
+  showScreen("s-expert-sel");
+}
+
+function buildExpertSelScreen() {
+  const list = document.getElementById("subfield-list");
+  list.innerHTML = "";
+
+  SUBFIELDS.forEach(sf => {
+    const pool = allQuestions.filter(q => q.subField === sf);
+    const st   = subFieldStats[sf] || { correct: 0, attempted: 0 };
+    const acc  = st.attempted > 0 ? Math.round(st.correct / st.attempted * 100) : null;
+
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "subfield-card";
+    btn.innerHTML =
+      '<span class="subfield-icon"><svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">' +
+      (SUBFIELD_ICON[sf] || "") + '</svg></span>' +
+      '<span class="subfield-body">' +
+        '<span class="subfield-name">' + sf + '</span>' +
+        '<span class="subfield-meta">' + pool.length + '問 ／ 5問出題' +
+        (acc !== null ? '・正答率 ' + acc + '%' : '') + '</span>' +
+      '</span>' +
+      '<span class="subfield-chev"><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></span>';
+    btn.addEventListener("click", () => startPracBySubField(sf, 5));
+    list.appendChild(btn);
+  });
+
+  // 正答率パネル
+  const statsEl = document.getElementById("subfield-stats");
+  statsEl.innerHTML = "";
+  SUBFIELDS.forEach(sf => {
+    const st  = subFieldStats[sf] || { correct: 0, attempted: 0 };
+    const acc = st.attempted > 0 ? Math.round(st.correct / st.attempted * 100) : null;
+    const row = document.createElement("div");
+    row.className = "sf-acc-row";
+    row.innerHTML =
+      '<span class="sf-acc-label">' + sf + '</span>' +
+      '<span class="sf-acc-bar"><span class="sf-acc-fill" style="width:' + (acc ?? 0) + '%"></span></span>' +
+      '<span class="sf-acc-val">' + (acc !== null ? acc + '%' : '—') + '</span>';
+    statsEl.appendChild(row);
+  });
+}
+
+function startPracBySubField(sf, count) {
+  let pool = allQuestions.filter(q => q.subField === sf);
+  if (pool.length === 0) { alert("この分野の問題が見つかりません。"); return; }
+  pool = shuffle(pool).slice(0, count);
+
+  currentMode   = "prac";
+  currentCatKey = "専門科目（機械部門）";
+  pracWeakOnly  = false;
+  pracQuestions = pool;
+  pracIdx       = 0;
+  pracAnswered  = false;
+  pracRecord    = new Array(pool.length).fill(null);
+
+  showScreen("s-prac");
+  renderPracQ();
+}
+
+document.getElementById("btn-expert-all").addEventListener("click", () => {
   startPrac("専門科目（機械部門）", { count: 20 });
+});
+document.getElementById("lnk-expert-back").addEventListener("click", e => {
+  e.preventDefault(); initModeScreen();
 });
 
 // ══════════════════════════════════════
@@ -537,7 +629,7 @@ function endExam() {
   examQuestions.forEach((q, i) => {
     if (examAnswers[i] !== null) {
       const ok = examAnswers[i] === q.correctIndex;
-      recordAnswer(q.category || "未分類", ok);
+      recordAnswer(q.category || "未分類", ok, q.subField || null);
       markQuestion(q, ok);
     }
   });
@@ -625,7 +717,7 @@ function onPracChoose(selectedIdx) {
   const isCorrect = selectedIdx === q.correctIndex;
 
   pracRecord[pracIdx] = selectedIdx;
-  recordAnswer(q.category || "未分類", isCorrect);
+  recordAnswer(q.category || "未分類", isCorrect, q.subField || null);
   markQuestion(q, isCorrect);
 
   const buttons = document.getElementById("prac-choices").querySelectorAll(".choice-btn");
