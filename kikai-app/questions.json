@@ -10,7 +10,8 @@
       "許容応力を基準強さで除した値であり、常に1より小さい"
     ],
     "correctIndex": 0,
-    "explanation": "安全率 S = 基準強さ / 許容応力。基準強さ（降伏強さや引張強さ）は許容応力より大きく設定するため S > 1 となる。例えば S=2 の場合、許容応力は基準強さの 1/2 に設定される。"
+    "explanation": "安全率 S = 基準強さ / 許容応力。基準強さ（降伏強さや引張強さ）は許容応力より大きく設定するため S > 1 となる。例えば S=2 の場合、許容応力は基準強さの 1/2 に設定される。",
+    "subField": "設計・計画"
   },
   {
     "category": "基礎科目",
@@ -23,7 +24,8 @@
       "0.999"
     ],
     "correctIndex": 0,
-    "explanation": "直列システムの信頼度 R = R₁ × R₂ × R₃ = 0.9 × 0.9 × 0.9 = 0.729。直列接続では構成要素が1つでも故障するとシステムが停止するため、個々の信頼度より低くなる。"
+    "explanation": "直列システムの信頼度 R = R₁ × R₂ × R₃ = 0.9 × 0.9 × 0.9 = 0.729。直列接続では構成要素が1つでも故障するとシステムが停止するため、個々の信頼度より低くなる。",
+    "subField": "設計・計画"
   },
   {
     "category": "基礎科目",
@@ -36,7 +38,8 @@
       "0.3151"
     ],
     "correctIndex": 0,
-    "explanation": "二項分布 P(X=2) = ₁₀C₂ × (0.05)² × (0.95)⁸ = 45 × 0.0025 × 0.6634 ≈ 0.0746。不良率が低くてもサンプル数次第で複数の不良品が出る確率を二項分布で評価する。"
+    "explanation": "二項分布 P(X=2) = ₁₀C₂ × (0.05)² × (0.95)⁸ = 45 × 0.0025 × 0.6634 ≈ 0.0746。不良率が低くてもサンプル数次第で複数の不良品が出る確率を二項分布で評価する。",
+    "subField": "設計・計画"
   },
   {
     "category": "基礎科目",
@@ -49,7 +52,8 @@
       "O(n²)"
     ],
     "correctIndex": 3,
-    "explanation": "バブルソートは最悪の場合（逆順データ）に n(n-1)/2 回の比較が必要で、計算量は O(n²)。クイックソートの平均は O(n log n)、線形探索は O(n)、二分探索は O(log n)。"
+    "explanation": "バブルソートは最悪の場合（逆順データ）に n(n-1)/2 回の比較が必要で、計算量は O(n²)。クイックソートの平均は O(n log n)、線形探索は O(n)、二分探索は O(log n)。",
+    "subField": "情報・論理"
   },
   {
     "category": "基礎科目",
@@ -63,7 +67,8 @@
       "25"
     ],
     "correctIndex": 1,
-    "explanation": "x が 1 から 5 まで順に S に加算される。S = 0+1+2+3+4+5 = 15。これは等差数列の和 n(n+1)/2 = 5×6/2 = 15 で求めることもできる。"
+    "explanation": "x が 1 から 5 まで順に S に加算される。S = 0+1+2+3+4+5 = 15。これは等差数列の和 n(n+1)/2 = 5×6/2 = 15 で求めることもできる。",
+    "subField": "情報・論理"
   },
   {
     "category": "基礎科目",
@@ -76,7 +81,8 @@
       "46"
     ],
     "correctIndex": 1,
-    "explanation": "10110₂ = 1×2⁴ + 0×2³ + 1×2² + 1×2¹ + 0×2⁰ = 16 + 0 + 4 + 2 + 0 = 22。桁ごとに重み（2の累乗）を掛けて合計する。"
+    "explanation": "10110₂ = 1×2⁴ + 0×2³ + 1×2² + 1×2¹ + 0×2⁰ = 16 + 0 + 4 + 2 + 0 = 22。桁ごとに重み（2の累乗）を掛けて合計する。",
+    "subField": "情報・論理"
   },
   {
     "category": "基礎科目",
@@ -89,7 +95,8 @@
       "y = e⁻²ˣ + 2"
     ],
     "correctIndex": 1,
-    "explanation": "変数分離法：dy/y = −2dx → ln|y| = −2x + C → y = Ae⁻²ˣ。初期条件 y(0)=3 より A=3、y = 3e⁻²ˣ。y が指数的に減衰する解。"
+    "explanation": "変数分離法：dy/y = −2dx → ln|y| = −2x + C → y = Ae⁻²ˣ。初期条件 y(0)=3 より A=3、y = 3e⁻²ˣ。y が指数的に減衰する解。",
+    "subField": "解析"
   },
   {
     "category": "基礎科目",
@@ -102,7 +109,8 @@
       "−1 と 7"
     ],
     "correctIndex": 1,
-    "explanation": "特性方程式 det(A − λI) = (3−λ)² − 1 = 0 → λ² − 6λ + 8 = 0 → (λ−2)(λ−4) = 0。固有値は λ₁ = 2、λ₂ = 4。"
+    "explanation": "特性方程式 det(A − λI) = (3−λ)² − 1 = 0 → λ² − 6λ + 8 = 0 → (λ−2)(λ−4) = 0。固有値は λ₁ = 2、λ₂ = 4。",
+    "subField": "解析"
   },
   {
     "category": "基礎科目",
@@ -115,7 +123,8 @@
       "1/(s+2)"
     ],
     "correctIndex": 0,
-    "explanation": "周波数移動定理（s-移動定理）：L{e⁻ᵃᵗ f(t)} = F(s+a)。L{sin(3t)} = 3/(s²+9) において s を s+2 に置き換えると 3/((s+2)²+9)。"
+    "explanation": "周波数移動定理（s-移動定理）：L{e⁻ᵃᵗ f(t)} = F(s+a)。L{sin(3t)} = 3/(s²+9) において s を s+2 に置き換えると 3/((s+2)²+9)。",
+    "subField": "解析"
   },
   {
     "category": "基礎科目",
@@ -128,7 +137,8 @@
       "体心立方格子（BCC）は六方最密格子（HCP）より充填率が高い"
     ],
     "correctIndex": 2,
-    "explanation": "FCC（Cu・Al・Au・Ni等）は充填率74%の最密充填構造で滑り系が多く延性・展性に優れる。BCCはFe（常温）・W・Mo等で充填率68%。HCPはMg・Ti・Zn等で充填率74%。"
+    "explanation": "FCC（Cu・Al・Au・Ni等）は充填率74%の最密充填構造で滑り系が多く延性・展性に優れる。BCCはFe（常温）・W・Mo等で充填率68%。HCPはMg・Ti・Zn等で充填率74%。",
+    "subField": "材料・化学・バイオ"
   },
   {
     "category": "基礎科目",
@@ -142,7 +152,8 @@
       "体積弾性係数 K"
     ],
     "correctIndex": 1,
-    "explanation": "応力−ひずみ線図の弾性域の傾き σ/ε = E（縦弾性係数・ヤング率）。ポアソン比は横ひずみ/縦ひずみの比、横弾性係数はせん断応力/せん断ひずみ、体積弾性係数は静水圧と体積ひずみの比。"
+    "explanation": "応力−ひずみ線図の弾性域の傾き σ/ε = E（縦弾性係数・ヤング率）。ポアソン比は横ひずみ/縦ひずみの比、横弾性係数はせん断応力/せん断ひずみ、体積弾性係数は静水圧と体積ひずみの比。",
+    "subField": "材料・化学・バイオ"
   },
   {
     "category": "基礎科目",
@@ -155,7 +166,8 @@
       "フェノール樹脂は熱を加えると再び軟化する"
     ],
     "correctIndex": 3,
-    "explanation": "フェノール樹脂は熱硬化性樹脂であり、一度硬化すると加熱しても再軟化しない。熱可塑性：PE・PP・PVC・ナイロン等（加熱で軟化・成形可能）。熱硬化性：エポキシ・フェノール・メラミン樹脂等。"
+    "explanation": "フェノール樹脂は熱硬化性樹脂であり、一度硬化すると加熱しても再軟化しない。熱可塑性：PE・PP・PVC・ナイロン等（加熱で軟化・成形可能）。熱硬化性：エポキシ・フェノール・メラミン樹脂等。",
+    "subField": "材料・化学・バイオ"
   },
   {
     "category": "基礎科目",
@@ -168,7 +180,8 @@
       "コークス"
     ],
     "correctIndex": 2,
-    "explanation": "天然ガス（主成分メタン CH₄）は炭素比率が最も低いため CO₂排出量が少ない。同一発熱量あたりCO₂排出量（相対）：石炭≒1.0、石油≒0.8、天然ガス≒0.6。水素含有量が多いほど発熱に対するCO₂排出が減る。"
+    "explanation": "天然ガス（主成分メタン CH₄）は炭素比率が最も低いため CO₂排出量が少ない。同一発熱量あたりCO₂排出量（相対）：石炭≒1.0、石油≒0.8、天然ガス≒0.6。水素含有量が多いほど発熱に対するCO₂排出が減る。",
+    "subField": "環境・エネルギー・技術史"
   },
   {
     "category": "基礎科目",
@@ -181,7 +194,8 @@
       "製品の生産コストと廃棄コストの差を評価する手法である"
     ],
     "correctIndex": 1,
-    "explanation": "LCA（ライフサイクルアセスメント）は「ゆりかごから墓場まで」の全段階—原材料採取・製造・輸送・使用・廃棄・リサイクル—の環境負荷（CO₂・資源消費等）を定量評価する手法。ISO 14040/14044で規格化。"
+    "explanation": "LCA（ライフサイクルアセスメント）は「ゆりかごから墓場まで」の全段階—原材料採取・製造・輸送・使用・廃棄・リサイクル—の環境負荷（CO₂・資源消費等）を定量評価する手法。ISO 14040/14044で規格化。",
+    "subField": "環境・エネルギー・技術史"
   },
   {
     "category": "基礎科目",
@@ -194,7 +208,8 @@
       "対称鍵暗号方式とも呼ばれ、大量データの暗号化に適している"
     ],
     "correctIndex": 1,
-    "explanation": "公開鍵暗号では、送信者が受信者の「公開鍵」（誰でも知れる）で暗号化し、受信者だけが持つ「秘密鍵」で復号する。鍵配送問題を解決するが計算量が多く低速。代表例：RSA暗号。"
+    "explanation": "公開鍵暗号では、送信者が受信者の「公開鍵」（誰でも知れる）で暗号化し、受信者だけが持つ「秘密鍵」で復号する。鍵配送問題を解決するが計算量が多く低速。代表例：RSA暗号。",
+    "subField": "情報・論理"
   },
   {
     "category": "基礎科目",
@@ -207,7 +222,8 @@
       "ヒストグラム"
     ],
     "correctIndex": 1,
-    "explanation": "特性要因図（石川図・フィッシュボーン図）は問題の特性（結果）と原因の関係を魚骨状に整理した図。QC7つ道具：パレート図・特性要因図・ヒストグラム・管理図・散布図・グラフ・チェックシート。"
+    "explanation": "特性要因図（石川図・フィッシュボーン図）は問題の特性（結果）と原因の関係を魚骨状に整理した図。QC7つ道具：パレート図・特性要因図・ヒストグラム・管理図・散布図・グラフ・チェックシート。",
+    "subField": "解析"
   },
   {
     "category": "適性科目（法令・倫理）",
@@ -220,7 +236,8 @@
       "違反した場合は直ちに登録が取り消され、刑事罰が科される"
     ],
     "correctIndex": 1,
-    "explanation": "技術士法第45条の2：技術士及び技術士補は業務を行うにあたり公益を害さないよう努める責務がある。技術士補にも適用される。依頼者の利益と公益が相反する場合は公益を優先することが求められる。"
+    "explanation": "技術士法第45条の2：技術士及び技術士補は業務を行うにあたり公益を害さないよう努める責務がある。技術士補にも適用される。依頼者の利益と公益が相反する場合は公益を優先することが求められる。",
+    "subField": "技術士法・制度"
   },
   {
     "category": "適性科目（法令・倫理）",
@@ -233,7 +250,8 @@
       "依頼者の口頭同意があれば第三者への開示が可能である"
     ],
     "correctIndex": 2,
-    "explanation": "秘密保持義務（技術士法第45条）は技術士・技術士補双方に適用され、退職・廃業後も継続する。違反した場合は1年以下の懲役または50万円以下の罰金が科される（第59条）。"
+    "explanation": "秘密保持義務（技術士法第45条）は技術士・技術士補双方に適用され、退職・廃業後も継続する。違反した場合は1年以下の懲役または50万円以下の罰金が科される（第59条）。",
+    "subField": "技術士法・制度"
   },
   {
     "category": "適性科目（法令・倫理）",
@@ -246,7 +264,8 @@
       "技術士補にはCPDの規定が適用されない"
     ],
     "correctIndex": 1,
-    "explanation": "技術士法第47条の2はCPDを「努力義務」として規定しており、具体的な単位数や罰則規定はない。公益社団法人日本技術士会はCPDガイドラインで目安（150時間/3年等）を定めているが、法定義務ではない。"
+    "explanation": "技術士法第47条の2はCPDを「努力義務」として規定しており、具体的な単位数や罰則規定はない。公益社団法人日本技術士会はCPDガイドラインで目安（150時間/3年等）を定めているが、法定義務ではない。",
+    "subField": "技術士法・制度"
   },
   {
     "category": "適性科目（法令・倫理）",
@@ -259,7 +278,8 @@
       "技術士のみに適用され、技術士補は対象外である"
     ],
     "correctIndex": 1,
-    "explanation": "信用失墜行為の禁止は技術士・技術士補双方に、業務内外を問わず適用される。違反した場合は文部科学大臣により登録取消や業務停止などの行政処分が下される（第36条）。"
+    "explanation": "信用失墜行為の禁止は技術士・技術士補双方に、業務内外を問わず適用される。違反した場合は文部科学大臣により登録取消や業務停止などの行政処分が下される（第36条）。",
+    "subField": "技術士法・制度"
   },
   {
     "category": "適性科目（法令・倫理）",
@@ -272,7 +292,8 @@
       "指導技術士の推薦状があれば試験不合格でも登録できる"
     ],
     "correctIndex": 1,
-    "explanation": "技術士第一次試験合格後は「修習技術者」となる。技術士補として業務に就くには文部科学大臣への登録が必要（技術士法第32条）。技術士補は指導技術士の監督のもとで業務を行う。"
+    "explanation": "技術士第一次試験合格後は「修習技術者」となる。技術士補として業務に就くには文部科学大臣への登録が必要（技術士法第32条）。技術士補は指導技術士の監督のもとで業務を行う。",
+    "subField": "技術士法・制度"
   },
   {
     "category": "適性科目（法令・倫理）",
@@ -285,7 +306,8 @@
       "自分の雇用が守られる場合のみ告発を行うことが倫理的に正しい"
     ],
     "correctIndex": 1,
-    "explanation": "公益通報者保護法は、公益目的の正当な通報を保護する。技術者倫理では、まず組織内解決を試み、効果がない場合に規制機関・消費者団体等への外部通報を段階的に検討することが適切とされる。"
+    "explanation": "公益通報者保護法は、公益目的の正当な通報を保護する。技術者倫理では、まず組織内解決を試み、効果がない場合に規制機関・消費者団体等への外部通報を段階的に検討することが適切とされる。",
+    "subField": "技術者倫理"
   },
   {
     "category": "適性科目（法令・倫理）",
@@ -298,7 +320,8 @@
       "製品に使用上の警告表示がないこと"
     ],
     "correctIndex": 1,
-    "explanation": "PL法（製造物責任法）第2条3項：「欠陥」とは製造物が通常有すべき安全性を欠いていることをいう。製造上の欠陥・設計上の欠陥・指示・警告上の欠陥の3種類がある。"
+    "explanation": "PL法（製造物責任法）第2条3項：「欠陥」とは製造物が通常有すべき安全性を欠いていることをいう。製造上の欠陥・設計上の欠陥・指示・警告上の欠陥の3種類がある。",
+    "subField": "環境・社会・安全"
   },
   {
     "category": "適性科目（法令・倫理）",
@@ -311,7 +334,8 @@
       "企業の財務情報"
     ],
     "correctIndex": 1,
-    "explanation": "個人情報保護法第2条1項：「個人情報」とは生存する個人に関する情報であって、氏名・生年月日等により特定の個人を識別できるものをいう。匿名加工情報は適切に加工すれば個人情報に該当しない。"
+    "explanation": "個人情報保護法第2条1項：「個人情報」とは生存する個人に関する情報であって、氏名・生年月日等により特定の個人を識別できるものをいう。匿名加工情報は適切に加工すれば個人情報に該当しない。",
+    "subField": "技術者倫理"
   },
   {
     "category": "適性科目（法令・倫理）",
@@ -324,7 +348,8 @@
       "リスクを第三者（外注先等）に転嫁する"
     ],
     "correctIndex": 1,
-    "explanation": "リスク対応の4戦略：①回避（原因活動を中止）②低減（発生確率・影響を下げる）③転嫁（保険・外注等）④受容（コストと天秤で許容）。リスク回避は最も確実だが、ビジネス機会も失う。"
+    "explanation": "リスク対応の4戦略：①回避（原因活動を中止）②低減（発生確率・影響を下げる）③転嫁（保険・外注等）④受容（コストと天秤で許容）。リスク回避は最も確実だが、ビジネス機会も失う。",
+    "subField": "技術者倫理"
   },
   {
     "category": "適性科目（法令・倫理）",
@@ -337,7 +362,8 @@
       "特許権は登録と同時に効力が発生し、届出は不要である"
     ],
     "correctIndex": 1,
-    "explanation": "特許法第2条：発明とは「自然法則を利用した技術的思想の創作のうち高度のもの」をいう。存続期間は出願日から20年（特許法第67条）。出願から原則18ヶ月後に公開される（公開制度）。"
+    "explanation": "特許法第2条：発明とは「自然法則を利用した技術的思想の創作のうち高度のもの」をいう。存続期間は出願日から20年（特許法第67条）。出願から原則18ヶ月後に公開される（公開制度）。",
+    "subField": "技術者倫理"
   },
   {
     "category": "適性科目（法令・倫理）",
@@ -350,7 +376,8 @@
       "技術者の専門知識が依頼者の知識を上回る状況"
     ],
     "correctIndex": 1,
-    "explanation": "利益相反とは、個人の私的利益（金銭・株式保有・家族関係等）が専門的判断の客観性を損なう可能性がある状況。発見した場合は開示・回避が原則。適切な開示なしに意思決定に関わることが問題とされる。"
+    "explanation": "利益相反とは、個人の私的利益（金銭・株式保有・家族関係等）が専門的判断の客観性を損なう可能性がある状況。発見した場合は開示・回避が原則。適切な開示なしに意思決定に関わることが問題とされる。",
+    "subField": "技術者倫理"
   },
   {
     "category": "適性科目（法令・倫理）",
@@ -363,7 +390,8 @@
       "日本のみが主導して策定した国内目標である"
     ],
     "correctIndex": 1,
-    "explanation": "SDGsは2015年9月に国連サミットで採択された「持続可能な開発のための2030アジェンダ」の中核。先進国・途上国を含む全193加盟国が対象。環境・社会・経済の三側面を統合した17ゴール・169ターゲット。"
+    "explanation": "SDGsは2015年9月に国連サミットで採択された「持続可能な開発のための2030アジェンダ」の中核。先進国・途上国を含む全193加盟国が対象。環境・社会・経済の三側面を統合した17ゴール・169ターゲット。",
+    "subField": "環境・社会・安全"
   },
   {
     "category": "適性科目（法令・倫理）",
@@ -376,7 +404,8 @@
       "名称表示は任意であり、義務ではない"
     ],
     "correctIndex": 1,
-    "explanation": "技術士法第46条：技術士は業務で技術士の名称を表示する場合、登録を受けた技術部門の名称を付記しなければならない。技術士でない者が技術士の名称を使用することは「名称独占」の違反（第32条）として処罰対象。"
+    "explanation": "技術士法第46条：技術士は業務で技術士の名称を表示する場合、登録を受けた技術部門の名称を付記しなければならない。技術士でない者が技術士の名称を使用することは「名称独占」の違反（第32条）として処罰対象。",
+    "subField": "技術士法・制度"
   },
   {
     "category": "適性科目（法令・倫理）",
@@ -389,7 +418,8 @@
       "特許出願を行えば機密情報の開示は正当化される"
     ],
     "correctIndex": 2,
-    "explanation": "不正競争防止法は「営業秘密」の不正使用を退職後も禁ずる。技術士法第45条の秘密保持義務も退職後も継続する。ただし一般的な知識・スキル（いわゆる「技能」）は持ち出し可能で、秘密情報との区別が重要。"
+    "explanation": "不正競争防止法は「営業秘密」の不正使用を退職後も禁ずる。技術士法第45条の秘密保持義務も退職後も継続する。ただし一般的な知識・スキル（いわゆる「技能」）は持ち出し可能で、秘密情報との区別が重要。",
+    "subField": "技術者倫理"
   },
   {
     "category": "適性科目（法令・倫理）",
@@ -402,7 +432,8 @@
       "プロセスアプローチ"
     ],
     "correctIndex": 2,
-    "explanation": "ISO 9001の品質マネジメント7原則：顧客重視・リーダーシップ・人々の積極的参画・プロセスアプローチ・改善・客観的事実に基づく意思決定・関係性管理。利益最大化は経営目標であり、QMS原則には含まれない。"
+    "explanation": "ISO 9001の品質マネジメント7原則：顧客重視・リーダーシップ・人々の積極的参画・プロセスアプローチ・改善・客観的事実に基づく意思決定・関係性管理。利益最大化は経営目標であり、QMS原則には含まれない。",
+    "subField": "環境・社会・安全"
   },
   {
     "category": "専門科目（機械部門）",
@@ -722,7 +753,8 @@
       "25"
     ],
     "correctIndex": 0,
-    "explanation": "ベクトルの大きさは √(3²+4²)=√25=5。直交成分の合成では三平方の定理を用いる。"
+    "explanation": "ベクトルの大きさは √(3²+4²)=√25=5。直交成分の合成では三平方の定理を用いる。",
+    "subField": "解析"
   },
   {
     "category": "基礎科目",
@@ -735,7 +767,8 @@
       "50.0"
     ],
     "correctIndex": 1,
-    "explanation": "合計は 50.0、データ数は5なので平均値は 50.0/5=10.0。"
+    "explanation": "合計は 50.0、データ数は5なので平均値は 50.0/5=10.0。",
+    "subField": "解析"
   },
   {
     "category": "基礎科目",
@@ -748,7 +781,8 @@
       "A=1, B=1"
     ],
     "correctIndex": 3,
-    "explanation": "AND はすべての入力が1のときだけ出力が1になる論理演算である。"
+    "explanation": "AND はすべての入力が1のときだけ出力が1になる論理演算である。",
+    "subField": "情報・論理"
   },
   {
     "category": "基礎科目",
@@ -761,7 +795,8 @@
       "生成物の質量を保存しない物質"
     ],
     "correctIndex": 1,
-    "explanation": "触媒は反応経路を変えて活性化エネルギーを下げるなど、反応速度に影響する。反応前後で正味には消費されない。"
+    "explanation": "触媒は反応経路を変えて活性化エネルギーを下げるなど、反応速度に影響する。反応前後で正味には消費されない。",
+    "subField": "材料・化学・バイオ"
   },
   {
     "category": "適性科目（法令・倫理）",
@@ -774,7 +809,8 @@
       "自分の担当外であれば確認しない"
     ],
     "correctIndex": 1,
-    "explanation": "技術者は公益確保と安全を重視し、根拠に基づいてリスクを共有し是正を促す必要がある。"
+    "explanation": "技術者は公益確保と安全を重視し、根拠に基づいてリスクを共有し是正を促す必要がある。",
+    "subField": "技術者倫理"
   },
   {
     "category": "適性科目（法令・倫理）",
@@ -787,7 +823,8 @@
       "記録を残さず口頭で処理する"
     ],
     "correctIndex": 1,
-    "explanation": "利益相反は開示し、関係者の理解と公正な判断手続きを確保することが重要である。"
+    "explanation": "利益相反は開示し、関係者の理解と公正な判断手続きを確保することが重要である。",
+    "subField": "技術士法・制度"
   },
   {
     "category": "適性科目（法令・倫理）",
@@ -800,7 +837,8 @@
       "退職後は自由に持ち出せる"
     ],
     "correctIndex": 1,
-    "explanation": "個人情報は利用目的を明確にし、必要最小限の取扱い、アクセス制限、漏えい防止を行う。"
+    "explanation": "個人情報は利用目的を明確にし、必要最小限の取扱い、アクセス制限、漏えい防止を行う。",
+    "subField": "技術士法・制度"
   },
   {
     "category": "専門科目（機械部門）",
@@ -891,7 +929,8 @@
       "12"
     ],
     "correctIndex": 3,
-    "explanation": "f′(x)=3x²。x=2 で f′(2)=3×4=12。"
+    "explanation": "f′(x)=3x²。x=2 で f′(2)=3×4=12。",
+    "subField": "解析"
   },
   {
     "category": "基礎科目",
@@ -904,7 +943,8 @@
       "11001₂"
     ],
     "correctIndex": 1,
-    "explanation": "1101₂=13、0011₂=3、和は16。16の2進表現は10000₂。"
+    "explanation": "1101₂=13、0011₂=3、和は16。16の2進表現は10000₂。",
+    "subField": "情報・論理"
   },
   {
     "category": "基礎科目",
@@ -917,7 +957,8 @@
       "データ数が少ない"
     ],
     "correctIndex": 1,
-    "explanation": "標準偏差は平均値まわりのばらつきの尺度であり、大きいほど散らばりが大きい。"
+    "explanation": "標準偏差は平均値まわりのばらつきの尺度であり、大きいほど散らばりが大きい。",
+    "subField": "解析"
   },
   {
     "category": "基礎科目",
@@ -930,7 +971,8 @@
       "重油ボイラ"
     ],
     "correctIndex": 2,
-    "explanation": "太陽光、風力、水力、地熱、バイオマスなどは再生可能エネルギーに分類される。"
+    "explanation": "太陽光、風力、水力、地熱、バイオマスなどは再生可能エネルギーに分類される。",
+    "subField": "環境・エネルギー・技術史"
   },
   {
     "category": "適性科目（法令・倫理）",
@@ -943,7 +985,8 @@
       "小数点以下だけなら常に許容される"
     ],
     "correctIndex": 2,
-    "explanation": "データの改ざんは技術的判断の基礎を失わせ、公益や安全にも影響する重大な不正である。"
+    "explanation": "データの改ざんは技術的判断の基礎を失わせ、公益や安全にも影響する重大な不正である。",
+    "subField": "技術者倫理"
   },
   {
     "category": "適性科目（法令・倫理）",
@@ -956,7 +999,8 @@
       "技術士法の義務は一切適用されない"
     ],
     "correctIndex": 1,
-    "explanation": "技術士補は登録を受け、指導技術士の補助として業務を行う位置づけである。"
+    "explanation": "技術士補は登録を受け、指導技術士の補助として業務を行う位置づけである。",
+    "subField": "技術士法・制度"
   },
   {
     "category": "適性科目（法令・倫理）",
@@ -969,7 +1013,8 @@
       "短期利益だけを評価する"
     ],
     "correctIndex": 1,
-    "explanation": "持続可能性の観点では、ライフサイクル全体の資源消費、環境負荷、保守性、廃棄性を考慮する。"
+    "explanation": "持続可能性の観点では、ライフサイクル全体の資源消費、環境負荷、保守性、廃棄性を考慮する。",
+    "subField": "技術者倫理"
   },
   {
     "category": "専門科目（機械部門）",
@@ -1059,7 +1104,8 @@
       "10"
     ],
     "correctIndex": 0,
-    "explanation": "2×2行列の行列式は ad-bc。1×4-2×3=4-6=-2。"
+    "explanation": "2×2行列の行列式は ad-bc。1×4-2×3=4-6=-2。",
+    "subField": "解析"
   },
   {
     "category": "基礎科目",
@@ -1072,7 +1118,8 @@
       "W=F+s"
     ],
     "correctIndex": 2,
-    "explanation": "力と変位が同方向なら仕事は W=Fs。単位は N・m = J。"
+    "explanation": "力と変位が同方向なら仕事は W=Fs。単位は N・m = J。",
+    "subField": "解析"
   },
   {
     "category": "基礎科目",
@@ -1085,7 +1132,8 @@
       "暗号鍵を管理する方式"
     ],
     "correctIndex": 1,
-    "explanation": "CSV は Comma-Separated Values の略で、値をカンマ区切りで表すテキストデータ形式である。"
+    "explanation": "CSV は Comma-Separated Values の略で、値をカンマ区切りで表すテキストデータ形式である。",
+    "subField": "情報・論理"
   },
   {
     "category": "基礎科目",
@@ -1098,7 +1146,8 @@
       "酸化剤である"
     ],
     "correctIndex": 1,
-    "explanation": "標準的な水溶液では pH=7 は中性、7未満は酸性、7を超えるとアルカリ性を示す。"
+    "explanation": "標準的な水溶液では pH=7 は中性、7未満は酸性、7を超えるとアルカリ性を示す。",
+    "subField": "材料・化学・バイオ"
   },
   {
     "category": "適性科目（法令・倫理）",
@@ -1111,7 +1160,8 @@
       "実務経験があれば登録不要で名乗れる"
     ],
     "correctIndex": 1,
-    "explanation": "技術士の名称を使用するには、第二次試験合格後に所定の登録を受ける必要がある。"
+    "explanation": "技術士の名称を使用するには、第二次試験合格後に所定の登録を受ける必要がある。",
+    "subField": "技術士法・制度"
   },
   {
     "category": "適性科目（法令・倫理）",
@@ -1124,7 +1174,8 @@
       "依頼者情報は技術資料なら自由に配布できる"
     ],
     "correctIndex": 1,
-    "explanation": "業務上知り得た秘密は、正当な理由なく漏らしてはならない。退職後も守秘が求められる場合がある。"
+    "explanation": "業務上知り得た秘密は、正当な理由なく漏らしてはならない。退職後も守秘が求められる場合がある。",
+    "subField": "技術士法・制度"
   },
   {
     "category": "適性科目（法令・倫理）",
@@ -1137,7 +1188,8 @@
       "責任部署が不明なら調査をやめる"
     ],
     "correctIndex": 2,
-    "explanation": "事故時は事実に基づく原因分析、対策、記録、水平展開が重要である。"
+    "explanation": "事故時は事実に基づく原因分析、対策、記録、水平展開が重要である。",
+    "subField": "技術者倫理"
   },
   {
     "category": "専門科目（機械部門）",
@@ -1227,7 +1279,8 @@
     ],
     "correctIndex": 1,
     "explanation": "平均値は合計をデータ数で割る。10.1+10.4+9.9+10.6+10.0=51.0、51.0/5=10.2。",
-    "figureHtml": "<div style='overflow:auto'><table style='width:100%;border-collapse:collapse;font-size:13px;color:#e8edf4'><tbody><tr><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>測定1</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>測定2</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>測定3</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>測定4</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>測定5</td></tr><tr><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>10.1</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>10.4</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>9.9</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>10.6</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>10.0</td></tr></tbody></table></div>"
+    "figureHtml": "<div style='overflow:auto'><table style='width:100%;border-collapse:collapse;font-size:13px;color:#e8edf4'><tbody><tr><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>測定1</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>測定2</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>測定3</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>測定4</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>測定5</td></tr><tr><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>10.1</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>10.4</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>9.9</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>10.6</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>10.0</td></tr></tbody></table></div>",
+    "subField": "解析"
   },
   {
     "category": "基礎科目",
@@ -1240,7 +1293,8 @@
       "100"
     ],
     "correctIndex": 0,
-    "explanation": "|a|=√(6²+8²)=√100=10。3-4-5の2倍の形として覚えると速い。"
+    "explanation": "|a|=√(6²+8²)=√100=10。3-4-5の2倍の形として覚えると速い。",
+    "subField": "解析"
   },
   {
     "category": "基礎科目",
@@ -1253,7 +1307,8 @@
       "53"
     ],
     "correctIndex": 2,
-    "explanation": "101101₂=32+0+8+4+0+1=45。各桁に2の累乗の重みを掛ける。"
+    "explanation": "101101₂=32+0+8+4+0+1=45。各桁に2の累乗の重みを掛ける。",
+    "subField": "情報・論理"
   },
   {
     "category": "基礎科目",
@@ -1267,7 +1322,8 @@
     ],
     "correctIndex": 2,
     "explanation": "入力が異なるときだけ1なのでXORである。ANDは両方1のみ、ORはいずれか1で1。",
-    "figureHtml": "<div style='overflow:auto'><table style='width:100%;border-collapse:collapse;font-size:13px;color:#e8edf4'><tbody><tr><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>A</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>B</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>出力</td></tr><tr><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>0</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>0</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>0</td></tr><tr><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>0</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>1</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>1</td></tr><tr><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>1</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>0</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>1</td></tr><tr><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>1</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>1</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>0</td></tr></tbody></table></div>"
+    "figureHtml": "<div style='overflow:auto'><table style='width:100%;border-collapse:collapse;font-size:13px;color:#e8edf4'><tbody><tr><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>A</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>B</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>出力</td></tr><tr><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>0</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>0</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>0</td></tr><tr><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>0</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>1</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>1</td></tr><tr><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>1</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>0</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>1</td></tr><tr><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>1</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>1</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>0</td></tr></tbody></table></div>",
+    "subField": "情報・論理"
   },
   {
     "category": "基礎科目",
@@ -1280,7 +1336,8 @@
       "0.9975"
     ],
     "correctIndex": 0,
-    "explanation": "直列信頼度は積で求める。0.95×0.95=0.9025。直列は構成要素が増えると信頼度が下がる。"
+    "explanation": "直列信頼度は積で求める。0.95×0.95=0.9025。直列は構成要素が増えると信頼度が下がる。",
+    "subField": "設計・計画"
   },
   {
     "category": "基礎科目",
@@ -1293,7 +1350,8 @@
       "1.60"
     ],
     "correctIndex": 2,
-    "explanation": "並列冗長では全台故障する確率を引く。1-(1-0.8)²=1-0.04=0.96。"
+    "explanation": "並列冗長では全台故障する確率を引く。1-(1-0.8)²=1-0.04=0.96。",
+    "subField": "設計・計画"
   },
   {
     "category": "基礎科目",
@@ -1306,7 +1364,8 @@
       "0.590"
     ],
     "correctIndex": 0,
-    "explanation": "二項分布より 5C1×0.1×0.9⁴=5×0.1×0.6561=0.32805。"
+    "explanation": "二項分布より 5C1×0.1×0.9⁴=5×0.1×0.6561=0.32805。",
+    "subField": "設計・計画"
   },
   {
     "category": "基礎科目",
@@ -1319,7 +1378,8 @@
       "14"
     ],
     "correctIndex": 1,
-    "explanation": "f'(x)=6x-2。x=2を代入して12-2=10。"
+    "explanation": "f'(x)=6x-2。x=2を代入して12-2=10。",
+    "subField": "解析"
   },
   {
     "category": "基礎科目",
@@ -1332,7 +1392,8 @@
       "10"
     ],
     "correctIndex": 0,
-    "explanation": "det A=2×3-1×4=2。2×2行列はad-bcで計算する。"
+    "explanation": "det A=2×3-1×4=2。2×2行列はad-bcで計算する。",
+    "subField": "解析"
   },
   {
     "category": "基礎科目",
@@ -1345,7 +1406,8 @@
       "2と8"
     ],
     "correctIndex": 0,
-    "explanation": "[[a,b],[b,a]]型の固有値はa+bとa-b。5+2=7、5-2=3。"
+    "explanation": "[[a,b],[b,a]]型の固有値はa+bとa-b。5+2=7、5-2=3。",
+    "subField": "解析"
   },
   {
     "category": "基礎科目",
@@ -1359,7 +1421,8 @@
     ],
     "correctIndex": 2,
     "explanation": "S=2×1+2×2+2×3+2×4=2(1+2+3+4)=20。",
-    "figureHtml": "<div style='overflow:auto'><table style='width:100%;border-collapse:collapse;font-size:13px;color:#e8edf4'><tbody><tr><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>初期値</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>S=0, i=1</td></tr><tr><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>繰返し</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>i≦4の間 S=S+2i, i=i+1</td></tr></tbody></table></div>"
+    "figureHtml": "<div style='overflow:auto'><table style='width:100%;border-collapse:collapse;font-size:13px;color:#e8edf4'><tbody><tr><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>初期値</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>S=0, i=1</td></tr><tr><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>繰返し</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>i≦4の間 S=S+2i, i=i+1</td></tr></tbody></table></div>",
+    "subField": "情報・論理"
   },
   {
     "category": "基礎科目",
@@ -1372,7 +1435,8 @@
       "O(n²)"
     ],
     "correctIndex": 3,
-    "explanation": "隣接交換を繰り返すため、最悪では比較回数がn(n-1)/2程度となりO(n²)。"
+    "explanation": "隣接交換を繰り返すため、最悪では比較回数がn(n-1)/2程度となりO(n²)。",
+    "subField": "情報・論理"
   },
   {
     "category": "基礎科目",
@@ -1385,7 +1449,8 @@
       "420kJ"
     ],
     "correctIndex": 2,
-    "explanation": "Q=mcΔT=2×4.2×20=168kJ。単位をkJでそろえる。"
+    "explanation": "Q=mcΔT=2×4.2×20=168kJ。単位をkJでそろえる。",
+    "subField": "材料・化学・バイオ"
   },
   {
     "category": "基礎科目",
@@ -1399,7 +1464,8 @@
     ],
     "correctIndex": 2,
     "explanation": "安全率=基準強さ/許容応力。Cは360/100=3.6で最大。",
-    "figureHtml": "<div style='overflow:auto'><table style='width:100%;border-collapse:collapse;font-size:13px;color:#e8edf4'><tbody><tr><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>材料</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>基準強さMPa</td></tr><tr><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>A</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>240</td></tr><tr><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>B</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>300</td></tr><tr><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>C</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>360</td></tr></tbody></table></div>"
+    "figureHtml": "<div style='overflow:auto'><table style='width:100%;border-collapse:collapse;font-size:13px;color:#e8edf4'><tbody><tr><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>材料</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>基準強さMPa</td></tr><tr><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>A</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>240</td></tr><tr><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>B</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>300</td></tr><tr><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>C</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>360</td></tr></tbody></table></div>",
+    "subField": "設計・計画"
   },
   {
     "category": "基礎科目",
@@ -1412,7 +1478,8 @@
       "製造時間だけを短縮する手法である"
     ],
     "correctIndex": 1,
-    "explanation": "LCAは製品ライフサイクル全体の環境負荷を定量的に評価する考え方である。"
+    "explanation": "LCAは製品ライフサイクル全体の環境負荷を定量的に評価する考え方である。",
+    "subField": "環境・エネルギー・技術史"
   },
   {
     "category": "基礎科目",
@@ -1425,7 +1492,8 @@
       "コークス"
     ],
     "correctIndex": 2,
-    "explanation": "天然ガスは主成分がメタンで炭素比率が低く、同一発熱量あたりのCO2排出量が比較的小さい。"
+    "explanation": "天然ガスは主成分がメタンで炭素比率が低く、同一発熱量あたりのCO2排出量が比較的小さい。",
+    "subField": "環境・エネルギー・技術史"
   },
   {
     "category": "基礎科目",
@@ -1438,7 +1506,8 @@
       "大量データ暗号化で常に共通鍵より高速である"
     ],
     "correctIndex": 0,
-    "explanation": "公開鍵暗号では公開鍵で暗号化し、対応する秘密鍵で復号する。鍵配送問題を緩和できるが計算量は大きい。"
+    "explanation": "公開鍵暗号では公開鍵で暗号化し、対応する秘密鍵で復号する。鍵配送問題を緩和できるが計算量は大きい。",
+    "subField": "情報・論理"
   },
   {
     "category": "基礎科目",
@@ -1451,7 +1520,8 @@
       "ヒストグラム"
     ],
     "correctIndex": 2,
-    "explanation": "特性要因図は結果に影響する要因を魚骨状に整理する図で、原因分析に使う。"
+    "explanation": "特性要因図は結果に影響する要因を魚骨状に整理する図で、原因分析に使う。",
+    "subField": "解析"
   },
   {
     "category": "基礎科目",
@@ -1464,7 +1534,8 @@
       "中央値が必ず0になる"
     ],
     "correctIndex": 1,
-    "explanation": "標準偏差は平均まわりの散らばりを表す。大きいほどデータのばらつきが大きい。"
+    "explanation": "標準偏差は平均まわりの散らばりを表す。大きいほどデータのばらつきが大きい。",
+    "subField": "解析"
   },
   {
     "category": "基礎科目",
@@ -1477,7 +1548,8 @@
       "金属である"
     ],
     "correctIndex": 0,
-    "explanation": "pHは7が中性、7未満が酸性、7を超えるとアルカリ性。pH=3は酸性。"
+    "explanation": "pHは7が中性、7未満が酸性、7を超えるとアルカリ性。pH=3は酸性。",
+    "subField": "材料・化学・バイオ"
   },
   {
     "category": "基礎科目",
@@ -1491,7 +1563,8 @@
     ],
     "correctIndex": 0,
     "explanation": "1MPa=10^6N/m²であり、1N/mm²も10^6N/m²なので等しい。",
-    "figureHtml": "<div style='overflow:auto'><table style='width:100%;border-collapse:collapse;font-size:13px;color:#e8edf4'><tbody><tr><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>量</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>換算候補</td></tr><tr><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>圧力</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>MPa と N/mm²</td></tr><tr><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>力</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>kN と N</td></tr><tr><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>長さ</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>m と mm</td></tr></tbody></table></div>"
+    "figureHtml": "<div style='overflow:auto'><table style='width:100%;border-collapse:collapse;font-size:13px;color:#e8edf4'><tbody><tr><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>量</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>換算候補</td></tr><tr><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>圧力</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>MPa と N/mm²</td></tr><tr><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>力</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>kN と N</td></tr><tr><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>長さ</td><td style='border:1px solid #405061;padding:7px 9px;text-align:center'>m と mm</td></tr></tbody></table></div>",
+    "subField": "解析"
   },
   {
     "category": "適性科目（法令・倫理）",
@@ -1504,7 +1577,8 @@
       "担当外なら確認しない"
     ],
     "correctIndex": 1,
-    "explanation": "公益確保の観点から、安全上の懸念は根拠をもって報告し、是正につなげる。"
+    "explanation": "公益確保の観点から、安全上の懸念は根拠をもって報告し、是正につなげる。",
+    "subField": "技術者倫理"
   },
   {
     "category": "適性科目（法令・倫理）",
@@ -1517,7 +1591,8 @@
       "依頼者情報はSNSで共有できる"
     ],
     "correctIndex": 1,
-    "explanation": "秘密保持は業務上知り得た秘密を正当な理由なく漏らさない義務である。"
+    "explanation": "秘密保持は業務上知り得た秘密を正当な理由なく漏らさない義務である。",
+    "subField": "技術士法・制度"
   },
   {
     "category": "適性科目（法令・倫理）",
@@ -1530,7 +1605,8 @@
       "記録を残さない"
     ],
     "correctIndex": 1,
-    "explanation": "利益相反は開示し、公正な判断ができる手続きを確保する必要がある。"
+    "explanation": "利益相反は開示し、公正な判断ができる手続きを確保する必要がある。",
+    "subField": "技術士法・制度"
   },
   {
     "category": "適性科目（法令・倫理）",
@@ -1543,7 +1619,8 @@
       "依頼者が望めば問題ない"
     ],
     "correctIndex": 2,
-    "explanation": "データ改ざんは判断の基礎を失わせる重大な不正であり、公益にも反する。"
+    "explanation": "データ改ざんは判断の基礎を失わせる重大な不正であり、公益にも反する。",
+    "subField": "技術者倫理"
   },
   {
     "category": "適性科目（法令・倫理）",
@@ -1556,7 +1633,8 @@
       "所属企業だけが行えばよい"
     ],
     "correctIndex": 0,
-    "explanation": "技術者は技術の変化に対応するため、継続的に知識・技能を高める必要がある。"
+    "explanation": "技術者は技術の変化に対応するため、継続的に知識・技能を高める必要がある。",
+    "subField": "技術士法・制度"
   },
   {
     "category": "適性科目（法令・倫理）",
@@ -1569,7 +1647,8 @@
       "責任部署が不明なら調査をやめる"
     ],
     "correctIndex": 0,
-    "explanation": "事故時は事実に基づく原因分析、是正、記録、水平展開が重要である。"
+    "explanation": "事故時は事実に基づく原因分析、是正、記録、水平展開が重要である。",
+    "subField": "技術者倫理"
   },
   {
     "category": "適性科目（法令・倫理）",
@@ -1582,7 +1661,8 @@
       "退職後は自由に持ち出せる"
     ],
     "correctIndex": 1,
-    "explanation": "個人情報は利用目的、必要最小限、アクセス制限、漏えい防止を意識して扱う。"
+    "explanation": "個人情報は利用目的、必要最小限、アクセス制限、漏えい防止を意識して扱う。",
+    "subField": "技術士法・制度"
   },
   {
     "category": "専門科目（機械部門）",
@@ -2361,7 +2441,8 @@
       "ア=正，イ=正，ウ=誤，エ=正"
     ],
     "correctIndex": 1,
-    "explanation": "CはCheck（確認・評価）の頭文字であり，Chooseではない。AはAct（改善・処置）の頭文字であり，Achieveではない。したがってア・イは正，ウ・エは誤。PDCAはPlan（計画）→Do（実施）→Check（確認）→Act（改善）の継続的改善サイクルである。"
+    "explanation": "CはCheck（確認・評価）の頭文字であり，Chooseではない。AはAct（改善・処置）の頭文字であり，Achieveではない。したがってア・イは正，ウ・エは誤。PDCAはPlan（計画）→Do（実施）→Check（確認）→Act（改善）の継続的改善サイクルである。",
+    "subField": "設計・計画"
   },
   {
     "category": "基礎科目",
@@ -2374,7 +2455,8 @@
       "ア=安全率÷基準強さ，イ=2以上の値，ウ=13〜20"
     ],
     "correctIndex": 1,
-    "explanation": "許容応力 = 基準強さ÷安全率。引張強さを基準強さとする場合の安全率は2〜4程度（2以上の値）。疲労限度を用いる場合は安全率1.3〜2.0程度が用いられる。安全率は常に1より大きい値をとる。"
+    "explanation": "許容応力 = 基準強さ÷安全率。引張強さを基準強さとする場合の安全率は2〜4程度（2以上の値）。疲労限度を用いる場合は安全率1.3〜2.0程度が用いられる。安全率は常に1より大きい値をとる。",
+    "subField": "設計・計画"
   },
   {
     "category": "基礎科目",
@@ -2387,7 +2469,8 @@
       "非常に薄い平板が面内荷重を受ける場合，ひずみの平板厚さ方向成分は無視してよい。これを平面ひずみ状態という。"
     ],
     "correctIndex": 0,
-    "explanation": "平面応力状態：薄い板の面内荷重問題。厚さ方向の応力（σz）を無視できる（σz=0）。平面ひずみ状態：非常に長い構造物の断面問題。長さ方向のひずみ（εz）を無視できる（εz=0）。②は「ひずみでなく応力」を無視しているため平面応力でなく平面ひずみに相当。③は平面ひずみの説明を平面応力と呼んでいるため誤り。"
+    "explanation": "平面応力状態：薄い板の面内荷重問題。厚さ方向の応力（σz）を無視できる（σz=0）。平面ひずみ状態：非常に長い構造物の断面問題。長さ方向のひずみ（εz）を無視できる（εz=0）。②は「ひずみでなく応力」を無視しているため平面応力でなく平面ひずみに相当。③は平面ひずみの説明を平面応力と呼んでいるため誤り。",
+    "subField": "材料・化学・バイオ"
   },
   {
     "category": "基礎科目",
@@ -2400,7 +2483,8 @@
       "100秒"
     ],
     "correctIndex": 3,
-    "explanation": "到着率λ=36人/時=1/100人/秒，サービス率μ=1/50人/秒。トラフィック密度ρ=λ/μ=(1/100)/(1/50)=0.5。平均系内列長L=0.5/(1−0.5)=1人。平均系内滞在時間W=L/λ=1/(1/100)=100秒。"
+    "explanation": "到着率λ=36人/時=1/100人/秒，サービス率μ=1/50人/秒。トラフィック密度ρ=λ/μ=(1/100)/(1/50)=0.5。平均系内列長L=0.5/(1−0.5)=1人。平均系内滞在時間W=L/λ=1/(1/100)=100秒。",
+    "subField": "解析"
   },
   {
     "category": "基礎科目",
@@ -2413,7 +2497,8 @@
       "区間推定法において，信頼度は危険率の逆数として表すことができる。"
     ],
     "correctIndex": 1,
-    "explanation": "帰無仮説は「差がない」「効果がない」という棄却することを目的とした仮説で，成立を期待するものではない（①誤）。第1種の誤り（偽陽性）：H₀が真なのに棄却，第2種の誤り（偽陰性）：H₀が偽なのに棄却しない（②正）。t分布の自由度はn−1（③誤）。信頼度=1−危険率であり逆数ではない（④誤）。"
+    "explanation": "帰無仮説は「差がない」「効果がない」という棄却することを目的とした仮説で，成立を期待するものではない（①誤）。第1種の誤り（偽陽性）：H₀が真なのに棄却，第2種の誤り（偽陰性）：H₀が偽なのに棄却しない（②正）。t分布の自由度はn−1（③誤）。信頼度=1−危険率であり逆数ではない（④誤）。",
+    "subField": "解析"
   },
   {
     "category": "基礎科目",
@@ -2426,7 +2511,8 @@
       "81"
     ],
     "correctIndex": 2,
-    "explanation": "|A×B| = |A|×|B| = 3×2 = 6。写像 f : A×B→C の総数は，A×Bの各元に対してCの元（2種類）を独立に割り当てるので，|C|^|A×B| = 2^6 = 64 通り。"
+    "explanation": "|A×B| = |A|×|B| = 3×2 = 6。写像 f : A×B→C の総数は，A×Bの各元に対してCの元（2種類）を独立に割り当てるので，|C|^|A×B| = 2^6 = 64 通り。",
+    "subField": "解析"
   },
   {
     "category": "基礎科目",
@@ -2439,7 +2525,8 @@
       "64%"
     ],
     "correctIndex": 3,
-    "explanation": "圧縮後データ量 = 250×10⁶×(8/10)×8 ビット = 1.6×10⁹ビット。伝送時間25秒 = 1.6×10⁹÷(100×10⁶×利用率)。利用率 = 1.6×10⁹÷(100×10⁶×25) = 1.6÷2.5 = 0.64 = 64%。"
+    "explanation": "圧縮後データ量 = 250×10⁶×(8/10)×8 ビット = 1.6×10⁹ビット。伝送時間25秒 = 1.6×10⁹÷(100×10⁶×利用率)。利用率 = 1.6×10⁹÷(100×10⁶×25) = 1.6÷2.5 = 0.64 = 64%。",
+    "subField": "情報・論理"
   },
   {
     "category": "基礎科目",
@@ -2452,7 +2539,8 @@
       "√26"
     ],
     "correctIndex": 0,
-    "explanation": "∂f/∂x = 4x + y → (2,1)で 4×2+1 = 9。∂f/∂y = x − 2y → (2,1)で 2−2×1 = 0。‖gradf‖ = √(9² + 0²) = √81 = 9。"
+    "explanation": "∂f/∂x = 4x + y → (2,1)で 4×2+1 = 9。∂f/∂y = x − 2y → (2,1)で 2−2×1 = 0。‖gradf‖ = √(9² + 0²) = √81 = 9。",
+    "subField": "解析"
   },
   {
     "category": "基礎科目",
@@ -2465,7 +2553,8 @@
       "h/3 × (f(a) + 4f(b) + f(c))"
     ],
     "correctIndex": 3,
-    "explanation": "シンプソン法（2次のニュートン・コーツ閉公式）：∫f(x)dx ≈ h/3×(f(a)+4f(b)+f(c))。中点 b の係数が4で端点の係数が1。台形則は h/2×(f(a)+f(c)) で精度が低い。h/3 の係数を h/6 と誤りやすいが，区間幅が 2h であることから h/3 が正しい。"
+    "explanation": "シンプソン法（2次のニュートン・コーツ閉公式）：∫f(x)dx ≈ h/3×(f(a)+4f(b)+f(c))。中点 b の係数が4で端点の係数が1。台形則は h/2×(f(a)+f(c)) で精度が低い。h/3 の係数を h/6 と誤りやすいが，区間幅が 2h であることから h/3 が正しい。",
+    "subField": "解析"
   },
   {
     "category": "基礎科目",
@@ -2478,7 +2567,8 @@
       "P_A = −P/5，P_B = −4P/5"
     ],
     "correctIndex": 1,
-    "explanation": "力の釣合い：P_A + P + P_B = 0。変位適合条件：AC間の変形＋CB間の変形 = 0。AC間内力 = P_A，CB間内力 = P_A + P。P_A×L + (P_A+P)×4L = 0 → 5P_A = −4P → P_A = −4P/5。P_B = −P − P_A = −P + 4P/5 = −P/5。"
+    "explanation": "力の釣合い：P_A + P + P_B = 0。変位適合条件：AC間の変形＋CB間の変形 = 0。AC間内力 = P_A，CB間内力 = P_A + P。P_A×L + (P_A+P)×4L = 0 → 5P_A = −4P → P_A = −4P/5。P_B = −P − P_A = −P + 4P/5 = −P/5。",
+    "subField": "解析"
   },
   {
     "category": "基礎科目",
@@ -2491,7 +2581,8 @@
       "加工硬化した金属材料を加熱し再結晶させると，延性を増加させることができる。"
     ],
     "correctIndex": 2,
-    "explanation": "鋼材の強度はホール・ペッチ則により結晶粒径が小さいほど（細粒化するほど）高くなる。「粗大化」すると強度は低下するため③が不適切。①快削鋼はS添加で被削性向上（○）。②体心立方のα-Feは単位胞に原子2個（○）。④再結晶焼鈍で加工硬化が回復し延性向上（○）。"
+    "explanation": "鋼材の強度はホール・ペッチ則により結晶粒径が小さいほど（細粒化するほど）高くなる。「粗大化」すると強度は低下するため③が不適切。①快削鋼はS添加で被削性向上（○）。②体心立方のα-Feは単位胞に原子2個（○）。④再結晶焼鈍で加工硬化が回復し延性向上（○）。",
+    "subField": "材料・化学・バイオ"
   },
   {
     "category": "基礎科目",
@@ -2504,7 +2595,8 @@
       "ア=15，イ=30，ウ=2"
     ],
     "correctIndex": 1,
-    "explanation": "2023年度の再エネ比率は約23%（水力含む）。太陽光システム費用は2024年に約23万円/kW程度（調達価格等算定委員会「令和7年度以降の調達価格等に関する意見」）。風力エネルギーP = 1/2×ρAv³ で風速の3乗に比例する。"
+    "explanation": "2023年度の再エネ比率は約23%（水力含む）。太陽光システム費用は2024年に約23万円/kW程度（調達価格等算定委員会「令和7年度以降の調達価格等に関する意見」）。風力エネルギーP = 1/2×ρAv³ で風速の3乗に比例する。",
+    "subField": "環境・エネルギー・技術史"
   },
   {
     "category": "適性科目（法令・倫理）",
@@ -2517,7 +2609,8 @@
       "ア=×，イ=×，ウ=×，エ=○"
     ],
     "correctIndex": 2,
-    "explanation": "ア（○）信用失墜行為の禁止（第44条）。イ（○）秘密保持義務は退職後も継続（第45条）。ウ（○）公益確保の責務（第45条の2）。エ（×）登録を受けていない技術部門の名称を技術士として表示することはできない。「3年の実務経験で可能」という規定は存在しない。"
+    "explanation": "ア（○）信用失墜行為の禁止（第44条）。イ（○）秘密保持義務は退職後も継続（第45条）。ウ（○）公益確保の責務（第45条の2）。エ（×）登録を受けていない技術部門の名称を技術士として表示することはできない。「3年の実務経験で可能」という規定は存在しない。",
+    "subField": "技術士法・制度"
   },
   {
     "category": "適性科目（法令・倫理）",
@@ -2530,7 +2623,8 @@
       "ア=技術，イ=顧客，ウ=基準，エ=社会"
     ],
     "correctIndex": 3,
-    "explanation": "技術士プロフェッション宣言の行動原則：①自らの「技術」に責任，②「顧客」業務について課せられた「基準」を順守し「顧客」に責任，③「社会」や環境への影響を考慮し「社会」に責任。守秘義務・所属企業・公衆・行動は誤りの選択肢。"
+    "explanation": "技術士プロフェッション宣言の行動原則：①自らの「技術」に責任，②「顧客」業務について課せられた「基準」を順守し「顧客」に責任，③「社会」や環境への影響を考慮し「社会」に責任。守秘義務・所属企業・公衆・行動は誤りの選択肢。",
+    "subField": "技術士法・制度"
   },
   {
     "category": "適性科目（法令・倫理）",
@@ -2543,7 +2637,8 @@
       "5つ"
     ],
     "correctIndex": 3,
-    "explanation": "（ア）〜（オ）の全てが倫理的行動・意思決定の阻害要因となりうる。無知は正しい判断の基盤を欠く。自己中心的志向は客観性を失う。微視的視野は全体の公益を見落とす。権威への盲目的服従は独立した判断を妨げる。集団思考は個人の倫理的判断を集団に流される。よって5つ全て該当する。"
+    "explanation": "（ア）〜（オ）の全てが倫理的行動・意思決定の阻害要因となりうる。無知は正しい判断の基盤を欠く。自己中心的志向は客観性を失う。微視的視野は全体の公益を見落とす。権威への盲目的服従は独立した判断を妨げる。集団思考は個人の倫理的判断を集団に流される。よって5つ全て該当する。",
+    "subField": "技術者倫理"
   },
   {
     "category": "適性科目（法令・倫理）",
@@ -2556,7 +2651,8 @@
       "技術士は，社会に貢献する技術者の育成に努める。"
     ],
     "correctIndex": 2,
-    "explanation": "技術士倫理綱領の指針では，「業務の履行に必要な場合には，適切な力量を有する他の技術士や専門家の助力・協業を求め」ることが求められている。③は「助力・協業を求めず」としており，これは誤りで最も不適切。技術士は必要に応じて他の専門家と連携・協働することが倫理的行動とされている。"
+    "explanation": "技術士倫理綱領の指針では，「業務の履行に必要な場合には，適切な力量を有する他の技術士や専門家の助力・協業を求め」ることが求められている。③は「助力・協業を求めず」としており，これは誤りで最も不適切。技術士は必要に応じて他の専門家と連携・協働することが倫理的行動とされている。",
+    "subField": "技術士法・制度"
   },
   {
     "category": "適性科目（法令・倫理）",
@@ -2569,7 +2665,8 @@
       "ア=×，イ=○，ウ=○，エ=×，オ=○"
     ],
     "correctIndex": 0,
-    "explanation": "（ア）×：ISO/IEC27001はISMS（情報セキュリティマネジメントシステム）の規格であり，情報セキュリティポリシー（方針文書）そのものではない。（イ）○（ウ）○（エ）○ CIAの3要素として正しい定義。（オ）×：「情報セキュリティマネジメント」はPDCAによる継続的管理の仕組みであり，「方針や行動指針をまとめたもの」は情報セキュリティポリシーの説明。"
+    "explanation": "（ア）×：ISO/IEC27001はISMS（情報セキュリティマネジメントシステム）の規格であり，情報セキュリティポリシー（方針文書）そのものではない。（イ）○（ウ）○（エ）○ CIAの3要素として正しい定義。（オ）×：「情報セキュリティマネジメント」はPDCAによる継続的管理の仕組みであり，「方針や行動指針をまとめたもの」は情報セキュリティポリシーの説明。",
+    "subField": "技術士法・制度"
   },
   {
     "category": "適性科目（法令・倫理）",
@@ -2582,7 +2679,8 @@
       "（イ）・（オ）・（キ）"
     ],
     "correctIndex": 3,
-    "explanation": "産業財産権は特許権・実用新案権・意匠権・商標権の4つ（特許庁が所管）。著作権（イ）は文化庁所管で産業財産権外。回路配置利用権（オ）と育成者権（キ）は産業財産権に含まれない。よって産業財産権に「該当しない」のは（イ）・（オ）・（キ）。"
+    "explanation": "産業財産権は特許権・実用新案権・意匠権・商標権の4つ（特許庁が所管）。著作権（イ）は文化庁所管で産業財産権外。回路配置利用権（オ）と育成者権（キ）は産業財産権に含まれない。よって産業財産権に「該当しない」のは（イ）・（オ）・（キ）。",
+    "subField": "技術士法・制度"
   },
   {
     "category": "適性科目（法令・倫理）",
@@ -2595,7 +2693,8 @@
       "1つ"
     ],
     "correctIndex": 2,
-    "explanation": "（ア）○：有価・無価を問わず廃棄物等，有用なものを循環資源（正しい）。（イ）×：これは「再使用」の説明。「再生利用」は原材料として利用すること。（ウ）×：これは「再生利用」の説明。「再使用」は製品・部品としてそのまま使用すること。（エ）○：熱回収の定義として正しい。（オ）×：正しい優先順位は発生抑制＞再使用＞再生利用＞熱回収＞適正処分。[2]と[3]が逆。適切なものはア・エの2つ。"
+    "explanation": "（ア）○：有価・無価を問わず廃棄物等，有用なものを循環資源（正しい）。（イ）×：これは「再使用」の説明。「再生利用」は原材料として利用すること。（ウ）×：これは「再生利用」の説明。「再使用」は製品・部品としてそのまま使用すること。（エ）○：熱回収の定義として正しい。（オ）×：正しい優先順位は発生抑制＞再使用＞再生利用＞熱回収＞適正処分。[2]と[3]が逆。適切なものはア・エの2つ。",
+    "subField": "技術士法・制度"
   },
   {
     "category": "適性科目（法令・倫理）",
@@ -2608,7 +2707,8 @@
       "1つ"
     ],
     "correctIndex": 2,
-    "explanation": "（ア）○：価格等の共同決定は「カルテル」として禁止（談合は入札に限る，やや広義に「談合」と呼ぶこともあるが原則カルテルが正確）。文脈上「談合」との表現を用いているが，内容的に○とできる。（イ）×：未公表情報を利用した株売買は「インサイダー取引」であり，「カルテル」ではない。（ウ）○：相場操縦取引の説明として正しい。（エ）×：入札での受注者事前決定は「談合」であり，「インサイダー取引」ではない。適切なものはア・ウの2つ。"
+    "explanation": "（ア）○：価格等の共同決定は「カルテル」として禁止（談合は入札に限る，やや広義に「談合」と呼ぶこともあるが原則カルテルが正確）。文脈上「談合」との表現を用いているが，内容的に○とできる。（イ）×：未公表情報を利用した株売買は「インサイダー取引」であり，「カルテル」ではない。（ウ）○：相場操縦取引の説明として正しい。（エ）×：入札での受注者事前決定は「談合」であり，「インサイダー取引」ではない。適切なものはア・ウの2つ。",
+    "subField": "技術士法・制度"
   },
   {
     "category": "適性科目（法令・倫理）",
@@ -2621,7 +2721,8 @@
       "この法律で規定する損害賠償の請求権には消費者保護を優先し，時効はない。"
     ],
     "correctIndex": 3,
-    "explanation": "PL法の損害賠償請求権には時効がある。製造業者等が損害賠償の責めを負うべき場合は，被害者が損害及び賠償義務者を知った時から3年，引渡し時から10年で時効となる。「時効はない」は誤りで④が最も不適切。①〜③は正しい説明である。"
+    "explanation": "PL法の損害賠償請求権には時効がある。製造業者等が損害賠償の責めを負うべき場合は，被害者が損害及び賠償義務者を知った時から3年，引渡し時から10年で時効となる。「時効はない」は誤りで④が最も不適切。①〜③は正しい説明である。",
+    "subField": "環境・社会・安全"
   },
   {
     "category": "適性科目（法令・倫理）",
@@ -2634,7 +2735,8 @@
       "公益通報の主体は，「労働者」「退職者」及び「役員」であり，「労働者」には，正社員の他，派遣労働者，アルバイト，パートタイマーなどが含まれるが，公務員は含まれない。"
     ],
     "correctIndex": 3,
-    "explanation": "公益通報者保護法における「労働者」には，公務員（国家公務員・地方公務員）も含まれる。「公務員は含まれない」は誤りで④が最も不適切。①〜③は正しい説明である。特に③：常時使用労働者が300人以下の事業者については，体制整備は義務でなく努力義務（正しい）。"
+    "explanation": "公益通報者保護法における「労働者」には，公務員（国家公務員・地方公務員）も含まれる。「公務員は含まれない」は誤りで④が最も不適切。①〜③は正しい説明である。特に③：常時使用労働者が300人以下の事業者については，体制整備は義務でなく努力義務（正しい）。",
+    "subField": "技術者倫理"
   },
   {
     "category": "適性科目（法令・倫理）",
@@ -2647,7 +2749,8 @@
       "残存リスクが無視できるレベルの場合"
     ],
     "correctIndex": 1,
-    "explanation": "ALARP領域（広く受け入れられる領域と許容できない領域の間）では，リスク軽減のコストと便益を比較し，「合理的に実行可能な限り」リスクを低減することが求められる。費用がリスク軽減の便益に「全く釣り合っていない」場合（費用が極めて高く便益がほとんどない場合）に，残存リスクが許容される。①無条件許容ではない，③賠償費用との比較は許容基準ではない，④は「広く受け入れられる領域」の説明。"
+    "explanation": "ALARP領域（広く受け入れられる領域と許容できない領域の間）では，リスク軽減のコストと便益を比較し，「合理的に実行可能な限り」リスクを低減することが求められる。費用がリスク軽減の便益に「全く釣り合っていない」場合（費用が極めて高く便益がほとんどない場合）に，残存リスクが許容される。①無条件許容ではない，③賠償費用との比較は許容基準ではない，④は「広く受け入れられる領域」の説明。",
+    "subField": "技術士法・制度"
   },
   {
     "category": "基礎科目",
@@ -2660,7 +2763,8 @@
       "ア:合理的　イ:要求性能　ウ:構造計画　エ:詳細設計"
     ],
     "correctIndex": 3,
-    "explanation": "構造設計の基本フロー：「合理的」な構造体を目指し（ア），「要求性能」を設定（イ）→「構造計画」を実施してイを満たす（ウ。施工計画は施工段階の話）→「詳細設計」を行い（エ）→設計耐用期間を通じた照査を行う。このフローは各種設計基準の共通思想に沿ったものである。"
+    "explanation": "構造設計の基本フロー：「合理的」な構造体を目指し（ア），「要求性能」を設定（イ）→「構造計画」を実施してイを満たす（ウ。施工計画は施工段階の話）→「詳細設計」を行い（エ）→設計耐用期間を通じた照査を行う。このフローは各種設計基準の共通思想に沿ったものである。",
+    "subField": "設計・計画"
   },
   {
     "category": "基礎科目",
@@ -2673,7 +2777,8 @@
       "単一の情報源の代わりに相関をもった多数の情報源（多元情報源）に対する情報圧縮の理論や，多次元の条件付確率分布で定義される多数の通信路（多元通信路）に対する情報伝送の理論を多元情報理論という。"
     ],
     "correctIndex": 2,
-    "explanation": "③が最も不適切。ユニバーサル符号化とは，情報源の統計的性質（確率分布）が事前に未知であっても，性質を推定しながら効率よく圧縮符号化できる手法のことである。「1入力多出力の通信路モデルにおいて通信路特性を考慮しない符号化」という定義は誤り。ユニバーサル符号化は情報源符号化の問題であり，通信路モデルとは直接関係しない。"
+    "explanation": "③が最も不適切。ユニバーサル符号化とは，情報源の統計的性質（確率分布）が事前に未知であっても，性質を推定しながら効率よく圧縮符号化できる手法のことである。「1入力多出力の通信路モデルにおいて通信路特性を考慮しない符号化」という定義は誤り。ユニバーサル符号化は情報源符号化の問題であり，通信路モデルとは直接関係しない。",
+    "subField": "情報・論理"
   },
   {
     "category": "基礎科目",
@@ -2686,7 +2791,8 @@
       "輻輳ウィンドウがしきい値に達した後は，輻輳ウィンドウをおよそ1ラウンドトリップタイム当たり1つのセグメント分だけ増加させる。この段階を輻輳回避フェーズと呼ぶ。"
     ],
     "correctIndex": 2,
-    "explanation": "③が最も不適切。スロースタートフェーズでは，ACKを受信するたびに輻輳ウィンドウが最大セグメント長分増加するため，1RTTごとに約2倍のペースで指数関数的に増加する（線形的ではない）。線形的に増加するのは，しきい値に達した後の輻輳回避フェーズ（④）の動作である。スロースタート（指数的増加）と輻輳回避（線形増加）を混同しないよう注意。"
+    "explanation": "③が最も不適切。スロースタートフェーズでは，ACKを受信するたびに輻輳ウィンドウが最大セグメント長分増加するため，1RTTごとに約2倍のペースで指数関数的に増加する（線形的ではない）。線形的に増加するのは，しきい値に達した後の輻輳回避フェーズ（④）の動作である。スロースタート（指数的増加）と輻輳回避（線形増加）を混同しないよう注意。",
+    "subField": "情報・論理"
   },
   {
     "category": "基礎科目",
@@ -2699,7 +2805,8 @@
       "自組織宛てのメールに添付されたファイルの安全性を確認するために，インターネット上で一般公開されているオンラインウイルス検査サービスに積極的にアップロードして確認することが最も確実な方法である。"
     ],
     "correctIndex": 3,
-    "explanation": "④が最も不適切。組織宛てメールの添付ファイルを一般公開のオンラインスキャンサービスへアップロードすることは，機密情報や個人情報の外部漏えいリスクがある。また標的型攻撃では公開スキャンサービスで検出されないよう設計されたマルウェアも存在し，「最も確実な方法」とは言えない。組織内部のサンドボックス環境での検査が推奨される。①②③はいずれも標的型攻撃対策として有効な手法である。"
+    "explanation": "④が最も不適切。組織宛てメールの添付ファイルを一般公開のオンラインスキャンサービスへアップロードすることは，機密情報や個人情報の外部漏えいリスクがある。また標的型攻撃では公開スキャンサービスで検出されないよう設計されたマルウェアも存在し，「最も確実な方法」とは言えない。組織内部のサンドボックス環境での検査が推奨される。①②③はいずれも標的型攻撃対策として有効な手法である。",
+    "subField": "情報・論理"
   },
   {
     "category": "基礎科目",
@@ -2712,7 +2819,8 @@
       "11"
     ],
     "correctIndex": 0,
-    "explanation": "A(2,2)を順次展開する。\nA(1,0)=A(0,1)=2, A(1,1)=A(0,A(1,0))=A(0,2)=3, A(1,2)=A(0,3)=4, A(1,3)=A(0,4)=5, A(1,4)=A(0,5)=6, A(1,5)=A(0,6)=7。\nA(2,0)=A(1,1)=3, A(2,1)=A(1,A(2,0))=A(1,3)=5, A(2,2)=A(1,A(2,1))=A(1,5)=7。\nよってA(2,2)=7。"
+    "explanation": "A(2,2)を順次展開する。\nA(1,0)=A(0,1)=2, A(1,1)=A(0,A(1,0))=A(0,2)=3, A(1,2)=A(0,3)=4, A(1,3)=A(0,4)=5, A(1,4)=A(0,5)=6, A(1,5)=A(0,6)=7。\nA(2,0)=A(1,1)=3, A(2,1)=A(1,A(2,0))=A(1,3)=5, A(2,2)=A(1,A(2,1))=A(1,5)=7。\nよってA(2,2)=7。",
+    "subField": "情報・論理"
   },
   {
     "category": "基礎科目",
@@ -2725,7 +2833,8 @@
       "[[1, 0, -a²], [0, 1, 0], [0, 0, 1]]"
     ],
     "correctIndex": 1,
-    "explanation": "掃き出し法で求める。[A|I]に行変換を適用。\nStep1: R1←R1-a×R2：第(1,2)成分 a-a=0，第(1,3)成分 a²-a²=0。R1=[1,0,0|1,-a,0]。\nStep2: R2←R2-a×R3：第(2,3)成分 a-a=0。R2=[0,1,0|0,1,-a]。\n結果: A⁻¹=[[1,-a,0],[0,1,-a],[0,0,1]]。\n検証: A×A⁻¹の(1,3)成分=a²×1+a×(-a)+1×0... ではなくA⁻¹×Aで確認すると単位行列になる。"
+    "explanation": "掃き出し法で求める。[A|I]に行変換を適用。\nStep1: R1←R1-a×R2：第(1,2)成分 a-a=0，第(1,3)成分 a²-a²=0。R1=[1,0,0|1,-a,0]。\nStep2: R2←R2-a×R3：第(2,3)成分 a-a=0。R2=[0,1,0|0,1,-a]。\n結果: A⁻¹=[[1,-a,0],[0,1,-a],[0,0,1]]。\n検証: A×A⁻¹の(1,3)成分=a²×1+a×(-a)+1×0... ではなくA⁻¹×Aで確認すると単位行列になる。",
+    "subField": "解析"
   },
   {
     "category": "基礎科目",
@@ -2738,7 +2847,8 @@
       "R"
     ],
     "correctIndex": 2,
-    "explanation": "A-B間には2つの経路がある。\n経路1: A→B直接（抵抗R）\n経路2: A→C→B（抵抗R+R=2R）\nこれら2経路は並列なので，合成抵抗 = R×2R/(R+2R) = 2R²/3R = 2R/3。\n別解（電流分布）: 全電流をI₀，AB直結にI₁，A→C→B経路にI₂=I₀-I₁が流れるとすると，電位差V=I₁R=I₂×2R → I₁=2I₂，I₀=3I₂。V=2I₂R=2I₀R/3。R_eq=V/I₀=2R/3。"
+    "explanation": "A-B間には2つの経路がある。\n経路1: A→B直接（抵抗R）\n経路2: A→C→B（抵抗R+R=2R）\nこれら2経路は並列なので，合成抵抗 = R×2R/(R+2R) = 2R²/3R = 2R/3。\n別解（電流分布）: 全電流をI₀，AB直結にI₁，A→C→B経路にI₂=I₀-I₁が流れるとすると，電位差V=I₁R=I₂×2R → I₁=2I₂，I₀=3I₂。V=2I₂R=2I₀R/3。R_eq=V/I₀=2R/3。",
+    "subField": "材料・化学・バイオ"
   },
   {
     "category": "基礎科目",
@@ -2751,7 +2861,8 @@
       "v = Mg / (BLR)"
     ],
     "correctIndex": 0,
-    "explanation": "終端速度では重力による駆動力（Mg）と電磁制動力が釣り合う。\n導体abが速度vで動くと，誘起起電力 ε = BLv。\n電流 I = ε/R = BLv/R。\n電磁力（制動力） F = BIL = B(BLv/R)L = B²L²v/R。\n釣り合い条件: Mg = B²L²v/R → v = MgR/B²L² = MgR/(BL)²。"
+    "explanation": "終端速度では重力による駆動力（Mg）と電磁制動力が釣り合う。\n導体abが速度vで動くと，誘起起電力 ε = BLv。\n電流 I = ε/R = BLv/R。\n電磁力（制動力） F = BIL = B(BLv/R)L = B²L²v/R。\n釣り合い条件: Mg = B²L²v/R → v = MgR/B²L² = MgR/(BL)²。",
+    "subField": "材料・化学・バイオ"
   },
   {
     "category": "基礎科目",
@@ -2764,7 +2875,8 @@
       "HNO₃（Nの酸化数 +5）"
     ],
     "correctIndex": 1,
-    "explanation": "H=+1，O=-2として各原子の酸化数を算出する。\nH₂SO₄: 2(+1)+S+4(-2)=0 → S=+6\nMnO₄⁻: Mn+4(-2)=-1 → Mn=+7\nCr₂O₇²⁻: 2Cr+7(-2)=-2 → Cr=+6\nHNO₃: (+1)+N+3(-2)=0 → N=+5\n最大はMnの+7（過マンガン酸イオン）。Mnは酸化数+7が典型的な最高酸化数。"
+    "explanation": "H=+1，O=-2として各原子の酸化数を算出する。\nH₂SO₄: 2(+1)+S+4(-2)=0 → S=+6\nMnO₄⁻: Mn+4(-2)=-1 → Mn=+7\nCr₂O₇²⁻: 2Cr+7(-2)=-2 → Cr=+6\nHNO₃: (+1)+N+3(-2)=0 → N=+5\n最大はMnの+7（過マンガン酸イオン）。Mnは酸化数+7が典型的な最高酸化数。",
+    "subField": "材料・化学・バイオ"
   },
   {
     "category": "基礎科目",
@@ -2777,7 +2889,8 @@
       "イ，エ"
     ],
     "correctIndex": 2,
-    "explanation": "（ア）誤り：HFはHClより弱酸。HFのpKa≈3.2に対しHClは強酸（完全電離）。F-H結合が強く電離しにくい。\n（イ）正しい：CF₃COOH（pKa≈0.5）はフッ素の強い電子吸引性でO-H結合が弱まり，酢酸（pKa≈4.8）より大幅に強い酸。\n（ウ）正しい：エタノール（pKa≈16）は酢酸（pKa≈4.8）より大幅に弱い酸。\n（エ）誤り：フェノール（pKa≈10）はエタノール（pKa≈16）より酸性が強い。ベンゼン環への共鳴安定化によりフェノキシドイオンが安定化されるため。\n正しいのはイとウ。"
+    "explanation": "（ア）誤り：HFはHClより弱酸。HFのpKa≈3.2に対しHClは強酸（完全電離）。F-H結合が強く電離しにくい。\n（イ）正しい：CF₃COOH（pKa≈0.5）はフッ素の強い電子吸引性でO-H結合が弱まり，酢酸（pKa≈4.8）より大幅に強い酸。\n（ウ）正しい：エタノール（pKa≈16）は酢酸（pKa≈4.8）より大幅に弱い酸。\n（エ）誤り：フェノール（pKa≈10）はエタノール（pKa≈16）より酸性が強い。ベンゼン環への共鳴安定化によりフェノキシドイオンが安定化されるため。\n正しいのはイとウ。",
+    "subField": "材料・化学・バイオ"
   },
   {
     "category": "基礎科目",
@@ -2790,7 +2903,8 @@
       "Sn: 95.8，Ag: 3.82，Cu: 0.375"
     ],
     "correctIndex": 1,
-    "explanation": "100 g の合金を想定してモル数を計算する。\nSn: 96.5÷118.7=0.8130 mol\nAg: 3.00÷107.8=0.02783 mol\nCu: 0.500÷63.5=0.007874 mol\n合計: 0.8487 mol\nモル分率: Sn=0.8130/0.8487×100=95.8%，Ag=0.02783/0.8487×100=3.28%，Cu=0.007874/0.8487×100=0.928%。\n③は質量分率をそのまま使った誤り。"
+    "explanation": "100 g の合金を想定してモル数を計算する。\nSn: 96.5÷118.7=0.8130 mol\nAg: 3.00÷107.8=0.02783 mol\nCu: 0.500÷63.5=0.007874 mol\n合計: 0.8487 mol\nモル分率: Sn=0.8130/0.8487×100=95.8%，Ag=0.02783/0.8487×100=3.28%，Cu=0.007874/0.8487×100=0.928%。\n③は質量分率をそのまま使った誤り。",
+    "subField": "材料・化学・バイオ"
   },
   {
     "category": "基礎科目",
@@ -2803,7 +2917,8 @@
       "プロリン"
     ],
     "correctIndex": 3,
-    "explanation": "ヒトの必須アミノ酸（9種）：イソロイシン，ロイシン，リシン，メチオニン，フェニルアラニン，スレオニン，トリプトファン，バリン，ヒスチジン。\nプロリンは非必須アミノ酸であり，体内でグルタミン酸から合成できる。①イソロイシン，②バリン，③ロイシンはいずれも分岐鎖アミノ酸（BCAA）であり必須アミノ酸に含まれる。④プロリンは体内合成が可能なため，必須アミノ酸としては最も不適切。"
+    "explanation": "ヒトの必須アミノ酸（9種）：イソロイシン，ロイシン，リシン，メチオニン，フェニルアラニン，スレオニン，トリプトファン，バリン，ヒスチジン。\nプロリンは非必須アミノ酸であり，体内でグルタミン酸から合成できる。①イソロイシン，②バリン，③ロイシンはいずれも分岐鎖アミノ酸（BCAA）であり必須アミノ酸に含まれる。④プロリンは体内合成が可能なため，必須アミノ酸としては最も不適切。",
+    "subField": "材料・化学・バイオ"
   },
   {
     "category": "基礎科目",
@@ -2816,7 +2931,8 @@
       "水は細菌細胞の重量の約70%を占める。"
     ],
     "correctIndex": 2,
-    "explanation": "③が最も不適切。細菌細胞の乾燥重量に占める主要巨大分子の割合は，タンパク質が最大（約55%）であり，核酸（DNAとRNA合計で約23%程度）よりも多い。核酸が最も重量比が大きいという記述は誤り。\n①正しい：H, O, N, Cの4元素が原子数ベースで約99%を占める。\n②正しい：水素が最多（水の構成元素として多い）。\n④正しい：細菌細胞の水分含量は重量の約70%。"
+    "explanation": "③が最も不適切。細菌細胞の乾燥重量に占める主要巨大分子の割合は，タンパク質が最大（約55%）であり，核酸（DNAとRNA合計で約23%程度）よりも多い。核酸が最も重量比が大きいという記述は誤り。\n①正しい：H, O, N, Cの4元素が原子数ベースで約99%を占める。\n②正しい：水素が最多（水の構成元素として多い）。\n④正しい：細菌細胞の水分含量は重量の約70%。",
+    "subField": "材料・化学・バイオ"
   },
   {
     "category": "基礎科目",
@@ -2829,7 +2945,8 @@
       "2030年度以降に新築される住宅及び建築物について，ZEH・ZEB基準を大幅に上回る省エネ性能の確保を義務付けるとともに，政府はこれに関するすべての補助事業を廃止している。"
     ],
     "correctIndex": 3,
-    "explanation": "④が最も不適切。政府はZEH・ZEB基準水準の省エネ性能確保を目指しているが，「ZEH・ZEB基準を大幅に上回る性能の義務付け」や「補助事業の廃止」という記述は事実と異なる。実際には政府はZEH・ZEB化に対する補助事業を実施している。①〜③はいずれも我が国の気候変動対策として実施されている適切な内容である。"
+    "explanation": "④が最も不適切。政府はZEH・ZEB基準水準の省エネ性能確保を目指しているが，「ZEH・ZEB基準を大幅に上回る性能の義務付け」や「補助事業の廃止」という記述は事実と異なる。実際には政府はZEH・ZEB化に対する補助事業を実施している。①〜③はいずれも我が国の気候変動対策として実施されている適切な内容である。",
+    "subField": "環境・エネルギー・技術史"
   },
   {
     "category": "基礎科目",
@@ -2842,7 +2959,8 @@
       "ア:誤，イ:正，ウ:正，エ:誤"
     ],
     "correctIndex": 1,
-    "explanation": "（ア）正：マイクロプラスチックの定義は一般に5mm未満（学術的定義）。\n（イ）誤：海洋プラスチックごみの主要排出源は東アジア・東南アジア等の途上国であり，先進国が大半というのは誤り。Jambeck et al.の推計では中国，インドネシア，フィリピン等が上位。\n（ウ）正：陸域での適切なごみ管理が海洋プラスチック汚染防止に重要。\n（エ）正：2019年策定「プラスチック資源循環戦略」の基本方針「3R+Renewable」の内容として正しい。\n正しいのはア，ウ，エ（イは誤り）。"
+    "explanation": "（ア）正：マイクロプラスチックの定義は一般に5mm未満（学術的定義）。\n（イ）誤：海洋プラスチックごみの主要排出源は東アジア・東南アジア等の途上国であり，先進国が大半というのは誤り。Jambeck et al.の推計では中国，インドネシア，フィリピン等が上位。\n（ウ）正：陸域での適切なごみ管理が海洋プラスチック汚染防止に重要。\n（エ）正：2019年策定「プラスチック資源循環戦略」の基本方針「3R+Renewable」の内容として正しい。\n正しいのはア，ウ，エ（イは誤り）。",
+    "subField": "環境・エネルギー・技術史"
   },
   {
     "category": "基礎科目",
@@ -2855,7 +2973,8 @@
       "世界では，脱炭素に伴うエネルギー需給構造の転換を自国の経済成長に結びつけようとする動きが広がっており，脱炭素関連投資の誘致が拡大している。"
     ],
     "correctIndex": 2,
-    "explanation": "③が最も不適切。2050年カーボンニュートラル実現に向けたエネルギー政策の基本的考え方は，特定の技術に絞り込むのではなく「選択肢を広く保つ」ことである。再生可能エネルギー，原子力，水素・アンモニア，CCS等の多様な技術を組み合わせて対応するため，「選択肢を限定していく」という記述は政策の方向性と逆行している。"
+    "explanation": "③が最も不適切。2050年カーボンニュートラル実現に向けたエネルギー政策の基本的考え方は，特定の技術に絞り込むのではなく「選択肢を広く保つ」ことである。再生可能エネルギー，原子力，水素・アンモニア，CCS等の多様な技術を組み合わせて対応するため，「選択肢を限定していく」という記述は政策の方向性と逆行している。",
+    "subField": "環境・エネルギー・技術史"
   },
   {
     "category": "基礎科目",
@@ -2868,7 +2987,8 @@
       "アメリカの自動車王ヘンリー・フォードは，ベルトコンベヤを導入して組立工程を連続流れ作業にすることで，自動車を低コストで大量生産することに成功した。"
     ],
     "correctIndex": 1,
-    "explanation": "②が最も不適切。「核力の理論研究に基づく中間子の存在の予言」で1949年に日本最初のノーベル物理学賞を受賞したのは湯川秀樹である。朝永振一郎がノーベル物理学賞を受賞したのは1965年であり，量子電気力学（QED）の基礎的研究（くりこみ理論）が受賞理由である。湯川秀樹と朝永振一郎の研究内容・受賞年を混同しないよう注意が必要。"
+    "explanation": "②が最も不適切。「核力の理論研究に基づく中間子の存在の予言」で1949年に日本最初のノーベル物理学賞を受賞したのは湯川秀樹である。朝永振一郎がノーベル物理学賞を受賞したのは1965年であり，量子電気力学（QED）の基礎的研究（くりこみ理論）が受賞理由である。湯川秀樹と朝永振一郎の研究内容・受賞年を混同しないよう注意が必要。",
+    "subField": "環境・エネルギー・技術史"
   },
   {
     "category": "基礎科目",
@@ -2881,7 +3001,8 @@
       "イ－ア－ウ－オ－エ"
     ],
     "correctIndex": 1,
-    "explanation": "各計画の対応期を特定する。\n第2期(2001-2005年)：クローン問題等のELSI（倫理的・法的・社会的課題）が強調→ア\n第3期(2006-2010年)：「社会のための科学技術」「双方向コミュニケーション」→イ\n第4期(2011-2015年)：東日本大震災（2011年）直後の計画で復興・再生→オ\n第5期(2016-2020年)：Society 5.0（超スマート社会）が提唱→エ\n第6期(2021-2025年)：「総合知」（文理融合）が掲げられた→ウ\n年代順：ア→イ→オ→エ→ウ。"
+    "explanation": "各計画の対応期を特定する。\n第2期(2001-2005年)：クローン問題等のELSI（倫理的・法的・社会的課題）が強調→ア\n第3期(2006-2010年)：「社会のための科学技術」「双方向コミュニケーション」→イ\n第4期(2011-2015年)：東日本大震災（2011年）直後の計画で復興・再生→オ\n第5期(2016-2020年)：Society 5.0（超スマート社会）が提唱→エ\n第6期(2021-2025年)：「総合知」（文理融合）が掲げられた→ウ\n年代順：ア→イ→オ→エ→ウ。",
+    "subField": "環境・エネルギー・技術史"
   },
   {
     "category": "適性科目（法令・倫理）",
@@ -2894,7 +3015,8 @@
       "ア:○，イ:○，ウ:○，エ:○"
     ],
     "correctIndex": 3,
-    "explanation": "（ア）○：DEI宣言の全体的な使命として，技術士会が多様な技術者・技術をつなぐプラットフォームとなり誰もがその人らしく生きられる社会の実現に貢献することを掲げている。\n（イ）○：多様性（Diversity）の説明として正しい。性別・年齢・国籍・障害・知識・経験・専門性・価値観などの多様性を受け入れ高める。\n（ウ）○：公平性（Equity）の説明として正しい。一人ひとりの個性・特性に応じた環境・ツールを公平に用意することを指す。\n（エ）○：包摂性（Inclusion）の説明として正しい。個性・特性のちがいを包摂し組織全体で新たな価値を創出することを指す。\nよって(ア)〜(エ)はすべて正しい。"
+    "explanation": "（ア）○：DEI宣言の全体的な使命として，技術士会が多様な技術者・技術をつなぐプラットフォームとなり誰もがその人らしく生きられる社会の実現に貢献することを掲げている。\n（イ）○：多様性（Diversity）の説明として正しい。性別・年齢・国籍・障害・知識・経験・専門性・価値観などの多様性を受け入れ高める。\n（ウ）○：公平性（Equity）の説明として正しい。一人ひとりの個性・特性に応じた環境・ツールを公平に用意することを指す。\n（エ）○：包摂性（Inclusion）の説明として正しい。個性・特性のちがいを包摂し組織全体で新たな価値を創出することを指す。\nよって(ア)〜(エ)はすべて正しい。",
+    "subField": "技術士法・制度"
   },
   {
     "category": "適性科目（法令・倫理）",
@@ -2907,7 +3029,8 @@
       "ア:情報　イ:高付加価値化　ウ:倫理　エ:学習"
     ],
     "correctIndex": 0,
-    "explanation": "ア=知識：21世紀は「知識集約型社会」とも呼ばれ，資本設備への依存度が高い資本集約型から，知識集約型社会へ転換が進んでいる。\nイ=高付加価値化：スマート化によって製品・サービスの高付加価値化が進んだ。\nウ=医療：AIはデータ解析・ロボット技術・医療・製造業など多岐にわたる分野に影響を与えている。\nエ=対話：ChatGPT等に代表される「対話型」生成AIが普及し，一般ユーザーも利用できるようになった。"
+    "explanation": "ア=知識：21世紀は「知識集約型社会」とも呼ばれ，資本設備への依存度が高い資本集約型から，知識集約型社会へ転換が進んでいる。\nイ=高付加価値化：スマート化によって製品・サービスの高付加価値化が進んだ。\nウ=医療：AIはデータ解析・ロボット技術・医療・製造業など多岐にわたる分野に影響を与えている。\nエ=対話：ChatGPT等に代表される「対話型」生成AIが普及し，一般ユーザーも利用できるようになった。",
+    "subField": "環境・社会・安全"
   },
   {
     "category": "適性科目（法令・倫理）",
@@ -2920,7 +3043,8 @@
       "ア:狩猟　イ:農耕　ウ:社会　エ:人間"
     ],
     "correctIndex": 3,
-    "explanation": "Society1.0=狩猟社会（ア=狩猟），Society2.0=農耕社会（イ=農耕），Society3.0=工業社会，Society4.0=情報社会，Society5.0=超スマート社会の順。\nウ=社会：経済発展と「社会的課題の解決」を両立する社会が目標。技術的課題ではない。\nエ=人間：「人間中心の社会」がSociety5.0の中核概念。自然中心ではない。\nよって④（ア=狩猟，イ=農耕，ウ=社会，エ=人間）が最も適切。"
+    "explanation": "Society1.0=狩猟社会（ア=狩猟），Society2.0=農耕社会（イ=農耕），Society3.0=工業社会，Society4.0=情報社会，Society5.0=超スマート社会の順。\nウ=社会：経済発展と「社会的課題の解決」を両立する社会が目標。技術的課題ではない。\nエ=人間：「人間中心の社会」がSociety5.0の中核概念。自然中心ではない。\nよって④（ア=狩猟，イ=農耕，ウ=社会，エ=人間）が最も適切。",
+    "subField": "環境・社会・安全"
   },
   {
     "category": "適性科目（法令・倫理）",
@@ -2933,7 +3057,8 @@
       "ア:○，イ:○，ウ:○，エ:○"
     ],
     "correctIndex": 1,
-    "explanation": "（ア）○：年10日以上の年次有給休暇が付与される労働者に対し，使用者が時季指定して年5日の確実な取得を義務付ける制度として正しい（2019年4月施行）。\n（イ）×：「上限規制緩和」ではなく「上限規制（強化）」が正しい。働き方改革関連法で時間外労働に法的上限（原則月45時間・年360時間）が設けられた。緩和ではなく規制強化である。\n（ウ）×：月60時間超の時間外労働に関する主な改正は「割増賃金率の50%以上への引き上げ（中小企業への適用拡大）」であり，「10時間当たり1日の代休付与」という内容は正確ではない。\n（エ）○：フレックスタイム制の清算期間の上限が1ヶ月から3ヶ月に延長された。"
+    "explanation": "（ア）○：年10日以上の年次有給休暇が付与される労働者に対し，使用者が時季指定して年5日の確実な取得を義務付ける制度として正しい（2019年4月施行）。\n（イ）×：「上限規制緩和」ではなく「上限規制（強化）」が正しい。働き方改革関連法で時間外労働に法的上限（原則月45時間・年360時間）が設けられた。緩和ではなく規制強化である。\n（ウ）×：月60時間超の時間外労働に関する主な改正は「割増賃金率の50%以上への引き上げ（中小企業への適用拡大）」であり，「10時間当たり1日の代休付与」という内容は正確ではない。\n（エ）○：フレックスタイム制の清算期間の上限が1ヶ月から3ヶ月に延長された。",
+    "subField": "環境・社会・安全"
   },
   {
     "category": "専門科目（機械部門）",

@@ -128,7 +128,7 @@ let currentCatKey = null;
 // ══════════════════════════════════════
 //  Screen management
 // ══════════════════════════════════════
-const SCREENS = ["s-mode","s-expert-sel","s-year-sel","s-subject-sel","s-cat-sel","s-exam","s-prac","s-results"];
+const SCREENS = ["s-mode","s-expert-sel","s-basic-sel","s-ethics-sel","s-year-sel","s-subject-sel","s-cat-sel","s-exam","s-prac","s-results"];
 function showScreen(id) {
   SCREENS.forEach(s => document.getElementById(s).hidden = (s !== id));
   window.scrollTo(0, 0);
@@ -254,10 +254,10 @@ document.getElementById("btn-mode-cat").addEventListener("click", () => {
   enterCatSel();
 });
 document.getElementById("btn-mode-basic").addEventListener("click", () => {
-  startPrac("基礎科目", { count: 20 });
+  showBasicSel();
 });
 document.getElementById("btn-mode-ethics").addEventListener("click", () => {
-  startPrac("適性科目（法令・倫理）", { count: 20 });
+  showEthicsSel();
 });
 document.getElementById("btn-mode-expert").addEventListener("click", () => {
   showExpertSel();
@@ -322,27 +322,103 @@ function buildExpertSelScreen() {
   });
 }
 
-function startPracBySubField(sf, count) {
+document.getElementById("btn-expert-all").addEventListener("click", () => {
+  startPrac("専門科目（機械部門）", { count: 20 });
+});
+document.getElementById("lnk-expert-back").addEventListener("click", e => {
+  e.preventDefault(); initModeScreen();
+});
+
+// ══════════════════════════════════════
+//  基礎科目・適性科目サブカテゴリ選択画面
+// ══════════════════════════════════════
+const BASIC_SUBFIELDS  = ["設計・計画", "情報・論理", "解析", "材料・化学・バイオ", "環境・エネルギー・技術史"];
+const ETHICS_SUBFIELDS = ["技術士法・制度", "技術者倫理", "環境・社会・安全"];
+
+const SUBFIELD_COLOR = {
+  basic:  { accent: "var(--subj-basic)",  soft: "var(--subj-basic-soft)",  statsColor: "var(--subj-basic)" },
+  ethics: { accent: "var(--subj-ethics)", soft: "var(--subj-ethics-soft)", statsColor: "var(--subj-ethics)" }
+};
+
+function buildSubSelScreen(catKey, subfields, listId, statsId, colorKey) {
+  const col = SUBFIELD_COLOR[colorKey];
+  const list = document.getElementById(listId);
+  list.innerHTML = "";
+
+  subfields.forEach(sf => {
+    const pool = allQuestions.filter(q => q.category === catKey && q.subField === sf);
+    const st   = subFieldStats[sf] || { correct: 0, attempted: 0 };
+    const acc  = st.attempted > 0 ? Math.round(st.correct / st.attempted * 100) : null;
+
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "subfield-card";
+    btn.innerHTML =
+      '<span class="subfield-icon" style="background:' + col.soft + ';color:' + col.accent + '">' +
+        '<svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">' +
+        '<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>' +
+        '</svg></span>' +
+      '<span class="subfield-body">' +
+        '<span class="subfield-name">' + sf + '</span>' +
+        '<span class="subfield-meta">' + pool.length + '問 ／ 5問出題' +
+        (acc !== null ? '・正答率 ' + acc + '%' : '') + '</span>' +
+      '</span>' +
+      '<span class="subfield-chev"><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></span>';
+    btn.addEventListener("click", () => startPracBySubField(sf, 5, catKey));
+    list.appendChild(btn);
+  });
+
+  // 正答率パネル
+  const statsEl = document.getElementById(statsId);
+  statsEl.innerHTML = "";
+  subfields.forEach(sf => {
+    const st  = subFieldStats[sf] || { correct: 0, attempted: 0 };
+    const acc = st.attempted > 0 ? Math.round(st.correct / st.attempted * 100) : null;
+    const row = document.createElement("div");
+    row.className = "sf-acc-row";
+    row.innerHTML =
+      '<span class="sf-acc-label">' + sf + '</span>' +
+      '<span class="sf-acc-bar"><span class="sf-acc-fill" style="width:' + (acc ?? 0) + '%;background:' + col.accent + '"></span></span>' +
+      '<span class="sf-acc-val" style="color:' + col.statsColor + '">' + (acc !== null ? acc + '%' : '—') + '</span>';
+    statsEl.appendChild(row);
+  });
+}
+
+function showBasicSel() {
+  buildSubSelScreen("基礎科目", BASIC_SUBFIELDS, "basic-subfield-list", "basic-subfield-stats", "basic");
+  showScreen("s-basic-sel");
+}
+function showEthicsSel() {
+  buildSubSelScreen("適性科目（法令・倫理）", ETHICS_SUBFIELDS, "ethics-subfield-list", "ethics-subfield-stats", "ethics");
+  showScreen("s-ethics-sel");
+}
+
+function startPracBySubField(sf, count, catKeyOverride) {
   let pool = allQuestions.filter(q => q.subField === sf);
+  if (catKeyOverride) pool = pool.filter(q => q.category === catKeyOverride);
   if (pool.length === 0) { alert("この分野の問題が見つかりません。"); return; }
   pool = shuffle(pool).slice(0, count);
-
   currentMode   = "prac";
-  currentCatKey = "専門科目（機械部門）";
+  currentCatKey = catKeyOverride || "専門科目（機械部門）";
   pracWeakOnly  = false;
   pracQuestions = pool;
   pracIdx       = 0;
   pracAnswered  = false;
   pracRecord    = new Array(pool.length).fill(null);
-
   showScreen("s-prac");
   renderPracQ();
 }
 
-document.getElementById("btn-expert-all").addEventListener("click", () => {
-  startPrac("専門科目（機械部門）", { count: 20 });
+document.getElementById("btn-basic-all").addEventListener("click", () => {
+  startPrac("基礎科目", { count: 20 });
 });
-document.getElementById("lnk-expert-back").addEventListener("click", e => {
+document.getElementById("lnk-basic-back").addEventListener("click", e => {
+  e.preventDefault(); initModeScreen();
+});
+document.getElementById("btn-ethics-all").addEventListener("click", () => {
+  startPrac("適性科目（法令・倫理）", { count: 20 });
+});
+document.getElementById("lnk-ethics-back").addEventListener("click", e => {
   e.preventDefault(); initModeScreen();
 });
 
@@ -912,14 +988,22 @@ async function boot() {
   await loadQuestions();
 
   const params = new URLSearchParams(location.search);
-  const subjParam = params.get("subject");
+  const gotoParam  = params.get("goto");
+  const subjParam  = params.get("subject");
   const countParam = parseInt(params.get("count"), 10) || 0;
   const SUBJ_MAP = {
     "basic":  "基礎科目",
     "ethics": "適性科目（法令・倫理）",
     "expert": "専門科目（機械部門）"
   };
-  if (subjParam && SUBJ_MAP[subjParam]) {
+
+  if (gotoParam === "expert") {
+    showExpertSel();
+  } else if (gotoParam === "basic") {
+    showBasicSel();
+  } else if (gotoParam === "ethics") {
+    showEthicsSel();
+  } else if (subjParam && SUBJ_MAP[subjParam]) {
     startPrac(SUBJ_MAP[subjParam], { count: countParam || 0 });
   } else {
     initModeScreen();

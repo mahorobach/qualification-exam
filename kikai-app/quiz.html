@@ -561,6 +561,46 @@
         </div>
       </section>
 
+      <!-- ════════ 基礎科目サブカテゴリ選択 ════════ -->
+      <section id="s-basic-sel" data-screen-label="基礎科目選択" hidden>
+        <button type="button" class="backbar" id="lnk-basic-back">
+          <svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>科目選択へ
+        </button>
+        <div class="page-head">
+          <span class="eyebrow">基礎科目</span>
+          <h1>分野を選ぶ</h1>
+        </div>
+        <button type="button" class="subfield-cta" id="btn-basic-all" style="background:var(--subj-basic);box-shadow:0 4px 14px rgba(47,111,219,.28)">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><path d="m12 2 9 5-9 5-9-5 9-5z"/><path d="m3 12 9 5 9-5"/><path d="m3 17 9 5 9-5"/></svg>
+          クイズを始める（全分野ランダム20問）
+        </button>
+        <div class="subfield-grid" id="basic-subfield-list"></div>
+        <div class="stat-panel">
+          <h2><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>分野別の累計正答率</h2>
+          <div id="basic-subfield-stats"></div>
+        </div>
+      </section>
+
+      <!-- ════════ 適性科目サブカテゴリ選択 ════════ -->
+      <section id="s-ethics-sel" data-screen-label="適性科目選択" hidden>
+        <button type="button" class="backbar" id="lnk-ethics-back">
+          <svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>科目選択へ
+        </button>
+        <div class="page-head">
+          <span class="eyebrow">適性科目（法令・倫理）</span>
+          <h1>分野を選ぶ</h1>
+        </div>
+        <button type="button" class="subfield-cta" id="btn-ethics-all" style="background:var(--subj-ethics);box-shadow:0 4px 14px rgba(31,157,122,.28)">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><path d="m12 2 9 5-9 5-9-5 9-5z"/><path d="m3 12 9 5 9-5"/><path d="m3 17 9 5 9-5"/></svg>
+          クイズを始める（全分野ランダム20問）
+        </button>
+        <div class="subfield-grid" id="ethics-subfield-list"></div>
+        <div class="stat-panel">
+          <h2><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>分野別の累計正答率</h2>
+          <div id="ethics-subfield-stats"></div>
+        </div>
+      </section>
+
       <!-- ════════ 1. 年度選択 ════════ -->
       <section id="s-year-sel" data-screen-label="年度選択" hidden>
         <button type="button" class="backbar" id="lnk-year-back"><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>モード選択へ</button>
@@ -678,6 +718,6 @@
       </section>
     </main>
 
-    <script src="quiz-app.js"></script>
+    <script src="quiz-app.js?v=2"></script>
   </body>
 </html>
