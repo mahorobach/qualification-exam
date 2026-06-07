@@ -6,7 +6,7 @@
  *      GEMINI_API_KEY=あなたのキー
  *
  *   2. 実行:
- *      node scripts/enhance-kikai-explanations.mjs
+ *      node scripts/enhance-kikai-explanations.mjs --years=2022,2023
  *
  *   ※ richExplanation が既にある問題はスキップします（再実行安全）
  *   ※ API レート制限のため1問ずつ処理します（約2秒間隔）
@@ -41,12 +41,26 @@ if (!API_KEY || API_KEY === "your_gemini_api_key_here") {
 }
 
 const DATA_PATH = path.join(__dirname, "../kikai-app/questions.json");
-const questions  = JSON.parse(fs.readFileSync(DATA_PATH, "utf-8"));
-
-// 対象：専門科目のみ（必要なら全科目に変更可）
-const targets = questions.filter(
-  q => q.category === "専門科目（機械部門）" && !q.richExplanation
+const BUNDLE_PATH = path.join(__dirname, "../kikai-app/questions-data.js");
+const questions = JSON.parse(fs.readFileSync(DATA_PATH, "utf-8"));
+const args = Object.fromEntries(
+  process.argv.slice(2).map(arg => {
+    const [key, value = "true"] = arg.replace(/^--/, "").split("=");
+    return [key, value];
+  })
 );
+const targetYears = args.years
+  ? new Set(args.years.split(",").map(Number))
+  : null;
+const targetCategory = args.category || null;
+const limit = Number(args.limit || 0);
+
+let targets = questions.filter(q =>
+  (!q.richExplanation || q.richExplanation.trim().length < 150) &&
+  (!targetYears || targetYears.has(q.year)) &&
+  (!targetCategory || q.category === targetCategory)
+);
+if (limit > 0) targets = targets.slice(0, limit);
 
 console.log(`対象: ${targets.length} 問（richExplanation 未設定）`);
 if (targets.length === 0) {
@@ -83,13 +97,17 @@ ${q.explanation}
 
 解説:`;
 
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent?key=${API_KEY}`;
+  const model = process.env.GEMINI_MODEL || "gemini-3.1-flash-lite";
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${API_KEY}`;
 
   const body = {
     contents: [{ parts: [{ text: prompt }] }],
     generationConfig: {
       temperature: 0.3,
-      maxOutputTokens: 1024
+      maxOutputTokens: 2048,
+      thinkingConfig: {
+        thinkingBudget: 0
+      }
     }
   };
 
@@ -108,51 +126,63 @@ ${q.explanation}
   return data.candidates?.[0]?.content?.parts?.[0]?.text?.trim() || "";
 }
 
+function saveQuestions() {
+  fs.writeFileSync(DATA_PATH, `${JSON.stringify(questions, null, 2)}\n`, "utf-8");
+  fs.writeFileSync(
+    BUNDLE_PATH,
+    `// Generated from questions.json. Enables the quiz to run from file:// URLs.\nwindow.KIKAI_QUESTIONS = ${JSON.stringify(questions)};\n`,
+    "utf-8"
+  );
+}
+
 // ── メイン処理 ──
 async function main() {
   let done = 0, skipped = 0, errors = 0;
 
   for (const q of targets) {
     const preview = q.question.slice(0, 40);
-    try {
-      console.log(`\n[${done + 1}/${targets.length}] 生成中: ${preview}...`);
-      const rich = await generateRichExplanation(q);
+    let completed = false;
 
-      if (!rich) {
-        console.warn("  ⚠ 空のレスポンス、スキップ");
-        skipped++;
-        continue;
+    for (let attempt = 1; attempt <= 5 && !completed; attempt++) {
+      try {
+        console.log(`\n[${done + 1}/${targets.length}] 生成中: ${preview}...`);
+        const rich = await generateRichExplanation(q);
+
+        if (rich.length < 150) {
+          throw new Error(`解説が短すぎます (${rich.length} 文字)`);
+        }
+
+        q.richExplanation = rich;
+        done++;
+        saveQuestions();
+        completed = true;
+        console.log(`  ✅ 完了・保存済み (${rich.length} 文字)`);
+
+        // 無料枠のレート制限対策
+        await new Promise(r => setTimeout(r, 5000));
+
+      } catch (e) {
+        console.error(`  ❌ エラー (${attempt}/5): ${e.message}`);
+        if (attempt < 5) {
+          await new Promise(r => setTimeout(r, 20000));
+        }
       }
+    }
 
-      q.richExplanation = rich;
-      done++;
-      console.log(`  ✅ 完了 (${rich.length} 文字)`);
-
-      // 途中保存（エラー時のロス防止）
-      if (done % 5 === 0) {
-        fs.writeFileSync(DATA_PATH, JSON.stringify(questions, null, 2), "utf-8");
-        console.log(`  💾 ${done} 問 保存済み`);
-      }
-
-      // レート制限対策（2秒待機）
-      await new Promise(r => setTimeout(r, 4500)); // 無料枠: 15req/min → 4秒以上
-
-    } catch (e) {
-      console.error(`  ❌ エラー: ${e.message}`);
+    if (!completed) {
       errors++;
-      await new Promise(r => setTimeout(r, 6000));
+      skipped++;
     }
   }
 
   // 最終保存
-  fs.writeFileSync(DATA_PATH, JSON.stringify(questions, null, 2), "utf-8");
+  saveQuestions();
 
   console.log("\n════════════════════════════");
   console.log(`✅ 完了: ${done} 問生成`);
   if (skipped) console.log(`⚠  スキップ: ${skipped} 問`);
   if (errors)  console.log(`❌ エラー: ${errors} 問`);
-  console.log("questions.json を更新しました。");
-  console.log("次のステップ: git add kikai-app/questions.json && git push");
+  console.log("questions.json と questions-data.js を更新しました。");
 }
 
 main().catch(e => { console.error(e); process.exit(1); });
