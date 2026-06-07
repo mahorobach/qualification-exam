@@ -226,20 +226,34 @@ function renderStats(containerId) {
 // ══════════════════════════════════════
 async function loadQuestions() {
   try {
-    const res = await fetch("questions.json", { cache: "no-store" });
-    if (!res.ok) throw new Error("HTTP " + res.status);
-    const data = await res.json();
+    let data = window.KIKAI_QUESTIONS;
+    if (!Array.isArray(data)) {
+      const res = await fetch("questions.json", { cache: "no-store" });
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      data = await res.json();
+    }
     if (!Array.isArray(data)) throw new Error("not array");
     allQuestions = data.filter(q =>
       q && typeof q.question === "string" &&
-      Array.isArray(q.choices) && q.choices.length === 4 &&
-      typeof q.correctIndex === "number"
+      Array.isArray(q.choices) && (q.choices.length === 4 || q.choices.length === 5) &&
+      (typeof q.correctIndex === "number" ||
+        (Array.isArray(q.correctIndices) && q.correctIndices.length > 0))
     );
   } catch(err) {
     const w = document.getElementById("load-warning");
     w.hidden = false;
-    w.textContent = "questions.json を読み込めませんでした。python3 -m http.server などでローカルサーバー経由で開いてください。";
+    w.textContent = "問題データを読み込めませんでした。ページを再読み込みしてください。";
   }
+}
+
+function correctIndices(q) {
+  return Array.isArray(q.correctIndices) && q.correctIndices.length > 0
+    ? q.correctIndices
+    : [q.correctIndex];
+}
+
+function isCorrectAnswer(q, selectedIndex) {
+  return correctIndices(q).includes(selectedIndex);
 }
 
 function shuffle(arr) {
@@ -751,7 +765,7 @@ function endExam() {
   clearInterval(examTimerInt);
   examQuestions.forEach((q, i) => {
     if (examAnswers[i] !== null) {
-      const ok = examAnswers[i] === q.correctIndex;
+      const ok = isCorrectAnswer(q, examAnswers[i]);
       recordAnswer(q.category || "未分類", ok, q.subField || null);
       markQuestion(q, ok);
     }
@@ -837,7 +851,7 @@ function onPracChoose(selectedIdx) {
   pracAnswered = true;
 
   const q = pracQuestions[pracIdx];
-  const isCorrect = selectedIdx === q.correctIndex;
+  const isCorrect = isCorrectAnswer(q, selectedIdx);
 
   pracRecord[pracIdx] = selectedIdx;
   recordAnswer(q.category || "未分類", isCorrect, q.subField || null);
@@ -846,7 +860,7 @@ function onPracChoose(selectedIdx) {
   const buttons = document.getElementById("prac-choices").querySelectorAll(".choice-btn");
   buttons.forEach((btn, i) => {
     btn.disabled = true;
-    if (i === q.correctIndex) btn.classList.add("correct-pick");
+    if (isCorrectAnswer(q, i)) btn.classList.add("correct-pick");
     else if (i === selectedIdx) btn.classList.add("wrong-pick");
   });
 
@@ -886,7 +900,7 @@ function showResults(mode) {
   const ans = mode === "year" ? examAnswers   : pracRecord;
 
   const answered = ans.filter(a => a !== null).length;
-  const correct  = qs.reduce((s, q, i) => s + (ans[i] === q.correctIndex ? 1 : 0), 0);
+  const correct  = qs.reduce((s, q, i) => s + (isCorrectAnswer(q, ans[i]) ? 1 : 0), 0);
   const pct      = answered > 0 ? Math.round(correct / answered * 100) : 0;
   const pass     = pct >= 50;
 
@@ -922,7 +936,7 @@ function showResults(mode) {
     const c = q.category || "未分類";
     if (!catMap[c]) catMap[c] = { ok: 0, done: 0, total: 0 };
     catMap[c].total++;
-    if (ans[i] !== null) { catMap[c].done++; if (ans[i] === q.correctIndex) catMap[c].ok++; }
+    if (ans[i] !== null) { catMap[c].done++; if (isCorrectAnswer(q, ans[i])) catMap[c].ok++; }
   });
   CAT_ORDER.forEach(c => {
     if (!catMap[c]) return;
@@ -945,7 +959,7 @@ function showResults(mode) {
   qs.forEach((q, i) => {
     const userAns = ans[i];
     const isSkip  = userAns === null;
-    const isOk    = !isSkip && userAns === q.correctIndex;
+    const isOk    = !isSkip && isCorrectAnswer(q, userAns);
     const subj    = CAT_SUBJ[q.category] || "basic";
     const short   = CAT_SHORT[q.category] || q.category;
 
@@ -967,7 +981,8 @@ function showResults(mode) {
     if (!isSkip && !isOk) {
       html += '<div class="rev-line ng"><span>あなた</span><span>' + escHtml(q.choices[userAns]) + '</span></div>';
     }
-    html += '<div class="rev-line ok"><span>正解</span><span>' + escHtml(q.choices[q.correctIndex]) + '</span></div>';
+    const correctLabels = correctIndices(q).map(idx => q.choices[idx]).join("・");
+    html += '<div class="rev-line ok"><span>正解</span><span>' + escHtml(correctLabels) + '</span></div>';
     html += '</div>';
     html += '<div class="rev-exp" data-q-idx="' + i + '"></div>';
     html += '</div>';
