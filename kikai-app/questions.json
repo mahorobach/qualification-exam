@@ -3044,7 +3044,7 @@
   {
     "category": "専門科目（機械部門）",
     "year": 2024,
-    "question": "片持ちはり（曲げ剛性 EI，長さ l）に集中荷重 P を先端に，等分布荷重 q を全長に作用させるとき，先端のたわみが等しくなる P と q の関係として正しいものはどれか。",
+    "question": "片持ちはり（曲げ剛性 E・I，長さ l）に集中荷重 P を先端に，等分布荷重 q を全長に作用させるとき，先端のたわみが等しくなる P と q の関係として正しいものはどれか。",
     "choices": [
       "P = 3ql/8",
       "P = ql/2",
@@ -3053,7 +3053,7 @@
       "P = ql"
     ],
     "correctIndex": 0,
-    "explanation": "先端たわみの公式：集中荷重P → δ_P = Pl³/(3EI)，等分布荷重q → δ_q = ql⁴/(8EI)。等しくなる条件：Pl³/(3EI) = ql⁴/(8EI) → P = 3ql/8。",
+    "explanation": "先端たわみの公式：集中荷重P → δ_P = Pl³/(3E・I)，等分布荷重q → δ_q = ql⁴/(8E・I)。等しくなる条件：Pl³/(3E・I) = ql⁴/(8E・I) → P = 3ql/8。",
     "subField": "材料力学",
     "richExplanation": "## 片持ちはりの先端たわみに関する解説\n\n本問は、重ね合わせの原理を用いて、2種類の荷重による先端たわみを比較する問題です。\n\n### 1. 各荷重による先端たわみの公式を確認する\n片持ちはり（長さ $l$、曲げ剛性 $EI$）において、先端に作用するたわみ $\\delta$ の公式は以下の通りです。\n\n*   **集中荷重 $P$ が先端に作用する場合**\n    $$\\delta_P = \\frac{Pl^3}{3EI}$$\n*   **等分布荷重 $q$ が全長に作用する場合**\n    $$\\delta_q = \\frac{ql^4}{8EI}$$\n\n### 2. たわみが等しくなる条件を立式する\n問題文より $\\delta_P = \\delta_q$ となる条件を求めます。\n\n$$\\frac{Pl^3}{3EI} = \\frac{ql^4}{8EI}$$\n\n### 3. $P$ について整理する\n両辺から $l^3$ と $EI$ を消去すると、以下のようになります。\n\n$$\\frac{P}{3} = \\frac{ql}{8}$$\n$$P = \\frac{3ql}{8}$$\n\nしたがって、選択肢1が正解となります。\n\n---\n\n### 💡 ポイント\n片持ちはりの先端たわみ公式は、集中荷重が $\\frac{1}{3}$、等分布荷重が $\\frac{1}{8}$ と覚えるのが鉄則です。この係数（$1/3$ と $1/8$）を覚えておけば、たわみ角や他の荷重条件の応用問題にも素早く対応できます。"
   },
@@ -5429,6 +5429,7 @@
     "category": "専門科目（機械部門）",
     "year": 2023,
     "question": "下図に示すように，楕円孔を有する無限に広い一様な厚さの板に一軸の引張応力σを負荷するとき，楕円孔の縁に応力集中によって生じる最大引張応力が最も低くなるときの2aと2bの組合せとして，適切なものはどれか。\n（図：垂直方向にσが作用，楕円の水平軸長さ2a，垂直軸長さ2b）",
+    "figureHtml": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 420 300\" width=\"420\" height=\"300\" style=\"max-width:100%;height:auto;display:block;margin:auto;font-family:sans-serif;font-size:14px\"><defs><marker id=\"kikai-2023-q5-arr\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"4\" orient=\"auto\"><path d=\"M0,0 L8,4 L0,8 z\" fill=\"#d97706\"/></marker><marker id=\"kikai-2023-q5-dim\" markerWidth=\"8\" markerHeight=\"8\" refX=\"4\" refY=\"4\" orient=\"auto\"><path d=\"M8,0 L0,4 L8,8\" fill=\"none\" stroke=\"#4b5563\" stroke-width=\"1.5\"/></marker></defs><rect x=\"70\" y=\"38\" width=\"280\" height=\"224\" rx=\"6\" fill=\"#f8fafc\" stroke=\"#94a3b8\" stroke-width=\"1.5\"/><path d=\"M70,78 H350 M70,118 H350 M70,158 H350 M70,198 H350 M70,238 H350 M110,38 V262 M150,38 V262 M190,38 V262 M230,38 V262 M270,38 V262 M310,38 V262\" stroke=\"#cbd5e1\" stroke-width=\"0.7\" opacity=\"0.65\"/><ellipse cx=\"210\" cy=\"150\" rx=\"60\" ry=\"86\" fill=\"#fff\" stroke=\"#111827\" stroke-width=\"2.4\"/><line x1=\"122\" y1=\"150\" x2=\"298\" y2=\"150\" stroke=\"#2563eb\" stroke-width=\"1.7\" stroke-dasharray=\"5,4\"/><line x1=\"210\" y1=\"42\" x2=\"210\" y2=\"258\" stroke=\"#2563eb\" stroke-width=\"1.7\" stroke-dasharray=\"5,4\"/><line x1=\"150\" y1=\"246\" x2=\"270\" y2=\"246\" stroke=\"#4b5563\" stroke-width=\"1.5\" marker-start=\"url(#kikai-2023-q5-dim)\" marker-end=\"url(#kikai-2023-q5-dim)\"/><line x1=\"150\" y1=\"231\" x2=\"150\" y2=\"258\" stroke=\"#4b5563\" stroke-width=\"1.2\"/><line x1=\"270\" y1=\"231\" x2=\"270\" y2=\"258\" stroke=\"#4b5563\" stroke-width=\"1.2\"/><text x=\"210\" y=\"276\" text-anchor=\"middle\" fill=\"#111827\" font-weight=\"700\">2a</text><line x1=\"312\" y1=\"64\" x2=\"312\" y2=\"236\" stroke=\"#4b5563\" stroke-width=\"1.5\" marker-start=\"url(#kikai-2023-q5-dim)\" marker-end=\"url(#kikai-2023-q5-dim)\"/><line x1=\"282\" y1=\"64\" x2=\"326\" y2=\"64\" stroke=\"#4b5563\" stroke-width=\"1.2\"/><line x1=\"282\" y1=\"236\" x2=\"326\" y2=\"236\" stroke=\"#4b5563\" stroke-width=\"1.2\"/><text x=\"334\" y=\"154\" fill=\"#111827\" font-weight=\"700\">2b</text><line x1=\"210\" y1=\"26\" x2=\"210\" y2=\"58\" stroke=\"#d97706\" stroke-width=\"3\" marker-end=\"url(#kikai-2023-q5-arr)\"/><line x1=\"210\" y1=\"274\" x2=\"210\" y2=\"242\" stroke=\"#d97706\" stroke-width=\"3\" marker-end=\"url(#kikai-2023-q5-arr)\"/><text x=\"225\" y=\"31\" fill=\"#d97706\" font-size=\"18\" font-weight=\"700\">σ</text><text x=\"225\" y=\"286\" fill=\"#d97706\" font-size=\"18\" font-weight=\"700\">σ</text><text x=\"210\" y=\"151\" text-anchor=\"middle\" dominant-baseline=\"middle\" fill=\"#64748b\" font-size=\"12\">楕円孔</text></svg>",
     "choices": [
       "2a＝10mm　2b＝40mm",
       "2a＝10mm　2b＝20mm",
