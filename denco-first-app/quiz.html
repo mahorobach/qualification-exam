@@ -1,0 +1,1814 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/da8873c0823e389b7f9a1d40/script.js"></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G4S7ZG2Y34"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-G4S7ZG2Y34');
+  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>第一種電気工事士 過去問クイズ | 資格トレイン</title>
+    <meta name="description" content="第一種電気工事士試験の学科対策クイズアプリ。電気理論・配線図・機器・施工・法令などを年度別・分野別で学習。詳しい解説付き。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../tokens.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0; min-height: 100dvh;
+            font-family: var(--font);
+            font-size: 16px; line-height: 1.65;
+            color: var(--text); background: var(--bg);
+            padding: calc(52px + max(16px, env(safe-area-inset-top))) 18px max(28px, env(safe-area-inset-bottom));
+        }
+        .app { max-width: 420px; margin: 0 auto; }
+
+        /* Fixed nav */
+        .site-nav {
+            position: fixed; top: 0; left: 0; right: 0; height: 52px; z-index: 200;
+            background: rgba(250,247,241,.88);
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--line);
+            display: flex; align-items: center; justify-content: space-between; padding: 0 18px;
+        }
+        .site-nav-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; color: var(--text); font-size: .9rem; font-weight: 600; }
+        .site-nav-back { font-size: .8rem; color: var(--text-muted); text-decoration: none; }
+        .site-nav-back:hover { color: var(--accent); }
+
+        header { text-align: center; margin-bottom: 22px; }
+        .header-icon { font-size: 1.15rem; display: inline; margin-right: 4px; }
+        header h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: 0.04em; margin: 0 0 6px; color: var(--text); }
+        header p { margin: 0; font-size: 0.8rem; color: var(--text-muted); }
+
+        .progress { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; font-size: 0.8rem; color: var(--text-muted); }
+        .progress-bar { flex: 1; height: 4px; background: var(--surface-2); border-radius: 2px; margin: 0 12px; overflow: hidden; }
+        .progress-bar span { display: block; height: 100%; background: linear-gradient(90deg, var(--accent), #5eb8ff); border-radius: 2px; transition: width 0.35s ease; }
+
+        .card { background: var(--surface); border-radius: var(--r-lg); padding: 22px 20px; box-shadow: var(--shadow); border: 1px solid var(--line); }
+
+        .question-num { display: inline-block; font-size: 0.72rem; font-weight: 500; color: var(--accent); background: var(--accent-soft); padding: 4px 10px; border-radius: 999px; margin-bottom: 14px; }
+        .question-text { font-size: 1rem; font-weight: 500; margin: 0 0 22px; line-height: 1.7; color: var(--text); }
+
+        .question-figure { display: none; margin: 0 0 18px; border: 1px solid var(--line); border-radius: var(--r-md); overflow: hidden; background: #f8fafc; }
+        .question-figure.visible { display: block; }
+        .question-figure-btn { appearance: none; display: block; width: 100%; padding: 0; border: 0; background: transparent; cursor: zoom-in; }
+        .question-figure img { display: block; width: 100%; max-height: 56vh; object-fit: contain; background: #fff; }
+        .figure-caption { display: flex; justify-content: space-between; gap: 10px; padding: 9px 12px; color: var(--text-muted); background: var(--surface-2); font-size: 0.78rem; line-height: 1.4; }
+
+        .figure-modal { position: fixed; inset: 0; z-index: 500; display: none; background: rgba(0,0,0,.82); padding: 18px; }
+        .figure-modal.visible { display: flex; flex-direction: column; gap: 10px; }
+        .figure-modal-bar { display: flex; justify-content: space-between; align-items: center; gap: 12px; color: #f8fafc; font-size: 0.86rem; }
+        .figure-modal-close { appearance: none; min-width: 44px; min-height: 36px; border: 1px solid rgba(255,255,255,.22); border-radius: 8px; background: rgba(255,255,255,.12); color: #f8fafc; font: inherit; cursor: pointer; }
+        .figure-modal-scroll { flex: 1; overflow: auto; border-radius: 10px; background: #fff; -webkit-overflow-scrolling: touch; }
+        .figure-modal-scroll img { display: block; width: max(1200px, 100%); height: auto; background: #fff; }
+
+        .choices { display: flex; flex-direction: column; gap: 10px; }
+        .choice-btn { appearance: none; width: 100%; text-align: left; padding: 14px 16px; font-family: inherit; font-size: 0.95rem; color: var(--text); background: var(--surface-2); border: 1px solid var(--line); border-radius: var(--r-md); cursor: pointer; transition: background 0.2s, border-color 0.2s, transform 0.15s; min-height: 48px; line-height: 1.45; }
+        .choice-btn:hover:not(:disabled) { background: var(--accent-soft); border-color: rgba(47,111,219,.35); }
+        .choice-btn:active:not(:disabled) { transform: scale(0.98); }
+        .choice-btn:disabled { cursor: default; opacity: 0.85; }
+        .choice-btn.correct-pick { background: var(--success-soft); border-color: rgba(31,157,122,.45); color: var(--success); }
+        .choice-btn.wrong-pick   { background: var(--danger-soft);  border-color: rgba(217,83,79,.45); }
+        .choice-btn.selected     { background: var(--accent-soft); border-color: rgba(47,111,219,.6); }
+
+        .feedback { margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--line); display: none; }
+        .feedback.visible { display: block; animation: fadeIn 0.35s ease; }
+        @keyframes fadeIn { from{opacity:0;transform:translateY(6px)} to{opacity:1;transform:translateY(0)} }
+
+        .result-label { font-size: 1.1rem; font-weight: 700; margin: 0 0 10px; }
+        .result-label.ok { color: var(--success); }
+        .result-label.ng { color: var(--danger); }
+        .explanation { font-size: 0.88rem; color: var(--text-muted); margin: 0; line-height: 1.75; }
+        .actions { margin-top: 22px; }
+
+        .next-btn { width: 100%; padding: 15px; font-family: inherit; font-size: 1rem; font-weight: 700; color: #fff; background: var(--accent); border: none; border-radius: var(--r-md); cursor: pointer; box-shadow: var(--shadow-cta); transition: opacity 0.15s; }
+        .next-btn:hover { opacity: .9; }
+
+        .summary { text-align: center; padding: 8px 0 4px; }
+        .summary h2 { font-size: 1.25rem; margin: 0 0 12px; color: var(--text); }
+        .summary .score { font-size: 2.2rem; font-weight: 700; color: var(--accent); margin: 0 0 8px; }
+        .summary p { font-size: 0.9rem; color: var(--text-muted); margin: 0 0 24px; }
+
+        .restart-btn { width: 100%; padding: 15px; font-family: inherit; font-size: 1rem; font-weight: 700; color: var(--text); background: var(--surface-2); border: 1px solid var(--line); border-radius: var(--r-md); cursor: pointer; }
+        .restart-btn:hover { background: var(--accent-soft); }
+
+        .load-warning { max-width: 420px; margin: 0 auto 14px; padding: 12px 14px; font-size: 0.82rem; line-height: 1.55; color: #7a5f00; background: #fff8e1; border: 1px solid rgba(200,160,0,.35); border-radius: var(--r-md); }
+
+        .top-bar { max-width: 420px; margin: 0 auto 12px; }
+        .back-btn { appearance: none; display: inline-flex; align-items: center; gap: 6px; padding: 10px 14px; font-family: inherit; font-size: 0.88rem; font-weight: 500; color: var(--accent); background: var(--surface); border: 1px solid rgba(47,111,219,.35); border-radius: 10px; cursor: pointer; transition: background 0.2s, border-color 0.2s; }
+        .back-btn:hover { background: var(--accent-soft); border-color: rgba(47,111,219,.55); }
+
+        .menu-title { font-size: 1.05rem; font-weight: 700; text-align: center; margin: 0 0 8px; line-height: 1.5; color: var(--text); }
+        .menu-quick-quiz-wrap { margin: 0 0 14px; }
+        .menu-quick-quiz-btn { appearance: none; width: 100%; padding: 14px 16px; font-family: inherit; font-size: 0.95rem; font-weight: 700; color: #fff; background: var(--accent); border: none; border-radius: var(--r-md); cursor: pointer; box-shadow: var(--shadow-cta); transition: opacity 0.15s; }
+        .menu-quick-quiz-btn:hover { opacity: .9; }
+
+        .menu-footer-note { font-size: 0.82rem; color: var(--text-muted); text-align: center; margin: 16px 0 0; line-height: 1.55; }
+        .source-notice { margin-top: 12px; padding: 12px 14px; border: 1px solid rgba(47,111,219,.25); border-radius: 10px; background: var(--accent-soft); color: var(--text-muted); font-size: 0.76rem; line-height: 1.7; }
+        .source-notice strong { color: var(--text); }
+        .menu-mock-link { text-align: center; margin: -8px 0 14px; font-size: 0.86rem; }
+        .menu-mock-link a { color: var(--accent); text-decoration: none; }
+        .menu-mock-link a:hover { text-decoration: underline; }
+
+        .category-buttons { display: flex; flex-direction: column; gap: 10px; }
+        .category-btn { appearance: none; width: 100%; text-align: left; padding: 14px 16px; font-family: inherit; font-size: 0.95rem; font-weight: 500; color: var(--text); background: var(--surface-2); border: 1px solid var(--line); border-radius: var(--r-md); cursor: pointer; transition: background 0.2s, border-color 0.2s, transform 0.15s; min-height: 48px; line-height: 1.45; }
+        .category-btn:hover { background: var(--accent-soft); border-color: rgba(47,111,219,.35); }
+        .category-btn:active { transform: scale(0.99); }
+        .category-btn .cat-meta { display: block; font-size: 0.78rem; font-weight: 400; color: var(--text-muted); margin-top: 4px; }
+
+        .weak-btn { width: 100%; min-height: 46px; border-radius: 10px; border: 1px solid rgba(217,83,79,.45); background: var(--danger-soft); color: var(--danger); font-family: inherit; font-weight: 700; cursor: pointer; }
+        .weak-btn:hover { background: rgba(217,83,79,.18); }
+        .reset-answered-btn { width: 100%; min-height: 44px; border-radius: 10px; border: 1px solid var(--line); background: transparent; color: var(--text-muted); font-family: inherit; font-size: 0.82rem; cursor: pointer; }
+        .reset-answered-btn:hover { background: var(--surface-2); color: var(--text); }
+
+        .stats-box { margin-top: 16px; background: var(--surface-2); border: 1px solid var(--line); border-radius: var(--r-md); padding: 12px; }
+        .stats-title { margin: 0 0 8px; font-size: 0.82rem; color: var(--text-muted); }
+        .stats-list { display: grid; gap: 6px; font-size: 0.84rem; }
+        .stats-row { display: flex; justify-content: space-between; gap: 12px; }
+
+        .pass-fail-banner { display: none; font-size: 1.6rem; font-weight: 700; letter-spacing: 0.08em; padding: 14px 20px; border-radius: 14px; margin-bottom: 16px; }
+        .pass-fail-banner.pass { display: block; color: var(--success); background: var(--success-soft); border: 2px solid rgba(31,157,122,.55); }
+        .pass-fail-banner.fail { display: block; color: var(--danger);  background: var(--danger-soft);  border: 2px solid rgba(217,83,79,.45); }
+        .pass-threshold { font-size: 0.8rem; font-weight: 400; color: var(--text-muted); margin-left: 8px; }
+
+        /* ── Mode selection screen ── */
+        .mode-grid { display: flex; flex-direction: column; gap: 10px; }
+        .mode-btn { appearance: none; width: 100%; text-align: left; padding: 15px 16px; font-family: inherit; color: var(--text); background: var(--surface-2); border: 1px solid var(--line); border-radius: var(--r-lg); cursor: pointer; transition: background .2s, border-color .2s; display: flex; align-items: center; gap: 14px; }
+        .mode-btn:hover { background: var(--accent-soft); border-color: rgba(47,111,219,.4); }
+        .mode-btn.danger:hover { background: var(--danger-soft); border-color: rgba(217,83,79,.5); }
+        .mode-btn.subtle:hover { background: var(--surface-2); border-color: var(--line); }
+        .mock-link-btn { display: flex; align-items: center; gap: 14px; padding: 15px 16px; font-family: inherit; font-size: 0.9rem; font-weight: 700; color: var(--text); background: var(--surface-2); border: 1px solid var(--line); border-radius: var(--r-lg); text-decoration: none; transition: background .2s; }
+        .mock-link-btn:hover { background: var(--accent-soft); }
+        .screen-title { font-size: 1.05rem; font-weight: 700; text-align: center; margin: 0 0 4px; color: var(--text); }
+        .screen-sub   { font-size: 0.82rem; color: var(--text-muted); text-align: center; margin: 0 0 18px; }
+        #s-mode .card > .screen-title:first-of-type { margin-bottom: 18px; }
+        .mode-icon { font-size: 1.4rem; flex-shrink: 0; }
+        .mode-name { font-size: 0.9rem; font-weight: 700; display: block; margin-bottom: 2px; }
+        .mode-desc { font-size: 0.74rem; color: var(--text-muted); display: block; line-height: 1.5; }
+
+        /* ── Year selection screen ── */
+        .sel-list { display: flex; flex-direction: column; gap: 8px; }
+        .sel-item { appearance: none; width: 100%; text-align: left; padding: 14px 16px; font-family: inherit; font-size: 0.92rem; color: var(--text); background: var(--surface-2); border: 1px solid var(--line); border-radius: var(--r-md); cursor: pointer; transition: background .2s, border-color .2s; display: flex; justify-content: space-between; align-items: center; }
+        .sel-item:hover { background: var(--accent-soft); border-color: rgba(47,111,219,.35); }
+        .s-meta { font-size: 0.75rem; color: var(--text-muted); }
+        .back-link { display: inline-flex; align-items: center; gap: 5px; font-size: 0.84rem; color: var(--accent); text-decoration: none; margin-bottom: 12px; }
+        .back-link:hover { text-decoration: underline; }
+        .info-card { background: var(--surface); border-radius: var(--r-md); padding: 14px 16px; border: 1px solid var(--line); margin-top: 12px; font-size: 0.83rem; color: var(--text-muted); line-height: 1.7; }
+
+        /* ── Year exam screen ── */
+        .exam-header { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
+        .timer-box { display: flex; flex-direction: column; align-items: center; background: var(--surface); border-radius: 10px; padding: 6px 14px; border: 1px solid var(--line); box-shadow: var(--shadow); min-width: 82px; }
+        .timer-label { font-size: 0.65rem; color: var(--text-muted); }
+        .timer-val { font-size: 1.15rem; font-weight: 700; font-variant-numeric: tabular-nums; color: var(--accent); }
+        .timer-val.warn   { color: #c07000; }
+        .timer-val.danger { color: var(--danger); animation: blink 1s ease infinite; }
+        @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.5} }
+        .exam-meta { font-size: 0.78rem; color: var(--text-muted); flex: 1; }
+        .end-btn { appearance: none; padding: 8px 14px; font-family: inherit; font-size: 0.8rem; font-weight: 700; color: var(--danger); background: var(--danger-soft); border: 1px solid rgba(217,83,79,.45); border-radius: 8px; cursor: pointer; white-space: nowrap; }
+        .end-btn:hover { background: rgba(217,83,79,.18); }
+        .q-nav { display: flex; flex-wrap: wrap; gap: 6px; padding: 12px; background: var(--surface); border-radius: 10px; border: 1px solid var(--line); box-shadow: var(--shadow); margin-bottom: 12px; }
+        .q-dot { appearance: none; width: 34px; height: 34px; border-radius: 8px; border: 1px solid var(--line); background: transparent; color: var(--text-muted); font-size: 0.78rem; font-family: inherit; cursor: pointer; transition: all .15s; }
+        .q-dot.current  { background: var(--accent); color: #fff; border-color: var(--accent); font-weight: 700; }
+        .q-dot.answered { border-color: rgba(47,111,219,.5); color: var(--accent); }
+        .q-dot.answered.current { background: var(--accent); color: #fff; }
+        .notice-bar { padding: 10px 14px; background: var(--success-soft); border: 1px solid rgba(31,157,122,.35); border-radius: 10px; font-size: 0.86rem; color: var(--success); margin-bottom: 12px; text-align: center; }
+        .q-num-badge { display: inline-block; font-size: 0.72rem; font-weight: 600; color: var(--accent); background: var(--accent-soft); padding: 4px 10px; border-radius: 999px; margin-bottom: 14px; }
+        .q-text { font-size: 1rem; font-weight: 500; margin: 0 0 20px; line-height: 1.7; color: var(--text); }
+        .exam-nav { display: flex; gap: 10px; margin-top: 12px; }
+        .nav-btn { flex: 1; padding: 13px; font-family: inherit; font-size: 0.9rem; font-weight: 700; color: var(--text); background: var(--surface-2); border: 1px solid var(--line); border-radius: var(--r-md); cursor: pointer; transition: background .15s; }
+        .nav-btn:hover:not(:disabled) { background: var(--accent-soft); }
+        .nav-btn:disabled { opacity: 0.35; cursor: default; }
+        .nav-btn.primary { background: var(--accent); color: #fff; border: none; box-shadow: var(--shadow-cta); }
+        .nav-btn.primary:hover:not(:disabled) { opacity: .88; }
+
+        /* ── Exam results ── */
+        .res-cat-row { display: flex; justify-content: space-between; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--line); font-size: 0.84rem; }
+        .res-cat-row:last-child { border-bottom: none; }
+        .res-q-card { padding: 14px; background: var(--surface-2); border-radius: var(--r-md); margin-bottom: 10px; border-left: 3px solid transparent; }
+        .res-q-card.ok   { border-left-color: var(--success); }
+        .res-q-card.ng   { border-left-color: var(--danger); }
+        .res-q-card.skip { border-left-color: var(--text-muted); }
+        .res-q-meta { font-size: 0.72rem; color: var(--text-muted); margin-bottom: 6px; }
+        .res-q-text { font-size: 0.88rem; margin-bottom: 8px; line-height: 1.6; color: var(--text); }
+        .res-q-yours { font-size: 0.82rem; padding: 5px 8px; border-radius: 6px; margin-bottom: 4px; }
+        .res-q-yours.ok { color: var(--success); background: var(--success-soft); }
+        .res-q-yours.ng { color: var(--danger);  background: var(--danger-soft); }
+        .res-q-correct { font-size: 0.82rem; color: var(--success); padding: 5px 8px; background: var(--success-soft); border-radius: 6px; margin-bottom: 4px; }
+        .res-q-exp { font-size: 0.8rem; color: var(--text-muted); line-height: 1.65; margin-top: 6px; }
+
+        #how-to-use { scroll-margin-top: 64px; }
+        .how-guide { margin-top: 16px; background: var(--surface-2); border: 1px solid var(--line); border-radius: var(--r-md); padding: 16px 14px; }
+        .how-guide h2 { font-size: 1rem; font-weight: 700; margin: 0 0 14px; color: var(--accent); }
+        .how-list { display: flex; flex-direction: column; gap: 10px; }
+        .how-item { display: flex; gap: 12px; align-items: flex-start; }
+        .how-num { flex-shrink: 0; min-width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; background: var(--accent-soft); border-radius: 50%; color: var(--accent); font-weight: 700; font-size: 0.85rem; }
+        .how-text { font-size: 0.85rem; color: var(--text-muted); line-height: 1.65; padding-top: 2px; }
+        .how-text strong { color: var(--text); }
+        .how-guide-note { margin-top: 14px; font-size: 0.78rem; color: var(--text-muted); line-height: 1.75; }
+    </style>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3002712486184435" crossorigin="anonymous"></script>
+</head>
+<body>
+<nav class="site-nav">
+  <a href="../index.html" class="site-nav-logo">
+    <svg width="24" height="24" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="100" height="100" rx="24" fill="#2f6fdb"/><rect x="24" y="18" width="52" height="56" rx="16" fill="#ffffff"/><rect x="31" y="29" width="16" height="15" rx="4" fill="#2f6fdb"/><rect x="53" y="29" width="16" height="15" rx="4" fill="#2f6fdb"/><rect x="40" y="53" width="20" height="6" rx="3" fill="#2f6fdb"/><circle cx="35" cy="80" r="5" fill="#ffffff"/><circle cx="65" cy="80" r="5" fill="#ffffff"/></svg>
+    資格トレイン
+  </a>
+  <a href="index.html" class="site-nav-back">⚡ 電気資格ポータル</a>
+</nav>
+    <div class="app">
+        <header>
+            <h1 id="page-title"><span class="header-icon" aria-hidden="true">🔌</span> 第一種電気工事士 過去問クイズ</h1>
+            <p id="subtitle">スマホ向け · 問題読み込み中…</p>
+        </header>
+
+        <p id="load-warning" class="load-warning" hidden></p>
+
+        <div id="top-bar" class="top-bar" hidden>
+            <button type="button" class="back-btn" id="back-btn">← 分野選択に戻る</button>
+        </div>
+
+        <!-- ══ Screen 0: モード選択 ══ -->
+        <div id="s-mode" hidden>
+            <div class="card">
+                <p class="screen-title">学習方法を選んでください</p>
+                <div class="mode-grid">
+                    <button type="button" class="mode-btn" id="btn-mode-cat">
+                        <span class="mode-icon">📂</span>
+                        <span><span class="mode-name">学習モード（分野別）</span><span class="mode-desc">分野を選んで1問ずつ解答。解答ごとに解説を確認できます。</span></span>
+                    </button>
+                    <button type="button" class="mode-btn" id="btn-mode-year">
+                        <span class="mode-icon">📅</span>
+                        <span><span class="mode-name">年度別演習</span><span class="mode-desc">年度・期別で本番形式50問・140分タイマー付きで解答。</span></span>
+                    </button>
+                    <a class="mock-link-btn" href="mock-sets.html">
+                        <span class="mode-icon">📋</span>
+                        <span><span class="mode-name">擬似問題集</span><span class="mode-desc">試験形式に近い問題セットを選んで実力チェック。</span></span>
+                    </a>
+                    <button type="button" class="mode-btn danger" id="btn-mode-weak">
+                        <span class="mode-icon">🔁</span>
+                        <span><span class="mode-name">間違った問題だけ再出題</span><span class="mode-desc">不正解だった問題をブラウザに自動記録・集中復習。</span></span>
+                    </button>
+                    <button type="button" class="mode-btn subtle" id="btn-mode-reset">
+                        <span class="mode-icon">↩️</span>
+                        <span><span class="mode-name">回答済みを出題に戻す</span><span class="mode-desc">解き終わった問題をリセットして再挑戦。</span></span>
+                    </button>
+                </div>
+            </div>
+            <div class="stats-box" style="margin-top:12px;">
+                <p class="stats-title">分野ごとの正答率（累計）</p>
+                <div id="mode-stats" class="stats-list"></div>
+            </div>
+            <div id="how-to-use" class="how-guide">
+                <h2>💡 使い方</h2>
+                <div class="how-list">
+                    <div class="how-item">
+                        <div class="how-num">1</div>
+                        <div class="how-text"><strong>クイズを始める</strong>：ポータルまたはモード選択・分野別メニューから、全問からランダムに<strong>20問</strong>（スクリプト先頭の <code style="font-size:0.8em;">QUICK_QUIZ_QUESTION_COUNT</code> で変更）を出題。セット完了後に結果を表示し、続けて挑戦すると過去に出した問題以外から再抽選します（使い切りで自動リセット）。正誤は学習モードの分野別累計正答率に反映されます。</div>
+                    </div>
+                    <div class="how-item">
+                        <div class="how-num">2</div>
+                        <div class="how-text"><strong>年度別演習</strong>：年度・期別で、本番形式50問（一般30問＋配線図系20問）を解答。対象の問題数が50問に満たない場合は、その範囲の問題のみで出題します。</div>
+                    </div>
+                    <div class="how-item">
+                        <div class="how-num">3</div>
+                        <div class="how-text"><strong>擬似問題集</strong>：試験形式に近い問題セットをまるごと選んで実力チェック。仕上げの総合演習に最適です。</div>
+                    </div>
+                    <div class="how-item">
+                        <div class="how-num">4</div>
+                        <div class="how-text"><strong>学習モード（分野別）</strong>：分野を選んで1問ずつ解答し、問題に答えると正誤と解説が表示されます。苦手分野の集中学習に活用してください。</div>
+                    </div>
+                    <div class="how-item">
+                        <div class="how-num">5</div>
+                        <div class="how-text"><strong>間違った問題だけ再出題</strong>：<strong>モード選択画面</strong>のボタン、または分野別メニュー内の同じ名前のボタンから利用できます。不正解だった問題がブラウザに自動保存され、間違った問題だけを集中して繰り返し復習できます。</div>
+                    </div>
+                    <div class="how-item">
+                        <div class="how-num">6</div>
+                        <div class="how-text"><strong>回答済みを出題に戻す</strong>：<strong>モード選択画面</strong>のボタン、または分野別メニュー内の「回答済み（同じ問題）を出題に戻す」から利用できます。一度解いた問題は再出題されない仕組みのため、リセットすると同じ問題を最初から解き直せます。</div>
+                    </div>
+                </div>
+                <p class="how-guide-note">※ 本サイトで使用している問題は、第一種電気工事士試験の公式過去問をもとに公式PDFから抽出した学科試験問題です。正確な試験情報は（一財）電気技術者試験センターの公式サイトをご確認ください。</p>
+                <div class="source-notice">
+                    <strong>出典について</strong><br>
+                    出典：一般財団法人 電気技術者試験センター公表「第一種電気工事士試験の問題と解答」。本アプリの問題および図面は、第一種電気工事士試験の公表過去問題を学習用JSONへデータ化したコンテンツです。図面・写真が必要な問題では公式PDFへの参照で確認できるようにしています。公式公表問題そのものを確認する場合は、同センター公式サイトをご確認ください。
+                </div>
+            </div>
+        </div>
+
+        <!-- ══ Screen 1: 年度選択 ══ -->
+        <div id="s-year-sel" hidden>
+            <a href="koujishi-index.html" class="back-link" id="lnk-year-back">← 第一種電気工事士 学習ポータルへ</a>
+            <div class="card">
+                <p class="screen-title">年度・期を選択</p>
+                <p class="screen-sub">解答する年度と前期・後期を選んでください</p>
+                <div class="sel-list" id="year-sel-list"></div>
+            </div>
+            <div class="info-card">140分タイマー付きで収録範囲内の問題が出題されます。問題を行き来しながら解答し、終了後に全問の解説を一覧で確認できます。</div>
+        </div>
+
+        <!-- ══ Screen 2: 年度別 試験 ══ -->
+        <div id="s-exam" hidden>
+            <div class="exam-header">
+                <div class="timer-box">
+                    <span class="timer-label">残り時間</span>
+                    <span class="timer-val" id="timer-val">140:00</span>
+                </div>
+                <div class="exam-meta" id="exam-meta">回答済み 0 / 0 問</div>
+                <button type="button" class="end-btn" id="btn-end-exam">終了する</button>
+            </div>
+            <div class="q-nav" id="q-nav"></div>
+            <div id="all-done-notice" class="notice-bar" hidden>✅ 全問回答済み。「終了する」で結果を確認できます。</div>
+            <div class="card" style="margin-bottom:12px;">
+                <span class="q-num-badge" id="exam-q-num">問題 1</span>
+                <p class="q-text" id="exam-q-text"></p>
+                <div class="question-figure" id="exam-question-figure">
+                    <button type="button" class="question-figure-btn" id="exam-question-figure-btn">
+                        <img id="exam-question-figure-img" alt="">
+                    </button>
+                    <div class="figure-caption"><span id="exam-question-figure-caption"></span><span>タップで拡大</span></div>
+                </div>
+                <div class="choices" id="exam-choices"></div>
+            </div>
+            <div class="exam-nav">
+                <button type="button" class="nav-btn" id="btn-exam-prev">← 前の問題</button>
+                <button type="button" class="nav-btn primary" id="btn-exam-next">次の問題 →</button>
+            </div>
+        </div>
+
+        <!-- ══ Screen 3: 年度別 結果 ══ -->
+        <div id="s-exam-results" hidden>
+            <a href="koujishi-index.html" class="back-link" id="lnk-res-back">← 第一種電気工事士 学習ポータルへ</a>
+            <div class="card" style="margin-bottom:12px;">
+                <p class="screen-title" id="res-title">結果</p>
+                <div id="res-banner" style="margin:12px 0;padding:12px;border-radius:10px;text-align:center;font-weight:700;font-size:1.1rem;"></div>
+                <p id="res-score" style="text-align:center;font-size:2rem;font-weight:700;color:var(--accent);margin:0 0 8px;"></p>
+                <p id="res-msg" style="font-size:0.85rem;color:var(--text-muted);text-align:center;margin:0 0 16px;line-height:1.6;"></p>
+                <div id="res-cat-summary"></div>
+                <a href="koujishi-index.html" class="restart-btn" id="btn-res-back-menu" style="margin-top:14px;display:block;text-align:center;text-decoration:none;box-sizing:border-box;">第一種電気工事士 学習ポータルに戻る</a>
+            </div>
+            <div id="res-q-list"></div>
+        </div>
+
+        <div id="menu-screen" style="display:none;">
+            <a href="koujishi-index.html" class="back-link" id="lnk-cat-back-mode">← 第一種電気工事士 学習ポータルへ</a>
+            <div class="card">
+            <h2 class="menu-title">分野を選択してください。</h2>
+            <div class="menu-quick-quiz-wrap">
+                <button type="button" class="menu-quick-quiz-btn" id="btn-menu-quick-quiz">クイズを始める</button>
+            </div>
+            <div id="category-buttons" class="category-buttons"></div>
+            <div class="stats-box">
+                <p class="stats-title">分野ごとの正答率</p>
+                <div id="stats-list" class="stats-list"></div>
+            </div>
+            <p class="menu-footer-note">分野の問数は収録件数です（本試験の1回の出題数ではありません）。答えた問題は同じ分野でも出ません。範囲内を全部答えると、次に選んだとき自動で記録がリセットされランダムに再出題されます。戻すは下のリセット。</p>
+            <div class="source-notice">
+                <strong>出典について</strong><br>
+                出典：一般財団法人 電気技術者試験センター公表「第一種電気工事士試験の問題と解答」。本アプリの問題および図面は、公表過去問題を学習用JSONへデータ化したコンテンツです。図面・写真が必要な問題では公式PDFへの参照で確認できるようにしています。
+            </div>
+            </div><!-- /.card -->
+        </div><!-- /#menu-screen -->
+
+        <div id="quiz-screen" style="display: none;">
+            <div class="progress">
+                <span id="progress-label">1 / 3</span>
+                <div class="progress-bar"><span id="progress-fill" style="width: 33.33%"></span></div>
+            </div>
+            <div class="card">
+                <span class="question-num" id="question-num">問題 1</span>
+                <p class="question-text" id="question-text"></p>
+                <div class="question-figure" id="question-figure">
+                    <button type="button" class="question-figure-btn" id="question-figure-btn">
+                        <img id="question-figure-img" alt="">
+                    </button>
+                    <div class="figure-caption"><span id="question-figure-caption"></span><span>タップで拡大</span></div>
+                </div>
+                <div class="choices" id="choices"></div>
+                <div class="feedback" id="feedback">
+                    <p class="result-label" id="result-label"></p>
+                    <p class="explanation" id="explanation"></p>
+                    <div class="actions">
+                        <button type="button" class="next-btn" id="next-btn">次の問題へ</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="figure-modal" id="figure-modal" aria-hidden="true">
+            <div class="figure-modal-bar">
+                <span id="figure-modal-title">図面</span>
+                <button type="button" class="figure-modal-close" id="figure-modal-close">閉じる</button>
+            </div>
+            <div class="figure-modal-scroll">
+                <img id="figure-modal-img" alt="">
+            </div>
+        </div>
+
+        <div id="summary-screen" class="card" style="display: none;">
+            <div class="summary">
+                <h2>おつかれさまでした</h2>
+                <div id="pass-fail-banner" class="pass-fail-banner"></div>
+                <p class="score" id="final-score"></p>
+                <p id="final-message"></p>
+                <button type="button" class="restart-btn" id="restart-btn">もう一度チャレンジ</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        /** 「クイズを始める」（?mode=all）1セットあたりの出題数。実験で前後させる場合はここだけ変える */
+        const QUICK_QUIZ_QUESTION_COUNT = 20;
+        const EXAM_TOTAL_QUESTION_COUNT = 50;
+        const EXAM_GENERAL_QUESTION_COUNT = 40;
+        const EXAM_DIAGRAM_QUESTION_COUNT = 10;
+        const EXAM_DIAGRAM_CATEGORY = "配線図・鑑別";
+
+        function syncMenuQuickQuizLabel() {
+            const el = document.getElementById("btn-menu-quick-quiz");
+            if (el) {
+                el.textContent = "クイズを始める";
+            }
+        }
+
+        const CATEGORY_ORDER = [
+            "電気理論・配電理論",
+            "電気機器・発変電設備",
+            "高圧受電設備・施工",
+            "検査・法令・保安",
+            "配線図・鑑別"
+        ];
+
+        const builtInQuestions = [
+            {
+                category: "接地・漏電保護",
+                question: "接地工事において、特別第3種接地工事を行う接地抵抗値は、おおむね何オーム以下とすることとされているか。",
+                choices: [
+                    "10Ω以下",
+                    "50Ω以下",
+                    "100Ω以下",
+                    "500Ω以下"
+                ],
+                correctIndex: 2,
+                explanation: "電気設備技術基準の解釈において、特別第3種接地工事の接地抵抗値は、おおむね100Ω以下とすることが求められます（接地線の種類や設備にもよりますが、試験ではこの数値が頻出です）。"
+            },
+            {
+                category: "接地・漏電保護",
+                question: "定格感度電流が15mA以下の漏電遮断器を用いるのは、主にどのような回路か。",
+                choices: [
+                    "三相200Vの動力回路",
+                    "避雷器の接地側",
+                    "主に人体が容易に触れることが想定される電気機器の対地電圧150V以下の回路",
+                    "昇圧変圧器の二次側"
+                ],
+                correctIndex: 2,
+                explanation: "定格感度電流15mA以下の漏電遮断器は、感電保護のため、主に人体が容易に触れるおそれのある機器を接続する対地電圧150V以下の回路などに用います（技術基準・工事の実務の両方で重要です）。"
+            },
+            {
+                category: "屋内配線・施工",
+                question: "低圧屋内電線路の支持点間の距離が2mを超える場合、支持点間における電線のたわみは、おおむね何mm以下とすることが望ましいとされているか。",
+                choices: [
+                    "20mm以下",
+                    "40mm以下",
+                    "60mm以下",
+                    "80mm以下"
+                ],
+                correctIndex: 1,
+                explanation: "電気設備技術基準の解釈では、低圧屋内電線路で支持点間の距離が2mを超える場合、支持点間の電線のたわみはおおむね40mm以下とすることが望ましいとされています。"
+            }
+        ];
+
+        let allQuestions = [];
+        let questions = [];
+        let sessionCategoryLabel = "";
+        let weakQuestionIds = new Set();
+        let answeredQids = new Set();
+        let categoryStats = {};
+        let currentIndex = 0;
+        let score = 0;
+        let skipAnswerRecording = false;
+        let isMockMode = false;
+        let isQuickQuizMode = false;
+        let quickQuizIssuedIds = new Set();
+        let quickQuizIssuedGroups = new Set();
+        /** boot 時のみ true。quiz.html#how-to-use 直リンクのとき一度だけ使い方へスクロールし、以降のモード復帰ではトップに戻す */
+        let applyHowToUseHashScrollOnce = false;
+
+        const questionTextEl = document.getElementById("question-text");
+        const choicesEl = document.getElementById("choices");
+        const feedbackEl = document.getElementById("feedback");
+        const questionFigureEl = document.getElementById("question-figure");
+        const questionFigureBtn = document.getElementById("question-figure-btn");
+        const questionFigureImg = document.getElementById("question-figure-img");
+        const questionFigureCaption = document.getElementById("question-figure-caption");
+        const figureModal = document.getElementById("figure-modal");
+        const figureModalImg = document.getElementById("figure-modal-img");
+        const figureModalTitle = document.getElementById("figure-modal-title");
+        const figureModalClose = document.getElementById("figure-modal-close");
+        const resultLabelEl = document.getElementById("result-label");
+        const explanationEl = document.getElementById("explanation");
+        const nextBtn = document.getElementById("next-btn");
+        const progressLabel = document.getElementById("progress-label");
+        const progressFill = document.getElementById("progress-fill");
+        const questionNumEl = document.getElementById("question-num");
+        const quizScreen = document.getElementById("quiz-screen");
+        const summaryScreen = document.getElementById("summary-screen");
+        const finalScoreEl = document.getElementById("final-score");
+        const finalMessageEl = document.getElementById("final-message");
+        const passFailBannerEl = document.getElementById("pass-fail-banner");
+        const restartBtn = document.getElementById("restart-btn");
+        const subtitleEl = document.getElementById("subtitle");
+        const loadWarningEl = document.getElementById("load-warning");
+        const menuScreen = document.getElementById("menu-screen");
+        const categoryButtonsEl = document.getElementById("category-buttons");
+        const topBarEl = document.getElementById("top-bar");
+        const backBtn = document.getElementById("back-btn");
+        const weakBtn = document.createElement("button");
+        weakBtn.type = "button";
+        weakBtn.id = "weak-btn";
+        weakBtn.className = "weak-btn";
+        weakBtn.textContent = "間違った問題だけ再出題";
+        const resetAnsweredBtn = document.createElement("button");
+        resetAnsweredBtn.type = "button";
+        resetAnsweredBtn.id = "reset-answered-btn";
+        resetAnsweredBtn.className = "reset-answered-btn";
+        resetAnsweredBtn.textContent = "回答済み（同じ問題）を出題に戻す";
+        const statsListEl = document.getElementById("stats-list");
+        const pageTitleEl = document.getElementById("page-title");
+        const PAGE_TITLE_DEFAULT = "第一種電気工事士 過去問クイズ";
+        const PAGE_TITLE_CATEGORY = "学習モード（分野別）";
+
+        function setPageTitleDefault() {
+            if (pageTitleEl) pageTitleEl.textContent = PAGE_TITLE_DEFAULT;
+        }
+        function setPageTitleCategory() {
+            if (pageTitleEl) pageTitleEl.textContent = PAGE_TITLE_CATEGORY;
+        }
+
+        function loadStoredStats() {
+            try {
+                const rawWeak = localStorage.getItem("denkoFirstWeakQuestionIds");
+                const arrWeak = rawWeak ? JSON.parse(rawWeak) : [];
+                weakQuestionIds = new Set(Array.isArray(arrWeak) ? arrWeak : []);
+            } catch (e) {
+                weakQuestionIds = new Set();
+            }
+            try {
+                const rawStats = localStorage.getItem("denkoFirstCategoryStats");
+                const parsed = rawStats ? JSON.parse(rawStats) : {};
+                categoryStats = parsed && typeof parsed === "object" ? parsed : {};
+            } catch (e) {
+                categoryStats = {};
+            }
+            try {
+                const rawAns = localStorage.getItem("denkoFirstAnsweredQids");
+                const arrAns = rawAns ? JSON.parse(rawAns) : [];
+                answeredQids = new Set(Array.isArray(arrAns) ? arrAns : []);
+            } catch (e) {
+                answeredQids = new Set();
+            }
+            try {
+                const rawQz = localStorage.getItem("denkoFirstQuickQuizIssuedQids");
+                const arrQz = rawQz ? JSON.parse(rawQz) : [];
+                quickQuizIssuedIds = new Set(Array.isArray(arrQz) ? arrQz : []);
+            } catch (e) {
+                quickQuizIssuedIds = new Set();
+            }
+            try {
+                const rawGroups = localStorage.getItem("denkoFirstQuickQuizIssuedGroups");
+                const arrGroups = rawGroups ? JSON.parse(rawGroups) : [];
+                quickQuizIssuedGroups = new Set(Array.isArray(arrGroups) ? arrGroups : []);
+            } catch (e) {
+                quickQuizIssuedGroups = new Set();
+            }
+        }
+
+        function saveStoredStats() {
+            localStorage.setItem("denkoFirstWeakQuestionIds", JSON.stringify(Array.from(weakQuestionIds)));
+            localStorage.setItem("denkoFirstCategoryStats", JSON.stringify(categoryStats));
+            localStorage.setItem("denkoFirstAnsweredQids", JSON.stringify(Array.from(answeredQids)));
+            localStorage.setItem("denkoFirstQuickQuizIssuedQids", JSON.stringify(Array.from(quickQuizIssuedIds)));
+            localStorage.setItem("denkoFirstQuickQuizIssuedGroups", JSON.stringify(Array.from(quickQuizIssuedGroups)));
+        }
+
+        function getFilteredPool() {
+            return allQuestions.slice();
+        }
+
+        function shuffleArray(arr) {
+            const a = arr.slice();
+            for (let i = a.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                const t = a[i];
+                a[i] = a[j];
+                a[j] = t;
+            }
+            return a;
+        }
+
+        function getQuestionStem(text) {
+            return String(text || "")
+                .replace(/^【\d{4}年(上期|下期)・類題】/, "")
+                .trim();
+        }
+
+        function getQuestionGroup(q) {
+            return q && q.duplicateGroup ? String(q.duplicateGroup) : "";
+        }
+
+        function getQuestionUid(q) {
+            if (!q) return "";
+            if (q._qid) return String(q._qid);
+            if (q.id !== undefined) return "id:" + String(q.id);
+            return getQuestionStem(q.question);
+        }
+
+        function isExamDiagramQuestion(q) {
+            return (q && (q.category || "未分類")) === EXAM_DIAGRAM_CATEGORY;
+        }
+
+        function getQuestionSpacingKey(q) {
+            return getQuestionGroup(q) || getQuestionStem(q && q.question);
+        }
+
+        function getFigureCaption(q) {
+            return q && (q.figureCaption || q.source || q.sourceLabel || "配線図");
+        }
+
+        function formatStructuredText(template, params) {
+            if (!template || !params || typeof params !== "object") return template || "";
+            return String(template).replace(/\{([a-zA-Z0-9_]+)\}/g, function (match, key) {
+                return Object.prototype.hasOwnProperty.call(params, key) ? String(params[key]) : match;
+            });
+        }
+
+        function getQuestionText(q) {
+            if (!q) return "";
+            return q.questionTemplate
+                ? formatStructuredText(q.questionTemplate, q.params)
+                : (q.question || "");
+        }
+
+        function getChoiceText(q, choice) {
+            if (!choice || typeof choice !== "object") return String(choice);
+            if (choice.template) return formatStructuredText(choice.template, q && q.params);
+            if (choice.text !== undefined) return String(choice.text);
+            return "";
+        }
+
+        function getChoices(q) {
+            if (!q || !Array.isArray(q.choices)) return [];
+            return q.choices.map(function (choice) { return getChoiceText(q, choice); });
+        }
+
+        function openFigureModal(src, title) {
+            if (!src) return;
+            figureModalImg.src = src;
+            figureModalImg.alt = title || "配線図";
+            figureModalTitle.textContent = title || "配線図";
+            figureModal.classList.add("visible");
+            figureModal.setAttribute("aria-hidden", "false");
+        }
+
+        function closeFigureModal() {
+            figureModal.classList.remove("visible");
+            figureModal.setAttribute("aria-hidden", "true");
+            figureModalImg.removeAttribute("src");
+        }
+
+        const DIAGRAM_ASSET_VERSION = "20260527-0015";
+        function getVersionedImageSrc(src) {
+            if (!src || /^(data:|blob:|https?:)/.test(src)) return src;
+            const glue = src.indexOf("?") >= 0 ? "&" : "?";
+            return src + glue + "v=" + DIAGRAM_ASSET_VERSION;
+        }
+
+        function renderFigure(q, el, img, caption, btn) {
+            if (!el || !img || !caption || !btn) return;
+            if (!q || !q.image) {
+                el.classList.remove("visible");
+                img.removeAttribute("src");
+                btn.onclick = null;
+                return;
+            }
+            const title = getFigureCaption(q);
+            const imageSrc = getVersionedImageSrc(q.image);
+            img.src = imageSrc;
+            img.alt = title;
+            caption.textContent = title;
+            btn.onclick = function () { openFigureModal(imageSrc, title); };
+            el.classList.add("visible");
+        }
+
+        function avoidAdjacentDuplicateStems(list) {
+            const groups = new Map();
+            for (const item of list) {
+                const stem = getQuestionSpacingKey(item);
+                if (!groups.has(stem)) groups.set(stem, []);
+                groups.get(stem).push(item);
+            }
+
+            const queue = Array.from(groups.entries()).map(function (entry) {
+                return { stem: entry[0], items: entry[1] };
+            });
+            queue.sort(function (a, b) { return b.items.length - a.items.length; });
+
+            const out = [];
+            let prevStem = "";
+
+            while (queue.length > 0) {
+                let pickIndex = 0;
+                if (queue.length > 1 && queue[0].stem === prevStem) {
+                    pickIndex = 1;
+                }
+                const picked = queue[pickIndex];
+                const nextItem = picked.items.shift();
+                out.push(nextItem);
+                prevStem = picked.stem;
+
+                if (picked.items.length === 0) {
+                    queue.splice(pickIndex, 1);
+                }
+                queue.sort(function (a, b) { return b.items.length - a.items.length; });
+            }
+
+            return out;
+        }
+
+        /**
+         * メニューから分野を選び直すたびに新しい出題順にする。
+         * 先にシャッフル → 同一設問の連続を抑える → 最後にもう一度シャッフルで順序のばらつきを強める。
+         */
+        function shuffleQuizDeck(list) {
+            let deck = shuffleArray(list.slice());
+            deck = avoidAdjacentDuplicateStems(deck);
+            deck = shuffleArray(deck);
+            return deck;
+        }
+
+        function pickBalancedQuickQuizDeck(pool, count) {
+            const byCategory = new Map();
+            const categories = [];
+            const usedGroups = new Set();
+            const categoryRank = new Map(CATEGORY_ORDER.map(function (cat, index) {
+                return [cat, index];
+            }));
+
+            pool.forEach(function (q) {
+                const cat = q.category || "未分類";
+                if (!byCategory.has(cat)) {
+                    byCategory.set(cat, []);
+                    categories.push(cat);
+                }
+                byCategory.get(cat).push(q);
+            });
+
+            byCategory.forEach(function (items, cat) {
+                byCategory.set(cat, shuffleQuizDeck(items));
+            });
+
+            const orderedCategories = shuffleArray(categories).sort(function (a, b) {
+                const ai = categoryRank.has(a) ? categoryRank.get(a) : 99;
+                const bi = categoryRank.has(b) ? categoryRank.get(b) : 99;
+                if (ai !== bi) return ai - bi;
+                return a.localeCompare(b, "ja");
+            });
+
+            const deck = [];
+            while (deck.length < count) {
+                let pickedInRound = false;
+                const roundCategories = shuffleArray(orderedCategories);
+                for (let i = 0; i < roundCategories.length && deck.length < count; i++) {
+                    const items = byCategory.get(roundCategories[i]);
+                    if (items && items.length > 0) {
+                        let pickIndex = -1;
+                        for (let j = 0; j < items.length; j++) {
+                            const group = getQuestionGroup(items[j]);
+                            if (!group || !usedGroups.has(group)) {
+                                pickIndex = j;
+                                break;
+                            }
+                        }
+                        if (pickIndex >= 0) {
+                            const picked = items.splice(pickIndex, 1)[0];
+                            deck.push(picked);
+                            const group = getQuestionGroup(picked);
+                            if (group) usedGroups.add(group);
+                            pickedInRound = true;
+                        }
+                    }
+                }
+                if (!pickedInRound) break;
+            }
+
+            return shuffleQuizDeck(deck);
+        }
+
+        function filterUnansweredByQid(list) {
+            return list.filter(function (q) {
+                return !answeredQids.has(q._qid);
+            });
+        }
+
+        function clearAnsweredForRawList(raw) {
+            for (let i = 0; i < raw.length; i++) {
+                answeredQids.delete(raw[i]._qid);
+            }
+        }
+
+        function buildDeckFromRaw(raw, skipAnsweredFilter) {
+            const list = skipAnsweredFilter ? raw.slice() : filterUnansweredByQid(raw.slice());
+            return shuffleQuizDeck(list);
+        }
+
+        function tryBuildDeckOrReset(raw, emptyMessage, skipAnsweredFilter) {
+            if (skipAnsweredFilter) {
+                const deck = buildDeckFromRaw(raw, true);
+                if (deck.length === 0) {
+                    window.alert(emptyMessage || "出題できる問題がありません。");
+                    return null;
+                }
+                return deck;
+            }
+            let list = filterUnansweredByQid(raw.slice());
+            if (list.length === 0 && raw.length > 0) {
+                clearAnsweredForRawList(raw);
+                saveStoredStats();
+                list = raw.slice();
+            }
+            if (list.length === 0) {
+                window.alert(emptyMessage || "出題できる問題がありません。");
+                return null;
+            }
+            return shuffleQuizDeck(list);
+        }
+
+        function pickFromCategoriesForMock(all, spec) {
+            const out = [];
+            for (let i = 0; i < spec.length; i++) {
+                const pool = shuffleArray(all.filter(function (q) {
+                    return (q.category || "未分類") === spec[i].cat;
+                }));
+                const take = Math.min(spec[i].n, pool.length);
+                for (let j = 0; j < take; j++) {
+                    out.push(pool[j]);
+                }
+            }
+            return avoidAdjacentDuplicateStems(shuffleArray(out));
+        }
+
+        function addQuestionToExamDeck(q, deck, usedIds, usedGroups) {
+            const uid = getQuestionUid(q);
+            if (!uid || usedIds.has(uid)) return false;
+            const group = getQuestionGroup(q);
+            if (group && usedGroups.has(group)) return false;
+            deck.push(q);
+            usedIds.add(uid);
+            if (group) usedGroups.add(group);
+            return true;
+        }
+
+        function difficultyTargets(total, easyRatio, medRatio, hardRatio) {
+            const totalRatio = easyRatio + medRatio + hardRatio;
+            let easy = Math.round(total * easyRatio / totalRatio);
+            let medium = Math.round(total * medRatio / totalRatio);
+            let hard = Math.round(total * hardRatio / totalRatio);
+            medium += total - (easy + medium + hard);
+            return { easy: easy, medium: medium, hard: hard };
+        }
+
+        function selectByDifficulty(candidates, total, easyRatio, medRatio, hardRatio, deck, usedIds, usedGroups) {
+            const byDiff = {
+                easy: shuffleArray(candidates.filter(function(q){ return (q.difficulty || "medium") === "easy"; })),
+                medium: shuffleArray(candidates.filter(function(q){ return (q.difficulty || "medium") === "medium"; })),
+                hard: shuffleArray(candidates.filter(function(q){ return (q.difficulty || "medium") === "hard"; }))
+            };
+            const targets = difficultyTargets(total, easyRatio, medRatio, hardRatio);
+
+            function take(diff, count) {
+                let added = 0;
+                const pool = byDiff[diff] || [];
+                for (let i = 0; i < pool.length && added < count && deck.length < total; i++) {
+                    if (addQuestionToExamDeck(pool[i], deck, usedIds, usedGroups)) added++;
+                }
+                return added;
+            }
+
+            take("easy", targets.easy);
+            take("medium", targets.medium);
+            take("hard", targets.hard);
+
+            const remaining = total - deck.length;
+            if (remaining > 0) {
+                const fill = shuffleArray(candidates.slice());
+                for (let i = 0; i < fill.length && deck.length < total; i++) {
+                    addQuestionToExamDeck(fill[i], deck, usedIds, usedGroups);
+                }
+            }
+        }
+
+        function buildExamLikeDeck(primary, supplement, total, easyRatio, medRatio, hardRatio) {
+            const deck = [];
+            const usedIds = new Set();
+            const usedGroups = new Set();
+            const diagramTarget = Math.min(EXAM_DIAGRAM_QUESTION_COUNT, total);
+            const generalTarget = Math.min(EXAM_GENERAL_QUESTION_COUNT, total - diagramTarget);
+            const primaryDiagram = primary.filter(isExamDiagramQuestion);
+            const primaryGeneral = primary.filter(function(q){ return !isExamDiagramQuestion(q); });
+            const supplementDiagram = supplement.filter(isExamDiagramQuestion);
+            const supplementGeneral = supplement.filter(function(q){ return !isExamDiagramQuestion(q); });
+
+            selectByDifficulty(primaryDiagram, diagramTarget, easyRatio, medRatio, hardRatio, deck, usedIds, usedGroups);
+            if (deck.length < diagramTarget) {
+                selectByDifficulty(supplementDiagram, diagramTarget, easyRatio, medRatio, hardRatio, deck, usedIds, usedGroups);
+            }
+
+            const generalStart = deck.length;
+            selectByDifficulty(primaryGeneral, generalStart + generalTarget, easyRatio, medRatio, hardRatio, deck, usedIds, usedGroups);
+            if (deck.length < total) {
+                selectByDifficulty(supplementGeneral, total, easyRatio, medRatio, hardRatio, deck, usedIds, usedGroups);
+            }
+            if (deck.length < total) {
+                selectByDifficulty(primary.concat(supplement), total, easyRatio, medRatio, hardRatio, deck, usedIds, usedGroups);
+            }
+
+            return avoidAdjacentDuplicateStems(shuffleArray(deck.slice(0, total)));
+        }
+
+        function buildBalancedMock(all, total) {
+            const cats = CATEGORY_ORDER.filter(function (c) {
+                return all.some(function (q) { return (q.category || "未分類") === c; });
+            });
+            if (cats.length === 0) {
+                return [];
+            }
+            const spec = [];
+            const per = Math.floor(total / cats.length);
+            let extra = total - per * cats.length;
+            for (let i = 0; i < cats.length; i++) {
+                const take = per + (extra > 0 ? 1 : 0);
+                if (extra > 0) {
+                    extra--;
+                }
+                spec.push({ cat: cats[i], n: take });
+            }
+            return pickFromCategoriesForMock(all, spec);
+        }
+
+        /**
+         * 難易度ウェイト指定で50問を選ぶ。
+         * easyRatio / medRatio / hardRatio の比率で easy/medium/hard 問題を配分し、
+         * 本番形式に合わせて一般40問 + 配線図・鑑別10問を優先する。
+         * 不足分は同じ問題バンク内の他問題から補う。
+         */
+        function buildDifficultyWeightedMock(all, total, easyRatio, medRatio, hardRatio) {
+            return buildExamLikeDeck(all, all, total, easyRatio, medRatio, hardRatio);
+        }
+
+        const MOCK_SETS = {
+            // ① easy:medium:hard = 30:50:20（標準的な仕上げ演習）
+            "mix-50": {
+                title: "擬似① 標準ミックス（50問）",
+                build: function (all) {
+                    return buildDifficultyWeightedMock(all, 50, 30, 50, 20);
+                }
+            },
+            // ② easy:medium:hard = 15:55:30（標準〜やや難）
+            "level2-50": {
+                title: "擬似② 標準〜やや難ミックス（50問）",
+                build: function (all) {
+                    return buildDifficultyWeightedMock(all, 50, 15, 55, 30);
+                }
+            },
+            // ③ easy:medium:hard = 5:50:45（応用レベル）
+            "level3-50": {
+                title: "擬似③ 応用レベルミックス（50問）",
+                build: function (all) {
+                    return buildDifficultyWeightedMock(all, 50, 5, 50, 45);
+                }
+            },
+            // ④ easy:medium:hard = 0:35:65（難問チャレンジ）
+            "level4-50": {
+                title: "擬似④ 難問チャレンジ（50問）",
+                build: function (all) {
+                    return buildDifficultyWeightedMock(all, 50, 0, 35, 65);
+                }
+            },
+            // ⑤ easy:medium:hard = 0:15:85（最難関チャレンジ）
+            "level5-50": {
+                title: "擬似⑤ 最難関チャレンジ（50問）",
+                build: function (all) {
+                    return buildDifficultyWeightedMock(all, 50, 0, 15, 85);
+                }
+            }
+        };
+        MOCK_SETS["mix-45"] = MOCK_SETS["mix-50"];
+        MOCK_SETS["level2-45"] = MOCK_SETS["level2-50"];
+        MOCK_SETS["level3-45"] = MOCK_SETS["level3-50"];
+        MOCK_SETS["level4-45"] = MOCK_SETS["level4-50"];
+        MOCK_SETS["level5-45"] = MOCK_SETS["level5-50"];
+
+        /**
+         * 「クイズを始める」用：全問からランダムに N 問（QUICK_QUIZ_QUESTION_COUNT）。
+         * 過去のクイズで出した問題は除外し、足りなくなったら履歴をリセットして再抽選。
+         * 分野別累計正答率（denkoFirstCategoryStats）には各解答ごとに蓄積。学習モードの「回答済み」は立てない。
+         */
+        function startQuickQuiz() {
+            if (!allQuestions.length) {
+                window.alert("問題が読み込まれていません。");
+                initModeScreen();
+                return;
+            }
+            const n = Math.min(QUICK_QUIZ_QUESTION_COUNT, allQuestions.length);
+            let pool = allQuestions.filter(function (q) {
+                const group = getQuestionGroup(q);
+                return !quickQuizIssuedIds.has(q._qid) && (!group || !quickQuizIssuedGroups.has(group));
+            });
+            if (pool.length < n) {
+                pool = allQuestions.filter(function (q) {
+                    return !quickQuizIssuedIds.has(q._qid);
+                });
+            }
+            if (pool.length < n) {
+                quickQuizIssuedIds.clear();
+                quickQuizIssuedGroups.clear();
+                saveStoredStats();
+                pool = allQuestions.slice();
+            }
+            const deck = pickBalancedQuickQuizDeck(pool.slice(), Math.min(n, pool.length));
+            if (deck.length === 0) {
+                window.alert("出題できる問題がありません。");
+                initModeScreen();
+                return;
+            }
+            for (let qi = 0; qi < deck.length; qi++) {
+                quickQuizIssuedIds.add(deck[qi]._qid);
+                const group = getQuestionGroup(deck[qi]);
+                if (group) quickQuizIssuedGroups.add(group);
+            }
+            saveStoredStats();
+            questions = deck;
+            sessionCategoryLabel = "ランダムクイズ（" + deck.length + "問）";
+            skipAnswerRecording = true;
+            isMockMode = false;
+            isQuickQuizMode = true;
+            currentIndex = 0;
+            score = 0;
+            menuScreen.style.display = "none";
+            summaryScreen.style.display = "none";
+            showNewScreen(null);
+            topBarEl.hidden = false;
+            quizScreen.style.display = "block";
+            setPageTitleDefault();
+            renderQuestion();
+        }
+
+        function startMockSet(setId) {
+            const cfg = MOCK_SETS[setId];
+            if (!cfg) {
+                window.alert("不明な擬似問題集です。");
+                goToMenu();
+                return;
+            }
+            let pool = filterUnansweredByQid(allQuestions.slice());
+            let built = cfg.build(pool);
+            if (built.length === 0) {
+                const full = cfg.build(allQuestions.slice());
+                if (full.length > 0) {
+                    clearAnsweredForRawList(full);
+                    saveStoredStats();
+                    pool = filterUnansweredByQid(allQuestions.slice());
+                    built = cfg.build(pool);
+                }
+            }
+            if (built.length === 0) {
+                window.alert("この擬似問題集を構成できる問題がありません。");
+                goToMenu();
+                return;
+            }
+            questions = shuffleQuizDeck(built);
+            sessionCategoryLabel = cfg.title;
+            skipAnswerRecording = false;
+            isMockMode = true;
+            isQuickQuizMode = false;
+            currentIndex = 0;
+            score = 0;
+            menuScreen.style.display = "none";
+            summaryScreen.style.display = "none";
+            topBarEl.hidden = false;
+            quizScreen.style.display = "block";
+            setPageTitleDefault();
+            renderQuestion();
+        }
+
+        function renderCategoryStats() {
+            const categories = new Set(CATEGORY_ORDER);
+            for (const q of allQuestions) categories.add(q.category || "未分類");
+            statsListEl.innerHTML = "";
+            Array.from(categories).forEach(function (cat) {
+                const st = categoryStats[cat] || { correct: 0, attempted: 0 };
+                const row = document.createElement("div");
+                row.className = "stats-row";
+                const name = document.createElement("span");
+                name.textContent = cat;
+                const value = document.createElement("span");
+                if (!st.attempted) {
+                    value.textContent = "-";
+                } else {
+                    const rate = Math.round((st.correct / st.attempted) * 100);
+                    value.textContent = rate + "% (" + st.correct + "/" + st.attempted + ")";
+                }
+                row.appendChild(name);
+                row.appendChild(value);
+                statsListEl.appendChild(row);
+            });
+        }
+
+        function renderQuestion() {
+            const q = questions[currentIndex];
+            feedbackEl.classList.remove("visible");
+            resultLabelEl.textContent = "";
+            explanationEl.textContent = "";
+            questionNumEl.textContent = sessionCategoryLabel + " · 問題 " + (currentIndex + 1);
+            questionTextEl.textContent = getQuestionText(q);
+            renderFigure(q, questionFigureEl, questionFigureImg, questionFigureCaption, questionFigureBtn);
+            choicesEl.innerHTML = "";
+
+            const total = questions.length;
+            progressLabel.textContent = (currentIndex + 1) + " / " + total;
+            progressFill.style.width = ((currentIndex + 1) / total * 100) + "%";
+
+            getChoices(q).forEach((label, index) => {
+                const btn = document.createElement("button");
+                btn.type = "button";
+                btn.className = "choice-btn";
+                btn.textContent = label;
+                btn.addEventListener("click", () => onChoose(index));
+                choicesEl.appendChild(btn);
+            });
+        }
+
+        function onChoose(selectedIndex) {
+            const q = questions[currentIndex];
+            const buttons = choicesEl.querySelectorAll(".choice-btn");
+            const isCorrect = selectedIndex === q.correctIndex;
+
+            const cat = q.category || "未分類";
+            if (!categoryStats[cat]) categoryStats[cat] = { correct: 0, attempted: 0 };
+            categoryStats[cat].attempted += 1;
+            if (isCorrect) {
+                categoryStats[cat].correct += 1;
+                weakQuestionIds.delete(q._qid);
+            } else {
+                weakQuestionIds.add(q._qid);
+            }
+            if (!skipAnswerRecording) {
+                answeredQids.add(q._qid);
+            }
+            saveStoredStats();
+
+            if (isCorrect) score++;
+
+            buttons.forEach((btn, i) => {
+                btn.disabled = true;
+                if (i === q.correctIndex) {
+                    btn.classList.add("correct-pick");
+                } else if (i === selectedIndex) {
+                    btn.classList.add("wrong-pick");
+                }
+            });
+
+            if (isCorrect) {
+                resultLabelEl.textContent = "正解！";
+                resultLabelEl.className = "result-label ok";
+            } else {
+                resultLabelEl.textContent = "不正解…";
+                resultLabelEl.className = "result-label ng";
+            }
+            explanationEl.textContent = q.explanation;
+            feedbackEl.classList.add("visible");
+
+            const isLast = currentIndex === questions.length - 1;
+            nextBtn.textContent = isLast ? "結果を見る" : "次の問題へ";
+        }
+
+        function goNext() {
+            if (currentIndex < questions.length - 1) {
+                currentIndex++;
+                renderQuestion();
+            } else {
+                showSummary();
+            }
+        }
+
+        function showSummary() {
+            quizScreen.style.display = "none";
+            summaryScreen.style.display = "block";
+            topBarEl.hidden = false;
+            const total = questions.length;
+            finalScoreEl.textContent = score + " / " + total;
+
+            if (isQuickQuizMode) {
+                for (let qi = 0; qi < questions.length; qi++) {
+                    quickQuizIssuedIds.add(questions[qi]._qid);
+                    const group = getQuestionGroup(questions[qi]);
+                    if (group) quickQuizIssuedGroups.add(group);
+                }
+                saveStoredStats();
+            }
+
+            // 擬似問題セットの合否判定：60%以上で合格
+            passFailBannerEl.className = "pass-fail-banner";
+            if (isMockMode) {
+                const passingScore = Math.ceil(total * 0.6);
+                const pct = Math.round(score / total * 100);
+                if (score >= passingScore) {
+                    passFailBannerEl.classList.add("pass");
+                    passFailBannerEl.innerHTML = "合格 ✓ <span class='pass-threshold'>正答率 " + pct + "% (" + score + "/" + total + ")</span>";
+                } else {
+                    passFailBannerEl.classList.add("fail");
+                    passFailBannerEl.innerHTML = "不合格 ✗ <span class='pass-threshold'>正答率 " + pct + "% (" + score + "/" + total + "）合格ライン " + passingScore + "問以上</span>";
+                }
+            } else {
+                passFailBannerEl.innerHTML = "";
+            }
+
+            restartBtn.textContent = isQuickQuizMode
+                ? "次のクイズ（新しい" + QUICK_QUIZ_QUESTION_COUNT + "問）"
+                : "もう一度チャレンジ";
+
+            if (isQuickQuizMode) {
+                finalMessageEl.textContent =
+                    "今回の結果は、学習モード画面の「分野ごとの正答率」に累計で加算されています。再度「クイズを始める」を選ぶと、今回までに出た問題以外からランダムに " +
+                    QUICK_QUIZ_QUESTION_COUNT +
+                    " 問（収録数が少ないときはその範囲内）が選ばれます。全問を使い切ると自動で履歴がリセットされます。";
+            } else if (score === total) {
+                finalMessageEl.textContent =
+                    "全問正解です。この調子で本番もがんばりましょう。分野に戻って同じ条件を選ぶと、未出題がなければ自動で記録がリセットされ、全問が新しい順で出ます。";
+            } else if (score >= 1) {
+                finalMessageEl.textContent =
+                    "解説を復習して、弱点を潰していきましょう。分野に戻って同じ条件を選ぶと、未出題がなければ自動で再出題の準備が整います。";
+            } else {
+                finalMessageEl.textContent =
+                    "用語と数値を教材で押さえ直すと伸びます。分野に戻って同じ条件を選ぶと、未出題がなければ自動で再出題の準備が整います。";
+            }
+        }
+
+        function restart() {
+            currentIndex = 0;
+            score = 0;
+            summaryScreen.style.display = "none";
+            quizScreen.style.display = "block";
+            topBarEl.hidden = false;
+            renderQuestion();
+        }
+
+        function goToMenu() {
+            currentIndex = 0;
+            score = 0;
+            skipAnswerRecording = false;
+            isQuickQuizMode = false;
+            feedbackEl.classList.remove("visible");
+            summaryScreen.style.display = "none";
+            quizScreen.style.display = "none";
+            ["s-mode","s-year-sel","s-exam","s-exam-results"].forEach(function(s){ const el=document.getElementById(s); if(el)el.hidden=true; });
+            menuScreen.style.display = "block";
+            topBarEl.hidden = true;
+            setPageTitleCategory();
+            if (window.history && window.history.replaceState && location.search) {
+                history.replaceState(null, "", location.pathname);
+            }
+            renderCategoryStats();
+            buildCategoryMenu();
+            syncMenuQuickQuizLabel();
+        }
+
+        function startCategory(catKey, labelForSession, onlyWeak) {
+            const pool = getFilteredPool();
+            let source = onlyWeak
+                ? pool.filter(function (q) { return weakQuestionIds.has(q._qid); })
+                : pool;
+            if (catKey === "__all__") {
+                questions = source.slice();
+            } else {
+                questions = source.filter(function (q) {
+                    return q.category === catKey;
+                });
+            }
+            if (onlyWeak && questions.length === 0) {
+                window.alert("間違った問題がまだありません。まず通常学習で問題を解いてください。");
+                return;
+            }
+            const emptyMsg = onlyWeak ? "間違った問題の未出題がありません。" : "この条件の未出題がありません。";
+            const deck = tryBuildDeckOrReset(questions, emptyMsg, onlyWeak);
+            if (!deck) {
+                return;
+            }
+            questions = deck;
+            sessionCategoryLabel = onlyWeak ? (labelForSession + "（間違い）") : labelForSession;
+            skipAnswerRecording = onlyWeak;
+            isMockMode = false;
+            isQuickQuizMode = false;
+            currentIndex = 0;
+            score = 0;
+            menuScreen.style.display = "none";
+            summaryScreen.style.display = "none";
+            topBarEl.hidden = false;
+            quizScreen.style.display = "block";
+            setPageTitleCategory();
+            renderQuestion();
+        }
+
+        function buildCategoryMenu() {
+            categoryButtonsEl.innerHTML = "";
+            const pool = getFilteredPool();
+            const counts = {};
+            for (let i = 0; i < pool.length; i++) {
+                const c = pool[i].category || "未分類";
+                counts[c] = (counts[c] || 0) + 1;
+            }
+
+            function addButton(catKey, title, count) {
+                const btn = document.createElement("button");
+                btn.type = "button";
+                btn.className = "category-btn";
+                const main = document.createElement("span");
+                main.textContent = title;
+                const meta = document.createElement("span");
+                meta.className = "cat-meta";
+                meta.textContent = count + " 問";
+                btn.appendChild(main);
+                btn.appendChild(meta);
+                btn.addEventListener("click", function () {
+                    startCategory(catKey, title, false);
+                });
+                categoryButtonsEl.appendChild(btn);
+            }
+
+            addButton("__all__", "すべて", pool.length);
+
+            const AFTER_ACTIONS_CAT = "機器・試験・計測";
+            for (let j = 0; j < CATEGORY_ORDER.length; j++) {
+                const c = CATEGORY_ORDER[j];
+                const n = counts[c];
+                if (n) {
+                    addButton(c, c, n);
+                    delete counts[c];
+                }
+                if (c === AFTER_ACTIONS_CAT) {
+                    categoryButtonsEl.appendChild(weakBtn);
+                    categoryButtonsEl.appendChild(resetAnsweredBtn);
+                }
+            }
+
+            const rest = Object.keys(counts).sort();
+            for (let k = 0; k < rest.length; k++) {
+                const c = rest[k];
+                addButton(c, c, counts[c]);
+            }
+
+            const weakPoolCount = pool.filter(function (q) { return weakQuestionIds.has(q._qid); }).length;
+            weakBtn.textContent = "間違った問題だけ再出題（" + weakPoolCount + "問）";
+        }
+
+        nextBtn.addEventListener("click", goNext);
+        restartBtn.addEventListener("click", function () {
+            if (isQuickQuizMode) {
+                startQuickQuiz();
+            } else {
+                restart();
+            }
+        });
+        backBtn.addEventListener("click", function() {
+            if (summaryScreen.style.display !== "none") { initModeScreen(); }
+            else { goToMenu(); }
+        });
+        weakBtn.addEventListener("click", function () {
+            startCategory("__all__", "すべて", true);
+        });
+        resetAnsweredBtn.addEventListener("click", function () {
+            const ok = window.confirm(
+                "一度答えた問題の記録を消し、再び出題されるようにします。よろしいですか？"
+            );
+            if (!ok) {
+                return;
+            }
+            answeredQids.clear();
+            saveStoredStats();
+            buildCategoryMenu();
+            renderCategoryStats();
+        });
+
+        figureModalClose.addEventListener("click", closeFigureModal);
+        figureModal.addEventListener("click", function (event) {
+            if (event.target === figureModal) closeFigureModal();
+        });
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "Escape" && figureModal.classList.contains("visible")) {
+                closeFigureModal();
+            }
+        });
+
+        async function loadQuestionBank() {
+            const jsonExtra = [];
+            try {
+                const res = await fetch("questions.json", { cache: "no-store" });
+                if (!res.ok) throw new Error("HTTP " + res.status);
+                const data = await res.json();
+                if (!Array.isArray(data)) throw new Error("not an array");
+                for (const item of data) {
+                    if (
+                        item &&
+                        (typeof item.question === "string" || typeof item.questionTemplate === "string") &&
+                        Array.isArray(item.choices) &&
+                        item.choices.length === 4 &&
+                        typeof item.correctIndex === "number" &&
+                        item.correctIndex >= 0 &&
+                        item.correctIndex <= 3 &&
+                        typeof item.explanation === "string"
+                    ) {
+                        const cat =
+                            typeof item.category === "string" && item.category.trim()
+                                ? item.category.trim()
+                                : "未分類";
+                        jsonExtra.push({
+                            id: item.id,
+                            category: cat,
+                            difficulty: item.difficulty,
+                            year: item.year,
+                            session: item.session,
+                            duplicateGroup: item.duplicateGroup,
+                            learningPoint: item.learningPoint,
+                            qualityStatus: item.qualityStatus,
+                            variantRole: item.variantRole,
+                            source: item.source,
+                            sourceUrl: item.sourceUrl,
+                            sourcePage: item.sourcePage,
+                            sourceQuestion: item.sourceQuestion,
+                            isModified: item.isModified,
+                            questionTemplate: item.questionTemplate,
+                            params: item.params,
+                            sourceFacts: item.sourceFacts,
+                            expressionPolicy: item.expressionPolicy,
+                            image: item.image,
+                            figureCaption: item.figureCaption,
+                            question: item.question,
+                            choices: item.choices,
+                            correctIndex: item.correctIndex,
+                            explanation: item.explanation
+                        });
+                    }
+                }
+            } catch (err) {
+                loadWarningEl.hidden = false;
+                loadWarningEl.textContent =
+                    "questions.json を読み込めませんでした（ブラウザで file:// 直開きのときは制限で失敗することがあります）。内蔵の3問のみで起動しています。同じフォルダでローカルサーバ（例: python3 -m http.server）を立てて開いてください。";
+            }
+            const questionSource = jsonExtra.length > 0 ? jsonExtra : builtInQuestions;
+            allQuestions = questionSource.map(function (item, idx) {
+                const year = item.year !== undefined ? item.year : "サンプル";
+                const session = item.session !== undefined ? item.session : "";
+                const qidSource = item.id !== undefined
+                    ? "denkoFirst_" + String(item.id)
+                    : [item.category || "", String(year), String(session), item.question, idx].join("|");
+                return {
+                    id: item.id,
+                    category: item.category || "未分類",
+                    difficulty: item.difficulty,
+                    year: year,
+                    session: session,
+                    duplicateGroup: item.duplicateGroup,
+                    learningPoint: item.learningPoint,
+                    qualityStatus: item.qualityStatus,
+                    variantRole: item.variantRole,
+                    source: item.source,
+                    sourceUrl: item.sourceUrl,
+                    sourcePage: item.sourcePage,
+                    sourceQuestion: item.sourceQuestion,
+                    isModified: item.isModified,
+                    questionTemplate: item.questionTemplate,
+                    params: item.params,
+                    sourceFacts: item.sourceFacts,
+                    expressionPolicy: item.expressionPolicy,
+                    image: item.image,
+                    figureCaption: item.figureCaption,
+                    question: item.question,
+                    choices: item.choices,
+                    correctIndex: item.correctIndex,
+                    explanation: item.explanation,
+                    _qid: qidSource
+                };
+            });
+            const nIn = builtInQuestions.length;
+            const nJson = jsonExtra.length;
+            subtitleEl.textContent =
+                "スマホ向け · 全 " +
+                allQuestions.length +
+                (nJson > 0
+                    ? " 問 · 分野別学習"
+                    : " 問（内蔵 " + nIn + " 問。questions.json 読み込み失敗時の予備データ）· 分野別学習");
+            buildCategoryMenu();
+            renderCategoryStats();
+            syncMenuQuickQuizLabel();
+        }
+
+        document.getElementById("btn-menu-quick-quiz").addEventListener("click", function () {
+            startQuickQuiz();
+        });
+
+        // ── Exam mode variables ──────────────────────────────────
+        let examQuestions = [], examAnswers = [], examIdx = 0;
+        let examTimerSec = 0, examTimerInt = null, examYearKey = null, examSelectionLabel = "";
+
+        const NEW_SCREENS = ["s-mode","s-year-sel","s-exam","s-exam-results"];
+
+        function showNewScreen(id) {
+            NEW_SCREENS.forEach(function(s) {
+                const el = document.getElementById(s);
+                if (el) el.hidden = (s !== id);
+            });
+            menuScreen.style.display = "none";
+            quizScreen.style.display = "none";
+            summaryScreen.style.display = "none";
+            topBarEl.hidden = true;
+            if (id === "s-mode" || id === "s-year-sel" || id === "s-exam" || id === "s-exam-results" || id === null) {
+                setPageTitleDefault();
+            }
+        }
+
+        function initModeScreen() {
+            clearInterval(examTimerInt);
+            renderModeStats();
+            showNewScreen("s-mode");
+            window.scrollTo(0, 0);
+            if (applyHowToUseHashScrollOnce && location.hash === "#how-to-use") {
+                applyHowToUseHashScrollOnce = false;
+                requestAnimationFrame(function () {
+                    requestAnimationFrame(function () {
+                        var el = document.getElementById("how-to-use");
+                        if (el) {
+                            el.scrollIntoView({ behavior: "smooth", block: "start" });
+                        }
+                    });
+                });
+                if (history.replaceState) {
+                    history.replaceState(null, "", location.pathname + location.search);
+                }
+            }
+        }
+
+        function renderModeStats() {
+            const el = document.getElementById("mode-stats");
+            if (!el) return;
+            el.innerHTML = "";
+            const cats = new Set(CATEGORY_ORDER);
+            for (const q of allQuestions) cats.add(q.category || "未分類");
+            Array.from(cats).forEach(function(cat) {
+                const st = categoryStats[cat] || { correct: 0, attempted: 0 };
+                const row = document.createElement("div"); row.className = "stats-row";
+                const name = document.createElement("span"); name.textContent = cat;
+                const val = document.createElement("span");
+                if (!st.attempted) { val.textContent = "—"; val.style.color = "var(--text-muted)"; }
+                else { const r = Math.round(st.correct / st.attempted * 100); val.textContent = r + "% (" + st.correct + "/" + st.attempted + ")"; val.style.color = r >= 60 ? "var(--success)" : "var(--danger)"; }
+                row.appendChild(name); row.appendChild(val); el.appendChild(row);
+            });
+        }
+
+        // Mode screen buttons
+        document.getElementById("btn-mode-year").addEventListener("click", function() {
+            showNewScreen("s-year-sel"); buildYearSel();
+        });
+        document.getElementById("btn-mode-cat").addEventListener("click", function() {
+            goToMenu();
+        });
+        document.getElementById("btn-mode-weak").addEventListener("click", function() {
+            const pool = allQuestions.filter(function(q) { return weakQuestionIds.has(q._qid); });
+            if (pool.length === 0) { window.alert("間違った問題がまだありません。まず通常学習で問題を解いてください。"); return; }
+            questions = pool.slice(); sessionCategoryLabel = "間違った問題"; skipAnswerRecording = false; isMockMode = false; isQuickQuizMode = false; currentIndex = 0; score = 0;
+            showNewScreen(null);
+            menuScreen.style.display = "none"; summaryScreen.style.display = "none";
+            topBarEl.hidden = false; quizScreen.style.display = "block";
+            renderQuestion();
+        });
+        document.getElementById("btn-mode-reset").addEventListener("click", function() {
+            if (!window.confirm("回答済みの記録をリセットします。よろしいですか？")) return;
+            answeredQids.clear(); saveStoredStats();
+            window.alert("リセットしました。全問が再出題されます。");
+        });
+        function normalizeSessionLabel(session) {
+            const s = String(session || "").trim();
+            if (s === "上期") return "前期";
+            if (s === "下期") return "後期";
+            return s;
+        }
+
+        function makeExamPeriodKey(year, session) {
+            return String(year || "").trim() + "::" + String(session || "").trim();
+        }
+
+        function parseExamPeriodKey(key) {
+            const parts = String(key || "").split("::");
+            return { year: parts[0] || "", session: parts.slice(1).join("::") || "" };
+        }
+
+        function sessionSortRank(session) {
+            const s = normalizeSessionLabel(session);
+            if (s === "前期") return 1;
+            if (s === "後期") return 2;
+            return 3;
+        }
+
+        function formatExamPeriodLabel(year, session) {
+            const s = normalizeSessionLabel(session);
+            return String(year || "") + "年" + (s ? " " + s : "");
+        }
+
+        // Year/session selection
+        function buildYearSel() {
+            const el = document.getElementById("year-sel-list"); el.innerHTML = "";
+            const periods = {};
+            allQuestions.forEach(function(q) {
+                const y = String(q.year || "").trim();
+                if (/^\d{4}$/.test(y)) {
+                    const s = String(q.session || "").trim();
+                    const key = makeExamPeriodKey(y, s);
+                    if (!periods[key]) periods[key] = { year: y, session: s, count: 0 };
+                    periods[key].count++;
+                }
+            });
+            Object.keys(periods).sort(function(a,b){
+                const pa = periods[a], pb = periods[b];
+                const yd = Number(pb.year) - Number(pa.year);
+                if (yd !== 0) return yd;
+                return sessionSortRank(pa.session) - sessionSortRank(pb.session);
+            }).forEach(function(key) {
+                const item = periods[key];
+                const btn = document.createElement("button"); btn.type = "button"; btn.className = "sel-item";
+                const title = item.session ? formatExamPeriodLabel(item.year, item.session) : item.year + "年度ベース";
+                btn.innerHTML = "<strong>" + title + "</strong><span class='s-meta'>本番形式 50問 · 収録 " + item.count + "問</span>";
+                btn.addEventListener("click", function() { startYearExam(key); }); el.appendChild(btn);
+            });
+            const allBtn = document.createElement("button"); allBtn.type = "button"; allBtn.className = "sel-item";
+            allBtn.style.borderColor = "rgba(47,111,219,0.35)";
+            allBtn.innerHTML = "<strong>🔀 全年度ランダム</strong><span class='s-meta'>本番形式 50問</span>";
+            allBtn.addEventListener("click", function() { startYearExam("__all__"); }); el.appendChild(allBtn);
+        }
+
+        // Year exam
+        function startYearExam(yearKey) {
+            examYearKey = yearKey; clearInterval(examTimerInt);
+            const period = parseExamPeriodKey(yearKey);
+            const periodPool = yearKey === "__all__"
+                ? allQuestions.slice()
+                : allQuestions.filter(function(q) {
+                    return String(q.year || "") === period.year && String(q.session || "") === period.session;
+                });
+            examSelectionLabel = yearKey === "__all__" ? "全年度ランダム" : formatExamPeriodLabel(period.year, period.session);
+            let pool = yearKey === "__all__"
+                ? buildExamLikeDeck(allQuestions.slice(), allQuestions.slice(), EXAM_TOTAL_QUESTION_COUNT, 30, 50, 20)
+                : buildExamLikeDeck(
+                    periodPool,
+                    periodPool,
+                    EXAM_TOTAL_QUESTION_COUNT,
+                    30,
+                    50,
+                    20
+                ).sort(function(a,b){ return (CATEGORY_ORDER.indexOf(a.category)<0?99:CATEGORY_ORDER.indexOf(a.category)) - (CATEGORY_ORDER.indexOf(b.category)<0?99:CATEGORY_ORDER.indexOf(b.category)); });
+            examQuestions = pool; examAnswers = new Array(pool.length).fill(null); examIdx = 0; examTimerSec = 140 * 60;
+            showNewScreen("s-exam");
+            document.getElementById("all-done-notice").hidden = true;
+            buildQNav(); renderExamQ(); startExamTimer();
+        }
+
+        function buildQNav() {
+            const nav = document.getElementById("q-nav"); nav.innerHTML = "";
+            examQuestions.forEach(function(q, i) {
+                const b = document.createElement("button"); b.type = "button";
+                b.className = "q-dot" + (i === examIdx ? " current" : "") + (examAnswers[i] !== null ? " answered" : "");
+                b.textContent = i + 1;
+                b.addEventListener("click", function() { examIdx = i; buildQNav(); renderExamQ(); });
+                nav.appendChild(b);
+            });
+            updateExamMeta();
+        }
+
+        function renderExamQ() {
+            const q = examQuestions[examIdx];
+            const sessionLabel = q.session ? q.session + " " : "";
+            document.getElementById("exam-q-num").textContent = (q.year ? q.year + "年 " + sessionLabel + "· " : "") + "問題 " + (examIdx + 1) + " / " + examQuestions.length;
+            document.getElementById("exam-q-text").textContent = getQuestionText(q);
+            renderFigure(
+                q,
+                document.getElementById("exam-question-figure"),
+                document.getElementById("exam-question-figure-img"),
+                document.getElementById("exam-question-figure-caption"),
+                document.getElementById("exam-question-figure-btn")
+            );
+            const ce = document.getElementById("exam-choices"); ce.innerHTML = "";
+            getChoices(q).forEach(function(label, idx) {
+                const btn = document.createElement("button"); btn.type = "button";
+                btn.className = "choice-btn" + (examAnswers[examIdx] === idx ? " selected" : "");
+                btn.textContent = label;
+                btn.addEventListener("click", function() { examAnswers[examIdx] = idx; buildQNav(); renderExamQ(); checkAllExamDone(); });
+                ce.appendChild(btn);
+            });
+            document.getElementById("btn-exam-prev").disabled = examIdx === 0;
+            document.getElementById("btn-exam-next").disabled = examIdx === examQuestions.length - 1;
+            document.getElementById("btn-exam-next").textContent = examIdx === examQuestions.length - 1 ? "最後の問題" : "次の問題 →";
+        }
+
+        function updateExamMeta() {
+            document.getElementById("exam-meta").textContent = "回答済み " + examAnswers.filter(function(a){return a!==null;}).length + " / " + examQuestions.length + " 問";
+        }
+        function checkAllExamDone() {
+            document.getElementById("all-done-notice").hidden = examAnswers.filter(function(a){return a!==null;}).length < examQuestions.length;
+        }
+
+        document.getElementById("btn-exam-prev").addEventListener("click", function() { if(examIdx>0){examIdx--;buildQNav();renderExamQ();} });
+        document.getElementById("btn-exam-next").addEventListener("click", function() { if(examIdx<examQuestions.length-1){examIdx++;buildQNav();renderExamQ();} });
+        document.getElementById("btn-end-exam").addEventListener("click", function() {
+            const ua = examAnswers.filter(function(a){return a===null;}).length;
+            if (!window.confirm(ua > 0 ? "未回答が " + ua + " 問あります。終了して採点しますか？" : "試験を終了して結果を表示します。よろしいですか？")) return;
+            endExam();
+        });
+
+        function startExamTimer() {
+            clearInterval(examTimerInt); renderExamTimer();
+            examTimerInt = setInterval(function() {
+                examTimerSec--; renderExamTimer();
+                if (examTimerSec <= 0) { clearInterval(examTimerInt); window.alert("⏰ 時間になりました。結果を表示します。"); endExam(); }
+            }, 1000);
+        }
+        function renderExamTimer() {
+            const el = document.getElementById("timer-val");
+            const m = Math.floor(examTimerSec/60), s = examTimerSec%60;
+            el.textContent = String(m).padStart(3,"0") + ":" + String(s).padStart(2,"0");
+            el.className = "timer-val" + (examTimerSec<=60?" danger":examTimerSec<=600?" warn":"");
+        }
+        function endExam() {
+            clearInterval(examTimerInt);
+            examQuestions.forEach(function(q,i) {
+                if (examAnswers[i] !== null) {
+                    const cat = q.category || "未分類";
+                    if (!categoryStats[cat]) categoryStats[cat] = { correct:0, attempted:0 };
+                    categoryStats[cat].attempted++;
+                    if (examAnswers[i] === q.correctIndex) categoryStats[cat].correct++;
+                }
+            });
+            saveStoredStats(); showExamResults();
+        }
+        function escHtml(s) { return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
+        function showExamResults() {
+            showNewScreen("s-exam-results");
+            const qs = examQuestions, ans = examAnswers;
+            const answered = ans.filter(function(a){return a!==null;}).length;
+            const correct = qs.reduce(function(s,q,i){return s+(ans[i]===q.correctIndex?1:0);},0);
+            const pct = answered > 0 ? Math.round(correct/answered*100) : 0, pass = pct >= 60;
+            document.getElementById("res-title").textContent = examSelectionLabel + " 結果";
+            document.getElementById("res-score").textContent = correct + " / " + answered + " 問正解";
+            const banner = document.getElementById("res-banner");
+            if (pass) { banner.style.cssText="background:var(--success-soft);border:1px solid rgba(31,157,122,0.45);color:var(--success);border-radius:10px;"; banner.textContent="✓ 合格ライン到達（正答率 "+pct+"%）"; }
+            else       { banner.style.cssText="background:var(--danger-soft);border:1px solid rgba(217,83,79,0.45);color:var(--danger);border-radius:10px;"; banner.textContent="✗ 不合格（"+pct+"% ／ 目安 60%以上）"; }
+            document.getElementById("res-msg").textContent = pct===100?"全問正解！完璧です。":pct>=80?"優秀な成績です！":pct>=60?"合格ライン到達。引き続き苦手分野を強化しましょう。":"解説をしっかり読んで基礎から固め直しましょう。";
+            const catSummary = document.getElementById("res-cat-summary"); catSummary.innerHTML = "";
+            const catMap = {};
+            qs.forEach(function(q,i){ const c=q.category||"未分類"; if(!catMap[c])catMap[c]={ok:0,done:0}; if(ans[i]!==null){catMap[c].done++;if(ans[i]===q.correctIndex)catMap[c].ok++;} });
+            CATEGORY_ORDER.forEach(function(c){ if(!catMap[c])return; const s=catMap[c]; const r=s.done>0?Math.round(s.ok/s.done*100):0; const row=document.createElement("div"); row.className="res-cat-row"; row.innerHTML="<span>"+c+"</span><span style='color:"+(r>=60?"var(--success)":"var(--danger)")+";font-weight:600'>"+s.ok+"/"+s.done+"問 ("+r+"%)</span>"; catSummary.appendChild(row); });
+            const listEl = document.getElementById("res-q-list"); listEl.innerHTML = "";
+            qs.forEach(function(q,i){ const ua=ans[i],isSkip=ua===null,isOk=!isSkip&&ua===q.correctIndex; const renderedChoices=getChoices(q); const card=document.createElement("div"); card.className="res-q-card "+(isSkip?"skip":isOk?"ok":"ng"); const sc=isSkip?"var(--text-muted)":isOk?"var(--success)":"var(--danger)"; const si=isSkip?"— 未回答":isOk?"✓ 正解":"✗ 不正解"; const periodMeta=q.year?formatExamPeriodLabel(q.year,q.session)+" · ":""; let html="<div class='res-q-meta'>"+periodMeta+(q.category||"")+" · 問"+(i+1)+" <span style='color:"+sc+"'>"+si+"</span></div><div class='res-q-text'>"+escHtml(getQuestionText(q))+"</div>"; if(!isSkip)html+="<div class='res-q-yours "+(isOk?"ok":"ng")+"'>あなたの解答："+escHtml(renderedChoices[ua])+"</div>"; if(!isOk)html+="<div class='res-q-correct'>正解："+escHtml(renderedChoices[q.correctIndex])+"</div>"; html+="<div class='res-q-exp'>"+escHtml(q.explanation)+"</div>"; card.innerHTML=html; listEl.appendChild(card); });
+        }
+
+        async function boot() {
+            categoryButtonsEl.innerHTML = "";
+            loadStoredStats();
+            await loadQuestionBank();
+            const qp = new URLSearchParams(location.search);
+            const setId = qp.get("set");
+            const mode = qp.get("mode");
+            if (setId && MOCK_SETS[setId]) {
+                startMockSet(setId);
+            } else if (mode === "year") {
+                showNewScreen("s-year-sel");
+                buildYearSel();
+            } else if (mode === "all") {
+                startQuickQuiz();
+            } else if (mode === "category" || mode === "cat") {
+                goToMenu();
+            } else {
+                applyHowToUseHashScrollOnce = location.hash === "#how-to-use";
+                initModeScreen();
+            }
+        }
+
+        boot();
+    </script>
+</body>
+</html>
