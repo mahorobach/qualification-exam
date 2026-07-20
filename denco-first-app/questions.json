@@ -1532,11 +1532,13 @@
     "sourceQuestion": 7,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_diagram_added",
     "needsFigure": true,
-    "qualityStatus": "revise",
+    "qualityStatus": "keep",
     "variantRole": "official",
-    "learningPoint": "電気理論・配電理論"
+    "learningPoint": "電気理論・配電理論",
+    "image": "images/diagrams/self-made/2025-kouki-q07-single-phase-3wire-loss.svg",
+    "figureCaption": "単相3線式配電線路（負荷A・B、各線抵抗0.4Ω）"
   },
   {
     "id": 10058,
