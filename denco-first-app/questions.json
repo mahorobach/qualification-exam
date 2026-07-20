@@ -20,11 +20,13 @@
     "sourceQuestion": 1,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "電気理論・配電理論"
+    "learningPoint": "電気理論・配電理論",
+    "image": "images/diagrams/self-made/2026-zenki-example-q01-schematic.svg",
+    "figureCaption": "2026年 上期・出題例 問1 自作模式図"
   },
   {
     "id": 10002,
@@ -47,11 +49,13 @@
     "sourceQuestion": 2,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "電気理論・配電理論"
+    "learningPoint": "電気理論・配電理論",
+    "image": "images/diagrams/self-made/2026-zenki-example-q02-schematic.svg",
+    "figureCaption": "2026年 上期・出題例 問2 自作模式図"
   },
   {
     "id": 10003,
@@ -74,11 +78,13 @@
     "sourceQuestion": 3,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "電気理論・配電理論"
+    "learningPoint": "電気理論・配電理論",
+    "image": "images/diagrams/self-made/2026-zenki-example-q03-schematic.svg",
+    "figureCaption": "2026年 上期・出題例 問3 自作模式図"
   },
   {
     "id": 10004,
@@ -101,11 +107,13 @@
     "sourceQuestion": 4,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "電気理論・配電理論"
+    "learningPoint": "電気理論・配電理論",
+    "image": "images/diagrams/self-made/2026-zenki-example-q04-schematic.svg",
+    "figureCaption": "2026年 上期・出題例 問4 自作模式図"
   },
   {
     "id": 10005,
@@ -128,11 +136,13 @@
     "sourceQuestion": 5,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "電気理論・配電理論"
+    "learningPoint": "電気理論・配電理論",
+    "image": "images/diagrams/self-made/2026-zenki-example-q05-schematic.svg",
+    "figureCaption": "2026年 上期・出題例 問5 自作模式図"
   },
   {
     "id": 10006,
@@ -155,11 +165,13 @@
     "sourceQuestion": 6,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "電気理論・配電理論"
+    "learningPoint": "電気理論・配電理論",
+    "image": "images/diagrams/self-made/2026-zenki-example-q06-schematic.svg",
+    "figureCaption": "2026年 上期・出題例 問6 自作模式図"
   },
   {
     "id": 10007,
@@ -182,11 +194,13 @@
     "sourceQuestion": 7,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "電気理論・配電理論"
+    "learningPoint": "電気理論・配電理論",
+    "image": "images/diagrams/self-made/2026-zenki-example-q07-schematic.svg",
+    "figureCaption": "2026年 上期・出題例 問7 自作模式図"
   },
   {
     "id": 10008,
@@ -209,11 +223,13 @@
     "sourceQuestion": 8,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "電気理論・配電理論"
+    "learningPoint": "電気理論・配電理論",
+    "image": "images/diagrams/self-made/2026-zenki-example-q08-schematic.svg",
+    "figureCaption": "2026年 上期・出題例 問8 自作模式図"
   },
   {
     "id": 10009,
@@ -236,11 +252,13 @@
     "sourceQuestion": 9,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "電気理論・配電理論"
+    "learningPoint": "電気理論・配電理論",
+    "image": "images/diagrams/self-made/2026-zenki-example-q09-schematic.svg",
+    "figureCaption": "2026年 上期・出題例 問9 自作模式図"
   },
   {
     "id": 10010,
@@ -371,11 +389,13 @@
     "sourceQuestion": 14,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "電気機器・発変電設備"
+    "learningPoint": "電気機器・発変電設備",
+    "image": "images/diagrams/self-made/2026-zenki-example-q14-schematic.svg",
+    "figureCaption": "2026年 上期・出題例 問14 自作模式図"
   },
   {
     "id": 10015,
@@ -398,11 +418,13 @@
     "sourceQuestion": 15,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "電気機器・発変電設備"
+    "learningPoint": "電気機器・発変電設備",
+    "image": "images/diagrams/self-made/2026-zenki-example-q15-schematic.svg",
+    "figureCaption": "2026年 上期・出題例 問15 自作模式図"
   },
   {
     "id": 10016,
@@ -425,11 +447,13 @@
     "sourceQuestion": 16,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "電気機器・発変電設備"
+    "learningPoint": "電気機器・発変電設備",
+    "image": "images/diagrams/self-made/2026-zenki-example-q16-schematic.svg",
+    "figureCaption": "2026年 上期・出題例 問16 自作模式図"
   },
   {
     "id": 10017,
@@ -587,11 +611,13 @@
     "sourceQuestion": 22,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "高圧受電設備・施工"
+    "learningPoint": "高圧受電設備・施工",
+    "image": "images/diagrams/self-made/2026-zenki-example-q22-schematic.svg",
+    "figureCaption": "2026年 上期・出題例 問22 自作模式図"
   },
   {
     "id": 10023,
@@ -614,11 +640,13 @@
     "sourceQuestion": 23,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "高圧受電設備・施工"
+    "learningPoint": "高圧受電設備・施工",
+    "image": "images/diagrams/self-made/2026-zenki-example-q23-schematic.svg",
+    "figureCaption": "2026年 上期・出題例 問23 自作模式図"
   },
   {
     "id": 10024,
@@ -668,11 +696,13 @@
     "sourceQuestion": 25,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "高圧受電設備・施工"
+    "learningPoint": "高圧受電設備・施工",
+    "image": "images/diagrams/self-made/2026-zenki-example-q25-schematic.svg",
+    "figureCaption": "2026年 上期・出題例 問25 自作模式図"
   },
   {
     "id": 10026,
@@ -695,11 +725,13 @@
     "sourceQuestion": 26,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "高圧受電設備・施工"
+    "learningPoint": "高圧受電設備・施工",
+    "image": "images/diagrams/self-made/2026-zenki-example-q26-schematic.svg",
+    "figureCaption": "2026年 上期・出題例 問26 自作模式図"
   },
   {
     "id": 10027,
@@ -1100,11 +1132,13 @@
     "sourceQuestion": 41,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "配線図・鑑別"
+    "learningPoint": "配線図・鑑別",
+    "image": "images/diagrams/self-made/2026-zenki-example-q41-schematic.svg",
+    "figureCaption": "2026年 上期・出題例 問41 自作模式図"
   },
   {
     "id": 10042,
@@ -1127,11 +1161,13 @@
     "sourceQuestion": 42,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "配線図・鑑別"
+    "learningPoint": "配線図・鑑別",
+    "image": "images/diagrams/self-made/2026-zenki-example-q42-schematic.svg",
+    "figureCaption": "2026年 上期・出題例 問42 自作模式図"
   },
   {
     "id": 10043,
@@ -1154,11 +1190,13 @@
     "sourceQuestion": 43,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "配線図・鑑別"
+    "learningPoint": "配線図・鑑別",
+    "image": "images/diagrams/self-made/2026-zenki-example-q43-schematic.svg",
+    "figureCaption": "2026年 上期・出題例 問43 自作模式図"
   },
   {
     "id": 10044,
@@ -1181,11 +1219,13 @@
     "sourceQuestion": 44,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "配線図・鑑別"
+    "learningPoint": "配線図・鑑別",
+    "image": "images/diagrams/self-made/2026-zenki-example-q44-schematic.svg",
+    "figureCaption": "2026年 上期・出題例 問44 自作模式図"
   },
   {
     "id": 10045,
@@ -1208,11 +1248,13 @@
     "sourceQuestion": 45,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "配線図・鑑別"
+    "learningPoint": "配線図・鑑別",
+    "image": "images/diagrams/self-made/2026-zenki-example-q45-schematic.svg",
+    "figureCaption": "2026年 上期・出題例 問45 自作模式図"
   },
   {
     "id": 10046,
@@ -1235,11 +1277,13 @@
     "sourceQuestion": 46,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "配線図・鑑別"
+    "learningPoint": "配線図・鑑別",
+    "image": "images/diagrams/self-made/2026-zenki-example-q46-schematic.svg",
+    "figureCaption": "2026年 上期・出題例 問46 自作模式図"
   },
   {
     "id": 10047,
@@ -1262,11 +1306,13 @@
     "sourceQuestion": 47,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "配線図・鑑別"
+    "learningPoint": "配線図・鑑別",
+    "image": "images/diagrams/self-made/2026-zenki-example-q47-schematic.svg",
+    "figureCaption": "2026年 上期・出題例 問47 自作模式図"
   },
   {
     "id": 10048,
@@ -1289,11 +1335,13 @@
     "sourceQuestion": 48,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "配線図・鑑別"
+    "learningPoint": "配線図・鑑別",
+    "image": "images/diagrams/self-made/2026-zenki-example-q48-schematic.svg",
+    "figureCaption": "2026年 上期・出題例 問48 自作模式図"
   },
   {
     "id": 10049,
@@ -1316,11 +1364,13 @@
     "sourceQuestion": 49,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "配線図・鑑別"
+    "learningPoint": "配線図・鑑別",
+    "image": "images/diagrams/self-made/2026-zenki-example-q49-schematic.svg",
+    "figureCaption": "2026年 上期・出題例 問49 自作模式図"
   },
   {
     "id": 10050,
@@ -1343,11 +1393,13 @@
     "sourceQuestion": 50,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "配線図・鑑別"
+    "learningPoint": "配線図・鑑別",
+    "image": "images/diagrams/self-made/2026-zenki-example-q50-schematic.svg",
+    "figureCaption": "2026年 上期・出題例 問50 自作模式図"
   },
   {
     "id": 10051,
@@ -1370,11 +1422,13 @@
     "sourceQuestion": 1,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "電気理論・配電理論"
+    "learningPoint": "電気理論・配電理論",
+    "image": "images/diagrams/self-made/2025-kouki-q01-schematic.svg",
+    "figureCaption": "2025年 下期 問1 自作模式図"
   },
   {
     "id": 10052,
@@ -1397,11 +1451,13 @@
     "sourceQuestion": 2,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "電気理論・配電理論"
+    "learningPoint": "電気理論・配電理論",
+    "image": "images/diagrams/self-made/2025-kouki-q02-schematic.svg",
+    "figureCaption": "2025年 下期 問2 自作模式図"
   },
   {
     "id": 10053,
@@ -1424,11 +1480,13 @@
     "sourceQuestion": 3,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "電気理論・配電理論"
+    "learningPoint": "電気理論・配電理論",
+    "image": "images/diagrams/self-made/2025-kouki-q03-schematic.svg",
+    "figureCaption": "2025年 下期 問3 自作模式図"
   },
   {
     "id": 10054,
@@ -1451,11 +1509,13 @@
     "sourceQuestion": 4,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "電気理論・配電理論"
+    "learningPoint": "電気理論・配電理論",
+    "image": "images/diagrams/self-made/2025-kouki-q04-schematic.svg",
+    "figureCaption": "2025年 下期 問4 自作模式図"
   },
   {
     "id": 10055,
@@ -1478,11 +1538,13 @@
     "sourceQuestion": 5,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "電気理論・配電理論"
+    "learningPoint": "電気理論・配電理論",
+    "image": "images/diagrams/self-made/2025-kouki-q05-schematic.svg",
+    "figureCaption": "2025年 下期 問5 自作模式図"
   },
   {
     "id": 10056,
@@ -1505,11 +1567,13 @@
     "sourceQuestion": 6,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "電気理論・配電理論"
+    "learningPoint": "電気理論・配電理論",
+    "image": "images/diagrams/self-made/2025-kouki-q06-schematic.svg",
+    "figureCaption": "2025年 下期 問6 自作模式図"
   },
   {
     "id": 10057,
@@ -1561,11 +1625,13 @@
     "sourceQuestion": 8,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "電気理論・配電理論"
+    "learningPoint": "電気理論・配電理論",
+    "image": "images/diagrams/self-made/2025-kouki-q08-schematic.svg",
+    "figureCaption": "2025年 下期 問8 自作模式図"
   },
   {
     "id": 10059,
@@ -1588,11 +1654,13 @@
     "sourceQuestion": 9,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "電気理論・配電理論"
+    "learningPoint": "電気理論・配電理論",
+    "image": "images/diagrams/self-made/2025-kouki-q09-schematic.svg",
+    "figureCaption": "2025年 下期 問9 自作模式図"
   },
   {
     "id": 10060,
@@ -1696,11 +1764,13 @@
     "sourceQuestion": 13,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "電気機器・発変電設備"
+    "learningPoint": "電気機器・発変電設備",
+    "image": "images/diagrams/self-made/2025-kouki-q13-schematic.svg",
+    "figureCaption": "2025年 下期 問13 自作模式図"
   },
   {
     "id": 10064,
@@ -1723,11 +1793,13 @@
     "sourceQuestion": 14,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "電気機器・発変電設備"
+    "learningPoint": "電気機器・発変電設備",
+    "image": "images/diagrams/self-made/2025-kouki-q14-schematic.svg",
+    "figureCaption": "2025年 下期 問14 自作模式図"
   },
   {
     "id": 10065,
@@ -1750,11 +1822,13 @@
     "sourceQuestion": 15,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "電気機器・発変電設備"
+    "learningPoint": "電気機器・発変電設備",
+    "image": "images/diagrams/self-made/2025-kouki-q15-schematic.svg",
+    "figureCaption": "2025年 下期 問15 自作模式図"
   },
   {
     "id": 10066,
@@ -1777,11 +1851,13 @@
     "sourceQuestion": 16,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "電気機器・発変電設備"
+    "learningPoint": "電気機器・発変電設備",
+    "image": "images/diagrams/self-made/2025-kouki-q16-schematic.svg",
+    "figureCaption": "2025年 下期 問16 自作模式図"
   },
   {
     "id": 10067,
@@ -1939,11 +2015,13 @@
     "sourceQuestion": 22,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "高圧受電設備・施工"
+    "learningPoint": "高圧受電設備・施工",
+    "image": "images/diagrams/self-made/2025-kouki-q22-schematic.svg",
+    "figureCaption": "2025年 下期 問22 自作模式図"
   },
   {
     "id": 10073,
@@ -1966,11 +2044,13 @@
     "sourceQuestion": 23,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "高圧受電設備・施工"
+    "learningPoint": "高圧受電設備・施工",
+    "image": "images/diagrams/self-made/2025-kouki-q23-schematic.svg",
+    "figureCaption": "2025年 下期 問23 自作模式図"
   },
   {
     "id": 10074,
@@ -2020,11 +2100,13 @@
     "sourceQuestion": 25,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "高圧受電設備・施工"
+    "learningPoint": "高圧受電設備・施工",
+    "image": "images/diagrams/self-made/2025-kouki-q25-schematic.svg",
+    "figureCaption": "2025年 下期 問25 自作模式図"
   },
   {
     "id": 10076,
@@ -2047,11 +2129,13 @@
     "sourceQuestion": 26,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "高圧受電設備・施工"
+    "learningPoint": "高圧受電設備・施工",
+    "image": "images/diagrams/self-made/2025-kouki-q26-schematic.svg",
+    "figureCaption": "2025年 下期 問26 自作模式図"
   },
   {
     "id": 10077,
@@ -2452,11 +2536,13 @@
     "sourceQuestion": 41,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "配線図・鑑別"
+    "learningPoint": "配線図・鑑別",
+    "image": "images/diagrams/self-made/2025-kouki-q41-schematic.svg",
+    "figureCaption": "2025年 下期 問41 自作模式図"
   },
   {
     "id": 10092,
@@ -2479,11 +2565,13 @@
     "sourceQuestion": 42,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "配線図・鑑別"
+    "learningPoint": "配線図・鑑別",
+    "image": "images/diagrams/self-made/2025-kouki-q42-schematic.svg",
+    "figureCaption": "2025年 下期 問42 自作模式図"
   },
   {
     "id": 10093,
@@ -2506,11 +2594,13 @@
     "sourceQuestion": 43,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "配線図・鑑別"
+    "learningPoint": "配線図・鑑別",
+    "image": "images/diagrams/self-made/2025-kouki-q43-schematic.svg",
+    "figureCaption": "2025年 下期 問43 自作模式図"
   },
   {
     "id": 10094,
@@ -2533,11 +2623,13 @@
     "sourceQuestion": 44,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "配線図・鑑別"
+    "learningPoint": "配線図・鑑別",
+    "image": "images/diagrams/self-made/2025-kouki-q44-schematic.svg",
+    "figureCaption": "2025年 下期 問44 自作模式図"
   },
   {
     "id": 10095,
@@ -2560,11 +2652,13 @@
     "sourceQuestion": 45,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "配線図・鑑別"
+    "learningPoint": "配線図・鑑別",
+    "image": "images/diagrams/self-made/2025-kouki-q45-schematic.svg",
+    "figureCaption": "2025年 下期 問45 自作模式図"
   },
   {
     "id": 10096,
@@ -2587,11 +2681,13 @@
     "sourceQuestion": 46,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "配線図・鑑別"
+    "learningPoint": "配線図・鑑別",
+    "image": "images/diagrams/self-made/2025-kouki-q46-schematic.svg",
+    "figureCaption": "2025年 下期 問46 自作模式図"
   },
   {
     "id": 10097,
@@ -2614,11 +2710,13 @@
     "sourceQuestion": 47,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "配線図・鑑別"
+    "learningPoint": "配線図・鑑別",
+    "image": "images/diagrams/self-made/2025-kouki-q47-schematic.svg",
+    "figureCaption": "2025年 下期 問47 自作模式図"
   },
   {
     "id": 10098,
@@ -2641,11 +2739,13 @@
     "sourceQuestion": 48,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "配線図・鑑別"
+    "learningPoint": "配線図・鑑別",
+    "image": "images/diagrams/self-made/2025-kouki-q48-schematic.svg",
+    "figureCaption": "2025年 下期 問48 自作模式図"
   },
   {
     "id": 10099,
@@ -2668,11 +2768,13 @@
     "sourceQuestion": 49,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "配線図・鑑別"
+    "learningPoint": "配線図・鑑別",
+    "image": "images/diagrams/self-made/2025-kouki-q49-schematic.svg",
+    "figureCaption": "2025年 下期 問49 自作模式図"
   },
   {
     "id": 10100,
@@ -2695,11 +2797,13 @@
     "sourceQuestion": 50,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "配線図・鑑別"
+    "learningPoint": "配線図・鑑別",
+    "image": "images/diagrams/self-made/2025-kouki-q50-schematic.svg",
+    "figureCaption": "2025年 下期 問50 自作模式図"
   },
   {
     "id": 10101,
@@ -2722,11 +2826,13 @@
     "sourceQuestion": 1,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "電気理論・配電理論"
+    "learningPoint": "電気理論・配電理論",
+    "image": "images/diagrams/self-made/2024-kouki-q01-schematic.svg",
+    "figureCaption": "2024年 下期 問1 自作模式図"
   },
   {
     "id": 10102,
@@ -2749,11 +2855,13 @@
     "sourceQuestion": 2,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "電気理論・配電理論"
+    "learningPoint": "電気理論・配電理論",
+    "image": "images/diagrams/self-made/2024-kouki-q02-schematic.svg",
+    "figureCaption": "2024年 下期 問2 自作模式図"
   },
   {
     "id": 10103,
@@ -2776,11 +2884,13 @@
     "sourceQuestion": 3,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "電気理論・配電理論"
+    "learningPoint": "電気理論・配電理論",
+    "image": "images/diagrams/self-made/2024-kouki-q03-schematic.svg",
+    "figureCaption": "2024年 下期 問3 自作模式図"
   },
   {
     "id": 10104,
@@ -2803,11 +2913,13 @@
     "sourceQuestion": 4,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "電気理論・配電理論"
+    "learningPoint": "電気理論・配電理論",
+    "image": "images/diagrams/self-made/2024-kouki-q04-schematic.svg",
+    "figureCaption": "2024年 下期 問4 自作模式図"
   },
   {
     "id": 10105,
@@ -2830,11 +2942,13 @@
     "sourceQuestion": 5,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "電気理論・配電理論"
+    "learningPoint": "電気理論・配電理論",
+    "image": "images/diagrams/self-made/2024-kouki-q05-schematic.svg",
+    "figureCaption": "2024年 下期 問5 自作模式図"
   },
   {
     "id": 10106,
@@ -2857,11 +2971,13 @@
     "sourceQuestion": 6,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "電気理論・配電理論"
+    "learningPoint": "電気理論・配電理論",
+    "image": "images/diagrams/self-made/2024-kouki-q06-schematic.svg",
+    "figureCaption": "2024年 下期 問6 自作模式図"
   },
   {
     "id": 10107,
@@ -2938,11 +3054,13 @@
     "sourceQuestion": 9,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "電気理論・配電理論"
+    "learningPoint": "電気理論・配電理論",
+    "image": "images/diagrams/self-made/2024-kouki-q09-schematic.svg",
+    "figureCaption": "2024年 下期 問9 自作模式図"
   },
   {
     "id": 10110,
@@ -3073,11 +3191,13 @@
     "sourceQuestion": 14,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "電気機器・発変電設備"
+    "learningPoint": "電気機器・発変電設備",
+    "image": "images/diagrams/self-made/2024-kouki-q14-schematic.svg",
+    "figureCaption": "2024年 下期 問14 自作模式図"
   },
   {
     "id": 10115,
@@ -3100,11 +3220,13 @@
     "sourceQuestion": 15,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "電気機器・発変電設備"
+    "learningPoint": "電気機器・発変電設備",
+    "image": "images/diagrams/self-made/2024-kouki-q15-schematic.svg",
+    "figureCaption": "2024年 下期 問15 自作模式図"
   },
   {
     "id": 10116,
@@ -3127,11 +3249,13 @@
     "sourceQuestion": 16,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "電気機器・発変電設備"
+    "learningPoint": "電気機器・発変電設備",
+    "image": "images/diagrams/self-made/2024-kouki-q16-schematic.svg",
+    "figureCaption": "2024年 下期 問16 自作模式図"
   },
   {
     "id": 10117,
@@ -3289,11 +3413,13 @@
     "sourceQuestion": 22,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "高圧受電設備・施工"
+    "learningPoint": "高圧受電設備・施工",
+    "image": "images/diagrams/self-made/2024-kouki-q22-schematic.svg",
+    "figureCaption": "2024年 下期 問22 自作模式図"
   },
   {
     "id": 10123,
@@ -3316,11 +3442,13 @@
     "sourceQuestion": 23,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "高圧受電設備・施工"
+    "learningPoint": "高圧受電設備・施工",
+    "image": "images/diagrams/self-made/2024-kouki-q23-schematic.svg",
+    "figureCaption": "2024年 下期 問23 自作模式図"
   },
   {
     "id": 10124,
@@ -3397,11 +3525,13 @@
     "sourceQuestion": 26,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "高圧受電設備・施工"
+    "learningPoint": "高圧受電設備・施工",
+    "image": "images/diagrams/self-made/2024-kouki-q26-schematic.svg",
+    "figureCaption": "2024年 下期 問26 自作模式図"
   },
   {
     "id": 10127,
@@ -3802,11 +3932,13 @@
     "sourceQuestion": 41,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "配線図・鑑別"
+    "learningPoint": "配線図・鑑別",
+    "image": "images/diagrams/self-made/2024-kouki-q41-schematic.svg",
+    "figureCaption": "2024年 下期 問41 自作模式図"
   },
   {
     "id": 10142,
@@ -3829,11 +3961,13 @@
     "sourceQuestion": 42,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "配線図・鑑別"
+    "learningPoint": "配線図・鑑別",
+    "image": "images/diagrams/self-made/2024-kouki-q42-schematic.svg",
+    "figureCaption": "2024年 下期 問42 自作模式図"
   },
   {
     "id": 10143,
@@ -3856,11 +3990,13 @@
     "sourceQuestion": 43,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "配線図・鑑別"
+    "learningPoint": "配線図・鑑別",
+    "image": "images/diagrams/self-made/2024-kouki-q43-schematic.svg",
+    "figureCaption": "2024年 下期 問43 自作模式図"
   },
   {
     "id": 10144,
@@ -3883,11 +4019,13 @@
     "sourceQuestion": 44,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "配線図・鑑別"
+    "learningPoint": "配線図・鑑別",
+    "image": "images/diagrams/self-made/2024-kouki-q44-schematic.svg",
+    "figureCaption": "2024年 下期 問44 自作模式図"
   },
   {
     "id": 10145,
@@ -3910,11 +4048,13 @@
     "sourceQuestion": 45,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "配線図・鑑別"
+    "learningPoint": "配線図・鑑別",
+    "image": "images/diagrams/self-made/2024-kouki-q45-schematic.svg",
+    "figureCaption": "2024年 下期 問45 自作模式図"
   },
   {
     "id": 10146,
@@ -3937,11 +4077,13 @@
     "sourceQuestion": 46,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "配線図・鑑別"
+    "learningPoint": "配線図・鑑別",
+    "image": "images/diagrams/self-made/2024-kouki-q46-schematic.svg",
+    "figureCaption": "2024年 下期 問46 自作模式図"
   },
   {
     "id": 10147,
@@ -3964,11 +4106,13 @@
     "sourceQuestion": 47,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "配線図・鑑別"
+    "learningPoint": "配線図・鑑別",
+    "image": "images/diagrams/self-made/2024-kouki-q47-schematic.svg",
+    "figureCaption": "2024年 下期 問47 自作模式図"
   },
   {
     "id": 10148,
@@ -3991,11 +4135,13 @@
     "sourceQuestion": 48,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "配線図・鑑別"
+    "learningPoint": "配線図・鑑別",
+    "image": "images/diagrams/self-made/2024-kouki-q48-schematic.svg",
+    "figureCaption": "2024年 下期 問48 自作模式図"
   },
   {
     "id": 10149,
@@ -4018,11 +4164,13 @@
     "sourceQuestion": 49,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "配線図・鑑別"
+    "learningPoint": "配線図・鑑別",
+    "image": "images/diagrams/self-made/2024-kouki-q49-schematic.svg",
+    "figureCaption": "2024年 下期 問49 自作模式図"
   },
   {
     "id": 10150,
@@ -4045,10 +4193,12 @@
     "sourceQuestion": 50,
     "sourcePage": null,
     "isModified": false,
-    "expressionPolicy": "official_text_extracted_from_public_pdf; needs_manual_qa_for_figures_and_tables",
+    "expressionPolicy": "official_text_extracted_from_public_pdf; self-made_schematic_added",
     "needsFigure": true,
     "qualityStatus": "revise",
     "variantRole": "official",
-    "learningPoint": "配線図・鑑別"
+    "learningPoint": "配線図・鑑別",
+    "image": "images/diagrams/self-made/2024-kouki-q50-schematic.svg",
+    "figureCaption": "2024年 下期 問50 自作模式図"
   }
 ]

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 520" width="100%" role="img" aria-labelledby="title desc" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif">
+<title id="title">2024年 下期 問6 模式図</title>
+<desc id="desc">出典：令和6年度第一種電気工事士下期学科試験 問6の学習用自作模式図。公式図・写真の転載ではありません。</desc>
+<rect width="880" height="520" fill="#f8fafc"/>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#334155"/></marker><marker id="arrowBlue" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#2563eb"/></marker></defs>
+<rect x="28" y="22" width="824" height="146" rx="12" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="42" y="52" font-size="20" font-weight="700" fill="#111827">2024年 下期 問6 模式図</text>
+<text x="42" y="76" font-size="16" fill="#334155">図は単相 2 線式の配電線路の単線結線図 である。電線 1 線当たりの抵抗は，</text>
+<text x="42" y="100" font-size="16" fill="#334155">A-B 間で 0.1 ，B-C 間で 0.2 である。A 点の線間電圧 が 210 V で，B 点</text>
+<text x="42" y="124" font-size="16" fill="#334155">，C 点にそれぞれ負荷電流 10 A の抵抗負荷があるとき，C 点の線間電圧 [V]</text>
+<text x="42" y="148" font-size="16" fill="#334155">は。</text>
+<rect x="648" y="42" width="176" height="34" rx="17" fill="#eaf1ff"/><text x="736" y="64" text-anchor="middle" font-size="13" font-weight="700" fill="#2563eb">電路・負荷の模式図</text>
+<text x="90" y="328" font-size="16" font-weight="700" fill="#111827">電源</text>
+<circle cx="152" cy="250" r="6" fill="#fff" stroke="#111827" stroke-width="3"/><line x1="158" y1="250" x2="330" y2="250" stroke="#111827" stroke-width="4"/><rect x="330" y="234" width="72" height="32" rx="6" fill="#fff" stroke="#111827" stroke-width="3"/><text x="366" y="256" text-anchor="middle" font-size="15">線路</text><line x1="402" y1="250" x2="608" y2="250" stroke="#111827" stroke-width="4"/><circle cx="152" cy="326" r="6" fill="#fff" stroke="#111827" stroke-width="3"/><line x1="158" y1="326" x2="330" y2="326" stroke="#111827" stroke-width="4"/><rect x="330" y="310" width="72" height="32" rx="6" fill="#fff" stroke="#111827" stroke-width="3"/><text x="366" y="332" text-anchor="middle" font-size="15">線路</text><line x1="402" y1="326" x2="608" y2="326" stroke="#111827" stroke-width="4"/><circle cx="152" cy="402" r="6" fill="#fff" stroke="#111827" stroke-width="3"/><line x1="158" y1="402" x2="330" y2="402" stroke="#111827" stroke-width="4"/><rect x="330" y="386" width="72" height="32" rx="6" fill="#fff" stroke="#111827" stroke-width="3"/><text x="366" y="408" text-anchor="middle" font-size="15">線路</text><line x1="402" y1="402" x2="608" y2="402" stroke="#111827" stroke-width="4"/>
+<rect x="608" y="236" width="92" height="86" rx="8" fill="#fff" stroke="#2563eb" stroke-width="3"/><text x="654" y="274" text-anchor="middle" font-size="16" font-weight="700" fill="#2563eb">負荷A</text><text x="654" y="298" text-anchor="middle" font-size="14" fill="#334155">100V</text>
+<rect x="608" y="338" width="92" height="86" rx="8" fill="#fff" stroke="#2563eb" stroke-width="3"/><text x="654" y="376" text-anchor="middle" font-size="16" font-weight="700" fill="#2563eb">負荷B</text><text x="654" y="400" text-anchor="middle" font-size="14" fill="#334155">100V</text>
+<line x1="608" y1="250" x2="608" y2="402" stroke="#111827" stroke-width="4"/>
+</svg>

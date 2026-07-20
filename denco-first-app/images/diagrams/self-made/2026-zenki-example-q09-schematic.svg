@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 520" width="100%" role="img" aria-labelledby="title desc" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif">
+<title id="title">2026年 上期・出題例 問9 模式図</title>
+<desc id="desc">出典：令和8年度第一種電気工事士上期学科試験（出題例） 問9の学習用自作模式図。公式図・写真の転載ではありません。</desc>
+<rect width="880" height="520" fill="#f8fafc"/>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#334155"/></marker><marker id="arrowBlue" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#2563eb"/></marker></defs>
+<rect x="28" y="22" width="824" height="146" rx="12" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="42" y="52" font-size="20" font-weight="700" fill="#111827">2026年 上期・出題例 問9 模式図</text>
+<text x="42" y="76" font-size="16" fill="#334155">図のような直列リアクトルを設けた高圧進相 コンデンサがある。電源電圧が V</text>
+<text x="42" y="100" font-size="16" fill="#334155">[V]，誘導性 リアクタンスが 9 ，容量性リアクタンスが 150 であるとき，こ</text>
+<text x="42" y="124" font-size="16" fill="#334155">の回路の無効電力(設備 容量)[var]を示す式は。 V2 V2 V2 V2</text>
+<rect x="648" y="42" width="176" height="34" rx="17" fill="#eaf1ff"/><text x="736" y="64" text-anchor="middle" font-size="13" font-weight="700" fill="#2563eb">回路の模式図</text>
+<circle cx="156" cy="326" r="34" fill="#fff" stroke="#111827" stroke-width="3"/><text x="156" y="334" text-anchor="middle" font-size="20">〜</text>
+<line x1="190" y1="326" x2="310" y2="326" stroke="#111827" stroke-width="4"/><rect x="310" y="302" width="92" height="48" rx="8" fill="#fff" stroke="#111827" stroke-width="3"/><text x="356" y="332" text-anchor="middle" font-size="18">R</text>
+<line x1="402" y1="326" x2="512" y2="326" stroke="#111827" stroke-width="4"/><rect x="512" y="302" width="92" height="48" rx="8" fill="#fff" stroke="#111827" stroke-width="3"/><text x="558" y="332" text-anchor="middle" font-size="18">X</text>
+<line x1="604" y1="326" x2="716" y2="326" stroke="#111827" stroke-width="4"/><path d="M716 326 v92 H156 V360" fill="none" stroke="#111827" stroke-width="4"/>
+<text x="440" y="470" text-anchor="middle" font-size="16" fill="#334155">回路定数・電圧・電流の関係を整理</text>
+</svg>

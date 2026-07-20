@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 520" width="100%" role="img" aria-labelledby="title desc" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif">
+<title id="title">2026年 上期・出題例 問3 模式図</title>
+<desc id="desc">出典：令和8年度第一種電気工事士上期学科試験（出題例） 問3の学習用自作模式図。公式図・写真の転載ではありません。</desc>
+<rect width="880" height="520" fill="#f8fafc"/>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#334155"/></marker><marker id="arrowBlue" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#2563eb"/></marker></defs>
+<rect x="28" y="22" width="824" height="146" rx="12" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="42" y="52" font-size="20" font-weight="700" fill="#111827">2026年 上期・出題例 問3 模式図</text>
+<text x="42" y="76" font-size="16" fill="#334155">図のような正弦波交流電圧がある。波形の 周 期 が 20 ms(周 波 数 50 Hz)</text>
+<text x="42" y="100" font-size="16" fill="#334155">で あ る と き ， 角速度 ［rad/s］の値は。</text>
+<rect x="648" y="42" width="176" height="34" rx="17" fill="#eaf1ff"/><text x="736" y="64" text-anchor="middle" font-size="13" font-weight="700" fill="#2563eb">波形の模式図</text>
+<line x1="92" y1="340" x2="788" y2="340" stroke="#111827" stroke-width="3"/><line x1="116" y1="240" x2="116" y2="430" stroke="#111827" stroke-width="3"/>
+<path d="M116 340 C170 220 230 220 284 340 S398 460 452 340 S566 220 620 340 S734 460 788 340" fill="none" stroke="#2563eb" stroke-width="5"/>
+<line x1="116" y1="456" x2="452" y2="456" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/><text x="284" y="486" text-anchor="middle" font-size="16" fill="#334155">周期 T = 20 ms / 周波数 f = 50 Hz</text>
+</svg>
