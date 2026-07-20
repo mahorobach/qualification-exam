@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://qualifications.app/sekou-denki-app/questions.schema.json",
+  "title": "1級電気工事施工管理技士 クイズ問題",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "id",
+      "exam",
+      "examStage",
+      "year",
+      "eraYear",
+      "category",
+      "difficulty",
+      "answerFormat",
+      "choiceCount",
+      "question",
+      "choices",
+      "correctIndex",
+      "answerLabel",
+      "explanation",
+      "source",
+      "sourceUrl",
+      "expressionPolicy",
+      "isModified"
+    ],
+    "properties": {
+      "id": { "type": "string" },
+      "exam": { "type": "string" },
+      "examStage": { "type": "string" },
+      "year": { "type": "integer" },
+      "eraYear": { "type": "string" },
+      "part": { "type": "string", "enum": ["午前", "午後", "共通", ""] },
+      "officialQuestionNo": { "type": "integer", "minimum": 1 },
+      "category": { "type": "string" },
+      "subcategory": { "type": "string" },
+      "difficulty": { "type": "string", "enum": ["easy", "medium", "hard"] },
+      "answerFormat": { "type": "string", "enum": ["single_choice"] },
+      "choiceCount": { "type": "integer", "enum": [4, 5] },
+      "question": { "type": "string", "minLength": 1 },
+      "choices": {
+        "type": "array",
+        "minItems": 4,
+        "maxItems": 5,
+        "items": { "type": "string" }
+      },
+      "correctIndex": { "type": "integer", "minimum": 0, "maximum": 4 },
+      "answerLabel": { "type": "string" },
+      "explanation": { "type": "string" },
+      "learningPoint": { "type": "string" },
+      "sourceFacts": { "type": "object" },
+      "expressionPolicy": { "type": "string" },
+      "isModified": { "type": "boolean" },
+      "source": { "type": "string" },
+      "sourceUrl": { "type": "string", "format": "uri" },
+      "sourceCheckedAt": { "type": "string" }
+    }
+  }
+}

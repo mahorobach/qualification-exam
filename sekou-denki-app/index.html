@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>1級電気工事施工管理技士 クイズ | 資格トレイン</title>
+  <meta name="description" content="1級電気工事施工管理技士 第一次検定の過去問を参考にした学習用クイズ。年度別・分野別で演習できます。">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../tokens.css">
+  <link rel="stylesheet" href="../base.css">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100dvh;
+      font-family: var(--font);
+      color: var(--text);
+      background: var(--bg);
+      padding: calc(52px + max(18px, env(safe-area-inset-top))) 18px max(32px, env(safe-area-inset-bottom));
+    }
+    .site-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 52px;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 18px;
+      background: rgba(250,247,241,.88);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+    .site-nav a { color: var(--text); text-decoration: none; font-size: .9rem; font-weight: 700; }
+    .wrap { max-width: 560px; margin: 0 auto; }
+    header { text-align: center; padding: 32px 0 24px; }
+    .icon { font-size: 3rem; display: block; margin-bottom: 12px; }
+    h1 { margin: 0 0 10px; font-size: 1.55rem; line-height: 1.35; }
+    .lead { margin: 0 auto; max-width: 420px; color: var(--text-muted); font-size: .92rem; line-height: 1.75; }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--r-lg);
+      box-shadow: var(--shadow);
+      padding: 22px 20px;
+      margin-bottom: 16px;
+    }
+    .cta {
+      display: block;
+      width: 100%;
+      padding: 16px;
+      border-radius: var(--r-pill);
+      background: var(--accent);
+      color: #fff;
+      text-align: center;
+      text-decoration: none;
+      font-weight: 700;
+      box-shadow: var(--shadow-cta);
+    }
+    .mode-link {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      padding: 13px 14px;
+      margin-top: 10px;
+      color: var(--text);
+      text-decoration: none;
+      background: var(--surface-2);
+      border: 1px solid var(--line);
+      border-radius: var(--r-md);
+    }
+    .mode-title { display: block; font-size: .88rem; font-weight: 700; }
+    .mode-sub { display: block; margin-top: 2px; color: var(--text-muted); font-size: .78rem; line-height: 1.5; }
+    h2 { margin: 0 0 14px; color: var(--accent); font-size: 1.05rem; }
+    .subjects { display: grid; gap: 10px; }
+    .subject { padding: 12px 14px; border-radius: var(--r-md); background: var(--surface-2); border: 1px solid var(--line); }
+    .badge { display: inline-block; margin-bottom: 5px; padding: 3px 10px; border-radius: var(--r-pill); background: var(--accent-soft); color: var(--accent); font-size: .72rem; font-weight: 700; }
+    .subject p { margin: 0; color: var(--text-muted); font-size: .82rem; line-height: 1.65; }
+  </style>
+</head>
+<body>
+<nav class="site-nav">
+  <a href="../index.html">資格トレイン</a>
+  <a href="quiz.html">クイズを始める</a>
+</nav>
+
+<main class="wrap">
+  <header>
+    <span class="icon">⚡</span>
+    <h1>1級電気工事施工管理技士 クイズ</h1>
+    <p class="lead">第一次検定の直近3年分を参考にした学習用クイズです。4択・5択に対応し、回答後すぐに解説を確認できます。</p>
+  </header>
+
+  <section class="card">
+    <a class="cta" href="quiz.html">クイズを始める →</a>
+    <a class="mode-link" href="quiz.html?mode=year">
+      <span>📅</span>
+      <span><span class="mode-title">年度別演習</span><span class="mode-sub">令和8・7・6年度の問題を年度で絞り込み</span></span>
+    </a>
+    <a class="mode-link" href="quiz.html?mode=category">
+      <span>📚</span>
+      <span><span class="mode-title">分野別演習</span><span class="mode-sub">電気工学・電気設備・施工管理法・法規などを選択</span></span>
+    </a>
+  </section>
+
+  <section class="card">
+    <h2>学習区分</h2>
+    <div class="subjects">
+      <div class="subject"><span class="badge">電気工学</span><p>電気基礎、交流回路、電界、電力計算など。</p></div>
+      <div class="subject"><span class="badge">電気設備</span><p>受変電設備、配線、保護装置、計器用変成器など。</p></div>
+      <div class="subject"><span class="badge">施工管理法</span><p>工程管理、品質管理、安全管理、応用能力問題など。</p></div>
+      <div class="subject"><span class="badge">法規</span><p>建設業法、電気事業法、労働安全衛生法など。</p></div>
+    </div>
+  </section>
+</main>
+</body>
+</html>

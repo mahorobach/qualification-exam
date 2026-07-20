@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>1級電気工事施工管理技士 クイズ | 資格トレイン</title>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../tokens.css">
+  <link rel="stylesheet" href="../base.css">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100dvh;
+      font-family: var(--font);
+      color: var(--text);
+      background: var(--bg);
+      padding: calc(52px + max(16px, env(safe-area-inset-top))) 18px max(28px, env(safe-area-inset-bottom));
+    }
+    .site-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 52px;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 18px;
+      background: rgba(250,247,241,.88);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+    .site-nav a { color: var(--text); text-decoration: none; font-size: .9rem; font-weight: 700; }
+    .app { max-width: 480px; margin: 0 auto; }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--r-lg);
+      box-shadow: var(--shadow);
+      padding: 22px 20px;
+      margin-bottom: 14px;
+    }
+    .screen-title { margin: 0 0 6px; text-align: center; font-size: 1.1rem; font-weight: 700; }
+    .screen-sub { margin: 0 0 18px; text-align: center; color: var(--text-muted); font-size: .82rem; line-height: 1.6; }
+    .mode-grid, .choice-list, .sel-list { display: grid; gap: 10px; }
+    button {
+      font: inherit;
+    }
+    .mode-btn, .sel-btn, .choice-btn, .next-btn, .restart-btn {
+      width: 100%;
+      border-radius: var(--r-md);
+      cursor: pointer;
+    }
+    .mode-btn, .sel-btn {
+      padding: 15px 16px;
+      text-align: left;
+      color: var(--text);
+      background: var(--surface-2);
+      border: 1px solid var(--line);
+    }
+    .mode-btn:hover, .sel-btn:hover, .choice-btn:hover:not(:disabled) {
+      background: var(--accent-soft);
+      border-color: rgba(47,111,219,.35);
+    }
+    .mode-name { display: block; font-weight: 700; }
+    .mode-desc, .sel-meta { display: block; margin-top: 3px; color: var(--text-muted); font-size: .78rem; line-height: 1.5; }
+    .progress { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; color: var(--text-muted); font-size: .8rem; }
+    .progress-bar { flex: 1; height: 4px; overflow: hidden; border-radius: 999px; background: var(--surface-2); }
+    .progress-bar span { display: block; height: 100%; background: var(--accent); transition: width .25s ease; }
+    .q-meta { display: inline-block; margin-bottom: 14px; padding: 4px 10px; border-radius: var(--r-pill); color: var(--accent); background: var(--accent-soft); font-size: .72rem; font-weight: 700; }
+    .q-text { margin: 0 0 20px; font-size: 1rem; line-height: 1.75; font-weight: 500; }
+    .choice-btn {
+      min-height: 48px;
+      padding: 13px 15px;
+      text-align: left;
+      color: var(--text);
+      background: var(--surface-2);
+      border: 1px solid var(--line);
+      line-height: 1.5;
+    }
+    .choice-btn:disabled { cursor: default; opacity: .9; }
+    .choice-btn.correct { color: var(--success); background: var(--success-soft); border-color: rgba(31,157,122,.45); }
+    .choice-btn.wrong { background: var(--danger-soft); border-color: rgba(217,83,79,.45); }
+    .feedback { display: none; margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--line); }
+    .feedback.visible { display: block; }
+    .result-label { margin: 0 0 10px; font-size: 1.08rem; font-weight: 700; }
+    .result-label.ok { color: var(--success); }
+    .result-label.ng { color: var(--danger); }
+    .explanation, .source-note { margin: 0; color: var(--text-muted); font-size: .86rem; line-height: 1.8; }
+    .source-note { margin-top: 10px; font-size: .74rem; }
+    .next-btn, .restart-btn {
+      min-height: 48px;
+      margin-top: 18px;
+      border: 0;
+      color: #fff;
+      background: var(--accent);
+      font-weight: 700;
+      box-shadow: var(--shadow-cta);
+    }
+    .restart-btn { background: var(--text); }
+    .summary { text-align: center; }
+    .score { margin: 8px 0; color: var(--accent); font-size: 2.3rem; font-weight: 700; }
+    .hidden { display: none; }
+    .warning { padding: 12px 14px; color: #7a5f00; background: #fff8e1; border: 1px solid rgba(122,95,0,.25); border-radius: var(--r-md); font-size: .82rem; line-height: 1.6; }
+  </style>
+</head>
+<body>
+<nav class="site-nav">
+  <a href="../index.html">資格トレイン</a>
+  <a href="index.html">ポータルへ</a>
+</nav>
+
+<main class="app">
+  <p id="warning" class="warning hidden"></p>
+
+  <section id="menu" class="card">
+    <p class="screen-title">1級電気工事施工管理技士 クイズ</p>
+    <p class="screen-sub">直近3年の第一次検定を参考にした学習用問題です。</p>
+    <div class="mode-grid">
+      <button type="button" class="mode-btn" data-mode="all"><span class="mode-name">全問ランダム</span><span class="mode-desc">収録問題からランダムに出題</span></button>
+      <button type="button" class="mode-btn" data-mode="year"><span class="mode-name">年度別</span><span class="mode-desc">令和8・7・6年度から選択</span></button>
+      <button type="button" class="mode-btn" data-mode="category"><span class="mode-name">分野別</span><span class="mode-desc">電気工学・電気設備・施工管理法・法規などから選択</span></button>
+    </div>
+  </section>
+
+  <section id="select" class="card hidden">
+    <p class="screen-title" id="select-title">選択</p>
+    <p class="screen-sub" id="select-sub">出題範囲を選んでください。</p>
+    <div id="select-list" class="sel-list"></div>
+  </section>
+
+  <section id="quiz" class="hidden">
+    <div class="progress">
+      <span id="count-now">1</span>
+      <div class="progress-bar"><span id="progress-fill"></span></div>
+      <span id="count-total">1</span>
+    </div>
+    <div class="card">
+      <span id="q-meta" class="q-meta"></span>
+      <p id="q-text" class="q-text"></p>
+      <div id="choices" class="choice-list"></div>
+      <div id="feedback" class="feedback">
+        <p id="result-label" class="result-label"></p>
+        <p id="explanation" class="explanation"></p>
+        <p id="source-note" class="source-note"></p>
+        <button type="button" id="next" class="next-btn">次の問題へ</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="summary" class="card summary hidden">
+    <p class="screen-title">結果</p>
+    <div id="score" class="score"></div>
+    <p id="summary-text" class="screen-sub"></p>
+    <button type="button" id="restart" class="restart-btn">もう一度解く</button>
+  </section>
+</main>
+
+<script>
+(function () {
+  var allQuestions = [];
+  var questions = [];
+  var current = 0;
+  var correct = 0;
+  var selected = false;
+
+  var el = {
+    warning: document.getElementById("warning"),
+    menu: document.getElementById("menu"),
+    select: document.getElementById("select"),
+    selectTitle: document.getElementById("select-title"),
+    selectSub: document.getElementById("select-sub"),
+    selectList: document.getElementById("select-list"),
+    quiz: document.getElementById("quiz"),
+    summary: document.getElementById("summary"),
+    countNow: document.getElementById("count-now"),
+    countTotal: document.getElementById("count-total"),
+    progressFill: document.getElementById("progress-fill"),
+    qMeta: document.getElementById("q-meta"),
+    qText: document.getElementById("q-text"),
+    choices: document.getElementById("choices"),
+    feedback: document.getElementById("feedback"),
+    resultLabel: document.getElementById("result-label"),
+    explanation: document.getElementById("explanation"),
+    sourceNote: document.getElementById("source-note"),
+    next: document.getElementById("next"),
+    score: document.getElementById("score"),
+    summaryText: document.getElementById("summary-text"),
+    restart: document.getElementById("restart")
+  };
+
+  function show(node) { node.classList.remove("hidden"); }
+  function hide(node) { node.classList.add("hidden"); }
+  function shuffle(items) {
+    return items.slice().sort(function () { return Math.random() - 0.5; });
+  }
+  function uniq(items) {
+    return Array.from(new Set(items));
+  }
+  function labelFor(q) {
+    var parts = [q.eraYear || q.year, q.category];
+    if (q.part) parts.push(q.part);
+    if (q.officialQuestionNo) parts.push("No." + q.officialQuestionNo);
+    return parts.filter(Boolean).join(" / ");
+  }
+  function start(list) {
+    questions = shuffle(list).slice(0, 20);
+    current = 0;
+    correct = 0;
+    hide(el.menu);
+    hide(el.select);
+    hide(el.summary);
+    show(el.quiz);
+    renderQuestion();
+  }
+  function renderSelect(mode) {
+    hide(el.menu);
+    show(el.select);
+    el.selectList.innerHTML = "";
+    var values = mode === "year"
+      ? uniq(allQuestions.map(function (q) { return q.year; })).sort(function (a, b) { return b - a; })
+      : uniq(allQuestions.map(function (q) { return q.category; })).sort();
+    el.selectTitle.textContent = mode === "year" ? "年度別演習" : "分野別演習";
+    el.selectSub.textContent = "出題範囲を選んでください。";
+    values.forEach(function (value) {
+      var list = allQuestions.filter(function (q) { return mode === "year" ? q.year === value : q.category === value; });
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "sel-btn";
+      btn.innerHTML = String(mode === "year" ? list[0].eraYear : value) + "<span class='sel-meta'>" + list.length + "問</span>";
+      btn.addEventListener("click", function () { start(list); });
+      el.selectList.appendChild(btn);
+    });
+  }
+  function renderQuestion() {
+    selected = false;
+    var q = questions[current];
+    el.countNow.textContent = current + 1;
+    el.countTotal.textContent = questions.length;
+    el.progressFill.style.width = ((current + 1) / questions.length * 100) + "%";
+    el.qMeta.textContent = labelFor(q);
+    el.qText.textContent = q.question;
+    el.choices.innerHTML = "";
+    el.feedback.classList.remove("visible");
+    q.choices.forEach(function (choice, index) {
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "choice-btn";
+      btn.textContent = (index + 1) + ". " + choice;
+      btn.addEventListener("click", function () { answer(index); });
+      el.choices.appendChild(btn);
+    });
+  }
+  function answer(index) {
+    if (selected) return;
+    selected = true;
+    var q = questions[current];
+    var isCorrect = index === q.correctIndex;
+    if (isCorrect) correct++;
+    Array.from(el.choices.children).forEach(function (btn, i) {
+      btn.disabled = true;
+      if (i === q.correctIndex) btn.classList.add("correct");
+      if (i === index && !isCorrect) btn.classList.add("wrong");
+    });
+    el.resultLabel.textContent = isCorrect ? "正解" : "不正解";
+    el.resultLabel.className = "result-label " + (isCorrect ? "ok" : "ng");
+    el.explanation.textContent = q.explanation;
+    el.sourceNote.textContent = q.source || "";
+    el.next.textContent = current + 1 >= questions.length ? "結果を見る" : "次の問題へ";
+    el.feedback.classList.add("visible");
+  }
+  function finish() {
+    hide(el.quiz);
+    show(el.summary);
+    el.score.textContent = correct + " / " + questions.length;
+    el.summaryText.textContent = "正答率 " + Math.round(correct / questions.length * 100) + "%";
+  }
+
+  document.querySelectorAll("[data-mode]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var mode = btn.getAttribute("data-mode");
+      if (mode === "all") start(allQuestions);
+      else renderSelect(mode);
+    });
+  });
+  el.next.addEventListener("click", function () {
+    if (current + 1 >= questions.length) finish();
+    else {
+      current++;
+      renderQuestion();
+    }
+  });
+  el.restart.addEventListener("click", function () {
+    hide(el.summary);
+    show(el.menu);
+  });
+
+  fetch("questions.json", { cache: "no-store" })
+    .then(function (res) {
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      return res.json();
+    })
+    .then(function (data) {
+      allQuestions = data.filter(function (q) {
+        return q.question && Array.isArray(q.choices) && q.choices.length >= 4 && typeof q.correctIndex === "number";
+      });
+      if (!allQuestions.length) throw new Error("問題データが空です");
+      var params = new URLSearchParams(location.search);
+      var mode = params.get("mode");
+      if (mode === "year" || mode === "category") renderSelect(mode);
+    })
+    .catch(function (err) {
+      el.warning.textContent = "questions.json を読み込めませんでした。ローカルサーバ経由で開いてください: " + err.message;
+      show(el.warning);
+    });
+})();
+</script>
+</body>
+</html>
