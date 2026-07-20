@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 520" width="100%" role="img" aria-labelledby="title desc" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif">
+<title id="title">配電線路と変圧器一次電流</title>
+<desc id="desc">一次側6000V、二次側100V+100V、R1=50A、R2=70Aの変圧器回路。</desc>
+<rect width="760" height="520" fill="#f8fafc"/>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#111827"/></marker><marker id="arrowBlue" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#2563eb"/></marker></defs>
+<text x="32" y="42" font-size="20" font-weight="700" fill="#111827">配電線路と変圧器一次電流</text>
+
+<text x="32" y="70" font-size="13" fill="#475569">変圧器と配電線路の損失、励磁電流を無視する。</text>
+<text x="76" y="246" font-size="18">1φ2W</text><text x="84" y="270" font-size="18">電源</text><text x="76" y="296" font-size="18">6000 V</text>
+<circle cx="164" cy="210" r="5" fill="#fff" stroke="#111827" stroke-width="3"/><circle cx="164" cy="330" r="5" fill="#fff" stroke="#111827" stroke-width="3"/>
+<path d="M164 210 h70" stroke="#111827" stroke-width="4"/><path d="M164 330 h70" stroke="#111827" stroke-width="4"/>
+<path d="M236 195 c24 10 24 26 0 36 c24 10 24 26 0 36 c24 10 24 26 0 36 c24 10 24 26 0 36" fill="none" stroke="#111827" stroke-width="4"/>
+<path d="M306 175 c-24 10 -24 26 0 36 c-24 10 -24 26 0 36 c-24 10 -24 26 0 36 c-24 10 -24 26 0 36 c-24 10 -24 26 0 36 c-24 10 -24 26 0 36" fill="none" stroke="#111827" stroke-width="4"/>
+<path d="M210 180 h-54" stroke="#111827" stroke-width="3" marker-end="url(#arrow)"/><text x="176" y="160" font-size="18" font-style="italic">I [A]</text>
+<line x1="334" y1="178" x2="560" y2="178" stroke="#111827" stroke-width="4"/><line x1="334" y1="280" x2="560" y2="280" stroke="#111827" stroke-width="4"/><line x1="334" y1="382" x2="560" y2="382" stroke="#111827" stroke-width="4"/>
+<line x1="394" y1="190" x2="394" y2="268" stroke="#2563eb" stroke-width="2" marker-start="url(#arrowBlue)" marker-end="url(#arrowBlue)"/><text x="410" y="235" font-size="18" fill="#2563eb">100 V</text>
+<line x1="394" y1="292" x2="394" y2="370" stroke="#2563eb" stroke-width="2" marker-start="url(#arrowBlue)" marker-end="url(#arrowBlue)"/><text x="410" y="337" font-size="18" fill="#2563eb">100 V</text>
+<rect x="560" y="178" width="40" height="102" rx="4" fill="#fff" stroke="#111827" stroke-width="3"/><text x="616" y="226" font-size="20" font-style="italic">R1</text><path d="M636 184 v70" stroke="#111827" stroke-width="3" marker-end="url(#arrow)"/><text x="654" y="224" font-size="18">50 A</text>
+<rect x="560" y="280" width="40" height="102" rx="4" fill="#fff" stroke="#111827" stroke-width="3"/><text x="616" y="330" font-size="20" font-style="italic">R2</text><path d="M636 286 v70" stroke="#111827" stroke-width="3" marker-end="url(#arrow)"/><text x="654" y="326" font-size="18">70 A</text>
+
+</svg>

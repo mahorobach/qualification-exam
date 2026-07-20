@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 520" width="100%" role="img" aria-labelledby="title desc" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif">
+<title id="title">三相交流回路の全消費電力</title>
+<desc id="desc">線間電圧V、各相R=5Ω、XL=3Ωの三相3線式回路。</desc>
+<rect width="760" height="520" fill="#f8fafc"/>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#111827"/></marker></defs>
+<text x="32" y="42" font-size="20" font-weight="700" fill="#111827">三相交流回路の全消費電力</text>
+<text x="32" y="70" font-size="13" fill="#475569">電源電圧 V、各相の抵抗 R=5Ω、誘導性リアクタンス XL=3Ω</text>
+<text x="54" y="272" font-size="18">3φ3W</text><text x="66" y="296" font-size="18">電源</text>
+<circle cx="170" cy="170" r="5" fill="#fff" stroke="#111827" stroke-width="3"/>
+<circle cx="170" cy="270" r="5" fill="#fff" stroke="#111827" stroke-width="3"/>
+<circle cx="170" cy="370" r="5" fill="#fff" stroke="#111827" stroke-width="3"/>
+<line x1="170" y1="170" x2="330" y2="170" stroke="#111827" stroke-width="4"/>
+<line x1="170" y1="270" x2="330" y2="270" stroke="#111827" stroke-width="4"/>
+<line x1="170" y1="370" x2="330" y2="370" stroke="#111827" stroke-width="4"/>
+<line x1="220" y1="184" x2="220" y2="256" stroke="#111827" stroke-width="2" marker-start="url(#arrow)" marker-end="url(#arrow)"/><text x="182" y="226" font-size="18">V [V]</text>
+<line x1="220" y1="284" x2="220" y2="356" stroke="#111827" stroke-width="2" marker-start="url(#arrow)" marker-end="url(#arrow)"/><text x="182" y="326" font-size="18">V [V]</text>
+<line x1="266" y1="184" x2="266" y2="356" stroke="#111827" stroke-width="2" marker-start="url(#arrow)" marker-end="url(#arrow)"/><text x="282" y="276" font-size="18">V [V]</text>
+<polygon points="510,130 360,380 650,380" fill="#fff" stroke="#111827" stroke-width="4"/>
+<circle cx="510" cy="130" r="5" fill="#111827"/><circle cx="360" cy="380" r="5" fill="#111827"/><circle cx="650" cy="380" r="5" fill="#111827"/>
+<line x1="330" y1="170" x2="510" y2="130" stroke="#111827" stroke-width="4"/>
+<line x1="330" y1="270" x2="360" y2="380" stroke="#111827" stroke-width="4"/>
+<line x1="330" y1="370" x2="650" y2="380" stroke="#111827" stroke-width="4"/>
+<rect x="424" y="220" width="42" height="22" rx="3" fill="#fff" stroke="#111827" stroke-width="3" transform="rotate(-58 445 231)"/>
+<text x="402" y="235" font-size="18" font-style="italic">R</text>
+<path d="M398 312 q10 -18 20 0 q10 -18 20 0 q10 -18 20 0" fill="none" stroke="#111827" stroke-width="3"/>
+<text x="416" y="348" font-size="18" font-style="italic">XL</text>
+<rect x="560" y="220" width="42" height="22" rx="3" fill="#fff" stroke="#111827" stroke-width="3" transform="rotate(58 581 231)"/>
+<text x="628" y="235" font-size="18" font-style="italic">R</text>
+<path d="M580 312 q10 -18 20 0 q10 -18 20 0 q10 -18 20 0" fill="none" stroke="#111827" stroke-width="3"/>
+<text x="610" y="348" font-size="18" font-style="italic">XL</text>
+<path d="M450 380 q10 -18 20 0 q10 -18 20 0 q10 -18 20 0" fill="none" stroke="#111827" stroke-width="3"/>
+<rect x="548" y="364" width="54" height="28" rx="4" fill="#fff" stroke="#111827" stroke-width="3"/>
+<text x="520" y="420" font-size="18" font-style="italic">XL</text><text x="575" y="420" text-anchor="middle" font-size="18" font-style="italic">R</text>
+</svg>

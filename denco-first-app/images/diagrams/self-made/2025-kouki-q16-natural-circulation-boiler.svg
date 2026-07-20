@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" width="100%" role="img" aria-labelledby="title desc" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif">
+<title id="title">自然循環ボイラの構成</title><desc id="desc">蒸気ドラム、蒸発管、過熱器、節炭器、給水ポンプ、燃焼ガスの流れを示す。</desc><rect width="900" height="560" fill="#f8fafc"/><defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#111827"/></marker><marker id="arrowBlue" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#2563eb"/></marker></defs><text x="32" y="42" font-size="20" font-weight="700" fill="#111827">自然循環ボイラの構成</text>
+<text x="32" y="70" font-size="13" fill="#475569">①・②・③の機器名称を、蒸気・水・燃焼ガスの流れから判別する。</text>
+<circle cx="226" cy="150" r="24" fill="#fff" stroke="#111827" stroke-width="3"/><text x="226" y="156" text-anchor="middle" font-size="13">ドラム</text>
+<text x="216" y="108" font-size="17">蒸気</text><path d="M250 132 H402 V250" fill="none" stroke="#111827" stroke-width="4" marker-end="url(#arrow)"/>
+<path d="M250 168 H316 V248" fill="none" stroke="#111827" stroke-width="4"/>
+<rect x="142" y="216" width="120" height="190" rx="8" fill="#fff" stroke="#111827" stroke-width="3"/>
+<path d="M170 238 h64 q16 0 16 14 q0 14 -16 14 h-64 q-16 0 -16 -14 q0 -14 16 -14" fill="none" stroke="#111827" stroke-width="3"/><path d="M170 268 h64 q16 0 16 14 q0 14 -16 14 h-64 q-16 0 -16 -14 q0 -14 16 -14" fill="none" stroke="#111827" stroke-width="3"/><path d="M170 298 h64 q16 0 16 14 q0 14 -16 14 h-64 q-16 0 -16 -14 q0 -14 16 -14" fill="none" stroke="#111827" stroke-width="3"/><path d="M170 328 h64 q16 0 16 14 q0 14 -16 14 h-64 q-16 0 -16 -14 q0 -14 16 -14" fill="none" stroke="#111827" stroke-width="3"/><path d="M170 358 h64 q16 0 16 14 q0 14 -16 14 h-64 q-16 0 -16 -14 q0 -14 16 -14" fill="none" stroke="#111827" stroke-width="3"/>
+<circle cx="132" cy="278" r="17" fill="#fff" stroke="#111827" stroke-width="3"/><text x="132" y="284" text-anchor="middle" font-size="17">①</text>
+<rect x="390" y="220" width="108" height="92" rx="8" fill="#fff" stroke="#111827" stroke-width="3"/>
+<path d="M418 238 h54 q16 0 16 14 q0 14 -16 14 h-54 q-16 0 -16 -14 q0 -14 16 -14" fill="none" stroke="#111827" stroke-width="3"/><path d="M418 268 h54 q16 0 16 14 q0 14 -16 14 h-54 q-16 0 -16 -14 q0 -14 16 -14" fill="none" stroke="#111827" stroke-width="3"/>
+<circle cx="522" cy="270" r="17" fill="#fff" stroke="#111827" stroke-width="3"/><text x="522" y="276" text-anchor="middle" font-size="17">②</text>
+<path d="M498 266 H660" stroke="#111827" stroke-width="4" marker-end="url(#arrow)"/><text x="648" y="250" font-size="17">タービンへ</text>
+<rect x="392" y="336" width="106" height="68" rx="8" fill="#fff" stroke="#111827" stroke-width="3"/>
+<path d="M420 356 h52 q14 0 14 11 q0 11 -14 11 h-52 q-14 0 -14 -11 q0 -11 14 -11" fill="none" stroke="#111827" stroke-width="3"/><path d="M420 382 h52 q14 0 14 11 q0 11 -14 11 h-52 q-14 0 -14 -11 q0 -11 14 -11" fill="none" stroke="#111827" stroke-width="3"/>
+<circle cx="522" cy="370" r="17" fill="#fff" stroke="#111827" stroke-width="3"/><text x="522" y="376" text-anchor="middle" font-size="17">③</text>
+<path d="M670 370 H536" stroke="#111827" stroke-width="4" marker-end="url(#arrow)"/><text x="675" y="376" font-size="17">水</text>
+<text x="462" y="432" font-size="16">給水ポンプ</text>
+<path d="M250 408 C270 470 430 470 445 404" fill="none" stroke="#64748b" stroke-width="3"/>
+<path d="M118 430 V214" stroke="#ef4444" stroke-width="4" marker-end="url(#arrow)"/><text x="70" y="446" font-size="17">燃焼ガス</text>
+<path d="M410 430 V404" stroke="#ef4444" stroke-width="4" marker-end="url(#arrow)"/><text x="414" y="452" font-size="17">煙突へ</text>
+</svg>

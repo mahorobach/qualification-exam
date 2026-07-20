@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" width="100%" role="img" aria-labelledby="title desc" font-family="Arial,'Hiragino Sans','Yu Gothic',sans-serif">
+<title id="title">高調波抑制用リアクトル</title><desc id="desc">高圧受電設備で用いる直列リアクトルの写真問題を、自作図で特徴化したもの。</desc><rect width="900" height="560" fill="#f8fafc"/><text x="32" y="46" font-size="22" font-weight="700" fill="#111827">写真に示す機器の特徴</text><text x="32" y="76" font-size="14" fill="#475569">油入ケース、上部端子、三相の巻線をもつ高圧用リアクトル。高調波電流を抑制する用途。</text>
+<rect x="270" y="180" width="360" height="250" rx="18" fill="#fff" stroke="#111827" stroke-width="4"/>
+<rect x="304" y="210" width="292" height="170" rx="8" fill="#e2e8f0" stroke="#64748b" stroke-width="2"/>
+<g fill="#fff" stroke="#111827" stroke-width="3"><circle cx="340" cy="160" r="19"/><circle cx="450" cy="150" r="19"/><circle cx="560" cy="160" r="19"/><rect x="328" y="176" width="24" height="42" rx="6"/><rect x="438" y="166" width="24" height="52" rx="6"/><rect x="548" y="176" width="24" height="42" rx="6"/></g>
+<g fill="none" stroke="#2563eb" stroke-width="5"><path d="M340 262c35-34 75-34 110 0s75 34 110 0"/><path d="M340 312c35-34 75-34 110 0s75 34 110 0"/><path d="M340 362c35-34 75-34 110 0s75 34 110 0"/></g>
+<rect x="312" y="396" width="276" height="24" rx="4" fill="#111827"/><text x="450" y="467" text-anchor="middle" font-size="20" font-weight="700" fill="#111827">直列リアクトル（SR）</text><text x="450" y="496" text-anchor="middle" font-size="15" fill="#475569">進相コンデンサ回路などで高調波電流を抑制</text></svg>
