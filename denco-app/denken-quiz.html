@@ -367,6 +367,7 @@ const CAT_SHORT = { "理論": "理論", "電力": "電力", "機械": "機械", 
 // ══════════════════════════════════════
 let allQuestions = [];
 let categoryStats = {};
+let completedPracticeQuestionIds = new Set();
 let examQuestions = [], examAnswers = [], examIdx = 0, examTimerSec = 0, examTimerInt = null, examYearKey = null;
 let pracQuestions = [], pracIdx = 0, pracAnswered = false, pracRecord = [];
 let currentMode = null, currentCatKey = null;
@@ -383,8 +384,24 @@ function showScreen(id) { SCREENS.forEach(s => document.getElementById(s).hidden
 function loadStats() {
     try { categoryStats = JSON.parse(localStorage.getItem("denkenCategoryStats") || "{}") || {}; }
     catch(e) { categoryStats = {}; }
+    try {
+        const savedIds = JSON.parse(localStorage.getItem("denkenCompletedPracticeQuestionIds") || "[]");
+        completedPracticeQuestionIds = new Set(Array.isArray(savedIds) ? savedIds : []);
+    } catch(e) {
+        completedPracticeQuestionIds = new Set();
+    }
 }
 function saveStats() { localStorage.setItem("denkenCategoryStats", JSON.stringify(categoryStats)); }
+function savePracticeProgress() {
+    localStorage.setItem("denkenCompletedPracticeQuestionIds", JSON.stringify(Array.from(completedPracticeQuestionIds)));
+}
+function practiceQuestionId(q) {
+    return [q.category || "未分類", q.year || "", q.question].join("\u001f");
+}
+function remainingPracticeCount(catKey) {
+    const scope = catKey === "__all__" ? allQuestions : allQuestions.filter(q => q.category === catKey);
+    return scope.filter(q => !completedPracticeQuestionIds.has(practiceQuestionId(q))).length;
+}
 function recordAnswer(cat, isCorrect) {
     if (!categoryStats[cat]) categoryStats[cat] = { correct: 0, attempted: 0 };
     categoryStats[cat].attempted++;
@@ -499,7 +516,7 @@ function buildCatList() {
     allQuestions.forEach(q => { const c = q.category || "未分類"; counts[c] = (counts[c]||0)+1; });
     const allBtn = document.createElement("button");
     allBtn.type = "button"; allBtn.className = "sel-item";
-    allBtn.innerHTML = `<strong>すべての科目</strong><span class="s-meta">全 ${allQuestions.length} 問をシャッフル</span>`;
+    allBtn.innerHTML = `<strong>すべての科目</strong><span class="s-meta">未出題 ${remainingPracticeCount("__all__")} / 全 ${allQuestions.length} 問</span>`;
     allBtn.addEventListener("click", () => startPrac("__all__"));
     el.appendChild(allBtn);
     CAT_ORDER.forEach(c => {
@@ -507,7 +524,7 @@ function buildCatList() {
         const b = CAT_BADGE[c] || "";
         const btn = document.createElement("button");
         btn.type = "button"; btn.className = "sel-item";
-        btn.innerHTML = `<span><span class="sub-badge ${b}">${c}</span><strong>${c}</strong></span><span class="s-meta">${counts[c]} 問</span>`;
+        btn.innerHTML = `<span><span class="sub-badge ${b}">${c}</span><strong>${c}</strong></span><span class="s-meta">未出題 ${remainingPracticeCount(c)} / 全 ${counts[c]} 問</span>`;
         btn.addEventListener("click", () => startPrac(c));
         el.appendChild(btn);
     });
@@ -605,7 +622,17 @@ function endExam() {
 // ══════════════════════════════════════
 function startPrac(catKey) {
     currentMode = "prac"; currentCatKey = catKey;
-    const pool = catKey==="__all__" ? shuffle(allQuestions.slice()) : shuffle(allQuestions.filter(q=>q.category===catKey));
+    const scope = catKey === "__all__" ? allQuestions.slice() : allQuestions.filter(q => q.category === catKey);
+    let candidates = scope.filter(q => !completedPracticeQuestionIds.has(practiceQuestionId(q)));
+
+    // 選択範囲を一巡したときだけ、その範囲の履歴を消して次の周回を始める。
+    if (!candidates.length && scope.length) {
+        scope.forEach(q => completedPracticeQuestionIds.delete(practiceQuestionId(q)));
+        savePracticeProgress();
+        candidates = scope;
+    }
+
+    const pool = shuffle(candidates);
     pracQuestions=pool; pracIdx=0; pracAnswered=false; pracRecord=new Array(pool.length).fill(null);
     showScreen("s-prac"); renderPracQ();
 }
@@ -634,6 +661,10 @@ function onPracChoose(selectedIdx) {
     if(pracAnswered) return; pracAnswered = true;
     const q = pracQuestions[pracIdx]; const isCorrect = selectedIdx===q.correctIndex;
     pracRecord[pracIdx] = selectedIdx; recordAnswer(q.category||"未分類", isCorrect);
+    if (isCorrect) {
+        completedPracticeQuestionIds.add(practiceQuestionId(q));
+        savePracticeProgress();
+    }
     const buttons = document.getElementById("prac-choices").querySelectorAll(".choice-btn");
     buttons.forEach((btn,i) => { btn.disabled=true; if(i===q.correctIndex)btn.classList.add("correct-pick"); else if(i===selectedIdx)btn.classList.add("wrong-pick"); });
     const lbl = document.getElementById("prac-result-label");
