@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="260" viewBox="0 0 760 260">
+  <defs>
+    <style>
+      .w{fill:none;stroke:#20242b;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+      .t{font:22px -apple-system,BlinkMacSystemFont,"Yu Gothic",sans-serif;fill:#20242b}
+      .s{font:18px -apple-system,BlinkMacSystemFont,"Yu Gothic",sans-serif;fill:#20242b}
+    </style>
+  </defs>
+  <line class="w" x1="90" y1="95" x2="670" y2="95"/>
+  <circle cx="90" cy="95" r="6" fill="#20242b"/>
+  <circle cx="380" cy="95" r="6" fill="#20242b"/>
+  <circle cx="670" cy="95" r="6" fill="#20242b"/>
+  <text class="t" x="78" y="70">S</text>
+  <text class="t" x="368" y="70">A</text>
+  <text class="t" x="658" y="70">B</text>
+  <text class="s" x="220" y="82">2 km</text>
+  <text class="s" x="510" y="82">2 km</text>
+  <line class="w" x1="380" y1="95" x2="380" y2="145"/>
+  <line class="w" x1="670" y1="95" x2="670" y2="145"/>
+  <text class="s" x="300" y="175">負荷電流 200 A</text>
+  <text class="s" x="300" y="205">力率（遅れ）0.8</text>
+  <text class="s" x="590" y="175">負荷電流 100 A</text>
+  <text class="s" x="590" y="205">力率（遅れ）0.6</text>
+</svg>
