@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="520" viewBox="0 0 520 520">
+<style>.w{fill:#fff;stroke:#20242b;stroke-width:2}.l{fill:none;stroke:#20242b;stroke-width:2}.t{font:20px -apple-system,"Yu Gothic",sans-serif;fill:#20242b}</style>
+<ellipse class="w" cx="260" cy="35" rx="70" ry="25"/><text class="t" x="235" y="43">開始</text><path class="l" d="M260 60V95"/>
+<rect class="w" x="180" y="95" width="160" height="70"/><text class="t" x="220" y="123">A ← 10</text><text class="t" x="230" y="151">B ← 2</text><path class="l" d="M260 165V200"/>
+<rect class="w" x="180" y="200" width="160" height="55"/><text class="t" x="210" y="235">A ← A＋B</text><path class="l" d="M260 255V285"/>
+<path class="w" d="M260 285L345 335L260 385L175 335Z"/><text class="t" x="220" y="343">A≦40</text>
+<text class="t" x="275" y="400">YES</text><path class="l" d="M260 385V410"/>
+<rect class="w" x="180" y="410" width="160" height="55"/><text class="t" x="205" y="444">B ← 2B＋1</text>
+<path class="l" d="M180 438H90V228H180"/>
+<path class="l" d="M345 335H430V410"/><text class="t" x="365" y="325">NO</text>
+<rect class="w" x="350" y="410" width="150" height="55"/><text class="t" x="365" y="444">A,Bを印字</text>
+<ellipse class="w" cx="425" cy="495" rx="70" ry="22"/><text class="t" x="400" y="502">終了</text><path class="l" d="M425 465V473"/>
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="260" viewBox="0 0 760 260">
+<style>.w{fill:none;stroke:#20242b;stroke-width:3}.b{fill:#fff;stroke:#20242b;stroke-width:2}.t{font:20px -apple-system,"Yu Gothic",sans-serif;fill:#20242b}</style>
+<text class="t" x="20" y="75">R(jω)</text><circle class="b" cx="130" cy="68" r="14"/><text class="t" x="115" y="48">＋</text><text class="t" x="113" y="98">－</text>
+<path class="w" d="M80 68H116M144 68H270M350 68H480M494 68H650"/>
+<rect class="b" x="270" y="42" width="80" height="52"/><text class="t" x="295" y="75">G₁</text>
+<circle class="b" cx="480" cy="68" r="14"/><text class="t" x="465" y="48">＋</text><text class="t" x="463" y="98">－</text><text class="t" x="655" y="75">C(jω)</text>
+<path class="w" d="M210 68V140H270M350 140H480V82"/><rect class="b" x="270" y="114" width="80" height="52"/><text class="t" x="295" y="147">G₂</text>
+<path class="w" d="M570 68V220H350M270 220H130V82"/><rect class="b" x="270" y="194" width="80" height="52"/><text class="t" x="295" y="227">G₃</text>
+</svg>

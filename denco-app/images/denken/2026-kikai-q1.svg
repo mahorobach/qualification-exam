@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="390" viewBox="0 0 800 390">
+<style>.a{fill:none;stroke:#20242b;stroke-width:2}.d{fill:none;stroke:#2563a8;stroke-width:3}.t{font:16px -apple-system,"Yu Gothic",sans-serif;fill:#20242b}</style>
+<g transform="translate(10 10)"><text class="t" x="60" y="15">(1)</text><path class="a" d="M20 150V30M20 150H140"/><path class="d" d="M25 140L130 35M25 45L130 65"/></g>
+<g transform="translate(165 10)"><text class="t" x="60" y="15">(2)</text><path class="a" d="M20 150V30M20 150H140"/><path class="d" d="M25 45L130 70M25 140L130 35"/></g>
+<g transform="translate(320 10)"><text class="t" x="60" y="15">(3)</text><path class="a" d="M20 150V30M20 150H140"/><path class="d" d="M25 45L130 70M25 140Q100 110 130 35"/></g>
+<g transform="translate(475 10)"><text class="t" x="60" y="15">(4)</text><path class="a" d="M20 150V30M20 150H140"/><path class="d" d="M25 140Q75 80 130 35M25 45L130 65"/></g>
+<g transform="translate(630 10)"><text class="t" x="60" y="15">(5)</text><path class="a" d="M20 150V30M20 150H140"/><path class="d" d="M25 45L130 65M25 140L130 35"/></g>
+<text class="t" x="220" y="215">青線はトルクTと回転速度nの特性。横軸は負荷電流、I₀は無負荷電流。</text>
+</svg>
