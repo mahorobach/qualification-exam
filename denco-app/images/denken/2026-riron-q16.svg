@@ -1,24 +1,118 @@
-<?xml version='1.0' encoding='utf-8'?>
-<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" width="700" height="330" viewBox="0 3560 700 330"><ns0:defs>
-    <ns0:style>
-      .w{fill:none;stroke:#20242b;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}.t{font:22px -apple-system,BlinkMacSystemFont,"Yu Gothic",sans-serif;fill:#20242b}.s{font:18px -apple-system,BlinkMacSystemFont,"Yu Gothic",sans-serif;fill:#20242b}.m{font:italic 22px Georgia,serif;fill:#20242b}.f{fill:#eef2f7;stroke:#20242b;stroke-width:2}.d{fill:#d8dee8;stroke:#20242b;stroke-width:2}.a{fill:none;stroke:#20242b;stroke-width:2;marker-end:url(#arrow)}
-    </ns0:style>
-    <ns0:marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><ns0:path d="M0 0L8 4L0 8z" fill="#20242b" /></ns0:marker>
-    <ns0:pattern id="hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(35)"><ns0:line x1="0" y1="0" x2="0" y2="10" stroke="#7f8998" stroke-width="3" /></ns0:pattern>
-    <ns0:view id="q1" viewBox="0 0 700 260" /><ns0:view id="q2" viewBox="0 280 700 230" />
-    <ns0:view id="q4" viewBox="0 530 700 260" /><ns0:view id="q5" viewBox="0 810 700 260" />
-    <ns0:view id="q6" viewBox="0 1090 700 240" /><ns0:view id="q7" viewBox="0 1350 700 270" />
-    <ns0:view id="q8" viewBox="0 1640 700 250" /><ns0:view id="q9" viewBox="0 1910 700 280" />
-    <ns0:view id="q10" viewBox="0 2210 700 430" /><ns0:view id="q12" viewBox="0 2660 700 260" />
-    <ns0:view id="q14" viewBox="0 2940 700 250" /><ns0:view id="q15" viewBox="0 3210 700 330" />
-    <ns0:view id="q16" viewBox="0 3560 700 330" /><ns0:view id="q17" viewBox="0 3910 700 300" />
-    <ns0:view id="q18" viewBox="0 4230 700 270" />
-  </ns0:defs>
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="410" viewBox="0 0 760 410" role="img" aria-labelledby="title desc">
+  <title id="title">抵抗Rの接続を変更した二つの直流回路</title>
+  <desc id="desc">図1は抵抗Rを端子aとdの間に接続し、図2は抵抗Rを端子bとcの間に接続している。</desc>
+  <defs>
+    <style>
+      .wire{fill:none;stroke:#20242b;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+      .resistor{fill:#fff;stroke:#20242b;stroke-width:2}
+      .node{fill:#20242b}
+      .label{fill:#20242b;font-family:"Times New Roman","Yu Mincho",serif;font-size:19px}
+      .value{fill:#20242b;font-family:"Times New Roman","Yu Mincho",serif;font-size:18px}
+      .caption{fill:#20242b;font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:19px}
+      .current{fill:none;stroke:#20242b;stroke-width:1.7;marker-end:url(#arrow)}
+    </style>
+    <marker id="arrow" markerWidth="9" markerHeight="8" refX="8" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8 Z" fill="#20242b"/>
+    </marker>
+  </defs>
 
-  <ns0:g id="fig-q16" transform="translate(0 3560)">
-    <ns0:text class="t" x="120" y="28">図1</ns0:text><ns0:text class="t" x="475" y="28">図2</ns0:text>
-    <ns0:g transform="translate(10 40)"><ns0:path class="w" d="M40 70H300V240H40V70M170 70V240" /><ns0:rect class="f" x="85" y="50" width="65" height="40" /><ns0:rect class="f" x="200" y="50" width="65" height="40" /><ns0:rect class="f" x="85" y="220" width="65" height="40" /><ns0:rect class="f" x="200" y="220" width="65" height="40" /><ns0:text class="s" x="90" y="45">16 Ω</ns0:text><ns0:text class="s" x="210" y="45">4 Ω</ns0:text><ns0:text class="s" x="95" y="290">4 Ω</ns0:text><ns0:text class="s" x="205" y="290">16 Ω</ns0:text><ns0:rect class="f" x="145" y="130" width="50" height="75" /><ns0:text class="m" x="158" y="173">R</ns0:text></ns0:g>
-    <ns0:g transform="translate(355 40)"><ns0:path class="w" d="M40 70H300V240H40V70M170 70V240" /><ns0:rect class="f" x="85" y="50" width="65" height="40" /><ns0:rect class="f" x="200" y="50" width="65" height="40" /><ns0:rect class="f" x="85" y="220" width="65" height="40" /><ns0:rect class="f" x="200" y="220" width="65" height="40" /><ns0:text class="s" x="90" y="45">16 Ω</ns0:text><ns0:text class="s" x="210" y="45">4 Ω</ns0:text><ns0:text class="s" x="95" y="290">4 Ω</ns0:text><ns0:text class="s" x="205" y="290">16 Ω</ns0:text><ns0:rect class="f" x="145" y="100" width="50" height="75" /><ns0:text class="m" x="158" y="143">R</ns0:text></ns0:g>
-  </ns0:g>
+  <!-- 図1 -->
+  <g aria-label="図1">
+    <!-- outer bridge -->
+    <path class="wire" d="M78 152V67H128 M178 67H224 M274 67H300V152"/>
+    <path class="wire" d="M78 152V237H128 M178 237H224 M274 237H300V152"/>
+    <rect class="resistor" x="128" y="55" width="50" height="24"/>
+    <rect class="resistor" x="224" y="55" width="50" height="24"/>
+    <rect class="resistor" x="128" y="225" width="50" height="24"/>
+    <rect class="resistor" x="224" y="225" width="50" height="24"/>
 
-  </ns0:svg>
+    <!-- middle branch R -->
+    <path class="wire" d="M78 152H163 M213 152H300"/>
+    <rect class="resistor" x="163" y="140" width="50" height="24"/>
+
+    <!-- source loop -->
+    <path class="wire" d="M78 152H56V315H175"/>
+    <path class="wire" d="M201 315H322V152H300"/>
+    <line class="wire" x1="175" y1="298" x2="175" y2="332"/>
+    <line class="wire" x1="201" y1="305" x2="201" y2="325"/>
+
+    <!-- nodes -->
+    <circle class="node" cx="78" cy="152" r="4"/>
+    <circle class="node" cx="201" cy="67" r="4"/>
+    <circle class="node" cx="201" cy="237" r="4"/>
+    <circle class="node" cx="300" cy="152" r="4"/>
+
+    <!-- current arrows -->
+    <path class="current" d="M91 130H147"/>
+    <path class="current" d="M67 294V250"/>
+
+    <!-- labels -->
+    <text class="value" x="132" y="45">16 Ω</text>
+    <text class="value" x="231" y="45">4 Ω</text>
+    <text class="value" x="137" y="219">4 Ω</text>
+    <text class="value" x="226" y="219">16 Ω</text>
+    <text class="label" x="179" y="181" font-style="italic">R</text>
+    <text class="value" x="198" y="181">[Ω]</text>
+    <text class="label" x="67" y="143">a</text>
+    <text class="label" x="196" y="54">b</text>
+    <text class="label" x="196" y="262">c</text>
+    <text class="label" x="306" y="143">d</text>
+    <text class="label" x="97" y="120" font-style="italic">I</text>
+    <text class="value" x="104" y="125" font-size="13">2</text>
+    <text class="value" x="116" y="120">= 0.5 A</text>
+    <text class="label" x="75" y="277" font-style="italic">I</text>
+    <text class="value" x="82" y="282" font-size="13">1</text>
+    <text class="value" x="94" y="277">= 4.5 A</text>
+    <text class="label" x="168" y="352" font-style="italic">E</text>
+    <text class="value" x="183" y="352">[V]</text>
+    <text class="caption" x="166" y="395">図1</text>
+  </g>
+
+  <!-- 図2 -->
+  <g aria-label="図2">
+    <!-- bridge -->
+    <path class="wire" d="M437 152V67H487 M537 67H583 M633 67H659V152"/>
+    <path class="wire" d="M437 152V237H487 M537 237H583 M633 237H659V152"/>
+    <rect class="resistor" x="487" y="55" width="50" height="24"/>
+    <rect class="resistor" x="583" y="55" width="50" height="24"/>
+    <rect class="resistor" x="487" y="225" width="50" height="24"/>
+    <rect class="resistor" x="583" y="225" width="50" height="24"/>
+
+    <!-- vertical branch R -->
+    <path class="wire" d="M560 67V126 M560 178V237"/>
+    <rect class="resistor" x="548" y="126" width="24" height="52"/>
+
+    <!-- source loop -->
+    <path class="wire" d="M437 152H415V315H534"/>
+    <path class="wire" d="M560 315H681V152H659"/>
+    <line class="wire" x1="534" y1="298" x2="534" y2="332"/>
+    <line class="wire" x1="560" y1="305" x2="560" y2="325"/>
+
+    <!-- nodes -->
+    <circle class="node" cx="437" cy="152" r="4"/>
+    <circle class="node" cx="560" cy="67" r="4"/>
+    <circle class="node" cx="560" cy="237" r="4"/>
+    <circle class="node" cx="659" cy="152" r="4"/>
+
+    <!-- current arrow -->
+    <path class="current" d="M426 294V250"/>
+
+    <!-- labels -->
+    <text class="value" x="491" y="45">16 Ω</text>
+    <text class="value" x="590" y="45">4 Ω</text>
+    <text class="value" x="496" y="219">4 Ω</text>
+    <text class="value" x="585" y="219">16 Ω</text>
+    <text class="label" x="579" y="151" font-style="italic">R</text>
+    <text class="value" x="593" y="151">[Ω]</text>
+    <text class="label" x="426" y="143">a</text>
+    <text class="label" x="555" y="54">b</text>
+    <text class="label" x="555" y="262">c</text>
+    <text class="label" x="665" y="143">d</text>
+    <text class="label" x="434" y="277" font-style="italic">I</text>
+    <text class="value" x="441" y="282" font-size="13">3</text>
+    <text class="value" x="453" y="277">[A]</text>
+    <text class="label" x="527" y="352" font-style="italic">E</text>
+    <text class="value" x="542" y="352">[V]</text>
+    <text class="caption" x="525" y="395">図2</text>
+  </g>
+</svg>
