@@ -164,6 +164,12 @@
         .result-label.ok { color: var(--success); }
         .result-label.ng { color: var(--danger); }
         .explanation { font-size: 0.88rem; color: var(--text-muted); margin: 0; line-height: 1.8; }
+        .rich-explanation h2 { color: var(--text); font-size: 1rem; margin: 1.2em 0 .45em; }
+        .rich-explanation h2:first-child { margin-top: 0; }
+        .rich-explanation h3 { color: var(--text); font-size: .92rem; margin: 1em 0 .35em; }
+        .rich-explanation p { margin: 0 0 .75em; }
+        .rich-explanation ul { margin: .25em 0 .9em; padding-left: 1.4em; }
+        .rich-explanation li { margin: .35em 0; }
         .next-btn {
             width: 100%; padding: 15px; margin-top: 20px; font-family: inherit;
             font-size: 1rem; font-weight: 700; color: #fff;
@@ -330,7 +336,7 @@
             <div class="choices" id="prac-choices"></div>
             <div class="feedback" id="prac-feedback">
                 <p class="result-label" id="prac-result-label"></p>
-                <p class="explanation" id="prac-explanation"></p>
+                <div class="explanation" id="prac-explanation"></div>
                 <button type="button" class="next-btn" id="btn-prac-next">次の問題へ</button>
             </div>
         </div>
@@ -679,7 +685,7 @@ function onPracChoose(selectedIdx) {
     const lbl = document.getElementById("prac-result-label");
     lbl.textContent = isCorrect ? "✓ 正解！" : "✗ 不正解…";
     lbl.className = "result-label "+(isCorrect?"ok":"ng");
-    document.getElementById("prac-explanation").textContent = q.explanation;
+    renderExplanation(document.getElementById("prac-explanation"), q);
     document.getElementById("prac-feedback").classList.add("visible");
 }
 
@@ -739,13 +745,53 @@ function showResults(mode) {
             <div class="q-res-text">${escHtml(q.question)}</div>`;
         if(!isSkip) html += `<div class="q-res-your ${isOk?'ok':'ng'}">あなたの解答：${escHtml(q.choices[userAns])}</div>`;
         if(!isOk)   html += `<div class="q-res-correct">正解：${escHtml(q.choices[q.correctIndex])}</div>`;
-        html += `<div class="q-res-exp">${escHtml(q.explanation)}</div>`;
+        html += `<div class="q-res-exp rich-explanation">${formatExplanationHtml(q.richExplanation || q.explanation)}</div>`;
         card.innerHTML = html; listEl.appendChild(card);
     });
 }
 
 function escHtml(str) {
     return String(str).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+}
+
+function formatExplanationHtml(text) {
+    const safe = escHtml(text || "");
+    const lines = safe.split(/\r?\n/);
+    let html = "", inList = false, paragraph = [];
+    const flushParagraph = () => {
+        if (!paragraph.length) return;
+        html += `<p>${paragraph.join("<br>")}</p>`;
+        paragraph = [];
+    };
+    const closeList = () => {
+        if (!inList) return;
+        html += "</ul>";
+        inList = false;
+    };
+    lines.forEach(line => {
+        const heading = line.match(/^(#{2,3})\s+(.+)$/);
+        const bullet = line.match(/^-\s+(.+)$/);
+        if (heading) {
+            flushParagraph(); closeList();
+            const level = heading[1].length;
+            html += `<h${level}>${heading[2]}</h${level}>`;
+        } else if (bullet) {
+            flushParagraph();
+            if (!inList) { html += "<ul>"; inList = true; }
+            html += `<li>${bullet[1]}</li>`;
+        } else if (!line.trim()) {
+            flushParagraph(); closeList();
+        } else {
+            closeList(); paragraph.push(line);
+        }
+    });
+    flushParagraph(); closeList();
+    return html;
+}
+
+function renderExplanation(element, q) {
+    element.classList.toggle("rich-explanation", Boolean(q.richExplanation));
+    element.innerHTML = formatExplanationHtml(q.richExplanation || q.explanation);
 }
 
 function renderQuestionDiagram(elementId, q) {
