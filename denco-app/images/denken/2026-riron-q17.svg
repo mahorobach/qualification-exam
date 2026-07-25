@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" width="700" height="300" viewBox="0 3910 700 300"><ns0:defs>
+    <ns0:style>
+      .w{fill:none;stroke:#20242b;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}.t{font:22px -apple-system,BlinkMacSystemFont,"Yu Gothic",sans-serif;fill:#20242b}.s{font:18px -apple-system,BlinkMacSystemFont,"Yu Gothic",sans-serif;fill:#20242b}.m{font:italic 22px Georgia,serif;fill:#20242b}.f{fill:#eef2f7;stroke:#20242b;stroke-width:2}.d{fill:#d8dee8;stroke:#20242b;stroke-width:2}.a{fill:none;stroke:#20242b;stroke-width:2;marker-end:url(#arrow)}
+    </ns0:style>
+    <ns0:marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><ns0:path d="M0 0L8 4L0 8z" fill="#20242b" /></ns0:marker>
+    <ns0:pattern id="hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(35)"><ns0:line x1="0" y1="0" x2="0" y2="10" stroke="#7f8998" stroke-width="3" /></ns0:pattern>
+    <ns0:view id="q1" viewBox="0 0 700 260" /><ns0:view id="q2" viewBox="0 280 700 230" />
+    <ns0:view id="q4" viewBox="0 530 700 260" /><ns0:view id="q5" viewBox="0 810 700 260" />
+    <ns0:view id="q6" viewBox="0 1090 700 240" /><ns0:view id="q7" viewBox="0 1350 700 270" />
+    <ns0:view id="q8" viewBox="0 1640 700 250" /><ns0:view id="q9" viewBox="0 1910 700 280" />
+    <ns0:view id="q10" viewBox="0 2210 700 430" /><ns0:view id="q12" viewBox="0 2660 700 260" />
+    <ns0:view id="q14" viewBox="0 2940 700 250" /><ns0:view id="q15" viewBox="0 3210 700 330" />
+    <ns0:view id="q16" viewBox="0 3560 700 330" /><ns0:view id="q17" viewBox="0 3910 700 300" />
+    <ns0:view id="q18" viewBox="0 4230 700 270" />
+  </ns0:defs>
+
+  <ns0:g id="fig-q17" transform="translate(0 3910)">
+    <ns0:text class="t" x="130" y="25">コンデンサA</ns0:text><ns0:text class="t" x="500" y="25">コンデンサB</ns0:text>
+    <ns0:rect class="f" x="80" y="55" width="260" height="60" /><ns0:rect class="d" x="80" y="115" width="260" height="85" /><ns0:rect x="80" y="200" width="260" height="70" fill="#aeb6c2" stroke="#20242b" stroke-width="2" />
+    <ns0:text class="s" x="155" y="90">E_A1, 2ε₀, d/6</ns0:text><ns0:text class="s" x="155" y="158">E_A2, 3ε₀, d/3</ns0:text><ns0:text class="s" x="155" y="240">E_A3, 6ε₀, d/2</ns0:text>
+    <ns0:rect class="f" x="405" y="55" width="55" height="215" /><ns0:rect class="d" x="460" y="55" width="105" height="215" /><ns0:rect x="565" y="55" width="105" height="215" fill="#aeb6c2" stroke="#20242b" stroke-width="2" />
+    <ns0:text class="s" x="410" y="150">E_B1</ns0:text><ns0:text class="s" x="480" y="150">E_B2</ns0:text><ns0:text class="s" x="590" y="150">E_B3</ns0:text><ns0:text class="s" x="410" y="180">2ε₀</ns0:text><ns0:text class="s" x="485" y="180">3ε₀</ns0:text><ns0:text class="s" x="595" y="180">6ε₀</ns0:text>
+  </ns0:g>
+
+  </ns0:svg>

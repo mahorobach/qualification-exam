@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" width="700" height="240" viewBox="0 1090 700 240"><ns0:defs>
+    <ns0:style>
+      .w{fill:none;stroke:#20242b;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}.t{font:22px -apple-system,BlinkMacSystemFont,"Yu Gothic",sans-serif;fill:#20242b}.s{font:18px -apple-system,BlinkMacSystemFont,"Yu Gothic",sans-serif;fill:#20242b}.m{font:italic 22px Georgia,serif;fill:#20242b}.f{fill:#eef2f7;stroke:#20242b;stroke-width:2}.d{fill:#d8dee8;stroke:#20242b;stroke-width:2}.a{fill:none;stroke:#20242b;stroke-width:2;marker-end:url(#arrow)}
+    </ns0:style>
+    <ns0:marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><ns0:path d="M0 0L8 4L0 8z" fill="#20242b" /></ns0:marker>
+    <ns0:pattern id="hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(35)"><ns0:line x1="0" y1="0" x2="0" y2="10" stroke="#7f8998" stroke-width="3" /></ns0:pattern>
+    <ns0:view id="q1" viewBox="0 0 700 260" /><ns0:view id="q2" viewBox="0 280 700 230" />
+    <ns0:view id="q4" viewBox="0 530 700 260" /><ns0:view id="q5" viewBox="0 810 700 260" />
+    <ns0:view id="q6" viewBox="0 1090 700 240" /><ns0:view id="q7" viewBox="0 1350 700 270" />
+    <ns0:view id="q8" viewBox="0 1640 700 250" /><ns0:view id="q9" viewBox="0 1910 700 280" />
+    <ns0:view id="q10" viewBox="0 2210 700 430" /><ns0:view id="q12" viewBox="0 2660 700 260" />
+    <ns0:view id="q14" viewBox="0 2940 700 250" /><ns0:view id="q15" viewBox="0 3210 700 330" />
+    <ns0:view id="q16" viewBox="0 3560 700 330" /><ns0:view id="q17" viewBox="0 3910 700 300" />
+    <ns0:view id="q18" viewBox="0 4230 700 270" />
+  </ns0:defs>
+
+  <ns0:g id="fig-q6" transform="translate(0 1090)">
+    <ns0:circle class="w" cx="120" cy="120" r="43" /><ns0:text class="m" x="97" y="128">E</ns0:text><ns0:text class="m" x="100" y="185">r [Ω]</ns0:text>
+    <ns0:path class="w" d="M120 77V35H580V205H120V163" /><ns0:rect class="f" x="385" y="185" width="105" height="40" /><ns0:text class="m" x="405" y="250">R [Ω]</ns0:text>
+    <ns0:line class="a" x1="240" y1="35" x2="330" y2="35" /><ns0:text class="m" x="260" y="25">I [A]</ns0:text>
+  </ns0:g>
+
+  </ns0:svg>

@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" width="700" height="260" viewBox="0 0 700 260"><ns0:defs>
+    <ns0:style>
+      .w{fill:none;stroke:#20242b;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}.t{font:22px -apple-system,BlinkMacSystemFont,"Yu Gothic",sans-serif;fill:#20242b}.s{font:18px -apple-system,BlinkMacSystemFont,"Yu Gothic",sans-serif;fill:#20242b}.m{font:italic 22px Georgia,serif;fill:#20242b}.f{fill:#eef2f7;stroke:#20242b;stroke-width:2}.d{fill:#d8dee8;stroke:#20242b;stroke-width:2}.a{fill:none;stroke:#20242b;stroke-width:2;marker-end:url(#arrow)}
+    </ns0:style>
+    <ns0:marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><ns0:path d="M0 0L8 4L0 8z" fill="#20242b" /></ns0:marker>
+    <ns0:pattern id="hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(35)"><ns0:line x1="0" y1="0" x2="0" y2="10" stroke="#7f8998" stroke-width="3" /></ns0:pattern>
+    <ns0:view id="q1" viewBox="0 0 700 260" /><ns0:view id="q2" viewBox="0 280 700 230" />
+    <ns0:view id="q4" viewBox="0 530 700 260" /><ns0:view id="q5" viewBox="0 810 700 260" />
+    <ns0:view id="q6" viewBox="0 1090 700 240" /><ns0:view id="q7" viewBox="0 1350 700 270" />
+    <ns0:view id="q8" viewBox="0 1640 700 250" /><ns0:view id="q9" viewBox="0 1910 700 280" />
+    <ns0:view id="q10" viewBox="0 2210 700 430" /><ns0:view id="q12" viewBox="0 2660 700 260" />
+    <ns0:view id="q14" viewBox="0 2940 700 250" /><ns0:view id="q15" viewBox="0 3210 700 330" />
+    <ns0:view id="q16" viewBox="0 3560 700 330" /><ns0:view id="q17" viewBox="0 3910 700 300" />
+    <ns0:view id="q18" viewBox="0 4230 700 270" />
+  </ns0:defs>
+
+  <ns0:g id="fig-q1">
+    <ns0:text class="t" x="155" y="32">図1</ns0:text><ns0:text class="t" x="500" y="32">図2</ns0:text>
+    <ns0:line class="w" x1="70" y1="90" x2="285" y2="90" /><ns0:line class="w" x1="70" y1="145" x2="285" y2="145" />
+    <ns0:rect x="70" y="91" width="215" height="53" fill="url(#hatch)" /><ns0:line class="w" x1="177" y1="50" x2="177" y2="185" /><ns0:text class="m" x="125" y="215">l [m]</ns0:text><ns0:text class="m" x="30" y="126">d [m]</ns0:text><ns0:text class="s" x="195" y="78">誘電体</ns0:text><ns0:text class="m" x="132" y="80">C₁</ns0:text>
+    <ns0:line class="w" x1="390" y1="90" x2="630" y2="90" /><ns0:line class="w" x1="390" y1="145" x2="630" y2="145" /><ns0:rect x="510" y="91" width="120" height="53" fill="url(#hatch)" /><ns0:line class="w" x1="510" y1="50" x2="510" y2="185" /><ns0:text class="m" x="445" y="215">l [m]</ns0:text><ns0:text class="m" x="350" y="126">d [m]</ns0:text><ns0:text class="s" x="535" y="78">誘電体</ns0:text><ns0:text class="m" x="445" y="80">C₂</ns0:text>
+  </ns0:g>
+
+  </ns0:svg>

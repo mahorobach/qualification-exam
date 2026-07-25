@@ -127,6 +127,8 @@
         /* ── Question Card ── */
         .q-num-badge { display: inline-block; font-size: 0.72rem; font-weight: 500; color: var(--denken); background: var(--denken-soft); padding: 4px 10px; border-radius: 999px; margin-bottom: 14px; }
         .q-text { font-size: 1rem; font-weight: 500; margin: 0 0 20px; line-height: 1.75; color: var(--text); }
+        .q-diagram { display: block; width: 100%; height: 300px; object-fit: contain; margin: -4px auto 20px; border-radius: 10px; background: #fff; }
+        .q-diagram[hidden] { display: none; }
         .choices { display: flex; flex-direction: column; gap: 10px; }
         .choice-btn {
             appearance: none; width: 100%; text-align: left; padding: 14px 16px;
@@ -305,6 +307,7 @@
         <div class="card" style="margin-bottom:12px;">
             <span class="q-num-badge" id="exam-q-num">問題 1</span>
             <p class="q-text" id="exam-q-text"></p>
+            <img class="q-diagram" id="exam-q-diagram" alt="" hidden>
             <div class="choices" id="exam-choices"></div>
         </div>
         <div class="exam-nav">
@@ -323,6 +326,7 @@
         <div class="card">
             <span class="q-num-badge" id="prac-q-num">問題 1</span>
             <p class="q-text" id="prac-q-text"></p>
+            <img class="q-diagram" id="prac-q-diagram" alt="" hidden>
             <div class="choices" id="prac-choices"></div>
             <div class="feedback" id="prac-feedback">
                 <p class="result-label" id="prac-result-label"></p>
@@ -451,7 +455,7 @@ async function loadQuestions() {
         if (!Array.isArray(data)) throw new Error("not array");
         allQuestions = data.filter(q =>
             q && typeof q.question === "string" &&
-            Array.isArray(q.choices) && q.choices.length === 4 &&
+            Array.isArray(q.choices) && (q.choices.length === 4 || q.choices.length === 5) &&
             typeof q.correctIndex === "number"
         );
     } catch(err) {
@@ -572,6 +576,7 @@ function renderExamQ() {
     const badge = CAT_BADGE[q.category]||""; const short = CAT_SHORT[q.category]||q.category;
     document.getElementById("exam-q-num").innerHTML = `<span class="sub-badge ${badge}">${short}</span> ${q.year}年 · 問題 ${examIdx+1} / ${examQuestions.length}`;
     document.getElementById("exam-q-text").textContent = q.question;
+    renderQuestionDiagram("exam-q-diagram", q);
     const choicesEl = document.getElementById("exam-choices"); choicesEl.innerHTML = "";
     q.choices.forEach((label,idx) => {
         const btn = document.createElement("button"); btn.type = "button";
@@ -650,6 +655,7 @@ function renderPracQ() {
     const badge = CAT_BADGE[q.category]||""; const short = CAT_SHORT[q.category]||q.category;
     document.getElementById("prac-q-num").innerHTML = `<span class="sub-badge ${badge}">${short}</span> ${q.year}年 · 問題 ${pracIdx+1}`;
     document.getElementById("prac-q-text").textContent = q.question;
+    renderQuestionDiagram("prac-q-diagram", q);
     const choicesEl = document.getElementById("prac-choices"); choicesEl.innerHTML = "";
     q.choices.forEach((label,idx) => {
         const btn = document.createElement("button"); btn.type="button"; btn.className="choice-btn"; btn.textContent=label;
@@ -740,6 +746,19 @@ function showResults(mode) {
 
 function escHtml(str) {
     return String(str).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+}
+
+function renderQuestionDiagram(elementId, q) {
+    const image = document.getElementById(elementId);
+    if (!q.diagram) {
+        image.hidden = true;
+        image.removeAttribute("src");
+        image.alt = "";
+        return;
+    }
+    image.src = q.diagram;
+    image.alt = q.diagramAlt || "問題の図";
+    image.hidden = false;
 }
 
 document.getElementById("btn-to-menu").addEventListener("click", () => initModeScreen());

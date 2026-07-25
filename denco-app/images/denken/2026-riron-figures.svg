@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="4500">
+  <defs>
+    <style>
+      .w{fill:none;stroke:#20242b;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}.t{font:22px -apple-system,BlinkMacSystemFont,"Yu Gothic",sans-serif;fill:#20242b}.s{font:18px -apple-system,BlinkMacSystemFont,"Yu Gothic",sans-serif;fill:#20242b}.m{font:italic 22px Georgia,serif;fill:#20242b}.f{fill:#eef2f7;stroke:#20242b;stroke-width:2}.d{fill:#d8dee8;stroke:#20242b;stroke-width:2}.a{fill:none;stroke:#20242b;stroke-width:2;marker-end:url(#arrow)}
+    </style>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8z" fill="#20242b"/></marker>
+    <pattern id="hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(35)"><line x1="0" y1="0" x2="0" y2="10" stroke="#7f8998" stroke-width="3"/></pattern>
+    <view id="q1" viewBox="0 0 700 260"/><view id="q2" viewBox="0 280 700 230"/>
+    <view id="q4" viewBox="0 530 700 260"/><view id="q5" viewBox="0 810 700 260"/>
+    <view id="q6" viewBox="0 1090 700 240"/><view id="q7" viewBox="0 1350 700 270"/>
+    <view id="q8" viewBox="0 1640 700 250"/><view id="q9" viewBox="0 1910 700 280"/>
+    <view id="q10" viewBox="0 2210 700 430"/><view id="q12" viewBox="0 2660 700 260"/>
+    <view id="q14" viewBox="0 2940 700 250"/><view id="q15" viewBox="0 3210 700 330"/>
+    <view id="q16" viewBox="0 3560 700 330"/><view id="q17" viewBox="0 3910 700 300"/>
+    <view id="q18" viewBox="0 4230 700 270"/>
+  </defs>
+
+  <g id="fig-q1">
+    <text class="t" x="155" y="32">図1</text><text class="t" x="500" y="32">図2</text>
+    <line class="w" x1="70" y1="90" x2="285" y2="90"/><line class="w" x1="70" y1="145" x2="285" y2="145"/>
+    <rect x="70" y="91" width="215" height="53" fill="url(#hatch)"/><line class="w" x1="177" y1="50" x2="177" y2="185"/><text class="m" x="125" y="215">l [m]</text><text class="m" x="30" y="126">d [m]</text><text class="s" x="195" y="78">誘電体</text><text class="m" x="132" y="80">C₁</text>
+    <line class="w" x1="390" y1="90" x2="630" y2="90"/><line class="w" x1="390" y1="145" x2="630" y2="145"/><rect x="510" y="91" width="120" height="53" fill="url(#hatch)"/><line class="w" x1="510" y1="50" x2="510" y2="185"/><text class="m" x="445" y="215">l [m]</text><text class="m" x="350" y="126">d [m]</text><text class="s" x="535" y="78">誘電体</text><text class="m" x="445" y="80">C₂</text>
+  </g>
+
+  <g id="fig-q2" transform="translate(0 280)">
+    <circle class="f" cx="90" cy="115" r="7"/><circle class="f" cx="590" cy="115" r="7"/><circle class="f" cx="260" cy="115" r="7"/>
+    <line class="w" x1="90" y1="115" x2="590" y2="115"/><text class="t" x="80" y="85">A</text><text class="t" x="250" y="85">P</text><text class="t" x="580" y="85">B</text>
+    <text class="m" x="25" y="150">3×10⁻⁷ C</text><text class="m" x="525" y="150">3×10⁻⁷ C</text><text class="m" x="220" y="150">Q [C]</text>
+    <line class="a" x1="275" y1="75" x2="395" y2="75"/><text class="m" x="300" y="55">5×10⁻³ N</text><text class="s" x="145" y="195">1 m</text><text class="s" x="405" y="195">2 m</text>
+  </g>
+
+  <g id="fig-q4" transform="translate(0 530)">
+    <path class="w" d="M150 205A200 200 0 0 1 350 5M250 205A100 100 0 0 1 350 105M150 205L250 205M350 5L350 105"/>
+    <circle cx="350" cy="205" r="5" fill="#20242b"/><text class="t" x="365" y="213">O</text><text class="s" x="170" y="230">0.5 m</text><text class="s" x="265" y="230">1 m</text>
+    <path class="a" d="M155 190A185 185 0 0 1 195 85"/><text class="m" x="85" y="105">I = 16 A</text>
+  </g>
+
+  <g id="fig-q5" transform="translate(0 810)">
+    <circle class="w" cx="110" cy="130" r="45"/><text class="m" x="88" y="138">V</text>
+    <path class="w" d="M110 85V45H310M360 45H420V215H110V175M420 105H570V215"/>
+    <rect class="f" x="310" y="25" width="50" height="40"/><text class="m" x="285" y="18">R₁ = 5 Ω</text>
+    <rect class="f" x="400" y="105" width="40" height="70"/><text class="m" x="445" y="145">R₂ = 4 Ω</text>
+    <rect class="f" x="550" y="105" width="40" height="70"/><text class="m" x="595" y="145">R₃ = 8 Ω</text>
+  </g>
+
+  <g id="fig-q6" transform="translate(0 1090)">
+    <circle class="w" cx="120" cy="120" r="43"/><text class="m" x="97" y="128">E</text><text class="m" x="100" y="185">r [Ω]</text>
+    <path class="w" d="M120 77V35H580V205H120V163"/><rect class="f" x="385" y="185" width="105" height="40"/><text class="m" x="405" y="250">R [Ω]</text>
+    <line class="a" x1="240" y1="35" x2="330" y2="35"/><text class="m" x="260" y="25">I [A]</text>
+  </g>
+
+  <g id="fig-q7" transform="translate(0 1350)">
+    <circle class="w" cx="110" cy="155" r="45"/><text class="m" x="88" y="163">E</text>
+    <path class="w" d="M110 110V55H590V255H110V200M300 55V145M590 145H300"/>
+    <rect class="f" x="235" y="35" width="90" height="40"/><text class="m" x="240" y="25">R₁ [Ω]</text>
+    <rect class="f" x="545" y="100" width="90" height="40"/><text class="m" x="530" y="90">R₂ [Ω]</text>
+    <rect class="f" x="255" y="145" width="90" height="40"/><text class="m" x="255" y="215">Rₓ [Ω]</text><line class="a" x1="300" y1="205" x2="300" y2="250"/><text class="m" x="315" y="245">I [A]</text>
+  </g>
+
+  <g id="fig-q8" transform="translate(0 1640)">
+    <circle class="w" cx="105" cy="125" r="42"/><text class="m" x="82" y="132">V,f</text><path class="w" d="M105 83V35H595V215H105V167"/>
+    <rect class="f" x="250" y="15" width="95" height="40"/><text class="m" x="260" y="75">R₁</text>
+    <line class="w" x1="250" y1="170" x2="280" y2="170"/><line class="w" x1="280" y1="140" x2="280" y2="200"/><line class="w" x1="310" y1="140" x2="310" y2="200"/><line class="w" x1="310" y1="170" x2="355" y2="170"/><text class="m" x="282" y="130">C</text>
+    <path class="w" d="M355 170q12-35 24 0q12-35 24 0q12-35 24 0"/><text class="m" x="385" y="130">L</text><rect class="f" x="475" y="150" width="85" height="40"/><text class="m" x="495" y="215">R₂</text>
+  </g>
+
+  <g id="fig-q9" transform="translate(0 1910)">
+    <text class="t" x="75" y="30">図1</text><path class="w" d="M60 105H560V35H60V105"/><rect class="f" x="185" y="15" width="90" height="40"/><text class="m" x="205" y="75">R</text><path class="w" d="M320 35q12-35 24 0q12-35 24 0q12-35 24 0"/><text class="m" x="350" y="75">X</text><text class="m" x="70" y="135">E = 100 V, I = 10 A</text>
+    <text class="t" x="75" y="165">図2</text><path class="w" d="M60 245H630V175H60V245"/><rect class="f" x="180" y="155" width="75" height="40"/><text class="m" x="202" y="215">R</text><path class="w" d="M300 175q12-35 24 0q12-35 24 0q12-35 24 0"/><rect class="f" x="430" y="155" width="90" height="40"/><text class="m" x="445" y="215">11 Ω</text><text class="m" x="70" y="275">E = 100 V, I = 5 A</text>
+  </g>
+
+  <g id="fig-q10" transform="translate(0 2210)">
+    <text class="s" x="20" y="22">点線：R=1 Ω　実線：R=2 Ω</text>
+    <g transform="translate(10 45)"><path class="w" d="M20 150V10M20 150H205"/><path d="M20 150Q80 45 190 30" fill="none" stroke="#777" stroke-width="2" stroke-dasharray="8 6"/><path d="M20 150Q75 80 190 75" class="w"/><text class="s" x="85" y="180">(1)</text></g>
+    <g transform="translate(240 45)"><path class="w" d="M20 150V10M20 150H205"/><path d="M20 150Q80 45 190 30" fill="none" stroke="#777" stroke-width="2" stroke-dasharray="8 6"/><path d="M20 150Q110 35 190 12" class="w"/><text class="s" x="85" y="180">(2)</text></g>
+    <g transform="translate(470 45)"><path class="w" d="M20 150V10M20 150H205"/><path d="M20 150Q80 45 190 30" fill="none" stroke="#777" stroke-width="2" stroke-dasharray="8 6"/><path d="M20 150Q45 80 190 75" class="w"/><text class="s" x="85" y="180">(3)</text></g>
+    <g transform="translate(125 240)"><path class="w" d="M20 150V10M20 150H205"/><path d="M20 150Q80 45 190 30" fill="none" stroke="#777" stroke-width="2" stroke-dasharray="8 6"/><path d="M20 150Q42 45 190 30" class="w"/><text class="s" x="85" y="180">(4)</text></g>
+    <g transform="translate(385 240)"><path class="w" d="M20 150V10M20 150H205"/><path d="M20 150Q80 45 190 30" fill="none" stroke="#777" stroke-width="2" stroke-dasharray="8 6"/><path d="M20 150Q125 45 190 30" class="w"/><text class="s" x="85" y="180">(5)</text></g>
+  </g>
+
+  <g id="fig-q12" transform="translate(0 2660)">
+    <rect class="f" x="115" y="45" width="470" height="145"/><line class="w" x1="115" y1="45" x2="585" y2="45"/><line class="w" x1="115" y1="190" x2="585" y2="190"/>
+    <circle cx="350" cy="170" r="8" fill="#20242b"/><line class="a" x1="350" y1="165" x2="350" y2="85"/><text class="t" x="365" y="135">電子</text><text class="m" x="365" y="95">F [N]</text><text class="m" x="60" y="125">d [m]</text><text class="t" x="600" y="70">陽極板</text><text class="t" x="600" y="195">陰極板</text><text class="m" x="480" y="130">V [V]</text>
+  </g>
+
+  <g id="fig-q14" transform="translate(0 2940)">
+    <path class="w" d="M70 185V35M70 110H630"/><path class="w" d="M70 185H630"/><path class="w" d="M70 185L350 35V185Z"/>
+    <text class="m" x="30" y="35">V [V]</text><text class="m" x="615" y="215">t [ms]</text><text class="t" x="45" y="105">8</text><text class="s" x="325" y="215">10</text><text class="s" x="600" y="215">20</text>
+  </g>
+
+  <g id="fig-q15" transform="translate(0 3210)">
+    <text class="t" x="20" y="28">対称三相交流電源（線間電圧 200 V）とRLC負荷</text>
+    <circle class="w" cx="115" cy="165" r="70"/><text class="m" x="72" y="170">3相 50 Hz</text><path class="w" d="M185 125H600M185 165H600M185 205H600"/>
+    <path class="w" d="M395 125L495 205M495 125L395 205M445 125V205"/><text class="m" x="505" y="105">R=10 Ω</text><text class="m" x="505" y="145">ωL=20 Ω</text><text class="m" x="505" y="185">1/(ωC)=20 Ω</text><line class="a" x1="205" y1="100" x2="300" y2="100"/><text class="m" x="240" y="90">I</text>
+  </g>
+
+  <g id="fig-q16" transform="translate(0 3560)">
+    <text class="t" x="120" y="28">図1</text><text class="t" x="475" y="28">図2</text>
+    <g transform="translate(10 40)"><path class="w" d="M40 70H300V240H40V70M170 70V240"/><rect class="f" x="85" y="50" width="65" height="40"/><rect class="f" x="200" y="50" width="65" height="40"/><rect class="f" x="85" y="220" width="65" height="40"/><rect class="f" x="200" y="220" width="65" height="40"/><text class="s" x="90" y="45">16 Ω</text><text class="s" x="210" y="45">4 Ω</text><text class="s" x="95" y="290">4 Ω</text><text class="s" x="205" y="290">16 Ω</text><rect class="f" x="145" y="130" width="50" height="75"/><text class="m" x="158" y="173">R</text></g>
+    <g transform="translate(355 40)"><path class="w" d="M40 70H300V240H40V70M170 70V240"/><rect class="f" x="85" y="50" width="65" height="40"/><rect class="f" x="200" y="50" width="65" height="40"/><rect class="f" x="85" y="220" width="65" height="40"/><rect class="f" x="200" y="220" width="65" height="40"/><text class="s" x="90" y="45">16 Ω</text><text class="s" x="210" y="45">4 Ω</text><text class="s" x="95" y="290">4 Ω</text><text class="s" x="205" y="290">16 Ω</text><rect class="f" x="145" y="100" width="50" height="75"/><text class="m" x="158" y="143">R</text></g>
+  </g>
+
+  <g id="fig-q17" transform="translate(0 3910)">
+    <text class="t" x="130" y="25">コンデンサA</text><text class="t" x="500" y="25">コンデンサB</text>
+    <rect class="f" x="80" y="55" width="260" height="60"/><rect class="d" x="80" y="115" width="260" height="85"/><rect x="80" y="200" width="260" height="70" fill="#aeb6c2" stroke="#20242b" stroke-width="2"/>
+    <text class="s" x="155" y="90">E_A1, 2ε₀, d/6</text><text class="s" x="155" y="158">E_A2, 3ε₀, d/3</text><text class="s" x="155" y="240">E_A3, 6ε₀, d/2</text>
+    <rect class="f" x="405" y="55" width="55" height="215"/><rect class="d" x="460" y="55" width="105" height="215"/><rect x="565" y="55" width="105" height="215" fill="#aeb6c2" stroke="#20242b" stroke-width="2"/>
+    <text class="s" x="410" y="150">E_B1</text><text class="s" x="480" y="150">E_B2</text><text class="s" x="590" y="150">E_B3</text><text class="s" x="410" y="180">2ε₀</text><text class="s" x="485" y="180">3ε₀</text><text class="s" x="595" y="180">6ε₀</text>
+  </g>
+
+  <g id="fig-q18" transform="translate(0 4230)">
+    <text class="t" x="25" y="25">図1：CMOS回路</text><path class="w" d="M170 45V85M170 85q-30 18 0 36q30 18 0 36V210"/><line class="w" x1="90" y1="103" x2="140" y2="103"/><line class="w" x1="90" y1="139" x2="140" y2="139"/><line class="w" x1="170" y1="121" x2="245" y2="121"/><text class="s" x="55" y="95">入力</text><text class="s" x="210" y="110">出力</text>
+    <text class="t" x="330" y="25">図2：NAND接続</text><text class="s" x="330" y="75">(イ) 両入力を接続</text><text class="s" x="330" y="120">(ロ) 一方を「0」に固定</text><text class="s" x="330" y="165">(ハ) 一方を「1」に固定</text>
+    <text class="t" x="25" y="245">図3：(ニ)入力0個　(ホ)入力1個　(ヘ)入力2個のマルチバイブレータ</text>
+  </g>
+</svg>
