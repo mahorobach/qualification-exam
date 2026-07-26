@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="430" viewBox="0 0 700 430" role="img" aria-label="高低圧架空電線を併架した電柱と支線">
+<defs><style>.w{fill:none;stroke:#20242b;stroke-width:3;stroke-linecap:round}.d{fill:none;stroke:#20242b;stroke-width:1.5;stroke-dasharray:5 4}.t{font:19px "Yu Gothic",sans-serif;fill:#20242b}.m{font:italic 19px Georgia,serif;fill:#20242b}</style></defs>
+<path class="w" d="M60 360H650M330 360L345 55L360 360"/>
+<path class="w" d="M110 80H345M110 145H345"/><path class="w" d="M345 145L565 360"/>
+<path class="w" d="M110 70v20M110 135v20"/><path class="w" d="M325 80h40M325 145h40"/>
+<text class="t" x="160" y="68">9 kN</text><text class="t" x="160" y="133">4 kN</text><text class="t" x="470" y="225">支線</text><text class="t" x="470" y="250">10 m</text>
+<path class="d" d="M280 80V360M250 145V360"/><path class="w" d="M270 90l10-10 10 10M270 350l10 10 10-10M240 155l10-10 10 10M240 350l10 10 10-10"/>
+<text class="t" x="285" y="225">10 m</text><text class="t" x="255" y="265">8 m</text>
+<path class="d" d="M345 390H565"/><path class="w" d="M355 380l-10 10 10 10M555 380l10 10-10 10"/><text class="t" x="435" y="420">6 m</text>
+<path class="w" d="M75 360l-15 15M105 360l-15 15M135 360l-15 15M165 360l-15 15M195 360l-15 15M225 360l-15 15M255 360l-15 15M285 360l-15 15M315 360l-15 15M365 360l-15 15M395 360l-15 15M425 360l-15 15M455 360l-15 15M485 360l-15 15M515 360l-15 15M545 360l-15 15M575 360l-15 15M605 360l-15 15"/>
+</svg>

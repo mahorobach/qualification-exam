@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="620" viewBox="0 0 760 620" role="img" aria-label="高圧受電設備の単線結線図">
+<defs><style>.w{fill:none;stroke:#20242b;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}.s{fill:#fff;stroke:#20242b;stroke-width:2}.t{font:20px "Yu Gothic",sans-serif;fill:#20242b}.m{font:italic 20px Georgia,serif;fill:#20242b}.n{fill:#20242b}</style></defs>
+<text class="t" x="270" y="30">3φ3W 6 600 V</text>
+<path class="w" d="M350 45V560"/><circle class="s" cx="350" cy="75" r="21"/><text class="t" x="337" y="82">3φ</text>
+<path class="w" d="M340 120l20 25-20 25 20 25"/><circle class="n" cx="350" cy="205" r="5"/>
+<path class="w" d="M350 205H500V265"/><rect class="s" x="465" y="265" width="70" height="42"/><text class="t" x="486" y="293">(ア)</text>
+<rect class="s" x="465" y="320" width="70" height="52"/><text class="t" x="480" y="354">Wh</text><path class="w" d="M500 307V320"/>
+<path class="w" d="M350 205H405V235M405 250V278"/><line class="w" x1="392" y1="235" x2="418" y2="235"/><line class="w" x1="392" y1="250" x2="418" y2="250"/>
+<circle class="s" cx="405" cy="300" r="18"/><circle class="s" cx="425" cy="300" r="18"/>
+<path class="w" d="M350 220H315V350H350"/><path class="w" d="M315 275l-16 25h32zM315 325l16-25h-32z"/>
+<circle class="n" cx="350" cy="350" r="5"/><circle class="s" cx="350" cy="390" r="21"/><path class="w" d="M330 390H300V430H350"/>
+<path class="w" d="M350 411V445"/><circle class="n" cx="350" cy="445" r="5"/><rect class="s" x="375" y="427" width="34" height="17"/>
+<circle class="s" cx="445" cy="445" r="20"/><path class="w" d="M409 435H425M465 445H555"/><rect class="s" x="555" y="425" width="50" height="40"/><text class="t" x="565" y="452">VS</text><circle class="s" cx="650" cy="445" r="21"/><text class="m" x="642" y="452">V</text><path class="w" d="M605 445H629"/>
+<path class="w" d="M350 445V490"/><circle class="n" cx="350" cy="490" r="5"/><circle class="s" cx="350" cy="525" r="21"/>
+<path class="w" d="M371 525H430"/><rect class="s" x="430" y="504" width="72" height="42"/><text class="t" x="447" y="532">(イ)</text><circle class="s" cx="540" cy="525" r="21"/><text class="m" x="531" y="532">W</text><path class="w" d="M502 525H519"/>
+<path class="w" d="M561 525H575"/><rect class="s" x="575" y="504" width="42" height="42"/><text class="t" x="581" y="532">(ウ)</text>
+<rect class="s" x="630" y="504" width="48" height="42"/><text class="t" x="638" y="532">AS</text><circle class="s" cx="715" cy="525" r="20"/><text class="m" x="707" y="532">A</text><path class="w" d="M617 525H630M678 525H695"/>
+<text class="t" x="265" y="600">高圧母線</text>
+</svg>

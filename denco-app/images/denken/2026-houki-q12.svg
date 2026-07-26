@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="320" viewBox="0 0 760 320" role="img" aria-label="高圧CVケーブルの絶縁耐力試験回路">
+<defs><style>.w{fill:none;stroke:#20242b;stroke-width:2.5;stroke-linecap:round}.s{fill:#fff;stroke:#20242b;stroke-width:2}.t{font:17px "Yu Gothic",sans-serif;fill:#20242b}.m{font:italic 18px Georgia,serif;fill:#20242b}</style></defs>
+<circle class="s" cx="55" cy="170" r="22"/><path class="w" d="M40 170q8-15 15 0t15 0M77 145H130M77 195H130"/>
+<path class="w" d="M130 145H175M130 195H175"/><circle class="s" cx="160" cy="145" r="14"/><text class="m" x="154" y="151">A</text>
+<rect class="s" x="175" y="100" width="105" height="140"/><path class="w" d="M205 125q-24 12 0 24t0 24t0 24t0 24M245 125q24 12 0 24t0 24t0 24t0 24"/>
+<text class="t" x="155" y="65">試験用変圧器</text><text class="t" x="145" y="88">110/11 000 V, 5 kV・A</text>
+<path class="w" d="M280 130H485M280 210H350V270"/><circle class="s" cx="320" cy="130" r="14"/><text class="m" x="314" y="136">A</text>
+<path class="w" d="M350 130V160M350 215V245"/><path class="w" d="M350 160q-18 10 0 20t0 20t0 20"/><text class="t" x="365" y="195">補償リアクトル</text>
+<path class="w" d="M485 130H710M485 210H710"/><rect x="500" y="113" width="24" height="34" fill="#20242b"/><text class="t" x="480" y="90">導体</text><text class="t" x="535" y="85">被試験ケーブル</text><text class="t" x="535" y="108">絶縁体・金属遮へい層・外装</text>
+<path class="w" d="M350 245v25m-18 0h36m-12 10h24m-36 0h24M500 210v60m-18 0h36m-12 10h24m-36 0h24"/>
+</svg>
